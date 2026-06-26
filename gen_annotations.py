@@ -108,10 +108,42 @@ def extract_json(text):
 
 def setup_llm():
     """偵測可用的 API key，回傳 (provider, model, complete_fn, pace_sec)。
-    優先免費：Groq → Gemini → Anthropic(付費)。complete_fn(user)->str。"""
+    優先免費：OpenRouter → Groq → Gemini → Anthropic(付費)。complete_fn(user)->str。"""
+    or_key = os.environ.get("OPENROUTER_API_KEY")
     groq = os.environ.get("GROQ_API_KEY")
     gem = os.environ.get("GEMINI_API_KEY")
     ant = os.environ.get("ANTHROPIC_API_KEY")
+
+    if or_key:
+        import httpx
+        ca = "/root/.ccr/ca-bundle.crt"
+        proxy = os.environ.get("HTTPS_PROXY")
+        model = "google/gemini-flash-1.5:free"
+
+        def complete(user):
+            headers = {
+                "Authorization": f"Bearer {or_key}",
+                "Content-Type": "application/json",
+                "HTTP-Referer": "https://github.com/windsjp00171-star/bibile-actionbook",
+            }
+            payload = {
+                "model": model,
+                "temperature": 0.2,
+                "max_tokens": 2000,
+                "messages": [
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": user},
+                ],
+            }
+            kwargs = {"headers": headers, "json": payload, "timeout": 60}
+            if proxy:
+                kwargs["proxy"] = proxy
+            verify = ca if os.path.exists(ca) else True
+            r = httpx.post("https://openrouter.ai/api/v1/chat/completions",
+                           verify=verify, **kwargs)
+            r.raise_for_status()
+            return r.json()["choices"][0]["message"]["content"]
+        return "OpenRouter", model, complete, 2.0
 
     if groq:
         from groq import Groq
