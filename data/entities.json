@@ -1112,14 +1112,34 @@
     "desc": "以撒長子，雅各的孿生兄長。因饑餓以一碗紅豆湯換掉長子名分，後又被雅各奪走祝福，成為以東族的祖先。",
     "verses": "創世記25-36章"
   },
-  "雅各": {
-    "type": "person",
-    "name": "雅各",
-    "name_en": "Jacob",
-    "testament": "both",
-    "desc": "以撒次子，十二支派之父。名意「抓腳踵者」，與神角力後改名以色列。娶拉結與利亞，生十二子，成為以色列民族的起源。",
-    "verses": "創世記25-50章"
-  },
+  "雅各": [
+    {
+      "testament": "OT",
+      "type": "person",
+      "name": "雅各（以撒之子）",
+      "name_en": "Jacob",
+      "desc": "以撒次子，以掃的孿生弟弟，十二支派之父。與神角力後改名「以色列」，是以色列民族的先祖。",
+      "verses": "創世記"
+    },
+    {
+      "testament": "NT",
+      "type": "person",
+      "name": "雅各（使徒）",
+      "name_en": "James",
+      "desc": "西庇太之子，約翰之兄，十二使徒之一，首位殉道的使徒。新約另有亞勒腓之子小雅各與主的兄弟雅各。",
+      "verses": "四福音書、使徒行傳",
+      "context_redirect": [
+        {
+          "keywords": [
+            "約西",
+            "西門的長兄",
+            "木匠的兒子"
+          ],
+          "target": "雅各（主的兄弟）"
+        }
+      ]
+    }
+  ],
   "拉班": {
     "type": "person",
     "name": "拉班",
@@ -1647,8 +1667,31 @@
     "name": "馬利亞",
     "name_en": "Mary",
     "testament": "NT",
-    "desc": "耶穌的母親，拿撒勒的童女。天使加百列向她報喜，她以「成就你的話吧」回應，懷孕生下耶穌。聖經中多位「馬利亞」同名，以「耶穌的母親」最重要。",
-    "verses": "路加福音1-2章、約翰福音2、19章"
+    "desc": "耶穌的母親，拿撒勒的童女，許配給木匠約瑟。天使加百列向她報喜，因聖靈感孕生下耶穌。",
+    "verses": "四福音書",
+    "context_redirect": [
+      {
+        "keywords": [
+          "抹大拉"
+        ],
+        "target": "抹大拉的馬利亞"
+      },
+      {
+        "keywords": [
+          "馬大",
+          "拉撒路",
+          "伯大尼",
+          "香膏抹"
+        ],
+        "target": "伯大尼的馬利亞"
+      },
+      {
+        "keywords": [
+          "馬可"
+        ],
+        "target": "馬可的母親馬利亞"
+      }
+    ]
   },
   "馬大": {
     "type": "person",
@@ -1715,11 +1758,19 @@
   },
   "腓力": {
     "type": "person",
-    "name": "腓力",
-    "name_en": "Philip",
+    "name": "腓力（使徒）",
+    "name_en": "Philip the Apostle",
     "testament": "NT",
-    "desc": "伯賽大人，安得烈和彼得的同鄉，十二使徒之一。找到拿但業介紹耶穌給他。五餅二魚前耶穌問他「哪裡買餅」，是試驗他的信心。",
-    "verses": "約翰福音1:43-45、6:5-7"
+    "desc": "伯賽大人，十二使徒之一，與安得烈、彼得同城。曾引介拿但業來見耶穌。",
+    "verses": "四福音書、使徒行傳",
+    "context_redirect": [
+      {
+        "keywords": [
+          "希羅底"
+        ],
+        "target": "腓力（分封王）"
+      }
+    ]
   },
   "巴拿巴": {
     "type": "person",
@@ -3350,13 +3401,6 @@
     "desc": "基督教的核心人物，猶太人、基督徒認為是上帝的兒子",
     "testament": "NT"
   },
-  "萬軍之耶和華": {
-    "type": "concept",
-    "name": "萬軍之耶和華",
-    "name_en": "Lord of Hosts",
-    "desc": "以色列人的上帝，萬軍的主宰",
-    "testament": "OT"
-  },
   "以色列": {
     "type": "place",
     "name": "以色列",
@@ -3378,81 +3422,11 @@
     "desc": "指上帝選擇的民族，以雅各為始祖",
     "testament": "OT"
   },
-  "撒冷": {
-    "type": "place",
-    "name": "撒冷",
-    "name_en": "Salem",
-    "desc": "古城名，與耶路撒冷相關",
-    "testament": "OT"
-  },
   "律例": {
     "type": "concept",
     "name": "律例",
     "name_en": "Law",
     "desc": "指上帝給以色列人的律法和規條",
-    "testament": "OT"
-  },
-  "首領": {
-    "type": "concept",
-    "name": "首領",
-    "name_en": "Leader",
-    "desc": "指以色列人或教會中的領導者",
-    "testament": "both"
-  },
-  "僕人": {
-    "type": "concept",
-    "name": "僕人",
-    "name_en": "Servant",
-    "desc": "指侍奉上帝或人的人",
-    "testament": "both"
-  },
-  "百姓": {
-    "type": "concept",
-    "name": "百姓",
-    "name_en": "People",
-    "desc": "指以色列人或教會中的信徒",
-    "testament": "both"
-  },
-  "華以色列": {
-    "type": "place",
-    "name": "華以色列",
-    "name_en": "Israel",
-    "desc": "指古代以色列人的國家",
-    "testament": "OT"
-  },
-  "主耶和華": {
-    "type": "concept",
-    "name": "主耶和華",
-    "name_en": "Lord Yahweh",
-    "desc": "以色列人對上帝的尊稱",
-    "testament": "OT"
-  },
-  "居民": {
-    "type": "concept",
-    "name": "居民",
-    "name_en": "Inhabitant",
-    "desc": "指居住在某地的人",
-    "testament": "both"
-  },
-  "城邑": {
-    "type": "place",
-    "name": "城邑",
-    "name_en": "City",
-    "desc": "指古代的城市或聚居地",
-    "testament": "both"
-  },
-  "路撒冷": {
-    "type": "place",
-    "name": "路撒冷",
-    "name_en": "Jerusalem",
-    "desc": "以色列的首都",
-    "testament": "both"
-  },
-  "色列人": {
-    "type": "concept",
-    "name": "色列人",
-    "name_en": "Israelites",
-    "desc": "亞伯拉罕的後代",
     "testament": "OT"
   },
   "誡命": {
@@ -3461,13 +3435,6 @@
     "name_en": "Commandments",
     "desc": "上帝給以色列人的律法",
     "testament": "OT"
-  },
-  "耶和華的靈": {
-    "type": "concept",
-    "name": "耶和華的靈",
-    "name_en": "Spirit of Yahweh",
-    "desc": "上帝的聖靈",
-    "testament": "both"
   },
   "亞摩利人": {
     "type": "people",
@@ -3483,13 +3450,6 @@
     "desc": "古代以色列的重量和貨幣單位",
     "testament": "OT"
   },
-  "巴比倫王尼": {
-    "type": "person",
-    "name": "巴比倫王尼",
-    "name_en": "Nebuchadnezzar",
-    "desc": "巴比倫的王，曾攻陷耶路撒冷，毀壞聖殿",
-    "testament": "OT"
-  },
   "以色列人": {
     "type": "place",
     "name": "以色列人",
@@ -3503,5 +3463,29 @@
     "name_en": "House of Israel",
     "desc": "以色列的十二個支派",
     "testament": "OT"
+  },
+  "伯大尼的馬利亞": {
+    "type": "person",
+    "name": "伯大尼的馬利亞",
+    "name_en": "Mary of Bethany",
+    "testament": "NT",
+    "desc": "馬大和拉撒路的妹妹，住伯大尼。曾坐在耶穌腳前聽道，並用真哪噠香膏抹主的腳。",
+    "verses": "路加福音、約翰福音"
+  },
+  "馬可的母親馬利亞": {
+    "type": "person",
+    "name": "馬可的母親馬利亞",
+    "name_en": "Mary mother of John Mark",
+    "testament": "NT",
+    "desc": "約翰馬可的母親，耶路撒冷信徒。彼得出獄後即到她家，那裡常有信徒聚集禱告。",
+    "verses": "使徒行傳"
+  },
+  "腓利": {
+    "type": "person",
+    "name": "腓利（傳福音的執事）",
+    "name_en": "Philip the Evangelist",
+    "testament": "NT",
+    "desc": "初代教會七執事之一，被稱「傳福音的腓利」。向撒瑪利亞人傳道，並為衣索比亞太監施洗。和合本以「腓利」與門徒「腓力」區分。",
+    "verses": "使徒行傳"
   }
 }
