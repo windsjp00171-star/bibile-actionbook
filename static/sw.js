@@ -1,4 +1,4 @@
-const CACHE = 'bible-v1';
+const CACHE = 'bible-v2';
 const SHELL = [
   '/',
   '/static/style.css',
