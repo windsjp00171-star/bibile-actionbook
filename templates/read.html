@@ -82,6 +82,14 @@
   <div class="lineage-scroll"><svg id="lineageSvg"></svg></div>
 </aside>
 
+<!-- 全螢幕大地圖 -->
+<div class="bigmap-overlay" id="bigMapOverlay" onclick="closeBigMap()"></div>
+<aside class="bigmap-panel" id="bigMapPanel">
+  <button class="card-close" onclick="closeBigMap()" aria-label="關閉">✕</button>
+  <h3 class="bigmap-title" id="bigMapTitle"></h3>
+  <div class="bigmap-canvas" id="bigMap"></div>
+</aside>
+
 <!-- 標注卡片：桌面右側浮動 / 手機底部 sheet -->
 <div class="card-overlay" id="cardOverlay" onclick="closeCard()"></div>
 <aside class="anno-card" id="annoCard">
@@ -89,7 +97,10 @@
   <button class="card-close" onclick="closeCard()" aria-label="關閉">✕</button>
   <div class="card-badge" id="cardBadge"></div>
   <h3 class="card-name" id="cardName"></h3>
-  <div class="card-map" id="cardMap"></div>
+  <div class="card-map-wrap" id="cardMapWrap" style="display:none">
+    <div class="card-map" id="cardMap"></div>
+    <button class="map-expand-btn" onclick="openBigMap()">⛶ 放大地圖</button>
+  </div>
   <p class="card-desc" id="cardDesc"></p>
   <div class="card-relations" id="cardRelations"></div>
   <div class="card-verses" id="cardVerses"></div>
@@ -164,10 +175,13 @@ function closeCard() {
   document.getElementById('cardOverlay').classList.remove('open');
 }
 
+let _curPlace = null;
 function renderMap(ent) {
   const wrap = document.getElementById('cardMap');
-  if (ent.type !== 'place' || ent.lat == null) { wrap.style.display = 'none'; return; }
-  wrap.style.display = 'block';
+  const outer = document.getElementById('cardMapWrap');
+  if (ent.type !== 'place' || ent.lat == null) { outer.style.display = 'none'; _curPlace = null; return; }
+  outer.style.display = 'block';
+  _curPlace = ent;
   if (!_map) {
     _map = L.map(wrap, { zoomControl: true, attributionControl: false });
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 14 }).addTo(_map);
@@ -192,6 +206,47 @@ function renderMap(ent) {
 
 function _lookupEntity(name) {
   return ENTITIES[name] || RELATED_BRIEF[name] || null;
+}
+
+// ── 全螢幕大地圖：所有地名都標清楚 ──────────────────────────────
+let _bigMap = null, _bigLayer = null;
+function openBigMap() {
+  if (!_curPlace) return;
+  const ent = _curPlace;
+  document.getElementById('bigMapTitle').textContent = '地圖　' + ent.name;
+  document.getElementById('bigMapPanel').classList.add('open');
+  document.getElementById('bigMapOverlay').classList.add('open');
+  setTimeout(() => {
+    const div = document.getElementById('bigMap');
+    if (!_bigMap) {
+      _bigMap = L.map(div, { zoomControl: true, attributionControl: false });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 14 }).addTo(_bigMap);
+      _bigLayer = L.layerGroup().addTo(_bigMap);
+    }
+    _bigLayer.clearLayers();
+    const pts = [];
+    Object.values(ENTITIES).forEach(e => {
+      if (e.type === 'place' && e.lat != null) {
+        const focus = e.name === ent.name;
+        L.circleMarker([e.lat, e.lng], {
+          radius: focus ? 9 : 6,
+          fillColor: focus ? '#2A5C3A' : '#8B6840',
+          color: '#fff', weight: 2, fillOpacity: 1
+        }).bindTooltip(e.name, { permanent: true, direction: 'top',
+            className: focus ? 'map-focus-label' : '' })
+          .on('click', () => { if (ENTITIES[e.name]) { closeBigMap(); openCard(e.name); } })
+          .addTo(_bigLayer);
+        pts.push([e.lat, e.lng]);
+      }
+    });
+    _bigMap.invalidateSize();
+    if (pts.length > 1) _bigMap.fitBounds(pts, { padding: [50, 50] });
+    else _bigMap.setView([ent.lat, ent.lng], 8);
+  }, 80);
+}
+function closeBigMap() {
+  document.getElementById('bigMapPanel').classList.remove('open');
+  document.getElementById('bigMapOverlay').classList.remove('open');
 }
 
 // ── 本章世系結構圖（SVG） ──────────────────────────────────────
