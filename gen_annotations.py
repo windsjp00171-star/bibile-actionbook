@@ -115,7 +115,12 @@ def setup_llm():
 
     if groq:
         from groq import Groq
-        client = Groq(api_key=groq)
+        import httpx
+        ca = "/root/.ccr/ca-bundle.crt"
+        proxy = os.environ.get("HTTPS_PROXY")
+        hc = httpx.Client(proxy=proxy, verify=ca if os.path.exists(ca) else True,
+                          timeout=60) if proxy else None
+        client = Groq(api_key=groq, http_client=hc)
         model = "llama-3.3-70b-versatile"
 
         def complete(user):
@@ -125,7 +130,7 @@ def setup_llm():
                           {"role": "user", "content": user}],
             )
             return r.choices[0].message.content
-        return "Groq", model, complete, 0.8
+        return "Groq", model, complete, 2.5
 
     if gem:
         import google.generativeai as genai
