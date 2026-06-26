@@ -3278,5 +3278,173 @@
     "name_en": "James (brother of Jesus)",
     "testament": "NT",
     "desc": "耶穌的弟弟，耶路撒冷教會領袖，寫〈雅各書〉，強調信心需有行為配合。"
+  },
+  "耶和華": {
+    "type": "concept",
+    "name": "耶和華",
+    "name_en": "Yahweh",
+    "desc": "以色列人的上帝，猶太教中的全能神",
+    "testament": "OT"
+  },
+  "耶穌": {
+    "type": "person",
+    "name": "耶穌",
+    "name_en": "Jesus",
+    "desc": "基督教的核心人物，猶太人、基督徒認為是上帝的兒子",
+    "testament": "NT"
+  },
+  "萬軍之耶和華": {
+    "type": "concept",
+    "name": "萬軍之耶和華",
+    "name_en": "Lord of Hosts",
+    "desc": "以色列人的上帝，萬軍的主宰",
+    "testament": "OT"
+  },
+  "以色列": {
+    "type": "place",
+    "name": "以色列",
+    "name_en": "Israel",
+    "desc": "古代以色列人的居住地",
+    "testament": "OT"
+  },
+  "人子": {
+    "type": "concept",
+    "name": "人子",
+    "name_en": "Son of Man",
+    "desc": "耶穌基督的稱號，代表祂的神性和人性",
+    "testament": "NT"
+  },
+  "以色列眾人": {
+    "type": "people",
+    "name": "以色列眾人",
+    "name_en": "Israelites",
+    "desc": "指上帝選擇的民族，以雅各為始祖",
+    "testament": "OT"
+  },
+  "撒冷": {
+    "type": "place",
+    "name": "撒冷",
+    "name_en": "Salem",
+    "desc": "古城名，與耶路撒冷相關",
+    "testament": "OT"
+  },
+  "律例": {
+    "type": "concept",
+    "name": "律例",
+    "name_en": "Law",
+    "desc": "指上帝給以色列人的律法和規條",
+    "testament": "OT"
+  },
+  "首領": {
+    "type": "concept",
+    "name": "首領",
+    "name_en": "Leader",
+    "desc": "指以色列人或教會中的領導者",
+    "testament": "both"
+  },
+  "僕人": {
+    "type": "concept",
+    "name": "僕人",
+    "name_en": "Servant",
+    "desc": "指侍奉上帝或人的人",
+    "testament": "both"
+  },
+  "百姓": {
+    "type": "concept",
+    "name": "百姓",
+    "name_en": "People",
+    "desc": "指以色列人或教會中的信徒",
+    "testament": "both"
+  },
+  "華以色列": {
+    "type": "place",
+    "name": "華以色列",
+    "name_en": "Israel",
+    "desc": "指古代以色列人的國家",
+    "testament": "OT"
+  },
+  "主耶和華": {
+    "type": "concept",
+    "name": "主耶和華",
+    "name_en": "Lord Yahweh",
+    "desc": "以色列人對上帝的尊稱",
+    "testament": "OT"
+  },
+  "居民": {
+    "type": "concept",
+    "name": "居民",
+    "name_en": "Inhabitant",
+    "desc": "指居住在某地的人",
+    "testament": "both"
+  },
+  "城邑": {
+    "type": "place",
+    "name": "城邑",
+    "name_en": "City",
+    "desc": "指古代的城市或聚居地",
+    "testament": "both"
+  },
+  "路撒冷": {
+    "type": "place",
+    "name": "路撒冷",
+    "name_en": "Jerusalem",
+    "desc": "以色列的首都",
+    "testament": "both"
+  },
+  "色列人": {
+    "type": "concept",
+    "name": "色列人",
+    "name_en": "Israelites",
+    "desc": "亞伯拉罕的後代",
+    "testament": "OT"
+  },
+  "誡命": {
+    "type": "concept",
+    "name": "誡命",
+    "name_en": "Commandments",
+    "desc": "上帝給以色列人的律法",
+    "testament": "OT"
+  },
+  "耶和華的靈": {
+    "type": "concept",
+    "name": "耶和華的靈",
+    "name_en": "Spirit of Yahweh",
+    "desc": "上帝的聖靈",
+    "testament": "both"
+  },
+  "亞摩利人": {
+    "type": "people",
+    "name": "亞摩利人",
+    "name_en": "Amorite",
+    "desc": "古代中東的一個民族，曾居住在迦南地區",
+    "testament": "OT"
+  },
+  "舍客勒": {
+    "type": "concept",
+    "name": "舍客勒",
+    "name_en": "Shekel",
+    "desc": "古代以色列的重量和貨幣單位",
+    "testament": "OT"
+  },
+  "巴比倫王尼": {
+    "type": "person",
+    "name": "巴比倫王尼",
+    "name_en": "Nebuchadnezzar",
+    "desc": "巴比倫的王，曾攻陷耶路撒冷，毀壞聖殿",
+    "testament": "OT"
+  },
+  "以色列人": {
+    "type": "place",
+    "name": "以色列人",
+    "name_en": "Israelites",
+    "desc": "以色列的後裔，猶太人的祖先",
+    "testament": "OT"
+  },
+  "以色列家": {
+    "type": "place",
+    "name": "以色列家",
+    "name_en": "House of Israel",
+    "desc": "以色列的十二個支派",
+    "testament": "OT"
   }
 }
