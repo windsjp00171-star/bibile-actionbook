@@ -163,17 +163,26 @@ def _is_partial_of_longer(text, start, end, word):
     return False
 
 
-def _redirect_target(name, entry, verse_text):
-    """同節關鍵字消歧義：若此詞條設有 context_redirect，且本節經文命中關鍵字，
-    回傳應改指向的目標詞條名（例：「約翰…施洗」→ 施洗約翰）。否則回 None。"""
+def _redirect_target(name, entry, verse_text, before=""):
+    """消歧義轉址，兩種規則，優先看緊貼名字前面的頭銜：
+      1. prefix_redirect：名字緊前方數字內出現頭銜（如「以色列王」約蘭、「猶大王」約阿施）
+         → 最可靠，文本自己標明了是誰。
+      2. context_redirect：整節經文命中關鍵字（如「約翰…施洗」→ 施洗約翰）。
+    回傳應改指向的目標詞條名；無則回 None。`before` 為該名字在本節中緊前方的文字。"""
+    pre_rules = (entry or {}).get("prefix_redirect")
+    if pre_rules and before:
+        for rule in pre_rules:
+            if any(p in before for p in rule.get("prefix", [])):
+                tgt = rule.get("target")
+                if tgt and tgt in ENTITIES:
+                    return tgt
     rules = (entry or {}).get("context_redirect")
-    if not rules:
-        return None
-    for rule in rules:
-        if any(kw in verse_text for kw in rule.get("keywords", [])):
-            tgt = rule.get("target")
-            if tgt and tgt in ENTITIES:
-                return tgt
+    if rules:
+        for rule in rules:
+            if any(kw in verse_text for kw in rule.get("keywords", [])):
+                tgt = rule.get("target")
+                if tgt and tgt in ENTITIES:
+                    return tgt
     return None
 
 
@@ -194,7 +203,8 @@ def annotate(text, book="", chapter=1):
         else:
             entry = _resolve_entity(word, book, chapter)
             if entry:
-                tgt = _redirect_target(word, entry, text)
+                before = text[max(0, m.start() - 6):m.start()]
+                tgt = _redirect_target(word, entry, text, before)
                 data_name = tgt or word
                 if tgt:
                     te = ENTITIES[tgt]
@@ -287,13 +297,21 @@ def chapter_entities(book, chapter):
             entry = _resolve_entity(name, book, chapter)
             if entry:
                 result[name] = entry
-                # 同節關鍵字轉址：把目標條目也補進來，前端才查得到（如 施洗約翰）
+                # 轉址目標也補進來，前端才查得到（如 施洗約翰、各分流的王）
                 for vtext in chap.values():
-                    if name in vtext:
-                        tgt = _redirect_target(name, entry, vtext)
+                    if name not in vtext:
+                        continue
+                    i = 0
+                    while True:
+                        j = vtext.find(name, i)
+                        if j < 0:
+                            break
+                        before = vtext[max(0, j - 6):j]
+                        tgt = _redirect_target(name, entry, vtext, before)
                         if tgt and tgt not in result:
                             te = ENTITIES[tgt]
                             result[tgt] = te[0] if isinstance(te, list) else te
+                        i = j + 1
     return result
 
 
