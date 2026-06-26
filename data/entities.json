@@ -4721,5 +4721,85 @@
     "name_en": "Nimrod",
     "testament": "OT",
     "desc": "含的後裔，世上第一個英雄勇士，「在耶和華面前是個英勇的獵戶」。建巴別、尼尼微等城，國度起於示拿。"
+  },
+  "該南": {
+    "type": "person",
+    "name": "該南",
+    "name_en": "",
+    "testament": "OT",
+    "desc": "以挪士之子，瑪勒列之父，亞當到挪亞十代族譜中的一代，活九百一十歲。",
+    "verses": "創世記5、創世記11"
+  },
+  "瑪勒列": {
+    "type": "person",
+    "name": "瑪勒列",
+    "name_en": "",
+    "testament": "OT",
+    "desc": "該南之子，雅列之父，亞當到挪亞族譜中的一代。",
+    "verses": "創世記5、創世記11"
+  },
+  "雅列": {
+    "type": "person",
+    "name": "雅列",
+    "name_en": "",
+    "testament": "OT",
+    "desc": "瑪勒列之子，以諾之父，亞當到挪亞族譜中的一代，活九百六十二歲。",
+    "verses": "創世記5、創世記11"
+  },
+  "瑪土撒拉": {
+    "type": "person",
+    "name": "瑪土撒拉",
+    "name_en": "",
+    "testament": "OT",
+    "desc": "以諾之子，拉麥之父，挪亞的祖父。聖經記載最長壽的人，活九百六十九歲。",
+    "verses": "創世記5、創世記11"
+  },
+  "亞法撒": {
+    "type": "person",
+    "name": "亞法撒",
+    "name_en": "",
+    "testament": "OT",
+    "desc": "閃之子，洪水後二年所生，是希伯與亞伯拉罕一系的先祖。",
+    "verses": "創世記5、創世記11"
+  },
+  "沙拉": {
+    "type": "person",
+    "name": "沙拉",
+    "name_en": "",
+    "testament": "OT",
+    "desc": "亞法撒之子，希伯之父，閃到亞伯拉罕族譜中的一代。",
+    "verses": "創世記5、創世記11"
+  },
+  "希伯": {
+    "type": "person",
+    "name": "希伯",
+    "name_en": "",
+    "testament": "OT",
+    "desc": "沙拉之子，「希伯來人」一名可能源自他，是閃族裔通往亞伯拉罕的關鍵一代。",
+    "verses": "創世記5、創世記11"
+  },
+  "法勒": {
+    "type": "person",
+    "name": "法勒",
+    "name_en": "",
+    "testament": "OT",
+    "desc": "希伯之子，「法勒」意為分開，因他在世時人類分散各地。",
+    "verses": "創世記5、創世記11"
+  },
+  "拉吳": {
+    "type": "person",
+    "name": "拉吳",
+    "name_en": "",
+    "testament": "OT",
+    "desc": "法勒之子，西鹿之父，閃到亞伯拉罕族譜中的一代。",
+    "verses": "創世記5、創世記11"
+  },
+  "西鹿": {
+    "type": "person",
+    "name": "西鹿",
+    "name_en": "",
+    "testament": "OT",
+    "desc": "拉吳之子，拿鶴之父，亞伯拉罕的曾祖父。",
+    "verses": "創世記5、創世記11"
   }
 }
