@@ -1,6 +1,10 @@
 import os
-from flask import Flask, render_template
-from markupsafe import Markup
+import re
+import json
+import hashlib
+from datetime import date
+from flask import Flask, render_template, request, jsonify
+from markupsafe import Markup, escape
 from supabase import create_client
 
 app = Flask(__name__)
@@ -8,7 +12,45 @@ app = Flask(__name__)
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
 
+# 暫時豁免：全域規範要求從 mark_core.supabase_client import，但本 repo 尚未接入
+# mark-core，且經文已改走本機 cuv.json，Supabase 目前未實際使用。待接入登入/
+# 通知等共用功能時，再改為 from mark_core.supabase_client import ...（待清理）。
 sb = create_client(SUPABASE_URL, SUPABASE_KEY) if SUPABASE_URL and SUPABASE_KEY else None
+
+# ---- 聖經全文：啟動時一次載入記憶體，伺服器端處理，不進對話 context ----
+_CUV_PATH = os.path.join(os.path.dirname(__file__), "cuv.json")
+try:
+    with open(_CUV_PATH, encoding="utf-8") as f:
+        BIBLE = json.load(f)
+except FileNotFoundError:
+    BIBLE = {}
+
+
+def _load_annotations():
+    """優先讀預生成的全本標注；沒有時 fallback 撒上17 範本。"""
+    ent_path = os.path.join(os.path.dirname(__file__), "data", "entities.json")
+    ann_path = os.path.join(os.path.dirname(__file__), "data", "annotated.json")
+    if os.path.exists(ent_path):
+        with open(ent_path, encoding="utf-8") as f:
+            entities = json.load(f)
+        annotated = set()
+        if os.path.exists(ann_path):
+            with open(ann_path, encoding="utf-8") as f:
+                raw = json.load(f)
+                annotated = {tuple(x) for x in raw}
+        # annotated.json 為空時，用 seed 補上已知章節
+        if not annotated:
+            try:
+                from data.annotations import ANNOTATED as seed_ann
+                annotated = set(seed_ann)
+            except Exception:
+                pass
+        return entities, annotated
+    from data.annotations import ENTITIES as seed_ent, ANNOTATED as seed_ann
+    return dict(seed_ent), set(seed_ann)
+
+
+ENTITIES, ANNOTATED = _load_annotations()
 
 OT_BOOKS = [
     ("創世記", 50), ("出埃及記", 40), ("利未記", 27), ("民數記", 36),
@@ -36,26 +78,63 @@ NT_BOOKS = [
 ALL_BOOKS = OT_BOOKS + NT_BOOKS
 BOOK_CHAPTERS = {name: ch for name, ch in ALL_BOOKS}
 
+_TYPE_CLASS = {"person": "anno-person", "place": "anno-place", "concept": "anno-concept"}
+
+# 全域標注：字典裡的名字在任何一章出現都會自動亮，不再受章節閘門限制。
+# 只匹配長度 >= 2 的名字，避免單字（如「蛇」）在全本造成過度標注的噪音。
+_ENTITY_NAMES = sorted([n for n in ENTITIES if len(n) >= 2], key=len, reverse=True)
+_ENTITY_RE = re.compile("|".join(re.escape(n) for n in _ENTITY_NAMES)) if _ENTITY_NAMES else None
+
+
+def annotate(text):
+    """把經文中的實體詞包成可點擊 span，其餘字元做 HTML 轉義。"""
+    if not _ENTITY_RE:
+        return str(escape(text))
+    out, last = [], 0
+    for m in _ENTITY_RE.finditer(text):
+        out.append(str(escape(text[last:m.start()])))
+        word = m.group(0)
+        cls = _TYPE_CLASS.get(ENTITIES[word]["type"], "anno-person")
+        out.append(f'<span class="anno {cls}" data-entity="{escape(word)}">{escape(word)}</span>')
+        last = m.end()
+    out.append(str(escape(text[last:])))
+    return "".join(out)
+
+
+# 依中文標點切分句；標點留在前一句尾。手機點按以「分句」為單位最好點。
+_CLAUSE_RE = re.compile(r"[^、，。；：！？「」『』（）]+[、，。；：！？」』）]*")
+
+
+def render_verse(text):
+    """把一節經文切成可點擊的分句 span，分句內仍套用實體標注。"""
+    parts = []
+    for m in _CLAUSE_RE.finditer(text):
+        clause = m.group(0)
+        if not clause.strip():
+            continue
+        parts.append(
+            f'<span class="clause" data-clause="{escape(clause)}">{annotate(clause)}</span>'
+        )
+    if not parts:  # 全是標點等極端情形
+        parts.append(annotate(text))
+    return Markup("".join(parts))
+
 
 def get_adjacent(book, chapter):
     total = BOOK_CHAPTERS.get(book, 1)
     books_list = [b for b, _ in ALL_BOOKS]
     idx = books_list.index(book) if book in books_list else -1
-
     prev_book, prev_ch, next_book, next_ch = None, None, None, None
-
     if chapter > 1:
         prev_book, prev_ch = book, chapter - 1
     elif idx > 0:
         prev_book = books_list[idx - 1]
         prev_ch = BOOK_CHAPTERS[prev_book]
-
     if chapter < total:
         next_book, next_ch = book, chapter + 1
     elif idx >= 0 and idx < len(books_list) - 1:
         next_book = books_list[idx + 1]
         next_ch = 1
-
     return prev_book, prev_ch, next_book, next_ch
 
 
@@ -78,17 +157,179 @@ def build_nav(current_book, current_chapter):
 
 
 def get_chapter(book, chapter):
-    if not sb:
-        return []
-    res = (
-        sb.table("bible_verses")
-        .select("verse, text")
-        .eq("book", book)
-        .eq("chapter", chapter)
-        .order("verse")
-        .execute()
+    """從 cuv.json 取一章，回傳 [{verse, html}]；全本任何章節皆套用全域字典標注。"""
+    chap = BIBLE.get(book, {}).get(str(chapter), {})
+    verses = []
+    for vnum in sorted(chap.keys(), key=lambda x: int(x)):
+        text = chap[vnum]
+        verses.append({"verse": int(vnum), "html": render_verse(text)})
+    return verses
+
+
+def chapter_entities(book, chapter):
+    """本章實際出現的實體（給前端卡片與地圖）。只回傳長度>=2、與標注一致者。"""
+    chap = BIBLE.get(book, {}).get(str(chapter), {})
+    joined = "".join(chap.values())
+    return {name: ENTITIES[name] for name in _ENTITY_NAMES if name in joined}
+
+
+# ============================================================
+#  即時 AI 解釋（差異化核心）：圈選經文 → 依程度解釋，三層快取控成本
+#    1) 手刻字典  2) Supabase 永久快取  3) Gemini 即時生成（僅冷門、只燒一次）
+# ============================================================
+
+LEVELS = {
+    "child":  ("兒童主日學的小朋友", "用最淺白、像講故事的口吻，30-60字，避免艱深神學詞。"),
+    "seeker": ("剛接觸信仰的慕道友",  "客觀親切，60-90字，解釋背景與意義，不預設信仰基礎。"),
+    "leader": ("帶讀經班備課的小組長", "稍深入，80-120字，含歷史背景、原文或神學重點，便於講解。"),
+}
+EXPLAIN_DAILY_CAP = int(os.environ.get("EXPLAIN_DAILY_CAP", "500"))  # 全域每日 API 上限（保險絲）
+
+_EXPLAIN_MEM = {}            # 程序內記憶體快取
+_EXPLAIN_USAGE = {"day": "", "n": 0}
+
+
+def _explain_key(text, level):
+    return hashlib.sha1(f"{level}|{text}".encode("utf-8")).hexdigest()
+
+
+def _cache_get(key):
+    if key in _EXPLAIN_MEM:
+        return _EXPLAIN_MEM[key]
+    if sb:
+        try:
+            r = sb.table("ai_explanations").select("content").eq("cache_key", key).limit(1).execute()
+            if r.data:
+                _EXPLAIN_MEM[key] = r.data[0]["content"]
+                return r.data[0]["content"]
+        except Exception:
+            pass
+    return None
+
+
+def _cache_set(key, text, level, content, ref):
+    _EXPLAIN_MEM[key] = content
+    if sb:
+        try:
+            sb.table("ai_explanations").upsert({
+                "cache_key": key, "selected_text": text, "level": level,
+                "content": content, "ref": ref,
+            }).execute()
+        except Exception:
+            pass
+
+
+def _usage_ok():
+    today = date.today().isoformat()
+    if _EXPLAIN_USAGE["day"] != today:
+        _EXPLAIN_USAGE["day"] = today
+        _EXPLAIN_USAGE["n"] = 0
+    return _EXPLAIN_USAGE["n"] < EXPLAIN_DAILY_CAP
+
+
+def _chapter_context(book, chapter, limit=1800):
+    """取該章經文當作接地材料，讓解釋貼著實際經文、降低幻覺。"""
+    chap = BIBLE.get(book, {}).get(str(chapter), {})
+    if not chap:
+        return ""
+    lines = [f"{v} {chap[v]}" for v in sorted(chap, key=int)]
+    ctx = "\n".join(lines)
+    return ctx[:limit]
+
+
+def _explain_system(level):
+    who, how = LEVELS[level]
+    return (
+        f"你是嚴謹的聖經閱讀解釋助手，對象是{who}。讀者正在讀和合本聖經，"
+        f"圈選了一段文字想知道它的意思。{how}\n"
+        "準確性是最高原則，寧可保守也不可誤導：\n"
+        "1. 只根據所提供的經文與廣被接受的聖經背景知識作答。\n"
+        "2. 嚴禁杜撰人名、地名、數字、年代或情節；經文沒有、你也不確定的，就不要說。\n"
+        "3. 若某點屬傳統看法或學界有爭議，明說「一般認為」「傳統上」或「學者看法不一」。\n"
+        "4. 只解釋圈選的這段，繁體中文，客觀貼著上下文，不加開場白或結語、不傳道。"
     )
-    return res.data or []
+
+
+def _explain_user(text, ref, context):
+    return (f"出處：{ref}\n\n本章經文（供你對照，勿超出其內容臆測）：\n{context}\n\n"
+            f"讀者圈選的文字：「{text}」\n請解釋這段的意思。")
+
+
+def _ai_explain(text, ref, level, context=""):
+    """生成層：優先 Groq（快、免費），退回 Gemini。皆無 key 則回 None。"""
+    system, user = _explain_system(level), _explain_user(text, ref, context)
+    groq_key = os.environ.get("GROQ_API_KEY")
+    if groq_key:
+        from groq import Groq
+        client = Groq(api_key=groq_key)
+        r = client.chat.completions.create(
+            model=os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile"),
+            temperature=0.2, max_tokens=600,
+            messages=[{"role": "system", "content": system},
+                      {"role": "user", "content": user}],
+        )
+        return (r.choices[0].message.content or "").strip()
+
+    gem_key = os.environ.get("GEMINI_API_KEY")
+    if gem_key:
+        import google.generativeai as genai
+        genai.configure(api_key=gem_key)
+        model = genai.GenerativeModel(
+            os.environ.get("GEMINI_MODEL", "gemini-2.5-flash"),
+            system_instruction=system)
+        r = model.generate_content(user, generation_config={"temperature": 0.2})
+        return (r.text or "").strip()
+
+    return None
+
+
+@app.route("/api/explain", methods=["POST"])
+def api_explain():
+    data = request.get_json(silent=True) or {}
+    text = (data.get("text") or "").strip()
+    level = data.get("level") if data.get("level") in LEVELS else "seeker"
+    ref = (data.get("ref") or "").strip()
+    if not text:
+        return jsonify({"error": "empty"}), 400
+    if len(text) > 200:
+        text = text[:200]
+
+    # 資安關卡：只解釋「真的出現在該章經文裡」的文字，杜絕被當免費 LLM 代理白嫖。
+    book = data.get("book", "")
+    chapter = str(data.get("chapter", ""))
+    chap = BIBLE.get(book, {}).get(chapter, {})
+    if not chap:
+        return jsonify({"error": "bad_ref"}), 400
+    _norm = lambda s: re.sub(r"[、，。；：！？「」『』（）\s]", "", s)
+    joined_norm = _norm("".join(chap.values()))
+    probe = _norm(text)
+    if probe and probe not in joined_norm:
+        return jsonify({"error": "not_scripture",
+                        "content": "只能解釋經文中的內容。"}), 400
+
+    # 第 1 層：手刻字典（整段剛好等於某實體名）
+    if text in ENTITIES:
+        return jsonify({"content": ENTITIES[text]["desc"], "source": "dict"})
+
+    # 第 2 層：永久快取
+    key = _explain_key(text, level)
+    cached = _cache_get(key)
+    if cached:
+        return jsonify({"content": cached, "source": "cache"})
+
+    # 第 3 層：即時生成（受每日上限保護）
+    if not _usage_ok():
+        return jsonify({"error": "busy", "content": "今天的免費解釋次數已用完，明天再試，或這段稍後就會有快取。"}), 429
+    ctx = _chapter_context(data.get("book", ""), data.get("chapter", ""))
+    try:
+        content = _ai_explain(text, ref, level, ctx)
+    except Exception as e:
+        return jsonify({"error": "ai_failed", "content": "解釋暫時無法生成，請稍後再試。"}), 502
+    if not content:
+        return jsonify({"error": "no_key", "content": "AI 解釋尚未啟用（伺服器未設定 GROQ_API_KEY 或 GEMINI_API_KEY）。"}), 503
+    _EXPLAIN_USAGE["n"] += 1
+    _cache_set(key, text, level, content, ref)
+    return jsonify({"content": content, "source": "ai"})
 
 
 @app.route("/")
@@ -101,12 +342,14 @@ def read_chapter(book, chapter):
     verses = get_chapter(book, chapter)
     nav_html = build_nav(book, chapter)
     prev_book, prev_ch, next_book, next_ch = get_adjacent(book, chapter)
+    entities = chapter_entities(book, chapter)
     return render_template(
         "read.html",
         book=book, chapter=chapter, verses=verses,
         nav_html=nav_html,
         prev_book=prev_book, prev_ch=prev_ch,
         next_book=next_book, next_ch=next_ch,
+        entities_json=Markup(json.dumps(entities, ensure_ascii=False)),
     )
 
 

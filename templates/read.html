@@ -2,19 +2,26 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2C1A0E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="聖經全書">
 <title>{{ book }} 第{{ chapter }}章 — 聖經全書</title>
+<link rel="manifest" href="/static/manifest.json">
+<link rel="apple-touch-icon" href="/static/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <header class="mob-header">
-  <button class="burger" onclick="openDrawer()">☰</button>
+  <button class="burger" onclick="openDrawer()" aria-label="目錄">☰</button>
   <h2>聖 經 全 書</h2>
-  <span style="width:36px"></span>
+  <button class="help-btn" onclick="startTour()">？教學</button>
 </header>
 
 <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
@@ -30,12 +37,23 @@
     <div class="deco-line"><span class="diamond"></span><span class="line"></span><span class="diamond"></span></div>
   </header>
 
-  <main class="passage">
+  {% if entities_json != '{}' %}
+  <div class="legend">
+    <span class="legend-item"><span class="legend-dot anno-person"></span>人物</span>
+    <span class="legend-item"><span class="legend-dot anno-place"></span>地點</span>
+    <span class="legend-item"><span class="legend-dot anno-concept"></span>族群／概念</span>
+    <span class="legend-hint">點標注詞看背景資料</span>
+  </div>
+  {% endif %}
+
+  <a class="resume-banner" id="resumeBanner" href="#" style="display:none"></a>
+
+  <main class="passage" id="passage">
     {% for v in verses %}
-    <p class="verse"><span class="verse-num">{{ v.verse }}</span>{{ v.text }}</p>
+    <p class="verse"><span class="verse-num">{{ v.verse }}</span>{{ v.html | safe }}</p>
     {% endfor %}
     {% if not verses %}
-    <p class="no-data">經文載入失敗，請確認環境變數設定。</p>
+    <p class="no-data">查無此章經文。</p>
     {% endif %}
   </main>
 
@@ -43,22 +61,74 @@
     <div class="deco-line"><span class="diamond"></span><span class="line"></span><span class="diamond"></span></div>
     <div class="chapter-nav">
       {% if prev_book %}
-      <a class="chapter-nav-btn" href="/read/{{ prev_book }}/{{ prev_ch }}">
-        ‹ {{ prev_book }} 第{{ prev_ch }}章
-      </a>
-      {% else %}
-      <span></span>
-      {% endif %}
+      <a class="chapter-nav-btn" href="/read/{{ prev_book }}/{{ prev_ch }}">‹ {{ prev_book }} {{ prev_ch }}</a>
+      {% else %}<span></span>{% endif %}
       {% if next_book %}
-      <a class="chapter-nav-btn" href="/read/{{ next_book }}/{{ next_ch }}">
-        {{ next_book }} 第{{ next_ch }}章 ›
-      </a>
+      <a class="chapter-nav-btn" href="/read/{{ next_book }}/{{ next_ch }}">{{ next_book }} {{ next_ch }} ›</a>
       {% endif %}
     </div>
   </footer>
 </div>
 
+<!-- 標注卡片：桌面右側浮動 / 手機底部 sheet -->
+<div class="card-overlay" id="cardOverlay" onclick="closeCard()"></div>
+<aside class="anno-card" id="annoCard">
+  <div class="card-grip"></div>
+  <button class="card-close" onclick="closeCard()" aria-label="關閉">✕</button>
+  <div class="card-badge" id="cardBadge"></div>
+  <h3 class="card-name" id="cardName"></h3>
+  <div class="card-map" id="cardMap"></div>
+  <p class="card-desc" id="cardDesc"></p>
+  <div class="card-verses" id="cardVerses"></div>
+</aside>
+
+<!-- 圈選經文後冒出的「解釋」浮鈕 -->
+<button class="sel-btn" id="selBtn" style="display:none">✦ 解釋這段</button>
+
+<!-- AI 解釋卡片（圈選任意文字 → 依程度即時解釋） -->
+<div class="card-overlay" id="explainOverlay" onclick="closeExplain()"></div>
+<aside class="anno-card explain-card" id="explainCard">
+  <div class="card-grip"></div>
+  <button class="card-close" onclick="closeExplain()" aria-label="關閉">✕</button>
+  <div class="explain-quote" id="explainQuote"></div>
+  <div class="level-switch" id="levelSwitch">
+    <button data-level="child">兒童</button>
+    <button data-level="seeker">慕道友</button>
+    <button data-level="leader">小組長</button>
+  </div>
+  <div class="explain-body" id="explainBody"></div>
+  <div class="explain-foot" id="explainFoot"></div>
+</aside>
+
+<!-- 字體大小控制 -->
+<div class="font-ctrl" id="fontCtrl">
+  <button onclick="setFont(-1)" aria-label="縮小字體">A−</button>
+  <button onclick="setFont(1)" aria-label="放大字體">A+</button>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
+const ENTITIES = {{ entities_json | safe }};
+const TYPE_LABEL = { person: '人物', place: '地點', concept: '族群／概念' };
+
+// ── Service Worker ──────────────────────────────────────────────
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/static/sw.js').catch(() => {});
+}
+
+// ── Font size ───────────────────────────────────────────────────
+let fontSize = parseInt(localStorage.getItem('bible-fs') || '18');
+applyFont();
+function applyFont() {
+  document.getElementById('passage').style.fontSize = fontSize + 'px';
+  localStorage.setItem('bible-fs', fontSize);
+}
+function setFont(delta) {
+  fontSize = Math.max(14, Math.min(26, fontSize + delta));
+  applyFont();
+}
+
+// ── Drawer ──────────────────────────────────────────────────────
 function openDrawer() {
   document.getElementById('drawer').classList.add('open');
   document.getElementById('overlay').classList.add('open');
@@ -67,6 +137,71 @@ function closeDrawer() {
   document.getElementById('drawer').classList.remove('open');
   document.getElementById('overlay').classList.remove('open');
 }
+
+// ── Anno card ───────────────────────────────────────────────────
+let _map = null, _layer = null;
+
+function closeCard() {
+  document.getElementById('annoCard').classList.remove('open');
+  document.getElementById('cardOverlay').classList.remove('open');
+}
+
+function renderMap(ent) {
+  const wrap = document.getElementById('cardMap');
+  if (ent.type !== 'place' || ent.lat == null) { wrap.style.display = 'none'; return; }
+  wrap.style.display = 'block';
+  if (!_map) {
+    _map = L.map(wrap, { zoomControl: true, attributionControl: false });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 14 }).addTo(_map);
+    _layer = L.layerGroup().addTo(_map);
+  }
+  _layer.clearLayers();
+  Object.values(ENTITIES).forEach(e => {
+    if (e.type === 'place' && e.name !== ent.name && e.lat != null) {
+      L.circleMarker([e.lat, e.lng], { radius: 5, fillColor: '#8B6840', color: '#fff', weight: 1.5, fillOpacity: 1 })
+        .bindTooltip(e.name, { permanent: true, direction: 'top' }).addTo(_layer);
+    }
+  });
+  L.circleMarker([ent.lat, ent.lng], { radius: 8, fillColor: '#2A5C3A', color: '#fff', weight: 2, fillOpacity: 1 })
+    .bindTooltip(ent.name, { permanent: true, direction: 'top' }).addTo(_layer);
+  _map.setView([ent.lat, ent.lng], 8);
+  setTimeout(() => { _map.invalidateSize(); _map.flyTo([ent.lat, ent.lng], 10); }, 60);
+}
+
+function openCard(name) {
+  const ent = ENTITIES[name];
+  if (!ent) return;
+  document.getElementById('cardBadge').textContent = TYPE_LABEL[ent.type] || '';
+  document.getElementById('cardBadge').className = 'card-badge anno-' + ent.type;
+  document.getElementById('cardName').textContent = ent.name + (ent.name_en ? '　' + ent.name_en : '');
+  document.getElementById('cardDesc').textContent = ent.desc || '';
+  const vbox = document.getElementById('cardVerses');
+  vbox.innerHTML = '';
+  (ent.verses || '').split('、').filter(Boolean).forEach(v => {
+    const chip = document.createElement('span');
+    chip.className = 'verse-chip';
+    chip.textContent = v;
+    vbox.appendChild(chip);
+  });
+  renderMap(ent);
+  document.getElementById('annoCard').classList.add('open');
+  document.getElementById('cardOverlay').classList.add('open');
+}
+
+document.querySelectorAll('.anno').forEach(el => {
+  el.addEventListener('click', e => { e.stopPropagation(); openCard(el.dataset.entity); });
+});
+
+// 點分句 → AI 解釋這句（點在實體詞上則交給實體卡，不重複）
+document.querySelectorAll('.clause').forEach(el => {
+  el.addEventListener('click', e => {
+    if (e.target.closest('.anno')) return;
+    const txt = (el.dataset.clause || '').replace(/[、，。；：！？「」『』（）]+$/g, '').trim();
+    if (txt.length >= 2) openExplain(txt);
+  });
+});
+
+// ── Sidebar ──────────────────────────────────────────────────────
 document.querySelectorAll('.book-item').forEach(el => {
   el.addEventListener('click', function(e) {
     const pills = this.nextElementSibling;
@@ -81,6 +216,164 @@ if (activeBook) {
   if (pills) pills.classList.add('open');
   activeBook.scrollIntoView({ block: 'center' });
 }
+
+// ── Tour ─────────────────────────────────────────────────────────
+function startTour() {
+  const first = document.querySelector('.anno');
+  if (first) openCard(first.dataset.entity);
+  else alert('點選經文中有底線的人名或地名，即可看背景資料與地圖。');
+}
+
+// ── Reading progress (localStorage, offline-friendly) ───────────
+const CUR_BOOK = {{ book | tojson }};
+const CUR_CH = {{ chapter }};
+
+function loadProgress() {
+  try { return JSON.parse(localStorage.getItem('bible-progress') || '{}'); }
+  catch (e) { return {}; }
+}
+function saveProgress(p) { localStorage.setItem('bible-progress', JSON.stringify(p)); }
+
+// 記錄目前章節為「最後閱讀」並標記已讀
+const _prog = loadProgress();
+_prog.last = { book: CUR_BOOK, chapter: CUR_CH };
+_prog.read = _prog.read || {};
+_prog.read[CUR_BOOK] = _prog.read[CUR_BOOK] || [];
+if (!_prog.read[CUR_BOOK].includes(CUR_CH)) {
+  _prog.read[CUR_BOOK].push(CUR_CH);
+  _prog.read[CUR_BOOK].sort((a, b) => a - b);
+}
+saveProgress(_prog);
+
+// 在側欄已讀章節的 pill 加標記，書卷顯示讀過幾章
+function markRead(root) {
+  const read = _prog.read || {};
+  root.querySelectorAll('.book-item').forEach(item => {
+    const name = item.textContent.trim();
+    const list = read[name] || [];
+    if (list.length) {
+      const badge = document.createElement('span');
+      badge.className = 'read-count';
+      badge.textContent = list.length;
+      item.appendChild(badge);
+    }
+    const pills = item.nextElementSibling;
+    if (pills && pills.classList.contains('chapter-pills')) {
+      pills.querySelectorAll('.pill').forEach(pill => {
+        if (list.includes(parseInt(pill.textContent))) pill.classList.add('read');
+      });
+    }
+  });
+}
+document.querySelectorAll('.sidebar, .drawer').forEach(markRead);
+
+// 「繼續上次閱讀」橫幅：只在首頁（撒上17 預設入口）且上次讀的是別章時出現。
+// 先讀舊的 last（本次造訪前的記錄），避免被剛才的寫入覆蓋。
+(function() {
+  const prevLast = (window.__prevLast = window.__prevLast);
+  // 用造訪前的快照判斷
+  const snapshot = JSON.parse(localStorage.getItem('bible-progress-prev') || 'null');
+  const isHome = (CUR_BOOK === '撒母耳記上' && CUR_CH === 17);
+  if (isHome && snapshot && snapshot.last &&
+      !(snapshot.last.book === CUR_BOOK && snapshot.last.chapter === CUR_CH)) {
+    const b = document.getElementById('resumeBanner');
+    b.textContent = '↩ 繼續閱讀 ' + snapshot.last.book + ' 第' + snapshot.last.chapter + '章';
+    b.href = '/read/' + snapshot.last.book + '/' + snapshot.last.chapter;
+    b.style.display = 'block';
+  }
+  // 更新「造訪前快照」供下次首頁判斷
+  localStorage.setItem('bible-progress-prev', JSON.stringify(_prog));
+})();
+
+// ── AI explain on text selection ────────────────────────────────
+const REF = CUR_BOOK + ' 第' + CUR_CH + '章';
+let _selText = '';
+let _level = localStorage.getItem('explain-level') || 'seeker';
+
+const passageEl = document.getElementById('passage');
+const selBtn = document.getElementById('selBtn');
+
+function clearSelBtn() { selBtn.style.display = 'none'; _selText = ''; }
+
+function onSelectionChange() {
+  const sel = window.getSelection();
+  const txt = sel ? sel.toString().trim() : '';
+  // 只接受落在經文區、長度合理的選取
+  if (!txt || txt.length < 2 || txt.length > 200) { clearSelBtn(); return; }
+  if (!sel.anchorNode || !passageEl.contains(sel.anchorNode)) { clearSelBtn(); return; }
+  _selText = txt;
+  const rect = sel.getRangeAt(0).getBoundingClientRect();
+  selBtn.style.display = 'block';
+  const top = window.scrollY + rect.top - 44;
+  const left = window.scrollX + rect.left + rect.width / 2;
+  selBtn.style.top = Math.max(window.scrollY + 8, top) + 'px';
+  selBtn.style.left = left + 'px';
+}
+document.addEventListener('selectionchange', onSelectionChange);
+
+selBtn.addEventListener('mousedown', e => e.preventDefault()); // 別讓按鈕搶走選取
+selBtn.addEventListener('click', () => { if (_selText) openExplain(_selText); });
+
+function setLevel(lv) {
+  _level = lv;
+  localStorage.setItem('explain-level', lv);
+  document.querySelectorAll('#levelSwitch button').forEach(b =>
+    b.classList.toggle('active', b.dataset.level === lv));
+}
+document.querySelectorAll('#levelSwitch button').forEach(b =>
+  b.addEventListener('click', () => { setLevel(b.dataset.level); fetchExplain(); }));
+
+function closeExplain() {
+  document.getElementById('explainCard').classList.remove('open');
+  document.getElementById('explainOverlay').classList.remove('open');
+}
+
+function openExplain(text) {
+  _selText = text;
+  setLevel(_level);
+  document.getElementById('explainQuote').textContent = '「' + text + '」';
+  document.getElementById('explainCard').classList.add('open');
+  document.getElementById('explainOverlay').classList.add('open');
+  clearSelBtn();
+  fetchExplain();
+}
+
+function fetchExplain() {
+  const body = document.getElementById('explainBody');
+  const foot = document.getElementById('explainFoot');
+  body.innerHTML = '<span class="explain-spin">解釋生成中…</span>';
+  foot.textContent = '';
+  fetch('/api/explain', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ text: _selText, level: _level, ref: REF }),
+  }).then(r => r.json().then(d => ({ ok: r.ok, d })))
+    .then(({ ok, d }) => {
+      body.textContent = d.content || d.error || '無法取得解釋。';
+      const tag = {
+        dict: '✓ 人工校訂',
+        cache: '✓ 已校訂・快取',
+        ai: '✦ AI 生成・僅供參考，請自行查證',
+      }[d.source];
+      foot.textContent = tag || '';
+      foot.className = 'explain-foot' + (d.source === 'ai' ? ' is-ai' : '');
+    })
+    .catch(() => { body.textContent = '網路錯誤，請稍後再試。'; });
+}
+
+// ── Swipe to navigate (mobile) ───────────────────────────────────
+(function() {
+  let sx = 0;
+  const passage = document.getElementById('passage');
+  passage.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+  passage.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) < 60) return;
+    const prev = document.querySelector('.chapter-nav-btn:first-child');
+    const next = document.querySelector('.chapter-nav-btn:last-child');
+    if (dx > 0 && prev && prev.href) location.href = prev.href;
+    if (dx < 0 && next && next.href) location.href = next.href;
+  }, { passive: true });
+})();
 </script>
 </body>
 </html>
