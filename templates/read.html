@@ -10,35 +10,74 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <div class="page">
-    <header class="chapter-header">
-      <div class="deco-line">
-        <span class="diamond"></span>
-        <span class="line"></span>
-        <span class="diamond"></span>
-      </div>
-      <h1 class="book-title">{{ book }}</h1>
-      <p class="chapter-sub">第 {{ chapter }} 章</p>
-    </header>
 
-    <main class="passage">
-      {% for v in verses %}
-      <p class="verse">
-        <sup class="verse-num">{{ v.verse }}</sup>{{ v.text }}
-      </p>
-      {% endfor %}
-      {% if not verses %}
-      <p class="no-data">經文載入失敗，請確認環境變數設定。</p>
-      {% endif %}
-    </main>
+<!-- Mobile header -->
+<header class="mob-header">
+  <button class="burger" onclick="openDrawer()">☰</button>
+  <h2>聖 經 全 書</h2>
+  <span style="width:28px"></span>
+</header>
 
-    <footer class="chapter-footer">
-      <div class="deco-line">
-        <span class="diamond"></span>
-        <span class="line"></span>
-        <span class="diamond"></span>
-      </div>
-    </footer>
-  </div>
+<!-- Mobile drawer overlay -->
+<div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
+<nav class="drawer" id="drawer">
+  {{ nav_html | safe }}
+</nav>
+
+<!-- Desktop sidebar -->
+<nav class="sidebar">
+  {{ nav_html | safe }}
+</nav>
+
+<!-- Reading area -->
+<div class="main">
+  <header class="chapter-header">
+    <div class="deco-line"><span class="diamond"></span><span class="line"></span><span class="diamond"></span></div>
+    <h1 class="book-title">{{ book }}</h1>
+    <p class="chapter-sub">第 {{ chapter }} 章</p>
+    <div class="deco-line"><span class="diamond"></span><span class="line"></span><span class="diamond"></span></div>
+  </header>
+
+  <main class="passage">
+    {% for v in verses %}
+    <p class="verse"><span class="verse-num">{{ v.verse }}</span>{{ v.text }}</p>
+    {% endfor %}
+    {% if not verses %}
+    <p class="no-data">經文載入失敗，請確認環境變數設定。</p>
+    {% endif %}
+  </main>
+
+  <footer class="chapter-footer">
+    <div class="deco-line"><span class="diamond"></span><span class="line"></span><span class="diamond"></span></div>
+  </footer>
+</div>
+
+<script>
+function openDrawer() {
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('overlay').classList.add('open');
+}
+function closeDrawer() {
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
+
+// Toggle chapter pills
+document.querySelectorAll('.book-item').forEach(el => {
+  el.addEventListener('click', function(e) {
+    const pills = this.nextElementSibling;
+    if (!pills || !pills.classList.contains('chapter-pills')) return;
+    e.preventDefault();
+    pills.classList.toggle('open');
+  });
+});
+
+// Auto-open active book's pills
+const activeBook = document.querySelector('.book-item.active');
+if (activeBook) {
+  const pills = activeBook.nextElementSibling;
+  if (pills) pills.classList.add('open');
+}
+</script>
 </body>
 </html>
