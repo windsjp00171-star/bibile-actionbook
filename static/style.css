@@ -397,6 +397,23 @@ body {
   border: 1px solid #C9A96E55; border-radius: 4px; padding: 2px 8px;
 }
 
+/* ── 聖經宇宙：人物關係 ── */
+.card-relations {
+  margin: 4px 0 14px;
+  display: flex; flex-direction: column; gap: 7px;
+}
+.rel-row { display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap; }
+.rel-label {
+  flex: 0 0 auto; font-size: 12px; color: #9C8866;
+  min-width: 30px; padding-top: 3px; letter-spacing: .05em;
+}
+.rel-chip {
+  font-size: 13px; color: #2A5C3A; background: #EAF1EA;
+  border: 1px solid #2A5C3A33; border-radius: 14px;
+  padding: 3px 11px; cursor: pointer; transition: background .15s;
+}
+.rel-chip:active { background: #D6E4D6; }
+
 /* ── Desktop: right-side floating card ── */
 @media (min-width: 601px) {
   .anno-card {

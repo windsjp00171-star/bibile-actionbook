@@ -52,6 +52,31 @@ def _load_annotations():
 
 ENTITIES, ANNOTATED = _load_annotations()
 
+
+def _load_relationships():
+    """聖經宇宙：人物關係圖（父母/子女/手足/配偶/敵對/師長/門生/同工）。"""
+    path = os.path.join(os.path.dirname(__file__), "data", "relationships.json")
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+
+RELATIONSHIPS = _load_relationships()
+
+
+def _entity_brief(name):
+    """關係連結用的精簡卡片資料；接受詞條鍵，回 dict 或 None。"""
+    v = ENTITIES.get(name)
+    if v is None:
+        return None
+    e = v[0] if isinstance(v, list) else v
+    return {"name": e.get("name", name), "type": e.get("type", "person"),
+            "desc": e.get("desc", ""), "name_en": e.get("name_en", ""),
+            "verses": e.get("verses", ""),
+            "lat": e.get("lat"), "lng": e.get("lng")}
+
+
 NT_BOOK_NAMES = set()  # populated after NT_BOOKS is defined below
 
 OT_BOOKS = [
@@ -508,6 +533,20 @@ def read_chapter(book, chapter):
     nav_html = build_nav(book, chapter)
     prev_book, prev_ch, next_book, next_ch = get_adjacent(book, chapter)
     entities = chapter_entities(book, chapter)
+
+    # 聖經宇宙：本章人物的關係，以及關係指向的人物精簡卡（即使不在本章也能點開）
+    rels = {}
+    brief = {}
+    for name in entities:
+        r = RELATIONSHIPS.get(name)
+        if r:
+            rels[name] = r
+            for targets in r.values():
+                for t in targets:
+                    if t not in brief and t not in entities:
+                        b = _entity_brief(t)
+                        if b:
+                            brief[t] = b
     return render_template(
         "read.html",
         book=book, chapter=chapter, verses=verses,
@@ -515,6 +554,8 @@ def read_chapter(book, chapter):
         prev_book=prev_book, prev_ch=prev_ch,
         next_book=next_book, next_ch=next_ch,
         entities_json=Markup(json.dumps(entities, ensure_ascii=False)),
+        relations_json=Markup(json.dumps(rels, ensure_ascii=False)),
+        related_brief_json=Markup(json.dumps(brief, ensure_ascii=False)),
     )
 
 
