@@ -46,6 +46,8 @@
   </div>
   {% endif %}
 
+  <a class="resume-banner" id="resumeBanner" href="#" style="display:none"></a>
+
   <main class="passage" id="passage">
     {% for v in verses %}
     <p class="verse"><span class="verse-num">{{ v.verse }}</span>{{ v.html | safe }}</p>
@@ -194,6 +196,67 @@ function startTour() {
   if (first) openCard(first.dataset.entity);
   else alert('點選經文中有底線的人名或地名，即可看背景資料與地圖。');
 }
+
+// ── Reading progress (localStorage, offline-friendly) ───────────
+const CUR_BOOK = {{ book | tojson }};
+const CUR_CH = {{ chapter }};
+
+function loadProgress() {
+  try { return JSON.parse(localStorage.getItem('bible-progress') || '{}'); }
+  catch (e) { return {}; }
+}
+function saveProgress(p) { localStorage.setItem('bible-progress', JSON.stringify(p)); }
+
+// 記錄目前章節為「最後閱讀」並標記已讀
+const _prog = loadProgress();
+_prog.last = { book: CUR_BOOK, chapter: CUR_CH };
+_prog.read = _prog.read || {};
+_prog.read[CUR_BOOK] = _prog.read[CUR_BOOK] || [];
+if (!_prog.read[CUR_BOOK].includes(CUR_CH)) {
+  _prog.read[CUR_BOOK].push(CUR_CH);
+  _prog.read[CUR_BOOK].sort((a, b) => a - b);
+}
+saveProgress(_prog);
+
+// 在側欄已讀章節的 pill 加標記，書卷顯示讀過幾章
+function markRead(root) {
+  const read = _prog.read || {};
+  root.querySelectorAll('.book-item').forEach(item => {
+    const name = item.textContent.trim();
+    const list = read[name] || [];
+    if (list.length) {
+      const badge = document.createElement('span');
+      badge.className = 'read-count';
+      badge.textContent = list.length;
+      item.appendChild(badge);
+    }
+    const pills = item.nextElementSibling;
+    if (pills && pills.classList.contains('chapter-pills')) {
+      pills.querySelectorAll('.pill').forEach(pill => {
+        if (list.includes(parseInt(pill.textContent))) pill.classList.add('read');
+      });
+    }
+  });
+}
+document.querySelectorAll('.sidebar, .drawer').forEach(markRead);
+
+// 「繼續上次閱讀」橫幅：只在首頁（撒上17 預設入口）且上次讀的是別章時出現。
+// 先讀舊的 last（本次造訪前的記錄），避免被剛才的寫入覆蓋。
+(function() {
+  const prevLast = (window.__prevLast = window.__prevLast);
+  // 用造訪前的快照判斷
+  const snapshot = JSON.parse(localStorage.getItem('bible-progress-prev') || 'null');
+  const isHome = (CUR_BOOK === '撒母耳記上' && CUR_CH === 17);
+  if (isHome && snapshot && snapshot.last &&
+      !(snapshot.last.book === CUR_BOOK && snapshot.last.chapter === CUR_CH)) {
+    const b = document.getElementById('resumeBanner');
+    b.textContent = '↩ 繼續閱讀 ' + snapshot.last.book + ' 第' + snapshot.last.chapter + '章';
+    b.href = '/read/' + snapshot.last.book + '/' + snapshot.last.chapter;
+    b.style.display = 'block';
+  }
+  // 更新「造訪前快照」供下次首頁判斷
+  localStorage.setItem('bible-progress-prev', JSON.stringify(_prog));
+})();
 
 // ── Swipe to navigate (mobile) ───────────────────────────────────
 (function() {

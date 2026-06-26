@@ -152,6 +152,47 @@ body {
 .legend-dot.anno-concept{ background: #4A3080; }
 .legend-hint { color: #A08B66; font-size: 11px; margin-left: auto; }
 
+/* ── Resume reading banner ── */
+.resume-banner {
+  display: block;
+  max-width: 640px;
+  margin: 0 auto 16px;
+  padding: 11px 16px;
+  border-radius: 8px;
+  background: #2C1A0E;
+  color: var(--nav-title);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.15s;
+}
+.resume-banner:hover { background: #3A220E; }
+
+/* ── Read progress markers (sidebar) ── */
+.read-count {
+  float: right;
+  font-size: 10px;
+  color: var(--gold-bright);
+  background: #1A0E04;
+  border-radius: 8px;
+  padding: 1px 6px;
+  margin-left: 6px;
+}
+.pill.read {
+  position: relative;
+  color: var(--nav-title);
+}
+.pill.read::after {
+  content: '';
+  position: absolute;
+  top: 4px; right: 4px;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--gold-bright);
+}
+.pill.read.active::after { background: #1A0E04; }
+
 /* ── Passage ── */
 .passage {
   font-size: 18px; /* controlled by JS */
