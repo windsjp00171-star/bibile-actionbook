@@ -164,8 +164,8 @@ function renderMap(ent) {
   });
   L.circleMarker([ent.lat, ent.lng], { radius: 8, fillColor: '#2A5C3A', color: '#fff', weight: 2, fillOpacity: 1 })
     .bindTooltip(ent.name, { permanent: true, direction: 'top' }).addTo(_layer);
-  _map.setView([ent.lat, ent.lng], 8);
-  setTimeout(() => { _map.invalidateSize(); _map.flyTo([ent.lat, ent.lng], 10); }, 60);
+  _map.setView([ent.lat, ent.lng], 7);
+  setTimeout(() => { _map.invalidateSize(); _map.flyTo([ent.lat, ent.lng], 7); }, 60);
 }
 
 function openCard(name) {
