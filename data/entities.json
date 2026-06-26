@@ -4,7 +4,8 @@
     "name": "大衛",
     "name_en": "David",
     "desc": "耶西最小的兒子，伯利恆的牧羊少年，已受撒母耳膏立為未來的以色列王。本章中他自願出戰，憑信心用機弦甩石擊殺非利士巨人歌利亞。",
-    "verses": "撒上17:12、17:32-50"
+    "verses": "撒上17:12、17:32-50",
+    "testament": "both"
   },
   "掃羅": [
     {
@@ -159,7 +160,8 @@
     "name": "拿俄米",
     "name_en": "Naomi",
     "desc": "以利米勒的妻、路得的婆婆，猶大伯利恆人。因饑荒舉家遷摩押，喪夫又喪二子後返鄉，自稱「瑪拉」（苦）。終因路得與波阿斯結合得安慰，成為俄備得的養祖母，列於大衛家譜。",
-    "verses": "路得記"
+    "verses": "路得記",
+    "testament": "both"
   },
   "以利米勒": {
     "type": "person",
@@ -194,14 +196,16 @@
     "name": "路得",
     "name_en": "Ruth",
     "desc": "摩押女子，瑪倫的遺孀。喪夫後不離婆婆，立誓「你的國就是我的國、你的神就是我的神」隨拿俄米返伯利恆。在波阿斯田間拾穗，終得其娶為妻，生俄備得，列入大衛與彌賽亞家譜。",
-    "verses": "路得記"
+    "verses": "路得記",
+    "testament": "both"
   },
   "波阿斯": {
     "type": "person",
     "name": "波阿斯",
     "name_en": "Boaz",
     "desc": "伯利恆的大財主，以利米勒的親族。容路得在田間拾穗並多加恩待，後在城門長老前盡至近親屬的本分，贖地並娶路得，成為俄備得之父、大衛的曾祖。",
-    "verses": "路得記"
+    "verses": "路得記",
+    "testament": "both"
   },
   "俄備得": {
     "type": "person",
@@ -316,7 +320,8 @@
     "name": "約拿",
     "name_en": "Jonah",
     "desc": "亞米太的兒子，北國以色列的先知。奉命往尼尼微宣告審判，卻搭船逃往他施，遇大風被拋入海、為大魚所吞，三日後獲救。再赴尼尼微傳道使全城悔改，卻為神的憐憫不悅。全書藉他反襯神對外邦的慈愛。",
-    "verses": "約拿書"
+    "verses": "約拿書",
+    "testament": "both"
   },
   "亞米太": {
     "type": "person",
@@ -385,7 +390,8 @@
     "name": "亞伯",
     "name_en": "Abel",
     "desc": "亞當與夏娃的次子，牧羊的。獻上羊群中頭生的為供物蒙神悅納，卻被兄該隱所殺，成為聖經第一位殉難的義人。",
-    "verses": "創世記"
+    "verses": "創世記",
+    "testament": "both"
   },
   "塞特": {
     "type": "person",
@@ -595,7 +601,8 @@
     "name": "燔祭",
     "name_en": "Burnt Offering",
     "desc": "將祭牲全牲焚燒獻於壇上的祭，表完全獻給神並蒙悅納。為利未記首先規定的祭，象徵奉獻者全然歸主。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "testament": "both"
   },
   "素祭": {
     "type": "concept",
@@ -616,7 +623,8 @@
     "name": "贖罪祭",
     "name_en": "Sin Offering",
     "desc": "為無心干犯神誡命而獻的祭，藉牲畜的血贖去罪污，使人得潔淨、與神復和。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "testament": "both"
   },
   "贖愆祭": {
     "type": "concept",
@@ -665,14 +673,16 @@
     "name": "贖罪日",
     "name_en": "Day of Atonement",
     "desc": "七月初十的至聖節期，大祭司一年一度進至聖所為全民贖罪，並將罪歸於歸阿撒瀉勒的羊。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "testament": "both"
   },
   "逾越節": {
     "type": "concept",
     "name": "逾越節",
     "name_en": "Passover",
     "desc": "正月十四紀念出埃及時神越過以色列人的家、擊殺埃及長子之夜，宰羔抹血、吃無酵餅的節期。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "testament": "both"
   },
   "除酵節": {
     "type": "concept",
@@ -714,14 +724,16 @@
     "name": "會幕",
     "name_en": "Tabernacle",
     "desc": "以色列曠野時期的活動聖所，按神所示樣式而造，是神與百姓相會、獻祭敬拜之處。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "testament": "both"
   },
   "約櫃": {
     "type": "concept",
     "name": "約櫃",
     "name_en": "Ark of the Covenant",
     "desc": "安放法版的鍍金木櫃，置於至聖所，上有施恩座與基路伯，象徵神的同在與寶座。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "testament": "both"
   },
   "至聖所": {
     "type": "concept",
@@ -742,21 +754,24 @@
     "name": "大祭司",
     "name_en": "High Priest",
     "desc": "祭司之長，惟亞倫家世襲，獨能於贖罪日進至聖所為全民贖罪，是神人之間的中保。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "testament": "both"
   },
   "利未人": {
     "type": "concept",
     "name": "利未人",
     "name_en": "Levites",
     "desc": "利未支派的人，蒙分別出來在會幕、聖殿中供職、協助祭司、管理聖物，不分地業而靠供物為生。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "testament": "both"
   },
   "亞倫": {
     "type": "person",
     "name": "亞倫",
     "name_en": "Aaron",
     "desc": "摩西的兄長，以色列首任大祭司，亞倫家世代承襲祭司職分。曾在西乃山下造金牛犢，亦數度與摩西一同面對百姓的爭鬧。",
-    "verses": "出埃及記、利未記"
+    "verses": "出埃及記、利未記",
+    "testament": "both"
   },
   "米戶雅利": {
     "type": "person",
@@ -975,7 +990,8 @@
     "name": "亞伯拉罕",
     "name_en": "Abraham",
     "desc": "原名亞伯蘭。神呼召他離開吾珥、哈蘭往迦南，與他立約，應許後裔如天上星、萬國因他得福。信心之父，以撒之父，以色列與多民族的先祖。",
-    "verses": ""
+    "verses": "",
+    "testament": "both"
   },
   "亞伯蘭": {
     "type": "person",
@@ -1004,7 +1020,7 @@
     "type": "person",
     "name": "挪亞",
     "name_en": "Noah",
-    "testament": "OT",
+    "testament": "both",
     "desc": "閃含雅弗之父，在墮落世代中被稱為義人。神命他造方舟，帶家人與各類動物渡過洪水之災，是全人類的再生之祖。",
     "verses": "創世記6-9章"
   },
@@ -1012,7 +1028,7 @@
     "type": "person",
     "name": "閃",
     "name_en": "Shem",
-    "testament": "OT",
+    "testament": "both",
     "desc": "挪亞長子，閃族諸民族的祖先，包括希伯來人、亞蘭人等。挪亞醉酒後，閃與雅弗以衣遮父，受父祝福。",
     "verses": "創世記9-11章"
   },
@@ -1020,7 +1036,7 @@
     "type": "person",
     "name": "含",
     "name_en": "Ham",
-    "testament": "OT",
+    "testament": "both",
     "desc": "挪亞次子，迦南之父。因看見父親醉臥赤身而受責，其後裔含括迦南人、埃及人、古實人等。",
     "verses": "創世記9-10章"
   },
@@ -1044,7 +1060,7 @@
     "type": "person",
     "name": "撒拉",
     "name_en": "Sarah",
-    "testament": "OT",
+    "testament": "both",
     "desc": "亞伯拉罕的妻子，以撒之母。原名撒萊，九十歲奇蹟懷孕生子，被稱為信心的母親。",
     "verses": "創世記17-23章"
   },
@@ -1052,7 +1068,7 @@
     "type": "person",
     "name": "羅得",
     "name_en": "Lot",
-    "testament": "OT",
+    "testament": "both",
     "desc": "亞伯拉罕的侄兒，隨其出吾珥。選擇肥沃的約但平原居住，後遷入罪惡之城所多瑪，神毀城前天使引他出逃。",
     "verses": "創世記13-19章"
   },
@@ -1060,7 +1076,7 @@
     "type": "person",
     "name": "夏甲",
     "name_en": "Hagar",
-    "testament": "OT",
+    "testament": "both",
     "desc": "撒萊的埃及婢女，因撒萊不孕而被送給亞伯蘭為妾，生以實瑪利。曾兩度被逐入曠野，神親自向她顯現應許保護。",
     "verses": "創世記16、21章"
   },
@@ -1068,7 +1084,7 @@
     "type": "person",
     "name": "以實瑪利",
     "name_en": "Ishmael",
-    "testament": "OT",
+    "testament": "both",
     "desc": "亞伯拉罕與夏甲之子，亞伯拉罕的長子。被逐後在曠野由神保護，成為十二族的祖先，一般視為阿拉伯民族先祖。",
     "verses": "創世記16-21章"
   },
@@ -1076,7 +1092,7 @@
     "type": "person",
     "name": "以撒",
     "name_en": "Isaac",
-    "testament": "OT",
+    "testament": "both",
     "desc": "亞伯拉罕與撒拉的兒子，神應許後裔的起點。幼時幾被獻祭，神在最後時刻預備羊羔代替，長大後娶利百加，生以掃與雅各。",
     "verses": "創世記21-35章"
   },
@@ -1084,7 +1100,7 @@
     "type": "person",
     "name": "利百加",
     "name_en": "Rebekah",
-    "testament": "OT",
+    "testament": "both",
     "desc": "以撒之妻，雅各與以掃的母親。亞伯拉罕差僕人回哈蘭為以撒尋妻，她在井旁以慷慨待人的舉動被認出，嫁入應許家族。",
     "verses": "創世記24-27章"
   },
@@ -1092,7 +1108,7 @@
     "type": "person",
     "name": "以掃",
     "name_en": "Esau",
-    "testament": "OT",
+    "testament": "both",
     "desc": "以撒長子，雅各的孿生兄長。因饑餓以一碗紅豆湯換掉長子名分，後又被雅各奪走祝福，成為以東族的祖先。",
     "verses": "創世記25-36章"
   },
@@ -1100,7 +1116,7 @@
     "type": "person",
     "name": "雅各",
     "name_en": "Jacob",
-    "testament": "OT",
+    "testament": "both",
     "desc": "以撒次子，十二支派之父。名意「抓腳踵者」，與神角力後改名以色列。娶拉結與利亞，生十二子，成為以色列民族的起源。",
     "verses": "創世記25-50章"
   },
@@ -1124,7 +1140,7 @@
     "type": "person",
     "name": "約瑟",
     "name_en": "Joseph",
-    "testament": "OT",
+    "testament": "both",
     "desc": "雅各與拉結的長子，雅各最寵愛的兒子。因兄弟嫉妒被賣到埃及，在獄中解夢，最終成為埃及宰相，拯救全家及埃及。",
     "verses": "創世記37-50章"
   },
@@ -1132,7 +1148,7 @@
     "type": "person",
     "name": "便雅憫",
     "name_en": "Benjamin",
-    "testament": "OT",
+    "testament": "both",
     "desc": "雅各與拉結的幼子，約瑟同母弟。其母拉結在生他時難產去世，他是雅各晚年最珍愛的兒子，後成便雅憫支派之祖。",
     "verses": "創世記35、42-45章"
   },
@@ -1140,7 +1156,7 @@
     "type": "person",
     "name": "流便",
     "name_en": "Reuben",
-    "testament": "OT",
+    "testament": "both",
     "desc": "雅各長子，利亞所生。曾試圖救約瑟免遭殺害（建議投入坑中），因與父妾私通而失去長子名分。",
     "verses": "創世記29、37章"
   },
@@ -1148,7 +1164,7 @@
     "type": "person",
     "name": "西緬",
     "name_en": "Simeon",
-    "testament": "OT",
+    "testament": "both",
     "desc": "雅各次子，利亞所生。與利未一同以詭計屠殺示劍城為妹底拿復仇。約瑟的兄弟到埃及時，他被留作人質。",
     "verses": "創世記29、34、42章"
   },
@@ -1156,7 +1172,7 @@
     "type": "person",
     "name": "利未",
     "name_en": "Levi",
-    "testament": "OT",
+    "testament": "both",
     "desc": "雅各三子，利亞所生。與西緬共謀屠劍城，受父咒詛分散。其後裔利未支派成為以色列的祭司族，不分土地只受奉獻。",
     "verses": "創世記29、34章"
   },
@@ -1164,7 +1180,7 @@
     "type": "person",
     "name": "拿弗他利",
     "name_en": "Naphtali",
-    "testament": "OT",
+    "testament": "both",
     "desc": "雅各第六子，辟拉（拉結的婢女）所生。雅各祝福他「快如母鹿，口出美言」，後裔居住於加利利地區。",
     "verses": "創世記30章"
   },
@@ -1172,7 +1188,7 @@
     "type": "person",
     "name": "迦得",
     "name_en": "Gad",
-    "testament": "OT",
+    "testament": "both",
     "desc": "雅各第七子，悉帕（利亞的婢女）所生。名意「福氣」，後裔以勇猛善戰聞名，佔據約但河東的肥沃牧地。",
     "verses": "創世記30章"
   },
@@ -1180,7 +1196,7 @@
     "type": "person",
     "name": "亞設",
     "name_en": "Asher",
-    "testament": "OT",
+    "testament": "both",
     "desc": "雅各第八子，悉帕所生。名意「有福的」，雅各祝福他「出產肥美食物」，後裔居住迦南沿海北部。",
     "verses": "創世記30章"
   },
@@ -1188,7 +1204,7 @@
     "type": "person",
     "name": "以薩迦",
     "name_en": "Issachar",
-    "testament": "OT",
+    "testament": "both",
     "desc": "雅各第九子，利亞所生。名意「有工價的」，雅各比他為伏在驢馱之間的健壯驢，後裔耕作約但平原的肥地。",
     "verses": "創世記30章"
   },
@@ -1196,7 +1212,7 @@
     "type": "person",
     "name": "西布倫",
     "name_en": "Zebulun",
-    "testament": "OT",
+    "testament": "both",
     "desc": "雅各第十子，利亞所生，利亞的末子。雅各祝福他「住在海口，靠近西頓」，後裔居於加利利地中。",
     "verses": "創世記30章"
   },
@@ -1204,7 +1220,7 @@
     "type": "person",
     "name": "但",
     "name_en": "Dan",
-    "testament": "OT",
+    "testament": "both",
     "desc": "雅各第五子，辟拉（拉結的婢女）所生，拉結視為己出。名意「伸冤者」，雅各稱其「為百姓施行審判」。",
     "verses": "創世記30章"
   },
@@ -1228,7 +1244,7 @@
     "type": "person",
     "name": "他拉",
     "name_en": "Terah",
-    "testament": "OT",
+    "testament": "both",
     "desc": "亞伯拉罕的父親。從迦勒底吾珥帶家人出發往迦南地，中途在哈蘭停留，活到二百零五歲在哈蘭去世。",
     "verses": "創世記11章"
   },
@@ -1236,7 +1252,7 @@
     "type": "person",
     "name": "拿鶴",
     "name_en": "Nahor",
-    "testament": "OT",
+    "testament": "both",
     "desc": "亞伯拉罕的兄弟，他拉之子。留在哈蘭，其孫女利百加後來成為以撒的妻子，家族也與以色列家族保持聯繫。",
     "verses": "創世記11、22、24章"
   },
@@ -1252,7 +1268,7 @@
     "type": "person",
     "name": "謝拉",
     "name_en": "Zerah",
-    "testament": "OT",
+    "testament": "both",
     "desc": "猶大與他瑪所生的雙胞胎之一，與兄法勒斯同時出生，接生婆先以紅線綁其手，卻是法勒斯先衝出。",
     "verses": "創世記38章"
   },
@@ -1260,7 +1276,7 @@
     "type": "place",
     "name": "吾珥",
     "name_en": "Ur of the Chaldeans",
-    "testament": "OT",
+    "testament": "both",
     "desc": "亞伯拉罕的出生地，位於今伊拉克南部的迦勒底，是當時兩河流域的文明大城。神在此呼召他離開，前往迦南。",
     "verses": "創世記11:28、11:31",
     "lat": 30.96,
@@ -1270,7 +1286,7 @@
     "type": "place",
     "name": "哈蘭",
     "name_en": "Haran",
-    "testament": "OT",
+    "testament": "both",
     "desc": "亞伯拉罕一家從吾珥出發往迦南途中停留之地，位於今土耳其東南部。他拉在此去世，神再次呼召亞伯蘭啟程南下。",
     "verses": "創世記11-12章",
     "lat": 36.87,
@@ -1280,7 +1296,7 @@
     "type": "place",
     "name": "迦南",
     "name_en": "Canaan",
-    "testament": "OT",
+    "testament": "both",
     "desc": "神應許給亞伯拉罕後裔的「應許之地」，泛指今以色列、巴勒斯坦及黎巴嫩南部一帶，原為迦南諸族所居住的土地。",
     "verses": "創世記12章起",
     "lat": 31.5,
@@ -1300,7 +1316,7 @@
     "type": "place",
     "name": "示劍",
     "name_en": "Shechem",
-    "testament": "OT",
+    "testament": "both",
     "desc": "迦南中部的重要城市，雅各從哈蘭返迦南後在此安營。神在此向亞伯拉罕顯現應許此地。底拿被玷污事件也發生於此。",
     "verses": "創世記12:6、33-34章",
     "lat": 32.21,
@@ -1310,7 +1326,7 @@
     "type": "place",
     "name": "伯特利",
     "name_en": "Bethel",
-    "testament": "OT",
+    "testament": "both",
     "desc": "雅各逃往哈蘭途中夢見天梯的地方，原名路斯，他以石頭立柱改名「伯特利」（神的家）。後成以色列重要聖地之一。",
     "verses": "創世記12:8、28:10-22",
     "lat": 31.93,
@@ -1330,7 +1346,7 @@
     "type": "place",
     "name": "所多瑪",
     "name_en": "Sodom",
-    "testament": "OT",
+    "testament": "both",
     "desc": "約但平原的城市，羅得選擇居住之地。因居民極端罪惡，神從天降硫磺火將其焚毀，成為聖經中神審判惡城的代名詞。",
     "verses": "創世記13、18-19章",
     "lat": 31.1,
@@ -1340,7 +1356,7 @@
     "type": "place",
     "name": "蛾摩拉",
     "name_en": "Gomorrah",
-    "testament": "OT",
+    "testament": "both",
     "desc": "與所多瑪齊名、同受天火毀滅的城市。兩城常在聖經中並列，成為因罪遭審判滅絕的象徵。",
     "verses": "創世記13、18-19章",
     "lat": 31.05,
@@ -1350,7 +1366,7 @@
     "type": "place",
     "name": "埃及",
     "name_en": "Egypt",
-    "testament": "OT",
+    "testament": "both",
     "desc": "尼羅河流域的文明古國，聖經多次提及。亞伯蘭曾因饑荒下埃及，約瑟被賣至此後成宰相，後來更成為以色列人被奴役四百年的地方。",
     "verses": "創世記12章起",
     "lat": 26.8,
@@ -1420,7 +1436,7 @@
     "type": "place",
     "name": "亞蘭",
     "name_en": "Aram",
-    "testament": "OT",
+    "testament": "both",
     "desc": "敘利亞一帶的古地名及民族稱呼，亞蘭語是當時近東的通行語言。雅各的母族在亞蘭，拉班被稱為「亞蘭人」。",
     "verses": "創世記24:10、25:20",
     "lat": 34.8,
@@ -1478,7 +1494,7 @@
     "type": "place",
     "name": "西奈山",
     "name_en": "Mount Sinai",
-    "testament": "OT",
+    "testament": "both",
     "desc": "神與摩西相遇、頒布十誡的聖山，又稱何烈山，位於西奈半島南部。以色列人在此與神立約，是舊約最重要的神聖地點之一。",
     "verses": "出埃及記19-20章",
     "lat": 28.54,
@@ -1488,7 +1504,7 @@
     "type": "place",
     "name": "何烈山",
     "name_en": "Mount Horeb",
-    "testament": "OT",
+    "testament": "both",
     "desc": "西奈山的別名，意為「荒地之山」。摩西在此於荊棘火焰中第一次遇見神，以利亞逃難時也在此遇神，申命記多用此名。",
     "verses": "出埃及記3章",
     "lat": 28.54,
@@ -1498,7 +1514,7 @@
     "type": "place",
     "name": "紅海",
     "name_en": "Red Sea",
-    "testament": "OT",
+    "testament": "both",
     "desc": "以色列人出埃及時神分開的大海，法老軍隊在此全軍覆沒。今學者爭議確切位置，或指蘆葦海（西奈半島北端的苦湖一帶）。",
     "verses": "出埃及記14-15章",
     "lat": 29.5,
@@ -1564,7 +1580,7 @@
     "type": "concept",
     "name": "十誡",
     "name_en": "Ten Commandments",
-    "testament": "OT",
+    "testament": "both",
     "desc": "神在西奈山親自寫在石版上頒給摩西的十條誡命，是以色列與神立約的核心律法，分為對神的責任（前四條）與對人的責任（後六條）。",
     "verses": "出埃及記20章、申命記5章"
   },
@@ -1864,7 +1880,8 @@
     "books": [
       "約書亞記"
     ],
-    "desc": "耶利哥妓女，藏匿以色列探子，因信心獲救，列於信心英雄。"
+    "desc": "耶利哥妓女，藏匿以色列探子，因信心獲救，列於信心英雄。",
+    "testament": "both"
   },
   "迦勒": {
     "type": "person",
@@ -1874,7 +1891,8 @@
       "約書亞記",
       "民數記"
     ],
-    "desc": "猶大支派勇士，十二探子之一，與約書亞信任神，得應許地業。"
+    "desc": "猶大支派勇士，十二探子之一，與約書亞信任神，得應許地業。",
+    "testament": "both"
   },
   "亞干": {
     "type": "person",
@@ -1892,7 +1910,8 @@
     "books": [
       "士師記"
     ],
-    "desc": "以色列女先知兼士師，率領巴拉擊敗迦南王耶賓的軍隊。"
+    "desc": "以色列女先知兼士師，率領巴拉擊敗迦南王耶賓的軍隊。",
+    "testament": "both"
   },
   "基甸": {
     "type": "person",
@@ -1901,7 +1920,8 @@
     "books": [
       "士師記"
     ],
-    "desc": "以色列士師，以三百人舉火把擊敗米甸大軍，拒絕世人立他為王。"
+    "desc": "以色列士師，以三百人舉火把擊敗米甸大軍，拒絕世人立他為王。",
+    "testament": "both"
   },
   "耶弗他": {
     "type": "person",
@@ -1919,7 +1939,8 @@
     "books": [
       "士師記"
     ],
-    "desc": "以色列士師，力大無比的拿細耳人，因大利拉出賣而失去力量與眼睛。"
+    "desc": "以色列士師，力大無比的拿細耳人，因大利拉出賣而失去力量與眼睛。",
+    "testament": "both"
   },
   "大利拉": {
     "type": "person",
@@ -1938,7 +1959,8 @@
       "撒母耳記上",
       "撒母耳記下"
     ],
-    "desc": "以色列先知兼士師，為以色列膏立第一任王掃羅，後膏立大衛。"
+    "desc": "以色列先知兼士師，為以色列膏立第一任王掃羅，後膏立大衛。",
+    "testament": "both"
   },
   "拔示巴": {
     "type": "person",
@@ -1967,7 +1989,8 @@
       "列王紀上",
       "歷代志下"
     ],
-    "desc": "以色列第三任王，以智慧著稱，建造聖殿，晚年因妃嬪導致拜偶像。"
+    "desc": "以色列第三任王，以智慧著稱，建造聖殿，晚年因妃嬪導致拜偶像。",
+    "testament": "both"
   },
   "以利亞": {
     "type": "person",
@@ -1977,7 +2000,8 @@
       "列王紀上",
       "列王紀下"
     ],
-    "desc": "著名先知，在迦密山勝過巴力先知，後被旋風接升天，象徵先知傳統。"
+    "desc": "著名先知，在迦密山勝過巴力先知，後被旋風接升天，象徵先知傳統。",
+    "testament": "both"
   },
   "以利沙": {
     "type": "person",
@@ -1986,7 +2010,8 @@
     "books": [
       "列王紀下"
     ],
-    "desc": "以利亞的繼承人，行神蹟比以利亞多，以禱告復活孩童、醫治乃縵。"
+    "desc": "以利亞的繼承人，行神蹟比以利亞多，以禱告復活孩童、醫治乃縵。",
+    "testament": "both"
   },
   "以賽亞": {
     "type": "person",
@@ -1995,7 +2020,8 @@
     "books": [
       "以賽亞書"
     ],
-    "desc": "猶大大先知，預言彌賽亞降生受苦，書中有著名「受苦僕人」詩篇。"
+    "desc": "猶大大先知，預言彌賽亞降生受苦，書中有著名「受苦僕人」詩篇。",
+    "testament": "both"
   },
   "耶利米": {
     "type": "person",
@@ -2004,7 +2030,8 @@
     "books": [
       "耶利米書"
     ],
-    "desc": "「哭泣的先知」，見證耶路撒冷被巴比倫毀滅，預言新約之盟。"
+    "desc": "「哭泣的先知」，見證耶路撒冷被巴比倫毀滅，預言新約之盟。",
+    "testament": "both"
   },
   "以西結": {
     "type": "person",
@@ -2013,7 +2040,8 @@
     "books": [
       "以西結書"
     ],
-    "desc": "被擄至巴比倫的祭司先知，異象豐富，預言枯骨復活與新聖殿。"
+    "desc": "被擄至巴比倫的祭司先知，異象豐富，預言枯骨復活與新聖殿。",
+    "testament": "both"
   },
   "但以理": {
     "type": "person",
@@ -2022,7 +2050,8 @@
     "books": [
       "但以理書"
     ],
-    "desc": "被擄至巴比倫的猶大少年，解夢解兆，入獅子坑仍蒙神保護。"
+    "desc": "被擄至巴比倫的猶大少年，解夢解兆，入獅子坑仍蒙神保護。",
+    "testament": "both"
   },
   "巴比倫": {
     "type": "place",
@@ -2410,7 +2439,8 @@
     "type": "place",
     "name": "曠野",
     "name_en": "Wilderness",
-    "desc": "以色列出埃及後漂流四十年的西奈半島荒野，神在此試煉磨練他們。"
+    "desc": "以色列出埃及後漂流四十年的西奈半島荒野，神在此試煉磨練他們。",
+    "testament": "both"
   },
   "米吉多": {
     "type": "place",
@@ -2517,7 +2547,8 @@
     "name_en": "Canaan",
     "desc": "神應許給亞伯拉罕後裔的土地，大致相當於今日以色列與巴勒斯坦地區。",
     "lat": 31.5,
-    "lng": 35.0
+    "lng": 35.0,
+    "testament": "both"
   },
   "約旦河": {
     "type": "place",
@@ -2564,13 +2595,15 @@
     "type": "concept",
     "name": "先知",
     "name_en": "Prophet",
-    "desc": "代神傳話者，宣告神的旨意、指責罪惡、預言未來，不一定只指預言。"
+    "desc": "代神傳話者，宣告神的旨意、指責罪惡、預言未來，不一定只指預言。",
+    "testament": "both"
   },
   "天使": {
     "type": "concept",
     "name": "天使",
     "name_en": "Angel",
-    "desc": "神的使者，形態多樣，執行傳信、護衛、審判等任務，常在重要時刻出現。"
+    "desc": "神的使者，形態多樣，執行傳信、護衛、審判等任務，常在重要時刻出現。",
+    "testament": "both"
   },
   "魔鬼": {
     "type": "concept",
