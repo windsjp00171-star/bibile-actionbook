@@ -2,8 +2,14 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2C1A0E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="聖經全書">
 <title>{{ book }} 第{{ chapter }}章 — 聖經全書</title>
+<link rel="manifest" href="/static/manifest.json">
+<link rel="apple-touch-icon" href="/static/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
@@ -13,9 +19,9 @@
 <body>
 
 <header class="mob-header">
-  <button class="burger" onclick="openDrawer()">☰</button>
+  <button class="burger" onclick="openDrawer()" aria-label="目錄">☰</button>
   <h2>聖 經 全 書</h2>
-  <button class="help-btn" data-tour="help" onclick="startTour()">？教學</button>
+  <button class="help-btn" onclick="startTour()">？教學</button>
 </header>
 
 <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
@@ -31,7 +37,16 @@
     <div class="deco-line"><span class="diamond"></span><span class="line"></span><span class="diamond"></span></div>
   </header>
 
-  <main class="passage" data-tour="passage">
+  {% if entities_json != '{}' %}
+  <div class="legend">
+    <span class="legend-item"><span class="legend-dot anno-person"></span>人物</span>
+    <span class="legend-item"><span class="legend-dot anno-place"></span>地點</span>
+    <span class="legend-item"><span class="legend-dot anno-concept"></span>族群／概念</span>
+    <span class="legend-hint">點標注詞看背景資料</span>
+  </div>
+  {% endif %}
+
+  <main class="passage" id="passage">
     {% for v in verses %}
     <p class="verse"><span class="verse-num">{{ v.verse }}</span>{{ v.html | safe }}</p>
     {% endfor %}
@@ -40,33 +55,24 @@
     {% endif %}
   </main>
 
-  {% if entities_json != '{}' %}
-  <div class="legend" data-tour="legend">
-    <span class="legend-item"><span class="legend-dot anno-person"></span>人物</span>
-    <span class="legend-item"><span class="legend-dot anno-place"></span>地點</span>
-    <span class="legend-item"><span class="legend-dot anno-concept"></span>族群／概念</span>
-    <span class="legend-hint">點經文中的標注詞看背景資料</span>
-  </div>
-  {% endif %}
-
   <footer class="chapter-footer">
     <div class="deco-line"><span class="diamond"></span><span class="line"></span><span class="diamond"></span></div>
     <div class="chapter-nav">
       {% if prev_book %}
-      <a class="chapter-nav-btn" href="/read/{{ prev_book }}/{{ prev_ch }}">‹ {{ prev_book }} 第{{ prev_ch }}章</a>
+      <a class="chapter-nav-btn" href="/read/{{ prev_book }}/{{ prev_ch }}">‹ {{ prev_book }} {{ prev_ch }}</a>
       {% else %}<span></span>{% endif %}
       {% if next_book %}
-      <a class="chapter-nav-btn" href="/read/{{ next_book }}/{{ next_ch }}">{{ next_book }} 第{{ next_ch }}章 ›</a>
+      <a class="chapter-nav-btn" href="/read/{{ next_book }}/{{ next_ch }}">{{ next_book }} {{ next_ch }} ›</a>
       {% endif %}
     </div>
   </footer>
 </div>
 
-<!-- 標注資料卡片：桌面浮動卡 / 手機底部 sheet 共用同一面板 -->
+<!-- 標注卡片：桌面右側浮動 / 手機底部 sheet -->
 <div class="card-overlay" id="cardOverlay" onclick="closeCard()"></div>
-<aside class="anno-card" id="annoCard" data-tour="card">
+<aside class="anno-card" id="annoCard">
   <div class="card-grip"></div>
-  <button class="card-close" onclick="closeCard()">✕</button>
+  <button class="card-close" onclick="closeCard()" aria-label="關閉">✕</button>
   <div class="card-badge" id="cardBadge"></div>
   <h3 class="card-name" id="cardName"></h3>
   <div class="card-map" id="cardMap"></div>
@@ -74,13 +80,35 @@
   <div class="card-verses" id="cardVerses"></div>
 </aside>
 
+<!-- 字體大小控制 -->
+<div class="font-ctrl" id="fontCtrl">
+  <button onclick="setFont(-1)" aria-label="縮小字體">A−</button>
+  <button onclick="setFont(1)" aria-label="放大字體">A+</button>
+</div>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const ENTITIES = {{ entities_json | safe }};
 const TYPE_LABEL = { person: '人物', place: '地點', concept: '族群／概念' };
 
-let _map = null, _layer = null;
+// ── Service Worker ──────────────────────────────────────────────
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/static/sw.js').catch(() => {});
+}
 
+// ── Font size ───────────────────────────────────────────────────
+let fontSize = parseInt(localStorage.getItem('bible-fs') || '18');
+applyFont();
+function applyFont() {
+  document.getElementById('passage').style.fontSize = fontSize + 'px';
+  localStorage.setItem('bible-fs', fontSize);
+}
+function setFont(delta) {
+  fontSize = Math.max(14, Math.min(26, fontSize + delta));
+  applyFont();
+}
+
+// ── Drawer ──────────────────────────────────────────────────────
 function openDrawer() {
   document.getElementById('drawer').classList.add('open');
   document.getElementById('overlay').classList.add('open');
@@ -89,6 +117,9 @@ function closeDrawer() {
   document.getElementById('drawer').classList.remove('open');
   document.getElementById('overlay').classList.remove('open');
 }
+
+// ── Anno card ───────────────────────────────────────────────────
+let _map = null, _layer = null;
 
 function closeCard() {
   document.getElementById('annoCard').classList.remove('open');
@@ -105,14 +136,12 @@ function renderMap(ent) {
     _layer = L.layerGroup().addTo(_map);
   }
   _layer.clearLayers();
-  // 同章其他地點：棕色小標記
   Object.values(ENTITIES).forEach(e => {
     if (e.type === 'place' && e.name !== ent.name && e.lat != null) {
       L.circleMarker([e.lat, e.lng], { radius: 5, fillColor: '#8B6840', color: '#fff', weight: 1.5, fillOpacity: 1 })
         .bindTooltip(e.name, { permanent: true, direction: 'top' }).addTo(_layer);
     }
   });
-  // 當前地點：綠色大標記
   L.circleMarker([ent.lat, ent.lng], { radius: 8, fillColor: '#2A5C3A', color: '#fff', weight: 2, fillOpacity: 1 })
     .bindTooltip(ent.name, { permanent: true, direction: 'top' }).addTo(_layer);
   _map.setView([ent.lat, ent.lng], 8);
@@ -143,7 +172,7 @@ document.querySelectorAll('.anno').forEach(el => {
   el.addEventListener('click', () => openCard(el.dataset.entity));
 });
 
-// 側欄書卷展開
+// ── Sidebar ──────────────────────────────────────────────────────
 document.querySelectorAll('.book-item').forEach(el => {
   el.addEventListener('click', function(e) {
     const pills = this.nextElementSibling;
@@ -159,12 +188,27 @@ if (activeBook) {
   activeBook.scrollIntoView({ block: 'center' });
 }
 
-// 聚焦式教學（最小占位；待接入全域共用 tour.js）
+// ── Tour ─────────────────────────────────────────────────────────
 function startTour() {
   const first = document.querySelector('.anno');
-  if (first) { openCard(first.dataset.entity); }
-  else { alert('點選經文中有底線的人名或地名，即可看背景資料與地圖。'); }
+  if (first) openCard(first.dataset.entity);
+  else alert('點選經文中有底線的人名或地名，即可看背景資料與地圖。');
 }
+
+// ── Swipe to navigate (mobile) ───────────────────────────────────
+(function() {
+  let sx = 0;
+  const passage = document.getElementById('passage');
+  passage.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+  passage.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) < 60) return;
+    const prev = document.querySelector('.chapter-nav-btn:first-child');
+    const next = document.querySelector('.chapter-nav-btn:last-child');
+    if (dx > 0 && prev && prev.href) location.href = prev.href;
+    if (dx < 0 && next && next.href) location.href = next.href;
+  }, { passive: true });
+})();
 </script>
 </body>
 </html>

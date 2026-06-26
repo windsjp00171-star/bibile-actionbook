@@ -22,6 +22,7 @@ body {
   display: flex;
 }
 
+/* ── Sidebar ── */
 .sidebar {
   width: 210px;
   min-height: 100vh;
@@ -48,268 +49,255 @@ body {
 }
 
 .section-label {
+  padding: 12px 16px 4px;
   font-size: 10px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.25em;
   color: var(--nav-section);
-  padding: 14px 16px 4px;
-  font-family: system-ui, sans-serif;
-  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .book-item {
   display: block;
-  padding: 7px 16px;
-  font-size: 13px;
+  padding: 8px 16px;
   color: var(--nav-book);
+  font-size: 13px;
   text-decoration: none;
   cursor: pointer;
-  letter-spacing: 0.03em;
-  line-height: 1.5;
-  transition: color 0.15s;
-  user-select: none;
+  transition: background 0.15s, color 0.15s;
 }
-
-.book-item:hover { color: var(--nav-active-text); }
-
-.book-item.active {
-  color: var(--nav-active-text);
+.book-item:hover, .book-item.active {
   background: var(--nav-active-bg);
-  border-left: 2px solid var(--gold-bright);
-  padding-left: 14px;
+  color: var(--nav-active-text);
 }
 
 .chapter-pills {
   display: none;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 4px;
   padding: 6px 12px 10px;
-  background: #1e1208;
 }
-
 .chapter-pills.open { display: flex; }
 
 .pill {
-  font-family: system-ui, sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  min-width: 32px;
-  height: 32px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  min-width: 34px;
+  height: 34px;
+  border-radius: 6px;
   background: #3A220E;
-  color: #C9A96E;
+  color: var(--nav-book);
+  font-size: 12px;
   text-decoration: none;
-  transition: background 0.15s, color 0.15s;
-  padding: 0 6px;
+  transition: background 0.12s, color 0.12s;
 }
+.pill:hover { background: #4A3010; color: var(--nav-title); }
+.pill.active { background: var(--gold-bright); color: #1A0E04; font-weight: 500; }
 
-.pill:hover { background: #5a3518; color: #F0C96A; }
-.pill.active { background: var(--gold-bright); color: var(--nav-bg); }
-
-/* Main */
+/* ── Main content ── */
 .main {
   flex: 1;
-  padding: 48px 40px 64px;
+  padding: 40px 24px 80px;
   max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.chapter-header { text-align: center; margin-bottom: 40px; }
-
+/* ── Chapter header ── */
+.chapter-header {
+  text-align: center;
+  padding: 12px 0 28px;
+}
+.book-title {
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  margin: 10px 0 4px;
+}
+.chapter-sub {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: #8B6840;
+}
 .deco-line {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin: 16px 0;
+  gap: 6px;
+  justify-content: center;
+  margin: 8px 0;
 }
+.diamond { width: 5px; height: 5px; background: var(--gold); transform: rotate(45deg); }
+.line { flex: 1; max-width: 120px; height: 1px; background: var(--gold); opacity: 0.5; }
 
-.deco-line .line { flex: 1; height: 1px; background: var(--gold); }
-
-.deco-line .diamond {
-  width: 6px;
-  height: 6px;
-  background: var(--gold);
-  transform: rotate(45deg);
-  flex-shrink: 0;
+/* ── Legend ── */
+.legend {
+  max-width: 640px;
+  margin: 0 auto 18px;
+  padding: 10px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid #C9A96E30;
+  border-radius: 8px;
+  background: #FEF8EC80;
+  font-size: 12px;
+  color: #6B5436;
 }
+.legend-item { display: inline-flex; align-items: center; gap: 5px; }
+.legend-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.legend-dot.anno-person { background: #8B3A1A; }
+.legend-dot.anno-place  { background: #2A5C3A; }
+.legend-dot.anno-concept{ background: #4A3080; }
+.legend-hint { color: #A08B66; font-size: 11px; margin-left: auto; }
 
-.book-title {
-  font-size: 21px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--text);
-  margin-top: 20px;
-}
-
-.chapter-sub {
-  font-size: 13px;
-  font-weight: 300;
-  letter-spacing: 0.06em;
-  color: var(--gold);
-  margin-top: 6px;
-}
-
+/* ── Passage ── */
 .passage {
-  line-height: 2.3;
-  font-size: 15px;
-  letter-spacing: 0.02em;
+  font-size: 18px; /* controlled by JS */
+  line-height: 2.1;
+  color: var(--text);
+  max-width: 640px;
+  margin: 0 auto;
 }
 
-.verse { margin-bottom: 0.3em; }
-
+.verse {
+  margin-bottom: 1.1em;
+  display: flex;
+  gap: 0.6em;
+  align-items: baseline;
+}
 .verse-num {
-  font-family: system-ui, sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--gold-bright);
-  margin-right: 4px;
-  position: relative;
-  top: -2px;
+  flex-shrink: 0;
+  font-size: 0.65em;
+  color: #A08B66;
+  font-weight: 500;
+  padding-top: 0.25em;
+  min-width: 1.6em;
+  text-align: right;
 }
 
-.chapter-footer { margin-top: 48px; }
+.no-data { color: #999; text-align: center; padding: 40px 0; }
 
+/* ── Inline annotation ── */
+.anno { cursor: pointer; text-underline-offset: 3px; border-radius: 2px; }
+.anno-person  { color: #8B3A1A; border-bottom: 2px dotted #8B3A1A88; }
+.anno-place   { color: #2A5C3A; border-bottom: 2px dotted #2A5C3A88; }
+.anno-concept { color: #4A3080; border-bottom: 2px dotted #4A308088; }
+.anno:active  { opacity: 0.7; }
+
+/* ── Chapter nav footer ── */
+.chapter-footer { margin-top: 40px; }
 .chapter-nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 24px;
   gap: 12px;
+  margin-top: 16px;
 }
-
 .chapter-nav-btn {
   display: inline-flex;
   align-items: center;
-  padding: 10px 18px;
-  border-radius: 6px;
-  background: var(--nav-bg);
-  color: var(--gold);
-  font-family: system-ui, sans-serif;
+  padding: 13px 18px;
+  border-radius: 8px;
+  background: #2C1A0E;
+  color: var(--nav-book);
   font-size: 13px;
-  font-weight: 500;
   text-decoration: none;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   transition: background 0.15s, color 0.15s;
+  min-width: 0;
+  max-width: 48%;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
+.chapter-nav-btn:hover { background: #3A220E; color: var(--nav-title); }
 
-.chapter-nav-btn:hover {
-  background: #3A220E;
-  color: var(--gold-bright);
-}
-
-.no-data {
-  color: #999;
-  text-align: center;
-  padding: 40px 0;
-}
-
-/* Mobile */
+/* ── Mobile header ── */
 .mob-header {
   display: none;
   background: var(--nav-bg);
   color: var(--nav-title);
   padding: 12px 16px;
+  padding-top: max(12px, env(safe-area-inset-top));
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 50;
 }
-
 .mob-header h2 { font-size: 13px; letter-spacing: 0.18em; }
 
 .burger {
-  background: none;
-  border: none;
-  color: var(--nav-title);
-  font-size: 22px;
-  cursor: pointer;
-  padding: 4px 8px;
-  line-height: 1;
+  background: none; border: none; color: var(--nav-title);
+  font-size: 22px; cursor: pointer; padding: 4px 8px; line-height: 1;
+  min-width: 44px; min-height: 44px;
 }
-
-.drawer-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: #00000080;
-  z-index: 100;
-}
-
-.drawer-overlay.open { display: block; }
-
-.drawer {
-  position: fixed;
-  top: 0;
-  left: -230px;
-  width: 210px;
-  height: 100vh;
-  background: var(--nav-bg);
-  z-index: 101;
-  overflow-y: auto;
-  transition: left 0.25s ease;
-}
-
-.drawer.open { left: 0; }
-
-@media (max-width: 600px) {
-  body { flex-direction: column; }
-  .sidebar { display: none; }
-  .mob-header { display: flex; }
-  .main { padding: 24px 16px 80px; }
-  .pill { min-width: 40px; height: 40px; font-size: 13px; }
-  .chapter-pills { gap: 6px; padding: 8px 12px 12px; }
-  .chapter-nav-btn { padding: 12px 14px; font-size: 12px; }
-}
-
-/* ===== 行內標注（spec 第三節）===== */
-.anno { cursor: pointer; text-underline-offset: 3px; }
-.anno-person  { color: #8B3A1A; border-bottom: 1px dotted #8B3A1A66; }
-.anno-place   { color: #2A5C3A; border-bottom: 1px dotted #2A5C3A66; }
-.anno-concept { color: #4A3080; border-bottom: 1px dotted #4A308066; }
-
-/* ===== 圖例 ===== */
-.legend {
-  max-width: 640px; margin: 18px auto 0; padding: 12px 16px;
-  display: flex; flex-wrap: wrap; align-items: center; gap: 16px;
-  border-top: 1px solid #C9A96E40; font-size: 12px; color: #6B5436;
-}
-.legend-item { display: inline-flex; align-items: center; gap: 6px; }
-.legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
-.legend-dot.anno-person { background: #8B3A1A; }
-.legend-dot.anno-place { background: #2A5C3A; }
-.legend-dot.anno-concept { background: #4A3080; }
-.legend-hint { color: #A08B66; font-size: 11px; }
 
 .help-btn {
   background: none; border: 1px solid #C9A96E66; color: #D4A847;
-  font-size: 12px; padding: 4px 10px; border-radius: 6px; cursor: pointer;
+  font-size: 12px; padding: 6px 10px; border-radius: 6px; cursor: pointer;
+  min-width: 44px; min-height: 44px;
 }
 
-/* ===== 標注卡片（spec 第三、六節）===== */
+/* ── Drawer ── */
+.drawer-overlay {
+  display: none; position: fixed; inset: 0;
+  background: #00000080; z-index: 100;
+}
+.drawer-overlay.open { display: block; }
+
+.drawer {
+  position: fixed; top: 0; left: -230px; width: 210px; height: 100vh;
+  background: var(--nav-bg); z-index: 101; overflow-y: auto;
+  transition: left 0.25s ease;
+}
+.drawer.open { left: 0; }
+
+/* ── Font size control ── */
+.font-ctrl {
+  display: none;
+  position: fixed;
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  right: 16px;
+  z-index: 200;
+  gap: 2px;
+  background: #2C1A0E;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0004;
+}
+.font-ctrl button {
+  display: block; background: none; border: none; color: #D4A847;
+  font-size: 13px; font-family: inherit; letter-spacing: 0.05em;
+  padding: 10px 14px; cursor: pointer; min-width: 44px;
+}
+.font-ctrl button:active { background: #3A220E; }
+
+/* ── Anno card overlay ── */
 .card-overlay {
   position: fixed; inset: 0; background: rgba(20,10,2,.35);
   opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 1200;
 }
 .card-overlay.open { opacity: 1; pointer-events: auto; }
 
+/* ── Anno card ── */
 .anno-card {
   position: fixed; z-index: 1300;
   background: #FEF8EC; border: 1px solid #C9A96E;
-  box-shadow: 2px 3px 0 #C9A96E30; border-radius: 8px;
-  padding: 18px 20px 20px;
+  box-shadow: 2px 3px 12px #0003;
   font-family: 'Noto Serif TC', serif;
 }
 .card-grip { display: none; }
 .card-close {
   position: absolute; top: 10px; right: 12px;
-  background: none; border: none; font-size: 16px; color: #A08B66; cursor: pointer;
+  background: none; border: none; font-size: 18px; color: #A08B66;
+  cursor: pointer; min-width: 44px; min-height: 44px;
+  display: flex; align-items: center; justify-content: center;
 }
 .card-badge {
-  display: inline-block; font-size: 11px; padding: 2px 9px; border-radius: 10px;
-  color: #fff; margin-bottom: 8px;
+  display: inline-block; font-size: 11px; padding: 2px 9px;
+  border-radius: 10px; color: #fff; margin-bottom: 8px;
 }
 .card-badge.anno-person  { background: #8B3A1A; }
 .card-badge.anno-place   { background: #2A5C3A; }
@@ -323,28 +311,46 @@ body {
   border: 1px solid #C9A96E55; border-radius: 4px; padding: 2px 8px;
 }
 
-/* 桌面：右側浮動卡片 */
+/* ── Desktop: right-side floating card ── */
 @media (min-width: 601px) {
   .anno-card {
     top: 50%; right: 28px; transform: translateY(-50%);
     width: 320px; max-height: 80vh; overflow-y: auto;
-    opacity: 0; pointer-events: none; transition: opacity .18s, transform .18s;
+    border-radius: 10px; padding: 18px 20px 20px;
+    opacity: 0; pointer-events: none; transition: opacity .18s;
   }
-  .anno-card.open { opacity: 1; pointer-events: auto; transform: translateY(-50%) translateX(0); }
+  .anno-card.open { opacity: 1; pointer-events: auto; }
   .card-overlay { background: transparent; }
 }
 
-/* 手機：底部 Bottom Sheet */
+/* ── Mobile ── */
 @media (max-width: 600px) {
+  body { flex-direction: column; }
+  .sidebar { display: none; }
+  .mob-header { display: flex; }
+  .font-ctrl { display: flex; }
+  .main { padding: 20px 16px calc(80px + env(safe-area-inset-bottom)); }
+
+  .book-title { font-size: 22px; }
+  .passage { font-size: 18px; line-height: 2.0; }
+
+  .pill { min-width: 40px; height: 40px; font-size: 13px; }
+  .chapter-pills { gap: 6px; padding: 8px 12px 12px; }
+
+  .chapter-nav-btn { padding: 14px 14px; font-size: 12px; }
+
+  /* Bottom sheet */
   .anno-card {
     left: 0; right: 0; bottom: 0; width: 100%;
-    border-radius: 16px 16px 0 0; padding-top: 22px;
-    max-height: 78vh; overflow-y: auto;
-    transform: translateY(100%); transition: transform .25s;
+    border-radius: 16px 16px 0 0;
+    padding: 22px 18px calc(20px + env(safe-area-inset-bottom));
+    max-height: 80vh; overflow-y: auto;
+    transform: translateY(100%); transition: transform .25s ease;
   }
   .anno-card.open { transform: translateY(0); }
   .card-grip {
-    display: block; position: absolute; top: 9px; left: 50%; transform: translateX(-50%);
+    display: block; position: absolute; top: 9px; left: 50%;
+    transform: translateX(-50%);
     width: 38px; height: 4px; border-radius: 2px; background: #C9A96E66;
   }
 }
