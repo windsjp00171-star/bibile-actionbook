@@ -4225,5 +4225,215 @@
     "name_en": "Issue of Blood",
     "testament": "both",
     "desc": "婦女不正常的持續出血，按律法使人不潔。福音書中患血漏十二年的婦人摸耶穌衣裳邊就得痊癒。"
+  },
+  "香柏木": {
+    "type": "concept",
+    "name": "香柏木",
+    "name_en": "Cedar",
+    "testament": "OT",
+    "desc": "黎巴嫩高大耐久、芬芳的名貴木材，所羅門用以建造聖殿與王宮，象徵尊榮與堅固。"
+  },
+  "皂莢木": {
+    "type": "concept",
+    "name": "皂莢木",
+    "name_en": "Acacia Wood",
+    "testament": "OT",
+    "desc": "曠野生長、堅硬耐蛀的木材，會幕、約櫃、各樣聖物多以皂莢木製作再包金。"
+  },
+  "橄欖樹": {
+    "type": "concept",
+    "name": "橄欖樹",
+    "name_en": "Olive Tree",
+    "testament": "both",
+    "desc": "地中海常綠果樹，產橄欖榨油供點燈、膏抹、食用。象徵蒙福、和平與神的子民，保羅以接枝喻外邦人歸入。"
+  },
+  "橄欖": {
+    "type": "concept",
+    "name": "橄欖",
+    "name_en": "Olive",
+    "testament": "both",
+    "desc": "橄欖樹的果實，榨成的油用於點燈、調素祭、膏抹君王祭司。鴿子銜橄欖葉回方舟，成為和平的記號。"
+  },
+  "無花果樹": {
+    "type": "concept",
+    "name": "無花果樹",
+    "name_en": "Fig Tree",
+    "testament": "both",
+    "desc": "結甜美無花果的果樹，常與葡萄樹並提象徵安居樂業。耶穌曾咒詛不結果的無花果樹，並以其發芽喻末世將近。"
+  },
+  "無花果": {
+    "type": "concept",
+    "name": "無花果",
+    "name_en": "Fig",
+    "testament": "both",
+    "desc": "無花果樹的果實，香甜可作餅。亞當夏娃曾用無花果樹葉編裙遮身。"
+  },
+  "葡萄樹": {
+    "type": "concept",
+    "name": "葡萄樹",
+    "name_en": "Vine",
+    "testament": "both",
+    "desc": "結葡萄釀酒的蔓生果樹，常象徵以色列。耶穌自稱「真葡萄樹」，門徒是枝子，連於他才能結果。"
+  },
+  "棕樹": {
+    "type": "concept",
+    "name": "棕樹",
+    "name_en": "Palm Tree",
+    "testament": "both",
+    "desc": "高直常綠、結棗的樹，象徵得勝與公義。耶利哥稱棕樹城；眾人持棕樹枝迎耶穌進耶路撒冷。"
+  },
+  "石榴": {
+    "type": "concept",
+    "name": "石榴",
+    "name_en": "Pomegranate",
+    "testament": "OT",
+    "desc": "多籽的紅色果實，迦南美地的出產之一。大祭司袍邊綴金鈴與石榴，聖殿柱頭也以石榴為飾。"
+  },
+  "柏樹": {
+    "type": "concept",
+    "name": "柏樹",
+    "name_en": "Cypress",
+    "testament": "OT",
+    "desc": "高大常綠的針葉樹，木質堅好，與香柏木同用於聖殿建造與造船。"
+  },
+  "蒺藜": {
+    "type": "concept",
+    "name": "蒺藜",
+    "name_en": "Thorns/Briers",
+    "testament": "both",
+    "desc": "帶刺的野生植物。人類墮落後，神咒詛地長出荊棘和蒺藜，象徵勞苦與審判。"
+  },
+  "荊棘": {
+    "type": "concept",
+    "name": "荊棘",
+    "name_en": "Thorns",
+    "testament": "both",
+    "desc": "帶刺的灌木叢。神在何烈山的荊棘火焰中向摩西顯現；兵丁也用荊棘編冠冕戴在耶穌頭上。"
+  },
+  "百合花": {
+    "type": "concept",
+    "name": "百合花",
+    "name_en": "Lily",
+    "testament": "both",
+    "desc": "野地的美麗花卉。雅歌以「谷中的百合花」喻佳偶；耶穌以野地百合花教人不要憂慮，神必看顧。"
+  },
+  "蘆葦": {
+    "type": "concept",
+    "name": "蘆葦",
+    "name_en": "Reed",
+    "testament": "both",
+    "desc": "水邊細長易折的草本植物。摩西嬰孩時藏於蘆葦中；聖經以「壓傷的蘆葦」喻軟弱者，主不折斷。"
+  },
+  "蓖麻": {
+    "type": "concept",
+    "name": "蓖麻",
+    "name_en": "Plant/Gourd",
+    "testament": "OT",
+    "desc": "神為約拿預備、一夜長成的大葉植物，為他遮蔭；次日枯死，藉此教導約拿憐憫尼尼微。"
+  },
+  "松樹": {
+    "type": "concept",
+    "name": "松樹",
+    "name_en": "Pine/Fir",
+    "testament": "OT",
+    "desc": "常綠針葉樹，木材用於建造。以賽亞書以松樹長出代替蒺藜，象徵神的更新與祝福。"
+  },
+  "桑樹": {
+    "type": "concept",
+    "name": "桑樹",
+    "name_en": "Sycamore",
+    "testament": "both",
+    "desc": "枝幹低矮易攀的果樹。撒該因身材矮小，爬上桑樹要看耶穌，因而蒙主到他家。"
+  },
+  "號筒": {
+    "type": "concept",
+    "name": "號筒",
+    "name_en": "Trumpet",
+    "testament": "both",
+    "desc": "金屬或羊角製的吹奏樂器，用於招聚會眾、宣告節期、爭戰與警報。吹角節、末日號筒皆與之相關。"
+  },
+  "琴瑟": {
+    "type": "concept",
+    "name": "琴瑟",
+    "name_en": "Harp and Lyre",
+    "testament": "OT",
+    "desc": "撥弦樂器琴與瑟的合稱，用於敬拜讚美。大衛善彈琴，詩篇常呼籲以琴瑟歌頌耶和華。"
+  },
+  "琵琶": {
+    "type": "concept",
+    "name": "琵琶",
+    "name_en": "Lyre/Lute",
+    "testament": "OT",
+    "desc": "一種撥弦樂器，用於聖殿敬拜與歡慶，詩篇多次呼召以琵琶頌讚神。"
+  },
+  "鈴鐺": {
+    "type": "concept",
+    "name": "鈴鐺",
+    "name_en": "Bells",
+    "testament": "OT",
+    "desc": "大祭司外袍底邊金鈴鐺，與石榴相間。進出聖所時聲音可聞，使他免於死亡。"
+  },
+  "手鼓": {
+    "type": "concept",
+    "name": "手鼓",
+    "name_en": "Tambourine",
+    "testament": "OT",
+    "desc": "手持拍擊的鼓，常伴隨舞蹈歡慶。米利暗在過紅海後手拿手鼓，率婦女歌舞讚美神。"
+  },
+  "月朔": {
+    "type": "concept",
+    "name": "月朔",
+    "name_en": "New Moon",
+    "testament": "OT",
+    "desc": "每月初一新月之日，以色列吹角、獻特定祭、停止買賣的聖日，標記月份的開始。"
+  },
+  "聖會": {
+    "type": "concept",
+    "name": "聖會",
+    "name_en": "Holy Convocation",
+    "testament": "OT",
+    "desc": "神所定、要全民停工聚集的神聖集會，多在節期舉行，如安息日、逾越節、五旬節等。"
+  },
+  "普珥日": {
+    "type": "concept",
+    "name": "普珥日",
+    "name_en": "Purim",
+    "testament": "OT",
+    "desc": "紀念以斯帖時代猶太人脫離哈曼滅族陰謀的節日，因哈曼「掣普珥」（抽籤）定日而得名，舉國歡樂互贈禮物。"
+  },
+  "收藏節": {
+    "type": "concept",
+    "name": "收藏節",
+    "name_en": "Feast of Ingathering",
+    "testament": "OT",
+    "desc": "秋季年終收割完畢的感恩節期，又稱住棚節，紀念曠野漂流並感謝神賜豐收。"
+  },
+  "修殿節": {
+    "type": "concept",
+    "name": "修殿節",
+    "name_en": "Feast of Dedication",
+    "testament": "NT",
+    "desc": "紀念馬加比潔淨並重新獻聖殿的節日，又稱光明節。耶穌曾在冬天的修殿節上聖殿。"
+  },
+  "雲柱": {
+    "type": "concept",
+    "name": "雲柱",
+    "name_en": "Pillar of Cloud",
+    "testament": "OT",
+    "desc": "神在曠野以雲柱日間引導以色列人行路、遮蔭並彰顯同在；夜間則化為火柱。"
+  },
+  "火柱": {
+    "type": "concept",
+    "name": "火柱",
+    "name_en": "Pillar of Fire",
+    "testament": "OT",
+    "desc": "神在曠野夜間以火柱為以色列照明引路，與日間雲柱同表神的同在與保護。"
+  },
+  "法版": {
+    "type": "concept",
+    "name": "法版",
+    "name_en": "Tablets of the Law",
+    "testament": "OT",
+    "desc": "神親手刻寫十誡的兩塊石版，存於約櫃中，是神與以色列立約的憑據。又稱約版、法版。"
   }
 }
