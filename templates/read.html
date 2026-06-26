@@ -81,6 +81,8 @@
   <p class="card-desc" id="cardDesc"></p>
   <div class="card-verses" id="cardVerses"></div>
   <button class="card-explain-btn" id="cardExplainBtn" onclick="openExplainFromCard()">✦ AI 深入解釋</button>
+  <button class="card-feedback-btn" id="cardFeedbackBtn" onclick="submitFeedback()">⚑ 標註有誤</button>
+  <div class="card-feedback-done" id="cardFeedbackDone" style="display:none">已回報，謝謝！</div>
 </aside>
 
 <!-- AI 解釋卡片（由實體卡片內的按鈕觸發） -->
@@ -285,6 +287,18 @@ let _curEntity = '';  // 目前開著的實體名稱
 
 function openExplainFromCard() {
   if (_curEntity) openExplain(_curEntity);
+}
+
+function submitFeedback() {
+  if (!_curEntity) return;
+  document.getElementById('cardFeedbackBtn').style.display = 'none';
+  fetch('/api/feedback', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({entity: _curEntity, book: CUR_BOOK, chapter: CUR_CH})
+  }).finally(() => {
+    document.getElementById('cardFeedbackDone').style.display = 'block';
+  });
 }
 
 function setLevel(lv) {

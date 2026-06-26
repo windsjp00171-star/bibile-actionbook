@@ -428,6 +428,28 @@ def api_explain():
     return jsonify({"content": content, "source": "ai"})
 
 
+@app.route("/api/feedback", methods=["POST"])
+def api_feedback():
+    data = request.get_json(silent=True) or {}
+    entity = (data.get("entity") or "").strip()[:50]
+    book = (data.get("book") or "").strip()[:30]
+    chapter = data.get("chapter", "")
+    note = (data.get("note") or "").strip()[:200]
+    if not entity:
+        return jsonify({"error": "empty"}), 400
+    if sb:
+        try:
+            sb.table("entity_feedback").insert({
+                "entity": entity,
+                "book": book,
+                "chapter": str(chapter),
+                "note": note,
+            }).execute()
+        except Exception:
+            pass
+    return jsonify({"ok": True})
+
+
 @app.route("/")
 def index():
     return read_chapter("撒母耳記上", 17)
