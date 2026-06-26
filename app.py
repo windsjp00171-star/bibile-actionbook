@@ -622,7 +622,8 @@ def api_feedback():
 
 @app.route("/")
 def index():
-    return read_chapter("撒母耳記上", 17)
+    # 入口從聖經起點開始；回訪讀者由前端 resume banner 接續上次進度。
+    return read_chapter("創世記", 1)
 
 
 @app.route("/read/<book>/<int:chapter>")
