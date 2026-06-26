@@ -2999,5 +2999,143 @@
     "desc": "以色列曠野旅程的重要站點，十二探子從這裡探訪迦南，以色列人在此多次駐營。",
     "lat": 30.84,
     "lng": 34.45
+  },
+  "西門": [
+    {
+      "books": [
+        "馬太福音",
+        "馬可福音",
+        "路加福音",
+        "約翰福音"
+      ],
+      "type": "person",
+      "name": "西門（彼得）",
+      "name_en": "Simon Peter",
+      "testament": "NT",
+      "desc": "彼得的原名，加利利漁夫，耶穌呼召後改名彼得（磐石），十二使徒之首。"
+    },
+    {
+      "books": [
+        "使徒行傳"
+      ],
+      "chapters": [
+        8,
+        8
+      ],
+      "type": "person",
+      "name": "西門（行邪術者）",
+      "name_en": "Simon Magus",
+      "testament": "NT",
+      "desc": "撒瑪利亞行邪術者，信主後試圖花錢購買聖靈的能力，被彼得責備。"
+    }
+  ],
+  "大雅各": {
+    "type": "person",
+    "name": "大雅各",
+    "name_en": "James (son of Zebedee)",
+    "testament": "NT",
+    "desc": "西庇太之子，約翰之兄，十二使徒之一，首位殉道的使徒，被希律所殺。"
+  },
+  "小雅各": {
+    "type": "person",
+    "name": "小雅各",
+    "name_en": "James (son of Alphaeus)",
+    "testament": "NT",
+    "desc": "亞勒腓之子，十二使徒之一，區別於西庇太之子大雅各而稱「小」雅各。"
+  },
+  "達太": {
+    "type": "person",
+    "name": "達太",
+    "name_en": "Thaddaeus",
+    "testament": "NT",
+    "desc": "又名猶大（亞勒腓之子），十二使徒之一，在最後晚餐問耶穌為何不向世人顯現。"
+  },
+  "奮銳黨的西門": {
+    "type": "person",
+    "name": "奮銳黨的西門",
+    "name_en": "Simon the Zealot",
+    "testament": "NT",
+    "desc": "十二使徒之一，曾屬奮銳黨（猶太民族主義者），歸主後成耶穌門徒。"
+  },
+  "加略人猶大": {
+    "type": "person",
+    "name": "加略人猶大",
+    "name_en": "Judas Iscariot",
+    "testament": "NT",
+    "desc": "十二使徒中出賣耶穌者，以三十塊銀子將主賣給祭司長，後悔恨自縊而死。"
+  },
+  "馬提亞": {
+    "type": "person",
+    "name": "馬提亞",
+    "name_en": "Matthias",
+    "testament": "NT",
+    "desc": "猶大死後被選為補充第十二使徒的門徒，見證過耶穌復活。"
+  },
+  "撒羅米": {
+    "type": "person",
+    "name": "撒羅米",
+    "name_en": "Salome",
+    "testament": "NT",
+    "desc": "西庇太妻，大雅各和約翰之母，跟隨耶穌、在十字架旁觀看、來到空墓。"
+  },
+  "革流巴": {
+    "type": "person",
+    "name": "革流巴",
+    "name_en": "Cleopas",
+    "testament": "NT",
+    "desc": "復活當日往以馬忤斯的門徒之一，與耶穌同行卻未認出，掰餅時才認出。"
+  },
+  "該亞法": {
+    "type": "person",
+    "name": "該亞法",
+    "name_en": "Caiaphas",
+    "testament": "NT",
+    "desc": "羅馬統治下的猶太大祭司，主導審判並送耶穌上十字架，說「一人死代全民」。"
+  },
+  "亞那": {
+    "type": "person",
+    "name": "亞那",
+    "name_en": "Annas",
+    "testament": "NT",
+    "desc": "前任大祭司，該亞法的岳父，耶穌被捕後先被帶到亞那處審問。"
+  },
+  "希律安提帕": {
+    "type": "person",
+    "name": "希律安提帕",
+    "name_en": "Herod Antipas",
+    "testament": "NT",
+    "desc": "加利利分封王，殺施洗約翰，耶穌被送去受審但不問罪即送回彼拉多。"
+  },
+  "希律大帝": {
+    "type": "person",
+    "name": "希律大帝",
+    "name_en": "Herod the Great",
+    "testament": "NT",
+    "desc": "羅馬封立的猶大王，擴建聖殿，博士來訪後屠殺伯利恆兩歲以下嬰兒。"
+  },
+  "腓力（分封王）": {
+    "type": "person",
+    "name": "腓力（分封王）",
+    "name_en": "Philip the Tetrarch",
+    "testament": "NT",
+    "desc": "希律大帝之子，統治約旦河東北地區，建該撒利亞腓立比城，為人相對公平。"
+  },
+  "革尼撒勒": {
+    "type": "place",
+    "name": "革尼撒勒",
+    "name_en": "Gennesaret",
+    "testament": "NT",
+    "desc": "加利利海西岸肥沃平原，耶穌在此醫治病人，又稱加利利海。",
+    "lat": 32.87,
+    "lng": 35.52
+  },
+  "髑髏地": {
+    "type": "place",
+    "name": "髑髏地",
+    "name_en": "Golgotha",
+    "testament": "NT",
+    "desc": "「髑髏的地方」，耶穌被釘十字架之處，位於耶路撒冷城外，又稱各各他。",
+    "lat": 31.78,
+    "lng": 35.23
   }
 }
