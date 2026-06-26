@@ -274,7 +274,9 @@ def _ai_explain(text, ref, level, context=""):
     if gem_key:
         import google.generativeai as genai
         genai.configure(api_key=gem_key)
-        model = genai.GenerativeModel("gemini-2.0-flash", system_instruction=system)
+        model = genai.GenerativeModel(
+            os.environ.get("GEMINI_MODEL", "gemini-2.5-flash"),
+            system_instruction=system)
         r = model.generate_content(user, generation_config={"temperature": 0.2})
         return (r.text or "").strip()
 
@@ -298,9 +300,10 @@ def api_explain():
     chap = BIBLE.get(book, {}).get(chapter, {})
     if not chap:
         return jsonify({"error": "bad_ref"}), 400
-    joined = "".join(chap.values())
-    probe = re.sub(r"[、，。；：！？「」『』（）\s]", "", text)
-    if probe and probe not in joined and text not in joined:
+    _norm = lambda s: re.sub(r"[、，。；：！？「」『』（）\s]", "", s)
+    joined_norm = _norm("".join(chap.values()))
+    probe = _norm(text)
+    if probe and probe not in joined_norm:
         return jsonify({"error": "not_scripture",
                         "content": "只能解釋經文中的內容。"}), 400
 
