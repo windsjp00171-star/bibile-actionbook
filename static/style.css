@@ -24,7 +24,7 @@ body {
 
 /* ── Sidebar ── */
 .sidebar {
-  width: 200px;
+  width: 210px;
   min-height: 100vh;
   background: var(--nav-bg);
   display: flex;
@@ -48,8 +48,6 @@ body {
   border-bottom: 1px solid #3A220E;
 }
 
-.sidebar-logo svg { flex-shrink: 0; }
-
 .section-label {
   font-size: 10px;
   letter-spacing: 0.12em;
@@ -61,14 +59,15 @@ body {
 
 .book-item {
   display: block;
-  padding: 5px 16px;
-  font-size: 12px;
+  padding: 7px 16px;
+  font-size: 13px;
   color: var(--nav-book);
   text-decoration: none;
   cursor: pointer;
   letter-spacing: 0.03em;
-  line-height: 1.6;
+  line-height: 1.5;
   transition: color 0.15s;
+  user-select: none;
 }
 
 .book-item:hover { color: var(--nav-active-text); }
@@ -83,24 +82,36 @@ body {
 .chapter-pills {
   display: none;
   flex-wrap: wrap;
-  gap: 4px;
-  padding: 4px 14px 8px;
+  gap: 5px;
+  padding: 6px 12px 10px;
+  background: #1e1208;
 }
 
 .chapter-pills.open { display: flex; }
 
 .pill {
   font-family: system-ui, sans-serif;
-  font-size: 10px;
-  padding: 2px 6px;
-  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
   background: #3A220E;
-  color: var(--nav-book);
+  color: #C9A96E;
   text-decoration: none;
   transition: background 0.15s, color 0.15s;
+  padding: 0 6px;
 }
 
-.pill:hover, .pill.active {
+.pill:hover {
+  background: #5a3518;
+  color: #F0C96A;
+}
+
+.pill.active {
   background: var(--gold-bright);
   color: var(--nav-bg);
 }
@@ -168,7 +179,6 @@ body {
   font-weight: 600;
   color: var(--gold-bright);
   margin-right: 4px;
-  vertical-align: baseline;
   position: relative;
   top: -2px;
 }
@@ -200,9 +210,10 @@ body {
   background: none;
   border: none;
   color: var(--nav-title);
-  font-size: 20px;
+  font-size: 22px;
   cursor: pointer;
-  padding: 4px;
+  padding: 4px 8px;
+  line-height: 1;
 }
 
 .drawer-overlay {
@@ -218,8 +229,8 @@ body {
 .drawer {
   position: fixed;
   top: 0;
-  left: -220px;
-  width: 200px;
+  left: -230px;
+  width: 210px;
   height: 100vh;
   background: var(--nav-bg);
   z-index: 101;
@@ -234,4 +245,16 @@ body {
   .sidebar { display: none; }
   .mob-header { display: flex; }
   .main { padding: 24px 16px 80px; }
+
+  /* Bigger pills on mobile */
+  .pill {
+    min-width: 40px;
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .chapter-pills {
+    gap: 6px;
+    padding: 8px 12px 12px;
+  }
 }
