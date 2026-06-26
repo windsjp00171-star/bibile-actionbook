@@ -111,7 +111,12 @@ _TYPE_CLASS = {"person": "anno-person", "place": "anno-place", "concept": "anno-
 # 全域單一 regex（所有詞條），長名優先排序讓最長匹配贏。
 # 「要不要顯示卡片」改由 _resolve_entity() 在命中時依三層優先度決定，
 # 不再需要分 OT/NT 兩套 regex。
-_ALL_NAMES = sorted([n for n in ENTITIES if len(n) >= 2], key=len, reverse=True)
+# 單字詞預設不標（易誤框），僅放行白名單中安全的度量衡單位（如「肘」總接在數字後）。
+_SINGLE_CHAR_OK = {"肘"}
+_ALL_NAMES = sorted(
+    [n for n in ENTITIES if len(n) >= 2 or n in _SINGLE_CHAR_OK],
+    key=len, reverse=True,
+)
 _ALL_RE = re.compile("|".join(re.escape(n) for n in _ALL_NAMES)) if _ALL_NAMES else None
 
 
