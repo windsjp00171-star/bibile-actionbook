@@ -5,8 +5,6 @@ from flask import Flask, render_template
 from markupsafe import Markup, escape
 from supabase import create_client
 
-from data.annotations import ENTITIES, ANNOTATED
-
 app = Flask(__name__)
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
@@ -24,6 +22,25 @@ try:
         BIBLE = json.load(f)
 except FileNotFoundError:
     BIBLE = {}
+
+
+def _load_annotations():
+    """優先讀預生成的全本標注；沒有時 fallback 撒上17 範本。"""
+    ent_path = os.path.join(os.path.dirname(__file__), "data", "entities.json")
+    ann_path = os.path.join(os.path.dirname(__file__), "data", "annotated.json")
+    if os.path.exists(ent_path):
+        with open(ent_path, encoding="utf-8") as f:
+            entities = json.load(f)
+        annotated = set()
+        if os.path.exists(ann_path):
+            with open(ann_path, encoding="utf-8") as f:
+                annotated = {tuple(x) for x in json.load(f)}
+        return entities, annotated
+    from data.annotations import ENTITIES as seed_ent, ANNOTATED as seed_ann
+    return dict(seed_ent), set(seed_ann)
+
+
+ENTITIES, ANNOTATED = _load_annotations()
 
 OT_BOOKS = [
     ("創世記", 50), ("出埃及記", 40), ("利未記", 27), ("民數記", 36),
