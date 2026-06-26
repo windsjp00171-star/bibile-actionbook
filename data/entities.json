@@ -521,5 +521,173 @@
   "name_en": "Nod",
   "desc": "伊甸東邊之地，名意「流蕩」。該隱殺弟受罰後離開耶和華的面，往此居住。",
   "verses": "創世記"
+ },
+ "燔祭": {
+  "type": "concept",
+  "name": "燔祭",
+  "name_en": "Burnt Offering",
+  "desc": "將祭牲全牲焚燒獻於壇上的祭，表完全獻給神並蒙悅納。為利未記首先規定的祭，象徵奉獻者全然歸主。",
+  "verses": "利未記"
+ },
+ "素祭": {
+  "type": "concept",
+  "name": "素祭",
+  "name_en": "Grain Offering",
+  "desc": "以細麵、油、乳香（不可有酵和蜜）獻上的祭，常伴隨燔祭，表以勞作成果感恩奉獻給神。",
+  "verses": "利未記"
+ },
+ "平安祭": {
+  "type": "concept",
+  "name": "平安祭",
+  "name_en": "Peace Offering",
+  "desc": "又稱酬恩祭，獻後祭肉由獻者與祭司分享同吃，表與神與人和好相交，含感謝、還願、甘心三類。",
+  "verses": "利未記"
+ },
+ "贖罪祭": {
+  "type": "concept",
+  "name": "贖罪祭",
+  "name_en": "Sin Offering",
+  "desc": "為無心干犯神誡命而獻的祭，藉牲畜的血贖去罪污，使人得潔淨、與神復和。",
+  "verses": "利未記"
+ },
+ "贖愆祭": {
+  "type": "concept",
+  "name": "贖愆祭",
+  "name_en": "Guilt Offering",
+  "desc": "為侵犯聖物或虧負他人而獻的祭，除獻牲外須加倍償還所虧之物，強調賠補與認罪。",
+  "verses": "利未記"
+ },
+ "火祭": {
+  "type": "concept",
+  "name": "火祭",
+  "name_en": "Offering by Fire",
+  "desc": "凡以火焚燒、騰作馨香獻與耶和華之祭的統稱，涵蓋燔祭、素祭等。",
+  "verses": "利未記"
+ },
+ "搖祭": {
+  "type": "concept",
+  "name": "搖祭",
+  "name_en": "Wave Offering",
+  "desc": "祭司將祭物在耶和華面前搖動以示獻上、再歸祭司食用的禮儀，多用於平安祭的胸。",
+  "verses": "利未記"
+ },
+ "舉祭": {
+  "type": "concept",
+  "name": "舉祭",
+  "name_en": "Heave Offering",
+  "desc": "從祭物或收成中分別舉起、獻歸耶和華與祭司的部分，如平安祭的右腿。",
+  "verses": "利未記"
+ },
+ "奠祭": {
+  "type": "concept",
+  "name": "奠祭",
+  "name_en": "Drink Offering",
+  "desc": "將酒澆奠在壇上、伴隨燔祭與素祭獻上的祭，表傾倒生命為奉獻。",
+  "verses": "利未記"
+ },
+ "安息日": {
+  "type": "concept",
+  "name": "安息日",
+  "name_en": "Sabbath",
+  "desc": "七日的第七日，神創造後安息並定為聖。以色列人當日停工敬拜，是與神立約的記號。",
+  "verses": "利未記"
+ },
+ "贖罪日": {
+  "type": "concept",
+  "name": "贖罪日",
+  "name_en": "Day of Atonement",
+  "desc": "七月初十的至聖節期，大祭司一年一度進至聖所為全民贖罪，並將罪歸於歸阿撒瀉勒的羊。",
+  "verses": "利未記"
+ },
+ "逾越節": {
+  "type": "concept",
+  "name": "逾越節",
+  "name_en": "Passover",
+  "desc": "正月十四紀念出埃及時神越過以色列人的家、擊殺埃及長子之夜，宰羔抹血、吃無酵餅的節期。",
+  "verses": "利未記"
+ },
+ "除酵節": {
+  "type": "concept",
+  "name": "除酵節",
+  "name_en": "Unleavened Bread",
+  "desc": "緊接逾越節的七日節期，期間除盡家中的酵、只吃無酵餅，紀念匆忙出埃及。",
+  "verses": "利未記"
+ },
+ "五旬節": {
+  "type": "concept",
+  "name": "五旬節",
+  "name_en": "Pentecost",
+  "desc": "又稱七七節，逾越後第五十日的收割初熟節期；新約中聖靈於此日降臨教會。",
+  "verses": "利未記"
+ },
+ "住棚節": {
+  "type": "concept",
+  "name": "住棚節",
+  "name_en": "Tabernacles",
+  "desc": "七月的收藏節期，以色列人住棚七日，紀念曠野漂流神的看顧，也是感謝秋收的歡樂節。",
+  "verses": "利未記"
+ },
+ "吹角節": {
+  "type": "concept",
+  "name": "吹角節",
+  "name_en": "Trumpets",
+  "desc": "七月初一吹角為號的聖會，標誌節期之始與民眾的聚集敬拜。",
+  "verses": "利未記"
+ },
+ "禧年": {
+  "type": "concept",
+  "name": "禧年",
+  "name_en": "Jubilee",
+  "desc": "每五十年一次的聖年，土地休耕、地業歸還原主、奴僕得釋放，體現神對公義與自由的安排。",
+  "verses": "利未記"
+ },
+ "會幕": {
+  "type": "concept",
+  "name": "會幕",
+  "name_en": "Tabernacle",
+  "desc": "以色列曠野時期的活動聖所，按神所示樣式而造，是神與百姓相會、獻祭敬拜之處。",
+  "verses": "利未記"
+ },
+ "約櫃": {
+  "type": "concept",
+  "name": "約櫃",
+  "name_en": "Ark of the Covenant",
+  "desc": "安放法版的鍍金木櫃，置於至聖所，上有施恩座與基路伯，象徵神的同在與寶座。",
+  "verses": "利未記"
+ },
+ "至聖所": {
+  "type": "concept",
+  "name": "至聖所",
+  "name_en": "Holy of Holies",
+  "desc": "會幕（聖殿）最內層的密室，安放約櫃，惟大祭司於贖罪日得入，代表神最聖的同在。",
+  "verses": "利未記"
+ },
+ "聖所": {
+  "type": "concept",
+  "name": "聖所",
+  "name_en": "Holy Place",
+  "desc": "會幕中陳設陳設餅桌、金燈臺、香壇之室，祭司每日於此供職，內接至聖所。",
+  "verses": "利未記"
+ },
+ "大祭司": {
+  "type": "concept",
+  "name": "大祭司",
+  "name_en": "High Priest",
+  "desc": "祭司之長，惟亞倫家世襲，獨能於贖罪日進至聖所為全民贖罪，是神人之間的中保。",
+  "verses": "利未記"
+ },
+ "利未人": {
+  "type": "concept",
+  "name": "利未人",
+  "name_en": "Levites",
+  "desc": "利未支派的人，蒙分別出來在會幕、聖殿中供職、協助祭司、管理聖物，不分地業而靠供物為生。",
+  "verses": "利未記"
+ },
+ "亞倫": {
+  "type": "person",
+  "name": "亞倫",
+  "name_en": "Aaron",
+  "desc": "摩西的兄長，以色列首任大祭司，亞倫家世代承襲祭司職分。曾在西乃山下造金牛犢，亦數度與摩西一同面對百姓的爭鬧。",
+  "verses": "出埃及記、利未記"
  }
 }
