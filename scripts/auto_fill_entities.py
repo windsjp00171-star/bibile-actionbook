@@ -8,7 +8,7 @@ from collections import Counter
 
 ROOT = Path(__file__).parent.parent
 ENTITIES_PATH = ROOT / "data" / "entities.json"
-BIBLE_PATH = ROOT / "scripture" / "cuv.json"
+BIBLE_PATH = ROOT / "cuv.json"
 
 # ── 1. 掃 cuv.json 找高頻詞候選 ──────────────────────────────────────
 print("載入聖經全文...")
