@@ -34,7 +34,6 @@ ENTITIES_PATH = os.path.join(DATA, "entities.json")
 ANNOTATED_PATH = os.path.join(DATA, "annotated.json")
 PROGRESS_PATH = os.path.join(DATA, "gen_progress.json")
 
-MODEL = "claude-haiku-4-5-20251001"
 BATCH_SAVE = 20          # 每處理幾章存檔一次
 MAX_RETRY = 3            # 單章最大重試
 ABORT_AFTER = 8          # 連續失敗幾章就中止（保留進度）
@@ -106,21 +105,62 @@ def extract_json(text):
     return json.loads(m.group(0))
 
 
-def call_chapter(client, book, chapter, verses_text, known_names):
+def setup_llm():
+    """偵測可用的 API key，回傳 (provider, model, complete_fn, pace_sec)。
+    優先免費：Groq → Gemini → Anthropic(付費)。complete_fn(user)->str。"""
+    groq = os.environ.get("GROQ_API_KEY")
+    gem = os.environ.get("GEMINI_API_KEY")
+    ant = os.environ.get("ANTHROPIC_API_KEY")
+
+    if groq:
+        from groq import Groq
+        client = Groq(api_key=groq)
+        model = "llama-3.3-70b-versatile"
+
+        def complete(user):
+            r = client.chat.completions.create(
+                model=model, temperature=0.2, max_tokens=2000,
+                messages=[{"role": "system", "content": SYSTEM_PROMPT},
+                          {"role": "user", "content": user}],
+            )
+            return r.choices[0].message.content
+        return "Groq", model, complete, 0.8
+
+    if gem:
+        import google.generativeai as genai
+        genai.configure(api_key=gem)
+        model = "gemini-2.0-flash"
+        gm = genai.GenerativeModel(model, system_instruction=SYSTEM_PROMPT)
+
+        def complete(user):
+            r = gm.generate_content(user, generation_config={"temperature": 0.2})
+            return r.text
+        return "Gemini", model, complete, 4.0
+
+    if ant:
+        import anthropic
+        client = anthropic.Anthropic()
+        model = "claude-haiku-4-5-20251001"
+
+        def complete(user):
+            msg = client.messages.create(
+                model=model, max_tokens=2000, system=SYSTEM_PROMPT,
+                messages=[{"role": "user", "content": user}],
+            )
+            return "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
+        return "Anthropic", model, complete, 0.3
+
+    sys.exit("✗ 沒有任何 API key（GROQ_API_KEY / GEMINI_API_KEY / ANTHROPIC_API_KEY 擇一）。")
+
+
+def call_chapter(complete, book, chapter, verses_text, known_names):
     known_list = "、".join(sorted(known_names)) if known_names else "（無）"
     user = (
         f"書卷：{book}　第 {chapter} 章\n"
         f"已知清單（這些只回名字、known=true）：{known_list}\n\n"
         f"經文：\n{verses_text}"
     )
-    msg = client.messages.create(
-        model=MODEL,
-        max_tokens=2000,
-        system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": user}],
-    )
-    raw = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
-    return extract_json(raw)
+    return extract_json(complete(user))
 
 
 def main():
@@ -129,13 +169,8 @@ def main():
     ap.add_argument("--book", type=str, default="", help="只跑指定單卷")
     args = ap.parse_args()
 
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        sys.exit("✗ 缺 ANTHROPIC_API_KEY，請先 export 後再跑。")
-
-    try:
-        import anthropic
-    except ImportError:
-        sys.exit("✗ 缺 anthropic 套件，請先 pip install anthropic。")
+    provider, model, complete, pace = setup_llm()
+    print(f"▶ 使用 {provider} / {model}（每章間隔 {pace}s）", flush=True)
 
     with open(CUV_PATH, encoding="utf-8") as f:
         bible = json.load(f)
@@ -151,7 +186,6 @@ def main():
     annotated = set(tuple(x) for x in load_json(ANNOTATED_PATH, []))
     known = set(entities.keys())
 
-    client = anthropic.Anthropic()
     processed = 0
     fails = 0
 
@@ -172,7 +206,7 @@ def main():
         ok = False
         for attempt in range(1, MAX_RETRY + 1):
             try:
-                result = call_chapter(client, book, chapter, verses_text, known)
+                result = call_chapter(complete, book, chapter, verses_text, known)
                 for ent in result.get("entities", []):
                     name = (ent.get("name") or "").strip()
                     if not name or name in STOPWORDS:
@@ -212,6 +246,7 @@ def main():
         fails = 0
         annotated.add((book, chapter))
         processed += 1
+        time.sleep(pace)
         if processed % 5 == 0:
             print(f"  … 已處理 {processed} 章，實體累計 {len(entities)}（最近 {book}{chapter}）", flush=True)
         if processed % BATCH_SAVE == 0:
