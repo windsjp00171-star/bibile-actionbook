@@ -4435,5 +4435,145 @@
     "name_en": "Tablets of the Law",
     "testament": "OT",
     "desc": "神親手刻寫十誡的兩塊石版，存於約櫃中，是神與以色列立約的憑據。又稱約版、法版。"
+  },
+  "帕提亞": {
+    "type": "place",
+    "name": "帕提亞",
+    "name_en": "Parthia",
+    "testament": "NT",
+    "desc": "古波斯以東的強盛帝國（今伊朗東北），五旬節時有帕提亞人在耶路撒冷聽見門徒說方言。",
+    "lat": 36.5,
+    "lng": 57.0
+  },
+  "瑪代": {
+    "type": "place",
+    "name": "瑪代",
+    "name_en": "Media",
+    "testament": "both",
+    "desc": "古波斯西北的民族與地區（今伊朗西北），與波斯聯合滅巴比倫，「瑪代波斯」常並稱。",
+    "lat": 35.0,
+    "lng": 49.0
+  },
+  "以攔": {
+    "type": "place",
+    "name": "以攔",
+    "name_en": "Elam",
+    "testament": "both",
+    "desc": "波斯灣北端的古國（今伊朗西南），首都書珊。閃的後裔，五旬節時有以攔人在場。",
+    "lat": 32.0,
+    "lng": 48.5
+  },
+  "加帕多家": {
+    "type": "place",
+    "name": "加帕多家",
+    "name_en": "Cappadocia",
+    "testament": "NT",
+    "desc": "小亞細亞東部的羅馬行省（今土耳其中東部），五旬節名單與彼得前書收信地之一。",
+    "lat": 38.7,
+    "lng": 35.0
+  },
+  "本都": {
+    "type": "place",
+    "name": "本都",
+    "name_en": "Pontus",
+    "testament": "NT",
+    "desc": "小亞細亞北部沿黑海的地區，亞居拉的故鄉，也是彼得前書收信的散居信徒所在之一。",
+    "lat": 40.8,
+    "lng": 36.5
+  },
+  "亞西亞": {
+    "type": "place",
+    "name": "亞西亞",
+    "name_en": "Asia (province)",
+    "testament": "NT",
+    "desc": "羅馬的亞細亞行省，位小亞細亞西部，首府以弗所。保羅在此宣教，啟示錄七教會皆在其中。",
+    "lat": 38.4,
+    "lng": 27.8
+  },
+  "弗呂家": {
+    "type": "place",
+    "name": "弗呂家",
+    "name_en": "Phrygia",
+    "testament": "NT",
+    "desc": "小亞細亞中西部的內陸地區，保羅宣教旅程曾經過，堅固當地門徒。",
+    "lat": 38.8,
+    "lng": 30.5
+  },
+  "旁非利亞": {
+    "type": "place",
+    "name": "旁非利亞",
+    "name_en": "Pamphylia",
+    "testament": "NT",
+    "desc": "小亞細亞南岸的沿海地區，保羅第一次宣教旅程曾登陸，馬可在此離隊返耶路撒冷。",
+    "lat": 36.9,
+    "lng": 30.8
+  },
+  "古利奈": {
+    "type": "place",
+    "name": "古利奈",
+    "name_en": "Cyrene",
+    "testament": "NT",
+    "desc": "北非利比亞海岸的城市，猶太人聚居。替耶穌背十字架的西門即古利奈人。",
+    "lat": 32.8,
+    "lng": 21.9
+  },
+  "呂彼亞": {
+    "type": "place",
+    "name": "呂彼亞",
+    "name_en": "Libya",
+    "testament": "NT",
+    "desc": "北非古利奈一帶的地區（今利比亞），五旬節萬國名單之一。",
+    "lat": 32.0,
+    "lng": 20.0
+  },
+  "革哩底": {
+    "type": "place",
+    "name": "革哩底",
+    "name_en": "Crete",
+    "testament": "NT",
+    "desc": "地中海大島。保羅押往羅馬途中經此遇風暴；後留提多在此建立並整頓教會。",
+    "lat": 35.2,
+    "lng": 24.9
+  },
+  "亞拉伯": {
+    "type": "place",
+    "name": "亞拉伯",
+    "name_en": "Arabia",
+    "testament": "both",
+    "desc": "以色列東方與南方的沙漠地區與民族。保羅歸信後曾往亞拉伯一段時間，後返大馬色。",
+    "lat": 25.0,
+    "lng": 45.0
+  },
+  "歌革": {
+    "type": "concept",
+    "name": "歌革",
+    "name_en": "Gog",
+    "testament": "OT",
+    "desc": "以西結書與啟示錄預言中，末世率列國攻擊神子民的勢力首領，與「瑪各地」相連。"
+  },
+  "瑪各": {
+    "type": "place",
+    "name": "瑪各",
+    "name_en": "Magog",
+    "testament": "both",
+    "desc": "雅弗的後裔與其所居之地，常與歌革並提，象徵末世敵對神的遠方勢力。"
+  },
+  "示巴": {
+    "type": "place",
+    "name": "示巴",
+    "name_en": "Sheba",
+    "testament": "OT",
+    "desc": "阿拉伯南部（今葉門一帶）富庶的古國，以香料黃金聞名。示巴女王曾來試所羅門的智慧。",
+    "lat": 15.4,
+    "lng": 44.2
+  },
+  "底但": {
+    "type": "place",
+    "name": "底但",
+    "name_en": "Dedan",
+    "testament": "OT",
+    "desc": "阿拉伯北部的商旅民族與地區，以貿易聞名，先知書中多次提及其受審判。",
+    "lat": 26.6,
+    "lng": 37.9
   }
 }
