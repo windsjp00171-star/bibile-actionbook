@@ -22,7 +22,6 @@ body {
   display: flex;
 }
 
-/* ── Sidebar ── */
 .sidebar {
   width: 210px;
   min-height: 100vh;
@@ -106,27 +105,17 @@ body {
   padding: 0 6px;
 }
 
-.pill:hover {
-  background: #5a3518;
-  color: #F0C96A;
-}
+.pill:hover { background: #5a3518; color: #F0C96A; }
+.pill.active { background: var(--gold-bright); color: var(--nav-bg); }
 
-.pill.active {
-  background: var(--gold-bright);
-  color: var(--nav-bg);
-}
-
-/* ── Main ── */
+/* Main */
 .main {
   flex: 1;
   padding: 48px 40px 64px;
   max-width: 720px;
 }
 
-.chapter-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
+.chapter-header { text-align: center; margin-bottom: 40px; }
 
 .deco-line {
   display: flex;
@@ -135,11 +124,7 @@ body {
   margin: 16px 0;
 }
 
-.deco-line .line {
-  flex: 1;
-  height: 1px;
-  background: var(--gold);
-}
+.deco-line .line { flex: 1; height: 1px; background: var(--gold); }
 
 .deco-line .diamond {
   width: 6px;
@@ -185,13 +170,42 @@ body {
 
 .chapter-footer { margin-top: 48px; }
 
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  gap: 12px;
+}
+
+.chapter-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: var(--nav-bg);
+  color: var(--gold);
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.chapter-nav-btn:hover {
+  background: #3A220E;
+  color: var(--gold-bright);
+}
+
 .no-data {
   color: #999;
   text-align: center;
   padding: 40px 0;
 }
 
-/* ── Mobile ── */
+/* Mobile */
 .mob-header {
   display: none;
   background: var(--nav-bg);
@@ -245,16 +259,7 @@ body {
   .sidebar { display: none; }
   .mob-header { display: flex; }
   .main { padding: 24px 16px 80px; }
-
-  /* Bigger pills on mobile */
-  .pill {
-    min-width: 40px;
-    height: 40px;
-    font-size: 13px;
-  }
-
-  .chapter-pills {
-    gap: 6px;
-    padding: 8px 12px 12px;
-  }
+  .pill { min-width: 40px; height: 40px; font-size: 13px; }
+  .chapter-pills { gap: 6px; padding: 8px 12px 12px; }
+  .chapter-nav-btn { padding: 12px 14px; font-size: 12px; }
 }

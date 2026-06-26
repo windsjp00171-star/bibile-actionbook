@@ -11,25 +11,17 @@
 </head>
 <body>
 
-<!-- Mobile header -->
 <header class="mob-header">
   <button class="burger" onclick="openDrawer()">☰</button>
   <h2>聖 經 全 書</h2>
-  <span style="width:28px"></span>
+  <span style="width:36px"></span>
 </header>
 
-<!-- Mobile drawer overlay -->
 <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
-<nav class="drawer" id="drawer">
-  {{ nav_html | safe }}
-</nav>
+<nav class="drawer" id="drawer">{{ nav_html | safe }}</nav>
 
-<!-- Desktop sidebar -->
-<nav class="sidebar">
-  {{ nav_html | safe }}
-</nav>
+<nav class="sidebar">{{ nav_html | safe }}</nav>
 
-<!-- Reading area -->
 <div class="main">
   <header class="chapter-header">
     <div class="deco-line"><span class="diamond"></span><span class="line"></span><span class="diamond"></span></div>
@@ -49,6 +41,20 @@
 
   <footer class="chapter-footer">
     <div class="deco-line"><span class="diamond"></span><span class="line"></span><span class="diamond"></span></div>
+    <div class="chapter-nav">
+      {% if prev_book %}
+      <a class="chapter-nav-btn" href="/read/{{ prev_book }}/{{ prev_ch }}">
+        ‹ {{ prev_book }} 第{{ prev_ch }}章
+      </a>
+      {% else %}
+      <span></span>
+      {% endif %}
+      {% if next_book %}
+      <a class="chapter-nav-btn" href="/read/{{ next_book }}/{{ next_ch }}">
+        {{ next_book }} 第{{ next_ch }}章 ›
+      </a>
+      {% endif %}
+    </div>
   </footer>
 </div>
 
@@ -61,8 +67,6 @@ function closeDrawer() {
   document.getElementById('drawer').classList.remove('open');
   document.getElementById('overlay').classList.remove('open');
 }
-
-// Toggle chapter pills
 document.querySelectorAll('.book-item').forEach(el => {
   el.addEventListener('click', function(e) {
     const pills = this.nextElementSibling;
@@ -71,12 +75,11 @@ document.querySelectorAll('.book-item').forEach(el => {
     pills.classList.toggle('open');
   });
 });
-
-// Auto-open active book's pills
 const activeBook = document.querySelector('.book-item.active');
 if (activeBook) {
   const pills = activeBook.nextElementSibling;
   if (pills) pills.classList.add('open');
+  activeBook.scrollIntoView({ block: 'center' });
 }
 </script>
 </body>

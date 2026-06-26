@@ -33,13 +33,37 @@ NT_BOOKS = [
     ("約翰二書", 1), ("約翰三書", 1), ("猶大書", 1), ("啟示錄", 22),
 ]
 
+ALL_BOOKS = OT_BOOKS + NT_BOOKS
+BOOK_CHAPTERS = {name: ch for name, ch in ALL_BOOKS}
+
+
+def get_adjacent(book, chapter):
+    total = BOOK_CHAPTERS.get(book, 1)
+    books_list = [b for b, _ in ALL_BOOKS]
+    idx = books_list.index(book) if book in books_list else -1
+
+    prev_book, prev_ch, next_book, next_ch = None, None, None, None
+
+    if chapter > 1:
+        prev_book, prev_ch = book, chapter - 1
+    elif idx > 0:
+        prev_book = books_list[idx - 1]
+        prev_ch = BOOK_CHAPTERS[prev_book]
+
+    if chapter < total:
+        next_book, next_ch = book, chapter + 1
+    elif idx >= 0 and idx < len(books_list) - 1:
+        next_book = books_list[idx + 1]
+        next_ch = 1
+
+    return prev_book, prev_ch, next_book, next_ch
+
 
 def build_nav(current_book, current_chapter):
     html = []
     html.append('<div class="sidebar-logo">')
     html.append('<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>')
     html.append('聖 經 全 書</div>')
-
     for label, books in [("舊 約", OT_BOOKS), ("新 約", NT_BOOKS)]:
         html.append(f'<div class="section-label">{label}</div>')
         for name, chapters in books:
@@ -76,8 +100,14 @@ def index():
 def read_chapter(book, chapter):
     verses = get_chapter(book, chapter)
     nav_html = build_nav(book, chapter)
-    return render_template("read.html", book=book, chapter=chapter,
-                           verses=verses, nav_html=nav_html)
+    prev_book, prev_ch, next_book, next_ch = get_adjacent(book, chapter)
+    return render_template(
+        "read.html",
+        book=book, chapter=chapter, verses=verses,
+        nav_html=nav_html,
+        prev_book=prev_book, prev_ch=prev_ch,
+        next_book=next_book, next_ch=next_ch,
+    )
 
 
 if __name__ == "__main__":
