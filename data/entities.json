@@ -4008,5 +4008,222 @@
     "name_en": "Stacte",
     "testament": "OT",
     "desc": "調製聖香的香料之一，一種樹脂類香膠，與施喜列、白松香、乳香同用。"
+  },
+  "肘": {
+    "type": "concept",
+    "name": "肘",
+    "name_en": "Cubit",
+    "testament": "both",
+    "desc": "古代長度單位，約手肘到指尖的距離，相當於 44–52 公分。聖經量度建築、器具、人身高常用此單位。"
+  },
+  "虎口": {
+    "type": "concept",
+    "name": "虎口",
+    "name_en": "Span",
+    "testament": "OT",
+    "desc": "長度單位，張開手掌拇指到小指尖的距離，約半肘（22–23 公分）。大祭司胸牌即一虎口見方。"
+  },
+  "伊法": {
+    "type": "concept",
+    "name": "伊法",
+    "name_en": "Ephah",
+    "testament": "OT",
+    "desc": "乾量單位，約 22 公升，用以量穀物麵粉。一伊法等於十分之一賀梅珥。"
+  },
+  "賀梅珥": {
+    "type": "concept",
+    "name": "賀梅珥",
+    "name_en": "Homer",
+    "testament": "OT",
+    "desc": "最大的乾量單位，約 220 公升，等於十伊法，原意一頭驢可馱的量。"
+  },
+  "歐梅珥": {
+    "type": "concept",
+    "name": "歐梅珥",
+    "name_en": "Omer",
+    "testament": "OT",
+    "desc": "小乾量單位，約 2.2 公升，是十分之一伊法。神吩咐以色列人每人每日收取一歐梅珥嗎哪。"
+  },
+  "細亞": {
+    "type": "concept",
+    "name": "細亞",
+    "name_en": "Seah",
+    "testament": "both",
+    "desc": "乾量單位，約 7.3 公升，是三分之一伊法。亞伯拉罕曾吩咐撒拉拿三細亞細麵作餅待客。"
+  },
+  "欣": {
+    "type": "concept",
+    "name": "欣",
+    "name_en": "Hin",
+    "testament": "OT",
+    "desc": "液量單位，約 3.6 公升，用以量酒與油，常見於獻祭的奠祭與調和素祭。"
+  },
+  "罷特": {
+    "type": "concept",
+    "name": "罷特",
+    "name_en": "Bath",
+    "testament": "OT",
+    "desc": "液量單位，約 22 公升，是液量中與乾量「伊法」相當的單位，用以量酒與油。"
+  },
+  "他連得": {
+    "type": "concept",
+    "name": "他連得",
+    "name_en": "Talent",
+    "testament": "both",
+    "desc": "最大的重量／幣值單位，約 34 公斤，等於三千舍客勒。一他連得是極大的財富，耶穌按才幹分銀的比喻即用此。"
+  },
+  "彌拿": {
+    "type": "concept",
+    "name": "彌拿",
+    "name_en": "Mina",
+    "testament": "both",
+    "desc": "重量／幣值單位，約 50 或 60 舍客勒。耶穌十錠（彌拿）的比喻中，僕人各領一錠去做生意。"
+  },
+  "紅寶石": {
+    "type": "concept",
+    "name": "紅寶石",
+    "name_en": "Ruby/Sardius",
+    "testament": "both",
+    "desc": "紅色寶石，大祭司胸牌第一行第一塊，代表流便支派。聖經也以紅寶石比喻才德的婦人之珍貴。"
+  },
+  "紅璧璽": {
+    "type": "concept",
+    "name": "紅璧璽",
+    "name_en": "Sardius",
+    "testament": "OT",
+    "desc": "紅色的寶石，鑲在大祭司胸牌上，代表以色列一個支派。"
+  },
+  "藍寶石": {
+    "type": "concept",
+    "name": "藍寶石",
+    "name_en": "Sapphire",
+    "testament": "both",
+    "desc": "深藍色寶石，鑲於大祭司胸牌。摩西等人見神腳下彷彿藍寶石鋪道，明淨如天。新耶路撒冷的根基之一。"
+  },
+  "綠寶石": {
+    "type": "concept",
+    "name": "綠寶石",
+    "name_en": "Emerald",
+    "testament": "both",
+    "desc": "綠色寶石，鑲於大祭司胸牌，也是新耶路撒冷城牆的根基寶石之一。"
+  },
+  "紅瑪瑙": {
+    "type": "concept",
+    "name": "紅瑪瑙",
+    "name_en": "Sardonyx",
+    "testament": "both",
+    "desc": "帶紅色紋理的瑪瑙寶石，鑲在大祭司胸牌，也是新耶路撒冷的根基寶石之一。"
+  },
+  "水蒼玉": {
+    "type": "concept",
+    "name": "水蒼玉",
+    "name_en": "Beryl",
+    "testament": "both",
+    "desc": "青綠色的寶石，鑲於大祭司胸牌。但以理見異象中那人的身體如水蒼玉般光亮。"
+  },
+  "碧玉": {
+    "type": "concept",
+    "name": "碧玉",
+    "name_en": "Jasper",
+    "testament": "both",
+    "desc": "晶瑩的寶石，鑲於大祭司胸牌。啟示錄中神寶座的榮光、新耶路撒冷的城牆皆如碧玉般明亮。"
+  },
+  "水晶": {
+    "type": "concept",
+    "name": "水晶",
+    "name_en": "Crystal",
+    "testament": "both",
+    "desc": "透明潔淨的礦石，聖經用以形容榮耀的明淨，如神寶座前如水晶的玻璃海。"
+  },
+  "金鋼石": {
+    "type": "concept",
+    "name": "金鋼石",
+    "name_en": "Diamond",
+    "testament": "OT",
+    "desc": "極堅硬的寶石，鑲於大祭司胸牌。耶利米書以金鋼石尖筆比喻猶大的罪刻得深。"
+  },
+  "珊瑚": {
+    "type": "concept",
+    "name": "珊瑚",
+    "name_en": "Coral",
+    "testament": "OT",
+    "desc": "海中珊瑚蟲形成的紅色珍貴飾材，古代視為寶物，約伯記以它襯托智慧更為難得。"
+  },
+  "珍珠": {
+    "type": "concept",
+    "name": "珍珠",
+    "name_en": "Pearl",
+    "testament": "both",
+    "desc": "蚌中孕育的珍貴圓珠。耶穌以「重價的珠子」比喻天國；新耶路撒冷的十二門各由一顆珍珠造成。"
+  },
+  "百夫長": {
+    "type": "concept",
+    "name": "百夫長",
+    "name_en": "Centurion",
+    "testament": "both",
+    "desc": "羅馬軍中統領約百名士兵的軍官。新約多位百夫長心存敬畏，如求耶穌醫僕的、歸信的哥尼流。"
+  },
+  "千夫長": {
+    "type": "concept",
+    "name": "千夫長",
+    "name_en": "Commander",
+    "testament": "both",
+    "desc": "統領千人的軍事長官。新約中耶路撒冷的羅馬千夫長曾救保羅脫離暴民。"
+  },
+  "護衛長": {
+    "type": "concept",
+    "name": "護衛長",
+    "name_en": "Captain of the Guard",
+    "testament": "OT",
+    "desc": "君王侍衛或刑罰的長官。約瑟在埃及曾被賣到護衛長波提乏家；巴比倫護衛長尼布撒拉旦毀耶路撒冷。"
+  },
+  "酒政": {
+    "type": "concept",
+    "name": "酒政",
+    "name_en": "Cupbearer",
+    "testament": "OT",
+    "desc": "為君王嚐酒、進酒的近侍重臣，深得王信任。約瑟為埃及酒政解夢；尼希米是波斯王的酒政。"
+  },
+  "膳長": {
+    "type": "concept",
+    "name": "膳長",
+    "name_en": "Chief Baker",
+    "testament": "OT",
+    "desc": "掌管君王膳食烘焙的官長。與酒政同下監時，約瑟為他解夢，預言他三日後被掛起。"
+  },
+  "謀士": {
+    "type": "concept",
+    "name": "謀士",
+    "name_en": "Counselor",
+    "testament": "both",
+    "desc": "為君王出謀獻策的智囊大臣。如大衛的謀士亞希多弗；以賽亞稱彌賽亞為「奇妙策士」。"
+  },
+  "太監": {
+    "type": "concept",
+    "name": "太監",
+    "name_en": "Eunuch",
+    "testament": "both",
+    "desc": "宮中受閹割的近侍官員，常掌內廷或要職。如服事以斯帖的太監、信主受洗的衣索比亞太監。"
+  },
+  "大痲瘋": {
+    "type": "concept",
+    "name": "大痲瘋",
+    "name_en": "Leprosy",
+    "testament": "both",
+    "desc": "泛指多種使皮膚潰爛變白的傳染性惡疾，患者被視為不潔須隔離。律法有詳細的察驗與潔淨禮，耶穌曾潔淨痲瘋病人。"
+  },
+  "痲瘋": {
+    "type": "concept",
+    "name": "痲瘋",
+    "name_en": "Leprosy",
+    "testament": "both",
+    "desc": "使皮膚潰爛的傳染惡疾，患者按律法被隔離在營外、衣裳撕裂、喊「不潔淨」。痊癒須由祭司察驗行潔淨禮。"
+  },
+  "血漏": {
+    "type": "concept",
+    "name": "血漏",
+    "name_en": "Issue of Blood",
+    "testament": "both",
+    "desc": "婦女不正常的持續出血，按律法使人不潔。福音書中患血漏十二年的婦人摸耶穌衣裳邊就得痊癒。"
   }
 }
