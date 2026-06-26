@@ -161,10 +161,25 @@ def _is_partial_of_longer(text, start, end, word):
     return False
 
 
+def _redirect_target(name, entry, verse_text):
+    """同節關鍵字消歧義：若此詞條設有 context_redirect，且本節經文命中關鍵字，
+    回傳應改指向的目標詞條名（例：「約翰…施洗」→ 施洗約翰）。否則回 None。"""
+    rules = (entry or {}).get("context_redirect")
+    if not rules:
+        return None
+    for rule in rules:
+        if any(kw in verse_text for kw in rule.get("keywords", [])):
+            tgt = rule.get("target")
+            if tgt and tgt in ENTITIES:
+                return tgt
+    return None
+
+
 def annotate(text, book="", chapter=1):
     """把經文中的實體詞包成可點擊 span，其餘字元做 HTML 轉義。
     book + chapter 傳入後，_resolve_entity() 依三層優先度選正確條目；
     無合適條目（如猶大在新約不對舊約卡片）就不框。
+    再依「同節關鍵字」做最後一層消歧義（如 Acts 1:5「約翰…施洗」→ 施洗約翰）。
     """
     if not _ALL_RE:
         return str(escape(text))
@@ -177,8 +192,13 @@ def annotate(text, book="", chapter=1):
         else:
             entry = _resolve_entity(word, book, chapter)
             if entry:
+                tgt = _redirect_target(word, entry, text)
+                data_name = tgt or word
+                if tgt:
+                    te = ENTITIES[tgt]
+                    entry = te[0] if isinstance(te, list) else te
                 cls = _TYPE_CLASS.get(entry["type"], "anno-person")
-                out.append(f'<span class="anno {cls}" data-entity="{escape(word)}">{escape(word)}</span>')
+                out.append(f'<span class="anno {cls}" data-entity="{escape(data_name)}">{escape(word)}</span>')
             else:
                 out.append(str(escape(word)))   # 此位置無適用條目 → 不框
         last = m.end()
@@ -265,6 +285,13 @@ def chapter_entities(book, chapter):
             entry = _resolve_entity(name, book, chapter)
             if entry:
                 result[name] = entry
+                # 同節關鍵字轉址：把目標條目也補進來，前端才查得到（如 施洗約翰）
+                for vtext in chap.values():
+                    if name in vtext:
+                        tgt = _redirect_target(name, entry, vtext)
+                        if tgt and tgt not in result:
+                            te = ENTITIES[tgt]
+                            result[tgt] = te[0] if isinstance(te, list) else te
     return result
 
 
