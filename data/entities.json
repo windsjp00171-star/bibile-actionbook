@@ -3763,5 +3763,138 @@
     "testament": "OT",
     "desc": "同名兩王：以色列王亞哈謝（亞哈之子，墜樓傷重而死）與猶大王亞哈謝（約蘭之子，被耶戶所殺）。",
     "verses": "列王紀下、歷代志下"
+  },
+  "胸牌": {
+    "type": "concept",
+    "name": "胸牌",
+    "name_en": "Breastpiece",
+    "testament": "OT",
+    "desc": "大祭司佩於胸前的方形聖物，鑲十二寶石代表以色列十二支派，內裝烏陵和土明，用以為民求問神的旨意，又稱「決斷的胸牌」。"
+  },
+  "烏陵": {
+    "type": "concept",
+    "name": "烏陵",
+    "name_en": "Urim",
+    "testament": "OT",
+    "desc": "放在大祭司胸牌內的聖物，與土明並用，是古以色列求問神旨意、判斷是非的器具。確切形制已不可考。"
+  },
+  "土明": {
+    "type": "concept",
+    "name": "土明",
+    "name_en": "Thummim",
+    "testament": "OT",
+    "desc": "與烏陵並用、放在大祭司胸牌內的聖物，用於在神面前抽籤式地求問是非吉凶。「烏陵土明」常並稱。"
+  },
+  "以弗得": {
+    "type": "concept",
+    "name": "以弗得",
+    "name_en": "Ephod",
+    "testament": "OT",
+    "desc": "大祭司所穿的聖服，金藍紫朱線織成的背心式外袍，雙肩有刻十二支派名的瑪瑙，胸牌即繫於其上。"
+  },
+  "聖衣": {
+    "type": "concept",
+    "name": "聖衣",
+    "name_en": "Holy Garments",
+    "testament": "OT",
+    "desc": "祭司在聖所事奉時專穿的聖潔禮服，包括以弗得、外袍、胸牌、冠冕等，為榮耀華美而造、分別為聖。"
+  },
+  "外袍": {
+    "type": "concept",
+    "name": "外袍",
+    "name_en": "Robe of the Ephod",
+    "testament": "OT",
+    "desc": "大祭司穿在以弗得內的藍色長袍，袍邊綴金鈴鐺與石榴，進聖所時聲音可聞，免得死亡。"
+  },
+  "冠冕": {
+    "type": "concept",
+    "name": "冠冕",
+    "name_en": "Turban/Crown",
+    "testament": "OT",
+    "desc": "大祭司頭上的細麻布頂冠，前面繫一面刻著「歸耶和華為聖」的精金牌，又稱聖冠。"
+  },
+  "聖冠": {
+    "type": "concept",
+    "name": "聖冠",
+    "name_en": "Holy Crown",
+    "testament": "OT",
+    "desc": "大祭司冠冕前的精金牌，刻「歸耶和華為聖」，戴在額上，承擔聖物所獻的罪愆，使供物蒙悅納。"
+  },
+  "金燈臺": {
+    "type": "concept",
+    "name": "金燈臺",
+    "name_en": "Golden Lampstand",
+    "testament": "OT",
+    "desc": "聖所中純金打造的七枝燈臺，造型如杏花，由祭司每日添油點燈，象徵神的同在與光。"
+  },
+  "燈臺": {
+    "type": "concept",
+    "name": "燈臺",
+    "name_en": "Lampstand",
+    "testament": "OT",
+    "desc": "聖所內純金的七枝燈臺，每日點燈不熄，象徵神面前長明的光。又稱金燈臺。"
+  },
+  "陳設餅": {
+    "type": "concept",
+    "name": "陳設餅",
+    "name_en": "Bread of the Presence",
+    "testament": "OT",
+    "desc": "聖所金桌上常擺的十二個無酵餅，代表十二支派，每安息日更換，舊餅歸祭司吃，象徵神與民同在。"
+  },
+  "香壇": {
+    "type": "concept",
+    "name": "香壇",
+    "name_en": "Altar of Incense",
+    "testament": "OT",
+    "desc": "聖所內包金的小壇，祭司早晚在其上燒香，香煙上騰象徵百姓的禱告達到神前。又稱金香壇。"
+  },
+  "銅祭壇": {
+    "type": "concept",
+    "name": "銅祭壇",
+    "name_en": "Bronze Altar",
+    "testament": "OT",
+    "desc": "會幕院中包銅的祭壇，用以獻燔祭與各樣祭牲，是百姓親近神、贖罪獻祭的所在。"
+  },
+  "洗濯盆": {
+    "type": "concept",
+    "name": "洗濯盆",
+    "name_en": "Bronze Basin",
+    "testament": "OT",
+    "desc": "會幕中盛水的銅盆，祭司進聖所或上壇事奉前必先在此洗手洗腳，象徵事奉前的潔淨。"
+  },
+  "聖膏油": {
+    "type": "concept",
+    "name": "聖膏油",
+    "name_en": "Holy Anointing Oil",
+    "testament": "OT",
+    "desc": "用沒藥、桂皮等香料與橄欖油調成的聖油，用以膏抹會幕、器具與祭司，使之分別為聖，不可仿製私用。"
+  },
+  "膏油": {
+    "type": "concept",
+    "name": "膏油",
+    "name_en": "Anointing Oil",
+    "testament": "OT",
+    "desc": "膏抹聖物、祭司與君王的油，象徵被神分別為聖、領受職分與聖靈的恩膏。"
+  },
+  "阿撒瀉勒": {
+    "type": "concept",
+    "name": "阿撒瀉勒（歸與之羊）",
+    "name_en": "Azazel/Scapegoat",
+    "testament": "OT",
+    "desc": "贖罪日兩隻公山羊中歸阿撒瀉勒的一隻，大祭司按手認以色列的罪於其上，放逐曠野，象徵罪被擔當、除去。"
+  },
+  "安息年": {
+    "type": "concept",
+    "name": "安息年",
+    "name_en": "Sabbath Year",
+    "testament": "OT",
+    "desc": "每七年一次讓土地停耕休息的年份，地裡自長的歸窮人與牲畜，並豁免債務，效法安息日的原則。"
+  },
+  "瑪瑙": {
+    "type": "concept",
+    "name": "瑪瑙",
+    "name_en": "Onyx",
+    "testament": "OT",
+    "desc": "一種寶石，刻上以色列十二支派的名字，鑲在大祭司以弗得的兩肩，使他帶著支派名常到神前記念。"
   }
 }
