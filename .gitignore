@@ -3,7 +3,5 @@ __pycache__/
 *.pyc
 .venv/
 venv/
-# 標注生成中間產物（全本跑完後以 git add -f 提交最終版）
-data/entities.json
-data/annotated.json
+# 標注資料為 app 運行所需，納入版控；僅忽略斷點進度檔
 data/gen_progress.json
