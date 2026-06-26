@@ -80,12 +80,10 @@
   <div class="card-map" id="cardMap"></div>
   <p class="card-desc" id="cardDesc"></p>
   <div class="card-verses" id="cardVerses"></div>
+  <button class="card-explain-btn" id="cardExplainBtn" onclick="openExplainFromCard()">✦ AI 深入解釋</button>
 </aside>
 
-<!-- 圈選經文後冒出的「解釋」浮鈕 -->
-<button class="sel-btn" id="selBtn" style="display:none">✦ 解釋這段</button>
-
-<!-- AI 解釋卡片（圈選任意文字 → 依程度即時解釋） -->
+<!-- AI 解釋卡片（由實體卡片內的按鈕觸發） -->
 <div class="card-overlay" id="explainOverlay" onclick="closeExplain()"></div>
 <aside class="anno-card explain-card" id="explainCard">
   <div class="card-grip"></div>
@@ -164,13 +162,14 @@ function renderMap(ent) {
   });
   L.circleMarker([ent.lat, ent.lng], { radius: 8, fillColor: '#2A5C3A', color: '#fff', weight: 2, fillOpacity: 1 })
     .bindTooltip(ent.name, { permanent: true, direction: 'top' }).addTo(_layer);
-  _map.setView([ent.lat, ent.lng], 8);
-  setTimeout(() => { _map.invalidateSize(); _map.flyTo([ent.lat, ent.lng], 10); }, 60);
+  _map.setView([ent.lat, ent.lng], 7);
+  setTimeout(() => { _map.invalidateSize(); _map.flyTo([ent.lat, ent.lng], 7); }, 60);
 }
 
 function openCard(name) {
   const ent = ENTITIES[name];
   if (!ent) return;
+  _curEntity = name;
   document.getElementById('cardBadge').textContent = TYPE_LABEL[ent.type] || '';
   document.getElementById('cardBadge').className = 'card-badge anno-' + ent.type;
   document.getElementById('cardName').textContent = ent.name + (ent.name_en ? '　' + ent.name_en : '');
@@ -184,21 +183,15 @@ function openCard(name) {
     vbox.appendChild(chip);
   });
   renderMap(ent);
+  // 重置解釋卡狀態
+  document.getElementById('explainBody').textContent = '';
+  document.getElementById('explainFoot').textContent = '';
   document.getElementById('annoCard').classList.add('open');
   document.getElementById('cardOverlay').classList.add('open');
 }
 
 document.querySelectorAll('.anno').forEach(el => {
   el.addEventListener('click', e => { e.stopPropagation(); openCard(el.dataset.entity); });
-});
-
-// 點分句 → AI 解釋這句（點在實體詞上則交給實體卡，不重複）
-document.querySelectorAll('.clause').forEach(el => {
-  el.addEventListener('click', e => {
-    if (e.target.closest('.anno')) return;
-    const txt = (el.dataset.clause || '').replace(/[、，。；：！？「」『』（）]+$/g, '').trim();
-    if (txt.length >= 2) openExplain(txt);
-  });
 });
 
 // ── Sidebar ──────────────────────────────────────────────────────
@@ -285,36 +278,14 @@ document.querySelectorAll('.sidebar, .drawer').forEach(markRead);
   localStorage.setItem('bible-progress-prev', JSON.stringify(_prog));
 })();
 
-// ── AI explain on text selection ────────────────────────────────
+// ── AI explain（只從實體卡片的按鈕觸發）────────────────────────
 const REF = CUR_BOOK + ' 第' + CUR_CH + '章';
-let _selText = '';
 let _level = localStorage.getItem('explain-level') || 'seeker';
+let _curEntity = '';  // 目前開著的實體名稱
 
-const passageEl = document.getElementById('passage');
-const selBtn = document.getElementById('selBtn');
-let _curText = '';  // 目前解釋卡的目標文字（與選取狀態分開，避免被清空）
-
-function hideSelBtn() { selBtn.style.display = 'none'; }
-function clearSelBtn() { hideSelBtn(); _selText = ''; }
-
-function onSelectionChange() {
-  const sel = window.getSelection();
-  const txt = sel ? sel.toString().trim() : '';
-  // 只接受落在經文區、長度合理的選取
-  if (!txt || txt.length < 2 || txt.length > 200) { clearSelBtn(); return; }
-  if (!sel.anchorNode || !passageEl.contains(sel.anchorNode)) { clearSelBtn(); return; }
-  _selText = txt;
-  const rect = sel.getRangeAt(0).getBoundingClientRect();
-  selBtn.style.display = 'block';
-  const top = window.scrollY + rect.top - 44;
-  const left = window.scrollX + rect.left + rect.width / 2;
-  selBtn.style.top = Math.max(window.scrollY + 8, top) + 'px';
-  selBtn.style.left = left + 'px';
+function openExplainFromCard() {
+  if (_curEntity) openExplain(_curEntity);
 }
-document.addEventListener('selectionchange', onSelectionChange);
-
-selBtn.addEventListener('mousedown', e => e.preventDefault()); // 別讓按鈕搶走選取
-selBtn.addEventListener('click', () => { if (_selText) openExplain(_selText); });
 
 function setLevel(lv) {
   _level = lv;
@@ -323,33 +294,30 @@ function setLevel(lv) {
     b.classList.toggle('active', b.dataset.level === lv));
 }
 document.querySelectorAll('#levelSwitch button').forEach(b =>
-  b.addEventListener('click', () => { setLevel(b.dataset.level); fetchExplain(); }));
+  b.addEventListener('click', () => { setLevel(b.dataset.level); if (_curEntity) fetchExplain(_curEntity); }));
 
 function closeExplain() {
   document.getElementById('explainCard').classList.remove('open');
   document.getElementById('explainOverlay').classList.remove('open');
 }
 
-function openExplain(text) {
-  _curText = text;
+function openExplain(entityName) {
   setLevel(_level);
-  document.getElementById('explainQuote').textContent = '「' + text + '」';
+  const ent = ENTITIES[entityName];
+  document.getElementById('explainQuote').textContent = ent ? '「' + ent.name + '」' : '「' + entityName + '」';
   document.getElementById('explainCard').classList.add('open');
   document.getElementById('explainOverlay').classList.add('open');
-  hideSelBtn();
-  // 清掉原生選取，避免手機殘留選取列
-  if (window.getSelection) { try { window.getSelection().removeAllRanges(); } catch (e) {} }
-  fetchExplain();
+  fetchExplain(entityName);
 }
 
-function fetchExplain() {
+function fetchExplain(entityName) {
   const body = document.getElementById('explainBody');
   const foot = document.getElementById('explainFoot');
   body.innerHTML = '<span class="explain-spin">解釋生成中…</span>';
   foot.textContent = '';
   fetch('/api/explain', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ text: _curText, level: _level, ref: REF,
+    body: JSON.stringify({ text: entityName, level: _level, ref: REF,
                            book: CUR_BOOK, chapter: CUR_CH }),
   }).then(r => r.json().then(d => ({ ok: r.ok, d })))
     .then(({ ok, d }) => {
