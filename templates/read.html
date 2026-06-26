@@ -50,7 +50,7 @@
 
   <main class="passage" id="passage">
     {% for v in verses %}
-    <p class="verse"><span class="verse-num">{{ v.verse }}</span>{{ v.html | safe }}</p>
+    <p class="verse"><span class="verse-num">{{ v.verse }}</span><span class="verse-body">{{ v.html | safe }}</span></p>
     {% endfor %}
     {% if not verses %}
     <p class="no-data">查無此章經文。</p>
@@ -292,8 +292,10 @@ let _level = localStorage.getItem('explain-level') || 'seeker';
 
 const passageEl = document.getElementById('passage');
 const selBtn = document.getElementById('selBtn');
+let _curText = '';  // 目前解釋卡的目標文字（與選取狀態分開，避免被清空）
 
-function clearSelBtn() { selBtn.style.display = 'none'; _selText = ''; }
+function hideSelBtn() { selBtn.style.display = 'none'; }
+function clearSelBtn() { hideSelBtn(); _selText = ''; }
 
 function onSelectionChange() {
   const sel = window.getSelection();
@@ -329,12 +331,14 @@ function closeExplain() {
 }
 
 function openExplain(text) {
-  _selText = text;
+  _curText = text;
   setLevel(_level);
   document.getElementById('explainQuote').textContent = '「' + text + '」';
   document.getElementById('explainCard').classList.add('open');
   document.getElementById('explainOverlay').classList.add('open');
-  clearSelBtn();
+  hideSelBtn();
+  // 清掉原生選取，避免手機殘留選取列
+  if (window.getSelection) { try { window.getSelection().removeAllRanges(); } catch (e) {} }
   fetchExplain();
 }
 
@@ -345,7 +349,8 @@ function fetchExplain() {
   foot.textContent = '';
   fetch('/api/explain', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ text: _selText, level: _level, ref: REF }),
+    body: JSON.stringify({ text: _curText, level: _level, ref: REF,
+                           book: CUR_BOOK, chapter: CUR_CH }),
   }).then(r => r.json().then(d => ({ ok: r.ok, d })))
     .then(({ ok, d }) => {
       body.textContent = d.content || d.error || '無法取得解釋。';

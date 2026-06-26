@@ -217,6 +217,9 @@ body {
   min-width: 1.6em;
   text-align: right;
 }
+.verse-body { flex: 1; min-width: 0; }
+/* 分句為 inline，隨文字正常斷行，不被 flex 撐開 */
+.clause { display: inline; }
 
 .no-data { color: #999; text-align: center; padding: 40px 0; }
 
