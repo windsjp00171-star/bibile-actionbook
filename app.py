@@ -86,16 +86,51 @@ _ENTITY_NAMES = sorted([n for n in ENTITIES if len(n) >= 2], key=len, reverse=Tr
 _ENTITY_RE = re.compile("|".join(re.escape(n) for n in _ENTITY_NAMES)) if _ENTITY_NAMES else None
 
 
+# 防誤植：這些較長的專有名詞「包含」字典裡某個短名，但意義完全不同。
+# 比對到短名時，若該處其實是這些長名的一部分，就不要框（例：亞伯拉罕≠亞伯）。
+_EXT_GUARD = {
+    # 亞伯(Abel) 誤夾進這些地名（亞伯拉罕/亞伯蘭已另立卡片，靠最長匹配處理）
+    "亞伯米何拉", "亞伯伯瑪迦", "亞伯瑪音", "亞伯什亭", "亞伯基拉明", "亞伯米斯拉音",
+    # 迦特(Gath)
+    "迦特希弗", "迦特臨門",
+    # 耶西(Jesse) / 希斯崙 / 沙瑪(Shammah) / 亞倫(Aaron)
+    "耶西末", "加略希斯崙", "以利沙瑪", "亞倫巴古",
+    # 他施(Tarshish) 撞動詞「施」：向他施恩、他施行…
+    "他施恩", "他施行", "他施捨", "他施報", "他施展",
+    # 約拿(Jonah) 其餘變體（約拿單已另立卡片）
+    "約拿達", "約拿大", "猶大書",
+}
+
+
+def _is_partial_of_longer(text, start, end, word):
+    """word 在 text[start:end]；若此位置其實落在某個更長名字內，回 True。"""
+    for g in _EXT_GUARD:
+        if len(g) <= len(word) or word not in g:
+            continue
+        lo = max(0, start - len(g) + 1)
+        seg = text[lo:end + len(g) - 1]
+        i = seg.find(g)
+        while i != -1:
+            gs, ge = lo + i, lo + i + len(g)
+            if gs <= start and ge >= end:
+                return True
+            i = seg.find(g, i + 1)
+    return False
+
+
 def annotate(text):
     """把經文中的實體詞包成可點擊 span，其餘字元做 HTML 轉義。"""
     if not _ENTITY_RE:
         return str(escape(text))
     out, last = [], 0
     for m in _ENTITY_RE.finditer(text):
-        out.append(str(escape(text[last:m.start()])))
         word = m.group(0)
-        cls = _TYPE_CLASS.get(ENTITIES[word]["type"], "anno-person")
-        out.append(f'<span class="anno {cls}" data-entity="{escape(word)}">{escape(word)}</span>')
+        out.append(str(escape(text[last:m.start()])))
+        if _is_partial_of_longer(text, m.start(), m.end(), word):
+            out.append(str(escape(word)))   # 是更長名字的一部分 → 純文字，不框
+        else:
+            cls = _TYPE_CLASS.get(ENTITIES[word]["type"], "anno-person")
+            out.append(f'<span class="anno {cls}" data-entity="{escape(word)}">{escape(word)}</span>')
         last = m.end()
     out.append(str(escape(text[last:])))
     return "".join(out)
