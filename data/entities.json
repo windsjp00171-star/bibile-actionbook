@@ -2872,5 +2872,132 @@
     "desc": "小亞細亞港口城市，啟示錄七教會之一，受逼迫卻被稱讚「富足」。",
     "lat": 38.42,
     "lng": 27.14
+  },
+  "別迦摩": {
+    "type": "place",
+    "name": "別迦摩",
+    "name_en": "Pergamum",
+    "testament": "NT",
+    "desc": "小亞細亞文化重鎮，啟示錄七教會之一，被責備容讓異端巴蘭的教訓。",
+    "lat": 39.12,
+    "lng": 27.18
+  },
+  "推雅推喇": {
+    "type": "place",
+    "name": "推雅推喇",
+    "name_en": "Thyatira",
+    "testament": "NT",
+    "desc": "小亞細亞商業城市，啟示錄七教會之一，被責備容忍自稱先知的耶洗別。",
+    "lat": 38.93,
+    "lng": 27.84
+  },
+  "撒狄": {
+    "type": "place",
+    "name": "撒狄",
+    "name_en": "Sardis",
+    "testament": "NT",
+    "desc": "古呂底亞首都，啟示錄七教會之一，有活的名聲卻是死的，需要醒悟。",
+    "lat": 38.49,
+    "lng": 28.04
+  },
+  "非拉鐵非": {
+    "type": "place",
+    "name": "非拉鐵非",
+    "name_en": "Philadelphia",
+    "testament": "NT",
+    "desc": "小亞細亞城市，啟示錄七教會之一，力量雖小卻受到稱讚，「開了的門」。",
+    "lat": 38.35,
+    "lng": 28.52
+  },
+  "米所波大米": {
+    "type": "place",
+    "name": "米所波大米",
+    "name_en": "Mesopotamia",
+    "desc": "「兩河之間」，指幼發拉底河和底格里斯河之間的地區，亞伯拉罕的出生地。",
+    "lat": 33.0,
+    "lng": 44.0
+  },
+  "非利士": {
+    "type": "place",
+    "name": "非利士",
+    "name_en": "Philistia",
+    "desc": "迦南海岸的非利士人領土，以色列的宿敵，大衛打敗哥利亞的地區。",
+    "lat": 31.7,
+    "lng": 34.6
+  },
+  "大馬色": {
+    "type": "place",
+    "name": "大馬色",
+    "name_en": "Damascus",
+    "desc": "亞蘭（敘利亞）首都，保羅歸信之路上遇見基督的城市，今大馬士革。",
+    "lat": 33.51,
+    "lng": 36.29
+  },
+  "亞歷山大": {
+    "type": "place",
+    "name": "亞歷山大",
+    "name_en": "Alexandria",
+    "testament": "NT",
+    "desc": "埃及著名港口城市，亞波羅的故鄉，猶太人聚居地，神學思想重要中心。",
+    "lat": 31.2,
+    "lng": 29.96
+  },
+  "長子": {
+    "type": "concept",
+    "name": "長子",
+    "name_en": "Firstborn",
+    "desc": "長子在以色列文化中享有雙份遺業的繼承權，象徵首先和最尊貴的地位。"
+  },
+  "銅蛇": {
+    "type": "concept",
+    "name": "銅蛇",
+    "name_en": "Bronze Serpent",
+    "books": [
+      "民數記"
+    ],
+    "desc": "摩西在曠野舉起的銅蛇，凡被毒蛇咬的仰望它就得活，耶穌引申為自己。"
+  },
+  "十二支派": {
+    "type": "concept",
+    "name": "十二支派",
+    "name_en": "Twelve Tribes",
+    "desc": "雅各十二子為祖先的以色列十二個支派，合稱以色列民族的完整組成。"
+  },
+  "外邦人": {
+    "type": "concept",
+    "name": "外邦人",
+    "name_en": "Gentiles",
+    "desc": "非以色列人統稱，新約中保羅被差往外邦人中傳福音，打破民族界限。"
+  },
+  "拿細耳人": {
+    "type": "concept",
+    "name": "拿細耳人",
+    "name_en": "Nazirite",
+    "testament": "OT",
+    "desc": "向神許願歸聖者，不喝酒、不剪頭髮、不近死物，如參孫、撒母耳。"
+  },
+  "示羅": {
+    "type": "place",
+    "name": "示羅",
+    "name_en": "Shiloh",
+    "desc": "以色列人入迦南後會幕的存放地，撒母耳在此服事以利祭司。",
+    "lat": 32.06,
+    "lng": 35.29
+  },
+  "基列": {
+    "type": "place",
+    "name": "基列",
+    "name_en": "Gilead",
+    "desc": "約旦河以東山地，產乳香聞名，耶弗他和大衛都與此地有關聯。",
+    "lat": 32.0,
+    "lng": 35.8
+  },
+  "加低斯": {
+    "type": "place",
+    "name": "加低斯",
+    "name_en": "Kadesh-barnea",
+    "desc": "以色列曠野旅程的重要站點，十二探子從這裡探訪迦南，以色列人在此多次駐營。",
+    "lat": 30.84,
+    "lng": 34.45
   }
 }
