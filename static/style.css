@@ -263,3 +263,88 @@ body {
   .chapter-pills { gap: 6px; padding: 8px 12px 12px; }
   .chapter-nav-btn { padding: 12px 14px; font-size: 12px; }
 }
+
+/* ===== 行內標注（spec 第三節）===== */
+.anno { cursor: pointer; text-underline-offset: 3px; }
+.anno-person  { color: #8B3A1A; border-bottom: 1px dotted #8B3A1A66; }
+.anno-place   { color: #2A5C3A; border-bottom: 1px dotted #2A5C3A66; }
+.anno-concept { color: #4A3080; border-bottom: 1px dotted #4A308066; }
+
+/* ===== 圖例 ===== */
+.legend {
+  max-width: 640px; margin: 18px auto 0; padding: 12px 16px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 16px;
+  border-top: 1px solid #C9A96E40; font-size: 12px; color: #6B5436;
+}
+.legend-item { display: inline-flex; align-items: center; gap: 6px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.legend-dot.anno-person { background: #8B3A1A; }
+.legend-dot.anno-place { background: #2A5C3A; }
+.legend-dot.anno-concept { background: #4A3080; }
+.legend-hint { color: #A08B66; font-size: 11px; }
+
+.help-btn {
+  background: none; border: 1px solid #C9A96E66; color: #D4A847;
+  font-size: 12px; padding: 4px 10px; border-radius: 6px; cursor: pointer;
+}
+
+/* ===== 標注卡片（spec 第三、六節）===== */
+.card-overlay {
+  position: fixed; inset: 0; background: rgba(20,10,2,.35);
+  opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 1200;
+}
+.card-overlay.open { opacity: 1; pointer-events: auto; }
+
+.anno-card {
+  position: fixed; z-index: 1300;
+  background: #FEF8EC; border: 1px solid #C9A96E;
+  box-shadow: 2px 3px 0 #C9A96E30; border-radius: 8px;
+  padding: 18px 20px 20px;
+  font-family: 'Noto Serif TC', serif;
+}
+.card-grip { display: none; }
+.card-close {
+  position: absolute; top: 10px; right: 12px;
+  background: none; border: none; font-size: 16px; color: #A08B66; cursor: pointer;
+}
+.card-badge {
+  display: inline-block; font-size: 11px; padding: 2px 9px; border-radius: 10px;
+  color: #fff; margin-bottom: 8px;
+}
+.card-badge.anno-person  { background: #8B3A1A; }
+.card-badge.anno-place   { background: #2A5C3A; }
+.card-badge.anno-concept { background: #4A3080; }
+.card-name { font-size: 18px; font-weight: 500; color: #2A1A08; margin: 0 0 10px; }
+.card-map { width: 100%; height: 160px; border-radius: 6px; margin-bottom: 12px; display: none; }
+.card-desc { font-size: 14px; font-weight: 300; line-height: 1.9; color: #3A2A14; margin: 0 0 12px; }
+.card-verses { display: flex; flex-wrap: wrap; gap: 6px; }
+.verse-chip {
+  font-size: 11px; color: #6B5436; background: #F0E6D0;
+  border: 1px solid #C9A96E55; border-radius: 4px; padding: 2px 8px;
+}
+
+/* 桌面：右側浮動卡片 */
+@media (min-width: 601px) {
+  .anno-card {
+    top: 50%; right: 28px; transform: translateY(-50%);
+    width: 320px; max-height: 80vh; overflow-y: auto;
+    opacity: 0; pointer-events: none; transition: opacity .18s, transform .18s;
+  }
+  .anno-card.open { opacity: 1; pointer-events: auto; transform: translateY(-50%) translateX(0); }
+  .card-overlay { background: transparent; }
+}
+
+/* 手機：底部 Bottom Sheet */
+@media (max-width: 600px) {
+  .anno-card {
+    left: 0; right: 0; bottom: 0; width: 100%;
+    border-radius: 16px 16px 0 0; padding-top: 22px;
+    max-height: 78vh; overflow-y: auto;
+    transform: translateY(100%); transition: transform .25s;
+  }
+  .anno-card.open { transform: translateY(0); }
+  .card-grip {
+    display: block; position: absolute; top: 9px; left: 50%; transform: translateX(-50%);
+    width: 38px; height: 4px; border-radius: 2px; background: #C9A96E66;
+  }
+}

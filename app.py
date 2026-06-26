@@ -1,14 +1,29 @@
 import os
+import re
+import json
 from flask import Flask, render_template
-from markupsafe import Markup
+from markupsafe import Markup, escape
 from supabase import create_client
+
+from data.annotations import ENTITIES, ANNOTATED
 
 app = Flask(__name__)
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
 
+# 暫時豁免：全域規範要求從 mark_core.supabase_client import，但本 repo 尚未接入
+# mark-core，且經文已改走本機 cuv.json，Supabase 目前未實際使用。待接入登入/
+# 通知等共用功能時，再改為 from mark_core.supabase_client import ...（待清理）。
 sb = create_client(SUPABASE_URL, SUPABASE_KEY) if SUPABASE_URL and SUPABASE_KEY else None
+
+# ---- 聖經全文：啟動時一次載入記憶體，伺服器端處理，不進對話 context ----
+_CUV_PATH = os.path.join(os.path.dirname(__file__), "cuv.json")
+try:
+    with open(_CUV_PATH, encoding="utf-8") as f:
+        BIBLE = json.load(f)
+except FileNotFoundError:
+    BIBLE = {}
 
 OT_BOOKS = [
     ("創世記", 50), ("出埃及記", 40), ("利未記", 27), ("民數記", 36),
@@ -36,26 +51,43 @@ NT_BOOKS = [
 ALL_BOOKS = OT_BOOKS + NT_BOOKS
 BOOK_CHAPTERS = {name: ch for name, ch in ALL_BOOKS}
 
+_TYPE_CLASS = {"person": "anno-person", "place": "anno-place", "concept": "anno-concept"}
+
+# 依字長由長到短排序，確保「非利士人」優先於較短的詞被匹配。
+_ENTITY_NAMES = sorted(ENTITIES.keys(), key=len, reverse=True)
+_ENTITY_RE = re.compile("|".join(re.escape(n) for n in _ENTITY_NAMES)) if _ENTITY_NAMES else None
+
+
+def annotate(text):
+    """把經文中的實體詞包成可點擊 span，其餘字元做 HTML 轉義。"""
+    if not _ENTITY_RE:
+        return Markup(str(escape(text)))
+    out, last = [], 0
+    for m in _ENTITY_RE.finditer(text):
+        out.append(str(escape(text[last:m.start()])))
+        word = m.group(0)
+        cls = _TYPE_CLASS.get(ENTITIES[word]["type"], "anno-person")
+        out.append(f'<span class="anno {cls}" data-entity="{escape(word)}">{escape(word)}</span>')
+        last = m.end()
+    out.append(str(escape(text[last:])))
+    return Markup("".join(out))
+
 
 def get_adjacent(book, chapter):
     total = BOOK_CHAPTERS.get(book, 1)
     books_list = [b for b, _ in ALL_BOOKS]
     idx = books_list.index(book) if book in books_list else -1
-
     prev_book, prev_ch, next_book, next_ch = None, None, None, None
-
     if chapter > 1:
         prev_book, prev_ch = book, chapter - 1
     elif idx > 0:
         prev_book = books_list[idx - 1]
         prev_ch = BOOK_CHAPTERS[prev_book]
-
     if chapter < total:
         next_book, next_ch = book, chapter + 1
     elif idx >= 0 and idx < len(books_list) - 1:
         next_book = books_list[idx + 1]
         next_ch = 1
-
     return prev_book, prev_ch, next_book, next_ch
 
 
@@ -78,17 +110,24 @@ def build_nav(current_book, current_chapter):
 
 
 def get_chapter(book, chapter):
-    if not sb:
-        return []
-    res = (
-        sb.table("bible_verses")
-        .select("verse, text")
-        .eq("book", book)
-        .eq("chapter", chapter)
-        .order("verse")
-        .execute()
-    )
-    return res.data or []
+    """從 cuv.json 取一章，回傳 [{verse, html}]；標注僅套用於已整理章節。"""
+    chap = BIBLE.get(book, {}).get(str(chapter), {})
+    do_anno = (book, chapter) in ANNOTATED
+    verses = []
+    for vnum in sorted(chap.keys(), key=lambda x: int(x)):
+        text = chap[vnum]
+        html = annotate(text) if do_anno else Markup(str(escape(text)))
+        verses.append({"verse": int(vnum), "html": html})
+    return verses
+
+
+def chapter_entities(book, chapter):
+    """本章實際用到的實體（給前端卡片與地圖）。"""
+    if (book, chapter) not in ANNOTATED:
+        return {}
+    chap = BIBLE.get(book, {}).get(str(chapter), {})
+    joined = "".join(chap.values())
+    return {name: ENTITIES[name] for name in ENTITIES if name in joined}
 
 
 @app.route("/")
@@ -101,12 +140,14 @@ def read_chapter(book, chapter):
     verses = get_chapter(book, chapter)
     nav_html = build_nav(book, chapter)
     prev_book, prev_ch, next_book, next_ch = get_adjacent(book, chapter)
+    entities = chapter_entities(book, chapter)
     return render_template(
         "read.html",
         book=book, chapter=chapter, verses=verses,
         nav_html=nav_html,
         prev_book=prev_book, prev_ch=prev_ch,
         next_book=next_book, next_ch=next_ch,
+        entities_json=Markup(json.dumps(entities, ensure_ascii=False)),
     )
 
 

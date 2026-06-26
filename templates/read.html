@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -14,7 +15,7 @@
 <header class="mob-header">
   <button class="burger" onclick="openDrawer()">☰</button>
   <h2>聖 經 全 書</h2>
-  <span style="width:36px"></span>
+  <button class="help-btn" data-tour="help" onclick="startTour()">？教學</button>
 </header>
 
 <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
@@ -30,35 +31,56 @@
     <div class="deco-line"><span class="diamond"></span><span class="line"></span><span class="diamond"></span></div>
   </header>
 
-  <main class="passage">
+  <main class="passage" data-tour="passage">
     {% for v in verses %}
-    <p class="verse"><span class="verse-num">{{ v.verse }}</span>{{ v.text }}</p>
+    <p class="verse"><span class="verse-num">{{ v.verse }}</span>{{ v.html | safe }}</p>
     {% endfor %}
     {% if not verses %}
-    <p class="no-data">經文載入失敗，請確認環境變數設定。</p>
+    <p class="no-data">查無此章經文。</p>
     {% endif %}
   </main>
+
+  {% if entities_json != '{}' %}
+  <div class="legend" data-tour="legend">
+    <span class="legend-item"><span class="legend-dot anno-person"></span>人物</span>
+    <span class="legend-item"><span class="legend-dot anno-place"></span>地點</span>
+    <span class="legend-item"><span class="legend-dot anno-concept"></span>族群／概念</span>
+    <span class="legend-hint">點經文中的標注詞看背景資料</span>
+  </div>
+  {% endif %}
 
   <footer class="chapter-footer">
     <div class="deco-line"><span class="diamond"></span><span class="line"></span><span class="diamond"></span></div>
     <div class="chapter-nav">
       {% if prev_book %}
-      <a class="chapter-nav-btn" href="/read/{{ prev_book }}/{{ prev_ch }}">
-        ‹ {{ prev_book }} 第{{ prev_ch }}章
-      </a>
-      {% else %}
-      <span></span>
-      {% endif %}
+      <a class="chapter-nav-btn" href="/read/{{ prev_book }}/{{ prev_ch }}">‹ {{ prev_book }} 第{{ prev_ch }}章</a>
+      {% else %}<span></span>{% endif %}
       {% if next_book %}
-      <a class="chapter-nav-btn" href="/read/{{ next_book }}/{{ next_ch }}">
-        {{ next_book }} 第{{ next_ch }}章 ›
-      </a>
+      <a class="chapter-nav-btn" href="/read/{{ next_book }}/{{ next_ch }}">{{ next_book }} 第{{ next_ch }}章 ›</a>
       {% endif %}
     </div>
   </footer>
 </div>
 
+<!-- 標注資料卡片：桌面浮動卡 / 手機底部 sheet 共用同一面板 -->
+<div class="card-overlay" id="cardOverlay" onclick="closeCard()"></div>
+<aside class="anno-card" id="annoCard" data-tour="card">
+  <div class="card-grip"></div>
+  <button class="card-close" onclick="closeCard()">✕</button>
+  <div class="card-badge" id="cardBadge"></div>
+  <h3 class="card-name" id="cardName"></h3>
+  <div class="card-map" id="cardMap"></div>
+  <p class="card-desc" id="cardDesc"></p>
+  <div class="card-verses" id="cardVerses"></div>
+</aside>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
+const ENTITIES = {{ entities_json | safe }};
+const TYPE_LABEL = { person: '人物', place: '地點', concept: '族群／概念' };
+
+let _map = null, _layer = null;
+
 function openDrawer() {
   document.getElementById('drawer').classList.add('open');
   document.getElementById('overlay').classList.add('open');
@@ -67,6 +89,61 @@ function closeDrawer() {
   document.getElementById('drawer').classList.remove('open');
   document.getElementById('overlay').classList.remove('open');
 }
+
+function closeCard() {
+  document.getElementById('annoCard').classList.remove('open');
+  document.getElementById('cardOverlay').classList.remove('open');
+}
+
+function renderMap(ent) {
+  const wrap = document.getElementById('cardMap');
+  if (ent.type !== 'place' || ent.lat == null) { wrap.style.display = 'none'; return; }
+  wrap.style.display = 'block';
+  if (!_map) {
+    _map = L.map(wrap, { zoomControl: true, attributionControl: false });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 14 }).addTo(_map);
+    _layer = L.layerGroup().addTo(_map);
+  }
+  _layer.clearLayers();
+  // 同章其他地點：棕色小標記
+  Object.values(ENTITIES).forEach(e => {
+    if (e.type === 'place' && e.name !== ent.name && e.lat != null) {
+      L.circleMarker([e.lat, e.lng], { radius: 5, fillColor: '#8B6840', color: '#fff', weight: 1.5, fillOpacity: 1 })
+        .bindTooltip(e.name, { permanent: true, direction: 'top' }).addTo(_layer);
+    }
+  });
+  // 當前地點：綠色大標記
+  L.circleMarker([ent.lat, ent.lng], { radius: 8, fillColor: '#2A5C3A', color: '#fff', weight: 2, fillOpacity: 1 })
+    .bindTooltip(ent.name, { permanent: true, direction: 'top' }).addTo(_layer);
+  _map.setView([ent.lat, ent.lng], 8);
+  setTimeout(() => { _map.invalidateSize(); _map.flyTo([ent.lat, ent.lng], 10); }, 60);
+}
+
+function openCard(name) {
+  const ent = ENTITIES[name];
+  if (!ent) return;
+  document.getElementById('cardBadge').textContent = TYPE_LABEL[ent.type] || '';
+  document.getElementById('cardBadge').className = 'card-badge anno-' + ent.type;
+  document.getElementById('cardName').textContent = ent.name + (ent.name_en ? '　' + ent.name_en : '');
+  document.getElementById('cardDesc').textContent = ent.desc || '';
+  const vbox = document.getElementById('cardVerses');
+  vbox.innerHTML = '';
+  (ent.verses || '').split('、').filter(Boolean).forEach(v => {
+    const chip = document.createElement('span');
+    chip.className = 'verse-chip';
+    chip.textContent = v;
+    vbox.appendChild(chip);
+  });
+  renderMap(ent);
+  document.getElementById('annoCard').classList.add('open');
+  document.getElementById('cardOverlay').classList.add('open');
+}
+
+document.querySelectorAll('.anno').forEach(el => {
+  el.addEventListener('click', () => openCard(el.dataset.entity));
+});
+
+// 側欄書卷展開
 document.querySelectorAll('.book-item').forEach(el => {
   el.addEventListener('click', function(e) {
     const pills = this.nextElementSibling;
@@ -80,6 +157,13 @@ if (activeBook) {
   const pills = activeBook.nextElementSibling;
   if (pills) pills.classList.add('open');
   activeBook.scrollIntoView({ block: 'center' });
+}
+
+// 聚焦式教學（最小占位；待接入全域共用 tour.js）
+function startTour() {
+  const first = document.querySelector('.anno');
+  if (first) { openCard(first.dataset.entity); }
+  else { alert('點選經文中有底線的人名或地名，即可看背景資料與地圖。'); }
 }
 </script>
 </body>
