@@ -1220,7 +1220,7 @@
     "type": "concept",
     "name": "法老",
     "name_en": "Pharaoh",
-    "testament": "OT",
+    "testament": "both",
     "desc": "埃及君王的稱號，非特指一人。聖經中多位「法老」以此稱呼出現，從亞伯拉罕時代到出埃及記均有記載。",
     "verses": "創世記、出埃及記"
   },
@@ -1548,7 +1548,7 @@
     "type": "concept",
     "name": "割禮",
     "name_en": "Circumcision",
-    "testament": "OT",
+    "testament": "both",
     "desc": "神與亞伯拉罕立約的記號，要求所有男性後裔在出生後第八日受割。是以色列民族身分的標誌，新約中保羅指出其真正意義在於心的改變。",
     "verses": "創世記17章"
   },
@@ -1556,7 +1556,7 @@
     "type": "concept",
     "name": "嗎哪",
     "name_en": "Manna",
-    "testament": "OT",
+    "testament": "both",
     "desc": "以色列人在曠野漂流四十年間，神每天早晨賜下的食物，形如白霜、味如蜜餅。安息日前加倍降下，其他日子不可留到隔日，象徵每日依靠神。",
     "verses": "出埃及記16章"
   },
@@ -1670,7 +1670,14 @@
     "name_en": "Thomas",
     "testament": "NT",
     "desc": "十二使徒之一，又名低土馬（雙生子）。耶穌復活後他不在場，堅持要親眼看見才信，八天後耶穌再次顯現，他立即認信「我的主、我的神」。",
-    "verses": "約翰福音20:24-29"
+    "verses": "約翰福音20:24-29",
+    "books": [
+      "馬太福音",
+      "馬可福音",
+      "路加福音",
+      "約翰福音",
+      "使徒行傳"
+    ]
   },
   "馬太": {
     "type": "person",
@@ -1708,7 +1715,7 @@
     "type": "person",
     "name": "加百列",
     "name_en": "Gabriel",
-    "testament": "NT",
+    "testament": "both",
     "desc": "聖經中具名的天使之一。向撒迦利亞預告施洗約翰的誕生，又向馬利亞報告她將懷孕生下耶穌，是傳遞重大喜訊的使者。",
     "verses": "路加福音1章"
   },
@@ -1804,8 +1811,8 @@
     "type": "concept",
     "name": "文士",
     "name_en": "Scribes",
-    "testament": "NT",
-    "desc": "抄寫並解釋律法的專業人員，地位如律法教師。"
+    "testament": "both",
+    "desc": "抄寫並解釋律法的專業人員。OT 時期為書記官，NT 時期成為律法教師階層，常與法利賽人並列對抗耶穌。"
   },
   "稅吏": {
     "type": "concept",
@@ -2068,8 +2075,8 @@
     "type": "concept",
     "name": "聖靈",
     "name_en": "Holy Spirit",
-    "testament": "NT",
-    "desc": "三位一體中的第三位格，在五旬節降臨門徒，賜能力與恩賜。"
+    "testament": "both",
+    "desc": "神的靈，在 OT 已臨到先知與君王，NT 五旬節後降臨所有信徒，三位一體中的第三位格。"
   },
   "使徒": {
     "type": "concept",
@@ -2111,7 +2118,14 @@
     "name": "西拉",
     "name_en": "Silas",
     "testament": "NT",
-    "desc": "保羅第二次宣教旅程同伴，與保羅同在腓立比監獄中讚美神。"
+    "desc": "保羅第二次宣教旅程同伴，與保羅同在腓立比監獄中讚美神。",
+    "books": [
+      "使徒行傳",
+      "帖撒羅尼迦前書",
+      "帖撒羅尼迦後書",
+      "哥林多後書",
+      "彼得前書"
+    ]
   },
   "提摩太": {
     "type": "person",
@@ -2494,8 +2508,8 @@
     "type": "concept",
     "name": "祭司",
     "name_en": "Priest",
-    "testament": "OT",
-    "desc": "代表以色列人在神前事奉的亞倫子孫，主持獻祭、守護聖殿。"
+    "testament": "both",
+    "desc": "代表人民在神前事奉者。OT 指亞倫子孫，主持獻祭守護聖殿；NT 書信中指信徒都是「祭司」，耶穌是大祭司。"
   },
   "迦南地": {
     "type": "place",
@@ -2836,8 +2850,8 @@
     "type": "concept",
     "name": "長老",
     "name_en": "Elder",
-    "testament": "NT",
-    "desc": "教會監督領袖，負責牧養和教導，保羅書信中對其品格有明確要求。"
+    "testament": "both",
+    "desc": "社群或宗教領袖。OT 指部族長老；NT 指教會監督，保羅書信列明其品格要求；啟示錄中二十四位長老環繞神的寶座。"
   },
   "執事": {
     "type": "concept",
