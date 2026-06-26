@@ -312,31 +312,84 @@ def get_chapter(book, chapter):
     return verses
 
 
+def chapter_lineage(book, chapter, present_entities):
+    """本章世系結構圖：以本章出現的人物為核心，沿父母/子女展開 1 層，
+    組成一張可佈局的家族/王系子圖。回傳 {nodes, edges} 或 None（無足夠世系）。
+    present_entities：本章 {詞條鍵: 解析後條目}；只取在本章解析為「人物」者當種子，
+    排除同名地名/支派（如列王紀的「猶大」其實是猶大國）。"""
+    present_names = set(present_entities.keys())
+    seeds = [n for n, e in present_entities.items()
+             if (e.get("type") == "person") and n in RELATIONSHIPS]
+    if not seeds:
+        return None
+
+    # 沿父母/子女展開 1 層：本章人物 + 直接父母與子女（足以看出在世系鏈的位置）
+    nodes = set(seeds)
+    for n in seeds:
+        r = RELATIONSHIPS.get(n, {})
+        for t in r.get("父母", []) + r.get("子女", []):
+            if t in ENTITIES:
+                nodes.add(t)
+
+    # 收集節點間的親子邊
+    edges = []
+    for n in nodes:
+        for c in RELATIONSHIPS.get(n, {}).get("子女", []):
+            if c in nodes:
+                edges.append([n, c])
+    if len(edges) < 2:
+        return None  # 親子連結太少，不值得單獨出一張結構圖
+
+    # 依祖先深度分代（無父母者為第 0 代）
+    parents = {}
+    for p, c in edges:
+        parents.setdefault(c, []).append(p)
+    gen = {}
+
+    def depth(n, seen=()):
+        if n in gen:
+            return gen[n]
+        if n in seen or n not in parents:
+            gen[n] = 0
+            return 0
+        d = 1 + max(depth(p, seen + (n,)) for p in parents[n])
+        gen[n] = d
+        return d
+
+    for n in nodes:
+        depth(n)
+    base = min(gen.values()) if gen else 0  # 正規化：最上一代從 0 起算
+
+    node_list = []
+    for n in sorted(nodes, key=lambda x: gen.get(x, 0)):
+        e = ENTITIES.get(n)
+        e = e[0] if isinstance(e, list) else e
+        node_list.append({
+            "key": n,
+            "name": (e or {}).get("name", n),
+            "gen": gen.get(n, 0) - base,
+            "lit": n in present_names,
+        })
+    return {"nodes": node_list, "edges": edges}
+
+
+_ANNO_DATA_RE = re.compile(r'data-entity="([^"]*)"')
+
+
 def chapter_entities(book, chapter):
-    """本章實際出現的實體（給前端卡片與地圖）。依 _resolve_entity 確認此位置適用後才回傳。"""
+    """本章實際被標註的實體（給前端卡片與地圖）。
+    直接從 annotate() 的真實輸出取詞，因此與經文中真正畫底線的詞完全一致——
+    自動排除碎片誤框（如「撒瑪利亞」中的「利亞」、「亞伯伯瑪迦」中的「亞伯」）。"""
     chap = BIBLE.get(book, {}).get(str(chapter), {})
-    joined = "".join(chap.values())
     result = {}
-    for name in _ALL_NAMES:
-        if name in joined:
-            entry = _resolve_entity(name, book, chapter)
-            if entry:
-                result[name] = entry
-                # 轉址目標也補進來，前端才查得到（如 施洗約翰、各分流的王）
-                for vtext in chap.values():
-                    if name not in vtext:
-                        continue
-                    i = 0
-                    while True:
-                        j = vtext.find(name, i)
-                        if j < 0:
-                            break
-                        before = vtext[max(0, j - 6):j]
-                        tgt = _redirect_target(name, entry, vtext, before)
-                        if tgt and tgt not in result:
-                            te = ENTITIES[tgt]
-                            result[tgt] = te[0] if isinstance(te, list) else te
-                        i = j + 1
+    for vtext in chap.values():
+        html = annotate(vtext, book, chapter)
+        for data_name in _ANNO_DATA_RE.findall(html):
+            if data_name in result:
+                continue
+            v = ENTITIES.get(data_name)
+            if v is not None:
+                result[data_name] = v[0] if isinstance(v, list) else v
     return result
 
 
@@ -547,6 +600,7 @@ def read_chapter(book, chapter):
                         b = _entity_brief(t)
                         if b:
                             brief[t] = b
+    lineage = chapter_lineage(book, chapter, entities)
     return render_template(
         "read.html",
         book=book, chapter=chapter, verses=verses,
@@ -556,6 +610,7 @@ def read_chapter(book, chapter):
         entities_json=Markup(json.dumps(entities, ensure_ascii=False)),
         relations_json=Markup(json.dumps(rels, ensure_ascii=False)),
         related_brief_json=Markup(json.dumps(brief, ensure_ascii=False)),
+        lineage_json=Markup(json.dumps(lineage, ensure_ascii=False)),
     )
 
 
