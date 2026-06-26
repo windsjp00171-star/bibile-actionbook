@@ -2512,5 +2512,150 @@
     "desc": "以色列主要河流，以色列人過河進迦南、耶穌受洗之地。",
     "lat": 32.0,
     "lng": 35.55
+  },
+  "稱義": {
+    "type": "concept",
+    "name": "稱義",
+    "name_en": "Justification",
+    "testament": "NT",
+    "desc": "神宣告罪人為義的行動，因信基督而得，非靠行為，是羅馬書核心主題。"
+  },
+  "成聖": {
+    "type": "concept",
+    "name": "成聖",
+    "name_en": "Sanctification",
+    "testament": "NT",
+    "desc": "信徒因聖靈工作而逐漸脫離罪、更像基督的生命過程。"
+  },
+  "得救": {
+    "type": "concept",
+    "name": "得救",
+    "name_en": "Salvation",
+    "testament": "NT",
+    "desc": "脫離罪的懲罰與權勢，因信靠基督的救贖而得永生的恩典。"
+  },
+  "救贖": {
+    "type": "concept",
+    "name": "救贖",
+    "name_en": "Redemption",
+    "desc": "以代價買回奴隸或罪人，基督以死作贖價將人從罪中買回給神。"
+  },
+  "彌賽亞": {
+    "type": "concept",
+    "name": "彌賽亞",
+    "name_en": "Messiah",
+    "desc": "希伯來文「受膏者」，指神應許的救主，基督徒相信耶穌即應驗這預言。"
+  },
+  "先知": {
+    "type": "concept",
+    "name": "先知",
+    "name_en": "Prophet",
+    "desc": "代神傳話者，宣告神的旨意、指責罪惡、預言未來，不一定只指預言。"
+  },
+  "天使": {
+    "type": "concept",
+    "name": "天使",
+    "name_en": "Angel",
+    "desc": "神的使者，形態多樣，執行傳信、護衛、審判等任務，常在重要時刻出現。"
+  },
+  "魔鬼": {
+    "type": "concept",
+    "name": "魔鬼",
+    "name_en": "Devil/Satan",
+    "desc": "撒但的別稱，「誹謗者」，試探耶穌、敵對神的計劃、逼迫信徒的靈界惡者。"
+  },
+  "撒但": {
+    "type": "concept",
+    "name": "撒但",
+    "name_en": "Satan",
+    "desc": "「敵對者」，在約伯記中出現，新約描述為世界的王、試探人的惡者。"
+  },
+  "律法": {
+    "type": "concept",
+    "name": "律法",
+    "name_en": "Law (Torah)",
+    "desc": "摩西五書及神所頒布的誡命，猶太人生活規範，保羅探討其與恩典的關係。"
+  },
+  "應許之地": {
+    "type": "concept",
+    "name": "應許之地",
+    "name_en": "Promised Land",
+    "desc": "神應許給亞伯拉罕後裔的迦南地，以色列人用四十年曠野旅程才進入。"
+  },
+  "亞居拉": {
+    "type": "person",
+    "name": "亞居拉",
+    "name_en": "Aquila",
+    "testament": "NT",
+    "desc": "猶太基督徒帳棚製造商，與妻百基拉同工輔導亞波羅，是保羅摯友。"
+  },
+  "百基拉": {
+    "type": "person",
+    "name": "百基拉",
+    "name_en": "Priscilla",
+    "testament": "NT",
+    "desc": "亞居拉之妻，與丈夫同為保羅重要同工，更詳細地教導亞波羅神的道。"
+  },
+  "亞波羅": {
+    "type": "person",
+    "name": "亞波羅",
+    "name_en": "Apollos",
+    "testament": "NT",
+    "desc": "亞歷山大猶太基督徒，口才流利、聖經知識豐富，受百基拉夫婦指導後大力傳道。"
+  },
+  "呂底亞": {
+    "type": "person",
+    "name": "呂底亞",
+    "name_en": "Lydia",
+    "testament": "NT",
+    "desc": "腓立比賣紫色布料的婦女，歐洲首位基督徒，開放家中讓保羅一行住宿。"
+  },
+  "腓利門": {
+    "type": "person",
+    "name": "腓利門",
+    "name_en": "Philemon",
+    "testament": "NT",
+    "desc": "保羅的信徒朋友，保羅寫信求他接納逃跑後歸信的奴隸阿尼西母。"
+  },
+  "拔摩島": {
+    "type": "place",
+    "name": "拔摩島",
+    "name_en": "Patmos",
+    "testament": "NT",
+    "desc": "愛琴海小島，使徒約翰因傳道被流放於此，在此得啟示錄的異象。",
+    "lat": 37.32,
+    "lng": 26.55
+  },
+  "哈米吉多頓": {
+    "type": "place",
+    "name": "哈米吉多頓",
+    "name_en": "Armageddon",
+    "testament": "NT",
+    "desc": "啟示錄所載末世大戰之地，源自米吉多山，象徵人類最後決戰場所。",
+    "lat": 32.58,
+    "lng": 35.18
+  },
+  "新耶路撒冷": {
+    "type": "concept",
+    "name": "新耶路撒冷",
+    "name_en": "New Jerusalem",
+    "testament": "NT",
+    "desc": "啟示錄末章從天降下的聖城，象徵神與人同住的完美永恆國度。"
+  },
+  "約旦": {
+    "type": "place",
+    "name": "約旦",
+    "name_en": "Jordan (region)",
+    "desc": "約旦河以東地區，以色列兩個半支派分得的領土，今約旦王國所在地。",
+    "lat": 31.0,
+    "lng": 36.0
+  },
+  "尼羅河": {
+    "type": "place",
+    "name": "尼羅河",
+    "name_en": "Nile River",
+    "desc": "埃及生命之河，摩西嬰兒時被放入尼羅河蘆葦籃中獲法老女兒拯救。",
+    "lat": 27.0,
+    "lng": 31.0
   }
 }
