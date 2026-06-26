@@ -78,8 +78,9 @@ BOOK_CHAPTERS = {name: ch for name, ch in ALL_BOOKS}
 
 _TYPE_CLASS = {"person": "anno-person", "place": "anno-place", "concept": "anno-concept"}
 
-# 依字長由長到短排序，確保「非利士人」優先於較短的詞被匹配。
-_ENTITY_NAMES = sorted(ENTITIES.keys(), key=len, reverse=True)
+# 全域標注：字典裡的名字在任何一章出現都會自動亮，不再受章節閘門限制。
+# 只匹配長度 >= 2 的名字，避免單字（如「蛇」）在全本造成過度標注的噪音。
+_ENTITY_NAMES = sorted([n for n in ENTITIES if len(n) >= 2], key=len, reverse=True)
 _ENTITY_RE = re.compile("|".join(re.escape(n) for n in _ENTITY_NAMES)) if _ENTITY_NAMES else None
 
 
@@ -135,24 +136,20 @@ def build_nav(current_book, current_chapter):
 
 
 def get_chapter(book, chapter):
-    """從 cuv.json 取一章，回傳 [{verse, html}]；標注僅套用於已整理章節。"""
+    """從 cuv.json 取一章，回傳 [{verse, html}]；全本任何章節皆套用全域字典標注。"""
     chap = BIBLE.get(book, {}).get(str(chapter), {})
-    do_anno = (book, chapter) in ANNOTATED
     verses = []
     for vnum in sorted(chap.keys(), key=lambda x: int(x)):
         text = chap[vnum]
-        html = annotate(text) if do_anno else Markup(str(escape(text)))
-        verses.append({"verse": int(vnum), "html": html})
+        verses.append({"verse": int(vnum), "html": annotate(text)})
     return verses
 
 
 def chapter_entities(book, chapter):
-    """本章實際用到的實體（給前端卡片與地圖）。"""
-    if (book, chapter) not in ANNOTATED:
-        return {}
+    """本章實際出現的實體（給前端卡片與地圖）。只回傳長度>=2、與標注一致者。"""
     chap = BIBLE.get(book, {}).get(str(chapter), {})
     joined = "".join(chap.values())
-    return {name: ENTITIES[name] for name in ENTITIES if name in joined}
+    return {name: ENTITIES[name] for name in _ENTITY_NAMES if name in joined}
 
 
 @app.route("/")
