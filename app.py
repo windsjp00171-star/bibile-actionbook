@@ -237,14 +237,9 @@ def _chapter_context(book, chapter, limit=1800):
     return ctx[:limit]
 
 
-def _gemini_explain(text, ref, level, context=""):
-    key = os.environ.get("GEMINI_API_KEY")
-    if not key:
-        return None
-    import google.generativeai as genai
-    genai.configure(api_key=key)
+def _explain_system(level):
     who, how = LEVELS[level]
-    system = (
+    return (
         f"你是嚴謹的聖經閱讀解釋助手，對象是{who}。讀者正在讀和合本聖經，"
         f"圈選了一段文字想知道它的意思。{how}\n"
         "準確性是最高原則，寧可保守也不可誤導：\n"
@@ -253,10 +248,37 @@ def _gemini_explain(text, ref, level, context=""):
         "3. 若某點屬傳統看法或學界有爭議，明說「一般認為」「傳統上」或「學者看法不一」。\n"
         "4. 只解釋圈選的這段，繁體中文，客觀貼著上下文，不加開場白或結語、不傳道。"
     )
-    model = genai.GenerativeModel("gemini-2.0-flash", system_instruction=system)
-    prompt = f"出處：{ref}\n\n本章經文（供你對照，勿超出其內容臆測）：\n{context}\n\n讀者圈選的文字：「{text}」\n請解釋這段的意思。"
-    r = model.generate_content(prompt, generation_config={"temperature": 0.2})
-    return (r.text or "").strip()
+
+
+def _explain_user(text, ref, context):
+    return (f"出處：{ref}\n\n本章經文（供你對照，勿超出其內容臆測）：\n{context}\n\n"
+            f"讀者圈選的文字：「{text}」\n請解釋這段的意思。")
+
+
+def _ai_explain(text, ref, level, context=""):
+    """生成層：優先 Groq（快、免費），退回 Gemini。皆無 key 則回 None。"""
+    system, user = _explain_system(level), _explain_user(text, ref, context)
+    groq_key = os.environ.get("GROQ_API_KEY")
+    if groq_key:
+        from groq import Groq
+        client = Groq(api_key=groq_key)
+        r = client.chat.completions.create(
+            model=os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile"),
+            temperature=0.2, max_tokens=600,
+            messages=[{"role": "system", "content": system},
+                      {"role": "user", "content": user}],
+        )
+        return (r.choices[0].message.content or "").strip()
+
+    gem_key = os.environ.get("GEMINI_API_KEY")
+    if gem_key:
+        import google.generativeai as genai
+        genai.configure(api_key=gem_key)
+        model = genai.GenerativeModel("gemini-2.0-flash", system_instruction=system)
+        r = model.generate_content(user, generation_config={"temperature": 0.2})
+        return (r.text or "").strip()
+
+    return None
 
 
 @app.route("/api/explain", methods=["POST"])
@@ -297,11 +319,11 @@ def api_explain():
         return jsonify({"error": "busy", "content": "今天的免費解釋次數已用完，明天再試，或這段稍後就會有快取。"}), 429
     ctx = _chapter_context(data.get("book", ""), data.get("chapter", ""))
     try:
-        content = _gemini_explain(text, ref, level, ctx)
+        content = _ai_explain(text, ref, level, ctx)
     except Exception as e:
         return jsonify({"error": "ai_failed", "content": "解釋暫時無法生成，請稍後再試。"}), 502
     if not content:
-        return jsonify({"error": "no_key", "content": "AI 解釋尚未啟用（伺服器未設定 GEMINI_API_KEY）。"}), 503
+        return jsonify({"error": "no_key", "content": "AI 解釋尚未啟用（伺服器未設定 GROQ_API_KEY 或 GEMINI_API_KEY）。"}), 503
     _EXPLAIN_USAGE["n"] += 1
     _cache_set(key, text, level, content, ref)
     return jsonify({"content": content, "source": "ai"})

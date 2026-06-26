@@ -2,3 +2,5 @@ flask>=3.0
 supabase>=2.0
 gunicorn>=21.0
 python-dotenv>=1.0
+groq>=0.11
+google-generativeai>=0.8
