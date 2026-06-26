@@ -220,6 +220,40 @@ body {
 
 .no-data { color: #999; text-align: center; padding: 40px 0; }
 
+/* ── Tappable clause (mobile-friendly: tap, no long-press select) ── */
+.clause { cursor: pointer; border-radius: 3px; transition: background 0.12s; }
+.clause:active { background: #EDB93033; }
+@media (hover: hover) {
+  .clause:hover { background: #EDB93022; }
+}
+
+/* ── Selection floating button (desktop bonus) ── */
+.sel-btn {
+  position: absolute; z-index: 1400; transform: translateX(-50%);
+  background: #2C1A0E; color: var(--nav-title);
+  border: 1px solid var(--gold); border-radius: 8px;
+  font-family: 'Noto Serif TC', serif; font-size: 13px;
+  padding: 7px 12px; cursor: pointer; white-space: nowrap;
+  box-shadow: 0 2px 8px #0004;
+}
+
+/* ── AI explain card ── */
+.explain-quote {
+  font-size: 15px; color: #2A1A08; line-height: 1.8;
+  border-left: 3px solid var(--gold); padding-left: 10px; margin: 4px 0 12px;
+}
+.level-switch { display: flex; gap: 6px; margin-bottom: 12px; }
+.level-switch button {
+  flex: 1; font-family: inherit; font-size: 12px; padding: 7px 0;
+  border: 1px solid #C9A96E66; background: #FDF6E8; color: #6B5436;
+  border-radius: 6px; cursor: pointer; transition: background 0.12s, color 0.12s;
+}
+.level-switch button.active { background: var(--gold-bright); color: #1A0E04; border-color: var(--gold-bright); }
+.explain-body { font-size: 14px; font-weight: 300; line-height: 1.95; color: #3A2A14; min-height: 2em; }
+.explain-spin { color: #A08B66; font-size: 13px; }
+.explain-foot { font-size: 11px; color: #6B8E5A; margin-top: 10px; }
+.explain-foot.is-ai { color: #B07A2A; }
+
 /* ── Inline annotation ── */
 .anno { cursor: pointer; text-underline-offset: 3px; border-radius: 2px; }
 .anno-person  { color: #8B3A1A; border-bottom: 2px dotted #8B3A1A88; }

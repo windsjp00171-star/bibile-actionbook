@@ -1,7 +1,9 @@
 import os
 import re
 import json
-from flask import Flask, render_template
+import hashlib
+from datetime import date
+from flask import Flask, render_template, request, jsonify
 from markupsafe import Markup, escape
 from supabase import create_client
 
@@ -87,7 +89,7 @@ _ENTITY_RE = re.compile("|".join(re.escape(n) for n in _ENTITY_NAMES)) if _ENTIT
 def annotate(text):
     """把經文中的實體詞包成可點擊 span，其餘字元做 HTML 轉義。"""
     if not _ENTITY_RE:
-        return Markup(str(escape(text)))
+        return str(escape(text))
     out, last = [], 0
     for m in _ENTITY_RE.finditer(text):
         out.append(str(escape(text[last:m.start()])))
@@ -96,7 +98,26 @@ def annotate(text):
         out.append(f'<span class="anno {cls}" data-entity="{escape(word)}">{escape(word)}</span>')
         last = m.end()
     out.append(str(escape(text[last:])))
-    return Markup("".join(out))
+    return "".join(out)
+
+
+# 依中文標點切分句；標點留在前一句尾。手機點按以「分句」為單位最好點。
+_CLAUSE_RE = re.compile(r"[^、，。；：！？「」『』（）]+[、，。；：！？」』）]*")
+
+
+def render_verse(text):
+    """把一節經文切成可點擊的分句 span，分句內仍套用實體標注。"""
+    parts = []
+    for m in _CLAUSE_RE.finditer(text):
+        clause = m.group(0)
+        if not clause.strip():
+            continue
+        parts.append(
+            f'<span class="clause" data-clause="{escape(clause)}">{annotate(clause)}</span>'
+        )
+    if not parts:  # 全是標點等極端情形
+        parts.append(annotate(text))
+    return Markup("".join(parts))
 
 
 def get_adjacent(book, chapter):
@@ -141,7 +162,7 @@ def get_chapter(book, chapter):
     verses = []
     for vnum in sorted(chap.keys(), key=lambda x: int(x)):
         text = chap[vnum]
-        verses.append({"verse": int(vnum), "html": annotate(text)})
+        verses.append({"verse": int(vnum), "html": render_verse(text)})
     return verses
 
 
@@ -150,6 +171,140 @@ def chapter_entities(book, chapter):
     chap = BIBLE.get(book, {}).get(str(chapter), {})
     joined = "".join(chap.values())
     return {name: ENTITIES[name] for name in _ENTITY_NAMES if name in joined}
+
+
+# ============================================================
+#  即時 AI 解釋（差異化核心）：圈選經文 → 依程度解釋，三層快取控成本
+#    1) 手刻字典  2) Supabase 永久快取  3) Gemini 即時生成（僅冷門、只燒一次）
+# ============================================================
+
+LEVELS = {
+    "child":  ("兒童主日學的小朋友", "用最淺白、像講故事的口吻，30-60字，避免艱深神學詞。"),
+    "seeker": ("剛接觸信仰的慕道友",  "客觀親切，60-90字，解釋背景與意義，不預設信仰基礎。"),
+    "leader": ("帶讀經班備課的小組長", "稍深入，80-120字，含歷史背景、原文或神學重點，便於講解。"),
+}
+EXPLAIN_DAILY_CAP = int(os.environ.get("EXPLAIN_DAILY_CAP", "500"))  # 全域每日 API 上限（保險絲）
+
+_EXPLAIN_MEM = {}            # 程序內記憶體快取
+_EXPLAIN_USAGE = {"day": "", "n": 0}
+
+
+def _explain_key(text, level):
+    return hashlib.sha1(f"{level}|{text}".encode("utf-8")).hexdigest()
+
+
+def _cache_get(key):
+    if key in _EXPLAIN_MEM:
+        return _EXPLAIN_MEM[key]
+    if sb:
+        try:
+            r = sb.table("ai_explanations").select("content").eq("cache_key", key).limit(1).execute()
+            if r.data:
+                _EXPLAIN_MEM[key] = r.data[0]["content"]
+                return r.data[0]["content"]
+        except Exception:
+            pass
+    return None
+
+
+def _cache_set(key, text, level, content, ref):
+    _EXPLAIN_MEM[key] = content
+    if sb:
+        try:
+            sb.table("ai_explanations").upsert({
+                "cache_key": key, "selected_text": text, "level": level,
+                "content": content, "ref": ref,
+            }).execute()
+        except Exception:
+            pass
+
+
+def _usage_ok():
+    today = date.today().isoformat()
+    if _EXPLAIN_USAGE["day"] != today:
+        _EXPLAIN_USAGE["day"] = today
+        _EXPLAIN_USAGE["n"] = 0
+    return _EXPLAIN_USAGE["n"] < EXPLAIN_DAILY_CAP
+
+
+def _chapter_context(book, chapter, limit=1800):
+    """取該章經文當作接地材料，讓解釋貼著實際經文、降低幻覺。"""
+    chap = BIBLE.get(book, {}).get(str(chapter), {})
+    if not chap:
+        return ""
+    lines = [f"{v} {chap[v]}" for v in sorted(chap, key=int)]
+    ctx = "\n".join(lines)
+    return ctx[:limit]
+
+
+def _gemini_explain(text, ref, level, context=""):
+    key = os.environ.get("GEMINI_API_KEY")
+    if not key:
+        return None
+    import google.generativeai as genai
+    genai.configure(api_key=key)
+    who, how = LEVELS[level]
+    system = (
+        f"你是嚴謹的聖經閱讀解釋助手，對象是{who}。讀者正在讀和合本聖經，"
+        f"圈選了一段文字想知道它的意思。{how}\n"
+        "準確性是最高原則，寧可保守也不可誤導：\n"
+        "1. 只根據所提供的經文與廣被接受的聖經背景知識作答。\n"
+        "2. 嚴禁杜撰人名、地名、數字、年代或情節；經文沒有、你也不確定的，就不要說。\n"
+        "3. 若某點屬傳統看法或學界有爭議，明說「一般認為」「傳統上」或「學者看法不一」。\n"
+        "4. 只解釋圈選的這段，繁體中文，客觀貼著上下文，不加開場白或結語、不傳道。"
+    )
+    model = genai.GenerativeModel("gemini-2.0-flash", system_instruction=system)
+    prompt = f"出處：{ref}\n\n本章經文（供你對照，勿超出其內容臆測）：\n{context}\n\n讀者圈選的文字：「{text}」\n請解釋這段的意思。"
+    r = model.generate_content(prompt, generation_config={"temperature": 0.2})
+    return (r.text or "").strip()
+
+
+@app.route("/api/explain", methods=["POST"])
+def api_explain():
+    data = request.get_json(silent=True) or {}
+    text = (data.get("text") or "").strip()
+    level = data.get("level") if data.get("level") in LEVELS else "seeker"
+    ref = (data.get("ref") or "").strip()
+    if not text:
+        return jsonify({"error": "empty"}), 400
+    if len(text) > 200:
+        text = text[:200]
+
+    # 資安關卡：只解釋「真的出現在該章經文裡」的文字，杜絕被當免費 LLM 代理白嫖。
+    book = data.get("book", "")
+    chapter = str(data.get("chapter", ""))
+    chap = BIBLE.get(book, {}).get(chapter, {})
+    if not chap:
+        return jsonify({"error": "bad_ref"}), 400
+    joined = "".join(chap.values())
+    probe = re.sub(r"[、，。；：！？「」『』（）\s]", "", text)
+    if probe and probe not in joined and text not in joined:
+        return jsonify({"error": "not_scripture",
+                        "content": "只能解釋經文中的內容。"}), 400
+
+    # 第 1 層：手刻字典（整段剛好等於某實體名）
+    if text in ENTITIES:
+        return jsonify({"content": ENTITIES[text]["desc"], "source": "dict"})
+
+    # 第 2 層：永久快取
+    key = _explain_key(text, level)
+    cached = _cache_get(key)
+    if cached:
+        return jsonify({"content": cached, "source": "cache"})
+
+    # 第 3 層：即時生成（受每日上限保護）
+    if not _usage_ok():
+        return jsonify({"error": "busy", "content": "今天的免費解釋次數已用完，明天再試，或這段稍後就會有快取。"}), 429
+    ctx = _chapter_context(data.get("book", ""), data.get("chapter", ""))
+    try:
+        content = _gemini_explain(text, ref, level, ctx)
+    except Exception as e:
+        return jsonify({"error": "ai_failed", "content": "解釋暫時無法生成，請稍後再試。"}), 502
+    if not content:
+        return jsonify({"error": "no_key", "content": "AI 解釋尚未啟用（伺服器未設定 GEMINI_API_KEY）。"}), 503
+    _EXPLAIN_USAGE["n"] += 1
+    _cache_set(key, text, level, content, ref)
+    return jsonify({"content": content, "source": "ai"})
 
 
 @app.route("/")

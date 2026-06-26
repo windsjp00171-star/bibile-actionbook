@@ -82,6 +82,24 @@
   <div class="card-verses" id="cardVerses"></div>
 </aside>
 
+<!-- 圈選經文後冒出的「解釋」浮鈕 -->
+<button class="sel-btn" id="selBtn" style="display:none">✦ 解釋這段</button>
+
+<!-- AI 解釋卡片（圈選任意文字 → 依程度即時解釋） -->
+<div class="card-overlay" id="explainOverlay" onclick="closeExplain()"></div>
+<aside class="anno-card explain-card" id="explainCard">
+  <div class="card-grip"></div>
+  <button class="card-close" onclick="closeExplain()" aria-label="關閉">✕</button>
+  <div class="explain-quote" id="explainQuote"></div>
+  <div class="level-switch" id="levelSwitch">
+    <button data-level="child">兒童</button>
+    <button data-level="seeker">慕道友</button>
+    <button data-level="leader">小組長</button>
+  </div>
+  <div class="explain-body" id="explainBody"></div>
+  <div class="explain-foot" id="explainFoot"></div>
+</aside>
+
 <!-- 字體大小控制 -->
 <div class="font-ctrl" id="fontCtrl">
   <button onclick="setFont(-1)" aria-label="縮小字體">A−</button>
@@ -171,7 +189,16 @@ function openCard(name) {
 }
 
 document.querySelectorAll('.anno').forEach(el => {
-  el.addEventListener('click', () => openCard(el.dataset.entity));
+  el.addEventListener('click', e => { e.stopPropagation(); openCard(el.dataset.entity); });
+});
+
+// 點分句 → AI 解釋這句（點在實體詞上則交給實體卡，不重複）
+document.querySelectorAll('.clause').forEach(el => {
+  el.addEventListener('click', e => {
+    if (e.target.closest('.anno')) return;
+    const txt = (el.dataset.clause || '').replace(/[、，。；：！？「」『』（）]+$/g, '').trim();
+    if (txt.length >= 2) openExplain(txt);
+  });
 });
 
 // ── Sidebar ──────────────────────────────────────────────────────
@@ -257,6 +284,81 @@ document.querySelectorAll('.sidebar, .drawer').forEach(markRead);
   // 更新「造訪前快照」供下次首頁判斷
   localStorage.setItem('bible-progress-prev', JSON.stringify(_prog));
 })();
+
+// ── AI explain on text selection ────────────────────────────────
+const REF = CUR_BOOK + ' 第' + CUR_CH + '章';
+let _selText = '';
+let _level = localStorage.getItem('explain-level') || 'seeker';
+
+const passageEl = document.getElementById('passage');
+const selBtn = document.getElementById('selBtn');
+
+function clearSelBtn() { selBtn.style.display = 'none'; _selText = ''; }
+
+function onSelectionChange() {
+  const sel = window.getSelection();
+  const txt = sel ? sel.toString().trim() : '';
+  // 只接受落在經文區、長度合理的選取
+  if (!txt || txt.length < 2 || txt.length > 200) { clearSelBtn(); return; }
+  if (!sel.anchorNode || !passageEl.contains(sel.anchorNode)) { clearSelBtn(); return; }
+  _selText = txt;
+  const rect = sel.getRangeAt(0).getBoundingClientRect();
+  selBtn.style.display = 'block';
+  const top = window.scrollY + rect.top - 44;
+  const left = window.scrollX + rect.left + rect.width / 2;
+  selBtn.style.top = Math.max(window.scrollY + 8, top) + 'px';
+  selBtn.style.left = left + 'px';
+}
+document.addEventListener('selectionchange', onSelectionChange);
+
+selBtn.addEventListener('mousedown', e => e.preventDefault()); // 別讓按鈕搶走選取
+selBtn.addEventListener('click', () => { if (_selText) openExplain(_selText); });
+
+function setLevel(lv) {
+  _level = lv;
+  localStorage.setItem('explain-level', lv);
+  document.querySelectorAll('#levelSwitch button').forEach(b =>
+    b.classList.toggle('active', b.dataset.level === lv));
+}
+document.querySelectorAll('#levelSwitch button').forEach(b =>
+  b.addEventListener('click', () => { setLevel(b.dataset.level); fetchExplain(); }));
+
+function closeExplain() {
+  document.getElementById('explainCard').classList.remove('open');
+  document.getElementById('explainOverlay').classList.remove('open');
+}
+
+function openExplain(text) {
+  _selText = text;
+  setLevel(_level);
+  document.getElementById('explainQuote').textContent = '「' + text + '」';
+  document.getElementById('explainCard').classList.add('open');
+  document.getElementById('explainOverlay').classList.add('open');
+  clearSelBtn();
+  fetchExplain();
+}
+
+function fetchExplain() {
+  const body = document.getElementById('explainBody');
+  const foot = document.getElementById('explainFoot');
+  body.innerHTML = '<span class="explain-spin">解釋生成中…</span>';
+  foot.textContent = '';
+  fetch('/api/explain', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ text: _selText, level: _level, ref: REF }),
+  }).then(r => r.json().then(d => ({ ok: r.ok, d })))
+    .then(({ ok, d }) => {
+      body.textContent = d.content || d.error || '無法取得解釋。';
+      const tag = {
+        dict: '✓ 人工校訂',
+        cache: '✓ 已校訂・快取',
+        ai: '✦ AI 生成・僅供參考，請自行查證',
+      }[d.source];
+      foot.textContent = tag || '';
+      foot.className = 'explain-foot' + (d.source === 'ai' ? ' is-ai' : '');
+    })
+    .catch(() => { body.textContent = '網路錯誤，請稍後再試。'; });
+}
 
 // ── Swipe to navigate (mobile) ───────────────────────────────────
 (function() {
