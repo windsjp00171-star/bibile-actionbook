@@ -52,6 +52,8 @@ def _load_annotations():
 
 ENTITIES, ANNOTATED = _load_annotations()
 
+NT_BOOK_NAMES = set()  # populated after NT_BOOKS is defined below
+
 OT_BOOKS = [
     ("創世記", 50), ("出埃及記", 40), ("利未記", 27), ("民數記", 36),
     ("申命記", 34), ("約書亞記", 24), ("士師記", 21), ("路得記", 4),
@@ -77,13 +79,35 @@ NT_BOOKS = [
 
 ALL_BOOKS = OT_BOOKS + NT_BOOKS
 BOOK_CHAPTERS = {name: ch for name, ch in ALL_BOOKS}
+NT_BOOK_NAMES.update(name for name, _ in NT_BOOKS)
 
 _TYPE_CLASS = {"person": "anno-person", "place": "anno-place", "concept": "anno-concept"}
 
-# 全域標注：字典裡的名字在任何一章出現都會自動亮，不再受章節閘門限制。
-# 只匹配長度 >= 2 的名字，避免單字（如「蛇」）在全本造成過度標注的噪音。
-_ENTITY_NAMES = sorted([n for n in ENTITIES if len(n) >= 2], key=len, reverse=True)
-_ENTITY_RE = re.compile("|".join(re.escape(n) for n in _ENTITY_NAMES)) if _ENTITY_NAMES else None
+
+def _build_entity_maps(entities):
+    """把 entities.json 展開成 OT 和 NT 兩張查閱表。
+    值為 dict → 視 testament 欄位（預設 both）決定加入哪張表。
+    值為 list → 每個子條目各自處理（同名異義用此格式）。
+    """
+    ot_map: dict = {}
+    nt_map: dict = {}
+    for name, val in entities.items():
+        entries = val if isinstance(val, list) else [val]
+        for entry in entries:
+            t = entry.get("testament", "both")
+            if t in ("OT", "both"):
+                ot_map[name] = entry
+            if t in ("NT", "both"):
+                nt_map[name] = entry
+    return ot_map, nt_map
+
+
+_OT_ENTITY_MAP, _NT_ENTITY_MAP = _build_entity_maps(ENTITIES)
+
+_OT_NAMES = sorted([n for n in _OT_ENTITY_MAP if len(n) >= 2], key=len, reverse=True)
+_NT_NAMES = sorted([n for n in _NT_ENTITY_MAP if len(n) >= 2], key=len, reverse=True)
+_OT_RE = re.compile("|".join(re.escape(n) for n in _OT_NAMES)) if _OT_NAMES else None
+_NT_RE = re.compile("|".join(re.escape(n) for n in _NT_NAMES)) if _NT_NAMES else None
 
 
 # 防誤植：這些較長的專有名詞「包含」字典裡某個短名，但意義完全不同。
@@ -118,18 +142,22 @@ def _is_partial_of_longer(text, start, end, word):
     return False
 
 
-def annotate(text):
-    """把經文中的實體詞包成可點擊 span，其餘字元做 HTML 轉義。"""
-    if not _ENTITY_RE:
+def annotate(text, testament="OT"):
+    """把經文中的實體詞包成可點擊 span，其餘字元做 HTML 轉義。
+    testament="NT" 時改用新約實體表，避免同名異義（如猶大、掃羅）顯示錯誤的卡片。
+    """
+    entity_re  = _NT_RE       if testament == "NT" else _OT_RE
+    entity_map = _NT_ENTITY_MAP if testament == "NT" else _OT_ENTITY_MAP
+    if not entity_re:
         return str(escape(text))
     out, last = [], 0
-    for m in _ENTITY_RE.finditer(text):
+    for m in entity_re.finditer(text):
         word = m.group(0)
         out.append(str(escape(text[last:m.start()])))
         if _is_partial_of_longer(text, m.start(), m.end(), word):
             out.append(str(escape(word)))   # 是更長名字的一部分 → 純文字，不框
         else:
-            cls = _TYPE_CLASS.get(ENTITIES[word]["type"], "anno-person")
+            cls = _TYPE_CLASS.get(entity_map[word]["type"], "anno-person")
             out.append(f'<span class="anno {cls}" data-entity="{escape(word)}">{escape(word)}</span>')
         last = m.end()
     out.append(str(escape(text[last:])))
@@ -140,7 +168,7 @@ def annotate(text):
 _CLAUSE_RE = re.compile(r"[^、，。；：！？「」『』（）]+[、，。；：！？」』）]*")
 
 
-def render_verse(text):
+def render_verse(text, testament="OT"):
     """把一節經文切成可點擊的分句 span，分句內仍套用實體標注。"""
     parts = []
     for m in _CLAUSE_RE.finditer(text):
@@ -148,10 +176,10 @@ def render_verse(text):
         if not clause.strip():
             continue
         parts.append(
-            f'<span class="clause" data-clause="{escape(clause)}">{annotate(clause)}</span>'
+            f'<span class="clause" data-clause="{escape(clause)}">{annotate(clause, testament)}</span>'
         )
     if not parts:  # 全是標點等極端情形
-        parts.append(annotate(text))
+        parts.append(annotate(text, testament))
     return Markup("".join(parts))
 
 
@@ -191,13 +219,18 @@ def build_nav(current_book, current_chapter):
     return Markup("".join(html))
 
 
+def _testament_of(book):
+    return "NT" if book in NT_BOOK_NAMES else "OT"
+
+
 def get_chapter(book, chapter):
     """從 cuv.json 取一章，回傳 [{verse, html}]；全本任何章節皆套用全域字典標注。"""
     chap = BIBLE.get(book, {}).get(str(chapter), {})
+    testament = _testament_of(book)
     verses = []
     for vnum in sorted(chap.keys(), key=lambda x: int(x)):
         text = chap[vnum]
-        verses.append({"verse": int(vnum), "html": render_verse(text)})
+        verses.append({"verse": int(vnum), "html": render_verse(text, testament)})
     return verses
 
 
@@ -205,7 +238,9 @@ def chapter_entities(book, chapter):
     """本章實際出現的實體（給前端卡片與地圖）。只回傳長度>=2、與標注一致者。"""
     chap = BIBLE.get(book, {}).get(str(chapter), {})
     joined = "".join(chap.values())
-    return {name: ENTITIES[name] for name in _ENTITY_NAMES if name in joined}
+    testament = _testament_of(book)
+    entity_map = _NT_ENTITY_MAP if testament == "NT" else _OT_ENTITY_MAP
+    return {name: entity_map[name] for name in entity_map if len(name) >= 2 and name in joined}
 
 
 # ============================================================
@@ -342,9 +377,11 @@ def api_explain():
         return jsonify({"error": "not_scripture",
                         "content": "只能解釋經文中的內容。"}), 400
 
-    # 第 1 層：手刻字典（整段剛好等於某實體名）
-    if text in ENTITIES:
-        return jsonify({"content": ENTITIES[text]["desc"], "source": "dict"})
+    # 第 1 層：手刻字典（整段剛好等於某實體名，依約章選正確的條目）
+    _testament = _testament_of(book)
+    _emap = _NT_ENTITY_MAP if _testament == "NT" else _OT_ENTITY_MAP
+    if text in _emap:
+        return jsonify({"content": _emap[text]["desc"], "source": "dict"})
 
     # 第 2 層：永久快取
     key = _explain_key(text, level)
