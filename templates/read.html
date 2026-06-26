@@ -174,14 +174,18 @@ function renderMap(ent) {
     _layer = L.layerGroup().addTo(_map);
   }
   _layer.clearLayers();
+  // 其他地名：只放小點，名稱改成碰觸/點擊才顯示，避免標籤全擠在一起；點了可開該地卡片
   Object.values(ENTITIES).forEach(e => {
     if (e.type === 'place' && e.name !== ent.name && e.lat != null) {
       L.circleMarker([e.lat, e.lng], { radius: 5, fillColor: '#8B6840', color: '#fff', weight: 1.5, fillOpacity: 1 })
-        .bindTooltip(e.name, { permanent: true, direction: 'top' }).addTo(_layer);
+        .bindTooltip(e.name, { direction: 'top', opacity: 0.95 })
+        .on('click', () => { if (ENTITIES[e.name]) openCard(e.name); })
+        .addTo(_layer);
     }
   });
+  // 焦點地名：較大、固定標籤
   L.circleMarker([ent.lat, ent.lng], { radius: 8, fillColor: '#2A5C3A', color: '#fff', weight: 2, fillOpacity: 1 })
-    .bindTooltip(ent.name, { permanent: true, direction: 'top' }).addTo(_layer);
+    .bindTooltip(ent.name, { permanent: true, direction: 'top', className: 'map-focus-label' }).addTo(_layer);
   _map.setView([ent.lat, ent.lng], 7);
   setTimeout(() => { _map.invalidateSize(); _map.flyTo([ent.lat, ent.lng], 7); }, 60);
 }
