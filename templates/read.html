@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ book }} 第{{ chapter }}章 — 聖經全書</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page">
+    <header class="chapter-header">
+      <div class="deco-line">
+        <span class="diamond"></span>
+        <span class="line"></span>
+        <span class="diamond"></span>
+      </div>
+      <h1 class="book-title">{{ book }}</h1>
+      <p class="chapter-sub">第 {{ chapter }} 章</p>
+    </header>
+
+    <main class="passage">
+      {% for v in verses %}
+      <p class="verse">
+        <sup class="verse-num">{{ v.verse }}</sup>{{ v.text }}
+      </p>
+      {% endfor %}
+      {% if not verses %}
+      <p class="no-data">經文載入失敗，請確認環境變數設定。</p>
+      {% endif %}
+    </main>
+
+    <footer class="chapter-footer">
+      <div class="deco-line">
+        <span class="diamond"></span>
+        <span class="line"></span>
+        <span class="diamond"></span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

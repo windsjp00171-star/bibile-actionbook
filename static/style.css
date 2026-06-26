@@ -1,0 +1,93 @@
+:root {
+  --bg: #F7F0E0;
+  --text: #2A1A08;
+  --gold: #C9A96E;
+  --gold-bright: #D4A847;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 300;
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+}
+
+.chapter-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.deco-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.deco-line .line {
+  flex: 1;
+  height: 1px;
+  background: var(--gold);
+}
+
+.deco-line .diamond {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.book-title {
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  margin-top: 20px;
+}
+
+.chapter-sub {
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  margin-top: 6px;
+}
+
+.passage {
+  line-height: 2.3;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+
+.verse {
+  margin-bottom: 0.4em;
+}
+
+.verse-num {
+  font-family: system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--gold);
+  vertical-align: super;
+  margin-right: 3px;
+}
+
+.chapter-footer {
+  margin-top: 48px;
+}
+
+.no-data {
+  color: #999;
+  text-align: center;
+  padding: 40px 0;
+}
