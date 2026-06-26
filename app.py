@@ -34,7 +34,15 @@ def _load_annotations():
         annotated = set()
         if os.path.exists(ann_path):
             with open(ann_path, encoding="utf-8") as f:
-                annotated = {tuple(x) for x in json.load(f)}
+                raw = json.load(f)
+                annotated = {tuple(x) for x in raw}
+        # annotated.json 為空時，用 seed 補上已知章節
+        if not annotated:
+            try:
+                from data.annotations import ANNOTATED as seed_ann
+                annotated = set(seed_ann)
+            except Exception:
+                pass
         return entities, annotated
     from data.annotations import ENTITIES as seed_ent, ANNOTATED as seed_ann
     return dict(seed_ent), set(seed_ann)
