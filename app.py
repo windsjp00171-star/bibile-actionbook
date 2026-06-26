@@ -328,27 +328,45 @@ def chapter_lineage(book, chapter, present_entities):
     if not seeds:
         return None
 
-    # 沿父母/子女展開 1 層：本章人物 + 直接父母與子女（足以看出在世系鏈的位置）
+    # 收集每個種子的所有祖先與後裔（沿關係圖走，防環）。
+    def walk(start, rel_key):
+        out, stack, seen = set(), [start], {start}
+        while stack:
+            cur = stack.pop()
+            for t in RELATIONSHIPS.get(cur, {}).get(rel_key, []):
+                if t in ENTITIES and t not in seen:
+                    seen.add(t); out.add(t); stack.append(t)
+        return out
+
+    anc = {s: walk(s, "父母") for s in seeds}
+    desc = {s: walk(s, "子女") for s in seeds}
+    anc_all = set().union(*anc.values()) if anc else set()
+    desc_all = set().union(*desc.values()) if desc else set()
+
+    # 節點 = 種子 + 「連接兩個種子」的中間人（既是某種子的祖先、又是另一種子的後裔）
+    #        + 種子的直接父母與子女（一層脈絡）。不會無謂追溯到亞當。
     nodes = set(seeds)
-    for n in seeds:
-        r = RELATIONSHIPS.get(n, {})
-        for t in r.get("父母", []) + r.get("子女", []):
+    nodes |= (anc_all & desc_all)            # 種子之間的橋接世系（族譜章節即整條鏈）
+    for s in seeds:                          # 一層脈絡
+        for t in RELATIONSHIPS.get(s, {}).get("父母", []) + RELATIONSHIPS.get(s, {}).get("子女", []):
             if t in ENTITIES:
                 nodes.add(t)
 
-    # 收集節點間的親子邊
+    # 親子邊
     edges = []
     for n in nodes:
         for c in RELATIONSHIPS.get(n, {}).get("子女", []):
             if c in nodes:
                 edges.append([n, c])
     if len(edges) < 2:
-        return None  # 親子連結太少，不值得單獨出一張結構圖
+        return None
 
-    # 依祖先深度分代（無父母者為第 0 代）
+    # 分代（無父母者為第 0 代）
     parents = {}
+    children = {}
     for p, c in edges:
         parents.setdefault(c, []).append(p)
+        children.setdefault(p, []).append(c)
     gen = {}
 
     def depth(n, seen=()):
@@ -363,16 +381,38 @@ def chapter_lineage(book, chapter, present_entities):
 
     for n in nodes:
         depth(n)
-    base = min(gen.values()) if gen else 0  # 正規化：最上一代從 0 起算
+    base = min(gen.values()) if gen else 0
+    for n in gen:
+        gen[n] -= base
+
+    # 防交錯排序：上代固定後，下一代依「父母平均位置」排列，使子女靠在父母之下。
+    by_gen = {}
+    for n in nodes:
+        by_gen.setdefault(gen[n], []).append(n)
+    max_gen = max(by_gen) if by_gen else 0
+    order = {}  # node -> 在該代的位置序 (0,1,2...)
+    top = sorted(by_gen.get(0, []))
+    for i, n in enumerate(top):
+        order[n] = i
+    for g in range(1, max_gen + 1):
+        row = by_gen.get(g, [])
+
+        def keyfn(n):
+            ps = [order[p] for p in parents.get(n, []) if p in order]
+            return (sum(ps) / len(ps)) if ps else len(order)
+        row_sorted = sorted(row, key=lambda n: (keyfn(n), n))
+        for i, n in enumerate(row_sorted):
+            order[n] = i
 
     node_list = []
-    for n in sorted(nodes, key=lambda x: gen.get(x, 0)):
-        e = ENTITIES.get(n)
+    for n in sorted(nodes, key=lambda x: (gen[x], order.get(x, 0))):
+        e = _resolve_entity(n, book, chapter) or ENTITIES.get(n)
         e = e[0] if isinstance(e, list) else e
         node_list.append({
             "key": n,
             "name": (e or {}).get("name", n),
-            "gen": gen.get(n, 0) - base,
+            "gen": gen[n],
+            "ord": order.get(n, 0),
             "lit": n in present_names,
         })
     return {"nodes": node_list, "edges": edges}
