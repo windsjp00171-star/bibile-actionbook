@@ -4575,5 +4575,151 @@
     "desc": "阿拉伯北部的商旅民族與地區，以貿易聞名，先知書中多次提及其受審判。",
     "lat": 26.6,
     "lng": 37.9
+  },
+  "迦南人": {
+    "type": "concept",
+    "name": "迦南人",
+    "name_en": "Canaanites",
+    "testament": "OT",
+    "desc": "應許之地迦南的原住民族總稱，拜巴力等偶像。神吩咐以色列進迦南時將其趕出，免得受其惡俗影響。"
+  },
+  "赫人": {
+    "type": "concept",
+    "name": "赫人",
+    "name_en": "Hittites",
+    "testament": "OT",
+    "desc": "迦南原住民族之一，源自小亞細亞的赫梯帝國。亞伯拉罕向赫人買麥比拉洞葬撒拉；烏利亞即赫人。"
+  },
+  "耶布斯人": {
+    "type": "concept",
+    "name": "耶布斯人",
+    "name_en": "Jebusites",
+    "testament": "OT",
+    "desc": "迦南族之一，據守耶路撒冷（耶布斯）的山城，直到大衛攻取，立為以色列京城。"
+  },
+  "希未人": {
+    "type": "concept",
+    "name": "希未人",
+    "name_en": "Hivites",
+    "testament": "OT",
+    "desc": "迦南原住民族之一。基遍人即希未人，曾用詭計與約書亞立約求存。"
+  },
+  "比利洗人": {
+    "type": "concept",
+    "name": "比利洗人",
+    "name_en": "Perizzites",
+    "testament": "OT",
+    "desc": "迦南地的原住民族之一，常與迦南人並提，是以色列當趕出之民。"
+  },
+  "革迦撒人": {
+    "type": "concept",
+    "name": "革迦撒人",
+    "name_en": "Girgashites",
+    "testament": "OT",
+    "desc": "迦南七族之一，是神應許從以色列面前趕出的民族之一。"
+  },
+  "以東": {
+    "type": "place",
+    "name": "以東",
+    "name_en": "Edom",
+    "testament": "OT",
+    "desc": "以掃的後裔與其所居之地，在死海以南的山地。以東與以色列是兄弟之邦卻常為敵，先知多預言其受審判。",
+    "lat": 30.7,
+    "lng": 35.5
+  },
+  "亞捫": {
+    "type": "place",
+    "name": "亞捫",
+    "name_en": "Ammon",
+    "testament": "OT",
+    "desc": "羅得後裔所成的民族，居約旦河東。常與以色列爭戰，拜偶像摩洛，與摩押為近親。",
+    "lat": 31.95,
+    "lng": 35.93
+  },
+  "米甸": {
+    "type": "place",
+    "name": "米甸",
+    "name_en": "Midian",
+    "testament": "OT",
+    "desc": "亞伯拉罕與基土拉所生米甸的後裔，居阿拉伯曠野的遊牧商旅民族。摩西逃亡時娶米甸祭司葉忒羅之女。",
+    "lat": 28.0,
+    "lng": 35.5
+  },
+  "亞瑪力": {
+    "type": "concept",
+    "name": "亞瑪力",
+    "name_en": "Amalek",
+    "testament": "OT",
+    "desc": "以掃之孫亞瑪力的後裔，曠野遊牧民族。出埃及時偷襲以色列，神命世代與之為敵，掃羅、大衛皆曾征討。"
+  },
+  "俄別以東": {
+    "type": "person",
+    "name": "俄別以東",
+    "name_en": "Obed-Edom",
+    "testament": "OT",
+    "desc": "迦特人，大衛運約櫃時暫存其家三月，耶和華因約櫃賜福他全家，後成為聖殿守門與歌唱者之祖。"
+  },
+  "亞衲族": {
+    "type": "concept",
+    "name": "亞衲族",
+    "name_en": "Anakim",
+    "testament": "OT",
+    "desc": "迦南地身材高大的巨人族，住希伯崙一帶。十二探子見之喪膽，後迦勒倚靠神將其趕出。"
+  },
+  "利乏音人": {
+    "type": "concept",
+    "name": "利乏音人",
+    "name_en": "Rephaim",
+    "testament": "OT",
+    "desc": "古代身量高大的巨人族，巴珊王噩即其遺存，他的鐵床長九肘。"
+  },
+  "基尼人": {
+    "type": "concept",
+    "name": "基尼人",
+    "name_en": "Kenites",
+    "testament": "OT",
+    "desc": "與以色列友好的遊牧民族，摩西岳父葉忒羅一族屬之。常與猶大支派雜居。"
+  },
+  "以實瑪利人": {
+    "type": "concept",
+    "name": "以實瑪利人",
+    "name_en": "Ishmaelites",
+    "testament": "OT",
+    "desc": "亞伯拉罕之子以實瑪利的後裔，阿拉伯遊牧商旅民族。約瑟即被兄弟賣給往埃及去的以實瑪利商隊。"
+  },
+  "雅完": {
+    "type": "place",
+    "name": "雅完",
+    "name_en": "Javan",
+    "testament": "OT",
+    "desc": "雅弗之子雅完，是希臘人（愛奧尼亞）的祖先，其名代表希臘一帶的民族。"
+  },
+  "歌篾": {
+    "type": "place",
+    "name": "歌篾",
+    "name_en": "Gomer",
+    "testament": "OT",
+    "desc": "雅弗的長子，是古代居黑海北方一帶民族（辛梅里安人）的祖先。"
+  },
+  "土巴": {
+    "type": "place",
+    "name": "土巴",
+    "name_en": "Tubal",
+    "testament": "OT",
+    "desc": "雅弗之子，小亞細亞一帶民族的祖先，常與米設並提，以西結書預言其結局。"
+  },
+  "米設": {
+    "type": "place",
+    "name": "米設",
+    "name_en": "Meshech",
+    "testament": "OT",
+    "desc": "雅弗之子，小亞細亞北方民族的祖先，常與土巴並提，屬歌革的勢力範圍。"
+  },
+  "寧錄": {
+    "type": "person",
+    "name": "寧錄",
+    "name_en": "Nimrod",
+    "testament": "OT",
+    "desc": "含的後裔，世上第一個英雄勇士，「在耶和華面前是個英勇的獵戶」。建巴別、尼尼微等城，國度起於示拿。"
   }
 }
