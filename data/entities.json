@@ -3896,5 +3896,117 @@
     "name_en": "Onyx",
     "testament": "OT",
     "desc": "一種寶石，刻上以色列十二支派的名字，鑲在大祭司以弗得的兩肩，使他帶著支派名常到神前記念。"
+  },
+  "沒藥": {
+    "type": "concept",
+    "name": "沒藥",
+    "name_en": "Myrrh",
+    "testament": "both",
+    "desc": "從沒藥樹脂提煉的珍貴香料，氣味芬芳，用於聖膏油、香水與屍體防腐。博士獻給嬰孩耶穌的禮物之一，預表他的受死。"
+  },
+  "乳香": {
+    "type": "concept",
+    "name": "乳香",
+    "name_en": "Frankincense",
+    "testament": "both",
+    "desc": "乳香樹的芳香樹脂，燃燒時香氣濃郁，用於聖殿燒香與素祭，象徵禱告與敬拜。博士獻給耶穌的三禮之一。"
+  },
+  "哪噠": {
+    "type": "concept",
+    "name": "哪噠",
+    "name_en": "Nard/Spikenard",
+    "testament": "both",
+    "desc": "從喜馬拉雅甘松提煉的極珍貴香膏，價值不菲。馬利亞曾用一瓶真哪噠香膏抹耶穌，預備他的安葬。"
+  },
+  "真哪噠": {
+    "type": "concept",
+    "name": "真哪噠",
+    "name_en": "Pure Nard",
+    "testament": "NT",
+    "desc": "純正未摻雜的哪噠香膏，價值約一年工資。伯大尼的馬利亞打破玉瓶，澆在耶穌身上膏他。"
+  },
+  "桂皮": {
+    "type": "concept",
+    "name": "桂皮",
+    "name_en": "Cassia",
+    "testament": "OT",
+    "desc": "肉桂類樹皮製成的香料，是調製聖膏油的成分之一，氣味芬芳。"
+  },
+  "肉桂": {
+    "type": "concept",
+    "name": "肉桂",
+    "name_en": "Cinnamon",
+    "testament": "both",
+    "desc": "芳香的樹皮香料，是聖膏油的成分之一，也用作香水，貴重而芬芳。"
+  },
+  "菖蒲": {
+    "type": "concept",
+    "name": "菖蒲",
+    "name_en": "Calamus",
+    "testament": "OT",
+    "desc": "一種帶香氣的蘆葦類植物根莖，是調製聖膏油的香料成分之一。"
+  },
+  "牛膝草": {
+    "type": "concept",
+    "name": "牛膝草",
+    "name_en": "Hyssop",
+    "testament": "both",
+    "desc": "一種小灌木，枝葉用於潔淨禮儀：逾越節塗血、潔淨大痲瘋與沾染者灑水。耶穌被釘時也以牛膝草遞醋。"
+  },
+  "風茄": {
+    "type": "concept",
+    "name": "風茄",
+    "name_en": "Mandrake",
+    "testament": "OT",
+    "desc": "一種結黃色果實的植物，古人相信能助孕。創世記中利亞與拉結曾為風茄相爭。"
+  },
+  "芥菜種": {
+    "type": "concept",
+    "name": "芥菜種",
+    "name_en": "Mustard Seed",
+    "testament": "NT",
+    "desc": "百種子裡最小的一種，長成卻比菜都大。耶穌以它比喻天國與信心：微小卻能成長壯大。"
+  },
+  "無酵餅": {
+    "type": "concept",
+    "name": "無酵餅",
+    "name_en": "Unleavened Bread",
+    "testament": "both",
+    "desc": "不加酵迅速烤成的餅，紀念以色列出埃及匆忙無暇發麵。逾越節期間七日只吃無酵餅，酵象徵罪。"
+  },
+  "苦菜": {
+    "type": "concept",
+    "name": "苦菜",
+    "name_en": "Bitter Herbs",
+    "testament": "OT",
+    "desc": "逾越節與羊羔同吃的苦味野菜，使以色列人記念在埃及為奴的苦難。"
+  },
+  "紅豆湯": {
+    "type": "concept",
+    "name": "紅豆湯",
+    "name_en": "Red Stew",
+    "testament": "OT",
+    "desc": "雅各所煮的紅色豆湯。以掃因飢餓，以一碗紅豆湯換掉了長子的名分，因此得名「以東」（紅）。"
+  },
+  "斑鳩": {
+    "type": "concept",
+    "name": "斑鳩",
+    "name_en": "Turtledove",
+    "testament": "both",
+    "desc": "獻祭用的鳥類，是窮人獻不起牛羊時可獻的祭物。耶穌的父母獻上一對斑鳩或雛鴿為他行潔淨禮。"
+  },
+  "雛鴿": {
+    "type": "concept",
+    "name": "雛鴿",
+    "name_en": "Young Pigeon",
+    "testament": "both",
+    "desc": "幼小的家鴿，與斑鳩同為窮人可獻的祭物，用於燔祭與贖罪祭、產婦潔淨禮。"
+  },
+  "拿他弗": {
+    "type": "concept",
+    "name": "拿他弗",
+    "name_en": "Stacte",
+    "testament": "OT",
+    "desc": "調製聖香的香料之一，一種樹脂類香膠，與施喜列、白松香、乳香同用。"
   }
 }
