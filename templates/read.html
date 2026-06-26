@@ -79,6 +79,7 @@
   <h3 class="card-name" id="cardName"></h3>
   <div class="card-map" id="cardMap"></div>
   <p class="card-desc" id="cardDesc"></p>
+  <div class="card-relations" id="cardRelations"></div>
   <div class="card-verses" id="cardVerses"></div>
   <button class="card-explain-btn" id="cardExplainBtn" onclick="openExplainFromCard()">✦ AI 深入解釋</button>
   <button class="card-feedback-btn" id="cardFeedbackBtn" onclick="submitFeedback()">⚑ 標註有誤</button>
@@ -109,7 +110,11 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const ENTITIES = {{ entities_json | safe }};
+const RELATIONS = {{ relations_json | safe }};
+const RELATED_BRIEF = {{ related_brief_json | safe }};
 const TYPE_LABEL = { person: '人物', place: '地點', concept: '族群／概念' };
+// 關係顯示順序與標籤
+const REL_ORDER = ['父母','母','子女','手足','配偶','師長','門生','同工','敵對','主','婢女','臣僕','祖父','孫'];
 
 // ── Service Worker ──────────────────────────────────────────────
 if ('serviceWorker' in navigator) {
@@ -168,14 +173,46 @@ function renderMap(ent) {
   setTimeout(() => { _map.invalidateSize(); _map.flyTo([ent.lat, ent.lng], 7); }, 60);
 }
 
+function _lookupEntity(name) {
+  return ENTITIES[name] || RELATED_BRIEF[name] || null;
+}
+
+function renderRelations(name) {
+  const box = document.getElementById('cardRelations');
+  box.innerHTML = '';
+  const rel = RELATIONS[name];
+  if (!rel) return;
+  const seen = REL_ORDER.filter(r => rel[r]);
+  const rest = Object.keys(rel).filter(r => !REL_ORDER.includes(r));
+  [...seen, ...rest].forEach(relType => {
+    const row = document.createElement('div');
+    row.className = 'rel-row';
+    const lbl = document.createElement('span');
+    lbl.className = 'rel-label';
+    lbl.textContent = relType;
+    row.appendChild(lbl);
+    rel[relType].forEach(target => {
+      if (!_lookupEntity(target)) return;
+      const chip = document.createElement('span');
+      chip.className = 'rel-chip';
+      const t = _lookupEntity(target);
+      chip.textContent = (t && t.name) ? t.name : target;
+      chip.addEventListener('click', e => { e.stopPropagation(); openCard(target); });
+      row.appendChild(chip);
+    });
+    box.appendChild(row);
+  });
+}
+
 function openCard(name) {
-  const ent = ENTITIES[name];
+  const ent = _lookupEntity(name);
   if (!ent) return;
   _curEntity = name;
   document.getElementById('cardBadge').textContent = TYPE_LABEL[ent.type] || '';
   document.getElementById('cardBadge').className = 'card-badge anno-' + ent.type;
   document.getElementById('cardName').textContent = ent.name + (ent.name_en ? '　' + ent.name_en : '');
   document.getElementById('cardDesc').textContent = ent.desc || '';
+  renderRelations(name);
   const vbox = document.getElementById('cardVerses');
   vbox.innerHTML = '';
   (ent.verses || '').split('、').filter(Boolean).forEach(v => {
