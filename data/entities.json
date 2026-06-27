@@ -5289,5 +5289,77 @@
     "name_en": "Gaham",
     "testament": "OT",
     "desc": "拿鶴與妾流瑪所生之子，亞伯拉罕兄弟拿鶴的後代之一。"
+  },
+  "巴力": {
+    "type": "concept",
+    "name": "巴力",
+    "name_en": "Baal",
+    "testament": "OT",
+    "desc": "迦南人的風暴與豐收之神，最常見的偶像。以色列屢次背棄耶和華去拜巴力，先知（如以利亞）力斥之。"
+  },
+  "巴力洗分": {
+    "type": "place",
+    "name": "巴力洗分",
+    "name_en": "Baal-zephon",
+    "testament": "OT",
+    "desc": "埃及邊境近紅海的地方，以色列出埃及時在其對面的海邊安營，神在此分紅海。",
+    "lat": 30.0,
+    "lng": 32.5
+  },
+  "巴力毗珥": {
+    "type": "place",
+    "name": "巴力毗珥",
+    "name_en": "Baal-peor",
+    "testament": "OT",
+    "desc": "摩押的巴力廟所在，以色列人在此與摩押女子行淫、拜偶像，招致瘟疫。"
+  },
+  "巴力西卜": {
+    "type": "concept",
+    "name": "巴力西卜",
+    "name_en": "Baal-zebub",
+    "testament": "both",
+    "desc": "以革倫人所拜的「蒼蠅之神」巴力。新約以「別西卜」指鬼王。"
+  },
+  "巴力迦得": {
+    "type": "place",
+    "name": "巴力迦得",
+    "name_en": "Baal-gad",
+    "testament": "OT",
+    "desc": "黎巴嫩平原、黑門山下的地方，約書亞征服迦南的最北界。"
+  },
+  "約哈難": {
+    "type": "person",
+    "name": "約哈難",
+    "name_en": "Johanan",
+    "testament": "OT",
+    "desc": "舊約多人同名。著名者為加利亞之子約哈難，耶路撒冷陷落後率餘民、不顧耶利米勸阻下埃及。"
+  },
+  "尼布撒拉旦": {
+    "type": "person",
+    "name": "尼布撒拉旦",
+    "name_en": "Nebuzaradan",
+    "testament": "OT",
+    "desc": "巴比倫的護衛長，奉尼布甲尼撒之命焚毀耶路撒冷與聖殿、擄走猶大人。"
+  },
+  "哈拿尼雅": {
+    "type": "person",
+    "name": "哈拿尼雅",
+    "name_en": "Hananiah",
+    "testament": "OT",
+    "desc": "舊約多人同名。最著名為但以理的同伴哈拿尼雅（巴比倫名沙得拉）；另有與耶利米對抗的假先知哈拿尼雅。"
+  },
+  "亞比戶": {
+    "type": "person",
+    "name": "亞比戶",
+    "name_en": "Abihu",
+    "testament": "OT",
+    "desc": "亞倫的次子，與長兄拿答獻凡火（不照神所吩咐）在耶和華面前，被火燒滅。"
+  },
+  "拿答": {
+    "type": "person",
+    "name": "拿答",
+    "name_en": "Nadab",
+    "testament": "OT",
+    "desc": "亞倫的長子，與弟亞比戶獻凡火被神擊殺。（另有以色列王拿答，耶羅波安之子。）"
   }
 }
