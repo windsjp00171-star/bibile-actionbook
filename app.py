@@ -323,8 +323,20 @@ def chapter_lineage(book, chapter, present_entities):
     present_entities：本章 {詞條鍵: 解析後條目}；只取在本章解析為「人物」者當種子，
     排除同名地名/支派（如列王紀的「猶大」其實是猶大國）。"""
     present_names = set(present_entities.keys())
+
+    def owns_relationships(n):
+        """關係圖的邊以「族譜詞義」為準。若本章把名字解析成非族譜的同名分支
+        （如使徒行傳的『雅各』是使徒、『約瑟』是巴撒巴、『猶大』是加略人），
+        就不套用族長家譜，避免世系圖亂接。預設詞義(v[0])或標了 rel_owner 才算。"""
+        v = ENTITIES.get(n)
+        if not isinstance(v, list):
+            return True
+        res = _resolve_entity(n, book, chapter)
+        return res is v[0] or bool((res or {}).get("rel_owner"))
+
     seeds = [n for n, e in present_entities.items()
-             if (e.get("type") == "person") and n in RELATIONSHIPS]
+             if (e.get("type") == "person") and n in RELATIONSHIPS
+             and owns_relationships(n)]
     if not seeds:
         return None
 
@@ -359,6 +371,13 @@ def chapter_lineage(book, chapter, present_entities):
             if c in nodes:
                 edges.append([n, c])
     if len(edges) < 2:
+        return None
+
+    # 只在「本章人物彼此真的構成親子鏈」時才出世系圖。
+    # 族譜章（馬太1、創5、列王）種子間有大量親子邊；使徒行傳1 只是人物清單，
+    # 種子之間幾乎沒有親子關係，不應硬把使徒雅各接到族長家譜上。
+    seed_edges = sum(1 for p, c in edges if p in present_names and c in present_names)
+    if seed_edges < 3:
         return None
 
     # 分代（無父母者為第 0 代）

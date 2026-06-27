@@ -366,6 +366,9 @@ function openCard(name) {
   // 重置解釋卡狀態
   document.getElementById('explainBody').textContent = '';
   document.getElementById('explainFoot').textContent = '';
+  // 重置「標註有誤」按鈕（每張卡片都要能回報）
+  document.getElementById('cardFeedbackBtn').style.display = '';
+  document.getElementById('cardFeedbackDone').style.display = 'none';
   document.getElementById('annoCard').classList.add('open');
   document.getElementById('cardOverlay').classList.add('open');
 }
