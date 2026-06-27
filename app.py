@@ -576,6 +576,16 @@ def api_entities():
     return jsonify(groups)
 
 
+@app.route("/api/entity")
+def api_entity():
+    """取單一詞條的卡片資料（給索引點擊後直接看標註內容）。"""
+    name = (request.args.get("name") or "").strip()
+    card = mark_bible.entity_card(name) if name else None
+    if not card:
+        return jsonify({"error": "not_found"}), 404
+    return jsonify(card)
+
+
 @app.route("/api/book_places")
 def api_book_places():
     """整卷地圖：某書卷中出現、且有座標的地點（去重）。"""

@@ -170,6 +170,7 @@
   <div class="card-relations" id="cardRelations"></div>
   <div class="card-verses" id="cardVerses"></div>
   <button class="card-explain-btn" id="cardExplainBtn" onclick="openExplainFromCard()">✦ AI 深入解釋</button>
+  <button class="card-explain-btn" id="cardVersesBtn" onclick="listEntityVerses()">🔍 列出所有經節</button>
   <button class="card-feedback-btn" id="cardFeedbackBtn" onclick="submitFeedback()">⚑ 標註有誤</button>
   <div class="card-feedback-done" id="cardFeedbackDone" style="display:none">已回報，謝謝！</div>
 </aside>
@@ -436,6 +437,25 @@ function closeExplore() {
   document.getElementById('searchOverlay').classList.remove('open');
   document.getElementById('searchOverlay').onclick = closeSearch;
 }
+// 索引點擊 → 先取詞條卡片資料，開卡片看標註內容（非直接跑搜尋）
+function openEntityInfo(key) {
+  fetch('/api/entity?name=' + encodeURIComponent(key)).then(r => r.json()).then(c => {
+    if (c.error) return;
+    RELATED_BRIEF[key] = c;
+    closeExplore();
+    openCard(key);
+  }).catch(() => {});
+}
+// 在卡片列出此詞條的所有經節（去掉括號註記再搜）
+function listEntityVerses() {
+  if (!_curEntity) return;
+  const term = _curEntity.replace(/（.*$/, '').replace(/\(.*$/, '');
+  closeCard();
+  openSearch();
+  document.getElementById('searchInput').value = term;
+  document.getElementById('searchScope').checked = false;
+  runSearch();
+}
 function switchExplore(t) {
   _exploreType = t;
   document.querySelectorAll('.explore-tab').forEach(b => b.classList.toggle('active', b.dataset.type === t));
@@ -451,7 +471,7 @@ function renderExplore() {
       const a = document.createElement('button');
       a.className = 'explore-item';
       a.innerHTML = (e.has_map ? '📍 ' : '') + e.name + (e.name_en ? ' <span class="ex-en">' + e.name_en + '</span>' : '');
-      a.onclick = () => { closeExplore(); openSearch(); document.getElementById('searchInput').value = e.key; runSearch(); };
+      a.onclick = () => openEntityInfo(e.key);
       list.appendChild(a);
     });
 }
