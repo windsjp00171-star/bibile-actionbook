@@ -48,10 +48,10 @@
   {% if lineage_json and lineage_json != 'null' %}
   <button class="lineage-trigger" id="lineageTrigger" onclick="openLineage()">⛓ 本章世系結構圖</button>
   {% endif %}
-  <button class="search-trigger" onclick="openSearch()">🔍 全本搜尋</button>
-  <button class="search-trigger" onclick="openExplore()">📑 人物地點索引</button>
-  <button class="search-trigger" onclick="openBookMap()">🗺 本卷地圖</button>
-  <button class="search-trigger" onclick="openBookmarks()">🔖 我的書籤</button>
+  <button class="search-trigger" id="tbSearch" onclick="openSearch()">🔍 全本搜尋</button>
+  <button class="search-trigger" id="tbExplore" onclick="openExplore()">📑 人物地點索引</button>
+  <button class="search-trigger" id="tbBookMap" onclick="openBookMap()">🗺 本卷地圖</button>
+  <button class="search-trigger" id="tbBookmarks" onclick="openBookmarks()">🔖 我的書籤</button>
 
   <a class="resume-banner" id="resumeBanner" href="#" style="display:none"></a>
 
@@ -76,6 +76,21 @@
     </div>
     <button class="chapter-report-btn" onclick="reportChapter()">⚑ 本章有漏標或標錯？回報</button>
   </footer>
+</div>
+
+<!-- 聚焦式導引 -->
+<div id="tourMask"></div>
+<div id="tourSpot"></div>
+<div id="tourCallout">
+  <div class="tour-step" id="tourStepNo"></div>
+  <div class="tour-title" id="tourTitle"></div>
+  <div class="tour-text" id="tourText"></div>
+  <div class="tour-btns">
+    <button class="tour-skip" onclick="endTour()">略過</button>
+    <span style="flex:1"></span>
+    <button class="tour-prev" id="tourPrev" onclick="tourPrev()">‹ 上一步</button>
+    <button class="tour-next" id="tourNext" onclick="tourNext()">下一步 ›</button>
+  </div>
 </div>
 
 <!-- 經文搜尋 -->
@@ -542,6 +557,10 @@ document.addEventListener('DOMContentLoaded', () => {
       num.addEventListener('click', () => toggleBookmark(parseInt(p.dataset.v), p)); }
   });
   loadBookmarks();
+  // 首次進入閱讀頁自動帶導引（之後可按「？教學」重看）
+  if (!localStorage.getItem('bible-tour-done')) {
+    setTimeout(startTour, 700);
+  }
   // 從搜尋結果跳轉而來：高亮並捲到該節
   const v = new URLSearchParams(location.search).get('v');
   if (v) {
@@ -627,11 +646,63 @@ if (activeBook) {
 }
 
 // ── Tour ─────────────────────────────────────────────────────────
+// ── 全站聚焦式導引（spotlight tour） ──────────────────────────────
+const TOUR_STEPS = [
+  { sel: '.legend', title: '標註說明', text: '經文中有底線的詞，分人物（紅）、地點（綠）、族群／概念（紫）三類。' },
+  { sel: '.passage .anno', title: '點詞看背景', text: '點任一個有底線的詞，就跳出小卡片：人物生平、地點地圖、概念解釋。看完關掉繼續讀。' },
+  { sel: '.passage .verse-num', title: '節號＝書籤', text: '點經文的「節號」即可加入／取消書籤，加了會顯示 🔖。' },
+  { sel: '#tbSearch', title: '全本搜尋', text: '搜尋整本聖經（66 卷）的經文，點結果直接跳到該節。' },
+  { sel: '#tbExplore', title: '人物地點索引', text: '瀏覽全部人物、地點、概念，點任一個列出他出現的所有經節。' },
+  { sel: '#tbBookMap', title: '本卷地圖', text: '把本卷所有地點聚到一張大地圖，一眼看見地理全貌。' },
+  { sel: '#tbBookmarks', title: '我的書籤', text: '這裡看所有書籤，點任一筆跳回該節。' },
+  { sel: '#lineageTrigger', title: '世系結構圖', text: '家譜、列王的章節會出現這顆按鈕，畫出世系樹、本章人物會點亮。' },
+  { sel: '.sidebar', title: '書卷切換', text: '左側可切換書卷與章節，隨時跳到聖經任何地方。' },
+];
+let _tourI = 0, _tourList = [];
 function startTour() {
-  const first = document.querySelector('.anno');
-  if (first) openCard(first.dataset.entity);
-  else alert('點選經文中有底線的人名或地名，即可看背景資料與地圖。');
+  _tourList = TOUR_STEPS.filter(s => document.querySelector(s.sel));
+  if (!_tourList.length) return;
+  _tourI = 0;
+  document.getElementById('tourMask').classList.add('on');
+  showTourStep();
 }
+function endTour() {
+  document.getElementById('tourMask').classList.remove('on');
+  document.getElementById('tourSpot').style.display = 'none';
+  document.getElementById('tourCallout').style.display = 'none';
+  localStorage.setItem('bible-tour-done', '1');
+}
+function showTourStep() {
+  const step = _tourList[_tourI];
+  const el = document.querySelector(step.sel);
+  if (!el) { _tourI++; if (_tourI < _tourList.length) return showTourStep(); return endTour(); }
+  el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  setTimeout(() => {
+    const r = el.getBoundingClientRect();
+    const pad = 6;
+    const spot = document.getElementById('tourSpot');
+    spot.style.display = 'block';
+    spot.style.left = (r.left - pad) + 'px';
+    spot.style.top = (r.top - pad) + 'px';
+    spot.style.width = (r.width + pad * 2) + 'px';
+    spot.style.height = (r.height + pad * 2) + 'px';
+    const co = document.getElementById('tourCallout');
+    co.style.display = 'block';
+    document.getElementById('tourTitle').textContent = step.title;
+    document.getElementById('tourText').textContent = step.text;
+    document.getElementById('tourStepNo').textContent = (_tourI + 1) + ' / ' + _tourList.length;
+    document.getElementById('tourPrev').style.visibility = _tourI === 0 ? 'hidden' : 'visible';
+    document.getElementById('tourNext').textContent = _tourI === _tourList.length - 1 ? '完成' : '下一步 ›';
+    // callout 放在 spot 下方，超出則放上方
+    const below = r.bottom + 14;
+    const coH = 150;
+    if (below + coH < window.innerHeight) { co.style.top = below + 'px'; }
+    else { co.style.top = Math.max(12, r.top - coH - 14) + 'px'; }
+    co.style.left = Math.min(Math.max(12, r.left), window.innerWidth - 320) + 'px';
+  }, 320);
+}
+function tourNext() { if (_tourI >= _tourList.length - 1) return endTour(); _tourI++; showTourStep(); }
+function tourPrev() { if (_tourI > 0) { _tourI--; showTourStep(); } }
 
 // ── Reading progress (localStorage, offline-friendly) ───────────
 const CUR_BOOK = {{ book | tojson }};
