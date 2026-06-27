@@ -3526,7 +3526,7 @@
     "testament": "NT"
   },
   "以色列眾人": {
-    "type": "people",
+    "type": "person",
     "name": "以色列眾人",
     "name_en": "Israelites",
     "desc": "指上帝選擇的民族，以雅各為始祖",
@@ -3547,7 +3547,7 @@
     "testament": "OT"
   },
   "亞摩利人": {
-    "type": "people",
+    "type": "person",
     "name": "亞摩利人",
     "name_en": "Amorite",
     "desc": "古代中東的一個民族，曾居住在迦南地區",

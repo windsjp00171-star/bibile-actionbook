@@ -527,9 +527,12 @@ def api_search():
         limit = min(max(int(request.args.get("limit", 200)), 1), 500)
     except ValueError:
         limit = 200
+    scope = (request.args.get("book") or "").strip()  # 限定書卷（可空）
     results = []
     total = 0
     for book, _ch_count in ALL_BOOKS:
+        if scope and book != scope:
+            continue
         chapters = BIBLE.get(book, {})
         for ch in sorted(chapters.keys(), key=lambda x: int(x)):
             verses = chapters[ch]
@@ -544,6 +547,46 @@ def api_search():
                         })
     return jsonify({"query": q, "total": total,
                     "truncated": total > len(results), "results": results})
+
+
+@app.route("/api/entities")
+def api_entities():
+    """人物/地點/概念索引：列出全部詞條（依類型分組）。"""
+    groups = {"person": [], "place": [], "concept": []}
+    for name, val in ENTITIES.items():
+        e = val[0] if isinstance(val, list) else val
+        t = e.get("type", "person")
+        groups.setdefault(t, []).append({
+            "key": name,
+            "name": e.get("name", name),
+            "name_en": e.get("name_en", ""),
+            "has_map": e.get("lat") is not None,
+        })
+    for t in groups:
+        groups[t].sort(key=lambda x: x["name"])
+    return jsonify(groups)
+
+
+@app.route("/api/book_places")
+def api_book_places():
+    """整卷地圖：某書卷中出現、且有座標的地點（去重）。"""
+    book = (request.args.get("book") or "").strip()
+    chapters = BIBLE.get(book, {})
+    if not chapters:
+        return jsonify({"book": book, "places": []})
+    joined = "".join(t for ch in chapters.values() for t in ch.values())
+    seen, places = set(), []
+    for name, val in ENTITIES.items():
+        e = val[0] if isinstance(val, list) else val
+        if e.get("type") != "place" or e.get("lat") is None:
+            continue
+        if name in seen or name not in joined:
+            continue
+        seen.add(name)
+        places.append({"name": e.get("name", name), "key": name,
+                       "lat": e["lat"], "lng": e["lng"],
+                       "desc": e.get("desc", "")})
+    return jsonify({"book": book, "places": places})
 
 
 @app.route("/api/progress", methods=["GET", "POST"])

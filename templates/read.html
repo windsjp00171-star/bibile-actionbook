@@ -49,6 +49,8 @@
   <button class="lineage-trigger" id="lineageTrigger" onclick="openLineage()">⛓ 本章世系結構圖</button>
   {% endif %}
   <button class="search-trigger" onclick="openSearch()">🔍 搜尋經文</button>
+  <button class="search-trigger" onclick="openExplore()">📑 人物地點索引</button>
+  <button class="search-trigger" onclick="openBookMap()">🗺 本卷地圖</button>
 
   <a class="resume-banner" id="resumeBanner" href="#" style="display:none"></a>
 
@@ -84,8 +86,31 @@
     <input type="text" id="searchInput" placeholder="輸入關鍵字，如「歌利亞」「愛是恆久忍耐」" autocomplete="off">
     <button onclick="runSearch()">搜尋</button>
   </div>
+  <label class="search-scope"><input type="checkbox" id="searchScope"> 只搜本卷（{{ book }}）</label>
   <div class="search-meta" id="searchMeta"></div>
   <div class="search-results" id="searchResults"></div>
+</aside>
+
+<!-- 人物/地點/概念索引 -->
+<div class="search-overlay" id="exploreOverlay" onclick="closeExplore()"></div>
+<aside class="search-panel" id="explorePanel">
+  <button class="card-close" onclick="closeExplore()" aria-label="關閉">✕</button>
+  <h3 class="search-title">人物・地點・概念索引</h3>
+  <div class="explore-tabs">
+    <button class="explore-tab active" data-type="person" onclick="switchExplore('person')">人物</button>
+    <button class="explore-tab" data-type="place" onclick="switchExplore('place')">地點</button>
+    <button class="explore-tab" data-type="concept" onclick="switchExplore('concept')">概念</button>
+  </div>
+  <input type="text" id="exploreFilter" class="explore-filter" placeholder="篩選名稱…" autocomplete="off">
+  <div class="explore-list" id="exploreList"></div>
+</aside>
+
+<!-- 本卷地圖 -->
+<div class="bigmap-overlay" id="bookMapOverlay" onclick="closeBookMap()"></div>
+<aside class="bigmap-panel" id="bookMapPanel">
+  <button class="card-close" onclick="closeBookMap()" aria-label="關閉">✕</button>
+  <h3 class="bigmap-title">本卷地圖　{{ book }}</h3>
+  <div class="bigmap-canvas" id="bookMap"></div>
 </aside>
 
 <!-- 本章世系結構圖 -->
@@ -355,7 +380,9 @@ function runSearch() {
   const box = document.getElementById('searchResults');
   if (!q) { meta.textContent = ''; box.innerHTML = ''; return; }
   meta.textContent = '搜尋中…'; box.innerHTML = '';
-  fetch('/api/search?q=' + encodeURIComponent(q) + '&limit=200')
+  const scoped = document.getElementById('searchScope').checked;
+  const bookParam = scoped ? '&book=' + encodeURIComponent(CUR_BOOK) : '';
+  fetch('/api/search?q=' + encodeURIComponent(q) + bookParam + '&limit=200')
     .then(r => r.json()).then(d => {
       meta.textContent = '找到 ' + d.total + ' 節' + (d.truncated ? '（顯示前 200）' : '');
       box.innerHTML = '';
@@ -370,9 +397,78 @@ function runSearch() {
       if (!d.results.length) box.innerHTML = '<p class="search-empty">查無符合的經文。</p>';
     }).catch(() => { meta.textContent = '搜尋失敗，請稍後再試。'; });
 }
+// ── 人物/地點/概念索引 ──────────────────────────────────────────
+let _exploreData = null, _exploreType = 'person';
+function openExplore() {
+  document.getElementById('explorePanel').classList.add('open');
+  document.getElementById('searchOverlay').classList.add('open');
+  document.getElementById('searchOverlay').onclick = closeExplore;
+  if (_exploreData) { renderExplore(); }
+  else fetch('/api/entities').then(r => r.json()).then(d => { _exploreData = d; renderExplore(); });
+}
+function closeExplore() {
+  document.getElementById('explorePanel').classList.remove('open');
+  document.getElementById('searchOverlay').classList.remove('open');
+  document.getElementById('searchOverlay').onclick = closeSearch;
+}
+function switchExplore(t) {
+  _exploreType = t;
+  document.querySelectorAll('.explore-tab').forEach(b => b.classList.toggle('active', b.dataset.type === t));
+  renderExplore();
+}
+function renderExplore() {
+  if (!_exploreData) return;
+  const filter = document.getElementById('exploreFilter').value.trim();
+  const list = document.getElementById('exploreList');
+  list.innerHTML = '';
+  (_exploreData[_exploreType] || []).filter(e => !filter || e.name.includes(filter) || (e.name_en||'').toLowerCase().includes(filter.toLowerCase()))
+    .forEach(e => {
+      const a = document.createElement('button');
+      a.className = 'explore-item';
+      a.innerHTML = (e.has_map ? '📍 ' : '') + e.name + (e.name_en ? ' <span class="ex-en">' + e.name_en + '</span>' : '');
+      a.onclick = () => { closeExplore(); openSearch(); document.getElementById('searchInput').value = e.key; runSearch(); };
+      list.appendChild(a);
+    });
+}
+
+// ── 本卷地圖 ────────────────────────────────────────────────────
+let _bookMap = null;
+function openBookMap() {
+  document.getElementById('bookMapPanel').classList.add('open');
+  document.getElementById('bookMapOverlay').classList.add('open');
+  fetch('/api/book_places?book=' + encodeURIComponent(CUR_BOOK)).then(r => r.json()).then(d => {
+    setTimeout(() => {
+      const el = document.getElementById('bookMap');
+      if (!_bookMap) {
+        _bookMap = L.map(el, { zoomControl: true, attributionControl: false });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 14 }).addTo(_bookMap);
+      }
+      _bookMap.eachLayer(l => { if (l instanceof L.CircleMarker) _bookMap.removeLayer(l); });
+      const pts = [];
+      (d.places || []).forEach(p => {
+        L.circleMarker([p.lat, p.lng], { radius: 6, fillColor: '#8B6840', color: '#fff', weight: 1.5, fillOpacity: 1 })
+          .bindTooltip(p.name, { permanent: true, direction: 'top' })
+          .on('click', () => { if (ENTITIES[p.key] || RELATED_BRIEF[p.key]) { closeBookMap(); openCard(p.key); } })
+          .addTo(_bookMap);
+        pts.push([p.lat, p.lng]);
+      });
+      _bookMap.invalidateSize();
+      if (pts.length > 1) _bookMap.fitBounds(pts, { padding: [40, 40] });
+      else if (pts.length === 1) _bookMap.setView(pts[0], 7);
+      else _bookMap.setView([31.5, 35], 6);
+    }, 80);
+  });
+}
+function closeBookMap() {
+  document.getElementById('bookMapPanel').classList.remove('open');
+  document.getElementById('bookMapOverlay').classList.remove('open');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const inp = document.getElementById('searchInput');
   if (inp) inp.addEventListener('keydown', e => { if (e.key === 'Enter') runSearch(); });
+  const ef = document.getElementById('exploreFilter');
+  if (ef) ef.addEventListener('input', renderExplore);
   // 從搜尋結果跳轉而來：高亮並捲到該節
   const v = new URLSearchParams(location.search).get('v');
   if (v) {
