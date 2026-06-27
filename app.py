@@ -685,8 +685,8 @@ def api_progress():
 
 @app.route("/")
 def index():
-    # 入口從聖經起點開始；回訪讀者由前端 resume banner 接續上次進度。
-    return read_chapter("創世記", 1)
+    # 首頁：開書動畫 → 存檔選單 → 三層選書，選完導向 /read/<書>/<章>。
+    return render_template("home.html")
 
 
 @app.route("/read/<book>/<int:chapter>")
