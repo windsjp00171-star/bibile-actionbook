@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>聖經互動全書</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#1A0E06;--brown-dark:#2C1A0E;--brown-mid:#3A220E;--brown-light:#5C3010;
+  --gold:#D4A847;--gold-dim:#9A7040;--gold-muted:#7A5830;--gold-faint:#5A3A18;
+  --cream:#F7F0E0;--cream-card:#FEF8EC;
+  --text-main:#2A1A08;--text-body:#5A3A18;
+  --person:#8B3A1A;--place:#2A5C3A;--concept:#4A3080;
+}
+html,body{height:100%;font-family:'Noto Serif TC',serif;}
+body{background:var(--bg);color:var(--cream);overflow:hidden;}
+
+/* 共用 */
+.screen{position:fixed;inset:0;opacity:0;pointer-events:none;transition:opacity .4s;display:flex;align-items:center;justify-content:center;flex-direction:column;}
+.screen.show{opacity:1;pointer-events:all;}
+.back-btn{position:fixed;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;background:#2C1A0E;border-top:1px solid #5C3010;font-size:14px;color:#C8A860;cursor:pointer;border:none;font-family:'Noto Serif TC',serif;transition:background .15s;letter-spacing:.08em;z-index:20;}
+.back-btn:hover{background:#3A220E;color:var(--gold);}
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:11px;color:#B0946A;letter-spacing:.08em;margin-bottom:10px;}
+.bc-sep{color:var(--brown-light);}
+.bc-active{color:#C8A860;}
+.bc-link{cursor:pointer;transition:color .15s;}
+.bc-link:hover{color:#C8A860;}
+.orn{display:flex;align-items:center;gap:10px;width:220px;}
+.orn-line{flex:1;height:1px;background:linear-gradient(to right,transparent,#5C3010,transparent);}
+.orn-dia{width:6px;height:6px;background:#C9A96E;transform:rotate(45deg);flex-shrink:0;}
+
+/* 星點 */
+#stars{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.star{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;opacity:0;animation:twinkle 3s infinite;}
+@keyframes twinkle{0%,100%{opacity:0}50%{opacity:.5}}
+
+/* 1. 開書 */
+#s-book{z-index:10;background:var(--bg);}
+.book-wrap{position:relative;width:240px;height:320px;perspective:800px;cursor:pointer;z-index:1;}
+.book{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.4,0,.2,1);}
+.book.open{transform:rotateY(-28deg);}
+.cover{position:absolute;inset:0;background:linear-gradient(135deg,#3D1F08 0%,#5C3010 50%,#3D1F08 100%);border-radius:3px 10px 10px 3px;border:1px solid #8B5E2A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;box-shadow:4px 4px 24px rgba(0,0,0,.7);}
+.cover-cross{width:28px;height:28px;position:relative;opacity:.8;}
+.cover-cross::before{content:'';position:absolute;width:4px;height:28px;left:50%;transform:translateX(-50%);background:var(--gold);border-radius:2px;}
+.cover-cross::after{content:'';position:absolute;width:20px;height:4px;top:8px;left:50%;transform:translateX(-50%);background:var(--gold);border-radius:2px;}
+.cover-orn{width:160px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+.cover-title{font-size:26px;font-weight:500;color:var(--gold);letter-spacing:.2em;text-align:center;line-height:1.6;}
+.cover-sub{font-size:12px;font-weight:300;color:#C8A860;letter-spacing:.14em;}
+.spine{position:absolute;left:-14px;top:4px;bottom:4px;width:14px;background:linear-gradient(to right,#1A0E06,#4A2810);border-radius:3px 0 0 3px;border:1px solid #5C3010;border-right:none;}
+.pages{position:absolute;right:-3px;top:6px;bottom:6px;width:3px;background:repeating-linear-gradient(to bottom,#E8D8B0,#E8D8B0 1px,#C8B080 1px,#C8B080 2px);border-radius:0 2px 2px 0;}
+.book-hint{position:absolute;bottom:-36px;left:50%;transform:translateX(-50%);font-size:12px;color:#B0946A;letter-spacing:.1em;white-space:nowrap;animation:blink 2s infinite;transition:opacity .4s;}
+@keyframes blink{0%,100%{opacity:.3}50%{opacity:.8}}
+.glow{position:fixed;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,#D4A84720 0%,transparent 70%);pointer-events:none;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0;transition:opacity 1s;}
+.glow.show{opacity:1;}
+
+/* 2. 存檔 */
+#s-menu{z-index:9;background:var(--bg);}
+.menu-card{background:var(--brown-dark);border:1px solid var(--brown-light);border-radius:10px;width:320px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.5);}
+.menu-head{background:#3D1F08;padding:14px 20px;border-bottom:1px solid var(--brown-light);display:flex;align-items:center;gap:8px;}
+.menu-head-title{font-size:14px;color:var(--gold);letter-spacing:.08em;}
+.save-slot{padding:14px 20px;border-bottom:1px solid var(--brown-mid);display:flex;align-items:center;gap:12px;cursor:pointer;transition:background .15s;}
+.save-slot:hover{background:var(--brown-mid);}
+.slot-icon{width:34px;height:34px;border-radius:6px;background:#3D1F08;border:1px solid var(--brown-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.slot-info{flex:1;}
+.slot-book{font-size:13px;color:var(--gold);margin-bottom:3px;}
+.slot-detail{font-size:11px;color:#C8A860;font-weight:300;}
+.new-btn{width:100%;padding:14px 20px;background:none;border:none;border-top:1px solid var(--brown-mid);display:flex;align-items:center;gap:12px;cursor:pointer;transition:background .15s;font-family:'Noto Serif TC',serif;}
+.new-btn:hover{background:var(--brown-mid);}
+.new-btn-label{font-size:13px;color:#C8A860;font-weight:300;letter-spacing:.04em;}
+
+/* 3. 新舊約 */
+#s-testament{z-index:8;}
+.testament-row{display:flex;gap:16px;}
+.testament-card{width:140px;height:155px;background:var(--brown-dark);border:1px solid var(--brown-light);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;transition:background .15s,border-color .15s,transform .15s;}
+.testament-card:hover{background:var(--brown-mid);border-color:var(--gold);transform:translateY(-2px);}
+.tc-icon{font-size:26px;color:var(--gold);}
+.tc-title{font-size:19px;font-weight:500;color:var(--gold);letter-spacing:.12em;}
+.tc-count{font-size:11px;color:#C8A860;font-weight:300;}
+
+/* 4. 經卷 */
+#s-books{z-index:7;}
+.book-grid-wrap{width:340px;max-height:360px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#5C3010 transparent;}
+.book-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;}
+.book-btn{background:var(--brown-dark);border:1px solid var(--brown-mid);border-radius:6px;padding:7px 4px;text-align:center;cursor:pointer;transition:background .12s,border-color .12s;display:flex;flex-direction:column;align-items:center;gap:2px;}
+.book-btn:hover{background:var(--brown-mid);border-color:#8B5E2A;}
+.book-num{font-size:9px;color:#B0946A;font-family:sans-serif;}
+.book-name{font-size:11px;color:#E8C98A;font-weight:300;line-height:1.4;}
+
+/* 5. 章節 */
+#s-chapters{z-index:6;}
+.chapter-wrap{width:340px;}
+.chapter-header{display:flex;align-items:baseline;gap:10px;margin-bottom:14px;}
+.ch-book-name{font-size:18px;font-weight:500;color:var(--gold);letter-spacing:.06em;}
+.ch-total{font-size:11px;color:#C8A860;font-weight:300;}
+.chapter-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;max-height:240px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#5C3010 transparent;}
+.ch-btn{background:var(--brown-dark);border:1px solid var(--brown-mid);border-radius:5px;padding:8px 2px;text-align:center;cursor:pointer;font-size:12px;color:#C8A860;transition:background .12s,border-color .12s,color .12s;}
+.ch-btn:hover{background:var(--brown-mid);border-color:#8B5E2A;color:var(--gold);}
+.ch-btn.selected{background:var(--brown-mid);border-color:var(--gold);color:var(--gold);}
+.enter-btn{background:#3D1F08;border:1px solid var(--gold);border-radius:6px;padding:10px 28px;cursor:pointer;font-family:'Noto Serif TC',serif;font-size:13px;color:var(--gold);letter-spacing:.1em;display:flex;align-items:center;gap:8px;transition:background .15s;margin-top:12px;}
+.enter-btn:hover{background:var(--brown-light);}
+
+/* 6. 閱讀頁 */
+#s-reader{z-index:5;background:var(--cream);flex-direction:row;align-items:stretch;justify-content:flex-start;}
+.sidebar{width:200px;background:#2C1A0E;border-right:2px solid #7A4E1E;display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto;}
+.sb-logo{font-size:13px;color:var(--gold);padding:16px;border-bottom:1px solid #4A2E12;letter-spacing:.1em;display:flex;align-items:center;gap:8px;}
+.sb-sec{padding:12px 16px 4px;font-size:10px;letter-spacing:.14em;color:#C8A860;text-transform:uppercase;font-family:sans-serif;}
+.sb-book-item{padding:6px 16px;font-size:13px;color:#D4B080;cursor:pointer;font-weight:300;transition:background .12s,color .12s;}
+.sb-book-item:hover{color:var(--gold);background:#3A220E;}
+.sb-book-item.active{color:#F0C96A;background:#3A220E;border-left:2px solid var(--gold);padding-left:14px;font-weight:400;}
+.sb-pills{display:flex;flex-wrap:wrap;gap:4px;padding:4px 16px 10px;}
+.sb-pill{font-size:10px;padding:2px 7px;border-radius:99px;border:1px solid #4A2E12;color:#C8A860;cursor:pointer;background:transparent;font-family:sans-serif;transition:background .12s;}
+.sb-pill:hover{background:#3A220E;}
+.sb-pill.active{background:var(--gold);color:#2C1A0E;border-color:var(--gold);font-weight:500;}
+
+/* 主閱讀區 */
+.reader-main{flex:1;padding:32px 48px 32px 52px;position:relative;overflow-y:auto;background:var(--cream);background-image:repeating-linear-gradient(transparent,transparent 36px,#D4B88818 36px,#D4B88818 37px);}
+.r-orn{display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.r-orn-line{flex:1;height:1px;background:linear-gradient(to right,transparent,#C9A96E88,transparent);}
+.r-orn-dia{width:6px;height:6px;background:#C9A96E;transform:rotate(45deg);flex-shrink:0;}
+.r-book-title{font-size:20px;font-weight:500;color:var(--text-main);letter-spacing:.08em;text-align:center;}
+.r-chapter-label{font-size:13px;color:#9A7040;margin-top:5px;font-weight:300;letter-spacing:.06em;text-align:center;margin-bottom:24px;}
+.verse-block{margin-bottom:2px;}
+.verse-num{font-family:sans-serif;font-size:9px;font-weight:500;color:#C9A96E;vertical-align:super;margin-right:3px;user-select:none;}
+.verse-text{font-size:15px;font-weight:300;color:var(--text-main);line-height:2.3;letter-spacing:.02em;}
+.tag-person{color:var(--person);border-bottom:1px dotted #8B3A1A66;cursor:pointer;}
+.tag-place{color:var(--place);border-bottom:1px dotted #2A5C3A66;cursor:pointer;}
+.tag-concept{color:var(--concept);border-bottom:1px dotted #4A308066;cursor:pointer;}
+.hl{background:linear-gradient(transparent 62%,#EDB93044 62%);}
+.legend{display:flex;gap:14px;margin-top:20px;padding-top:16px;border-top:1px solid #D4B88840;flex-wrap:wrap;}
+.legend-item{display:flex;align-items:center;gap:5px;font-family:sans-serif;font-size:11px;color:#9A7840;}
+.ldot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* 浮動卡片（桌面） */
+.float-card{position:absolute;right:-12px;top:200px;width:232px;background:var(--cream-card);border:1px solid #C9A96E;border-radius:8px;padding:14px 15px;box-shadow:2px 3px 0 #C9A96E30;display:none;}
+.float-card.show{display:block;}
+.float-arrow{position:absolute;left:-7px;top:20px;width:12px;height:12px;background:var(--cream-card);border-left:1px solid #C9A96E;border-bottom:1px solid #C9A96E;transform:rotate(45deg);}
+.card-badge{font-family:sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;border-radius:99px;display:inline-block;margin-bottom:8px;}
+.badge-person{color:#7A3010;background:#F5DDD0;border:1px solid #C9906A;}
+.badge-place{color:#1A5030;background:#D0EDD8;border:1px solid #6AB08A;}
+.badge-concept{color:#2A1860;background:#DDD8F0;border:1px solid #9A90C8;}
+.card-name{font-size:15px;font-weight:500;color:var(--text-main);margin-bottom:6px;}
+.card-body{font-size:12px;font-weight:300;color:var(--text-body);line-height:1.85;margin-bottom:10px;}
+.card-refs{display:flex;gap:5px;flex-wrap:wrap;}
+.ref-chip{font-family:sans-serif;font-size:10px;padding:2px 7px;border-radius:99px;background:#F0E4C0;border:1px solid #C9A96E;color:#7A5020;}
+.card-close{position:absolute;top:8px;right:10px;background:none;border:none;color:#C9A96E;cursor:pointer;font-size:16px;line-height:1;}
+.card-map-placeholder{width:100%;height:90px;background:#D4E8C4;border-radius:6px;border:1px solid #A8C890;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--place);}
+
+/* 手機 header */
+.mob-header{display:none;background:#2C1A0E;padding:14px 16px;align-items:center;gap:12px;border-bottom:2px solid #7A4E1E;flex-shrink:0;}
+.mob-menu-btn{background:none;border:none;color:var(--gold);cursor:pointer;padding:4px;}
+.mob-title{font-size:14px;color:var(--gold);letter-spacing:.1em;flex:1;}
+.mob-chapter-btn{font-family:sans-serif;font-size:11px;color:#D4B080;border:1px solid #4A2E12;background:none;padding:4px 10px;border-radius:99px;cursor:pointer;}
+
+/* Bottom Sheet */
+.bs-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:50;display:none;}
+.bs-overlay.show{display:block;}
+.bs{position:fixed;bottom:0;left:0;right:0;background:var(--cream-card);border-top:2px solid #C9A96E;border-radius:12px 12px 0 0;z-index:51;max-height:70vh;overflow-y:auto;display:none;}
+.bs.show{display:block;}
+.bs-handle{width:36px;height:4px;background:#C9A96E;border-radius:99px;margin:10px auto 0;}
+.bs-inner{padding:14px 18px 28px;}
+.bs-tab-row{display:flex;align-items:center;margin-bottom:14px;border-bottom:1px solid #D4B88860;}
+.bs-tab{font-family:'Noto Serif TC',serif;font-size:12px;padding:6px 14px;color:#9A7040;cursor:pointer;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;background:none;}
+.bs-tab.active{color:var(--place);border-bottom-color:var(--place);font-weight:500;}
+.bs-close{background:none;border:none;color:#9A7040;cursor:pointer;font-size:18px;margin-left:auto;line-height:1;}
+.bs-map-placeholder{width:100%;height:160px;background:#D4E8C4;border-radius:8px;border:1px solid #A8C890;margin-bottom:10px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--place);}
+
+/* 抽屜 */
+.drawer-mask{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:60;display:none;}
+.drawer-mask.show{display:block;}
+.drawer{position:fixed;top:0;left:0;width:200px;bottom:0;background:#2C1A0E;z-index:61;overflow-y:auto;display:none;}
+.drawer.show{display:block;}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid #4A2E12;}
+.drawer-close-btn{background:none;border:none;color:#C8A860;cursor:pointer;font-size:18px;}
+
+/* RWD */
+@media(max-width:640px){
+  .sidebar{display:none;}
+  .mob-header{display:flex;}
+  #s-reader{flex-direction:column;}
+  .reader-main{padding:20px 18px 160px;}
+  .float-card{display:none!important;}
+}
+</style>
+</head>
+<body>
+
+<div id="stars"></div>
+<div class="glow" id="glow"></div>
+
+<!-- 1. 開書 -->
+<div class="screen show" id="s-book">
+  <div class="book-wrap" id="bookWrap" role="button" aria-label="點擊開始閱讀">
+    <div class="book" id="book">
+      <div class="spine"></div>
+      <div class="pages"></div>
+      <div class="cover">
+        <div class="cover-cross"></div>
+        <div class="cover-orn"></div>
+        <div class="cover-title">聖　經</div>
+        <div class="cover-orn"></div>
+        <div class="cover-sub">互 動 全 書</div>
+      </div>
+    </div>
+    <div class="book-hint" id="bookHint">點擊書本開始</div>
+  </div>
+</div>
+
+<!-- 2. 存檔選單 -->
+<div class="screen" id="s-menu">
+  <div class="menu-card">
+    <div class="menu-head">
+      <i class="ti ti-device-floppy" style="color:var(--gold);font-size:16px" aria-hidden="true"></i>
+      <span class="menu-head-title">讀取存檔</span>
+    </div>
+    <!-- [後端] GET /api/reading-progress → 渲染最近兩筆，無資料時隱藏 slot -->
+    <div class="save-slot" id="slot1" onclick="enterChapter('撒母耳記上',17)">
+      <div class="slot-icon"><i class="ti ti-book-2" style="color:var(--gold);font-size:15px"></i></div>
+      <div class="slot-info">
+        <div class="slot-book" id="slot1-book">撒母耳記上・第十七章</div>
+        <div class="slot-detail" id="slot1-detail">大衛與歌利亞　· 昨天</div>
+      </div>
+      <i class="ti ti-chevron-right" style="color:#6B3A10"></i>
+    </div>
+    <div class="save-slot" id="slot2" onclick="enterChapter('約翰福音',3)">
+      <div class="slot-icon"><i class="ti ti-book" style="color:#C8A860;font-size:15px"></i></div>
+      <div class="slot-info">
+        <div class="slot-book" id="slot2-book">約翰福音・第三章</div>
+        <div class="slot-detail" id="slot2-detail">尼哥底母　· 三天前</div>
+      </div>
+      <i class="ti ti-chevron-right" style="color:#6B3A10"></i>
+    </div>
+    <button class="new-btn" onclick="showScreen('s-testament')">
+      <div class="slot-icon"><i class="ti ti-plus" style="color:#C8A860;font-size:15px"></i></div>
+      <span class="new-btn-label">從頭開始，選擇書卷</span>
+      <i class="ti ti-chevron-right" style="color:#6B3A10;margin-left:auto"></i>
+    </button>
+  </div>
+</div>
+
+<!-- 3. 新舊約 -->
+<div class="screen" id="s-testament">
+  <button class="back-btn" onclick="showScreen('s-menu')"><i class="ti ti-arrow-left"></i> 返回</button>
+  <div class="orn"><div class="orn-line"></div><div class="orn-dia"></div><div class="orn-line"></div></div>
+  <div class="testament-row" style="margin:20px 0;">
+    <div class="testament-card" onclick="goBooks('old')">
+      <i class="ti ti-book tc-icon"></i>
+      <div class="tc-title">舊　約</div>
+      <div class="tc-count">39 卷・929 章</div>
+    </div>
+    <div class="testament-card" onclick="goBooks('new')">
+      <i class="ti ti-book-2 tc-icon"></i>
+      <div class="tc-title">新　約</div>
+      <div class="tc-count">27 卷・260 章</div>
+    </div>
+  </div>
+  <div class="orn"><div class="orn-line"></div><div class="orn-dia"></div><div class="orn-line"></div></div>
+</div>
+
+<!-- 4. 經卷 -->
+<div class="screen" id="s-books">
+  <button class="back-btn" onclick="showScreen('s-testament')"><i class="ti ti-arrow-left"></i> 返回</button>
+  <div style="text-align:center;margin-bottom:14px;">
+    <div style="font-size:11px;color:#B0946A;letter-spacing:.14em;margin-bottom:6px;">── 經卷選擇 ──</div>
+    <div id="bc-books-t" style="font-size:22px;font-weight:500;color:var(--gold);letter-spacing:.14em;">舊約</div>
+  </div>
+  <div class="book-grid-wrap"><div class="book-grid" id="bookGrid"></div></div>
+</div>
+
+<!-- 5. 章節 -->
+<div class="screen" id="s-chapters">
+  <button class="back-btn" onclick="showScreen('s-books')"><i class="ti ti-arrow-left"></i> 返回</button>
+  <div class="breadcrumb">
+    <span class="bc-link" onclick="showScreen('s-testament')" id="bc-ch-t">舊約</span>
+    <span class="bc-sep">›</span>
+    <span class="bc-link" onclick="showScreen('s-books')" id="bc-ch-b">撒母耳記上</span>
+    <span class="bc-sep">›</span>
+    <span class="bc-active">選擇章節</span>
+  </div>
+  <div class="chapter-wrap">
+    <div class="chapter-header">
+      <span class="ch-book-name" id="chBookName"></span>
+      <span class="ch-total" id="chTotal"></span>
+    </div>
+    <div class="chapter-grid" id="chapterGrid"></div>
+  </div>
+  <button class="enter-btn" id="enterBtn" style="display:none">
+    <i class="ti ti-book-open"></i>開始閱讀
+  </button>
+</div>
+
+<!-- 6. 閱讀頁 -->
+<div class="screen" id="s-reader">
+  <!-- 手機 header -->
+  <div class="mob-header">
+    <button class="mob-menu-btn" onclick="openDrawer()"><i class="ti ti-menu-2" style="font-size:20px"></i></button>
+    <span class="mob-title">聖 經 全 書</span>
+    <button class="mob-chapter-btn" id="mobChapterBtn">撒上 17 ▾</button>
+  </div>
+
+  <!-- 桌面側欄 -->
+  <div class="sidebar">
+    <div class="sb-logo"><i class="ti ti-book" style="font-size:14px"></i>聖 經 全 書</div>
+    <!-- [後端] 動態渲染完整書卷列表，active class 標記當前書卷 -->
+    <div class="sb-sec">舊約</div>
+    <div class="sb-book-item active" id="sidebarActiveBook">撒母耳記上</div>
+    <div class="sb-pills" id="sidebarPills">
+      <!-- [後端] 動態渲染該書卷的章節 pills，active 標記當前章 -->
+      <span class="sb-pill">15</span><span class="sb-pill">16</span>
+      <span class="sb-pill active">17</span><span class="sb-pill">18</span>
+    </div>
+    <div class="sb-sec" style="margin-top:8px">新約</div>
+    <div class="sb-book-item">約翰福音</div>
+    <div class="sb-book-item">羅馬書</div>
+  </div>
+
+  <!-- 主閱讀區 -->
+  <div class="reader-main">
+    <div class="r-orn"><div class="r-orn-line"></div><div class="r-orn-dia"></div><div class="r-orn-line"></div></div>
+    <div class="r-book-title" id="readerBookTitle">撒母耳記上</div>
+    <div class="r-chapter-label" id="readerChapterLabel">第十七章　大衛與歌利亞</div>
+
+    <!--
+    [後端] GET /api/verses?book=撒母耳記上&chapter=17
+    每節渲染結構：
+    <div class="verse-block">
+      <span class="verse-num">{verse_number}</span>
+      <span class="verse-text">
+        人名：<span class="tag-person" data-id="{entity_id}">{name}</span>
+        地名：<span class="tag-place" data-id="{entity_id}">{name}</span>
+        概念：<span class="tag-concept" data-id="{entity_id}">{name}</span>
+        重要經文外層加 class="hl"
+      </span>
+    </div>
+    -->
+    <div id="verseContainer">
+      <div class="verse-block"><span class="verse-num">1</span><span class="verse-text"><span class="tag-place" data-id="philistines">非利士人</span>聚集軍旅，到屬<span class="tag-place" data-id="judah">猶大</span>的<span class="tag-place" data-id="sokoh">梭哥</span>，安營在梭哥和<span class="tag-place" data-id="azekah">亞西加</span>之間的<span class="tag-place" data-id="ephes-dammim">以弗大憫</span>。</span></div>
+      <div class="verse-block"><span class="verse-num">2</span><span class="verse-text"><span class="tag-person" data-id="saul">掃羅</span>和<span class="tag-concept" data-id="israel">以色列人</span>聚集，在<span class="tag-place" data-id="valley-of-elah">以拉谷</span>安營，擺列陣勢，要與非利士人打仗。</span></div>
+      <div class="verse-block"><span class="verse-num">3</span><span class="verse-text">非利士人站在這邊山上，以色列人站在那邊山上，當中有谷。</span></div>
+      <div class="verse-block"><span class="verse-num">4</span><span class="verse-text">非利士營中有一個勇士，名叫<span class="hl"><span class="tag-person" data-id="goliath">歌利亞</span></span>，是<span class="tag-place" data-id="gath">迦特</span>人，身高六肘零一虎口。</span></div>
+      <div class="verse-block"><span class="verse-num">5</span><span class="verse-text">頭戴銅盔，身穿鎧甲，甲重五千舍客勒銅；</span></div>
+      <div class="verse-block"><span class="verse-num">6</span><span class="verse-text">腿上有銅護膝，兩肩之中背負銅戟；</span></div>
+      <div class="verse-block"><span class="verse-num">7</span><span class="verse-text">槍桿粗如織布的機軸，鐵槍頭重六百舍客勒。有一個拿盾牌的人在他前面走。</span></div>
+    </div>
+
+    <!-- 浮動卡片（桌面，點標注詞後顯示） -->
+    <div class="float-card" id="floatCard">
+      <div class="float-arrow"></div>
+      <button class="card-close" onclick="closeCard()">✕</button>
+      <span class="card-badge" id="cardBadge"></span>
+      <div class="card-name" id="cardName"></div>
+      <!--
+      [後端] 若 type=place，在此插入 Leaflet 地圖：
+      <div id="cardMap" style="width:100%;height:90px;border-radius:6px;margin-bottom:8px;"></div>
+      初始化：L.map('cardMap').setView([lat,lng],10)
+               加上當前地點標記（綠）與附近地點標記（棕）
+      -->
+      <div class="card-map-placeholder" id="cardMapArea" style="display:none">Leaflet 地圖區域</div>
+      <div class="card-body" id="cardBody"></div>
+      <div class="card-refs" id="cardRefs"></div>
+    </div>
+
+    <div class="r-orn" style="margin-top:20px"><div class="r-orn-line"></div><div class="r-orn-dia"></div><div class="r-orn-line"></div></div>
+    <div class="legend">
+      <div class="legend-item"><div class="ldot" style="background:var(--person)"></div>人物</div>
+      <div class="legend-item"><div class="ldot" style="background:var(--place)"></div>地點</div>
+      <div class="legend-item"><div class="ldot" style="background:var(--concept)"></div>族群／概念</div>
+      <div class="legend-item"><div class="ldot" style="background:#EDB930"></div>重要經文</div>
+    </div>
+  </div>
+</div>
+
+<!-- 手機 Bottom Sheet -->
+<div class="bs-overlay" id="bsOverlay" onclick="closeBS()"></div>
+<div class="bs" id="bs">
+  <div class="bs-handle"></div>
+  <div class="bs-inner">
+    <div class="bs-tab-row">
+      <button class="bs-tab active" id="bsTab1" onclick="switchBSTab('person')">人物</button>
+      <button class="bs-tab" id="bsTab2" onclick="switchBSTab('place')">地點</button>
+      <button class="bs-close" onclick="closeBS()">✕</button>
+    </div>
+    <div id="bs-person">
+      <span class="card-badge badge-person" style="margin-bottom:8px;display:inline-block">人物</span>
+      <div class="card-name" id="bsPersonName"></div>
+      <div class="card-body" id="bsPersonBody"></div>
+      <div class="card-refs" id="bsPersonRefs"></div>
+    </div>
+    <div id="bs-place" style="display:none">
+      <span class="card-badge badge-place" style="margin-bottom:8px;display:inline-block">地點</span>
+      <div class="card-name" id="bsPlaceName"></div>
+      <!--
+      [後端] Leaflet 地圖容器（手機）：
+      <div id="bsMap" style="width:100%;height:160px;border-radius:8px;margin-bottom:10px;"></div>
+      -->
+      <div class="bs-map-placeholder" id="bsMapPlaceholder">Leaflet 地圖區域</div>
+      <div class="card-body" id="bsPlaceBody"></div>
+      <div class="card-refs" id="bsPlaceRefs"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 手機抽屜 -->
+<div class="drawer-mask" id="drawerMask" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <span style="color:var(--gold);font-size:13px;letter-spacing:.08em">聖 經 全 書</span>
+    <button class="drawer-close-btn" onclick="closeDrawer()">✕</button>
+  </div>
+  <!-- [後端] 同 sidebar，完整書卷列表 -->
+  <div class="sb-sec">舊約</div>
+  <div class="sb-book-item active">撒母耳記上</div>
+  <div class="sb-pills">
+    <span class="sb-pill">15</span><span class="sb-pill">16</span>
+    <span class="sb-pill active">17</span><span class="sb-pill">18</span>
+  </div>
+  <div class="sb-sec" style="margin-top:8px">新約</div>
+  <div class="sb-book-item">約翰福音</div>
+</div>
+
+<script>
+/* 資料 */
+const OLD=[
+  {n:'創世記',c:50},{n:'出埃及記',c:40},{n:'利未記',c:27},{n:'民數記',c:36},{n:'申命記',c:34},
+  {n:'約書亞記',c:24},{n:'士師記',c:21},{n:'路得記',c:4},{n:'撒母耳記上',c:31},{n:'撒母耳記下',c:24},
+  {n:'列王紀上',c:22},{n:'列王紀下',c:25},{n:'歷代志上',c:29},{n:'歷代志下',c:36},{n:'以斯拉記',c:10},
+  {n:'尼希米記',c:13},{n:'以斯帖記',c:10},{n:'約伯記',c:42},{n:'詩篇',c:150},{n:'箴言',c:31},
+  {n:'傳道書',c:12},{n:'雅歌',c:8},{n:'以賽亞書',c:66},{n:'耶利米書',c:52},{n:'耶利米哀歌',c:5},
+  {n:'以西結書',c:48},{n:'但以理書',c:12},{n:'何西阿書',c:14},{n:'約珥書',c:3},{n:'阿摩司書',c:9},
+  {n:'俄巴底亞書',c:1},{n:'約拿書',c:4},{n:'彌迦書',c:7},{n:'那鴻書',c:3},{n:'哈巴谷書',c:3},
+  {n:'西番雅書',c:3},{n:'哈該書',c:2},{n:'撒迦利亞書',c:14},{n:'瑪拉基書',c:4}
+];
+const NEW=[
+  {n:'馬太福音',c:28},{n:'馬可福音',c:16},{n:'路加福音',c:24},{n:'約翰福音',c:21},{n:'使徒行傳',c:28},
+  {n:'羅馬書',c:16},{n:'哥林多前書',c:16},{n:'哥林多後書',c:13},{n:'加拉太書',c:6},{n:'以弗所書',c:6},
+  {n:'腓立比書',c:4},{n:'歌羅西書',c:4},{n:'帖撒羅尼迦前書',c:5},{n:'帖撒羅尼迦後書',c:3},{n:'提摩太前書',c:6},
+  {n:'提摩太後書',c:4},{n:'提多書',c:3},{n:'腓利門書',c:1},{n:'希伯來書',c:13},{n:'雅各書',c:5},
+  {n:'彼得前書',c:5},{n:'彼得後書',c:3},{n:'約翰一書',c:5},{n:'約翰二書',c:1},{n:'約翰三書',c:1},
+  {n:'猶大書',c:1},{n:'啟示錄',c:22}
+];
+
+/* 星點 */
+for(let i=0;i<40;i++){
+  const s=document.createElement('div');s.className='star';
+  s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*3}s;animation-duration:${2+Math.random()*3}s`;
+  document.getElementById('stars').appendChild(s);
+}
+
+/* 畫面切換 */
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('show'));
+  document.getElementById(id).classList.add('show');
+}
+
+/* 開書動畫 */
+let bookOpened=false;
+document.getElementById('bookWrap').addEventListener('click',()=>{
+  if(bookOpened)return;
+  bookOpened=true;
+  document.getElementById('book').classList.add('open');
+  document.getElementById('bookHint').style.opacity='0';
+  document.getElementById('glow').classList.add('show');
+  setTimeout(()=>{
+    document.getElementById('bookWrap').style.transition='opacity .5s';
+    document.getElementById('bookWrap').style.opacity='0';
+  },600);
+  setTimeout(()=>{
+    document.getElementById('glow').classList.remove('show');
+    showScreen('s-menu');
+    loadProgress();
+  },1100);
+});
+
+/* 選書流程 */
+let curT='old', selBook=null, selCh=null;
+
+function goBooks(t){
+  curT=t;
+  const label=t==='old'?'舊約':'新約';
+  document.getElementById('bc-books-t').textContent=label;
+  document.getElementById('bc-ch-t').textContent=label;
+  const data=t==='old'?OLD:NEW;
+  const grid=document.getElementById('bookGrid');
+  grid.innerHTML='';
+  data.forEach((b,i)=>{
+    const btn=document.createElement('div');
+    btn.className='book-btn';
+    btn.innerHTML=`<div class="book-num">${i+1}</div><div class="book-name">${b.n}</div>`;
+    btn.onclick=()=>goChapters(b);
+    grid.appendChild(btn);
+  });
+  showScreen('s-books');
+}
+
+function goChapters(b){
+  selBook=b; selCh=null;
+  document.getElementById('bc-ch-b').textContent=b.n;
+  document.getElementById('chBookName').textContent=b.n;
+  document.getElementById('chTotal').textContent=`共 ${b.c} 章`;
+  const grid=document.getElementById('chapterGrid');
+  grid.innerHTML='';
+  for(let i=1;i<=b.c;i++){
+    const btn=document.createElement('div');btn.className='ch-btn';btn.textContent=i;
+    const ch=i;
+    btn.onclick=()=>{
+      selCh=ch;
+      document.querySelectorAll('.ch-btn').forEach(b=>b.classList.remove('selected'));
+      btn.classList.add('selected');
+      document.getElementById('enterBtn').style.display='flex';
+    };
+    grid.appendChild(btn);
+  }
+  document.getElementById('enterBtn').style.display='none';
+  document.getElementById('enterBtn').onclick=()=>enterChapter(selBook.n, selCh);
+  showScreen('s-chapters');
+}
+
+/* 進入閱讀 → 導向既有閱讀頁（含標註、地圖、世系圖、AI解釋、回報按鈕） */
+function enterChapter(bookName, chapter){
+  window.location.href='/read/'+encodeURIComponent(bookName)+'/'+chapter;
+}
+
+/* 裝置 ID（無登入，存檔以此識別；與閱讀頁共用同一把 key） */
+function deviceId(){
+  let id=localStorage.getItem('bible-device-id');
+  if(!id){ id=(crypto.randomUUID?crypto.randomUUID():'dev-'+Date.now()+'-'+Math.random().toString(16).slice(2)); localStorage.setItem('bible-device-id',id); }
+  return id;
+}
+function relTime(iso){
+  if(!iso) return '';
+  const d=new Date(iso), days=Math.floor((Date.now()-d)/86400000);
+  if(days<=0) return '今天'; if(days===1) return '昨天';
+  if(days<7) return days+'天前'; if(days<30) return Math.floor(days/7)+'週前';
+  return d.getFullYear()+'/'+(d.getMonth()+1)+'/'+d.getDate();
+}
+/* 載入最近兩筆存檔；無資料隱藏該 slot */
+function loadProgress(){
+  fetch('/api/progress?user_id='+encodeURIComponent(deviceId()))
+    .then(r=>r.json()).then(d=>{
+      const recs=(d&&d.records)||[];
+      for(let i=0;i<2;i++){
+        const slot=document.getElementById('slot'+(i+1)), rec=recs[i];
+        if(rec){
+          slot.style.display='flex';
+          document.getElementById('slot'+(i+1)+'-book').textContent=rec.book_name+'・第'+rec.chapter+'章';
+          document.getElementById('slot'+(i+1)+'-detail').textContent=relTime(rec.updated_at);
+          slot.onclick=()=>enterChapter(rec.book_name,rec.chapter);
+        } else { slot.style.display='none'; }
+      }
+    }).catch(()=>{
+      document.getElementById('slot1').style.display='none';
+      document.getElementById('slot2').style.display='none';
+    });
+}
+
+/* 標注點擊 */
+function bindTags(){
+  document.querySelectorAll('.tag-person,.tag-place,.tag-concept').forEach(el=>{
+    el.onclick=()=>{
+      const id=el.dataset.id;
+      const type=el.classList.contains('tag-person')?'person':el.classList.contains('tag-place')?'place':'concept';
+      // [後端] fetch(`/api/entity/${id}`).then(d=>showCard(type,d))
+      // 靜態示範：
+      showCard(type,{
+        name:el.textContent,
+        body:'（後端 GET /api/entity/'+id+' 提供內容）',
+        refs:['撒上 17'],
+        lat:31.7, lng:34.9
+      });
+    };
+  });
+}
+
+function showCard(type, data){
+  const isMobile=window.innerWidth<=640;
+  if(isMobile){ openBS(type,data); return; }
+  const badgeMap={person:'badge-person 人物',place:'badge-place 地點',concept:'badge-concept 概念'};
+  const [cls,label]=badgeMap[type].split(' ');
+  document.getElementById('cardBadge').className='card-badge '+cls;
+  document.getElementById('cardBadge').textContent=label;
+  document.getElementById('cardName').textContent=data.name;
+  document.getElementById('cardBody').textContent=data.body;
+  document.getElementById('cardRefs').innerHTML=data.refs.map(r=>`<span class="ref-chip">${r}</span>`).join('');
+  const mapArea=document.getElementById('cardMapArea');
+  if(type==='place'){ mapArea.style.display='flex'; /* [後端] init Leaflet #cardMap */ }
+  else { mapArea.style.display='none'; }
+  document.getElementById('floatCard').classList.add('show');
+}
+
+function closeCard(){document.getElementById('floatCard').classList.remove('show');}
+
+/* Bottom Sheet */
+function openBS(type,data){
+  document.getElementById('bsOverlay').classList.add('show');
+  document.getElementById('bs').classList.add('show');
+  switchBSTab(type==='place'?'place':'person');
+  if(type==='place'){
+    document.getElementById('bsPlaceName').textContent=data.name;
+    document.getElementById('bsPlaceBody').textContent=data.body;
+    document.getElementById('bsPlaceRefs').innerHTML=data.refs.map(r=>`<span class="ref-chip">${r}</span>`).join('');
+    // [後端] init Leaflet #bsMap center [data.lat, data.lng]
+  } else {
+    document.getElementById('bsPersonName').textContent=data.name;
+    document.getElementById('bsPersonBody').textContent=data.body;
+    document.getElementById('bsPersonRefs').innerHTML=data.refs.map(r=>`<span class="ref-chip">${r}</span>`).join('');
+  }
+}
+
+function closeBS(){
+  document.getElementById('bsOverlay').classList.remove('show');
+  document.getElementById('bs').classList.remove('show');
+}
+
+function switchBSTab(t){
+  document.getElementById('bs-person').style.display=t==='person'?'block':'none';
+  document.getElementById('bs-place').style.display=t==='place'?'block':'none';
+  document.getElementById('bsTab1').className='bs-tab'+(t==='person'?' active':'');
+  document.getElementById('bsTab2').className='bs-tab'+(t==='place'?' active':'');
+}
+
+/* 抽屜 */
+function openDrawer(){ document.getElementById('drawerMask').classList.add('show'); document.getElementById('drawer').classList.add('show'); }
+function closeDrawer(){ document.getElementById('drawerMask').classList.remove('show'); document.getElementById('drawer').classList.remove('show'); }
+
+/* 初始化 */
+bindTags();
+</script>
+</body>
+</html>
