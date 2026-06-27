@@ -1360,16 +1360,31 @@
     "lat": 32.54,
     "lng": 44.42
   },
-  "示劍": {
-    "type": "place",
-    "name": "示劍",
-    "name_en": "Shechem",
-    "testament": "both",
-    "desc": "迦南中部的重要城市，雅各從哈蘭返迦南後在此安營。神在此向亞伯拉罕顯現應許此地。底拿被玷污事件也發生於此。",
-    "verses": "創世記12:6、33-34章",
-    "lat": 32.21,
-    "lng": 35.28
-  },
+  "示劍": [
+    {
+      "books": [
+        "創世記"
+      ],
+      "chapters": [
+        33,
+        34
+      ],
+      "type": "person",
+      "name": "示劍（哈抹之子）",
+      "name_en": "Shechem",
+      "testament": "OT",
+      "desc": "希未人哈抹的兒子，玷辱雅各的女兒底拿，後雅各之子西緬、利未為此屠城報仇。"
+    },
+    {
+      "type": "place",
+      "name": "示劍",
+      "name_en": "Shechem",
+      "testament": "both",
+      "desc": "迦南中部古城，亞伯拉罕首築壇之地，雅各返迦南在此安營，約書亞在此重申立約。",
+      "lat": 32.21,
+      "lng": 35.28
+    }
+  ],
   "伯特利": {
     "type": "place",
     "name": "伯特利",
@@ -2581,13 +2596,6 @@
       "瑪拉基書"
     ],
     "desc": "舊約最後一位先知，責備以色列獻帶殘疾的祭，預言以利亞再來。"
-  },
-  "曠野": {
-    "type": "place",
-    "name": "曠野",
-    "name_en": "Wilderness",
-    "desc": "以色列出埃及後漂流四十年的西奈半島荒野，神在此試煉磨練他們。",
-    "testament": "both"
   },
   "米吉多": {
     "type": "place",
@@ -5014,5 +5022,261 @@
     "desc": "猶太沿海平原城市，彼得在此醫好癱瘓八年的以尼雅，使附近居民歸主。",
     "lat": 31.95,
     "lng": 34.9
+  },
+  "希伯崙": {
+    "type": "place",
+    "name": "希伯崙",
+    "name_en": "Hebron",
+    "testament": "OT",
+    "desc": "猶大山地古城，又名基列亞巴。亞伯拉罕在此買麥比拉洞葬撒拉，列祖多葬於此；後為大衛初登基的王城。",
+    "lat": 31.53,
+    "lng": 35.1
+  },
+  "基列亞巴": {
+    "type": "place",
+    "name": "基列亞巴",
+    "name_en": "Kiriath-arba",
+    "testament": "OT",
+    "desc": "希伯崙的古名，因亞衲族先祖亞巴得名。",
+    "lat": 31.53,
+    "lng": 35.1
+  },
+  "麥比拉洞": {
+    "type": "place",
+    "name": "麥比拉洞",
+    "name_en": "Cave of Machpelah",
+    "testament": "OT",
+    "desc": "希伯崙幔利前的洞，亞伯拉罕向赫人買下葬撒拉，後成列祖（亞伯拉罕、以撒、雅各及妻）的家族墓地。",
+    "lat": 31.52,
+    "lng": 35.11
+  },
+  "幔利": {
+    "type": "place",
+    "name": "幔利",
+    "name_en": "Mamre",
+    "testament": "OT",
+    "desc": "希伯崙附近的橡樹地，亞伯拉罕長住之處，曾在此接待三位天使、為羅得代求。",
+    "lat": 31.53,
+    "lng": 35.1
+  },
+  "迦勒底": {
+    "type": "place",
+    "name": "迦勒底",
+    "name_en": "Chaldea",
+    "testament": "OT",
+    "desc": "巴比倫南部地區，亞伯拉罕的故鄉吾珥即「迦勒底的吾珥」。後迦勒底人建新巴比倫帝國。",
+    "lat": 30.96,
+    "lng": 46.1
+  },
+  "巴旦亞蘭": {
+    "type": "place",
+    "name": "巴旦亞蘭",
+    "name_en": "Paddan-aram",
+    "testament": "OT",
+    "desc": "美索不達米亞上游、哈蘭一帶，拉班所居之地。雅各逃往此處投奔舅父，娶利亞、拉結。",
+    "lat": 36.86,
+    "lng": 39.0
+  },
+  "安城": {
+    "type": "place",
+    "name": "安城",
+    "name_en": "On (Heliopolis)",
+    "testament": "OT",
+    "desc": "埃及古城（希臘名赫利奧波利斯），太陽神崇拜中心。約瑟之妻亞西納是安城祭司波提非拉之女。",
+    "lat": 30.13,
+    "lng": 31.29
+  },
+  "摩利橡樹": {
+    "type": "place",
+    "name": "摩利橡樹",
+    "name_en": "Oak of Moreh",
+    "testament": "OT",
+    "desc": "示劍附近的橡樹，亞伯拉罕初入迦南在此得神應許、築壇。",
+    "lat": 32.21,
+    "lng": 35.28
+  },
+  "基悉": {
+    "type": "place",
+    "name": "基悉",
+    "name_en": "Chezib",
+    "testament": "OT",
+    "desc": "猶大地的城邑，猶大的妻在此生子示拉。"
+  },
+  "哈抹": {
+    "type": "person",
+    "name": "哈抹",
+    "name_en": "Hamor",
+    "testament": "OT",
+    "desc": "示劍城的希未人首領，示劍之父。其子玷辱底拿後，全城男丁被西緬、利未所殺。"
+  },
+  "基土拉": {
+    "type": "person",
+    "name": "基土拉",
+    "name_en": "Keturah",
+    "testament": "OT",
+    "desc": "撒拉死後亞伯拉罕所娶之妻，生心蘭、約珊、米但、米甸、伊施巴、書亞六子，為阿拉伯諸族之祖。"
+  },
+  "心蘭": {
+    "type": "person",
+    "name": "心蘭",
+    "name_en": "Zimran",
+    "testament": "OT",
+    "desc": "亞伯拉罕與基土拉所生之子，阿拉伯一族之祖。"
+  },
+  "約珊": {
+    "type": "person",
+    "name": "約珊",
+    "name_en": "Jokshan",
+    "testament": "OT",
+    "desc": "亞伯拉罕與基土拉之子，示巴與底但之父。"
+  },
+  "米但": {
+    "type": "person",
+    "name": "米但",
+    "name_en": "Medan",
+    "testament": "OT",
+    "desc": "亞伯拉罕與基土拉所生之子。"
+  },
+  "伊施巴": {
+    "type": "person",
+    "name": "伊施巴",
+    "name_en": "Ishbak",
+    "testament": "OT",
+    "desc": "亞伯拉罕與基土拉所生之子。"
+  },
+  "書亞": {
+    "type": "person",
+    "name": "書亞",
+    "name_en": "Shuah",
+    "testament": "OT",
+    "desc": "亞伯拉罕與基土拉所生的幼子。"
+  },
+  "基大老瑪": {
+    "type": "person",
+    "name": "基大老瑪",
+    "name_en": "Chedorlaomer",
+    "testament": "OT",
+    "desc": "以攔王，率四王聯軍征討約但平原五王，擄走羅得，後被亞伯拉罕追擊大敗。"
+  },
+  "暗拉非": {
+    "type": "person",
+    "name": "暗拉非",
+    "name_en": "Amraphel",
+    "testament": "OT",
+    "desc": "示拿王，創世記14章與基大老瑪聯軍的四王之一。"
+  },
+  "亞略": {
+    "type": "person",
+    "name": "亞略",
+    "name_en": "Arioch",
+    "testament": "OT",
+    "desc": "以拉撒王，創14章四王聯軍之一。"
+  },
+  "提達": {
+    "type": "person",
+    "name": "提達",
+    "name_en": "Tidal",
+    "testament": "OT",
+    "desc": "戈印王，創14章四王聯軍之一。"
+  },
+  "以實各": {
+    "type": "person",
+    "name": "以實各",
+    "name_en": "Eshcol",
+    "testament": "OT",
+    "desc": "幔利的弟兄，亞摩利人，亞伯拉罕追擊四王時的盟友。"
+  },
+  "亞乃": {
+    "type": "person",
+    "name": "亞乃",
+    "name_en": "Aner",
+    "testament": "OT",
+    "desc": "幔利的弟兄，亞摩利人，亞伯拉罕的盟友之一。"
+  },
+  "基尼洗人": {
+    "type": "concept",
+    "name": "基尼洗人",
+    "name_en": "Kenizzites",
+    "testament": "OT",
+    "desc": "神應許賜地時所列迦南諸族之一。"
+  },
+  "甲摩尼人": {
+    "type": "concept",
+    "name": "甲摩尼人",
+    "name_en": "Kadmonites",
+    "testament": "OT",
+    "desc": "神應許賜地時所列迦南諸族之一，意為「東方人」。"
+  },
+  "流珥": {
+    "type": "person",
+    "name": "流珥",
+    "name_en": "Reuel",
+    "testament": "OT",
+    "desc": "以掃與巴實抹所生之子，以東族長之祖。"
+  },
+  "巴實抹": {
+    "type": "person",
+    "name": "巴實抹",
+    "name_en": "Basemath",
+    "testament": "OT",
+    "desc": "以掃的妻子，以實瑪利之女、尼拜約之妹，生流珥。"
+  },
+  "尼拜約": {
+    "type": "person",
+    "name": "尼拜約",
+    "name_en": "Nebaioth",
+    "testament": "OT",
+    "desc": "以實瑪利的長子，巴實抹之兄，阿拉伯一族之祖。"
+  },
+  "提幔": {
+    "type": "place",
+    "name": "提幔",
+    "name_en": "Teman",
+    "testament": "OT",
+    "desc": "以東地區與族名，以智慧聞名（約伯的朋友以利法即提幔人）。",
+    "lat": 30.3,
+    "lng": 35.4
+  },
+  "俄南": {
+    "type": "person",
+    "name": "俄南",
+    "name_en": "Onan",
+    "testament": "OT",
+    "desc": "猶大的次子，拒為亡兄留後，行為惡，被神擊殺。"
+  },
+  "示拉": {
+    "type": "person",
+    "name": "示拉",
+    "name_en": "Shelah",
+    "testament": "OT",
+    "desc": "猶大的三子，在基悉所生。"
+  },
+  "撒發那忒巴內亞": {
+    "type": "person",
+    "name": "撒發那忒巴內亞",
+    "name_en": "Zaphnath-paaneah",
+    "testament": "OT",
+    "desc": "法老賜給約瑟的埃及名字，約意為「神說、他活著」或「解秘者」。"
+  },
+  "波提非拉": {
+    "type": "person",
+    "name": "波提非拉",
+    "name_en": "Potiphera",
+    "testament": "OT",
+    "desc": "安城（赫利奧波利斯）的祭司，約瑟之妻亞西納的父親。"
+  },
+  "亞西納": {
+    "type": "person",
+    "name": "亞西納",
+    "name_en": "Asenath",
+    "testament": "OT",
+    "desc": "安城祭司波提非拉之女，法老賜給約瑟為妻，生瑪拿西與以法蓮。"
+  },
+  "榧子": {
+    "type": "concept",
+    "name": "榧子",
+    "name_en": "Pistachio Nuts",
+    "testament": "OT",
+    "desc": "開心果類乾果，迦南的土產之一。雅各打發兒子下埃及時以此為禮送給約瑟。"
   }
 }
