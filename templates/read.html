@@ -48,7 +48,7 @@
   {% if lineage_json and lineage_json != 'null' %}
   <button class="lineage-trigger" id="lineageTrigger" onclick="openLineage()">⛓ 本章世系結構圖</button>
   {% endif %}
-  <button class="search-trigger" onclick="openSearch()">🔍 搜尋經文</button>
+  <button class="search-trigger" onclick="openSearch()">🔍 全本搜尋</button>
   <button class="search-trigger" onclick="openExplore()">📑 人物地點索引</button>
   <button class="search-trigger" onclick="openBookMap()">🗺 本卷地圖</button>
   <button class="search-trigger" onclick="openBookmarks()">🔖 我的書籤</button>
@@ -82,7 +82,7 @@
 <div class="search-overlay" id="searchOverlay" onclick="closeSearch()"></div>
 <aside class="search-panel" id="searchPanel">
   <button class="card-close" onclick="closeSearch()" aria-label="關閉">✕</button>
-  <h3 class="search-title">搜尋經文</h3>
+  <h3 class="search-title">全本搜尋</h3><p class="search-meta" style="margin-top:-4px">搜尋整本聖經（66 卷）</p>
   <div class="search-inputrow">
     <input type="text" id="searchInput" placeholder="輸入關鍵字，如「歌利亞」「愛是恆久忍耐」" autocomplete="off">
     <button onclick="runSearch()">搜尋</button>
