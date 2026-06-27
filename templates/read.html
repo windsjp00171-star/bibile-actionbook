@@ -70,6 +70,7 @@
       <a class="chapter-nav-btn" href="/read/{{ next_book }}/{{ next_ch }}">{{ next_book }} {{ next_ch }} ›</a>
       {% endif %}
     </div>
+    <button class="chapter-report-btn" onclick="reportChapter()">⚑ 本章有漏標或標錯？回報</button>
   </footer>
 </div>
 
@@ -496,6 +497,17 @@ function submitFeedback() {
   }).finally(() => {
     document.getElementById('cardFeedbackDone').style.display = 'block';
   });
+}
+
+// 章節層級回報：可回報「漏標」（沒有卡片可按的詞）或整章問題
+function reportChapter() {
+  const note = prompt('請描述本章的標註問題（例如：「迦瑪列」沒標、「某詞」標錯人）：');
+  if (!note || !note.trim()) return;
+  fetch('/api/feedback', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({entity: '（本章回報）', book: CUR_BOOK, chapter: CUR_CH, note: note.trim()})
+  }).finally(() => alert('已回報，謝謝！'));
 }
 
 function setLevel(lv) {
