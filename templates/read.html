@@ -48,12 +48,13 @@
   {% if lineage_json and lineage_json != 'null' %}
   <button class="lineage-trigger" id="lineageTrigger" onclick="openLineage()">⛓ 本章世系結構圖</button>
   {% endif %}
+  <button class="search-trigger" onclick="openSearch()">🔍 搜尋經文</button>
 
   <a class="resume-banner" id="resumeBanner" href="#" style="display:none"></a>
 
   <main class="passage" id="passage">
     {% for v in verses %}
-    <p class="verse"><span class="verse-num">{{ v.verse }}</span><span class="verse-body">{{ v.html | safe }}</span></p>
+    <p class="verse" data-v="{{ v.verse }}"><span class="verse-num">{{ v.verse }}</span><span class="verse-body">{{ v.html | safe }}</span></p>
     {% endfor %}
     {% if not verses %}
     <p class="no-data">查無此章經文。</p>
@@ -73,6 +74,19 @@
     <button class="chapter-report-btn" onclick="reportChapter()">⚑ 本章有漏標或標錯？回報</button>
   </footer>
 </div>
+
+<!-- 經文搜尋 -->
+<div class="search-overlay" id="searchOverlay" onclick="closeSearch()"></div>
+<aside class="search-panel" id="searchPanel">
+  <button class="card-close" onclick="closeSearch()" aria-label="關閉">✕</button>
+  <h3 class="search-title">搜尋經文</h3>
+  <div class="search-inputrow">
+    <input type="text" id="searchInput" placeholder="輸入關鍵字，如「歌利亞」「愛是恆久忍耐」" autocomplete="off">
+    <button onclick="runSearch()">搜尋</button>
+  </div>
+  <div class="search-meta" id="searchMeta"></div>
+  <div class="search-results" id="searchResults"></div>
+</aside>
 
 <!-- 本章世系結構圖 -->
 <div class="lineage-overlay" id="lineageOverlay" onclick="closeLineage()"></div>
@@ -318,6 +332,55 @@ function closeLineage() {
   document.getElementById('lineagePanel').classList.remove('open');
   document.getElementById('lineageOverlay').classList.remove('open');
 }
+
+// ── 經文搜尋 ──────────────────────────────────────────────────────
+function openSearch() {
+  document.getElementById('searchPanel').classList.add('open');
+  document.getElementById('searchOverlay').classList.add('open');
+  setTimeout(() => document.getElementById('searchInput').focus(), 80);
+}
+function closeSearch() {
+  document.getElementById('searchPanel').classList.remove('open');
+  document.getElementById('searchOverlay').classList.remove('open');
+}
+function _hl(text, q) {
+  const i = text.indexOf(q);
+  if (i < 0) return text.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  const esc = s => s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  return esc(text.slice(0, i)) + '<mark>' + esc(q) + '</mark>' + esc(text.slice(i + q.length));
+}
+function runSearch() {
+  const q = document.getElementById('searchInput').value.trim();
+  const meta = document.getElementById('searchMeta');
+  const box = document.getElementById('searchResults');
+  if (!q) { meta.textContent = ''; box.innerHTML = ''; return; }
+  meta.textContent = '搜尋中…'; box.innerHTML = '';
+  fetch('/api/search?q=' + encodeURIComponent(q) + '&limit=200')
+    .then(r => r.json()).then(d => {
+      meta.textContent = '找到 ' + d.total + ' 節' + (d.truncated ? '（顯示前 200）' : '');
+      box.innerHTML = '';
+      d.results.forEach(r => {
+        const a = document.createElement('a');
+        a.className = 'search-hit';
+        a.href = '/read/' + encodeURIComponent(r.book) + '/' + r.chapter + '?v=' + r.verse;
+        a.innerHTML = '<span class="hit-ref">' + r.book + ' ' + r.chapter + ':' + r.verse +
+                      '</span><span class="hit-text">' + _hl(r.text, q) + '</span>';
+        box.appendChild(a);
+      });
+      if (!d.results.length) box.innerHTML = '<p class="search-empty">查無符合的經文。</p>';
+    }).catch(() => { meta.textContent = '搜尋失敗，請稍後再試。'; });
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const inp = document.getElementById('searchInput');
+  if (inp) inp.addEventListener('keydown', e => { if (e.key === 'Enter') runSearch(); });
+  // 從搜尋結果跳轉而來：高亮並捲到該節
+  const v = new URLSearchParams(location.search).get('v');
+  if (v) {
+    const el = document.querySelector('.verse[data-v="' + v + '"]') ||
+               [...document.querySelectorAll('.verse-num')].find(n => n.textContent.trim() === v)?.closest('.verse');
+    if (el) { el.classList.add('verse-hl'); el.scrollIntoView({block:'center'}); }
+  }
+});
 
 function renderRelations(name) {
   const box = document.getElementById('cardRelations');

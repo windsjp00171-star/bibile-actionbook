@@ -517,6 +517,35 @@ def api_books():
     return jsonify({"ot": pack(OT_BOOKS), "nt": pack(NT_BOOKS)})
 
 
+@app.route("/api/search")
+def api_search():
+    """經文全文搜尋。GET ?q=關鍵字&limit=  → 依聖經順序回符合的節。"""
+    q = (request.args.get("q") or "").strip()
+    if len(q) < 1:
+        return jsonify({"query": q, "total": 0, "results": []})
+    try:
+        limit = min(max(int(request.args.get("limit", 200)), 1), 500)
+    except ValueError:
+        limit = 200
+    results = []
+    total = 0
+    for book, _ch_count in ALL_BOOKS:
+        chapters = BIBLE.get(book, {})
+        for ch in sorted(chapters.keys(), key=lambda x: int(x)):
+            verses = chapters[ch]
+            for v in sorted(verses.keys(), key=lambda x: int(x)):
+                text = verses[v]
+                if q in text:
+                    total += 1
+                    if len(results) < limit:
+                        results.append({
+                            "book": book, "chapter": int(ch),
+                            "verse": int(v), "text": text,
+                        })
+    return jsonify({"query": q, "total": total,
+                    "truncated": total > len(results), "results": results})
+
+
 @app.route("/api/progress", methods=["GET", "POST"])
 def api_progress():
     """首頁存檔。POST：進閱讀頁時 upsert 進度；GET：取最近兩筆不同書卷。
