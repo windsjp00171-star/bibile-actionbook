@@ -106,146 +106,15 @@ ALL_BOOKS = OT_BOOKS + NT_BOOKS
 BOOK_CHAPTERS = {name: ch for name, ch in ALL_BOOKS}
 NT_BOOK_NAMES.update(name for name, _ in NT_BOOKS)
 
-_TYPE_CLASS = {"person": "anno-person", "place": "anno-place", "concept": "anno-concept"}
-
-# 全域單一 regex（所有詞條），長名優先排序讓最長匹配贏。
-# 「要不要顯示卡片」改由 _resolve_entity() 在命中時依三層優先度決定，
-# 不再需要分 OT/NT 兩套 regex。
-# 單字詞預設不標（易誤框），僅放行白名單中安全的度量衡單位（如「肘」總接在數字後）。
-_SINGLE_CHAR_OK = {"肘"}
-_ALL_NAMES = sorted(
-    [n for n in ENTITIES if len(n) >= 2 or n in _SINGLE_CHAR_OK],
-    key=len, reverse=True,
-)
-_ALL_RE = re.compile("|".join(re.escape(n) for n in _ALL_NAMES)) if _ALL_NAMES else None
-
-
-def _resolve_entity(name, book, chapter):
-    """依三層優先度找出這個詞條在目前位置最適用的條目；無合適條目回 None（不框）。
-    優先度：
-      1. books + chapters（章節範圍最精確）
-      2. books（書卷範圍）
-      3. testament（約）
-      4. both（任何地方）
-    """
-    val = ENTITIES.get(name)
-    if val is None:
-        return None
-    entries = val if isinstance(val, list) else [val]
-    testament = _testament_of(book)
-
-    # 1. book + chapter range
-    for e in entries:
-        if "books" in e and book in e["books"]:
-            cr = e.get("chapters")
-            if cr and cr[0] <= chapter <= cr[1]:
-                return e
-
-    # 2. book (no chapter restriction)
-    for e in entries:
-        if "books" in e and book in e["books"] and "chapters" not in e:
-            return e
-
-    # 3. testament
-    for e in entries:
-        if "books" not in e and e.get("testament", "both") == testament:
-            return e
-
-    # 4. both
-    for e in entries:
-        if "books" not in e and e.get("testament", "both") == "both":
-            return e
-
-    return None  # 此位置沒有適用條目 → 不框
-
-
-# 防誤植：這些較長的專有名詞「包含」字典裡某個短名，但意義完全不同。
-# 比對到短名時，若該處其實是這些長名的一部分，就不要框（例：亞伯拉罕≠亞伯）。
-_EXT_GUARD = {
-    # 亞伯(Abel) 誤夾進這些地名（亞伯拉罕/亞伯蘭已另立卡片，靠最長匹配處理）
-    "亞伯米何拉", "亞伯伯瑪迦", "亞伯瑪音", "亞伯什亭", "亞伯基拉明", "亞伯米斯拉音",
-    # 迦特(Gath)
-    "迦特希弗", "迦特臨門",
-    # 耶西(Jesse) / 希斯崙 / 沙瑪(Shammah) / 亞倫(Aaron)
-    "耶西末", "加略希斯崙", "以利沙瑪", "亞倫巴古",
-    # 他施(Tarshish) 撞動詞「施」：向他施恩、他施行…
-    "他施恩", "他施行", "他施捨", "他施報", "他施展",
-    # 約拿(Jonah) 其餘變體（約拿單已另立卡片）
-    "約拿達", "約拿大", "猶大書",
-    # 利亞(Leah) 誤夾進這些名字
-    "米利亞", "亞利亞", "比利亞",
-}
-
-
-def _is_partial_of_longer(text, start, end, word):
-    """word 在 text[start:end]；若此位置其實落在某個更長名字內，回 True。"""
-    for g in _EXT_GUARD:
-        if len(g) <= len(word) or word not in g:
-            continue
-        lo = max(0, start - len(g) + 1)
-        seg = text[lo:end + len(g) - 1]
-        i = seg.find(g)
-        while i != -1:
-            gs, ge = lo + i, lo + i + len(g)
-            if gs <= start and ge >= end:
-                return True
-            i = seg.find(g, i + 1)
-    return False
-
-
-def _redirect_target(name, entry, verse_text, before=""):
-    """消歧義轉址，兩種規則，優先看緊貼名字前面的頭銜：
-      1. prefix_redirect：名字緊前方數字內出現頭銜（如「以色列王」約蘭、「猶大王」約阿施）
-         → 最可靠，文本自己標明了是誰。
-      2. context_redirect：整節經文命中關鍵字（如「約翰…施洗」→ 施洗約翰）。
-    回傳應改指向的目標詞條名；無則回 None。`before` 為該名字在本節中緊前方的文字。"""
-    pre_rules = (entry or {}).get("prefix_redirect")
-    if pre_rules and before:
-        for rule in pre_rules:
-            if any(p in before for p in rule.get("prefix", [])):
-                tgt = rule.get("target")
-                if tgt and tgt in ENTITIES:
-                    return tgt
-    rules = (entry or {}).get("context_redirect")
-    if rules:
-        for rule in rules:
-            if any(kw in verse_text for kw in rule.get("keywords", [])):
-                tgt = rule.get("target")
-                if tgt and tgt in ENTITIES:
-                    return tgt
-    return None
-
-
-def annotate(text, book="", chapter=1):
-    """把經文中的實體詞包成可點擊 span，其餘字元做 HTML 轉義。
-    book + chapter 傳入後，_resolve_entity() 依三層優先度選正確條目；
-    無合適條目（如猶大在新約不對舊約卡片）就不框。
-    再依「同節關鍵字」做最後一層消歧義（如 Acts 1:5「約翰…施洗」→ 施洗約翰）。
-    """
-    if not _ALL_RE:
-        return str(escape(text))
-    out, last = [], 0
-    for m in _ALL_RE.finditer(text):
-        word = m.group(0)
-        out.append(str(escape(text[last:m.start()])))
-        if _is_partial_of_longer(text, m.start(), m.end(), word):
-            out.append(str(escape(word)))   # 是更長名字的一部分 → 純文字，不框
-        else:
-            entry = _resolve_entity(word, book, chapter)
-            if entry:
-                before = text[max(0, m.start() - 6):m.start()]
-                tgt = _redirect_target(word, entry, text, before)
-                data_name = tgt or word
-                if tgt:
-                    te = ENTITIES[tgt]
-                    entry = te[0] if isinstance(te, list) else te
-                cls = _TYPE_CLASS.get(entry["type"], "anno-person")
-                out.append(f'<span class="anno {cls}" data-entity="{escape(data_name)}">{escape(word)}</span>')
-            else:
-                out.append(str(escape(word)))   # 此位置無適用條目 → 不框
-        last = m.end()
-    out.append(str(escape(text[last:])))
-    return "".join(out)
+# 標註引擎已抽到獨立模組 mark_bible（兩專案共用，避免分叉）。
+# 詞條以 mark_bible 載入的同一份 data/entities.json 為唯一來源。
+import mark_bible
+ENTITIES = mark_bible.ENTITIES
+_TYPE_CLASS = mark_bible._TYPE_CLASS
+_ALL_NAMES = mark_bible._ALL_NAMES
+_resolve_entity = mark_bible.resolve_entity
+_redirect_target = mark_bible.redirect_target
+annotate = mark_bible.annotate
 
 
 # 依中文標點切分句；標點留在前一句尾。手機點按以「分句」為單位最好點。
