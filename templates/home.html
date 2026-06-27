@@ -52,6 +52,8 @@ body{background:var(--bg);color:var(--cream);overflow:hidden;}
 .spine{position:absolute;left:-14px;top:4px;bottom:4px;width:14px;background:linear-gradient(to right,#1A0E06,#4A2810);border-radius:3px 0 0 3px;border:1px solid #5C3010;border-right:none;}
 .pages{position:absolute;right:-3px;top:6px;bottom:6px;width:3px;background:repeating-linear-gradient(to bottom,#E8D8B0,#E8D8B0 1px,#C8B080 1px,#C8B080 2px);border-radius:0 2px 2px 0;}
 .book-hint{position:absolute;bottom:-36px;left:50%;transform:translateX(-50%);font-size:12px;color:#B0946A;letter-spacing:.1em;white-space:nowrap;animation:blink 2s infinite;transition:opacity .4s;}
+.skip-intro{position:fixed;bottom:28px;right:24px;z-index:5;background:none;border:1px solid #5C3010;color:#B0946A;font-family:'Noto Serif TC',serif;font-size:13px;letter-spacing:.08em;padding:8px 16px;border-radius:99px;cursor:pointer;transition:color .15s,border-color .15s;}
+.skip-intro:hover{color:var(--gold);border-color:var(--gold);}
 @keyframes blink{0%,100%{opacity:.3}50%{opacity:.8}}
 .glow{position:fixed;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,#D4A84720 0%,transparent 70%);pointer-events:none;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0;transition:opacity 1s;}
 .glow.show{opacity:1;}
@@ -206,6 +208,7 @@ body{background:var(--bg);color:var(--cream);overflow:hidden;}
     </div>
     <div class="book-hint" id="bookHint">點擊書本開始</div>
   </div>
+  <button class="skip-intro" id="skipIntro" onclick="skipIntro()">略過開場 ›</button>
 </div>
 
 <!-- 2. 存檔選單 -->
@@ -343,6 +346,20 @@ document.getElementById('bookWrap').addEventListener('click',()=>{
     loadProgress();
   },1100);
 });
+
+/* 略過開場：直接進存檔選單，並記住偏好（下次自動略過） */
+function skipIntro(){
+  bookOpened=true;
+  localStorage.setItem('bible-skip-intro','1');
+  showScreen('s-menu');
+  loadProgress();
+}
+// 回訪者若曾選過略過，自動跳過開書動畫
+if(localStorage.getItem('bible-skip-intro')==='1'){
+  bookOpened=true;
+  showScreen('s-menu');
+  loadProgress();
+}
 
 /* 選書流程 */
 let curT='old', selBook=null, selCh=null;
