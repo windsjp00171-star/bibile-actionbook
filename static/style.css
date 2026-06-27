@@ -494,6 +494,30 @@ body {
 .search-hit mark { background: #EDB93055; color: inherit; padding: 0 1px; }
 .search-empty { color: #9C8866; font-size: 13px; padding: 12px 2px; }
 .verse-hl { background: linear-gradient(transparent 60%, #EDB93040 60%); border-radius: 3px; }
+.search-scope { display: block; font-size: 12px; color: #6B5436; margin: 8px 2px 0; cursor: pointer; }
+.search-scope input { vertical-align: middle; margin-right: 5px; }
+/* 索引 */
+.explore-tabs { display: flex; gap: 6px; margin-bottom: 10px; }
+.explore-tab {
+  flex: 1; padding: 7px; border: 1px solid #C9A96E; border-radius: 8px;
+  background: none; color: #8B6840; font-size: 13px; cursor: pointer; font-family: inherit;
+}
+.explore-tab.active { background: #2A5C3A; color: #fff; border-color: #2A5C3A; }
+.explore-filter {
+  width: 100%; padding: 8px 11px; border: 1px solid #C9A96E; border-radius: 8px;
+  font-size: 13px; font-family: inherit; margin-bottom: 10px; background: #fff; color: #2A1A08;
+}
+.explore-list { overflow-y: auto; flex: 1; display: flex; flex-wrap: wrap; gap: 6px; align-content: flex-start; }
+.explore-item {
+  padding: 6px 11px; border: 1px solid #C9A96E66; border-radius: 16px;
+  background: #F5ECD8; color: #3A2A14; font-size: 13px; cursor: pointer; font-family: inherit;
+}
+.explore-item:active { background: #EADBBE; }
+.ex-en { color: #9C8866; font-size: 11px; }
+.verse.bookmarked { position: relative; }
+.verse.bookmarked .verse-num::after {
+  content: '🔖'; font-size: 10px; margin-left: 2px;
+}
 
 /* ── 本章世系結構圖 ── */
 .lineage-trigger {

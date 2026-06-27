@@ -527,9 +527,12 @@ def api_search():
         limit = min(max(int(request.args.get("limit", 200)), 1), 500)
     except ValueError:
         limit = 200
+    scope = (request.args.get("book") or "").strip()  # 限定書卷（可空）
     results = []
     total = 0
     for book, _ch_count in ALL_BOOKS:
+        if scope and book != scope:
+            continue
         chapters = BIBLE.get(book, {})
         for ch in sorted(chapters.keys(), key=lambda x: int(x)):
             verses = chapters[ch]
@@ -544,6 +547,91 @@ def api_search():
                         })
     return jsonify({"query": q, "total": total,
                     "truncated": total > len(results), "results": results})
+
+
+@app.route("/api/entities")
+def api_entities():
+    """人物/地點/概念索引：列出全部詞條（依類型分組）。"""
+    groups = {"person": [], "place": [], "concept": []}
+    for name, val in ENTITIES.items():
+        e = val[0] if isinstance(val, list) else val
+        t = e.get("type", "person")
+        groups.setdefault(t, []).append({
+            "key": name,
+            "name": e.get("name", name),
+            "name_en": e.get("name_en", ""),
+            "has_map": e.get("lat") is not None,
+        })
+    for t in groups:
+        groups[t].sort(key=lambda x: x["name"])
+    return jsonify(groups)
+
+
+@app.route("/api/book_places")
+def api_book_places():
+    """整卷地圖：某書卷中出現、且有座標的地點（去重）。"""
+    book = (request.args.get("book") or "").strip()
+    chapters = BIBLE.get(book, {})
+    if not chapters:
+        return jsonify({"book": book, "places": []})
+    joined = "".join(t for ch in chapters.values() for t in ch.values())
+    seen, places = set(), []
+    for name, val in ENTITIES.items():
+        e = val[0] if isinstance(val, list) else val
+        if e.get("type") != "place" or e.get("lat") is None:
+            continue
+        if name in seen or name not in joined:
+            continue
+        seen.add(name)
+        places.append({"name": e.get("name", name), "key": name,
+                       "lat": e["lat"], "lng": e["lng"],
+                       "desc": e.get("desc", "")})
+    return jsonify({"book": book, "places": places})
+
+
+@app.route("/api/bookmarks", methods=["GET", "POST", "DELETE"])
+def api_bookmarks():
+    """書籤。POST 新增 / DELETE 移除 / GET 取清單。以裝置 ID 當 user_id。"""
+    if request.method == "GET":
+        uid = (request.args.get("user_id") or "").strip()[:64]
+        if not uid or not sb:
+            return jsonify({"bookmarks": []})
+        try:
+            r = (sb.table("user_bookmarks")
+                 .select("book_name,chapter,verse,text,created_at")
+                 .eq("user_id", uid).order("created_at", desc=True).limit(300).execute())
+            return jsonify({"bookmarks": r.data or []})
+        except Exception:
+            return jsonify({"bookmarks": []})
+
+    data = request.get_json(silent=True) or {}
+    uid = (data.get("user_id") or "").strip()[:64]
+    book = (data.get("book") or "").strip()[:30]
+    try:
+        chapter = int(data.get("chapter"))
+        verse = int(data.get("verse"))
+    except (TypeError, ValueError):
+        return jsonify({"error": "bad_request"}), 400
+    if not uid or not book or not sb:
+        return jsonify({"ok": True})
+
+    if request.method == "DELETE":
+        try:
+            (sb.table("user_bookmarks").delete()
+             .eq("user_id", uid).eq("book_name", book)
+             .eq("chapter", chapter).eq("verse", verse).execute())
+        except Exception:
+            pass
+        return jsonify({"ok": True})
+
+    try:
+        sb.table("user_bookmarks").upsert({
+            "user_id": uid, "book_name": book, "chapter": chapter,
+            "verse": verse, "text": (data.get("text") or "")[:300],
+        }, on_conflict="user_id,book_name,chapter,verse").execute()
+    except Exception:
+        pass
+    return jsonify({"ok": True})
 
 
 @app.route("/api/progress", methods=["GET", "POST"])
