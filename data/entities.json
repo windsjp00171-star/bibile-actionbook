@@ -4865,5 +4865,154 @@
     "name_en": "Judas Iscariot",
     "testament": "NT",
     "desc": "十二使徒之一，加略人西門之子。以三十塊銀子賣耶穌，後懊悔自縊。"
+  },
+  "基督": {
+    "type": "concept",
+    "name": "基督",
+    "name_en": "Christ",
+    "testament": "NT",
+    "desc": "希臘文「受膏者」，等同希伯來文「彌賽亞」，指神所應許的救主。基督徒宣認耶穌就是基督。"
+  },
+  "亞基帕": {
+    "type": "person",
+    "name": "亞基帕（希律亞基帕二世）",
+    "name_en": "Agrippa II",
+    "testament": "NT",
+    "desc": "希律王朝末代分封王，保羅在該撒利亞受審時向他申訴。亞基帕說「你想少微一勸、便叫我作基督徒阿」。"
+  },
+  "非斯都": {
+    "type": "person",
+    "name": "非斯都",
+    "name_en": "Festus",
+    "testament": "NT",
+    "desc": "接替腓力斯的羅馬猶太巡撫。審問保羅，聽其申訴後將他送往羅馬向該撒上訴。"
+  },
+  "腓力斯": {
+    "type": "person",
+    "name": "腓力斯",
+    "name_en": "Felix",
+    "testament": "NT",
+    "desc": "羅馬猶太巡撫，審問保羅卻拖延兩年盼得賄賂，後由非斯都接任。"
+  },
+  "革老丟": {
+    "type": "person",
+    "name": "革老丟",
+    "name_en": "Claudius",
+    "testament": "NT",
+    "desc": "羅馬皇帝，在位時天下大饑荒，並下令猶太人離開羅馬，故亞居拉夫婦遷往哥林多。"
+  },
+  "哥尼流": {
+    "type": "person",
+    "name": "哥尼流",
+    "name_en": "Cornelius",
+    "testament": "NT",
+    "desc": "該撒利亞的羅馬百夫長，敬畏神又周濟人。神差彼得到他家，成為首批受聖靈、受洗的外邦人。"
+  },
+  "迦瑪列": {
+    "type": "person",
+    "name": "迦瑪列",
+    "name_en": "Gamaliel",
+    "testament": "NT",
+    "desc": "受尊敬的法利賽人律法教師，公會中勸眾人勿輕舉妄動對付使徒。保羅年輕時曾在他門下受教。"
+  },
+  "拿但業": {
+    "type": "person",
+    "name": "拿但業",
+    "name_en": "Nathanael",
+    "testament": "NT",
+    "desc": "被腓力引介來見耶穌的門徒，耶穌稱他是「真以色列人，心裡沒有詭詐」。一般認為即巴多羅買。"
+  },
+  "馬可": {
+    "type": "person",
+    "name": "馬可（約翰馬可）",
+    "name_en": "John Mark",
+    "testament": "NT",
+    "desc": "又名約翰，巴拿巴的表弟，馬可福音作者。曾隨保羅宣教中途離隊，後與保羅和好同工。"
+  },
+  "西庇太": {
+    "type": "person",
+    "name": "西庇太",
+    "name_en": "Zebedee",
+    "testament": "NT",
+    "desc": "加利利漁夫，雅各和約翰的父親。耶穌呼召其二子時，他們撇下父親與船來跟從。"
+  },
+  "亞力山大": {
+    "type": "person",
+    "name": "亞力山大",
+    "name_en": "Alexander",
+    "testament": "NT",
+    "desc": "新約數人同名。以弗所暴動時猶太人推他出來分訴；保羅也提到「銅匠亞力山大」多多害他。"
+  },
+  "亞力山太": {
+    "type": "place",
+    "name": "亞力山太",
+    "name_en": "Alexandria",
+    "testament": "NT",
+    "desc": "埃及著名港都與學術中心，猶太人聚居。亞波羅是亞力山太人；保羅赴羅馬曾乘亞力山太的船。",
+    "lat": 31.2,
+    "lng": 29.9
+  },
+  "基利家": {
+    "type": "place",
+    "name": "基利家",
+    "name_en": "Cilicia",
+    "testament": "NT",
+    "desc": "小亞細亞東南沿海地區，首府大數即保羅的故鄉。",
+    "lat": 37.0,
+    "lng": 35.3
+  },
+  "居比路": {
+    "type": "place",
+    "name": "居比路",
+    "name_en": "Cyprus",
+    "testament": "NT",
+    "desc": "地中海大島，巴拿巴的故鄉。保羅第一次宣教旅程的首站。",
+    "lat": 35.0,
+    "lng": 33.0
+  },
+  "帕弗": {
+    "type": "place",
+    "name": "帕弗",
+    "name_en": "Paphos",
+    "testament": "NT",
+    "desc": "居比路島西端城市，保羅在此使行法術的以呂馬瞎眼，方伯士求保羅因而信主。",
+    "lat": 34.77,
+    "lng": 32.42
+  },
+  "路司得": {
+    "type": "place",
+    "name": "路司得",
+    "name_en": "Lystra",
+    "testament": "NT",
+    "desc": "呂高尼地區城市，保羅醫好瘸腿者後被誤當作神，後又被石頭打。提摩太的家鄉。",
+    "lat": 37.58,
+    "lng": 32.45
+  },
+  "特庇": {
+    "type": "place",
+    "name": "特庇",
+    "name_en": "Derbe",
+    "testament": "NT",
+    "desc": "呂高尼地區城市，保羅宣教旅程所到，在此收了不少門徒。",
+    "lat": 37.35,
+    "lng": 33.3
+  },
+  "米利大": {
+    "type": "place",
+    "name": "米利大",
+    "name_en": "Malta",
+    "testament": "NT",
+    "desc": "地中海島嶼（馬爾他）。保羅赴羅馬遇船難漂流至此，被毒蛇咬卻無恙，並醫好島上病人。",
+    "lat": 35.9,
+    "lng": 14.4
+  },
+  "呂大": {
+    "type": "place",
+    "name": "呂大",
+    "name_en": "Lydda",
+    "testament": "NT",
+    "desc": "猶太沿海平原城市，彼得在此醫好癱瘓八年的以尼雅，使附近居民歸主。",
+    "lat": 31.95,
+    "lng": 34.9
   }
 }
