@@ -589,6 +589,51 @@ def api_book_places():
     return jsonify({"book": book, "places": places})
 
 
+@app.route("/api/bookmarks", methods=["GET", "POST", "DELETE"])
+def api_bookmarks():
+    """書籤。POST 新增 / DELETE 移除 / GET 取清單。以裝置 ID 當 user_id。"""
+    if request.method == "GET":
+        uid = (request.args.get("user_id") or "").strip()[:64]
+        if not uid or not sb:
+            return jsonify({"bookmarks": []})
+        try:
+            r = (sb.table("user_bookmarks")
+                 .select("book_name,chapter,verse,text,created_at")
+                 .eq("user_id", uid).order("created_at", desc=True).limit(300).execute())
+            return jsonify({"bookmarks": r.data or []})
+        except Exception:
+            return jsonify({"bookmarks": []})
+
+    data = request.get_json(silent=True) or {}
+    uid = (data.get("user_id") or "").strip()[:64]
+    book = (data.get("book") or "").strip()[:30]
+    try:
+        chapter = int(data.get("chapter"))
+        verse = int(data.get("verse"))
+    except (TypeError, ValueError):
+        return jsonify({"error": "bad_request"}), 400
+    if not uid or not book or not sb:
+        return jsonify({"ok": True})
+
+    if request.method == "DELETE":
+        try:
+            (sb.table("user_bookmarks").delete()
+             .eq("user_id", uid).eq("book_name", book)
+             .eq("chapter", chapter).eq("verse", verse).execute())
+        except Exception:
+            pass
+        return jsonify({"ok": True})
+
+    try:
+        sb.table("user_bookmarks").upsert({
+            "user_id": uid, "book_name": book, "chapter": chapter,
+            "verse": verse, "text": (data.get("text") or "")[:300],
+        }, on_conflict="user_id,book_name,chapter,verse").execute()
+    except Exception:
+        pass
+    return jsonify({"ok": True})
+
+
 @app.route("/api/progress", methods=["GET", "POST"])
 def api_progress():
     """首頁存檔。POST：進閱讀頁時 upsert 進度；GET：取最近兩筆不同書卷。

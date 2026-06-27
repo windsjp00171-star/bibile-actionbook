@@ -51,6 +51,7 @@
   <button class="search-trigger" onclick="openSearch()">🔍 搜尋經文</button>
   <button class="search-trigger" onclick="openExplore()">📑 人物地點索引</button>
   <button class="search-trigger" onclick="openBookMap()">🗺 本卷地圖</button>
+  <button class="search-trigger" onclick="openBookmarks()">🔖 我的書籤</button>
 
   <a class="resume-banner" id="resumeBanner" href="#" style="display:none"></a>
 
@@ -103,6 +104,15 @@
   </div>
   <input type="text" id="exploreFilter" class="explore-filter" placeholder="篩選名稱…" autocomplete="off">
   <div class="explore-list" id="exploreList"></div>
+</aside>
+
+<!-- 我的書籤 -->
+<div class="search-overlay" id="bookmarksOverlay" onclick="closeBookmarks()"></div>
+<aside class="search-panel" id="bookmarksPanel">
+  <button class="card-close" onclick="closeBookmarks()" aria-label="關閉">✕</button>
+  <h3 class="search-title">我的書籤</h3>
+  <div class="search-meta">點經文的「節號」即可加／取消書籤</div>
+  <div class="search-results" id="bookmarksList"></div>
 </aside>
 
 <!-- 本卷地圖 -->
@@ -464,11 +474,74 @@ function closeBookMap() {
   document.getElementById('bookMapOverlay').classList.remove('open');
 }
 
+// ── 書籤 ────────────────────────────────────────────────────────
+let _bmSet = new Set();  // 本章已加書籤的節
+function _bmKey(b, c, v) { return b + '|' + c + '|' + v; }
+function loadBookmarks(cb) {
+  fetch('/api/bookmarks?user_id=' + encodeURIComponent(deviceId()))
+    .then(r => r.json()).then(d => {
+      _bmAll = d.bookmarks || [];
+      _bmSet = new Set(_bmAll.filter(b => b.book_name === CUR_BOOK && b.chapter === CUR_CH)
+                            .map(b => _bmKey(b.book_name, b.chapter, b.verse)));
+      document.querySelectorAll('.verse').forEach(p => {
+        const v = parseInt(p.dataset.v);
+        p.classList.toggle('bookmarked', _bmSet.has(_bmKey(CUR_BOOK, CUR_CH, v)));
+      });
+      if (cb) cb();
+    }).catch(() => {});
+}
+let _bmAll = [];
+function toggleBookmark(v, p) {
+  const k = _bmKey(CUR_BOOK, CUR_CH, v);
+  const on = _bmSet.has(k);
+  const text = p.querySelector('.verse-body').textContent;
+  fetch('/api/bookmarks', {
+    method: on ? 'DELETE' : 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ user_id: deviceId(), book: CUR_BOOK, chapter: CUR_CH, verse: v, text: text })
+  }).catch(() => {});
+  if (on) { _bmSet.delete(k); p.classList.remove('bookmarked'); }
+  else { _bmSet.add(k); p.classList.add('bookmarked'); }
+}
+function openBookmarks() {
+  document.getElementById('bookmarksPanel').classList.add('open');
+  document.getElementById('searchOverlay').classList.add('open');
+  document.getElementById('searchOverlay').onclick = closeBookmarks;
+  const box = document.getElementById('bookmarksList');
+  box.innerHTML = '<p class="search-empty">載入中…</p>';
+  fetch('/api/bookmarks?user_id=' + encodeURIComponent(deviceId()))
+    .then(r => r.json()).then(d => {
+      const bms = d.bookmarks || [];
+      box.innerHTML = '';
+      if (!bms.length) { box.innerHTML = '<p class="search-empty">尚無書籤。點經文節號即可加入。</p>'; return; }
+      bms.forEach(b => {
+        const a = document.createElement('a');
+        a.className = 'search-hit';
+        a.href = '/read/' + encodeURIComponent(b.book_name) + '/' + b.chapter + '?v=' + b.verse;
+        a.innerHTML = '<span class="hit-ref">' + b.book_name + ' ' + b.chapter + ':' + b.verse +
+                      '</span><span class="hit-text">' + (b.text || '').replace(/[<>&]/g, '') + '</span>';
+        box.appendChild(a);
+      });
+    });
+}
+function closeBookmarks() {
+  document.getElementById('bookmarksPanel').classList.remove('open');
+  document.getElementById('searchOverlay').classList.remove('open');
+  document.getElementById('searchOverlay').onclick = closeSearch;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const inp = document.getElementById('searchInput');
   if (inp) inp.addEventListener('keydown', e => { if (e.key === 'Enter') runSearch(); });
   const ef = document.getElementById('exploreFilter');
   if (ef) ef.addEventListener('input', renderExplore);
+  // 節號可點以加／取消書籤
+  document.querySelectorAll('.verse').forEach(p => {
+    const num = p.querySelector('.verse-num');
+    if (num) { num.style.cursor = 'pointer'; num.title = '加入／取消書籤';
+      num.addEventListener('click', () => toggleBookmark(parseInt(p.dataset.v), p)); }
+  });
+  loadBookmarks();
   // 從搜尋結果跳轉而來：高亮並捲到該節
   const v = new URLSearchParams(location.search).get('v');
   if (v) {
