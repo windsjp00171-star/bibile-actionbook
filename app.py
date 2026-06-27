@@ -2,7 +2,7 @@ import os
 import re
 import json
 import hashlib
-from datetime import date
+from datetime import date, datetime, timezone
 from flask import Flask, render_template, request, jsonify
 from markupsafe import Markup, escape
 from supabase import create_client
@@ -618,6 +618,50 @@ def api_feedback():
         except Exception:
             pass
     return jsonify({"ok": True})
+
+
+@app.route("/api/books")
+def api_books():
+    """選書流程用：新舊約書卷清單（含卷號、書名、章數），順序固定。"""
+    def pack(books):
+        return [{"order": i + 1, "name": n, "chapters": c}
+                for i, (n, c) in enumerate(books)]
+    return jsonify({"ot": pack(OT_BOOKS), "nt": pack(NT_BOOKS)})
+
+
+@app.route("/api/progress", methods=["GET", "POST"])
+def api_progress():
+    """首頁存檔。POST：進閱讀頁時 upsert 進度；GET：取最近兩筆不同書卷。
+    無登入系統，以前端產生的裝置 ID 當 user_id。"""
+    if request.method == "POST":
+        data = request.get_json(silent=True) or {}
+        uid = (data.get("user_id") or "").strip()[:64]
+        book = (data.get("book") or "").strip()[:30]
+        chapter = data.get("chapter")
+        if not uid or not book or not isinstance(chapter, int):
+            return jsonify({"error": "bad_request"}), 400
+        if sb:
+            try:
+                sb.table("user_reading_progress").upsert({
+                    "user_id": uid, "book_name": book, "chapter": chapter,
+                    "updated_at": datetime.now(timezone.utc).isoformat(),
+                }, on_conflict="user_id,book_name").execute()
+            except Exception:
+                pass
+        return jsonify({"ok": True})
+
+    uid = (request.args.get("user_id") or "").strip()[:64]
+    if not uid or not sb:
+        return jsonify({"records": []})
+    try:
+        r = (sb.table("user_reading_progress")
+             .select("book_name,chapter,updated_at")
+             .eq("user_id", uid)
+             .order("updated_at", desc=True)
+             .limit(2).execute())
+        return jsonify({"records": r.data or []})
+    except Exception:
+        return jsonify({"records": []})
 
 
 @app.route("/")

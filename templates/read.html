@@ -418,6 +418,22 @@ if (!_prog.read[CUR_BOOK].includes(CUR_CH)) {
 }
 saveProgress(_prog);
 
+// 同步存檔到 Supabase（首頁存檔選單用）。無登入，以裝置 ID 識別。
+function deviceId() {
+  let id = localStorage.getItem('bible-device-id');
+  if (!id) {
+    id = (crypto.randomUUID ? crypto.randomUUID()
+          : 'dev-' + Date.now() + '-' + Math.random().toString(16).slice(2));
+    localStorage.setItem('bible-device-id', id);
+  }
+  return id;
+}
+fetch('/api/progress', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ user_id: deviceId(), book: CUR_BOOK, chapter: CUR_CH })
+}).catch(() => {});
+
 // 在側欄已讀章節的 pill 加標記，書卷顯示讀過幾章
 function markRead(root) {
   const read = _prog.read || {};
