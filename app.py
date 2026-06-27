@@ -493,16 +493,19 @@ def api_feedback():
     book = (data.get("book") or "").strip()[:30]
     chapter = data.get("chapter", "")
     note = (data.get("note") or "").strip()[:200]
+    try:
+        verse = int(data.get("verse")) if data.get("verse") not in (None, "") else None
+    except (TypeError, ValueError):
+        verse = None
     if not entity:
         return jsonify({"error": "empty"}), 400
     if sb:
         try:
-            sb.table("entity_feedback").insert({
-                "entity": entity,
-                "book": book,
-                "chapter": str(chapter),
-                "note": note,
-            }).execute()
+            row = {"entity": entity, "book": book,
+                   "chapter": str(chapter), "note": note}
+            if verse is not None:
+                row["verse"] = verse
+            sb.table("entity_feedback").insert(row).execute()
         except Exception:
             pass
     return jsonify({"ok": True})

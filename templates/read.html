@@ -74,7 +74,7 @@
       <a class="chapter-nav-btn" href="/read/{{ next_book }}/{{ next_ch }}">{{ next_book }} {{ next_ch }} ›</a>
       {% endif %}
     </div>
-    <button class="chapter-report-btn" onclick="reportChapter()">⚑ 本章有漏標或標錯？回報</button>
+    <p class="report-hint">看到漏標或標錯？點每節句末的 <span class="rv-demo">⚑</span> 即可逐節回報。</p>
   </footer>
 </div>
 
@@ -552,9 +552,19 @@ document.addEventListener('DOMContentLoaded', () => {
   if (ef) ef.addEventListener('input', renderExplore);
   // 節號可點以加／取消書籤
   document.querySelectorAll('.verse').forEach(p => {
+    const v = parseInt(p.dataset.v);
     const num = p.querySelector('.verse-num');
     if (num) { num.style.cursor = 'pointer'; num.title = '加入／取消書籤';
-      num.addEventListener('click', () => toggleBookmark(parseInt(p.dataset.v), p)); }
+      num.addEventListener('click', () => toggleBookmark(v, p)); }
+    // 句末逐節回報 ⚑
+    const body = p.querySelector('.verse-body');
+    if (body) {
+      const rb = document.createElement('button');
+      rb.className = 'verse-report'; rb.textContent = '⚑';
+      rb.title = '回報此節漏標／標錯';
+      rb.addEventListener('click', e => { e.stopPropagation(); reportVerse(v); });
+      body.appendChild(rb);
+    }
   });
   loadBookmarks();
   // 首次進入閱讀頁自動帶導引（之後可按「？教學」重看）
@@ -803,14 +813,15 @@ function submitFeedback() {
 }
 
 // 章節層級回報：可回報「漏標」（沒有卡片可按的詞）或整章問題
-function reportChapter() {
-  const note = prompt('請描述本章的標註問題（例如：「迦瑪列」沒標、「某詞」標錯人）：');
+// 逐節回報：點某節的 ⚑ 回報「漏標／標錯」，精確到該節
+function reportVerse(v) {
+  const note = prompt('回報第 ' + v + ' 節的標註問題（例如：「迦瑪列」沒標、「某詞」標錯人）：');
   if (!note || !note.trim()) return;
   fetch('/api/feedback', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({entity: '（本章回報）', book: CUR_BOOK, chapter: CUR_CH, note: note.trim()})
-  }).finally(() => alert('已回報，謝謝！'));
+    body: JSON.stringify({entity: '（逐節回報）', book: CUR_BOOK, chapter: CUR_CH, verse: v, note: note.trim()})
+  }).finally(() => alert('已回報第 ' + v + ' 節，謝謝！'));
 }
 
 function setLevel(lv) {
@@ -859,20 +870,7 @@ function fetchExplain(entityName) {
     .catch(() => { body.textContent = '網路錯誤，請稍後再試。'; });
 }
 
-// ── Swipe to navigate (mobile) ───────────────────────────────────
-(function() {
-  let sx = 0;
-  const passage = document.getElementById('passage');
-  passage.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
-  passage.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - sx;
-    if (Math.abs(dx) < 60) return;
-    const prev = document.querySelector('.chapter-nav-btn:first-child');
-    const next = document.querySelector('.chapter-nav-btn:last-child');
-    if (dx > 0 && prev && prev.href) location.href = prev.href;
-    if (dx < 0 && next && next.href) location.href = next.href;
-  }, { passive: true });
-})();
+// 滑動切換章節已移除——垂直捲動易誤觸翻章。改用底部「上一章／下一章」按鈕。
 </script>
 </body>
 </html>
