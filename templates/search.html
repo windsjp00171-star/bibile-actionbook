@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全本搜尋 · 聖經互動全書</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<style>
+.sp-wrap{max-width:720px;margin:0 auto;padding:28px 18px 60px;}
+.sp-head{text-align:center;margin-bottom:20px;}
+.sp-title{font-size:22px;color:#2A1A08;letter-spacing:.08em;margin-bottom:4px;}
+.sp-sub{font-size:13px;color:#9C8866;}
+.sp-row{display:flex;gap:8px;margin-bottom:6px;}
+.sp-row input{flex:1;padding:11px 14px;border:1px solid #C9A96E;border-radius:10px;font-size:15px;font-family:inherit;background:#fff;color:#2A1A08;}
+.sp-row button{padding:11px 20px;border:none;border-radius:10px;background:#2A5C3A;color:#fff;font-size:15px;cursor:pointer;font-family:inherit;}
+.sp-meta{font-size:12px;color:#9C8866;margin:10px 2px;}
+.sp-hit{display:block;padding:12px 8px;border-bottom:1px solid #ece2d2;text-decoration:none;color:#3A2A14;}
+.sp-hit:active{background:#F5ECD8;}
+.sp-ref{display:block;font-size:12px;color:#2A5C3A;margin-bottom:3px;font-weight:500;}
+.sp-text{font-size:15px;font-weight:300;line-height:1.8;}
+.sp-hit mark{background:#EDB93055;color:inherit;}
+.sp-empty{color:#9C8866;font-size:14px;padding:16px 2px;text-align:center;}
+.sp-back{display:inline-block;margin-bottom:16px;color:#8B6840;text-decoration:none;font-size:13px;}
+</style>
+</head>
+<body class="search-page">
+<div class="sp-wrap">
+  <a class="sp-back" href="/">‹ 回首頁</a>
+  <div class="sp-head">
+    <div class="sp-title">🔍 全本搜尋</div>
+    <div class="sp-sub">搜尋整本聖經（66 卷）的經文</div>
+  </div>
+  <div class="sp-row">
+    <input type="text" id="q" placeholder="輸入關鍵字，如「歌利亞」「愛是恆久忍耐」" autocomplete="off" value="{{ q }}">
+    <button onclick="run()">搜尋</button>
+  </div>
+  <div class="sp-meta" id="meta"></div>
+  <div id="results"></div>
+</div>
+<script>
+function esc(s){return s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function hl(text,q){const i=text.indexOf(q);if(i<0)return esc(text);
+  return esc(text.slice(0,i))+'<mark>'+esc(q)+'</mark>'+esc(text.slice(i+q.length));}
+function run(){
+  const q=document.getElementById('q').value.trim();
+  const meta=document.getElementById('meta'), box=document.getElementById('results');
+  if(!q){meta.textContent='';box.innerHTML='';return;}
+  history.replaceState(null,'','/search?q='+encodeURIComponent(q));
+  meta.textContent='搜尋中…';box.innerHTML='';
+  fetch('/api/search?q='+encodeURIComponent(q)+'&limit=300').then(r=>r.json()).then(d=>{
+    meta.textContent='找到 '+d.total+' 節'+(d.truncated?'（顯示前 300）':'');
+    box.innerHTML='';
+    d.results.forEach(r=>{
+      const a=document.createElement('a');a.className='sp-hit';
+      a.href='/read/'+encodeURIComponent(r.book)+'/'+r.chapter+'?v='+r.verse;
+      a.innerHTML='<span class="sp-ref">'+r.book+' '+r.chapter+':'+r.verse+'</span><span class="sp-text">'+hl(r.text,q)+'</span>';
+      box.appendChild(a);
+    });
+    if(!d.results.length)box.innerHTML='<p class="sp-empty">查無符合的經文。</p>';
+  }).catch(()=>{meta.textContent='搜尋失敗，請稍後再試。';});
+}
+document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')run();});
+if(document.getElementById('q').value.trim())run();
+document.getElementById('q').focus();
+</script>
+</body>
+</html>

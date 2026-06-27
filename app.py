@@ -549,6 +549,12 @@ def api_search():
                     "truncated": total > len(results), "results": results})
 
 
+@app.route("/search")
+def search_page():
+    """獨立的全本搜尋頁（首頁與閱讀頁皆可進）。"""
+    return render_template("search.html", q=(request.args.get("q") or "").strip())
+
+
 @app.route("/api/entities")
 def api_entities():
     """人物/地點/概念索引：列出全部詞條（依類型分組）。"""
