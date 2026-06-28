@@ -570,6 +570,7 @@ def api_entities():
             "name": e.get("name", name),
             "name_en": e.get("name_en", ""),
             "has_map": e.get("lat") is not None,
+            "testament": e.get("testament", "both"),
         })
     for t in groups:
         groups[t].sort(key=lambda x: x["name"])

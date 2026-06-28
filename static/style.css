@@ -257,6 +257,7 @@ body {
 
 /* ── Chapter nav footer ── */
 .chapter-footer { margin-top: 40px; }
+.copyright-note { text-align: center; font-size: 11px; color: #B0A088; line-height: 1.8; margin: 20px auto 0; max-width: 540px; }
 .report-hint { text-align: center; font-size: 12px; color: #9C8866; margin: 18px auto 0; }
 .report-hint .rv-demo { color: #C08; }
 .verse-report {
@@ -516,6 +517,15 @@ body {
 }
 .explore-item:active { background: #EADBBE; }
 .ex-en { color: #9C8866; font-size: 11px; }
+.ex-cnt { font-size: 11px; opacity: .7; }
+.explore-subfilter { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+.explore-subfilter select {
+  padding: 6px 9px; border: 1px solid #C9A96E; border-radius: 8px;
+  font-size: 12px; font-family: inherit; background: #fff; color: #2A1A08;
+}
+.ex-maponly { font-size: 12px; color: #8B6840; display: flex; align-items: center; gap: 4px; cursor: pointer; }
+.ex-maponly input { margin: 0; }
+.ex-shown { font-size: 11px; color: #9C8866; margin-left: auto; }
 .verse.bookmarked { position: relative; }
 .verse.bookmarked .verse-num::after {
   content: '🔖'; font-size: 10px; margin-left: 2px;
