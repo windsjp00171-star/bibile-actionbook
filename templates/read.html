@@ -75,6 +75,10 @@
       {% endif %}
     </div>
     <p class="report-hint">看到漏標或標錯？點每節句末的 <span class="rv-demo">⚑</span> 即可逐節回報。</p>
+    <p class="copyright-note">
+      經文採用《和合本》（Chinese Union Version，1919 年出版），版權屬公有領域（Public Domain）。<br>
+      標註、地圖、解釋等內容為本站整理，僅供研讀參考。
+    </p>
   </footer>
 </div>
 
@@ -113,11 +117,20 @@
   <button class="card-close" onclick="closeExplore()" aria-label="關閉">✕</button>
   <h3 class="search-title">人物・地點・概念索引</h3>
   <div class="explore-tabs">
-    <button class="explore-tab active" data-type="person" onclick="switchExplore('person')">人物</button>
-    <button class="explore-tab" data-type="place" onclick="switchExplore('place')">地點</button>
-    <button class="explore-tab" data-type="concept" onclick="switchExplore('concept')">概念</button>
+    <button class="explore-tab active" data-type="person" onclick="switchExplore('person')">人物 <span class="ex-cnt" id="cnt-person"></span></button>
+    <button class="explore-tab" data-type="place" onclick="switchExplore('place')">地點 <span class="ex-cnt" id="cnt-place"></span></button>
+    <button class="explore-tab" data-type="concept" onclick="switchExplore('concept')">概念 <span class="ex-cnt" id="cnt-concept"></span></button>
   </div>
-  <input type="text" id="exploreFilter" class="explore-filter" placeholder="篩選名稱…" autocomplete="off">
+  <input type="text" id="exploreFilter" class="explore-filter" placeholder="輸入名稱即時篩選…" autocomplete="off">
+  <div class="explore-subfilter">
+    <select id="exploreTestament" onchange="renderExplore()">
+      <option value="">全部</option>
+      <option value="OT">舊約</option>
+      <option value="NT">新約</option>
+    </select>
+    <label class="ex-maponly"><input type="checkbox" id="exploreMapOnly" onchange="renderExplore()"> 📍 只看有地圖</label>
+    <span class="ex-shown" id="exploreShown"></span>
+  </div>
   <div class="explore-list" id="exploreList"></div>
 </aside>
 
@@ -430,7 +443,14 @@ function openExplore() {
   document.getElementById('searchOverlay').classList.add('open');
   document.getElementById('searchOverlay').onclick = closeExplore;
   if (_exploreData) { renderExplore(); }
-  else fetch('/api/entities').then(r => r.json()).then(d => { _exploreData = d; renderExplore(); });
+  else fetch('/api/entities').then(r => r.json()).then(d => { _exploreData = d; updateExploreCounts(); renderExplore(); });
+}
+function updateExploreCounts() {
+  if (!_exploreData) return;
+  ['person', 'place', 'concept'].forEach(t => {
+    const el = document.getElementById('cnt-' + t);
+    if (el) el.textContent = (_exploreData[t] || []).length;
+  });
 }
 function closeExplore() {
   document.getElementById('explorePanel').classList.remove('open');
@@ -464,16 +484,26 @@ function switchExplore(t) {
 function renderExplore() {
   if (!_exploreData) return;
   const filter = document.getElementById('exploreFilter').value.trim();
+  const testVal = (document.getElementById('exploreTestament') || {}).value || '';
+  const mapOnly = (document.getElementById('exploreMapOnly') || {}).checked || false;
   const list = document.getElementById('exploreList');
   list.innerHTML = '';
-  (_exploreData[_exploreType] || []).filter(e => !filter || e.name.includes(filter) || (e.name_en||'').toLowerCase().includes(filter.toLowerCase()))
-    .forEach(e => {
-      const a = document.createElement('button');
-      a.className = 'explore-item';
-      a.innerHTML = (e.has_map ? '📍 ' : '') + e.name + (e.name_en ? ' <span class="ex-en">' + e.name_en + '</span>' : '');
-      a.onclick = () => openEntityInfo(e.key);
-      list.appendChild(a);
-    });
+  const lcFilter = filter.toLowerCase();
+  const rows = (_exploreData[_exploreType] || []).filter(e => {
+    if (filter && !e.name.includes(filter) && !(e.name_en || '').toLowerCase().includes(lcFilter)) return false;
+    if (testVal && e.testament !== testVal && e.testament !== 'both') return false;
+    if (mapOnly && !e.has_map) return false;
+    return true;
+  });
+  rows.forEach(e => {
+    const a = document.createElement('button');
+    a.className = 'explore-item';
+    a.innerHTML = (e.has_map ? '📍 ' : '') + e.name + (e.name_en ? ' <span class="ex-en">' + e.name_en + '</span>' : '');
+    a.onclick = () => openEntityInfo(e.key);
+    list.appendChild(a);
+  });
+  const shown = document.getElementById('exploreShown');
+  if (shown) shown.textContent = rows.length ? ('共 ' + rows.length + ' 筆') : '無符合';
 }
 
 // ── 本卷地圖 ────────────────────────────────────────────────────
