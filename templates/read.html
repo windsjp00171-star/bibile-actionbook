@@ -628,27 +628,41 @@ function drawRoute(rt) {
     else if (pts.length === 1) _routeMap.setView(pts[0], 7);
   }, 80);
 }
-// 動畫：線條逐段「生長」描繪，停靠點依序落下
+// 計算「跟隨縮放」：能容下最長一段的縮放等級，讓每段都不會超出畫面
+function _followZoom(wps) {
+  let z = 13;
+  for (let i = 0; i < wps.length - 1; i++) {
+    const b = L.latLngBounds([[wps[i].lat, wps[i].lng], [wps[i + 1].lat, wps[i + 1].lng]]);
+    const zi = _routeMap.getBoundsZoom(b, false, [60, 60]);
+    if (zi < z) z = zi;
+  }
+  return Math.max(4, Math.min(z, 8));
+}
+// 動畫：鏡頭跟著線頭走，線條逐段「生長」描繪，停靠點依序落下
 function playRoute() {
   const rt = _curRoute;
   if (!rt || !rt.waypoints || rt.waypoints.length < 2) return;
   _ensureRouteMap();
   _clearRoute();
   _routeMap.invalidateSize();
-  _routeMap.fitBounds(rt.waypoints.map(w => [w.lat, w.lng]), { padding: [45, 45] });
+  const wps = rt.waypoints;
+  const allPts = wps.map(w => [w.lat, w.lng]);
+  const followZ = _followZoom(wps);
+  _routeMap.setView([wps[0].lat, wps[0].lng], followZ, { animate: false });
   const btn = document.getElementById('routePlay');
   if (btn) { btn.textContent = '⟳ 描繪中…'; btn.disabled = true; }
   const line = L.polyline([], { color: rt.color, weight: 4, opacity: 0.9 }).addTo(_routeMap);
   _routeLayers.push(line);
-  const wps = rt.waypoints;
   const drawn = [];               // 已完成的折線頂點
   let seg = 0;                    // 目前畫到第幾段
   // 先落第一個點
   const m0 = _routeMarker(rt, wps[0], 0).addTo(_routeMap); _routeLayers.push(m0);
   drawn.push([wps[0].lat, wps[0].lng]);
-  const SEG_MS = 650;
+  const SEG_MS = 900;
   function nextSeg() {
     if (seg >= wps.length - 1) {
+      // 播完拉回全局，看完整路線
+      _routeMap.flyToBounds(allPts, { padding: [45, 45], duration: 1.0 });
       if (btn) { btn.textContent = '▶ 重新播放'; btn.disabled = false; }
       return;
     }
@@ -656,15 +670,17 @@ function playRoute() {
     const t0 = performance.now();
     function step(now) {
       const t = Math.min(1, (now - t0) / SEG_MS);
-      const lat = a.lat + (b.lat - a.lat) * t;
-      const lng = a.lng + (b.lng - a.lng) * t;
+      const e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;  // ease-in-out
+      const lat = a.lat + (b.lat - a.lat) * e;
+      const lng = a.lng + (b.lng - a.lng) * e;
       line.setLatLngs(drawn.concat([[lat, lng]]));
+      _routeMap.panTo([lat, lng], { animate: false });  // 鏡頭跟隨線頭
       if (t < 1) { _routeAnim = requestAnimationFrame(step); }
       else {
         drawn.push([b.lat, b.lng]);
         const m = _routeMarker(rt, b, seg + 1).addTo(_routeMap); _routeLayers.push(m);
         seg++;
-        _routeAnim = requestAnimationFrame(() => setTimeout(nextSeg, 180));
+        _routeAnim = requestAnimationFrame(() => setTimeout(nextSeg, 260));
       }
     }
     _routeAnim = requestAnimationFrame(step);
