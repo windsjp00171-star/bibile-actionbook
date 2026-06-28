@@ -639,6 +639,49 @@ def api_routes():
     return jsonify({"book": book, "routes": items})
 
 
+# 經文簡稱 → 全名（路線資料 ref 用簡稱，用來判斷某章經過哪些路線站點）
+_ROUTE_BOOK_ABBR = {
+    "創": "創世記", "出": "出埃及記", "利": "利未記", "民": "民數記", "申": "申命記",
+    "書": "約書亞記", "士": "士師記", "得": "路得記", "撒上": "撒母耳記上", "撒下": "撒母耳記下",
+    "王上": "列王紀上", "王下": "列王紀下", "拉": "以斯拉記", "尼": "尼希米記", "詩": "詩篇",
+    "賽": "以賽亞書", "耶": "耶利米書", "結": "以西結書", "但": "但以理書",
+    "太": "馬太福音", "可": "馬可福音", "路": "路加福音", "約": "約翰福音", "徒": "使徒行傳",
+}
+_REF_RE = re.compile(r"^([一-鿿]+?(?:上|下)?)(\d+)(?::(\d+))?")
+
+
+def _parse_route_ref(ref):
+    """把『出17:1』『王上19:8』解析為 (book, chapter, verse)；無法解析回 None。"""
+    m = _REF_RE.match(ref or "")
+    if not m:
+        return None
+    pre = m.group(1)
+    book = _ROUTE_BOOK_ABBR.get(pre) or (_ROUTE_BOOK_ABBR.get(pre[0]) if len(pre) > 1 else None)
+    if not book:
+        return None
+    return book, int(m.group(2)), (int(m.group(3)) if m.group(3) else None)
+
+
+@app.route("/api/routes_here")
+def api_routes_here():
+    """本章浮現：回傳經過某書卷某章的路線站點（讀經時自動提示用）。"""
+    book = (request.args.get("book") or "").strip()
+    try:
+        ch = int(request.args.get("chapter") or 0)
+    except ValueError:
+        ch = 0
+    hits = []
+    for rid, r in ROUTES.items():
+        for i, w in enumerate(r.get("waypoints", [])):
+            nav = _parse_route_ref(w.get("ref", ""))
+            if nav and nav[0] == book and nav[1] == ch:
+                hits.append({
+                    "id": rid, "route": r.get("name", rid), "color": r.get("color", "#8B6840"),
+                    "stop": i + 1, "name": w.get("name", ""), "ref": w.get("ref", ""),
+                })
+    return jsonify({"here": hits})
+
+
 @app.route("/api/bookmarks", methods=["GET", "POST", "DELETE"])
 def api_bookmarks():
     """書籤。POST 新增 / DELETE 移除 / GET 取清單。以裝置 ID 當 user_id。"""

@@ -56,6 +56,8 @@
 
   <a class="resume-banner" id="resumeBanner" href="#" style="display:none"></a>
 
+  <div class="route-here-bar" id="routeHereBar" style="display:none"></div>
+
   <main class="passage" id="passage">
     {% for v in verses %}
     <p class="verse" data-v="{{ v.verse }}"><span class="verse-num">{{ v.verse }}</span><span class="verse-body">{{ v.html | safe }}</span></p>
@@ -564,9 +566,41 @@ function openRoutes() {
     }
     _routesExpanded = false;       // 預設只顯示本卷相關路線
     renderRoutePicker();
-    // 預設選第一條（情境相關優先，已由後端排序）
-    selectRoute(_routesList[0].id);
+    if (_pendingRoute) {           // 由「本章路線」提示點入：開到指定路線/站
+      const pr = _pendingRoute; _pendingRoute = null;
+      if (!_routesList.some(r => r.relevant && r.id === pr.id)) { _routesExpanded = true; renderRoutePicker(); }
+      selectRoute(pr.id, pr.stop);
+      const chip = document.querySelector('#routePicker .route-chip[data-rid="' + pr.id + '"]');
+      if (chip) highlightChip(chip);
+    } else {
+      // 預設選第一條（情境相關優先，已由後端排序）
+      selectRoute(_routesList[0].id);
+    }
   });
+}
+// 從「本章路線」提示開啟，定位到指定站
+let _pendingRoute = null;
+function openRoutesAt(id, stop) { _pendingRoute = { id: id, stop: stop }; openRoutes(); }
+// 讀經頁載入時：自動偵測本章經過的路線，浮出提示條
+function loadRouteHere() {
+  const bar = document.getElementById('routeHereBar');
+  if (!bar) return;
+  fetch('/api/routes_here?book=' + encodeURIComponent(CUR_BOOK) + '&chapter=' + CUR_CH)
+    .then(r => r.json()).then(d => {
+      const hits = d.here || [];
+      if (!hits.length) { bar.style.display = 'none'; return; }
+      // 依路線分組，取本章第一個站
+      const byRoute = {};
+      hits.forEach(h => { if (!byRoute[h.id]) byRoute[h.id] = { route: h.route, color: h.color, stops: [], first: h.stop }; byRoute[h.id].stops.push(h.name); });
+      bar.innerHTML = '<span class="rh-label">🧭 本章路線</span>' +
+        Object.keys(byRoute).map(id => {
+          const g = byRoute[id];
+          const txt = g.stops.length > 1 ? (g.stops[0] + ' 等 ' + g.stops.length + ' 站') : g.stops[0];
+          return '<button class="rh-chip" style="--rc:' + g.color + '" onclick="openRoutesAt(\'' + id + '\',' + g.first + ')">' +
+                 g.route + ' · ' + txt + '</button>';
+        }).join('');
+      bar.style.display = 'flex';
+    }).catch(() => { bar.style.display = 'none'; });
 }
 let _routesExpanded = false;
 function renderRoutePicker() {
@@ -606,7 +640,7 @@ function highlightChip(el) {
   document.querySelectorAll('#routePicker .route-chip').forEach(c => c.classList.remove('active'));
   el.classList.add('active');
 }
-function selectRoute(id) {
+function selectRoute(id, focusStop) {
   fetch('/api/routes?id=' + encodeURIComponent(id)).then(r => r.json()).then(rt => {
     _curRoute = rt;
     document.getElementById('routeInfo').innerHTML =
@@ -622,7 +656,17 @@ function selectRoute(id) {
       (rt.summary ? '<div class="route-sum">' + rt.summary + '</div>' : '');
     drawRoute(rt);
     renderStops(rt);
+    // 由「本章路線」提示開入時，定位並標示該站
+    if (focusStop && rt.waypoints && rt.waypoints[focusStop - 1]) {
+      const w = rt.waypoints[focusStop - 1];
+      setTimeout(() => { if (_routeMap) { _routeMap.setView([w.lat, w.lng], 8); _highlightStopRow(focusStop - 1); } }, 200);
+    }
   });
+}
+function _highlightStopRow(idx) {
+  const rows = document.querySelectorAll('#routeStops .route-stop');
+  rows.forEach((r, i) => r.classList.toggle('rs-focus', i === idx));
+  if (rows[idx]) rows[idx].scrollIntoView({ block: 'nearest' });
 }
 function _ensureRouteMap() {
   const el = document.getElementById('routeMap');
@@ -901,6 +945,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   loadBookmarks();
+  loadRouteHere();   // 本章路線自動提示
   // 首次進入閱讀頁自動帶導引（之後可按「？教學」重看）
   if (!localStorage.getItem('bible-tour-done')) {
     setTimeout(startTour, 700);
