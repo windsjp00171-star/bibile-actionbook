@@ -313,25 +313,41 @@ body {
   min-width: 44px; min-height: 44px;
 }
 
-/* 教學導引鈕：放在工具列，稍微點亮讓它好被發現 */
+/* 教學導覽：右下角浮動鈕（？） */
+.tour-fab {
+  position: fixed; right: 16px; bottom: 18px; z-index: 1000;
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, #21492e, #2A5C3A); color: #fff;
+  border: none; border-radius: 100px; padding: 12px 20px 12px 16px;
+  font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer;
+  box-shadow: 0 6px 22px rgba(42,92,58,.5);
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+.tour-fab:active { transform: scale(.96); }
+.tour-fab .tour-fab-q {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: rgba(255,255,255,.22); font-size: 14px; font-weight: 800;
+}
+/* 教學鈕（工具列/搜尋頁版，沿用） */
 .tour-trigger { background: #C9852E; position: relative; }
 .tour-trigger:active { background: #a86d22; }
-/* 還沒看過導引時，脈動吸引目光 */
-.tour-trigger.pulse { animation: tourPulse 1.8s ease-out infinite; }
+/* 還沒看過 / 隔段時間沒看 → 脈動吸引目光 */
+.tour-trigger.pulse, .tour-fab.pulse { animation: tourPulse 1.8s ease-out infinite; }
 @keyframes tourPulse {
-  0%   { box-shadow: 0 0 0 0 rgba(201,133,46,.6); }
-  70%  { box-shadow: 0 0 0 12px rgba(201,133,46,0); }
-  100% { box-shadow: 0 0 0 0 rgba(201,133,46,0); }
+  0%   { box-shadow: 0 0 0 0 rgba(42,92,58,.6); }
+  70%  { box-shadow: 0 0 0 14px rgba(42,92,58,0); }
+  100% { box-shadow: 0 0 0 0 rgba(42,92,58,0); }
 }
 /* 脈動氣泡：右上角小圓點 */
-.tour-trigger.pulse::after {
+.tour-trigger.pulse::after, .tour-fab.pulse::after {
   content: ""; position: absolute; top: -3px; right: -3px;
-  width: 9px; height: 9px; border-radius: 50%; background: #E94F37;
+  width: 11px; height: 11px; border-radius: 50%; background: #E94F37;
   box-shadow: 0 0 0 2px #fff; animation: tourDot 1.8s ease-out infinite;
 }
 @keyframes tourDot { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.35); opacity: .7; } }
 @media (prefers-reduced-motion: reduce) {
-  .tour-trigger.pulse, .tour-trigger.pulse::after { animation: none; }
+  .tour-trigger.pulse, .tour-fab.pulse, .tour-trigger.pulse::after, .tour-fab.pulse::after { animation: none; }
 }
 
 /* ── Drawer ── */

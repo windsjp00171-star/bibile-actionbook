@@ -52,7 +52,6 @@
   <button class="search-trigger" id="tbBookMap" onclick="openBookMap()">🗺 本卷地圖</button>
   <button class="search-trigger" id="tbRoutes" onclick="openRoutes()">🧭 路線圖</button>
   <button class="search-trigger" id="tbBookmarks" onclick="openBookmarks()">🔖 我的書籤</button>
-  <button class="search-trigger tour-trigger" id="tbTour" onclick="startTour()">💡 教學導引</button>
 
   <a class="resume-banner" id="resumeBanner" href="#" style="display:none"></a>
 
@@ -221,6 +220,11 @@
   <button onclick="setFont(-1)" aria-label="縮小字體">A−</button>
   <button onclick="setFont(1)" aria-label="放大字體">A+</button>
 </div>
+
+<!-- 教學導覽浮動鈕（右下角） -->
+<button id="tourFab" class="tour-fab" type="button" onclick="startTour()" aria-label="教學導覽">
+  <span class="tour-fab-q">?</span><span class="tour-fab-label">教學導覽</span>
+</button>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="{{ url_for('static', filename='js/tour.js') }}"></script>
@@ -956,8 +960,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const TOUR_REMIND_MS = 5 * 24 * 60 * 60 * 1000;  // 5 天
   const tourLast = parseInt(localStorage.getItem('bible-tour-last') || '0', 10);
   if (Date.now() - tourLast > TOUR_REMIND_MS) {
-    const tb = document.getElementById('tbTour');
-    if (tb) tb.classList.add('pulse');
+    const fab = document.getElementById('tourFab');
+    if (fab) fab.classList.add('pulse');
   }
   // 從搜尋結果跳轉而來：高亮並捲到該節
   const v = new URLSearchParams(location.search).get('v');
@@ -1047,27 +1051,42 @@ if (activeBook) {
 }
 
 // ── 聚焦式教學導覽（SpotlightTour，static/js/tour.js） ─────────────
+// 深入式導覽：每一步「先打開該模塊面板」，再圈裡面的控制項
+function closeAllPanels() {
+  ['closeCard', 'closeSearch', 'closeExplore', 'closeBookMap', 'closeRoutes', 'closeBookmarks'].forEach(fn => {
+    try { if (typeof window[fn] === 'function') window[fn](); } catch (e) {}
+  });
+}
 const PAGE_TOUR_STEPS = [
-  { title: '歡迎！這是教學導覽 👋', text: '不會用沒關係～我會把這一頁的每個地方一個一個圈出來、用白話說給你聽。看著綠色框框、看完按「下一步」就好；想停隨時按「結束導覽」。' },
+  { title: '歡迎！這是教學導覽 👋', text: '不會用沒關係～我會把這一頁的功能一個一個打開、圈出來、用白話說給你聽。看著綠色框框、按「下一步」就好；想停隨時按「結束導覽」。' },
   { sel: '.legend', title: '標註說明', text: '經文中有底線的詞，分人物（紅）、地點（綠）、族群／概念（紫）三類。', spot: 6 },
-  { sel: '.passage .anno', title: '點詞看背景＋列出經節', text: '點任一個有底線的詞，跳出小卡片：人物生平、地點地圖、概念解釋（生僻字還附注音）。卡片裡的「🔍 列出所有經節」能一次看這個人／地在全本的所有出處。', spot: 4 },
-  { sel: '.passage .verse-num', title: '節號＝書籤', text: '點經文的「節號」即可加入／取消書籤，加了會顯示 🔖。', spot: 4 },
-  { sel: '#tbSearch', title: '全本搜尋', text: '搜尋整本聖經（66 卷）的經文，點結果直接跳到該節。' },
-  { sel: '#tbExplore', title: '人物地點索引', text: '瀏覽全部人物、地點、概念。打開後可用「📖 只看本卷」縮到當前書卷；概念還能按分類（節期、器物、寶石…）篩選。' },
-  { sel: '#tbBookMap', title: '本卷地圖', text: '把本卷所有地點聚到一張大地圖，一眼看見地理全貌。' },
-  { sel: '#tbRoutes', title: '路線圖', text: '亞伯拉罕遷徙、出埃及、保羅宣教…等聖經路線。可「▶ 播放」讓鏡頭跟著行程走，點停靠點看經文出處。' },
-  { sel: '#routeHereBar', title: '本章路線提示', text: '讀到有路線經過的章節，這裡會自動浮出，點一下直接開地圖定位到該站。' },
-  { sel: '#tbBookmarks', title: '我的書籤', text: '這裡看所有書籤，點任一筆跳回該節。' },
-  { sel: '#lineageTrigger', title: '世系結構圖', text: '家譜、列王的章節會出現這顆按鈕，畫出世系樹、本章人物會點亮。' },
-  { sel: '.sidebar', title: '書卷切換', text: '左側可切換書卷與章節，隨時跳到聖經任何地方。' },
-  { sel: '#tbTour', title: '完成！你已經學會了 🎉', text: '以後忘記了不用緊張，隨時點這顆「💡 教學導引」，我就會再從頭帶你看一次。' },
+  { sel: '.passage .anno', title: '點詞看背景', text: '點任一個有底線的詞，會跳出小卡片：人物生平、地點地圖、概念解釋（生僻字還附注音）。我現在幫你打開一張看看。', spot: 4 },
+  { before: () => { const a = document.querySelector('.passage .anno'); if (a) a.click(); }, beforeWait: 380,
+    sel: '#cardVersesBtn', title: '卡片：列出所有經節', text: '卡片下方這顆「🔍 列出所有經節」，能一次看這個人／地在整本聖經的所有出處。', spot: 6 },
+  { before: () => { try { closeCard(); } catch (e) {} }, sel: '.passage .verse-num', title: '節號＝書籤', text: '點經文的「節號」即可加入／取消書籤，加了會顯示 🔖。', spot: 4 },
+  { before: () => { closeAllPanels(); openSearch(); }, beforeWait: 340,
+    sel: '#searchInput', title: '全本搜尋', text: '在這裡打關鍵字，搜尋整本聖經（66 卷），點結果直接跳到該節。', spot: 6 },
+  { before: () => { closeAllPanels(); openExplore(); }, beforeWait: 360,
+    sel: '#exploreInBook', title: '索引：只看本卷', text: '索引列出全部人物／地點／概念。勾「📖 只看本卷」，就只剩當前書卷出現的，瞬間從幾百個縮到幾十個。', spot: 8 },
+  { before: () => { if (typeof switchExplore === 'function') switchExplore('concept'); }, beforeWait: 120,
+    sel: '#exploreCat', title: '索引：概念分類', text: '切到「概念」分頁，還能依分類（節期、聖所器物、寶石、度量衡…）再篩一層。', spot: 8 },
+  { before: () => { closeAllPanels(); openBookMap(); }, beforeWait: 420,
+    sel: '#bookMap', title: '本卷地圖', text: '把本卷所有地點聚成一張大地圖，點任一標記看背景資料。', spot: 6 },
+  { before: () => { closeAllPanels(); openRoutes(); }, beforeWait: 480,
+    sel: '#routePicker', title: '路線圖', text: '亞伯拉罕遷徙、出埃及、保羅宣教…選一條，按「▶ 播放」鏡頭會跟著行程走，點停靠點看經文出處。', spot: 8 },
+  { before: () => { closeAllPanels(); }, sel: '#routeHereBar', title: '本章路線提示', text: '讀到有路線經過的章節，這裡會自動浮出，點一下直接開地圖定位到該站。', spot: 6 },
+  { before: () => { closeAllPanels(); openBookmarks(); }, beforeWait: 340,
+    sel: '#bookmarksList', title: '我的書籤', text: '你加過書籤的經節都收在這，點任一筆跳回去繼續讀。', spot: 6 },
+  { before: () => { closeAllPanels(); }, sel: '#lineageTrigger', title: '世系結構圖', text: '家譜、列王的章節會出現這顆按鈕，畫出世系樹、本章人物會點亮。', spot: 6 },
+  { before: () => { closeAllPanels(); }, sel: '.sidebar', title: '書卷切換', text: '左側可切換書卷與章節，隨時跳到聖經任何地方。', spot: 6 },
+  { before: () => { closeAllPanels(); }, sel: '#tourFab', title: '完成！你已經學會了 🎉', text: '以後忘記了不用緊張，隨時點右下角這顆「？教學導覽」，我就會再從頭帶你看一次。' },
 ];
 function startTour() {
-  const tb = document.getElementById('tbTour');
-  if (tb) tb.classList.remove('pulse');
+  const fab = document.getElementById('tourFab');
+  if (fab) fab.classList.remove('pulse');
   localStorage.setItem('bible-tour-done', '1');
   localStorage.setItem('bible-tour-last', String(Date.now()));
-  SpotlightTour.start(PAGE_TOUR_STEPS);
+  SpotlightTour.start(PAGE_TOUR_STEPS, { onFinish: closeAllPanels });
 }
 
 // ── Reading progress (localStorage, offline-friendly) ───────────
