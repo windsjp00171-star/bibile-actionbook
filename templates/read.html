@@ -528,7 +528,7 @@ function openBookMap() {
       const el = document.getElementById('bookMap');
       if (!_bookMap) {
         _bookMap = L.map(el, { zoomControl: true, attributionControl: false });
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 14 }).addTo(_bookMap);
+        L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', { maxZoom: 16, subdomains: 'abc' }).addTo(_bookMap);
       }
       _bookMap.eachLayer(l => { if (l instanceof L.CircleMarker) _bookMap.removeLayer(l); });
       const pts = [];
@@ -611,7 +611,13 @@ function selectRoute(id) {
     _curRoute = rt;
     document.getElementById('routeInfo').innerHTML =
       '<div class="route-headline"><div class="route-name">' + rt.name + '</div>' +
-      '<button class="route-play" id="routePlay" onclick="playRoute()">▶ 播放路線</button></div>' +
+      '<div class="route-ctrl">' +
+        '<button class="route-play" id="routePlay" onclick="togglePlay()">▶ 播放</button>' +
+        '<select class="route-speed" id="routeSpeed" onchange="_routeSpeed=parseFloat(this.value)">' +
+          '<option value="1.6">0.6×</option><option value="1" selected>1×</option>' +
+          '<option value="0.6">1.6×</option><option value="0.35">3×</option>' +
+        '</select>' +
+      '</div></div>' +
       '<div class="route-ref">' + (rt.ref || '') + '</div>' +
       (rt.summary ? '<div class="route-sum">' + rt.summary + '</div>' : '');
     drawRoute(rt);
@@ -622,12 +628,15 @@ function _ensureRouteMap() {
   const el = document.getElementById('routeMap');
   if (!_routeMap) {
     _routeMap = L.map(el, { zoomControl: true, attributionControl: false });
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 14 }).addTo(_routeMap);
+    // 地形底圖（比街道圖更貼近聖經地理）
+    L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+      { maxZoom: 16, subdomains: 'abc' }).addTo(_routeMap);
   }
   return _routeMap;
 }
 function _clearRoute() {
   if (_routeAnim) { cancelAnimationFrame(_routeAnim); _routeAnim = null; }
+  if (_routeTimer) { clearTimeout(_routeTimer); _routeTimer = null; }
   _routeLayers.forEach(l => _routeMap.removeLayer(l));
   _routeLayers = [];
 }
@@ -637,10 +646,52 @@ function _routeMarker(rt, w, i) {
     iconSize: [22, 22], iconAnchor: [11, 11] });
   return L.marker([w.lat, w.lng], { icon })
     .bindTooltip(w.name, { permanent: true, direction: 'top', offset: [0, -10] })
-    .bindPopup('<b>' + (i + 1) + '. ' + w.name + '</b><br>' + (w.ref || '') +
-               (w.note ? '<br>' + w.note : ''));
+    .bindPopup(_stopPopupHtml(w, i));
 }
-// 靜態：一次畫完整條路線
+// 停靠點彈窗：地名 + 經文連結 + 說明
+function _stopPopupHtml(w, i) {
+  const nav = _parseRef(w.ref);
+  const refHtml = nav
+    ? '<a href="/read/' + encodeURIComponent(nav.book) + '/' + nav.ch +
+      (nav.v ? '?v=' + nav.v : '') + '" class="rp-link">' + w.ref + ' →</a>'
+    : (w.ref || '');
+  return '<b>' + (i + 1) + '. ' + w.name + '</b><br>' + refHtml + (w.note ? '<br>' + w.note : '');
+}
+// 經文簡稱 → 全名（路線資料 ref 用簡稱）
+const _BOOK_ABBR = {
+  '創': '創世記', '出': '出埃及記', '利': '利未記', '民': '民數記', '申': '申命記',
+  '書': '約書亞記', '士': '士師記', '得': '路得記', '撒上': '撒母耳記上', '撒下': '撒母耳記下',
+  '王上': '列王紀上', '王下': '列王紀下', '拉': '以斯拉記', '尼': '尼希米記', '詩': '詩篇',
+  '賽': '以賽亞書', '耶': '耶利米書', '結': '以西結書', '但': '但以理書',
+  '太': '馬太福音', '可': '馬可福音', '路': '路加福音', '約': '約翰福音', '徒': '使徒行傳'
+};
+function _parseRef(ref) {
+  if (!ref) return null;
+  const m = ref.match(/^([一-龥]+?(?:上|下)?)(\d+):(\d+)/);
+  if (!m) return null;
+  // 先試 2 字簡稱（王上/王下/撒上…）再試 1 字
+  let pre = m[1], book = _BOOK_ABBR[pre];
+  if (!book && pre.length > 1) book = _BOOK_ABBR[pre.slice(0, 1)];
+  if (!book) return null;
+  return { book: book, ch: parseInt(m[2]), v: parseInt(m[3]) };
+}
+// 方向箭頭：在每段中點放一個依方位角旋轉的箭頭
+function _arrowMarkers(rt) {
+  const out = [];
+  const wps = rt.waypoints || [];
+  for (let i = 0; i < wps.length - 1; i++) {
+    const a = wps[i], b = wps[i + 1];
+    if (a.lat === b.lat && a.lng === b.lng) continue;
+    const mid = [(a.lat + b.lat) / 2, (a.lng + b.lng) / 2];
+    const ang = Math.atan2(b.lng - a.lng, b.lat - a.lat) * 180 / Math.PI; // 0=北，順時針
+    const icon = L.divIcon({ className: 'route-arrow-icon',
+      html: '<span style="color:' + rt.color + ';transform:rotate(' + ang + 'deg)">▲</span>',
+      iconSize: [16, 16], iconAnchor: [8, 8] });
+    out.push(L.marker(mid, { icon, interactive: false }));
+  }
+  return out;
+}
+// 靜態：一次畫完整條路線（含方向箭頭）
 function drawRoute(rt) {
   setTimeout(() => {
     _ensureRouteMap();
@@ -649,6 +700,7 @@ function drawRoute(rt) {
     if (pts.length > 1) {
       const line = L.polyline(pts, { color: rt.color, weight: 3, opacity: 0.85, dashArray: '6,7' }).addTo(_routeMap);
       _routeLayers.push(line);
+      _arrowMarkers(rt).forEach(a => { a.addTo(_routeMap); _routeLayers.push(a); });
     }
     (rt.waypoints || []).forEach((w, i) => { const m = _routeMarker(rt, w, i).addTo(_routeMap); _routeLayers.push(m); });
     _routeMap.invalidateSize();
@@ -666,7 +718,28 @@ function _followZoom(wps) {
   }
   return Math.max(4, Math.min(z, 8));
 }
-// 動畫：鏡頭跟著線頭走，線條逐段「生長」描繪，停靠點依序落下
+// 播放／暫停切換
+function togglePlay() {
+  if (_routePlaying && !_routePaused) { pauseRoute(); }
+  else if (_routePlaying && _routePaused) { resumeRoute(); }
+  else { playRoute(); }
+}
+function _setPlayBtn(txt) { const b = document.getElementById('routePlay'); if (b) b.textContent = txt; }
+function pauseRoute() {
+  _routePaused = true;
+  if (_routeAnim) { cancelAnimationFrame(_routeAnim); _routeAnim = null; }
+  if (_routeTimer) { clearTimeout(_routeTimer); _routeTimer = null; }
+  _setPlayBtn('▶ 繼續');
+}
+function resumeRoute() {
+  if (!_routePaused) return;
+  _routePaused = false;
+  _setPlayBtn('⏸ 暫停');
+  _routeTick();   // 從目前進度接續
+}
+// 動畫狀態（讓暫停/速度能接續）
+let _routePlaying = false, _routePaused = false, _routeTimer = null, _routeSpeed = 1;
+let _anim = null;  // { wps, allPts, line, drawn, seg, segStart, paused }
 function playRoute() {
   const rt = _curRoute;
   if (!rt || !rt.waypoints || rt.waypoints.length < 2) return;
@@ -674,56 +747,61 @@ function playRoute() {
   _clearRoute();
   _routeMap.invalidateSize();
   const wps = rt.waypoints;
-  const allPts = wps.map(w => [w.lat, w.lng]);
-  const followZ = _followZoom(wps);
-  _routeMap.setView([wps[0].lat, wps[0].lng], followZ, { animate: false });
-  const btn = document.getElementById('routePlay');
-  if (btn) { btn.textContent = '⟳ 描繪中…'; btn.disabled = true; }
-  const line = L.polyline([], { color: rt.color, weight: 4, opacity: 0.9 }).addTo(_routeMap);
+  _routeMap.setView([wps[0].lat, wps[0].lng], _followZoom(wps), { animate: false });
+  const line = L.polyline([], { color: rt.color, weight: 4, opacity: 0.95 }).addTo(_routeMap);
   _routeLayers.push(line);
-  const drawn = [];               // 已完成的折線頂點
-  let seg = 0;                    // 目前畫到第幾段
-  // 先落第一個點
   const m0 = _routeMarker(rt, wps[0], 0).addTo(_routeMap); _routeLayers.push(m0);
-  drawn.push([wps[0].lat, wps[0].lng]);
-  const SEG_MS = 900;
-  function nextSeg() {
-    if (seg >= wps.length - 1) {
-      // 播完拉回全局，看完整路線
-      _routeMap.flyToBounds(allPts, { padding: [45, 45], duration: 1.0 });
-      if (btn) { btn.textContent = '▶ 重新播放'; btn.disabled = false; }
-      return;
-    }
-    const a = wps[seg], b = wps[seg + 1];
-    const t0 = performance.now();
-    function step(now) {
-      const t = Math.min(1, (now - t0) / SEG_MS);
-      const e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;  // ease-in-out
-      const lat = a.lat + (b.lat - a.lat) * e;
-      const lng = a.lng + (b.lng - a.lng) * e;
-      line.setLatLngs(drawn.concat([[lat, lng]]));
-      _routeMap.panTo([lat, lng], { animate: false });  // 鏡頭跟隨線頭
-      if (t < 1) { _routeAnim = requestAnimationFrame(step); }
-      else {
-        drawn.push([b.lat, b.lng]);
-        const m = _routeMarker(rt, b, seg + 1).addTo(_routeMap); _routeLayers.push(m);
-        seg++;
-        _routeAnim = requestAnimationFrame(() => setTimeout(nextSeg, 260));
-      }
-    }
-    _routeAnim = requestAnimationFrame(step);
+  _anim = { rt, wps, allPts: wps.map(w => [w.lat, w.lng]), line,
+            drawn: [[wps[0].lat, wps[0].lng]], seg: 0, segT0: 0, elapsed: 0 };
+  _routePlaying = true; _routePaused = false;
+  _setPlayBtn('⏸ 暫停');
+  _routeTick();
+}
+const _SEG_BASE = 900;  // 每段基準毫秒（再乘速度倍率）
+function _routeTick() {
+  const A = _anim; if (!A) return;
+  if (A.seg >= A.wps.length - 1) {       // 播完
+    _routeMap.flyToBounds(A.allPts, { padding: [45, 45], duration: 1.0 });
+    _routePlaying = false; _routePaused = false;
+    _setPlayBtn('▶ 重新播放');
+    return;
   }
-  nextSeg();
+  const a = A.wps[A.seg], b = A.wps[A.seg + 1];
+  const dur = _SEG_BASE * _routeSpeed;
+  const start = performance.now() - A.elapsed;   // 接續已過時間（暫停用）
+  function step(now) {
+    if (_routePaused) { A.elapsed = now - start; return; }
+    const t = Math.min(1, (now - start) / dur);
+    const e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    const lat = a.lat + (b.lat - a.lat) * e, lng = a.lng + (b.lng - a.lng) * e;
+    A.line.setLatLngs(A.drawn.concat([[lat, lng]]));
+    _routeMap.panTo([lat, lng], { animate: false });
+    if (t < 1) { _routeAnim = requestAnimationFrame(step); }
+    else {
+      A.drawn.push([b.lat, b.lng]);
+      // 段末補上方向箭頭與停靠點
+      const ar = _arrowMarkers({ color: A.rt.color, waypoints: [a, b] })[0];
+      if (ar) { ar.addTo(_routeMap); _routeLayers.push(ar); }
+      const m = _routeMarker(A.rt, b, A.seg + 1).addTo(_routeMap); _routeLayers.push(m);
+      A.seg++; A.elapsed = 0;
+      _routeTimer = setTimeout(_routeTick, 240 * _routeSpeed);
+    }
+  }
+  _routeAnim = requestAnimationFrame(step);
 }
 function renderStops(rt) {
   const box = document.getElementById('routeStops');
   box.innerHTML = '';
   (rt.waypoints || []).forEach((w, i) => {
+    const nav = _parseRef(w.ref);
     const row = document.createElement('div');
     row.className = 'route-stop';
     row.innerHTML = '<span class="rs-num" style="background:' + rt.color + '">' + (i + 1) + '</span>' +
-      '<span class="rs-body"><b>' + w.name + '</b> <span class="rs-ref">' + (w.ref || '') + '</span>' +
-      (w.note ? '<br><span class="rs-note">' + w.note + '</span>' : '') + '</span>';
+      '<span class="rs-body"><b>' + w.name + '</b> ' +
+        (nav ? '<a class="rs-ref rs-link" href="/read/' + encodeURIComponent(nav.book) + '/' + nav.ch +
+               (nav.v ? '?v=' + nav.v : '') + '" onclick="event.stopPropagation()">' + w.ref + ' →</a>'
+             : '<span class="rs-ref">' + (w.ref || '') + '</span>') +
+        (w.note ? '<br><span class="rs-note">' + w.note + '</span>' : '') + '</span>';
     row.onclick = () => { if (_routeMap) { _routeMap.setView([w.lat, w.lng], 8); } };
     box.appendChild(row);
   });
