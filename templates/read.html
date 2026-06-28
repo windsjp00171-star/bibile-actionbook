@@ -119,6 +119,7 @@
 <aside class="search-panel" id="explorePanel">
   <button class="card-close" onclick="closeExplore()" aria-label="關閉">✕</button>
   <h3 class="search-title">人物・地點・概念索引</h3>
+  <div class="search-meta">💡 「📖 只看本卷」可縮到當前書卷；概念能依分類篩選。點任一項看背景、並可列出所有經節。</div>
   <div class="explore-tabs">
     <button class="explore-tab active" data-type="person" onclick="switchExplore('person')">人物 <span class="ex-cnt" id="cnt-person"></span></button>
     <button class="explore-tab" data-type="place" onclick="switchExplore('place')">地點 <span class="ex-cnt" id="cnt-place"></span></button>
@@ -162,6 +163,7 @@
 <aside class="bigmap-panel" id="bookMapPanel">
   <button class="card-close" onclick="closeBookMap()" aria-label="關閉">✕</button>
   <h3 class="bigmap-title">本卷地圖　{{ book }}</h3>
+  <div class="search-meta">💡 本卷所有地點聚成一圖；點任一標記看背景資料。</div>
   <div class="bigmap-canvas" id="bookMap"></div>
 </aside>
 
@@ -170,6 +172,7 @@
 <aside class="bigmap-panel" id="routesPanel">
   <button class="card-close" onclick="closeRoutes()" aria-label="關閉">✕</button>
   <h3 class="bigmap-title">🧭 聖經路線圖</h3>
+  <div class="search-meta">💡 選一條路線 →「▶ 播放」鏡頭跟著行程走；點停靠點看經文出處、可調速度。</div>
   <div class="route-picker" id="routePicker"></div>
   <div class="route-info" id="routeInfo"></div>
   <div class="bigmap-canvas" id="routeMap"></div>
