@@ -422,6 +422,11 @@ body {
 .route-chip.relevant { font-weight: 600; }
 .route-chip.active { background: var(--rc, #8B6840); color: #fff; border-color: var(--rc, #8B6840); }
 .route-empty { font-size: 13px; color: #9C8866; }
+.route-toggle {
+  padding: 5px 11px; border: 1px dashed #C9A96E; border-radius: 14px;
+  background: transparent; color: #8B6840; font-size: 12px; cursor: pointer; font-family: inherit;
+}
+.route-toggle:active { background: #F5ECD8; }
 .route-info { margin-bottom: 8px; }
 .route-headline { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .route-play {
