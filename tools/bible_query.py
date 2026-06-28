@@ -177,6 +177,63 @@ def cmd_feedback(args):
         print(f"  {x.get('entity')} @ {loc}  {note}")
 
 
+_ROUTE_ABBR = {
+    "創": "創世記", "出": "出埃及記", "利": "利未記", "民": "民數記", "申": "申命記",
+    "書": "約書亞記", "士": "士師記", "得": "路得記", "撒上": "撒母耳記上", "撒下": "撒母耳記下",
+    "王上": "列王紀上", "王下": "列王紀下", "拉": "以斯拉記", "尼": "尼希米記", "詩": "詩篇",
+    "賽": "以賽亞書", "耶": "耶利米書", "結": "以西結書", "但": "但以理書",
+    "太": "馬太福音", "可": "馬可福音", "路": "路加福音", "約": "約翰福音", "徒": "使徒行傳",
+}
+_ROUTE_REF_RE = re.compile(r"^([一-鿿]+?(?:上|下)?)(\d+)(?::(\d+))?")
+
+
+def _parse_route_ref(ref):
+    m = _ROUTE_REF_RE.match(ref or "")
+    if not m:
+        return None
+    pre = m.group(1)
+    book = _ROUTE_ABBR.get(pre) or (_ROUTE_ABBR.get(pre[0]) if len(pre) > 1 else None)
+    if not book:
+        return None
+    return book, int(m.group(2)), (int(m.group(3)) if m.group(3) else None)
+
+
+def cmd_routecheck(args):
+    """稽核路線：比對每個停靠點地名是否出現在引用的經文章節，列出對不上的（可能錯/變體）。"""
+    with open(os.path.join(ROOT, "data", "routes.json"), encoding="utf-8") as f:
+        routes = json.load(f)
+    ids = [args.id] if args.id else list(routes.keys())
+    total_flags = 0
+    for rid in ids:
+        r = routes.get(rid)
+        if not r:
+            print(f"# {rid}: 找不到此路線")
+            continue
+        flags = []
+        for i, w in enumerate(r.get("waypoints", [])):
+            name, ref = w.get("name", ""), w.get("ref", "")
+            nav = _parse_route_ref(ref)
+            if not nav:
+                flags.append(f"  ⚠ #{i+1} {name}：ref「{ref}」無法解析")
+                continue
+            book, ch, _ = nav
+            chap = cuv().get(book, {}).get(str(ch), {})
+            if not chap:
+                flags.append(f"  ⚠ #{i+1} {name}：{book} {ch} 章不存在")
+                continue
+            joined = "".join(chap.values())
+            # 地名整體或去尾字（山/地/曠野/溪/海/平原/城）後是否出現
+            stem = re.sub(r"(山|地|曠野|溪|河|海|平原|城|的.*)$", "", name)
+            if name not in joined and (not stem or stem not in joined):
+                flags.append(f"  ⚠ #{i+1} {name}：未在 {book} {ch} 出現（ref={ref}）")
+        total_flags += len(flags)
+        mark = "✓" if not flags else f"{len(flags)} 處待查"
+        print(f"# {rid}（{r.get('name','')}）— {len(r.get('waypoints',[]))} 站，{mark}")
+        for fl in flags:
+            print(fl)
+    print(f"# 合計 {total_flags} 處待人工確認")
+
+
 def main():
     p = argparse.ArgumentParser(description="聖經/標註查詢（省 token）")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -216,6 +273,10 @@ def main():
     s = sub.add_parser("feedback", help="抓 Supabase 回報")
     s.add_argument("--limit", type=int, default=50)
     s.set_defaults(func=cmd_feedback)
+
+    s = sub.add_parser("routecheck", help="稽核路線停靠點與經文是否對得上")
+    s.add_argument("--id", default="", help="只查單一路線（預設全查）")
+    s.set_defaults(func=cmd_routecheck)
 
     args = p.parse_args()
     args.func(args)
