@@ -313,11 +313,9 @@ body {
   min-width: 44px; min-height: 44px;
 }
 
-.help-btn {
-  background: none; border: 1px solid #C9A96E66; color: #D4A847;
-  font-size: 12px; padding: 6px 10px; border-radius: 6px; cursor: pointer;
-  min-width: 44px; min-height: 44px;
-}
+/* 教學導引鈕：放在工具列，稍微點亮讓它好被發現 */
+.tour-trigger { background: #C9852E; }
+.tour-trigger:active { background: #a86d22; }
 
 /* ── Drawer ── */
 .drawer-overlay {

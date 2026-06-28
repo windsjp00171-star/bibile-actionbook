@@ -21,7 +21,6 @@
 <header class="mob-header">
   <button class="burger" onclick="openDrawer()" aria-label="目錄">☰</button>
   <h2>聖 經 全 書</h2>
-  <button class="help-btn" onclick="startTour()">？教學</button>
 </header>
 
 <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
@@ -53,6 +52,7 @@
   <button class="search-trigger" id="tbBookMap" onclick="openBookMap()">🗺 本卷地圖</button>
   <button class="search-trigger" id="tbRoutes" onclick="openRoutes()">🧭 路線圖</button>
   <button class="search-trigger" id="tbBookmarks" onclick="openBookmarks()">🔖 我的書籤</button>
+  <button class="search-trigger tour-trigger" id="tbTour" onclick="startTour()">💡 教學導引</button>
 
   <a class="resume-banner" id="resumeBanner" href="#" style="display:none"></a>
 
@@ -1058,18 +1058,21 @@ if (activeBook) {
 // ── 全站聚焦式導引（spotlight tour） ──────────────────────────────
 const TOUR_STEPS = [
   { sel: '.legend', title: '標註說明', text: '經文中有底線的詞，分人物（紅）、地點（綠）、族群／概念（紫）三類。' },
-  { sel: '.passage .anno', title: '點詞看背景', text: '點任一個有底線的詞，就跳出小卡片：人物生平、地點地圖、概念解釋。看完關掉繼續讀。' },
+  { sel: '.passage .anno', title: '點詞看背景＋列出經節', text: '點任一個有底線的詞，跳出小卡片：人物生平、地點地圖、概念解釋（生僻字還附注音）。卡片裡的「🔍 列出所有經節」能一次看這個人／地在全本的所有出處。' },
   { sel: '.passage .verse-num', title: '節號＝書籤', text: '點經文的「節號」即可加入／取消書籤，加了會顯示 🔖。' },
   { sel: '#tbSearch', title: '全本搜尋', text: '搜尋整本聖經（66 卷）的經文，點結果直接跳到該節。' },
-  { sel: '#tbExplore', title: '人物地點索引', text: '瀏覽全部人物、地點、概念，點任一個列出他出現的所有經節。' },
+  { sel: '#tbExplore', title: '人物地點索引', text: '瀏覽全部人物、地點、概念。可用「📖 只看本卷」縮到當前書卷；概念還能按分類（節期、器物、寶石…）篩選。' },
   { sel: '#tbBookMap', title: '本卷地圖', text: '把本卷所有地點聚到一張大地圖，一眼看見地理全貌。' },
+  { sel: '#tbRoutes', title: '路線圖', text: '亞伯拉罕遷徙、出埃及、保羅宣教…等聖經路線。可「▶ 播放」讓鏡頭跟著行程走，點停靠點看經文出處。' },
+  { sel: '#routeHereBar', title: '本章路線提示', text: '讀到有路線經過的章節，這裡會自動浮出，點一下直接開地圖定位到該站。' },
   { sel: '#tbBookmarks', title: '我的書籤', text: '這裡看所有書籤，點任一筆跳回該節。' },
   { sel: '#lineageTrigger', title: '世系結構圖', text: '家譜、列王的章節會出現這顆按鈕，畫出世系樹、本章人物會點亮。' },
   { sel: '.sidebar', title: '書卷切換', text: '左側可切換書卷與章節，隨時跳到聖經任何地方。' },
 ];
 let _tourI = 0, _tourList = [];
 function startTour() {
-  _tourList = TOUR_STEPS.filter(s => document.querySelector(s.sel));
+  // 只導引「當下看得到」的項目（隱藏的如本章無路線提示就跳過）
+  _tourList = TOUR_STEPS.filter(s => { const el = document.querySelector(s.sel); return el && el.offsetParent !== null; });
   if (!_tourList.length) return;
   _tourI = 0;
   document.getElementById('tourMask').classList.add('on');
