@@ -558,21 +558,49 @@ function openRoutes() {
   document.getElementById('routesOverlay').classList.add('open');
   fetch('/api/routes?book=' + encodeURIComponent(CUR_BOOK)).then(r => r.json()).then(d => {
     _routesList = d.routes || [];
-    const pick = document.getElementById('routePicker');
-    pick.innerHTML = '';
-    if (!_routesList.length) { pick.innerHTML = '<span class="route-empty">尚無路線資料。</span>'; return; }
-    _routesList.forEach((r, i) => {
-      const b = document.createElement('button');
-      b.className = 'route-chip' + (r.relevant ? ' relevant' : '');
-      b.style.setProperty('--rc', r.color);
-      b.textContent = (r.relevant ? '✦ ' : '') + r.name;
-      b.onclick = () => { selectRoute(r.id); highlightChip(b); };
-      pick.appendChild(b);
-    });
+    if (!_routesList.length) {
+      document.getElementById('routePicker').innerHTML = '<span class="route-empty">尚無路線資料。</span>';
+      return;
+    }
+    _routesExpanded = false;       // 預設只顯示本卷相關路線
+    renderRoutePicker();
     // 預設選第一條（情境相關優先，已由後端排序）
-    const first = pick.querySelector('.route-chip');
-    if (first) { selectRoute(_routesList[0].id); highlightChip(first); }
+    selectRoute(_routesList[0].id);
   });
+}
+let _routesExpanded = false;
+function renderRoutePicker() {
+  const pick = document.getElementById('routePicker');
+  pick.innerHTML = '';
+  const relevant = _routesList.filter(r => r.relevant);
+  const others = _routesList.filter(r => !r.relevant);
+  // 有相關路線時預設只顯示相關；無相關（如讀的卷沒對應路線）則全顯示
+  const baseList = (relevant.length && !_routesExpanded) ? relevant : _routesList;
+  let firstChip = null;
+  baseList.forEach(r => {
+    const b = document.createElement('button');
+    b.className = 'route-chip' + (r.relevant ? ' relevant' : '');
+    b.style.setProperty('--rc', r.color);
+    b.textContent = (r.relevant ? '✦ ' : '') + r.name;
+    b.dataset.rid = r.id;
+    b.onclick = () => { selectRoute(r.id); highlightChip(b); };
+    pick.appendChild(b);
+    if (!firstChip) firstChip = b;
+  });
+  // 「顯示其他路線 / 收起」切換
+  if (relevant.length && others.length) {
+    const t = document.createElement('button');
+    t.className = 'route-toggle';
+    t.textContent = _routesExpanded ? '收起其他路線' : ('＋ 其他路線 (' + others.length + ')');
+    t.onclick = () => { _routesExpanded = !_routesExpanded; renderRoutePicker(); restoreActiveChip(); };
+    pick.appendChild(t);
+  }
+  if (firstChip && !document.querySelector('#routePicker .route-chip.active')) highlightChip(firstChip);
+}
+function restoreActiveChip() {
+  if (!_curRoute) return;
+  const el = document.querySelector('#routePicker .route-chip[data-rid="' + _curRoute.id + '"]');
+  if (el) highlightChip(el);
 }
 function highlightChip(el) {
   document.querySelectorAll('#routePicker .route-chip').forEach(c => c.classList.remove('active'));
