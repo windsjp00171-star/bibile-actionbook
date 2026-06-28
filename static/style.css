@@ -382,6 +382,8 @@ body {
 .card-badge.anno-place   { background: #2A5C3A; }
 .card-badge.anno-concept { background: #4A3080; }
 .card-name { font-size: 18px; font-weight: 500; color: #2A1A08; margin: 0 0 10px; }
+.card-reading { font-size: 13px; color: #B5651D; font-weight: 400; letter-spacing: .05em; margin-left: 4px; }
+.card-en { font-size: 14px; color: #9C8866; font-weight: 400; }
 .card-map-wrap { position: relative; margin-bottom: 12px; }
 .card-map { width: 100%; height: 260px; border-radius: 8px; }
 .map-focus-label { font-weight: 600; font-size: 13px; }

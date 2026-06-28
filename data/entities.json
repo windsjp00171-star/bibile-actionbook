@@ -294,7 +294,10 @@
       "type": "person",
       "name": "猶大",
       "name_en": "Judah (person)",
-      "books": ["創世記", "出埃及記"],
+      "books": [
+        "創世記",
+        "出埃及記"
+      ],
       "desc": "雅各第四子，利亞所生，十二支派始祖之一。曾力保便雅憫、代為擔保（創43-44），是後來大衛王族所屬的猶大支派之先祖。"
     },
     {
@@ -1236,14 +1239,32 @@
     "desc": "雅各次子，利亞所生。與利未一同以詭計屠殺示劍城為妹底拿復仇。約瑟的兄弟到埃及時，他被留作人質。",
     "verses": "創世記29、34、42章"
   },
-  "利未": {
-    "type": "person",
-    "name": "利未",
-    "name_en": "Levi",
-    "testament": "both",
-    "desc": "雅各三子，利亞所生。與西緬共謀屠劍城，受父咒詛分散。其後裔利未支派成為以色列的祭司族，不分土地只受奉獻。",
-    "verses": "創世記29、34章"
-  },
+  "利未": [
+    {
+      "type": "person",
+      "name": "利未",
+      "name_en": "Levi",
+      "books": [
+        "創世記"
+      ],
+      "testament": "OT",
+      "desc": "雅各第三子，利亞所生；因示劍事件與西緬一同屠城，是利未支派的先祖。"
+    },
+    {
+      "type": "place",
+      "name": "利未",
+      "name_en": "Levi (tribe)",
+      "testament": "OT",
+      "desc": "利未支派／利未人，承擔聖所事奉與祭司職分，散居各支派中不另分地業。"
+    },
+    {
+      "type": "person",
+      "name": "利未",
+      "name_en": "Levi",
+      "testament": "NT",
+      "desc": "新約中的利未：或指利未支派，或指稅吏利未（即使徒馬太）。"
+    }
+  ],
   "拿弗他利": {
     "type": "person",
     "name": "拿弗他利",
@@ -2072,7 +2093,9 @@
       "type": "person",
       "name": "底波拉",
       "name_en": "Deborah (nurse)",
-      "books": ["創世記"],
+      "books": [
+        "創世記"
+      ],
       "testament": "OT",
       "desc": "利百加的奶母，隨雅各一家生活，死後葬於伯特利下邊橡樹底下，那樹因此名叫亞倫巴古（哭泣的橡樹）。"
     },
@@ -2080,7 +2103,9 @@
       "type": "person",
       "name": "底波拉",
       "name_en": "Deborah (judge)",
-      "books": ["士師記"],
+      "books": [
+        "士師記"
+      ],
       "testament": "OT",
       "desc": "以色列女先知兼士師，率領巴拉擊敗迦南王耶賓的軍隊。"
     }
@@ -2903,7 +2928,9 @@
       "type": "person",
       "name": "以利法",
       "name_en": "Eliphaz (son of Esau)",
-      "books": ["創世記"],
+      "books": [
+        "創世記"
+      ],
       "testament": "OT",
       "desc": "以掃長子，以東族長，其子提幔成為以東一支族長。"
     },
@@ -2911,7 +2938,9 @@
       "type": "person",
       "name": "以利法",
       "name_en": "Eliphaz (Job's friend)",
-      "books": ["約伯記"],
+      "books": [
+        "約伯記"
+      ],
       "testament": "OT",
       "desc": "約伯三友之一，特幔人，認為約伯受苦必因犯罪，被神責備說話不正確。"
     }
@@ -3583,11 +3612,11 @@
     "testament": "OT"
   },
   "亞摩利人": {
-    "type": "person",
+    "type": "place",
     "name": "亞摩利人",
-    "name_en": "Amorite",
-    "desc": "古代中東的一個民族，曾居住在迦南地區",
-    "testament": "OT"
+    "name_en": "Amorites",
+    "testament": "OT",
+    "desc": "迦南七族之一，住山地，勢力強盛；神應許將其地賜給以色列。"
   },
   "舍客勒": {
     "type": "concept",
@@ -5112,15 +5141,18 @@
     "type": "place",
     "name": "摩利橡樹",
     "name_en": "Oak of Moreh",
-    "books": ["創世記"],
     "testament": "OT",
-    "desc": "示劍城附近的聖樹，亞伯拉罕進迦南後在此紮營，神向他顯現應許此地（創12:6）。"
+    "desc": "示劍附近的橡樹，亞伯拉罕初入迦南在此得神應許、築壇。",
+    "lat": 32.21,
+    "lng": 35.28
   },
   "亞達禾場": {
     "type": "place",
     "name": "亞達禾場",
     "name_en": "Abel Mizraim",
-    "books": ["創世記"],
+    "books": [
+      "創世記"
+    ],
     "testament": "OT",
     "desc": "約但河東、迦南邊境的禾場，雅各的喪隊在此為他大哭七天，埃及人目睹，故改名「埃及人的悲哀」（創50:11）。"
   },
@@ -5150,15 +5182,6 @@
     "desc": "埃及古城（希臘名赫利奧波利斯），太陽神崇拜中心。約瑟之妻亞西納是安城祭司波提非拉之女。",
     "lat": 30.13,
     "lng": 31.29
-  },
-  "摩利橡樹": {
-    "type": "place",
-    "name": "摩利橡樹",
-    "name_en": "Oak of Moreh",
-    "testament": "OT",
-    "desc": "示劍附近的橡樹，亞伯拉罕初入迦南在此得神應許、築壇。",
-    "lat": 32.21,
-    "lng": 35.28
   },
   "基悉": {
     "type": "place",
@@ -5313,7 +5336,9 @@
     "type": "person",
     "name": "辟拉",
     "name_en": "Bilhah",
-    "books": ["創世記"],
+    "books": [
+      "創世記"
+    ],
     "testament": "OT",
     "desc": "拉結的使女，雅各的妾，生但、拿弗他利兩支派始祖；流便曾與她同寢，此事記入以色列家族史。"
   },
@@ -5321,7 +5346,9 @@
     "type": "person",
     "name": "亞達",
     "name_en": "Adah",
-    "books": ["創世記"],
+    "books": [
+      "創世記"
+    ],
     "testament": "OT",
     "desc": "以掃的妻之一，赫人以倫的女兒，生以利法，是以東族的先祖母之一。"
   },
@@ -5329,7 +5356,9 @@
     "type": "place",
     "name": "亞倫巴古",
     "name_en": "Allon-bacuth",
-    "books": ["創世記"],
+    "books": [
+      "創世記"
+    ],
     "testament": "OT",
     "desc": "伯特利附近一棵橡樹，因利百加奶母底波拉在此去世而得名，意為「哭泣的橡樹」（創35:8）。"
   },
@@ -5446,5 +5475,220 @@
     "name_en": "Nadab",
     "testament": "OT",
     "desc": "亞倫的長子，與弟亞比戶獻凡火被神擊殺。（另有以色列王拿答，耶羅波安之子。）"
+  },
+  "約書亞": {
+    "type": "person",
+    "name_en": "Joshua",
+    "testament": "both",
+    "desc": "嫩的兒子，摩西的助手與接班人，率領以色列人渡約但河、征服迦南。",
+    "name": "約書亞"
+  },
+  "以他瑪": {
+    "type": "person",
+    "name_en": "Ithamar",
+    "testament": "OT",
+    "desc": "亞倫的第四子，祭司，管理會幕的工料與利未人的事奉。",
+    "name": "以他瑪"
+  },
+  "亞何利亞伯": {
+    "type": "person",
+    "name_en": "Oholiab",
+    "testament": "OT",
+    "desc": "但支派亞希撒抹的兒子，與比撒列一同蒙神賜智慧建造會幕的巧匠。",
+    "name": "亞何利亞伯"
+  },
+  "戶珥": {
+    "type": "person",
+    "name_en": "Hur",
+    "testament": "OT",
+    "desc": "與亞倫一同扶住摩西的手，使以色列勝過亞瑪力人；後與亞倫共理民事。",
+    "name": "戶珥"
+  },
+  "以利以謝": {
+    "type": "person",
+    "name_en": "Eliezer",
+    "testament": "OT",
+    "desc": "摩西與西坡拉的次子，名意為「我父神是幫助」。",
+    "name": "以利以謝"
+  },
+  "烏利": {
+    "type": "person",
+    "name_en": "Uri",
+    "testament": "OT",
+    "desc": "猶大支派戶珥的兒子，巧匠比撒列之父。",
+    "name": "烏利"
+  },
+  "比撒列": {
+    "type": "person",
+    "name_en": "Bezalel",
+    "testament": "OT",
+    "desc": "猶大支派，蒙神賜智慧聰明、能作各樣工的會幕總匠。",
+    "name": "比撒列"
+  },
+  "普鐵": {
+    "type": "person",
+    "name_en": "Putiel",
+    "testament": "OT",
+    "desc": "以利亞撒的岳父，祭司非尼哈的外祖父（出6:25）。",
+    "name": "普鐵"
+  },
+  "亞希撒抹": {
+    "type": "person",
+    "name_en": "Ahisamach",
+    "testament": "OT",
+    "desc": "但支派人，建造會幕的巧匠亞何利亞伯之父。",
+    "name": "亞希撒抹"
+  },
+  "亞比亞撒": {
+    "type": "person",
+    "name_en": "Abiasaph",
+    "testament": "OT",
+    "desc": "可拉的後裔之一，可拉家族的先祖（出6:24）。",
+    "name": "亞比亞撒"
+  },
+  "西乃山": {
+    "type": "place",
+    "name_en": "Mount Sinai",
+    "testament": "OT",
+    "lat": 28.54,
+    "lng": 33.97,
+    "desc": "神向摩西頒佈十誡與律法、與以色列立約的山，又稱何烈山。",
+    "name": "西乃山"
+  },
+  "西乃": {
+    "type": "place",
+    "name_en": "Sinai",
+    "testament": "OT",
+    "lat": 28.54,
+    "lng": 33.97,
+    "desc": "西乃半島曠野一帶，以色列人出埃及後在此漂流、領受律法。",
+    "name": "西乃"
+  },
+  "蘭塞": {
+    "type": "place",
+    "name_en": "Rameses",
+    "testament": "OT",
+    "lat": 30.8,
+    "lng": 31.83,
+    "desc": "埃及尼羅河三角洲城邑，以色列人出埃及的起點。",
+    "name": "蘭塞"
+  },
+  "疏割": {
+    "type": "place",
+    "name_en": "Succoth",
+    "testament": "OT",
+    "lat": 30.62,
+    "lng": 32.1,
+    "desc": "以色列人出埃及後的第一個紮營地。",
+    "name": "疏割"
+  },
+  "比哈希錄": {
+    "type": "place",
+    "name_en": "Pi-hahiroth",
+    "testament": "OT",
+    "desc": "紅海邊的地名，以色列人在此與密奪之間安營（出14:2，確切位置不詳）。",
+    "name": "比哈希錄"
+  },
+  "密奪": {
+    "type": "place",
+    "name_en": "Migdol",
+    "testament": "OT",
+    "desc": "埃及邊境的軍事要塞地名，過紅海前的安營處（確切位置不詳）。",
+    "name": "密奪"
+  },
+  "俄梅珥": {
+    "type": "concept",
+    "name_en": "Omer",
+    "testament": "OT",
+    "desc": "乾量單位，約 2.2 公升，是伊法的十分之一；收嗎哪時每人一俄梅珥。",
+    "name": "俄梅珥"
+  },
+  "亞筆月": {
+    "type": "concept",
+    "name_en": "Abib",
+    "testament": "OT",
+    "desc": "猶太宗教曆正月（約陽曆三、四月），以色列出埃及的月份，後稱尼散月。",
+    "name": "亞筆月"
+  },
+  "收割節": {
+    "type": "concept",
+    "name_en": "Feast of Harvest",
+    "testament": "OT",
+    "desc": "三大節期之一，慶祝初熟莊稼的收成，即七七節（五旬節）。",
+    "name": "收割節"
+  },
+  "法櫃": {
+    "type": "concept",
+    "name_en": "Ark of the Covenant",
+    "testament": "OT",
+    "desc": "約櫃，內放兩塊法版，安置於至聖所，象徵神與百姓同在。",
+    "name": "法櫃"
+  },
+  "海狗皮": {
+    "type": "concept",
+    "name_en": "Sea cow / dugong hides",
+    "testament": "OT",
+    "desc": "蒙在會幕頂層的皮，防水耐用（一說為儒艮或海豚皮）。",
+    "name": "海狗皮"
+  },
+  "紅玉": {
+    "type": "concept",
+    "name_en": "Sardius",
+    "testament": "OT",
+    "desc": "大祭司胸牌第一行第一塊寶石（出28:17）。",
+    "name": "紅玉"
+  },
+  "紫晶": {
+    "type": "concept",
+    "name_en": "Amethyst",
+    "testament": "OT",
+    "desc": "大祭司胸牌第三行的紫色寶石（出28:19）。",
+    "name": "紫晶"
+  },
+  "施喜列": {
+    "type": "concept",
+    "name_en": "Onycha",
+    "testament": "OT",
+    "desc": "調製聖香的香料之一（出30:34）。",
+    "name": "施喜列"
+  },
+  "喜利比拿": {
+    "type": "concept",
+    "name_en": "Galbanum",
+    "testament": "OT",
+    "desc": "調製聖香的香料之一，氣味濃烈（出30:34）。",
+    "name": "喜利比拿"
+  },
+  "帷子": {
+    "type": "concept",
+    "name_en": "Hangings",
+    "testament": "OT",
+    "reading": "ㄨㄟˊ ㄗ˙",
+    "desc": "院子四圍懸掛的細麻布幔。",
+    "name": "帷子"
+  },
+  "橛子": {
+    "type": "concept",
+    "name_en": "Pegs",
+    "testament": "OT",
+    "reading": "ㄐㄩㄝˊ ㄗ˙",
+    "desc": "固定帳幕與院子帷子的銅或木釘。",
+    "name": "橛子"
+  },
+  "肉鍤子": {
+    "type": "concept",
+    "name_en": "Fleshhooks",
+    "testament": "OT",
+    "reading": "ㄖㄡˋ ㄔㄚ ㄗ˙",
+    "desc": "祭壇上用來翻動祭肉的銅叉。",
+    "name": "肉鍤子"
+  },
+  "閂": {
+    "type": "concept",
+    "name_en": "Bar",
+    "testament": "OT",
+    "reading": "ㄕㄨㄢ",
+    "desc": "貫穿帳幕板、使之相連的橫木。",
+    "name": "閂"
   }
 }
