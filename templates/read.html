@@ -963,9 +963,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   loadBookmarks();
   loadRouteHere();   // 本章路線自動提示
-  // 首次進入閱讀頁自動帶導引（之後可按「？教學」重看）
-  if (!localStorage.getItem('bible-tour-done')) {
-    setTimeout(startTour, 700);
+  // 教學鈕定期脈動提醒：沒看過→提醒；看過也每隔幾天再提醒一次（功能多，容易忘）
+  const TOUR_REMIND_MS = 5 * 24 * 60 * 60 * 1000;  // 5 天
+  const tourLast = parseInt(localStorage.getItem('bible-tour-last') || '0', 10);
+  if (Date.now() - tourLast > TOUR_REMIND_MS) {
+    const tb = document.getElementById('tbTour');
+    if (tb) tb.classList.add('pulse');
   }
   // 從搜尋結果跳轉而來：高亮並捲到該節
   const v = new URLSearchParams(location.search).get('v');
@@ -1071,6 +1074,10 @@ const TOUR_STEPS = [
 ];
 let _tourI = 0, _tourList = [];
 function startTour() {
+  // 點了就停止脈動、記下時間（用於日後定期重提醒）
+  const tb = document.getElementById('tbTour');
+  if (tb) tb.classList.remove('pulse');
+  localStorage.setItem('bible-tour-last', String(Date.now()));
   // 只導引「當下看得到」的項目（隱藏的如本章無路線提示就跳過）
   _tourList = TOUR_STEPS.filter(s => { const el = document.querySelector(s.sel); return el && el.offsetParent !== null; });
   if (!_tourList.length) return;
@@ -1083,6 +1090,7 @@ function endTour() {
   document.getElementById('tourSpot').style.display = 'none';
   document.getElementById('tourCallout').style.display = 'none';
   localStorage.setItem('bible-tour-done', '1');
+  localStorage.setItem('bible-tour-last', String(Date.now()));
 }
 function showTourStep() {
   const step = _tourList[_tourI];

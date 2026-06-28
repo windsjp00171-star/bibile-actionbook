@@ -314,8 +314,25 @@ body {
 }
 
 /* 教學導引鈕：放在工具列，稍微點亮讓它好被發現 */
-.tour-trigger { background: #C9852E; }
+.tour-trigger { background: #C9852E; position: relative; }
 .tour-trigger:active { background: #a86d22; }
+/* 還沒看過導引時，脈動吸引目光 */
+.tour-trigger.pulse { animation: tourPulse 1.8s ease-out infinite; }
+@keyframes tourPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(201,133,46,.6); }
+  70%  { box-shadow: 0 0 0 12px rgba(201,133,46,0); }
+  100% { box-shadow: 0 0 0 0 rgba(201,133,46,0); }
+}
+/* 脈動氣泡：右上角小圓點 */
+.tour-trigger.pulse::after {
+  content: ""; position: absolute; top: -3px; right: -3px;
+  width: 9px; height: 9px; border-radius: 50%; background: #E94F37;
+  box-shadow: 0 0 0 2px #fff; animation: tourDot 1.8s ease-out infinite;
+}
+@keyframes tourDot { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.35); opacity: .7; } }
+@media (prefers-reduced-motion: reduce) {
+  .tour-trigger.pulse, .tour-trigger.pulse::after { animation: none; }
+}
 
 /* ── Drawer ── */
 .drawer-overlay {
