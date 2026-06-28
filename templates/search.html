@@ -25,7 +25,11 @@
 </head>
 <body class="search-page">
 <div class="sp-wrap">
-  <a class="sp-back" href="/">‹ 回首頁</a>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+    <a class="sp-back" href="/" style="margin:0">‹ 回首頁</a>
+    <button id="tourBtn" class="tour-trigger" type="button" onclick="startSearchTour()"
+      style="background:#2A5C3A;color:#fff;border:none;border-radius:14px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">💡 教學</button>
+  </div>
   <div class="sp-head">
     <div class="sp-title">🔍 全本搜尋</div>
     <div class="sp-sub">搜尋整本聖經（66 卷）的經文</div>
@@ -38,7 +42,25 @@
   <div id="results"></div>
   <p style="text-align:center;font-size:11px;color:#B0A088;margin-top:30px">經文採用《和合本》（Chinese Union Version，1919）· 公有領域</p>
 </div>
+<script src="{{ url_for('static', filename='js/tour.js') }}"></script>
 <script>
+const SEARCH_TOUR_STEPS = [
+  { title: '歡迎！這是搜尋教學 👋', text: '這頁可以一次搜尋整本聖經（66 卷）。我帶你看怎麼用，看完按「下一步」就好。' },
+  { sel: '#q', title: '輸入關鍵字', text: '打人名、地名或一句經文（如「歌利亞」「愛是恆久忍耐」），按 Enter 或右邊「搜尋」。', spot: 6 },
+  { sel: '#results', title: '搜尋結果', text: '會列出所有符合的經節，點任一筆直接跳到聖經那一節閱讀。', spot: 6 },
+  { sel: '#tourBtn', title: '完成！🎉', text: '忘記了隨時點這顆「💡 教學」再看一次。' },
+];
+function startSearchTour(){
+  const b=document.getElementById('tourBtn'); if(b) b.classList.remove('pulse');
+  try{ localStorage.setItem('search-tour-last', String(Date.now())); }catch(e){}
+  SpotlightTour.start(SEARCH_TOUR_STEPS);
+}
+(function(){ // 沒看過或隔 5 天 → 教學鈕脈動提醒
+  try{
+    const last=parseInt(localStorage.getItem('search-tour-last')||'0',10);
+    if(Date.now()-last > 5*24*60*60*1000){ const b=document.getElementById('tourBtn'); if(b) b.classList.add('pulse'); }
+  }catch(e){}
+})();
 function esc(s){return s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
 function hl(text,q){const i=text.indexOf(q);if(i<0)return esc(text);
   return esc(text.slice(0,i))+'<mark>'+esc(q)+'</mark>'+esc(text.slice(i+q.length));}

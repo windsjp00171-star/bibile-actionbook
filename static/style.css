@@ -615,28 +615,7 @@ body {
 .verse.bookmarked .verse-num::after {
   content: '🔖'; font-size: 10px; margin-left: 2px;
 }
-/* ── 聚焦式導引 ── */
-#tourMask { position: fixed; inset: 0; z-index: 3000; display: none; }
-#tourMask.on { display: block; }
-#tourSpot {
-  position: fixed; z-index: 3001; display: none;
-  border: 2px solid #E8C766; border-radius: 8px;
-  box-shadow: 0 0 0 9999px rgba(20,12,6,.62); pointer-events: none;
-  transition: left .25s, top .25s, width .25s, height .25s;
-}
-#tourCallout {
-  position: fixed; z-index: 3002; display: none; width: 300px; max-width: 90vw;
-  background: #FBF6EA; border-radius: 12px; padding: 14px 16px;
-  box-shadow: 0 8px 30px rgba(0,0,0,.35); transition: left .25s, top .25s;
-}
-.tour-step { font-size: 11px; color: #B0946A; letter-spacing: .1em; margin-bottom: 4px; }
-.tour-title { font-size: 16px; color: #2A1A08; font-weight: 500; margin-bottom: 6px; }
-.tour-text { font-size: 13px; color: #5A4F44; line-height: 1.8; margin-bottom: 12px; }
-.tour-btns { display: flex; align-items: center; gap: 8px; }
-.tour-btns button { border: none; border-radius: 7px; padding: 7px 12px; font-size: 13px; cursor: pointer; font-family: inherit; }
-.tour-skip { background: none; color: #9C8866; }
-.tour-prev { background: #F0E6D0; color: #6B5436; }
-.tour-next { background: #2A5C3A; color: #fff; }
+/* 聚焦式導引改用 static/js/tour.js（SpotlightTour），樣式自帶於該檔。 */
 
 /* ── 本章世系結構圖 ── */
 .lineage-trigger {
