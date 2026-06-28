@@ -593,8 +593,8 @@ body {
   padding: 6px 9px; border: 1px solid #C9A96E; border-radius: 8px;
   font-size: 12px; font-family: inherit; background: #fff; color: #2A1A08;
 }
-.ex-maponly { font-size: 12px; color: #8B6840; display: flex; align-items: center; gap: 4px; cursor: pointer; }
-.ex-maponly input { margin: 0; }
+.ex-inbook { font-size: 12px; color: #8B6840; display: flex; align-items: center; gap: 4px; cursor: pointer; }
+.ex-inbook input { margin: 0; }
 .ex-shown { font-size: 11px; color: #9C8866; margin-left: auto; }
 .verse.bookmarked { position: relative; }
 .verse.bookmarked .verse-num::after {

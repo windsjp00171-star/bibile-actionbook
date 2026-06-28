@@ -568,18 +568,30 @@ def search_page():
 
 @app.route("/api/entities")
 def api_entities():
-    """人物/地點/概念索引：列出全部詞條（依類型分組）。"""
+    """人物/地點/概念索引：列出全部詞條（依類型分組）。
+    傳 book 參數時，另標記每個詞條是否出現在該卷（給「只看本卷」過濾用）。"""
+    book = (request.args.get("book") or "").strip()
+    joined = ""
+    if book:
+        chapters = BIBLE.get(book, {})
+        joined = "".join(t for ch in chapters.values() for t in ch.values())
     groups = {"person": [], "place": [], "concept": []}
     for name, val in ENTITIES.items():
         e = val[0] if isinstance(val, list) else val
         t = e.get("type", "person")
-        groups.setdefault(t, []).append({
+        item = {
             "key": name,
             "name": e.get("name", name),
             "name_en": e.get("name_en", ""),
             "has_map": e.get("lat") is not None,
             "testament": e.get("testament", "both"),
-        })
+        }
+        if t == "concept":
+            item["cat"] = e.get("cat", "theo")
+        if book:
+            disp = e.get("name", name)
+            item["in_book"] = (name in joined) or (disp in joined)
+        groups.setdefault(t, []).append(item)
     for t in groups:
         groups[t].sort(key=lambda x: x["name"])
     return jsonify(groups)
