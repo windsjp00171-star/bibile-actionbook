@@ -429,11 +429,24 @@ body {
 .route-toggle:active { background: #F5ECD8; }
 .route-info { margin-bottom: 8px; }
 .route-headline { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.route-ctrl { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
 .route-play {
-  flex-shrink: 0; padding: 5px 12px; border: none; border-radius: 14px;
+  padding: 5px 12px; border: none; border-radius: 14px;
   background: #2A5C3A; color: #fff; font-size: 12px; cursor: pointer; font-family: inherit;
 }
 .route-play:disabled { background: #9C8866; cursor: default; }
+.route-speed {
+  padding: 4px 6px; border: 1px solid #C9A96E; border-radius: 10px;
+  background: #fff; color: #6B5436; font-size: 11px; font-family: inherit; cursor: pointer;
+}
+.route-arrow-icon { background: none; border: none; }
+.route-arrow-icon span {
+  display: inline-block; font-size: 13px; line-height: 16px; text-align: center;
+  width: 16px; height: 16px; text-shadow: 0 0 2px #fff, 0 0 2px #fff;
+}
+.rp-link { color: #2A5C3A; font-weight: 600; text-decoration: none; }
+.rs-link { text-decoration: none; }
+.rs-link:active { opacity: .6; }
 .route-name { font-size: 15px; color: #2A1A08; font-weight: 600; }
 .route-ref { font-size: 12px; color: #2A5C3A; margin: 1px 0 3px; }
 .route-sum { font-size: 12.5px; font-weight: 300; line-height: 1.7; color: #5A4628; }
