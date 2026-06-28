@@ -32,6 +32,14 @@
   #   —— 一般由 Claude 用 MCP 抓，這裡備援用
   python tools/bible_query.py feedback --limit 50
 
+  # 稽核路線：停靠點地名是否對得上引用經文
+  python tools/bible_query.py routecheck
+  python tools/bible_query.py routecheck --id exodus
+
+  # 掃漏：自動找「含罕用字、卻沒被標」的候選專名（給人工審）
+  python tools/bible_query.py gaps 民數記
+  python tools/bible_query.py gaps 民數記 1 --limit 20
+
 輸出刻意精簡：能用一行表達就不換行，能回計數就不回全文。
 """
 import os
@@ -234,6 +242,72 @@ def cmd_routecheck(args):
     print(f"# 合計 {total_flags} 處待人工確認")
 
 
+_GAP_STOP = set("的了在和與及就是這那你我他祂神主說有要不必他們你們我們將都並又或如若因所以為從到向上下中前後左右大小多少眾各每兩")
+_COMMON_WORDS = {
+    "以色列", "耶和華", "利未人", "祭司", "會幕", "帳幕", "燔祭", "素祭", "贖罪",
+    "安息日", "亞瑪力", "迦南人", "赫人", "希未人", "比利洗人", "耶布斯人", "亞摩利人",
+}
+
+
+def _char_freq():
+    """全本聖經各字出現次數（用來判斷哪些是罕用『譯名專用字』）。"""
+    freq = {}
+    for chs in cuv().values():
+        for verses in chs.values():
+            for text in verses.values():
+                for c in text:
+                    freq[c] = freq.get(c, 0) + 1
+    return freq
+
+
+def _name_chars():
+    """從現有人名／地名詞條學出『譯名常用字』。"""
+    import mark_bible
+    chars = set()
+    for name, val in mark_bible.ENTITIES.items():
+        e = val[0] if isinstance(val, list) else val
+        if e.get("type") in ("person", "place"):
+            chars.update(name)
+    return chars - _GAP_STOP
+
+
+def cmd_gaps(args):
+    """掃漏：找由譯名字組成、含罕用字、卻未被標註的候選詞（給人工審）。"""
+    import mark_bible
+    nc = _name_chars()
+    freq = _char_freq()
+    # 罕用『譯名專用字』：是名字字元且全本出現次數低（幾乎只見於譯名）
+    rare = {c for c in nc if freq.get(c, 0) <= args.rare}
+    known = set(mark_bible.ENTITIES.keys())
+    book = args.book
+    chs = [str(args.chapter)] if args.chapter else list(cuv().get(book, {}).keys())
+    cand = {}   # 候選詞 -> [次數, 首見 ref]
+    for ch in chs:
+        for v, text in cuv().get(book, {}).get(ch, {}).items():
+            html = mark_bible.annotate(text, book, int(ch))
+            marked = set(re.findall(r'>([^<>]+)</span>', html))
+            # 把已標詞挖空，避免「父葉忒羅」這類黏連假陽性
+            scan = text
+            for m in sorted(marked, key=len, reverse=True):
+                if m:
+                    scan = scan.replace(m, " ")
+            run = ""
+            for c in scan + " ":
+                if c in nc:
+                    run += c
+                else:
+                    if (len(run) >= 2 and run not in _COMMON_WORDS and run not in known
+                            and any(c in rare for c in run)):       # 至少含一個罕用字
+                        cand.setdefault(run, [0, f"{ch}:{v}"])
+                        cand[run][0] += 1
+                    run = ""
+    items = sorted(cand.items(), key=lambda x: -x[1][0])[: args.limit]
+    print(f"# {book}{('/' + str(args.chapter)) if args.chapter else ''} 候選漏標 {len(items)} 個（含罕用字、出現多者優先）")
+    for w, (n, ref) in items:
+        print(f"  {w}  ×{n}  首見 {ref}")
+    print("# 註：啟發式候選，需人工確認是否真為專名再決定標註。")
+
+
 def main():
     p = argparse.ArgumentParser(description="聖經/標註查詢（省 token）")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -277,6 +351,13 @@ def main():
     s = sub.add_parser("routecheck", help="稽核路線停靠點與經文是否對得上")
     s.add_argument("--id", default="", help="只查單一路線（預設全查）")
     s.set_defaults(func=cmd_routecheck)
+
+    s = sub.add_parser("gaps", help="掃漏：找候選未標專名")
+    s.add_argument("book")
+    s.add_argument("chapter", type=int, nargs="?", default=0, help="省略則掃全卷")
+    s.add_argument("--limit", type=int, default=40)
+    s.add_argument("--rare", type=int, default=120, help="罕用字頻率門檻（全本出現<=此數）")
+    s.set_defaults(func=cmd_gaps)
 
     args = p.parse_args()
     args.func(args)
