@@ -444,6 +444,18 @@ body {
   display: inline-block; font-size: 13px; line-height: 16px; text-align: center;
   width: 16px; height: 16px; text-shadow: 0 0 2px #fff, 0 0 2px #fff;
 }
+.route-here-bar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  margin: 0 0 12px; padding: 8px 12px; border-radius: 12px;
+  background: #F5ECD8; border: 1px solid #E6D8BC;
+}
+.rh-label { font-size: 12px; color: #8B6840; font-weight: 600; flex-shrink: 0; }
+.rh-chip {
+  padding: 5px 11px; border: none; border-radius: 14px; cursor: pointer; font-family: inherit;
+  background: #fff; color: #3A2A14; font-size: 12.5px; border-left: 4px solid var(--rc, #8B6840);
+}
+.rh-chip:active { background: #EADBBE; }
+.route-stop.rs-focus { background: #FBEFD2; border-radius: 8px; }
 .rp-link { color: #2A5C3A; font-weight: 600; text-decoration: none; }
 .rs-link { text-decoration: none; }
 .rs-link:active { opacity: .6; }
