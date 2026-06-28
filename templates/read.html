@@ -986,13 +986,16 @@ function renderRelations(name) {
   });
 }
 
+function _esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
 function openCard(name) {
   const ent = _lookupEntity(name);
   if (!ent) return;
   _curEntity = name;
   document.getElementById('cardBadge').textContent = TYPE_LABEL[ent.type] || '';
   document.getElementById('cardBadge').className = 'card-badge anno-' + ent.type;
-  document.getElementById('cardName').textContent = ent.name + (ent.name_en ? '　' + ent.name_en : '');
+  document.getElementById('cardName').innerHTML = _esc(ent.name) +
+    (ent.reading ? ' <span class="card-reading">' + _esc(ent.reading) + '</span>' : '') +
+    (ent.name_en ? '<span class="card-en">　' + _esc(ent.name_en) + '</span>' : '');
   document.getElementById('cardDesc').textContent = ent.desc || '';
   renderRelations(name);
   const vbox = document.getElementById('cardVerses');

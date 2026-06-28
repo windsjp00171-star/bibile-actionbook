@@ -86,6 +86,7 @@ _EXT_GUARD = {
     "他施恩", "他施行", "他施捨", "他施報", "他施展",
     "約拿達", "約拿大", "猶大書",
     "米利亞", "亞利亞", "比利亞", "加利亞",
+    "希伯崙", "希伯倫", "希伯來",
 }
 
 
@@ -163,6 +164,7 @@ def entity_card(name, book="", chapter=1):
         "name_en": e.get("name_en", ""),
         "type": e.get("type", "person"),
         "desc": e.get("desc", ""),
+        "reading": e.get("reading", ""),  # 生僻字注音／拼音
         "verses": e.get("verses", ""),
         "lat": e.get("lat"),
         "lng": e.get("lng"),
