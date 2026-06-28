@@ -51,6 +51,7 @@
   <button class="search-trigger" id="tbSearch" onclick="openSearch()">🔍 全本搜尋</button>
   <button class="search-trigger" id="tbExplore" onclick="openExplore()">📑 人物地點索引</button>
   <button class="search-trigger" id="tbBookMap" onclick="openBookMap()">🗺 本卷地圖</button>
+  <button class="search-trigger" id="tbRoutes" onclick="openRoutes()">🧭 路線圖</button>
   <button class="search-trigger" id="tbBookmarks" onclick="openBookmarks()">🔖 我的書籤</button>
 
   <a class="resume-banner" id="resumeBanner" href="#" style="display:none"></a>
@@ -149,6 +150,17 @@
   <button class="card-close" onclick="closeBookMap()" aria-label="關閉">✕</button>
   <h3 class="bigmap-title">本卷地圖　{{ book }}</h3>
   <div class="bigmap-canvas" id="bookMap"></div>
+</aside>
+
+<!-- 聖經路線圖 -->
+<div class="bigmap-overlay" id="routesOverlay" onclick="closeRoutes()"></div>
+<aside class="bigmap-panel" id="routesPanel">
+  <button class="card-close" onclick="closeRoutes()" aria-label="關閉">✕</button>
+  <h3 class="bigmap-title">🧭 聖經路線圖</h3>
+  <div class="route-picker" id="routePicker"></div>
+  <div class="route-info" id="routeInfo"></div>
+  <div class="bigmap-canvas" id="routeMap"></div>
+  <div class="route-stops" id="routeStops"></div>
 </aside>
 
 <!-- 本章世系結構圖 -->
@@ -537,6 +549,91 @@ function openBookMap() {
 function closeBookMap() {
   document.getElementById('bookMapPanel').classList.remove('open');
   document.getElementById('bookMapOverlay').classList.remove('open');
+}
+
+// ── 聖經路線圖 ──────────────────────────────────────────────────
+let _routeMap = null, _routeLayers = [], _routesList = null;
+function openRoutes() {
+  document.getElementById('routesPanel').classList.add('open');
+  document.getElementById('routesOverlay').classList.add('open');
+  fetch('/api/routes?book=' + encodeURIComponent(CUR_BOOK)).then(r => r.json()).then(d => {
+    _routesList = d.routes || [];
+    const pick = document.getElementById('routePicker');
+    pick.innerHTML = '';
+    if (!_routesList.length) { pick.innerHTML = '<span class="route-empty">尚無路線資料。</span>'; return; }
+    _routesList.forEach((r, i) => {
+      const b = document.createElement('button');
+      b.className = 'route-chip' + (r.relevant ? ' relevant' : '');
+      b.style.setProperty('--rc', r.color);
+      b.textContent = (r.relevant ? '✦ ' : '') + r.name;
+      b.onclick = () => { selectRoute(r.id); highlightChip(b); };
+      pick.appendChild(b);
+    });
+    // 預設選第一條（情境相關優先，已由後端排序）
+    const first = pick.querySelector('.route-chip');
+    if (first) { selectRoute(_routesList[0].id); highlightChip(first); }
+  });
+}
+function highlightChip(el) {
+  document.querySelectorAll('#routePicker .route-chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+}
+function selectRoute(id) {
+  fetch('/api/routes?id=' + encodeURIComponent(id)).then(r => r.json()).then(rt => {
+    document.getElementById('routeInfo').innerHTML =
+      '<div class="route-name">' + rt.name + '</div>' +
+      '<div class="route-ref">' + (rt.ref || '') + '</div>' +
+      (rt.summary ? '<div class="route-sum">' + rt.summary + '</div>' : '');
+    drawRoute(rt);
+    renderStops(rt);
+  });
+}
+function drawRoute(rt) {
+  setTimeout(() => {
+    const el = document.getElementById('routeMap');
+    if (!_routeMap) {
+      _routeMap = L.map(el, { zoomControl: true, attributionControl: false });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 14 }).addTo(_routeMap);
+    }
+    _routeLayers.forEach(l => _routeMap.removeLayer(l));
+    _routeLayers = [];
+    const pts = (rt.waypoints || []).map(w => [w.lat, w.lng]);
+    if (pts.length > 1) {
+      const line = L.polyline(pts, { color: rt.color, weight: 3, opacity: 0.85, dashArray: '6,7' }).addTo(_routeMap);
+      _routeLayers.push(line);
+    }
+    (rt.waypoints || []).forEach((w, i) => {
+      const icon = L.divIcon({ className: 'route-num-icon',
+        html: '<span style="background:' + rt.color + '">' + (i + 1) + '</span>',
+        iconSize: [22, 22], iconAnchor: [11, 11] });
+      const m = L.marker([w.lat, w.lng], { icon })
+        .bindTooltip(w.name, { permanent: true, direction: 'top', offset: [0, -10] })
+        .bindPopup('<b>' + (i + 1) + '. ' + w.name + '</b><br>' + (w.ref || '') +
+                   (w.note ? '<br>' + w.note : ''));
+      m.addTo(_routeMap);
+      _routeLayers.push(m);
+    });
+    _routeMap.invalidateSize();
+    if (pts.length > 1) _routeMap.fitBounds(pts, { padding: [45, 45] });
+    else if (pts.length === 1) _routeMap.setView(pts[0], 7);
+  }, 80);
+}
+function renderStops(rt) {
+  const box = document.getElementById('routeStops');
+  box.innerHTML = '';
+  (rt.waypoints || []).forEach((w, i) => {
+    const row = document.createElement('div');
+    row.className = 'route-stop';
+    row.innerHTML = '<span class="rs-num" style="background:' + rt.color + '">' + (i + 1) + '</span>' +
+      '<span class="rs-body"><b>' + w.name + '</b> <span class="rs-ref">' + (w.ref || '') + '</span>' +
+      (w.note ? '<br><span class="rs-note">' + w.note + '</span>' : '') + '</span>';
+    row.onclick = () => { if (_routeMap) { _routeMap.setView([w.lat, w.lng], 8); } };
+    box.appendChild(row);
+  });
+}
+function closeRoutes() {
+  document.getElementById('routesPanel').classList.remove('open');
+  document.getElementById('routesOverlay').classList.remove('open');
 }
 
 // ── 書籤 ────────────────────────────────────────────────────────

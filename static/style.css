@@ -411,6 +411,38 @@ body {
 .bigmap-panel.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
 .bigmap-title { font-size: 16px; color: #2A1A08; margin: 0 0 10px; padding-right: 36px; }
 .bigmap-canvas { flex: 1; border-radius: 10px; overflow: hidden; }
+
+/* 路線圖 */
+.route-picker { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.route-chip {
+  padding: 5px 11px; border: 1px solid #C9A96E; border-radius: 14px;
+  background: #fff; color: #6B5436; font-size: 12px; cursor: pointer; font-family: inherit;
+  border-left: 4px solid var(--rc, #8B6840);
+}
+.route-chip.relevant { font-weight: 600; }
+.route-chip.active { background: var(--rc, #8B6840); color: #fff; border-color: var(--rc, #8B6840); }
+.route-empty { font-size: 13px; color: #9C8866; }
+.route-info { margin-bottom: 8px; }
+.route-name { font-size: 15px; color: #2A1A08; font-weight: 600; }
+.route-ref { font-size: 12px; color: #2A5C3A; margin: 1px 0 3px; }
+.route-sum { font-size: 12.5px; font-weight: 300; line-height: 1.7; color: #5A4628; }
+.route-stops { max-height: 150px; overflow-y: auto; margin-top: 8px; }
+.route-stop {
+  display: flex; gap: 8px; align-items: flex-start; padding: 5px 4px;
+  border-bottom: 1px solid #ece2d2; cursor: pointer;
+}
+.route-stop:active { background: #F5ECD8; }
+.rs-num, .route-num-icon span {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px; min-width: 20px; border-radius: 50%;
+  color: #fff; font-size: 12px; font-weight: 600;
+}
+.route-num-icon span {
+  width: 22px; height: 22px; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.4);
+}
+.rs-body { font-size: 13px; color: #3A2A14; line-height: 1.5; }
+.rs-ref { font-size: 11px; color: #2A5C3A; }
+.rs-note { font-size: 12px; font-weight: 300; color: #6B5436; }
 .card-desc { font-size: 14px; font-weight: 300; line-height: 1.9; color: #3A2A14; margin: 0 0 12px; }
 .card-verses { display: flex; flex-wrap: wrap; gap: 6px; }
 .card-explain-btn {

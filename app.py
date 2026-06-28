@@ -116,6 +116,14 @@ _resolve_entity = mark_bible.resolve_entity
 _redirect_target = mark_bible.redirect_target
 annotate = mark_bible.annotate
 
+# 聖經路線圖資料（人工策展的有序停靠點）。
+_ROUTES_PATH = os.path.join(os.path.dirname(__file__), "data", "routes.json")
+try:
+    with open(_ROUTES_PATH, encoding="utf-8") as _f:
+        ROUTES = json.load(_f)
+except (FileNotFoundError, json.JSONDecodeError):
+    ROUTES = {}
+
 
 # 依中文標點切分句；標點留在前一句尾。手機點按以「分句」為單位最好點。
 _CLAUSE_RE = re.compile(r"[^、，。；：！？「」『』（）]+[、，。；：！？」』）]*")
@@ -607,6 +615,28 @@ def api_book_places():
                        "lat": e["lat"], "lng": e["lng"],
                        "desc": e.get("desc", "")})
     return jsonify({"book": book, "places": places})
+
+
+@app.route("/api/routes")
+def api_routes():
+    """聖經路線圖：列出路線（可依 book 過濾為情境推薦），或回單一路線細節。"""
+    rid = (request.args.get("id") or "").strip()
+    if rid:
+        r = ROUTES.get(rid)
+        if not r:
+            return jsonify({"error": "not_found"}), 404
+        return jsonify(dict(r, id=rid))
+    book = (request.args.get("book") or "").strip()
+    items = []
+    for k, r in ROUTES.items():
+        relevant = (not book) or (book in r.get("books", []))
+        items.append({
+            "id": k, "name": r.get("name", k), "ref": r.get("ref", ""),
+            "color": r.get("color", "#8B6840"), "testament": r.get("testament", "OT"),
+            "stops": len(r.get("waypoints", [])), "relevant": relevant,
+        })
+    items.sort(key=lambda x: (not x["relevant"], x["name"]))
+    return jsonify({"book": book, "routes": items})
 
 
 @app.route("/api/bookmarks", methods=["GET", "POST", "DELETE"])
