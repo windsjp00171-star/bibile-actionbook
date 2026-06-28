@@ -552,7 +552,7 @@ function closeBookMap() {
 }
 
 // ── 聖經路線圖 ──────────────────────────────────────────────────
-let _routeMap = null, _routeLayers = [], _routesList = null;
+let _routeMap = null, _routeLayers = [], _routesList = null, _curRoute = null, _routeAnim = null;
 function openRoutes() {
   document.getElementById('routesPanel').classList.add('open');
   document.getElementById('routesOverlay').classList.add('open');
@@ -580,43 +580,96 @@ function highlightChip(el) {
 }
 function selectRoute(id) {
   fetch('/api/routes?id=' + encodeURIComponent(id)).then(r => r.json()).then(rt => {
+    _curRoute = rt;
     document.getElementById('routeInfo').innerHTML =
-      '<div class="route-name">' + rt.name + '</div>' +
+      '<div class="route-headline"><div class="route-name">' + rt.name + '</div>' +
+      '<button class="route-play" id="routePlay" onclick="playRoute()">▶ 播放路線</button></div>' +
       '<div class="route-ref">' + (rt.ref || '') + '</div>' +
       (rt.summary ? '<div class="route-sum">' + rt.summary + '</div>' : '');
     drawRoute(rt);
     renderStops(rt);
   });
 }
+function _ensureRouteMap() {
+  const el = document.getElementById('routeMap');
+  if (!_routeMap) {
+    _routeMap = L.map(el, { zoomControl: true, attributionControl: false });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 14 }).addTo(_routeMap);
+  }
+  return _routeMap;
+}
+function _clearRoute() {
+  if (_routeAnim) { cancelAnimationFrame(_routeAnim); _routeAnim = null; }
+  _routeLayers.forEach(l => _routeMap.removeLayer(l));
+  _routeLayers = [];
+}
+function _routeMarker(rt, w, i) {
+  const icon = L.divIcon({ className: 'route-num-icon',
+    html: '<span style="background:' + rt.color + '">' + (i + 1) + '</span>',
+    iconSize: [22, 22], iconAnchor: [11, 11] });
+  return L.marker([w.lat, w.lng], { icon })
+    .bindTooltip(w.name, { permanent: true, direction: 'top', offset: [0, -10] })
+    .bindPopup('<b>' + (i + 1) + '. ' + w.name + '</b><br>' + (w.ref || '') +
+               (w.note ? '<br>' + w.note : ''));
+}
+// 靜態：一次畫完整條路線
 function drawRoute(rt) {
   setTimeout(() => {
-    const el = document.getElementById('routeMap');
-    if (!_routeMap) {
-      _routeMap = L.map(el, { zoomControl: true, attributionControl: false });
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 14 }).addTo(_routeMap);
-    }
-    _routeLayers.forEach(l => _routeMap.removeLayer(l));
-    _routeLayers = [];
+    _ensureRouteMap();
+    _clearRoute();
     const pts = (rt.waypoints || []).map(w => [w.lat, w.lng]);
     if (pts.length > 1) {
       const line = L.polyline(pts, { color: rt.color, weight: 3, opacity: 0.85, dashArray: '6,7' }).addTo(_routeMap);
       _routeLayers.push(line);
     }
-    (rt.waypoints || []).forEach((w, i) => {
-      const icon = L.divIcon({ className: 'route-num-icon',
-        html: '<span style="background:' + rt.color + '">' + (i + 1) + '</span>',
-        iconSize: [22, 22], iconAnchor: [11, 11] });
-      const m = L.marker([w.lat, w.lng], { icon })
-        .bindTooltip(w.name, { permanent: true, direction: 'top', offset: [0, -10] })
-        .bindPopup('<b>' + (i + 1) + '. ' + w.name + '</b><br>' + (w.ref || '') +
-                   (w.note ? '<br>' + w.note : ''));
-      m.addTo(_routeMap);
-      _routeLayers.push(m);
-    });
+    (rt.waypoints || []).forEach((w, i) => { const m = _routeMarker(rt, w, i).addTo(_routeMap); _routeLayers.push(m); });
     _routeMap.invalidateSize();
     if (pts.length > 1) _routeMap.fitBounds(pts, { padding: [45, 45] });
     else if (pts.length === 1) _routeMap.setView(pts[0], 7);
   }, 80);
+}
+// 動畫：線條逐段「生長」描繪，停靠點依序落下
+function playRoute() {
+  const rt = _curRoute;
+  if (!rt || !rt.waypoints || rt.waypoints.length < 2) return;
+  _ensureRouteMap();
+  _clearRoute();
+  _routeMap.invalidateSize();
+  _routeMap.fitBounds(rt.waypoints.map(w => [w.lat, w.lng]), { padding: [45, 45] });
+  const btn = document.getElementById('routePlay');
+  if (btn) { btn.textContent = '⟳ 描繪中…'; btn.disabled = true; }
+  const line = L.polyline([], { color: rt.color, weight: 4, opacity: 0.9 }).addTo(_routeMap);
+  _routeLayers.push(line);
+  const wps = rt.waypoints;
+  const drawn = [];               // 已完成的折線頂點
+  let seg = 0;                    // 目前畫到第幾段
+  // 先落第一個點
+  const m0 = _routeMarker(rt, wps[0], 0).addTo(_routeMap); _routeLayers.push(m0);
+  drawn.push([wps[0].lat, wps[0].lng]);
+  const SEG_MS = 650;
+  function nextSeg() {
+    if (seg >= wps.length - 1) {
+      if (btn) { btn.textContent = '▶ 重新播放'; btn.disabled = false; }
+      return;
+    }
+    const a = wps[seg], b = wps[seg + 1];
+    const t0 = performance.now();
+    function step(now) {
+      const t = Math.min(1, (now - t0) / SEG_MS);
+      const lat = a.lat + (b.lat - a.lat) * t;
+      const lng = a.lng + (b.lng - a.lng) * t;
+      line.setLatLngs(drawn.concat([[lat, lng]]));
+      if (t < 1) { _routeAnim = requestAnimationFrame(step); }
+      else {
+        drawn.push([b.lat, b.lng]);
+        const m = _routeMarker(rt, b, seg + 1).addTo(_routeMap); _routeLayers.push(m);
+        seg++;
+        _routeAnim = requestAnimationFrame(() => setTimeout(nextSeg, 180));
+      }
+    }
+    _routeAnim = requestAnimationFrame(step);
+  }
+  nextSeg();
 }
 function renderStops(rt) {
   const box = document.getElementById('routeStops');
