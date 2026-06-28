@@ -2051,16 +2051,24 @@
     ],
     "desc": "以色列人，因私留耶利哥戰利品違背神令，導致以軍在艾城敗退。"
   },
-  "底波拉": {
-    "type": "person",
-    "name": "底波拉",
-    "name_en": "Deborah",
-    "books": [
-      "士師記"
-    ],
-    "desc": "以色列女先知兼士師，率領巴拉擊敗迦南王耶賓的軍隊。",
-    "testament": "both"
-  },
+  "底波拉": [
+    {
+      "type": "person",
+      "name": "底波拉",
+      "name_en": "Deborah (nurse)",
+      "books": ["創世記"],
+      "testament": "OT",
+      "desc": "利百加的奶母，隨雅各一家生活，死後葬於伯特利下邊橡樹底下，那樹因此名叫亞倫巴古（哭泣的橡樹）。"
+    },
+    {
+      "type": "person",
+      "name": "底波拉",
+      "name_en": "Deborah (judge)",
+      "books": ["士師記"],
+      "testament": "OT",
+      "desc": "以色列女先知兼士師，率領巴拉擊敗迦南王耶賓的軍隊。"
+    }
+  ],
   "基甸": {
     "type": "person",
     "name": "基甸",
@@ -2135,10 +2143,13 @@
     "name_en": "Solomon",
     "books": [
       "列王紀上",
-      "歷代志下"
+      "歷代志下",
+      "箴言",
+      "傳道書",
+      "雅歌"
     ],
-    "desc": "以色列第三任王，以智慧著稱，建造聖殿，晚年因妃嬪導致拜偶像。",
-    "testament": "both"
+    "desc": "以色列第三任王，以智慧著稱，建造聖殿，晚年因妃嬪導致拜偶像；傳統認為是箴言、傳道書、雅歌的作者。",
+    "testament": "OT"
   },
   "以利亞": {
     "type": "person",
@@ -2871,15 +2882,24 @@
     ],
     "desc": "烏斯地完全人，撒但試煉後失去一切，在痛苦中仍持守對神的信心。"
   },
-  "以利法": {
-    "type": "person",
-    "name": "以利法",
-    "name_en": "Eliphaz",
-    "books": [
-      "約伯記"
-    ],
-    "desc": "約伯三友之一，特幔人，認為約伯受苦必因犯罪，被神責備說話不正確。"
-  },
+  "以利法": [
+    {
+      "type": "person",
+      "name": "以利法",
+      "name_en": "Eliphaz (son of Esau)",
+      "books": ["創世記"],
+      "testament": "OT",
+      "desc": "以掃長子，以東族長，其子提幔成為以東一支族長。"
+    },
+    {
+      "type": "person",
+      "name": "以利法",
+      "name_en": "Eliphaz (Job's friend)",
+      "books": ["約伯記"],
+      "testament": "OT",
+      "desc": "約伯三友之一，特幔人，認為約伯受苦必因犯罪，被神責備說話不正確。"
+    }
+  ],
   "比勒達": {
     "type": "person",
     "name": "比勒達",
@@ -5063,6 +5083,22 @@
     "lat": 31.53,
     "lng": 35.1
   },
+  "摩利橡樹": {
+    "type": "place",
+    "name": "摩利橡樹",
+    "name_en": "Oak of Moreh",
+    "books": ["創世記"],
+    "testament": "OT",
+    "desc": "示劍城附近的聖樹，亞伯拉罕進迦南後在此紮營，神向他顯現應許此地（創12:6）。"
+  },
+  "亞達禾場": {
+    "type": "place",
+    "name": "亞達禾場",
+    "name_en": "Abel Mizraim",
+    "books": ["創世記"],
+    "testament": "OT",
+    "desc": "約但河東、迦南邊境的禾場，雅各的喪隊在此為他大哭七天，埃及人目睹，故改名「埃及人的悲哀」（創50:11）。"
+  },
   "迦勒底": {
     "type": "place",
     "name": "迦勒底",
@@ -5247,6 +5283,30 @@
     "name_en": "Onan",
     "testament": "OT",
     "desc": "猶大的次子，拒為亡兄留後，行為惡，被神擊殺。"
+  },
+  "辟拉": {
+    "type": "person",
+    "name": "辟拉",
+    "name_en": "Bilhah",
+    "books": ["創世記"],
+    "testament": "OT",
+    "desc": "拉結的使女，雅各的妾，生但、拿弗他利兩支派始祖；流便曾與她同寢，此事記入以色列家族史。"
+  },
+  "亞達": {
+    "type": "person",
+    "name": "亞達",
+    "name_en": "Adah",
+    "books": ["創世記"],
+    "testament": "OT",
+    "desc": "以掃的妻之一，赫人以倫的女兒，生以利法，是以東族的先祖母之一。"
+  },
+  "亞倫巴古": {
+    "type": "place",
+    "name": "亞倫巴古",
+    "name_en": "Allon-bacuth",
+    "books": ["創世記"],
+    "testament": "OT",
+    "desc": "伯特利附近一棵橡樹，因利百加奶母底波拉在此去世而得名，意為「哭泣的橡樹」（創35:8）。"
   },
   "示拉": {
     "type": "person",
