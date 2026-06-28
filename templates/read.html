@@ -528,7 +528,7 @@ function openBookMap() {
       const el = document.getElementById('bookMap');
       if (!_bookMap) {
         _bookMap = L.map(el, { zoomControl: true, attributionControl: false });
-        L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', { maxZoom: 16, subdomains: 'abc' }).addTo(_bookMap);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 16 }).addTo(_bookMap);
       }
       _bookMap.eachLayer(l => { if (l instanceof L.CircleMarker) _bookMap.removeLayer(l); });
       const pts = [];
@@ -628,9 +628,7 @@ function _ensureRouteMap() {
   const el = document.getElementById('routeMap');
   if (!_routeMap) {
     _routeMap = L.map(el, { zoomControl: true, attributionControl: false });
-    // 地形底圖（比街道圖更貼近聖經地理）
-    L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
-      { maxZoom: 16, subdomains: 'abc' }).addTo(_routeMap);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 16 }).addTo(_routeMap);
   }
   return _routeMap;
 }
@@ -640,11 +638,23 @@ function _clearRoute() {
   _routeLayers.forEach(l => _routeMap.removeLayer(l));
   _routeLayers = [];
 }
-function _routeMarker(rt, w, i) {
+// 重複停靠點（往返同地）稍微錯開，避免編號標記疊在一起
+function _dispPositions(wps) {
+  const seen = {}, out = [];
+  wps.forEach(w => {
+    const key = w.lat.toFixed(3) + ',' + w.lng.toFixed(3);
+    const n = seen[key] || 0; seen[key] = n + 1;
+    if (n === 0) out.push([w.lat, w.lng]);
+    else out.push([w.lat + 0.07 * n, w.lng + 0.05 * n]);  // 第 n 次重複往東北錯開
+  });
+  return out;
+}
+function _routeMarker(rt, w, i, pos) {
+  const ll = pos || [w.lat, w.lng];
   const icon = L.divIcon({ className: 'route-num-icon',
     html: '<span style="background:' + rt.color + '">' + (i + 1) + '</span>',
     iconSize: [22, 22], iconAnchor: [11, 11] });
-  return L.marker([w.lat, w.lng], { icon })
+  return L.marker(ll, { icon })
     .bindTooltip(w.name, { permanent: true, direction: 'top', offset: [0, -10] })
     .bindPopup(_stopPopupHtml(w, i));
 }
@@ -697,12 +707,13 @@ function drawRoute(rt) {
     _ensureRouteMap();
     _clearRoute();
     const pts = (rt.waypoints || []).map(w => [w.lat, w.lng]);
+    const disp = _dispPositions(rt.waypoints || []);
     if (pts.length > 1) {
       const line = L.polyline(pts, { color: rt.color, weight: 3, opacity: 0.85, dashArray: '6,7' }).addTo(_routeMap);
       _routeLayers.push(line);
       _arrowMarkers(rt).forEach(a => { a.addTo(_routeMap); _routeLayers.push(a); });
     }
-    (rt.waypoints || []).forEach((w, i) => { const m = _routeMarker(rt, w, i).addTo(_routeMap); _routeLayers.push(m); });
+    (rt.waypoints || []).forEach((w, i) => { const m = _routeMarker(rt, w, i, disp[i]).addTo(_routeMap); _routeLayers.push(m); });
     _routeMap.invalidateSize();
     if (pts.length > 1) _routeMap.fitBounds(pts, { padding: [45, 45] });
     else if (pts.length === 1) _routeMap.setView(pts[0], 7);
@@ -748,10 +759,11 @@ function playRoute() {
   _routeMap.invalidateSize();
   const wps = rt.waypoints;
   _routeMap.setView([wps[0].lat, wps[0].lng], _followZoom(wps), { animate: false });
+  const disp = _dispPositions(wps);
   const line = L.polyline([], { color: rt.color, weight: 4, opacity: 0.95 }).addTo(_routeMap);
   _routeLayers.push(line);
-  const m0 = _routeMarker(rt, wps[0], 0).addTo(_routeMap); _routeLayers.push(m0);
-  _anim = { rt, wps, allPts: wps.map(w => [w.lat, w.lng]), line,
+  const m0 = _routeMarker(rt, wps[0], 0, disp[0]).addTo(_routeMap); _routeLayers.push(m0);
+  _anim = { rt, wps, disp, allPts: wps.map(w => [w.lat, w.lng]), line,
             drawn: [[wps[0].lat, wps[0].lng]], seg: 0, segT0: 0, elapsed: 0 };
   _routePlaying = true; _routePaused = false;
   _setPlayBtn('⏸ 暫停');
@@ -782,7 +794,7 @@ function _routeTick() {
       // 段末補上方向箭頭與停靠點
       const ar = _arrowMarkers({ color: A.rt.color, waypoints: [a, b] })[0];
       if (ar) { ar.addTo(_routeMap); _routeLayers.push(ar); }
-      const m = _routeMarker(A.rt, b, A.seg + 1).addTo(_routeMap); _routeLayers.push(m);
+      const m = _routeMarker(A.rt, b, A.seg + 1, A.disp[A.seg + 1]).addTo(_routeMap); _routeLayers.push(m);
       A.seg++; A.elapsed = 0;
       _routeTimer = setTimeout(_routeTick, 240 * _routeSpeed);
     }
