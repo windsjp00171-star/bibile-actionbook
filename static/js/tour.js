@@ -111,6 +111,15 @@
   function render() {
     var step = state.steps[state.i];
     resetIdle();
+    // step.before：進入此步前先執行（例如打開某個面板／卡片再導覽其內部）
+    if (typeof step.before === 'function') {
+      try { step.before(); } catch (e) {}
+      setTimeout(function () { if (state.steps[state.i] === step) renderBody(step); }, step.beforeWait || 300);
+    } else {
+      renderBody(step);
+    }
+  }
+  function renderBody(step) {
     if (!step.sel) { requestAnimationFrame(function () { positionCenter(step); }); return; }
     maybeReveal(step);
     var el = document.querySelector(step.sel);
