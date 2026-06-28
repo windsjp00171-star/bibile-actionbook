@@ -131,7 +131,18 @@
       <option value="OT">舊約</option>
       <option value="NT">新約</option>
     </select>
-    <label class="ex-maponly"><input type="checkbox" id="exploreMapOnly" onchange="renderExplore()"> 📍 只看有地圖</label>
+    <select id="exploreCat" class="ex-cat" style="display:none" onchange="renderExplore()">
+      <option value="">所有分類</option>
+      <option value="fest">節期禮儀</option>
+      <option value="holy">聖所器物</option>
+      <option value="gem">寶石礦物</option>
+      <option value="plant">動植物</option>
+      <option value="measure">度量衡</option>
+      <option value="people">族群外邦</option>
+      <option value="role">職分稱呼</option>
+      <option value="theo">神學・其他</option>
+    </select>
+    <label class="ex-inbook"><input type="checkbox" id="exploreInBook" onchange="renderExplore()"> 📖 只看本卷</label>
     <span class="ex-shown" id="exploreShown"></span>
   </div>
   <div class="explore-list" id="exploreList"></div>
@@ -457,7 +468,8 @@ function openExplore() {
   document.getElementById('searchOverlay').classList.add('open');
   document.getElementById('searchOverlay').onclick = closeExplore;
   if (_exploreData) { renderExplore(); }
-  else fetch('/api/entities').then(r => r.json()).then(d => { _exploreData = d; updateExploreCounts(); renderExplore(); });
+  else fetch('/api/entities?book=' + encodeURIComponent(CUR_BOOK)).then(r => r.json())
+    .then(d => { _exploreData = d; updateExploreCounts(); renderExplore(); });
 }
 function updateExploreCounts() {
   if (!_exploreData) return;
@@ -493,20 +505,25 @@ function listEntityVerses() {
 function switchExplore(t) {
   _exploreType = t;
   document.querySelectorAll('.explore-tab').forEach(b => b.classList.toggle('active', b.dataset.type === t));
+  // 分類下拉只在概念分頁出現
+  const catSel = document.getElementById('exploreCat');
+  if (catSel) { catSel.style.display = (t === 'concept') ? '' : 'none'; if (t !== 'concept') catSel.value = ''; }
   renderExplore();
 }
 function renderExplore() {
   if (!_exploreData) return;
   const filter = document.getElementById('exploreFilter').value.trim();
   const testVal = (document.getElementById('exploreTestament') || {}).value || '';
-  const mapOnly = (document.getElementById('exploreMapOnly') || {}).checked || false;
+  const catVal = (document.getElementById('exploreCat') || {}).value || '';
+  const inBook = (document.getElementById('exploreInBook') || {}).checked || false;
   const list = document.getElementById('exploreList');
   list.innerHTML = '';
   const lcFilter = filter.toLowerCase();
   const rows = (_exploreData[_exploreType] || []).filter(e => {
     if (filter && !e.name.includes(filter) && !(e.name_en || '').toLowerCase().includes(lcFilter)) return false;
     if (testVal && e.testament !== testVal && e.testament !== 'both') return false;
-    if (mapOnly && !e.has_map) return false;
+    if (catVal && e.cat !== catVal) return false;
+    if (inBook && !e.in_book) return false;
     return true;
   });
   rows.forEach(e => {

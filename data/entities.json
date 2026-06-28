@@ -72,7 +72,8 @@
     "name": "非利士人",
     "name_en": "Philistines",
     "desc": "居住於迦南西南沿海平原的民族，擁有五座主要城邦，掌握冶鐵技術，是士師至王國初期以色列最強勁的宿敵。歌利亞即其精銳勇士。",
-    "verses": "撒上17:1-3"
+    "verses": "撒上17:1-3",
+    "cat": "people"
   },
   "以拉谷": {
     "type": "place",
@@ -351,7 +352,8 @@
     "name": "士師",
     "name_en": "Judges",
     "desc": "約書亞之後、君王制度之前，神為以色列興起的拯救者領袖。路得記開篇「當士師秉政的時候」即定位於這段時期。",
-    "verses": "路得記"
+    "verses": "路得記",
+    "cat": "role"
   },
   "約拿": {
     "type": "person",
@@ -400,7 +402,8 @@
     "name": "希伯來人",
     "name_en": "Hebrews",
     "testament": "both",
-    "desc": "以色列人的別稱，源自先祖希伯（或「渡河而來者」之意）。埃及人、非利士人常以此稱呼以色列民。"
+    "desc": "以色列人的別稱，源自先祖希伯（或「渡河而來者」之意）。埃及人、非利士人常以此稱呼以色列民。",
+    "cat": "people"
   },
   "亞當": {
     "type": "person",
@@ -552,14 +555,16 @@
     "name": "蛇",
     "name_en": "Serpent",
     "desc": "田野活物中最狡猾的，在伊甸園引誘女人違背神命吃禁果，致人類墮落。神咒詛牠終身用肚行走，並預言女人的後裔要傷牠的頭。",
-    "verses": "創世記"
+    "verses": "創世記",
+    "cat": "plant"
   },
   "基路伯": {
     "type": "concept",
     "name": "基路伯",
     "name_en": "Cherubim",
     "desc": "神所設立的天上活物。人犯罪被逐後，神在伊甸園東邊安設基路伯與發火焰的劍，把守通往生命樹的道路。",
-    "verses": "創世記"
+    "verses": "創世記",
+    "cat": "theo"
   },
   "伊甸": {
     "type": "place",
@@ -640,21 +645,24 @@
     "name_en": "Burnt Offering",
     "desc": "將祭牲全牲焚燒獻於壇上的祭，表完全獻給神並蒙悅納。為利未記首先規定的祭，象徵奉獻者全然歸主。",
     "verses": "利未記",
-    "testament": "both"
+    "testament": "both",
+    "cat": "fest"
   },
   "素祭": {
     "type": "concept",
     "name": "素祭",
     "name_en": "Grain Offering",
     "desc": "以細麵、油、乳香（不可有酵和蜜）獻上的祭，常伴隨燔祭，表以勞作成果感恩奉獻給神。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "cat": "fest"
   },
   "平安祭": {
     "type": "concept",
     "name": "平安祭",
     "name_en": "Peace Offering",
     "desc": "又稱酬恩祭，獻後祭肉由獻者與祭司分享同吃，表與神與人和好相交，含感謝、還願、甘心三類。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "cat": "fest"
   },
   "贖罪祭": {
     "type": "concept",
@@ -662,49 +670,56 @@
     "name_en": "Sin Offering",
     "desc": "為無心干犯神誡命而獻的祭，藉牲畜的血贖去罪污，使人得潔淨、與神復和。",
     "verses": "利未記",
-    "testament": "both"
+    "testament": "both",
+    "cat": "fest"
   },
   "贖愆祭": {
     "type": "concept",
     "name": "贖愆祭",
     "name_en": "Guilt Offering",
     "desc": "為侵犯聖物或虧負他人而獻的祭，除獻牲外須加倍償還所虧之物，強調賠補與認罪。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "cat": "fest"
   },
   "火祭": {
     "type": "concept",
     "name": "火祭",
     "name_en": "Offering by Fire",
     "desc": "凡以火焚燒、騰作馨香獻與耶和華之祭的統稱，涵蓋燔祭、素祭等。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "cat": "fest"
   },
   "搖祭": {
     "type": "concept",
     "name": "搖祭",
     "name_en": "Wave Offering",
     "desc": "祭司將祭物在耶和華面前搖動以示獻上、再歸祭司食用的禮儀，多用於平安祭的胸。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "cat": "fest"
   },
   "舉祭": {
     "type": "concept",
     "name": "舉祭",
     "name_en": "Heave Offering",
     "desc": "從祭物或收成中分別舉起、獻歸耶和華與祭司的部分，如平安祭的右腿。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "cat": "fest"
   },
   "奠祭": {
     "type": "concept",
     "name": "奠祭",
     "name_en": "Drink Offering",
     "desc": "將酒澆奠在壇上、伴隨燔祭與素祭獻上的祭，表傾倒生命為奉獻。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "cat": "fest"
   },
   "安息日": {
     "type": "concept",
     "name": "安息日",
     "name_en": "Sabbath",
     "desc": "七日的第七日，神創造後安息並定為聖。以色列人當日停工敬拜，是與神立約的記號。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "cat": "fest"
   },
   "贖罪日": {
     "type": "concept",
@@ -712,7 +727,8 @@
     "name_en": "Day of Atonement",
     "desc": "七月初十的至聖節期，大祭司一年一度進至聖所為全民贖罪，並將罪歸於歸阿撒瀉勒的羊。",
     "verses": "利未記",
-    "testament": "both"
+    "testament": "both",
+    "cat": "fest"
   },
   "逾越節": {
     "type": "concept",
@@ -720,42 +736,48 @@
     "name_en": "Passover",
     "desc": "正月十四紀念出埃及時神越過以色列人的家、擊殺埃及長子之夜，宰羔抹血、吃無酵餅的節期。",
     "verses": "利未記",
-    "testament": "both"
+    "testament": "both",
+    "cat": "fest"
   },
   "除酵節": {
     "type": "concept",
     "name": "除酵節",
     "name_en": "Unleavened Bread",
     "desc": "緊接逾越節的七日節期，期間除盡家中的酵、只吃無酵餅，紀念匆忙出埃及。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "cat": "fest"
   },
   "五旬節": {
     "type": "concept",
     "name": "五旬節",
     "name_en": "Pentecost",
     "desc": "又稱七七節，逾越後第五十日的收割初熟節期；新約中聖靈於此日降臨教會。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "cat": "fest"
   },
   "住棚節": {
     "type": "concept",
     "name": "住棚節",
     "name_en": "Tabernacles",
     "desc": "七月的收藏節期，以色列人住棚七日，紀念曠野漂流神的看顧，也是感謝秋收的歡樂節。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "cat": "fest"
   },
   "吹角節": {
     "type": "concept",
     "name": "吹角節",
     "name_en": "Trumpets",
     "desc": "七月初一吹角為號的聖會，標誌節期之始與民眾的聚集敬拜。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "cat": "fest"
   },
   "禧年": {
     "type": "concept",
     "name": "禧年",
     "name_en": "Jubilee",
     "desc": "每五十年一次的聖年，土地休耕、地業歸還原主、奴僕得釋放，體現神對公義與自由的安排。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "cat": "fest"
   },
   "會幕": {
     "type": "concept",
@@ -763,7 +785,8 @@
     "name_en": "Tabernacle",
     "desc": "以色列曠野時期的活動聖所，按神所示樣式而造，是神與百姓相會、獻祭敬拜之處。",
     "verses": "利未記",
-    "testament": "both"
+    "testament": "both",
+    "cat": "holy"
   },
   "約櫃": {
     "type": "concept",
@@ -771,21 +794,24 @@
     "name_en": "Ark of the Covenant",
     "desc": "安放法版的鍍金木櫃，置於至聖所，上有施恩座與基路伯，象徵神的同在與寶座。",
     "verses": "利未記",
-    "testament": "both"
+    "testament": "both",
+    "cat": "holy"
   },
   "至聖所": {
     "type": "concept",
     "name": "至聖所",
     "name_en": "Holy of Holies",
     "desc": "會幕（聖殿）最內層的密室，安放約櫃，惟大祭司於贖罪日得入，代表神最聖的同在。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "cat": "holy"
   },
   "聖所": {
     "type": "concept",
     "name": "聖所",
     "name_en": "Holy Place",
     "desc": "會幕中陳設陳設餅桌、金燈臺、香壇之室，祭司每日於此供職，內接至聖所。",
-    "verses": "利未記"
+    "verses": "利未記",
+    "cat": "holy"
   },
   "大祭司": {
     "type": "concept",
@@ -793,7 +819,8 @@
     "name_en": "High Priest",
     "desc": "祭司之長，惟亞倫家世襲，獨能於贖罪日進至聖所為全民贖罪，是神人之間的中保。",
     "verses": "利未記",
-    "testament": "both"
+    "testament": "both",
+    "cat": "role"
   },
   "利未人": {
     "type": "concept",
@@ -801,7 +828,8 @@
     "name_en": "Levites",
     "desc": "利未支派的人，蒙分別出來在會幕、聖殿中供職、協助祭司、管理聖物，不分地業而靠供物為生。",
     "verses": "利未記",
-    "testament": "both"
+    "testament": "both",
+    "cat": "role"
   },
   "亞倫": {
     "type": "person",
@@ -1327,7 +1355,8 @@
     "name_en": "Pharaoh",
     "testament": "both",
     "desc": "埃及君王的稱號，非特指一人。聖經中多位「法老」以此稱呼出現，從亞伯拉罕時代到出埃及記均有記載。",
-    "verses": "創世記、出埃及記"
+    "verses": "創世記、出埃及記",
+    "cat": "role"
   },
   "他拉": {
     "type": "person",
@@ -1685,7 +1714,8 @@
     "name_en": "Circumcision",
     "testament": "both",
     "desc": "神與亞伯拉罕立約的記號，要求所有男性後裔在出生後第八日受割。是以色列民族身分的標誌，新約中保羅指出其真正意義在於心的改變。",
-    "verses": "創世記17章"
+    "verses": "創世記17章",
+    "cat": "fest"
   },
   "嗎哪": {
     "type": "concept",
@@ -1693,7 +1723,8 @@
     "name_en": "Manna",
     "testament": "both",
     "desc": "以色列人在曠野漂流四十年間，神每天早晨賜下的食物，形如白霜、味如蜜餅。安息日前加倍降下，其他日子不可留到隔日，象徵每日依靠神。",
-    "verses": "出埃及記16章"
+    "verses": "出埃及記16章",
+    "cat": "holy"
   },
   "十誡": {
     "type": "concept",
@@ -1701,7 +1732,8 @@
     "name_en": "Ten Commandments",
     "testament": "both",
     "desc": "神在西奈山親自寫在石版上頒給摩西的十條誡命，是以色列與神立約的核心律法，分為對神的責任（前四條）與對人的責任（後六條）。",
-    "verses": "出埃及記20章、申命記5章"
+    "verses": "出埃及記20章、申命記5章",
+    "cat": "holy"
   },
   "約版": {
     "type": "concept",
@@ -1709,7 +1741,8 @@
     "name_en": "Tablets of the Covenant",
     "testament": "OT",
     "desc": "神親手刻寫十誡的兩塊石版，收藏在約櫃中。摩西第一次下山見百姓拜金牛犢，憤而摔碎，後神再次賜下第二塊石版。",
-    "verses": "出埃及記31-32、34章"
+    "verses": "出埃及記31-32、34章",
+    "cat": "holy"
   },
   "施恩座": {
     "type": "concept",
@@ -1717,7 +1750,8 @@
     "name_en": "Mercy Seat",
     "testament": "OT",
     "desc": "覆蓋約櫃頂端的純金蓋板，兩端各有一基路伯展翅相對。是神與摩西相會說話的地方，也是大祭司在贖罪日灑血的聖所核心。",
-    "verses": "出埃及記25:17-22"
+    "verses": "出埃及記25:17-22",
+    "cat": "holy"
   },
   "幔子": {
     "type": "concept",
@@ -1725,7 +1759,8 @@
     "name_en": "Veil",
     "testament": "OT",
     "desc": "會幕（後為聖殿）中隔開聖所與至聖所的厚重簾子，象徵人與神之間的阻隔。耶穌受難時此幔子從上到下裂為兩半，象徵進入神面前的通道開啟。",
-    "verses": "出埃及記26:31-33"
+    "verses": "出埃及記26:31-33",
+    "cat": "holy"
   },
   "彼得": {
     "type": "person",
@@ -1999,28 +2034,32 @@
     "name": "法利賽人",
     "name_en": "Pharisees",
     "testament": "NT",
-    "desc": "猶太宗教黨派，嚴守律法與傳統，常與耶穌辯論。"
+    "desc": "猶太宗教黨派，嚴守律法與傳統，常與耶穌辯論。",
+    "cat": "people"
   },
   "撒都該人": {
     "type": "concept",
     "name": "撒都該人",
     "name_en": "Sadducees",
     "testament": "NT",
-    "desc": "猶太祭司貴族黨派，不信復活，掌管聖殿事務。"
+    "desc": "猶太祭司貴族黨派，不信復活，掌管聖殿事務。",
+    "cat": "people"
   },
   "文士": {
     "type": "concept",
     "name": "文士",
     "name_en": "Scribes",
     "testament": "both",
-    "desc": "抄寫並解釋律法的專業人員。OT 時期為書記官，NT 時期成為律法教師階層，常與法利賽人並列對抗耶穌。"
+    "desc": "抄寫並解釋律法的專業人員。OT 時期為書記官，NT 時期成為律法教師階層，常與法利賽人並列對抗耶穌。",
+    "cat": "role"
   },
   "稅吏": {
     "type": "concept",
     "name": "稅吏",
     "name_en": "Tax Collector",
     "testament": "NT",
-    "desc": "為羅馬政府向猶太人徵稅者，被視為叛徒與罪人。"
+    "desc": "為羅馬政府向猶太人徵稅者，被視為叛徒與罪人。",
+    "cat": "role"
   },
   "安提阿": {
     "type": "place",
@@ -2292,34 +2331,39 @@
     "type": "concept",
     "name": "詩篇",
     "name_en": "Psalms",
-    "desc": "共一百五十首讚美詩與祈禱詞，多由大衛所作，是以色列敬拜核心。"
+    "desc": "共一百五十首讚美詩與祈禱詞，多由大衛所作，是以色列敬拜核心。",
+    "cat": "theo"
   },
   "箴言": {
     "type": "concept",
     "name": "箴言",
     "name_en": "Proverbs",
-    "desc": "所羅門王主編的智慧文集，以短句形式教導敬畏神的生活智慧。"
+    "desc": "所羅門王主編的智慧文集，以短句形式教導敬畏神的生活智慧。",
+    "cat": "theo"
   },
   "聖靈": {
     "type": "concept",
     "name": "聖靈",
     "name_en": "Holy Spirit",
     "testament": "both",
-    "desc": "神的靈，在 OT 已臨到先知與君王，NT 五旬節後降臨所有信徒，三位一體中的第三位格。"
+    "desc": "神的靈，在 OT 已臨到先知與君王，NT 五旬節後降臨所有信徒，三位一體中的第三位格。",
+    "cat": "theo"
   },
   "使徒": {
     "type": "concept",
     "name": "使徒",
     "name_en": "Apostle",
     "testament": "NT",
-    "desc": "被耶穌差派的十二門徒，廣義指被教會差出宣教者，如保羅也稱使徒。"
+    "desc": "被耶穌差派的十二門徒，廣義指被教會差出宣教者，如保羅也稱使徒。",
+    "cat": "role"
   },
   "會堂": {
     "type": "concept",
     "name": "會堂",
     "name_en": "Synagogue",
     "testament": "both",
-    "desc": "猶太人地方聚會所，用於讀律法書、禱告，被擄後廣設各地。"
+    "desc": "猶太人地方聚會所，用於讀律法書、禱告，被擄後廣設各地。",
+    "cat": "theo"
   },
   "聖殿": {
     "type": "place",
@@ -2333,7 +2377,8 @@
     "name": "拿細耳",
     "name_en": "Nazirite",
     "testament": "OT",
-    "desc": "向神許特別誓願者，禁酒、不剃頭、不近屍體，如參孫、撒母耳。"
+    "desc": "向神許特別誓願者，禁酒、不剃頭、不近屍體，如參孫、撒母耳。",
+    "cat": "people"
   },
   "保羅": {
     "type": "person",
@@ -2456,7 +2501,8 @@
     "type": "concept",
     "name": "啟示錄",
     "name_en": "Revelation",
-    "desc": "約翰在拔摩島所得異象，記錄末世審判、新天新地的預言性書卷。"
+    "desc": "約翰在拔摩島所得異象，記錄末世審判、新天新地的預言性書卷。",
+    "cat": "theo"
   },
   "七印": {
     "type": "concept",
@@ -2466,7 +2512,8 @@
     "books": [
       "啟示錄"
     ],
-    "desc": "啟示錄中羔羊依次開啟的神秘封印，開啟後帶出審判與末世事件。"
+    "desc": "啟示錄中羔羊依次開啟的神秘封印，開啟後帶出審判與末世事件。",
+    "cat": "theo"
   },
   "耶羅波安": [
     {
@@ -2674,21 +2721,24 @@
     "name": "恩賜",
     "name_en": "Spiritual Gifts",
     "testament": "NT",
-    "desc": "聖靈所賜的超自然能力，如說方言、醫病、先知等，用於造就教會。"
+    "desc": "聖靈所賜的超自然能力，如說方言、醫病、先知等，用於造就教會。",
+    "cat": "theo"
   },
   "洗禮": {
     "type": "concept",
     "name": "洗禮",
     "name_en": "Baptism",
     "testament": "NT",
-    "desc": "基督徒入教的水禮，象徵舊我死去、新生命開始，與基督同死同復活。"
+    "desc": "基督徒入教的水禮，象徵舊我死去、新生命開始，與基督同死同復活。",
+    "cat": "fest"
   },
   "聖餐": {
     "type": "concept",
     "name": "聖餐",
     "name_en": "Lord's Supper",
     "testament": "NT",
-    "desc": "耶穌設立的紀念禮，以餅象徵身體、杯象徵血，記念主直到他再來。"
+    "desc": "耶穌設立的紀念禮，以餅象徵身體、杯象徵血，記念主直到他再來。",
+    "cat": "fest"
   },
   "拿單": {
     "type": "person",
@@ -2748,7 +2798,8 @@
     "name": "祭司",
     "name_en": "Priest",
     "testament": "both",
-    "desc": "代表人民在神前事奉者。OT 指亞倫子孫，主持獻祭守護聖殿；NT 書信中指信徒都是「祭司」，耶穌是大祭司。"
+    "desc": "代表人民在神前事奉者。OT 指亞倫子孫，主持獻祭守護聖殿；NT 書信中指信徒都是「祭司」，耶穌是大祭司。",
+    "cat": "role"
   },
   "迦南地": {
     "type": "place",
@@ -2772,71 +2823,82 @@
     "name": "稱義",
     "name_en": "Justification",
     "testament": "NT",
-    "desc": "神宣告罪人為義的行動，因信基督而得，非靠行為，是羅馬書核心主題。"
+    "desc": "神宣告罪人為義的行動，因信基督而得，非靠行為，是羅馬書核心主題。",
+    "cat": "theo"
   },
   "成聖": {
     "type": "concept",
     "name": "成聖",
     "name_en": "Sanctification",
     "testament": "NT",
-    "desc": "信徒因聖靈工作而逐漸脫離罪、更像基督的生命過程。"
+    "desc": "信徒因聖靈工作而逐漸脫離罪、更像基督的生命過程。",
+    "cat": "theo"
   },
   "得救": {
     "type": "concept",
     "name": "得救",
     "name_en": "Salvation",
     "testament": "NT",
-    "desc": "脫離罪的懲罰與權勢，因信靠基督的救贖而得永生的恩典。"
+    "desc": "脫離罪的懲罰與權勢，因信靠基督的救贖而得永生的恩典。",
+    "cat": "theo"
   },
   "救贖": {
     "type": "concept",
     "name": "救贖",
     "name_en": "Redemption",
-    "desc": "以代價買回奴隸或罪人，基督以死作贖價將人從罪中買回給神。"
+    "desc": "以代價買回奴隸或罪人，基督以死作贖價將人從罪中買回給神。",
+    "cat": "theo"
   },
   "彌賽亞": {
     "type": "concept",
     "name": "彌賽亞",
     "name_en": "Messiah",
-    "desc": "希伯來文「受膏者」，指神應許的救主，基督徒相信耶穌即應驗這預言。"
+    "desc": "希伯來文「受膏者」，指神應許的救主，基督徒相信耶穌即應驗這預言。",
+    "cat": "theo"
   },
   "先知": {
     "type": "concept",
     "name": "先知",
     "name_en": "Prophet",
     "desc": "代神傳話者，宣告神的旨意、指責罪惡、預言未來，不一定只指預言。",
-    "testament": "both"
+    "testament": "both",
+    "cat": "role"
   },
   "天使": {
     "type": "concept",
     "name": "天使",
     "name_en": "Angel",
     "desc": "神的使者，形態多樣，執行傳信、護衛、審判等任務，常在重要時刻出現。",
-    "testament": "both"
+    "testament": "both",
+    "cat": "theo"
   },
   "魔鬼": {
     "type": "concept",
     "name": "魔鬼",
     "name_en": "Devil/Satan",
-    "desc": "撒但的別稱，「誹謗者」，試探耶穌、敵對神的計劃、逼迫信徒的靈界惡者。"
+    "desc": "撒但的別稱，「誹謗者」，試探耶穌、敵對神的計劃、逼迫信徒的靈界惡者。",
+    "cat": "theo"
   },
   "撒但": {
     "type": "concept",
     "name": "撒但",
     "name_en": "Satan",
-    "desc": "「敵對者」，在約伯記中出現，新約描述為世界的王、試探人的惡者。"
+    "desc": "「敵對者」，在約伯記中出現，新約描述為世界的王、試探人的惡者。",
+    "cat": "theo"
   },
   "律法": {
     "type": "concept",
     "name": "律法",
     "name_en": "Law (Torah)",
-    "desc": "摩西五書及神所頒布的誡命，猶太人生活規範，保羅探討其與恩典的關係。"
+    "desc": "摩西五書及神所頒布的誡命，猶太人生活規範，保羅探討其與恩典的關係。",
+    "cat": "theo"
   },
   "應許之地": {
     "type": "concept",
     "name": "應許之地",
     "name_en": "Promised Land",
-    "desc": "神應許給亞伯拉罕後裔的迦南地，以色列人用四十年曠野旅程才進入。"
+    "desc": "神應許給亞伯拉罕後裔的迦南地，以色列人用四十年曠野旅程才進入。",
+    "cat": "theo"
   },
   "亞居拉": {
     "type": "person",
@@ -2896,7 +2958,8 @@
     "name": "新耶路撒冷",
     "name_en": "New Jerusalem",
     "testament": "NT",
-    "desc": "啟示錄末章從天降下的聖城，象徵神與人同住的完美永恆國度。"
+    "desc": "啟示錄末章從天降下的聖城，象徵神與人同住的完美永恆國度。",
+    "cat": "theo"
   },
   "約旦": {
     "type": "place",
@@ -3113,21 +3176,24 @@
     "books": [
       "以西結書"
     ],
-    "desc": "以西結異象中枯乾的骸骨，神使其復活，象徵以色列民族的復興。"
+    "desc": "以西結異象中枯乾的骸骨，神使其復活，象徵以色列民族的復興。",
+    "cat": "theo"
   },
   "長老": {
     "type": "concept",
     "name": "長老",
     "name_en": "Elder",
     "testament": "both",
-    "desc": "社群或宗教領袖。OT 指部族長老；NT 指教會監督，保羅書信列明其品格要求；啟示錄中二十四位長老環繞神的寶座。"
+    "desc": "社群或宗教領袖。OT 指部族長老；NT 指教會監督，保羅書信列明其品格要求；啟示錄中二十四位長老環繞神的寶座。",
+    "cat": "role"
   },
   "執事": {
     "type": "concept",
     "name": "執事",
     "name_en": "Deacon",
     "testament": "NT",
-    "desc": "教會服事職分，初代教會設立七人分擔門徒的日常服務工作。"
+    "desc": "教會服事職分，初代教會設立七人分擔門徒的日常服務工作。",
+    "cat": "role"
   },
   "哥羅西": {
     "type": "place",
@@ -3229,7 +3295,8 @@
     "type": "concept",
     "name": "長子",
     "name_en": "Firstborn",
-    "desc": "長子在以色列文化中享有雙份遺業的繼承權，象徵首先和最尊貴的地位。"
+    "desc": "長子在以色列文化中享有雙份遺業的繼承權，象徵首先和最尊貴的地位。",
+    "cat": "role"
   },
   "銅蛇": {
     "type": "concept",
@@ -3238,26 +3305,30 @@
     "books": [
       "民數記"
     ],
-    "desc": "摩西在曠野舉起的銅蛇，凡被毒蛇咬的仰望它就得活，耶穌引申為自己。"
+    "desc": "摩西在曠野舉起的銅蛇，凡被毒蛇咬的仰望它就得活，耶穌引申為自己。",
+    "cat": "holy"
   },
   "十二支派": {
     "type": "concept",
     "name": "十二支派",
     "name_en": "Twelve Tribes",
-    "desc": "雅各十二子為祖先的以色列十二個支派，合稱以色列民族的完整組成。"
+    "desc": "雅各十二子為祖先的以色列十二個支派，合稱以色列民族的完整組成。",
+    "cat": "theo"
   },
   "外邦人": {
     "type": "concept",
     "name": "外邦人",
     "name_en": "Gentiles",
-    "desc": "非以色列人統稱，新約中保羅被差往外邦人中傳福音，打破民族界限。"
+    "desc": "非以色列人統稱，新約中保羅被差往外邦人中傳福音，打破民族界限。",
+    "cat": "people"
   },
   "拿細耳人": {
     "type": "concept",
     "name": "拿細耳人",
     "name_en": "Nazirite",
     "testament": "OT",
-    "desc": "向神許願歸聖者，不喝酒、不剪頭髮、不近死物，如參孫、撒母耳。"
+    "desc": "向神許願歸聖者，不喝酒、不剪頭髮、不近死物，如參孫、撒母耳。",
+    "cat": "people"
   },
   "示羅": {
     "type": "place",
@@ -3567,7 +3638,8 @@
     "name": "耶和華",
     "name_en": "Yahweh",
     "desc": "以色列人的上帝，猶太教中的全能神",
-    "testament": "OT"
+    "testament": "OT",
+    "cat": "theo"
   },
   "耶穌": {
     "type": "person",
@@ -3588,7 +3660,8 @@
     "name": "人子",
     "name_en": "Son of Man",
     "desc": "耶穌基督的稱號，代表祂的神性和人性",
-    "testament": "NT"
+    "testament": "NT",
+    "cat": "theo"
   },
   "以色列眾人": {
     "type": "person",
@@ -3602,14 +3675,16 @@
     "name": "律例",
     "name_en": "Law",
     "desc": "指上帝給以色列人的律法和規條",
-    "testament": "OT"
+    "testament": "OT",
+    "cat": "theo"
   },
   "誡命": {
     "type": "concept",
     "name": "誡命",
     "name_en": "Commandments",
     "desc": "上帝給以色列人的律法",
-    "testament": "OT"
+    "testament": "OT",
+    "cat": "theo"
   },
   "亞摩利人": {
     "type": "place",
@@ -3623,7 +3698,8 @@
     "name": "舍客勒",
     "name_en": "Shekel",
     "desc": "古代以色列的重量和貨幣單位",
-    "testament": "OT"
+    "testament": "OT",
+    "cat": "measure"
   },
   "以色列人": {
     "type": "place",
@@ -3889,672 +3965,768 @@
     "name": "胸牌",
     "name_en": "Breastpiece",
     "testament": "OT",
-    "desc": "大祭司佩於胸前的方形聖物，鑲十二寶石代表以色列十二支派，內裝烏陵和土明，用以為民求問神的旨意，又稱「決斷的胸牌」。"
+    "desc": "大祭司佩於胸前的方形聖物，鑲十二寶石代表以色列十二支派，內裝烏陵和土明，用以為民求問神的旨意，又稱「決斷的胸牌」。",
+    "cat": "holy"
   },
   "烏陵": {
     "type": "concept",
     "name": "烏陵",
     "name_en": "Urim",
     "testament": "OT",
-    "desc": "放在大祭司胸牌內的聖物，與土明並用，是古以色列求問神旨意、判斷是非的器具。確切形制已不可考。"
+    "desc": "放在大祭司胸牌內的聖物，與土明並用，是古以色列求問神旨意、判斷是非的器具。確切形制已不可考。",
+    "cat": "holy"
   },
   "土明": {
     "type": "concept",
     "name": "土明",
     "name_en": "Thummim",
     "testament": "OT",
-    "desc": "與烏陵並用、放在大祭司胸牌內的聖物，用於在神面前抽籤式地求問是非吉凶。「烏陵土明」常並稱。"
+    "desc": "與烏陵並用、放在大祭司胸牌內的聖物，用於在神面前抽籤式地求問是非吉凶。「烏陵土明」常並稱。",
+    "cat": "holy"
   },
   "以弗得": {
     "type": "concept",
     "name": "以弗得",
     "name_en": "Ephod",
     "testament": "OT",
-    "desc": "大祭司所穿的聖服，金藍紫朱線織成的背心式外袍，雙肩有刻十二支派名的瑪瑙，胸牌即繫於其上。"
+    "desc": "大祭司所穿的聖服，金藍紫朱線織成的背心式外袍，雙肩有刻十二支派名的瑪瑙，胸牌即繫於其上。",
+    "cat": "holy"
   },
   "聖衣": {
     "type": "concept",
     "name": "聖衣",
     "name_en": "Holy Garments",
     "testament": "OT",
-    "desc": "祭司在聖所事奉時專穿的聖潔禮服，包括以弗得、外袍、胸牌、冠冕等，為榮耀華美而造、分別為聖。"
+    "desc": "祭司在聖所事奉時專穿的聖潔禮服，包括以弗得、外袍、胸牌、冠冕等，為榮耀華美而造、分別為聖。",
+    "cat": "holy"
   },
   "外袍": {
     "type": "concept",
     "name": "外袍",
     "name_en": "Robe of the Ephod",
     "testament": "OT",
-    "desc": "大祭司穿在以弗得內的藍色長袍，袍邊綴金鈴鐺與石榴，進聖所時聲音可聞，免得死亡。"
+    "desc": "大祭司穿在以弗得內的藍色長袍，袍邊綴金鈴鐺與石榴，進聖所時聲音可聞，免得死亡。",
+    "cat": "holy"
   },
   "冠冕": {
     "type": "concept",
     "name": "冠冕",
     "name_en": "Turban/Crown",
     "testament": "OT",
-    "desc": "大祭司頭上的細麻布頂冠，前面繫一面刻著「歸耶和華為聖」的精金牌，又稱聖冠。"
+    "desc": "大祭司頭上的細麻布頂冠，前面繫一面刻著「歸耶和華為聖」的精金牌，又稱聖冠。",
+    "cat": "holy"
   },
   "聖冠": {
     "type": "concept",
     "name": "聖冠",
     "name_en": "Holy Crown",
     "testament": "OT",
-    "desc": "大祭司冠冕前的精金牌，刻「歸耶和華為聖」，戴在額上，承擔聖物所獻的罪愆，使供物蒙悅納。"
+    "desc": "大祭司冠冕前的精金牌，刻「歸耶和華為聖」，戴在額上，承擔聖物所獻的罪愆，使供物蒙悅納。",
+    "cat": "holy"
   },
   "金燈臺": {
     "type": "concept",
     "name": "金燈臺",
     "name_en": "Golden Lampstand",
     "testament": "OT",
-    "desc": "聖所中純金打造的七枝燈臺，造型如杏花，由祭司每日添油點燈，象徵神的同在與光。"
+    "desc": "聖所中純金打造的七枝燈臺，造型如杏花，由祭司每日添油點燈，象徵神的同在與光。",
+    "cat": "holy"
   },
   "燈臺": {
     "type": "concept",
     "name": "燈臺",
     "name_en": "Lampstand",
     "testament": "OT",
-    "desc": "聖所內純金的七枝燈臺，每日點燈不熄，象徵神面前長明的光。又稱金燈臺。"
+    "desc": "聖所內純金的七枝燈臺，每日點燈不熄，象徵神面前長明的光。又稱金燈臺。",
+    "cat": "holy"
   },
   "陳設餅": {
     "type": "concept",
     "name": "陳設餅",
     "name_en": "Bread of the Presence",
     "testament": "OT",
-    "desc": "聖所金桌上常擺的十二個無酵餅，代表十二支派，每安息日更換，舊餅歸祭司吃，象徵神與民同在。"
+    "desc": "聖所金桌上常擺的十二個無酵餅，代表十二支派，每安息日更換，舊餅歸祭司吃，象徵神與民同在。",
+    "cat": "holy"
   },
   "香壇": {
     "type": "concept",
     "name": "香壇",
     "name_en": "Altar of Incense",
     "testament": "OT",
-    "desc": "聖所內包金的小壇，祭司早晚在其上燒香，香煙上騰象徵百姓的禱告達到神前。又稱金香壇。"
+    "desc": "聖所內包金的小壇，祭司早晚在其上燒香，香煙上騰象徵百姓的禱告達到神前。又稱金香壇。",
+    "cat": "holy"
   },
   "銅祭壇": {
     "type": "concept",
     "name": "銅祭壇",
     "name_en": "Bronze Altar",
     "testament": "OT",
-    "desc": "會幕院中包銅的祭壇，用以獻燔祭與各樣祭牲，是百姓親近神、贖罪獻祭的所在。"
+    "desc": "會幕院中包銅的祭壇，用以獻燔祭與各樣祭牲，是百姓親近神、贖罪獻祭的所在。",
+    "cat": "holy"
   },
   "洗濯盆": {
     "type": "concept",
     "name": "洗濯盆",
     "name_en": "Bronze Basin",
     "testament": "OT",
-    "desc": "會幕中盛水的銅盆，祭司進聖所或上壇事奉前必先在此洗手洗腳，象徵事奉前的潔淨。"
+    "desc": "會幕中盛水的銅盆，祭司進聖所或上壇事奉前必先在此洗手洗腳，象徵事奉前的潔淨。",
+    "cat": "holy"
   },
   "聖膏油": {
     "type": "concept",
     "name": "聖膏油",
     "name_en": "Holy Anointing Oil",
     "testament": "OT",
-    "desc": "用沒藥、桂皮等香料與橄欖油調成的聖油，用以膏抹會幕、器具與祭司，使之分別為聖，不可仿製私用。"
+    "desc": "用沒藥、桂皮等香料與橄欖油調成的聖油，用以膏抹會幕、器具與祭司，使之分別為聖，不可仿製私用。",
+    "cat": "fest"
   },
   "膏油": {
     "type": "concept",
     "name": "膏油",
     "name_en": "Anointing Oil",
     "testament": "OT",
-    "desc": "膏抹聖物、祭司與君王的油，象徵被神分別為聖、領受職分與聖靈的恩膏。"
+    "desc": "膏抹聖物、祭司與君王的油，象徵被神分別為聖、領受職分與聖靈的恩膏。",
+    "cat": "fest"
   },
   "阿撒瀉勒": {
     "type": "concept",
     "name": "阿撒瀉勒（歸與之羊）",
     "name_en": "Azazel/Scapegoat",
     "testament": "OT",
-    "desc": "贖罪日兩隻公山羊中歸阿撒瀉勒的一隻，大祭司按手認以色列的罪於其上，放逐曠野，象徵罪被擔當、除去。"
+    "desc": "贖罪日兩隻公山羊中歸阿撒瀉勒的一隻，大祭司按手認以色列的罪於其上，放逐曠野，象徵罪被擔當、除去。",
+    "cat": "fest"
   },
   "安息年": {
     "type": "concept",
     "name": "安息年",
     "name_en": "Sabbath Year",
     "testament": "OT",
-    "desc": "每七年一次讓土地停耕休息的年份，地裡自長的歸窮人與牲畜，並豁免債務，效法安息日的原則。"
+    "desc": "每七年一次讓土地停耕休息的年份，地裡自長的歸窮人與牲畜，並豁免債務，效法安息日的原則。",
+    "cat": "fest"
   },
   "瑪瑙": {
     "type": "concept",
     "name": "瑪瑙",
     "name_en": "Onyx",
     "testament": "OT",
-    "desc": "一種寶石，刻上以色列十二支派的名字，鑲在大祭司以弗得的兩肩，使他帶著支派名常到神前記念。"
+    "desc": "一種寶石，刻上以色列十二支派的名字，鑲在大祭司以弗得的兩肩，使他帶著支派名常到神前記念。",
+    "cat": "gem"
   },
   "沒藥": {
     "type": "concept",
     "name": "沒藥",
     "name_en": "Myrrh",
     "testament": "both",
-    "desc": "從沒藥樹脂提煉的珍貴香料，氣味芬芳，用於聖膏油、香水與屍體防腐。博士獻給嬰孩耶穌的禮物之一，預表他的受死。"
+    "desc": "從沒藥樹脂提煉的珍貴香料，氣味芬芳，用於聖膏油、香水與屍體防腐。博士獻給嬰孩耶穌的禮物之一，預表他的受死。",
+    "cat": "plant"
   },
   "乳香": {
     "type": "concept",
     "name": "乳香",
     "name_en": "Frankincense",
     "testament": "both",
-    "desc": "乳香樹的芳香樹脂，燃燒時香氣濃郁，用於聖殿燒香與素祭，象徵禱告與敬拜。博士獻給耶穌的三禮之一。"
+    "desc": "乳香樹的芳香樹脂，燃燒時香氣濃郁，用於聖殿燒香與素祭，象徵禱告與敬拜。博士獻給耶穌的三禮之一。",
+    "cat": "plant"
   },
   "哪噠": {
     "type": "concept",
     "name": "哪噠",
     "name_en": "Nard/Spikenard",
     "testament": "both",
-    "desc": "從喜馬拉雅甘松提煉的極珍貴香膏，價值不菲。馬利亞曾用一瓶真哪噠香膏抹耶穌，預備他的安葬。"
+    "desc": "從喜馬拉雅甘松提煉的極珍貴香膏，價值不菲。馬利亞曾用一瓶真哪噠香膏抹耶穌，預備他的安葬。",
+    "cat": "plant"
   },
   "真哪噠": {
     "type": "concept",
     "name": "真哪噠",
     "name_en": "Pure Nard",
     "testament": "NT",
-    "desc": "純正未摻雜的哪噠香膏，價值約一年工資。伯大尼的馬利亞打破玉瓶，澆在耶穌身上膏他。"
+    "desc": "純正未摻雜的哪噠香膏，價值約一年工資。伯大尼的馬利亞打破玉瓶，澆在耶穌身上膏他。",
+    "cat": "plant"
   },
   "桂皮": {
     "type": "concept",
     "name": "桂皮",
     "name_en": "Cassia",
     "testament": "OT",
-    "desc": "肉桂類樹皮製成的香料，是調製聖膏油的成分之一，氣味芬芳。"
+    "desc": "肉桂類樹皮製成的香料，是調製聖膏油的成分之一，氣味芬芳。",
+    "cat": "plant"
   },
   "肉桂": {
     "type": "concept",
     "name": "肉桂",
     "name_en": "Cinnamon",
     "testament": "both",
-    "desc": "芳香的樹皮香料，是聖膏油的成分之一，也用作香水，貴重而芬芳。"
+    "desc": "芳香的樹皮香料，是聖膏油的成分之一，也用作香水，貴重而芬芳。",
+    "cat": "plant"
   },
   "菖蒲": {
     "type": "concept",
     "name": "菖蒲",
     "name_en": "Calamus",
     "testament": "OT",
-    "desc": "一種帶香氣的蘆葦類植物根莖，是調製聖膏油的香料成分之一。"
+    "desc": "一種帶香氣的蘆葦類植物根莖，是調製聖膏油的香料成分之一。",
+    "cat": "plant"
   },
   "牛膝草": {
     "type": "concept",
     "name": "牛膝草",
     "name_en": "Hyssop",
     "testament": "both",
-    "desc": "一種小灌木，枝葉用於潔淨禮儀：逾越節塗血、潔淨大痲瘋與沾染者灑水。耶穌被釘時也以牛膝草遞醋。"
+    "desc": "一種小灌木，枝葉用於潔淨禮儀：逾越節塗血、潔淨大痲瘋與沾染者灑水。耶穌被釘時也以牛膝草遞醋。",
+    "cat": "plant"
   },
   "風茄": {
     "type": "concept",
     "name": "風茄",
     "name_en": "Mandrake",
     "testament": "OT",
-    "desc": "一種結黃色果實的植物，古人相信能助孕。創世記中利亞與拉結曾為風茄相爭。"
+    "desc": "一種結黃色果實的植物，古人相信能助孕。創世記中利亞與拉結曾為風茄相爭。",
+    "cat": "plant"
   },
   "芥菜種": {
     "type": "concept",
     "name": "芥菜種",
     "name_en": "Mustard Seed",
     "testament": "NT",
-    "desc": "百種子裡最小的一種，長成卻比菜都大。耶穌以它比喻天國與信心：微小卻能成長壯大。"
+    "desc": "百種子裡最小的一種，長成卻比菜都大。耶穌以它比喻天國與信心：微小卻能成長壯大。",
+    "cat": "plant"
   },
   "無酵餅": {
     "type": "concept",
     "name": "無酵餅",
     "name_en": "Unleavened Bread",
     "testament": "both",
-    "desc": "不加酵迅速烤成的餅，紀念以色列出埃及匆忙無暇發麵。逾越節期間七日只吃無酵餅，酵象徵罪。"
+    "desc": "不加酵迅速烤成的餅，紀念以色列出埃及匆忙無暇發麵。逾越節期間七日只吃無酵餅，酵象徵罪。",
+    "cat": "plant"
   },
   "苦菜": {
     "type": "concept",
     "name": "苦菜",
     "name_en": "Bitter Herbs",
     "testament": "OT",
-    "desc": "逾越節與羊羔同吃的苦味野菜，使以色列人記念在埃及為奴的苦難。"
+    "desc": "逾越節與羊羔同吃的苦味野菜，使以色列人記念在埃及為奴的苦難。",
+    "cat": "plant"
   },
   "紅豆湯": {
     "type": "concept",
     "name": "紅豆湯",
     "name_en": "Red Stew",
     "testament": "OT",
-    "desc": "雅各所煮的紅色豆湯。以掃因飢餓，以一碗紅豆湯換掉了長子的名分，因此得名「以東」（紅）。"
+    "desc": "雅各所煮的紅色豆湯。以掃因飢餓，以一碗紅豆湯換掉了長子的名分，因此得名「以東」（紅）。",
+    "cat": "plant"
   },
   "斑鳩": {
     "type": "concept",
     "name": "斑鳩",
     "name_en": "Turtledove",
     "testament": "both",
-    "desc": "獻祭用的鳥類，是窮人獻不起牛羊時可獻的祭物。耶穌的父母獻上一對斑鳩或雛鴿為他行潔淨禮。"
+    "desc": "獻祭用的鳥類，是窮人獻不起牛羊時可獻的祭物。耶穌的父母獻上一對斑鳩或雛鴿為他行潔淨禮。",
+    "cat": "plant"
   },
   "雛鴿": {
     "type": "concept",
     "name": "雛鴿",
     "name_en": "Young Pigeon",
     "testament": "both",
-    "desc": "幼小的家鴿，與斑鳩同為窮人可獻的祭物，用於燔祭與贖罪祭、產婦潔淨禮。"
+    "desc": "幼小的家鴿，與斑鳩同為窮人可獻的祭物，用於燔祭與贖罪祭、產婦潔淨禮。",
+    "cat": "plant"
   },
   "拿他弗": {
     "type": "concept",
     "name": "拿他弗",
     "name_en": "Stacte",
     "testament": "OT",
-    "desc": "調製聖香的香料之一，一種樹脂類香膠，與施喜列、白松香、乳香同用。"
+    "desc": "調製聖香的香料之一，一種樹脂類香膠，與施喜列、白松香、乳香同用。",
+    "cat": "plant"
   },
   "肘": {
     "type": "concept",
     "name": "肘",
     "name_en": "Cubit",
     "testament": "both",
-    "desc": "古代長度單位，約手肘到指尖的距離，相當於 44–52 公分。聖經量度建築、器具、人身高常用此單位。"
+    "desc": "古代長度單位，約手肘到指尖的距離，相當於 44–52 公分。聖經量度建築、器具、人身高常用此單位。",
+    "cat": "measure"
   },
   "虎口": {
     "type": "concept",
     "name": "虎口",
     "name_en": "Span",
     "testament": "OT",
-    "desc": "長度單位，張開手掌拇指到小指尖的距離，約半肘（22–23 公分）。大祭司胸牌即一虎口見方。"
+    "desc": "長度單位，張開手掌拇指到小指尖的距離，約半肘（22–23 公分）。大祭司胸牌即一虎口見方。",
+    "cat": "measure"
   },
   "伊法": {
     "type": "concept",
     "name": "伊法",
     "name_en": "Ephah",
     "testament": "OT",
-    "desc": "乾量單位，約 22 公升，用以量穀物麵粉。一伊法等於十分之一賀梅珥。"
+    "desc": "乾量單位，約 22 公升，用以量穀物麵粉。一伊法等於十分之一賀梅珥。",
+    "cat": "measure"
   },
   "賀梅珥": {
     "type": "concept",
     "name": "賀梅珥",
     "name_en": "Homer",
     "testament": "OT",
-    "desc": "最大的乾量單位，約 220 公升，等於十伊法，原意一頭驢可馱的量。"
+    "desc": "最大的乾量單位，約 220 公升，等於十伊法，原意一頭驢可馱的量。",
+    "cat": "measure"
   },
   "歐梅珥": {
     "type": "concept",
     "name": "歐梅珥",
     "name_en": "Omer",
     "testament": "OT",
-    "desc": "小乾量單位，約 2.2 公升，是十分之一伊法。神吩咐以色列人每人每日收取一歐梅珥嗎哪。"
+    "desc": "小乾量單位，約 2.2 公升，是十分之一伊法。神吩咐以色列人每人每日收取一歐梅珥嗎哪。",
+    "cat": "measure"
   },
   "細亞": {
     "type": "concept",
     "name": "細亞",
     "name_en": "Seah",
     "testament": "both",
-    "desc": "乾量單位，約 7.3 公升，是三分之一伊法。亞伯拉罕曾吩咐撒拉拿三細亞細麵作餅待客。"
+    "desc": "乾量單位，約 7.3 公升，是三分之一伊法。亞伯拉罕曾吩咐撒拉拿三細亞細麵作餅待客。",
+    "cat": "measure"
   },
   "欣": {
     "type": "concept",
     "name": "欣",
     "name_en": "Hin",
     "testament": "OT",
-    "desc": "液量單位，約 3.6 公升，用以量酒與油，常見於獻祭的奠祭與調和素祭。"
+    "desc": "液量單位，約 3.6 公升，用以量酒與油，常見於獻祭的奠祭與調和素祭。",
+    "cat": "measure"
   },
   "罷特": {
     "type": "concept",
     "name": "罷特",
     "name_en": "Bath",
     "testament": "OT",
-    "desc": "液量單位，約 22 公升，是液量中與乾量「伊法」相當的單位，用以量酒與油。"
+    "desc": "液量單位，約 22 公升，是液量中與乾量「伊法」相當的單位，用以量酒與油。",
+    "cat": "measure"
   },
   "他連得": {
     "type": "concept",
     "name": "他連得",
     "name_en": "Talent",
     "testament": "both",
-    "desc": "最大的重量／幣值單位，約 34 公斤，等於三千舍客勒。一他連得是極大的財富，耶穌按才幹分銀的比喻即用此。"
+    "desc": "最大的重量／幣值單位，約 34 公斤，等於三千舍客勒。一他連得是極大的財富，耶穌按才幹分銀的比喻即用此。",
+    "cat": "measure"
   },
   "彌拿": {
     "type": "concept",
     "name": "彌拿",
     "name_en": "Mina",
     "testament": "both",
-    "desc": "重量／幣值單位，約 50 或 60 舍客勒。耶穌十錠（彌拿）的比喻中，僕人各領一錠去做生意。"
+    "desc": "重量／幣值單位，約 50 或 60 舍客勒。耶穌十錠（彌拿）的比喻中，僕人各領一錠去做生意。",
+    "cat": "measure"
   },
   "紅寶石": {
     "type": "concept",
     "name": "紅寶石",
     "name_en": "Ruby/Sardius",
     "testament": "both",
-    "desc": "紅色寶石，大祭司胸牌第一行第一塊，代表流便支派。聖經也以紅寶石比喻才德的婦人之珍貴。"
+    "desc": "紅色寶石，大祭司胸牌第一行第一塊，代表流便支派。聖經也以紅寶石比喻才德的婦人之珍貴。",
+    "cat": "gem"
   },
   "紅璧璽": {
     "type": "concept",
     "name": "紅璧璽",
     "name_en": "Sardius",
     "testament": "OT",
-    "desc": "紅色的寶石，鑲在大祭司胸牌上，代表以色列一個支派。"
+    "desc": "紅色的寶石，鑲在大祭司胸牌上，代表以色列一個支派。",
+    "cat": "gem"
   },
   "藍寶石": {
     "type": "concept",
     "name": "藍寶石",
     "name_en": "Sapphire",
     "testament": "both",
-    "desc": "深藍色寶石，鑲於大祭司胸牌。摩西等人見神腳下彷彿藍寶石鋪道，明淨如天。新耶路撒冷的根基之一。"
+    "desc": "深藍色寶石，鑲於大祭司胸牌。摩西等人見神腳下彷彿藍寶石鋪道，明淨如天。新耶路撒冷的根基之一。",
+    "cat": "gem"
   },
   "綠寶石": {
     "type": "concept",
     "name": "綠寶石",
     "name_en": "Emerald",
     "testament": "both",
-    "desc": "綠色寶石，鑲於大祭司胸牌，也是新耶路撒冷城牆的根基寶石之一。"
+    "desc": "綠色寶石，鑲於大祭司胸牌，也是新耶路撒冷城牆的根基寶石之一。",
+    "cat": "gem"
   },
   "紅瑪瑙": {
     "type": "concept",
     "name": "紅瑪瑙",
     "name_en": "Sardonyx",
     "testament": "both",
-    "desc": "帶紅色紋理的瑪瑙寶石，鑲在大祭司胸牌，也是新耶路撒冷的根基寶石之一。"
+    "desc": "帶紅色紋理的瑪瑙寶石，鑲在大祭司胸牌，也是新耶路撒冷的根基寶石之一。",
+    "cat": "gem"
   },
   "水蒼玉": {
     "type": "concept",
     "name": "水蒼玉",
     "name_en": "Beryl",
     "testament": "both",
-    "desc": "青綠色的寶石，鑲於大祭司胸牌。但以理見異象中那人的身體如水蒼玉般光亮。"
+    "desc": "青綠色的寶石，鑲於大祭司胸牌。但以理見異象中那人的身體如水蒼玉般光亮。",
+    "cat": "gem"
   },
   "碧玉": {
     "type": "concept",
     "name": "碧玉",
     "name_en": "Jasper",
     "testament": "both",
-    "desc": "晶瑩的寶石，鑲於大祭司胸牌。啟示錄中神寶座的榮光、新耶路撒冷的城牆皆如碧玉般明亮。"
+    "desc": "晶瑩的寶石，鑲於大祭司胸牌。啟示錄中神寶座的榮光、新耶路撒冷的城牆皆如碧玉般明亮。",
+    "cat": "gem"
   },
   "水晶": {
     "type": "concept",
     "name": "水晶",
     "name_en": "Crystal",
     "testament": "both",
-    "desc": "透明潔淨的礦石，聖經用以形容榮耀的明淨，如神寶座前如水晶的玻璃海。"
+    "desc": "透明潔淨的礦石，聖經用以形容榮耀的明淨，如神寶座前如水晶的玻璃海。",
+    "cat": "gem"
   },
   "金鋼石": {
     "type": "concept",
     "name": "金鋼石",
     "name_en": "Diamond",
     "testament": "OT",
-    "desc": "極堅硬的寶石，鑲於大祭司胸牌。耶利米書以金鋼石尖筆比喻猶大的罪刻得深。"
+    "desc": "極堅硬的寶石，鑲於大祭司胸牌。耶利米書以金鋼石尖筆比喻猶大的罪刻得深。",
+    "cat": "gem"
   },
   "珊瑚": {
     "type": "concept",
     "name": "珊瑚",
     "name_en": "Coral",
     "testament": "OT",
-    "desc": "海中珊瑚蟲形成的紅色珍貴飾材，古代視為寶物，約伯記以它襯托智慧更為難得。"
+    "desc": "海中珊瑚蟲形成的紅色珍貴飾材，古代視為寶物，約伯記以它襯托智慧更為難得。",
+    "cat": "gem"
   },
   "珍珠": {
     "type": "concept",
     "name": "珍珠",
     "name_en": "Pearl",
     "testament": "both",
-    "desc": "蚌中孕育的珍貴圓珠。耶穌以「重價的珠子」比喻天國；新耶路撒冷的十二門各由一顆珍珠造成。"
+    "desc": "蚌中孕育的珍貴圓珠。耶穌以「重價的珠子」比喻天國；新耶路撒冷的十二門各由一顆珍珠造成。",
+    "cat": "gem"
   },
   "百夫長": {
     "type": "concept",
     "name": "百夫長",
     "name_en": "Centurion",
     "testament": "both",
-    "desc": "羅馬軍中統領約百名士兵的軍官。新約多位百夫長心存敬畏，如求耶穌醫僕的、歸信的哥尼流。"
+    "desc": "羅馬軍中統領約百名士兵的軍官。新約多位百夫長心存敬畏，如求耶穌醫僕的、歸信的哥尼流。",
+    "cat": "role"
   },
   "千夫長": {
     "type": "concept",
     "name": "千夫長",
     "name_en": "Commander",
     "testament": "both",
-    "desc": "統領千人的軍事長官。新約中耶路撒冷的羅馬千夫長曾救保羅脫離暴民。"
+    "desc": "統領千人的軍事長官。新約中耶路撒冷的羅馬千夫長曾救保羅脫離暴民。",
+    "cat": "role"
   },
   "護衛長": {
     "type": "concept",
     "name": "護衛長",
     "name_en": "Captain of the Guard",
     "testament": "OT",
-    "desc": "君王侍衛或刑罰的長官。約瑟在埃及曾被賣到護衛長波提乏家；巴比倫護衛長尼布撒拉旦毀耶路撒冷。"
+    "desc": "君王侍衛或刑罰的長官。約瑟在埃及曾被賣到護衛長波提乏家；巴比倫護衛長尼布撒拉旦毀耶路撒冷。",
+    "cat": "role"
   },
   "酒政": {
     "type": "concept",
     "name": "酒政",
     "name_en": "Cupbearer",
     "testament": "OT",
-    "desc": "為君王嚐酒、進酒的近侍重臣，深得王信任。約瑟為埃及酒政解夢；尼希米是波斯王的酒政。"
+    "desc": "為君王嚐酒、進酒的近侍重臣，深得王信任。約瑟為埃及酒政解夢；尼希米是波斯王的酒政。",
+    "cat": "role"
   },
   "膳長": {
     "type": "concept",
     "name": "膳長",
     "name_en": "Chief Baker",
     "testament": "OT",
-    "desc": "掌管君王膳食烘焙的官長。與酒政同下監時，約瑟為他解夢，預言他三日後被掛起。"
+    "desc": "掌管君王膳食烘焙的官長。與酒政同下監時，約瑟為他解夢，預言他三日後被掛起。",
+    "cat": "role"
   },
   "謀士": {
     "type": "concept",
     "name": "謀士",
     "name_en": "Counselor",
     "testament": "both",
-    "desc": "為君王出謀獻策的智囊大臣。如大衛的謀士亞希多弗；以賽亞稱彌賽亞為「奇妙策士」。"
+    "desc": "為君王出謀獻策的智囊大臣。如大衛的謀士亞希多弗；以賽亞稱彌賽亞為「奇妙策士」。",
+    "cat": "role"
   },
   "太監": {
     "type": "concept",
     "name": "太監",
     "name_en": "Eunuch",
     "testament": "both",
-    "desc": "宮中受閹割的近侍官員，常掌內廷或要職。如服事以斯帖的太監、信主受洗的衣索比亞太監。"
+    "desc": "宮中受閹割的近侍官員，常掌內廷或要職。如服事以斯帖的太監、信主受洗的衣索比亞太監。",
+    "cat": "role"
   },
   "大痲瘋": {
     "type": "concept",
     "name": "大痲瘋",
     "name_en": "Leprosy",
     "testament": "both",
-    "desc": "泛指多種使皮膚潰爛變白的傳染性惡疾，患者被視為不潔須隔離。律法有詳細的察驗與潔淨禮，耶穌曾潔淨痲瘋病人。"
+    "desc": "泛指多種使皮膚潰爛變白的傳染性惡疾，患者被視為不潔須隔離。律法有詳細的察驗與潔淨禮，耶穌曾潔淨痲瘋病人。",
+    "cat": "theo"
   },
   "痲瘋": {
     "type": "concept",
     "name": "痲瘋",
     "name_en": "Leprosy",
     "testament": "both",
-    "desc": "使皮膚潰爛的傳染惡疾，患者按律法被隔離在營外、衣裳撕裂、喊「不潔淨」。痊癒須由祭司察驗行潔淨禮。"
+    "desc": "使皮膚潰爛的傳染惡疾，患者按律法被隔離在營外、衣裳撕裂、喊「不潔淨」。痊癒須由祭司察驗行潔淨禮。",
+    "cat": "theo"
   },
   "血漏": {
     "type": "concept",
     "name": "血漏",
     "name_en": "Issue of Blood",
     "testament": "both",
-    "desc": "婦女不正常的持續出血，按律法使人不潔。福音書中患血漏十二年的婦人摸耶穌衣裳邊就得痊癒。"
+    "desc": "婦女不正常的持續出血，按律法使人不潔。福音書中患血漏十二年的婦人摸耶穌衣裳邊就得痊癒。",
+    "cat": "theo"
   },
   "香柏木": {
     "type": "concept",
     "name": "香柏木",
     "name_en": "Cedar",
     "testament": "OT",
-    "desc": "黎巴嫩高大耐久、芬芳的名貴木材，所羅門用以建造聖殿與王宮，象徵尊榮與堅固。"
+    "desc": "黎巴嫩高大耐久、芬芳的名貴木材，所羅門用以建造聖殿與王宮，象徵尊榮與堅固。",
+    "cat": "plant"
   },
   "皂莢木": {
     "type": "concept",
     "name": "皂莢木",
     "name_en": "Acacia Wood",
     "testament": "OT",
-    "desc": "曠野生長、堅硬耐蛀的木材，會幕、約櫃、各樣聖物多以皂莢木製作再包金。"
+    "desc": "曠野生長、堅硬耐蛀的木材，會幕、約櫃、各樣聖物多以皂莢木製作再包金。",
+    "cat": "plant"
   },
   "橄欖樹": {
     "type": "concept",
     "name": "橄欖樹",
     "name_en": "Olive Tree",
     "testament": "both",
-    "desc": "地中海常綠果樹，產橄欖榨油供點燈、膏抹、食用。象徵蒙福、和平與神的子民，保羅以接枝喻外邦人歸入。"
+    "desc": "地中海常綠果樹，產橄欖榨油供點燈、膏抹、食用。象徵蒙福、和平與神的子民，保羅以接枝喻外邦人歸入。",
+    "cat": "plant"
   },
   "橄欖": {
     "type": "concept",
     "name": "橄欖",
     "name_en": "Olive",
     "testament": "both",
-    "desc": "橄欖樹的果實，榨成的油用於點燈、調素祭、膏抹君王祭司。鴿子銜橄欖葉回方舟，成為和平的記號。"
+    "desc": "橄欖樹的果實，榨成的油用於點燈、調素祭、膏抹君王祭司。鴿子銜橄欖葉回方舟，成為和平的記號。",
+    "cat": "plant"
   },
   "無花果樹": {
     "type": "concept",
     "name": "無花果樹",
     "name_en": "Fig Tree",
     "testament": "both",
-    "desc": "結甜美無花果的果樹，常與葡萄樹並提象徵安居樂業。耶穌曾咒詛不結果的無花果樹，並以其發芽喻末世將近。"
+    "desc": "結甜美無花果的果樹，常與葡萄樹並提象徵安居樂業。耶穌曾咒詛不結果的無花果樹，並以其發芽喻末世將近。",
+    "cat": "plant"
   },
   "無花果": {
     "type": "concept",
     "name": "無花果",
     "name_en": "Fig",
     "testament": "both",
-    "desc": "無花果樹的果實，香甜可作餅。亞當夏娃曾用無花果樹葉編裙遮身。"
+    "desc": "無花果樹的果實，香甜可作餅。亞當夏娃曾用無花果樹葉編裙遮身。",
+    "cat": "plant"
   },
   "葡萄樹": {
     "type": "concept",
     "name": "葡萄樹",
     "name_en": "Vine",
     "testament": "both",
-    "desc": "結葡萄釀酒的蔓生果樹，常象徵以色列。耶穌自稱「真葡萄樹」，門徒是枝子，連於他才能結果。"
+    "desc": "結葡萄釀酒的蔓生果樹，常象徵以色列。耶穌自稱「真葡萄樹」，門徒是枝子，連於他才能結果。",
+    "cat": "plant"
   },
   "棕樹": {
     "type": "concept",
     "name": "棕樹",
     "name_en": "Palm Tree",
     "testament": "both",
-    "desc": "高直常綠、結棗的樹，象徵得勝與公義。耶利哥稱棕樹城；眾人持棕樹枝迎耶穌進耶路撒冷。"
+    "desc": "高直常綠、結棗的樹，象徵得勝與公義。耶利哥稱棕樹城；眾人持棕樹枝迎耶穌進耶路撒冷。",
+    "cat": "plant"
   },
   "石榴": {
     "type": "concept",
     "name": "石榴",
     "name_en": "Pomegranate",
     "testament": "OT",
-    "desc": "多籽的紅色果實，迦南美地的出產之一。大祭司袍邊綴金鈴與石榴，聖殿柱頭也以石榴為飾。"
+    "desc": "多籽的紅色果實，迦南美地的出產之一。大祭司袍邊綴金鈴與石榴，聖殿柱頭也以石榴為飾。",
+    "cat": "plant"
   },
   "柏樹": {
     "type": "concept",
     "name": "柏樹",
     "name_en": "Cypress",
     "testament": "OT",
-    "desc": "高大常綠的針葉樹，木質堅好，與香柏木同用於聖殿建造與造船。"
+    "desc": "高大常綠的針葉樹，木質堅好，與香柏木同用於聖殿建造與造船。",
+    "cat": "plant"
   },
   "蒺藜": {
     "type": "concept",
     "name": "蒺藜",
     "name_en": "Thorns/Briers",
     "testament": "both",
-    "desc": "帶刺的野生植物。人類墮落後，神咒詛地長出荊棘和蒺藜，象徵勞苦與審判。"
+    "desc": "帶刺的野生植物。人類墮落後，神咒詛地長出荊棘和蒺藜，象徵勞苦與審判。",
+    "cat": "plant"
   },
   "荊棘": {
     "type": "concept",
     "name": "荊棘",
     "name_en": "Thorns",
     "testament": "both",
-    "desc": "帶刺的灌木叢。神在何烈山的荊棘火焰中向摩西顯現；兵丁也用荊棘編冠冕戴在耶穌頭上。"
+    "desc": "帶刺的灌木叢。神在何烈山的荊棘火焰中向摩西顯現；兵丁也用荊棘編冠冕戴在耶穌頭上。",
+    "cat": "plant"
   },
   "百合花": {
     "type": "concept",
     "name": "百合花",
     "name_en": "Lily",
     "testament": "both",
-    "desc": "野地的美麗花卉。雅歌以「谷中的百合花」喻佳偶；耶穌以野地百合花教人不要憂慮，神必看顧。"
+    "desc": "野地的美麗花卉。雅歌以「谷中的百合花」喻佳偶；耶穌以野地百合花教人不要憂慮，神必看顧。",
+    "cat": "plant"
   },
   "蘆葦": {
     "type": "concept",
     "name": "蘆葦",
     "name_en": "Reed",
     "testament": "both",
-    "desc": "水邊細長易折的草本植物。摩西嬰孩時藏於蘆葦中；聖經以「壓傷的蘆葦」喻軟弱者，主不折斷。"
+    "desc": "水邊細長易折的草本植物。摩西嬰孩時藏於蘆葦中；聖經以「壓傷的蘆葦」喻軟弱者，主不折斷。",
+    "cat": "plant"
   },
   "蓖麻": {
     "type": "concept",
     "name": "蓖麻",
     "name_en": "Plant/Gourd",
     "testament": "OT",
-    "desc": "神為約拿預備、一夜長成的大葉植物，為他遮蔭；次日枯死，藉此教導約拿憐憫尼尼微。"
+    "desc": "神為約拿預備、一夜長成的大葉植物，為他遮蔭；次日枯死，藉此教導約拿憐憫尼尼微。",
+    "cat": "plant"
   },
   "松樹": {
     "type": "concept",
     "name": "松樹",
     "name_en": "Pine/Fir",
     "testament": "OT",
-    "desc": "常綠針葉樹，木材用於建造。以賽亞書以松樹長出代替蒺藜，象徵神的更新與祝福。"
+    "desc": "常綠針葉樹，木材用於建造。以賽亞書以松樹長出代替蒺藜，象徵神的更新與祝福。",
+    "cat": "plant"
   },
   "桑樹": {
     "type": "concept",
     "name": "桑樹",
     "name_en": "Sycamore",
     "testament": "both",
-    "desc": "枝幹低矮易攀的果樹。撒該因身材矮小，爬上桑樹要看耶穌，因而蒙主到他家。"
+    "desc": "枝幹低矮易攀的果樹。撒該因身材矮小，爬上桑樹要看耶穌，因而蒙主到他家。",
+    "cat": "plant"
   },
   "號筒": {
     "type": "concept",
     "name": "號筒",
     "name_en": "Trumpet",
     "testament": "both",
-    "desc": "金屬或羊角製的吹奏樂器，用於招聚會眾、宣告節期、爭戰與警報。吹角節、末日號筒皆與之相關。"
+    "desc": "金屬或羊角製的吹奏樂器，用於招聚會眾、宣告節期、爭戰與警報。吹角節、末日號筒皆與之相關。",
+    "cat": "holy"
   },
   "琴瑟": {
     "type": "concept",
     "name": "琴瑟",
     "name_en": "Harp and Lyre",
     "testament": "OT",
-    "desc": "撥弦樂器琴與瑟的合稱，用於敬拜讚美。大衛善彈琴，詩篇常呼籲以琴瑟歌頌耶和華。"
+    "desc": "撥弦樂器琴與瑟的合稱，用於敬拜讚美。大衛善彈琴，詩篇常呼籲以琴瑟歌頌耶和華。",
+    "cat": "holy"
   },
   "琵琶": {
     "type": "concept",
     "name": "琵琶",
     "name_en": "Lyre/Lute",
     "testament": "OT",
-    "desc": "一種撥弦樂器，用於聖殿敬拜與歡慶，詩篇多次呼召以琵琶頌讚神。"
+    "desc": "一種撥弦樂器，用於聖殿敬拜與歡慶，詩篇多次呼召以琵琶頌讚神。",
+    "cat": "holy"
   },
   "鈴鐺": {
     "type": "concept",
     "name": "鈴鐺",
     "name_en": "Bells",
     "testament": "OT",
-    "desc": "大祭司外袍底邊金鈴鐺，與石榴相間。進出聖所時聲音可聞，使他免於死亡。"
+    "desc": "大祭司外袍底邊金鈴鐺，與石榴相間。進出聖所時聲音可聞，使他免於死亡。",
+    "cat": "holy"
   },
   "手鼓": {
     "type": "concept",
     "name": "手鼓",
     "name_en": "Tambourine",
     "testament": "OT",
-    "desc": "手持拍擊的鼓，常伴隨舞蹈歡慶。米利暗在過紅海後手拿手鼓，率婦女歌舞讚美神。"
+    "desc": "手持拍擊的鼓，常伴隨舞蹈歡慶。米利暗在過紅海後手拿手鼓，率婦女歌舞讚美神。",
+    "cat": "holy"
   },
   "月朔": {
     "type": "concept",
     "name": "月朔",
     "name_en": "New Moon",
     "testament": "OT",
-    "desc": "每月初一新月之日，以色列吹角、獻特定祭、停止買賣的聖日，標記月份的開始。"
+    "desc": "每月初一新月之日，以色列吹角、獻特定祭、停止買賣的聖日，標記月份的開始。",
+    "cat": "fest"
   },
   "聖會": {
     "type": "concept",
     "name": "聖會",
     "name_en": "Holy Convocation",
     "testament": "OT",
-    "desc": "神所定、要全民停工聚集的神聖集會，多在節期舉行，如安息日、逾越節、五旬節等。"
+    "desc": "神所定、要全民停工聚集的神聖集會，多在節期舉行，如安息日、逾越節、五旬節等。",
+    "cat": "fest"
   },
   "普珥日": {
     "type": "concept",
     "name": "普珥日",
     "name_en": "Purim",
     "testament": "OT",
-    "desc": "紀念以斯帖時代猶太人脫離哈曼滅族陰謀的節日，因哈曼「掣普珥」（抽籤）定日而得名，舉國歡樂互贈禮物。"
+    "desc": "紀念以斯帖時代猶太人脫離哈曼滅族陰謀的節日，因哈曼「掣普珥」（抽籤）定日而得名，舉國歡樂互贈禮物。",
+    "cat": "fest"
   },
   "收藏節": {
     "type": "concept",
     "name": "收藏節",
     "name_en": "Feast of Ingathering",
     "testament": "OT",
-    "desc": "秋季年終收割完畢的感恩節期，又稱住棚節，紀念曠野漂流並感謝神賜豐收。"
+    "desc": "秋季年終收割完畢的感恩節期，又稱住棚節，紀念曠野漂流並感謝神賜豐收。",
+    "cat": "fest"
   },
   "修殿節": {
     "type": "concept",
     "name": "修殿節",
     "name_en": "Feast of Dedication",
     "testament": "NT",
-    "desc": "紀念馬加比潔淨並重新獻聖殿的節日，又稱光明節。耶穌曾在冬天的修殿節上聖殿。"
+    "desc": "紀念馬加比潔淨並重新獻聖殿的節日，又稱光明節。耶穌曾在冬天的修殿節上聖殿。",
+    "cat": "fest"
   },
   "雲柱": {
     "type": "concept",
     "name": "雲柱",
     "name_en": "Pillar of Cloud",
     "testament": "OT",
-    "desc": "神在曠野以雲柱日間引導以色列人行路、遮蔭並彰顯同在；夜間則化為火柱。"
+    "desc": "神在曠野以雲柱日間引導以色列人行路、遮蔭並彰顯同在；夜間則化為火柱。",
+    "cat": "holy"
   },
   "火柱": {
     "type": "concept",
     "name": "火柱",
     "name_en": "Pillar of Fire",
     "testament": "OT",
-    "desc": "神在曠野夜間以火柱為以色列照明引路，與日間雲柱同表神的同在與保護。"
+    "desc": "神在曠野夜間以火柱為以色列照明引路，與日間雲柱同表神的同在與保護。",
+    "cat": "holy"
   },
   "法版": {
     "type": "concept",
     "name": "法版",
     "name_en": "Tablets of the Law",
     "testament": "OT",
-    "desc": "神親手刻寫十誡的兩塊石版，存於約櫃中，是神與以色列立約的憑據。又稱約版、法版。"
+    "desc": "神親手刻寫十誡的兩塊石版，存於約櫃中，是神與以色列立約的憑據。又稱約版、法版。",
+    "cat": "holy"
   },
   "帕提亞": {
     "type": "place",
@@ -4669,7 +4841,8 @@
     "name": "歌革",
     "name_en": "Gog",
     "testament": "OT",
-    "desc": "以西結書與啟示錄預言中，末世率列國攻擊神子民的勢力首領，與「瑪各地」相連。"
+    "desc": "以西結書與啟示錄預言中，末世率列國攻擊神子民的勢力首領，與「瑪各地」相連。",
+    "cat": "people"
   },
   "瑪各": {
     "type": "place",
@@ -4701,42 +4874,48 @@
     "name": "迦南人",
     "name_en": "Canaanites",
     "testament": "OT",
-    "desc": "應許之地迦南的原住民族總稱，拜巴力等偶像。神吩咐以色列進迦南時將其趕出，免得受其惡俗影響。"
+    "desc": "應許之地迦南的原住民族總稱，拜巴力等偶像。神吩咐以色列進迦南時將其趕出，免得受其惡俗影響。",
+    "cat": "people"
   },
   "赫人": {
     "type": "concept",
     "name": "赫人",
     "name_en": "Hittites",
     "testament": "OT",
-    "desc": "迦南原住民族之一，源自小亞細亞的赫梯帝國。亞伯拉罕向赫人買麥比拉洞葬撒拉；烏利亞即赫人。"
+    "desc": "迦南原住民族之一，源自小亞細亞的赫梯帝國。亞伯拉罕向赫人買麥比拉洞葬撒拉；烏利亞即赫人。",
+    "cat": "people"
   },
   "耶布斯人": {
     "type": "concept",
     "name": "耶布斯人",
     "name_en": "Jebusites",
     "testament": "OT",
-    "desc": "迦南族之一，據守耶路撒冷（耶布斯）的山城，直到大衛攻取，立為以色列京城。"
+    "desc": "迦南族之一，據守耶路撒冷（耶布斯）的山城，直到大衛攻取，立為以色列京城。",
+    "cat": "people"
   },
   "希未人": {
     "type": "concept",
     "name": "希未人",
     "name_en": "Hivites",
     "testament": "OT",
-    "desc": "迦南原住民族之一。基遍人即希未人，曾用詭計與約書亞立約求存。"
+    "desc": "迦南原住民族之一。基遍人即希未人，曾用詭計與約書亞立約求存。",
+    "cat": "people"
   },
   "比利洗人": {
     "type": "concept",
     "name": "比利洗人",
     "name_en": "Perizzites",
     "testament": "OT",
-    "desc": "迦南地的原住民族之一，常與迦南人並提，是以色列當趕出之民。"
+    "desc": "迦南地的原住民族之一，常與迦南人並提，是以色列當趕出之民。",
+    "cat": "people"
   },
   "革迦撒人": {
     "type": "concept",
     "name": "革迦撒人",
     "name_en": "Girgashites",
     "testament": "OT",
-    "desc": "迦南七族之一，是神應許從以色列面前趕出的民族之一。"
+    "desc": "迦南七族之一，是神應許從以色列面前趕出的民族之一。",
+    "cat": "people"
   },
   "以東": {
     "type": "place",
@@ -4770,7 +4949,8 @@
     "name": "亞瑪力",
     "name_en": "Amalek",
     "testament": "OT",
-    "desc": "以掃之孫亞瑪力的後裔，曠野遊牧民族。出埃及時偷襲以色列，神命世代與之為敵，掃羅、大衛皆曾征討。"
+    "desc": "以掃之孫亞瑪力的後裔，曠野遊牧民族。出埃及時偷襲以色列，神命世代與之為敵，掃羅、大衛皆曾征討。",
+    "cat": "people"
   },
   "俄別以東": {
     "type": "person",
@@ -4784,28 +4964,32 @@
     "name": "亞衲族",
     "name_en": "Anakim",
     "testament": "OT",
-    "desc": "迦南地身材高大的巨人族，住希伯崙一帶。十二探子見之喪膽，後迦勒倚靠神將其趕出。"
+    "desc": "迦南地身材高大的巨人族，住希伯崙一帶。十二探子見之喪膽，後迦勒倚靠神將其趕出。",
+    "cat": "people"
   },
   "利乏音人": {
     "type": "concept",
     "name": "利乏音人",
     "name_en": "Rephaim",
     "testament": "OT",
-    "desc": "古代身量高大的巨人族，巴珊王噩即其遺存，他的鐵床長九肘。"
+    "desc": "古代身量高大的巨人族，巴珊王噩即其遺存，他的鐵床長九肘。",
+    "cat": "people"
   },
   "基尼人": {
     "type": "concept",
     "name": "基尼人",
     "name_en": "Kenites",
     "testament": "OT",
-    "desc": "與以色列友好的遊牧民族，摩西岳父葉忒羅一族屬之。常與猶大支派雜居。"
+    "desc": "與以色列友好的遊牧民族，摩西岳父葉忒羅一族屬之。常與猶大支派雜居。",
+    "cat": "people"
   },
   "以實瑪利人": {
     "type": "concept",
     "name": "以實瑪利人",
     "name_en": "Ishmaelites",
     "testament": "OT",
-    "desc": "亞伯拉罕之子以實瑪利的後裔，阿拉伯遊牧商旅民族。約瑟即被兄弟賣給往埃及去的以實瑪利商隊。"
+    "desc": "亞伯拉罕之子以實瑪利的後裔，阿拉伯遊牧商旅民族。約瑟即被兄弟賣給往埃及去的以實瑪利商隊。",
+    "cat": "people"
   },
   "雅完": {
     "type": "place",
@@ -4927,7 +5111,8 @@
     "name": "希伯來",
     "name_en": "Hebrew",
     "testament": "both",
-    "desc": "指希伯來人（以色列人）或其語言。源自先祖希伯，舊約多以此與外族區別。"
+    "desc": "指希伯來人（以色列人）或其語言。源自先祖希伯，舊約多以此與外族區別。",
+    "cat": "people"
   },
   "雅各的兒子猶大": {
     "type": "person",
@@ -4957,7 +5142,8 @@
     "name": "基督",
     "name_en": "Christ",
     "testament": "NT",
-    "desc": "希臘文「受膏者」，等同希伯來文「彌賽亞」，指神所應許的救主。基督徒宣認耶穌就是基督。"
+    "desc": "希臘文「受膏者」，等同希伯來文「彌賽亞」，指神所應許的救主。基督徒宣認耶穌就是基督。",
+    "cat": "theo"
   },
   "亞基帕": {
     "type": "person",
@@ -5286,14 +5472,16 @@
     "name": "基尼洗人",
     "name_en": "Kenizzites",
     "testament": "OT",
-    "desc": "神應許賜地時所列迦南諸族之一。"
+    "desc": "神應許賜地時所列迦南諸族之一。",
+    "cat": "people"
   },
   "甲摩尼人": {
     "type": "concept",
     "name": "甲摩尼人",
     "name_en": "Kadmonites",
     "testament": "OT",
-    "desc": "神應許賜地時所列迦南諸族之一，意為「東方人」。"
+    "desc": "神應許賜地時所列迦南諸族之一，意為「東方人」。",
+    "cat": "people"
   },
   "流珥": {
     "type": "person",
@@ -5395,7 +5583,8 @@
     "name": "榧子",
     "name_en": "Pistachio Nuts",
     "testament": "OT",
-    "desc": "開心果類乾果，迦南的土產之一。雅各打發兒子下埃及時以此為禮送給約瑟。"
+    "desc": "開心果類乾果，迦南的土產之一。雅各打發兒子下埃及時以此為禮送給約瑟。",
+    "cat": "plant"
   },
   "迦含": {
     "type": "person",
@@ -5409,7 +5598,8 @@
     "name": "巴力",
     "name_en": "Baal",
     "testament": "OT",
-    "desc": "迦南人的風暴與豐收之神，最常見的偶像。以色列屢次背棄耶和華去拜巴力，先知（如以利亞）力斥之。"
+    "desc": "迦南人的風暴與豐收之神，最常見的偶像。以色列屢次背棄耶和華去拜巴力，先知（如以利亞）力斥之。",
+    "cat": "theo"
   },
   "巴力洗分": {
     "type": "place",
@@ -5432,7 +5622,8 @@
     "name": "巴力西卜",
     "name_en": "Baal-zebub",
     "testament": "both",
-    "desc": "以革倫人所拜的「蒼蠅之神」巴力。新約以「別西卜」指鬼王。"
+    "desc": "以革倫人所拜的「蒼蠅之神」巴力。新約以「別西卜」指鬼王。",
+    "cat": "theo"
   },
   "巴力迦得": {
     "type": "place",
@@ -5601,63 +5792,72 @@
     "name_en": "Omer",
     "testament": "OT",
     "desc": "乾量單位，約 2.2 公升，是伊法的十分之一；收嗎哪時每人一俄梅珥。",
-    "name": "俄梅珥"
+    "name": "俄梅珥",
+    "cat": "measure"
   },
   "亞筆月": {
     "type": "concept",
     "name_en": "Abib",
     "testament": "OT",
     "desc": "猶太宗教曆正月（約陽曆三、四月），以色列出埃及的月份，後稱尼散月。",
-    "name": "亞筆月"
+    "name": "亞筆月",
+    "cat": "fest"
   },
   "收割節": {
     "type": "concept",
     "name_en": "Feast of Harvest",
     "testament": "OT",
     "desc": "三大節期之一，慶祝初熟莊稼的收成，即七七節（五旬節）。",
-    "name": "收割節"
+    "name": "收割節",
+    "cat": "fest"
   },
   "法櫃": {
     "type": "concept",
     "name_en": "Ark of the Covenant",
     "testament": "OT",
     "desc": "約櫃，內放兩塊法版，安置於至聖所，象徵神與百姓同在。",
-    "name": "法櫃"
+    "name": "法櫃",
+    "cat": "holy"
   },
   "海狗皮": {
     "type": "concept",
     "name_en": "Sea cow / dugong hides",
     "testament": "OT",
     "desc": "蒙在會幕頂層的皮，防水耐用（一說為儒艮或海豚皮）。",
-    "name": "海狗皮"
+    "name": "海狗皮",
+    "cat": "holy"
   },
   "紅玉": {
     "type": "concept",
     "name_en": "Sardius",
     "testament": "OT",
     "desc": "大祭司胸牌第一行第一塊寶石（出28:17）。",
-    "name": "紅玉"
+    "name": "紅玉",
+    "cat": "gem"
   },
   "紫晶": {
     "type": "concept",
     "name_en": "Amethyst",
     "testament": "OT",
     "desc": "大祭司胸牌第三行的紫色寶石（出28:19）。",
-    "name": "紫晶"
+    "name": "紫晶",
+    "cat": "gem"
   },
   "施喜列": {
     "type": "concept",
     "name_en": "Onycha",
     "testament": "OT",
     "desc": "調製聖香的香料之一（出30:34）。",
-    "name": "施喜列"
+    "name": "施喜列",
+    "cat": "plant"
   },
   "喜利比拿": {
     "type": "concept",
     "name_en": "Galbanum",
     "testament": "OT",
     "desc": "調製聖香的香料之一，氣味濃烈（出30:34）。",
-    "name": "喜利比拿"
+    "name": "喜利比拿",
+    "cat": "plant"
   },
   "帷子": {
     "type": "concept",
@@ -5665,7 +5865,8 @@
     "testament": "OT",
     "reading": "ㄨㄟˊ ㄗ˙",
     "desc": "院子四圍懸掛的細麻布幔。",
-    "name": "帷子"
+    "name": "帷子",
+    "cat": "holy"
   },
   "橛子": {
     "type": "concept",
@@ -5673,7 +5874,8 @@
     "testament": "OT",
     "reading": "ㄐㄩㄝˊ ㄗ˙",
     "desc": "固定帳幕與院子帷子的銅或木釘。",
-    "name": "橛子"
+    "name": "橛子",
+    "cat": "holy"
   },
   "肉鍤子": {
     "type": "concept",
@@ -5681,7 +5883,8 @@
     "testament": "OT",
     "reading": "ㄖㄡˋ ㄔㄚ ㄗ˙",
     "desc": "祭壇上用來翻動祭肉的銅叉。",
-    "name": "肉鍤子"
+    "name": "肉鍤子",
+    "cat": "holy"
   },
   "閂": {
     "type": "concept",
@@ -5689,6 +5892,7 @@
     "testament": "OT",
     "reading": "ㄕㄨㄢ",
     "desc": "貫穿帳幕板、使之相連的橫木。",
-    "name": "閂"
+    "name": "閂",
+    "cat": "holy"
   }
 }
