@@ -39,13 +39,41 @@
     "desc": "伯利恆的以法他人，大衛的父親，共有八子。本章中差派大衛帶食物到前線探望從軍的三個哥哥。",
     "verses": "撒上17:12-20"
   },
-  "以利押": {
-    "type": "person",
-    "name": "以利押",
-    "name_en": "Eliab",
-    "desc": "耶西的長子，在掃羅軍中。見大衛來到陣前，以為他擅離羊群看熱鬧，出言責備。",
-    "verses": "撒上17:13、17:28"
-  },
+  "以利押": [
+    {
+      "type": "person",
+      "name": "以利押（西布倫支派首領）",
+      "name_en": "Eliab (chief of Zebulun)",
+      "books": [
+        "民數記"
+      ],
+      "chapters": [
+        1,
+        10
+      ],
+      "testament": "OT",
+      "desc": "希倫的兒子，出埃及時西布倫支派的首領（民1:9）。"
+    },
+    {
+      "type": "person",
+      "name": "以利押（大坍亞比蘭之父）",
+      "name_en": "Eliab (father of Dathan and Abiram)",
+      "books": [
+        "民數記",
+        "申命記"
+      ],
+      "testament": "OT",
+      "desc": "流便支派人，大坍與亞比蘭的父親，其子與可拉一同叛逆摩西（民16、26章）。"
+    },
+    {
+      "type": "person",
+      "name": "以利押",
+      "name_en": "Eliab",
+      "testament": "OT",
+      "desc": "耶西的長子，大衛的兄長，在掃羅軍中。見大衛來到陣前，以為他擅離羊群看熱鬧，出言責備。",
+      "verses": "撒上17:13、17:28"
+    }
+  ],
   "亞比拿達": {
     "type": "person",
     "name": "亞比拿達",
@@ -3369,12 +3397,25 @@
     "name_en": "Joab",
     "desc": "大衛軍長，能征善戰，卻擅自殺死押沙龍和亞伯拿，後在所羅門時被賜死。"
   },
-  "示每": {
-    "type": "person",
-    "name": "示每",
-    "name_en": "Shimei",
-    "desc": "便雅憫人，大衛出逃時咒罵他，後跪求赦免；所羅門最終命人殺他。"
-  },
+  "示每": [
+    {
+      "type": "person",
+      "name": "示每（革順之子）",
+      "name_en": "Shimei (son of Gershon)",
+      "books": [
+        "民數記"
+      ],
+      "testament": "OT",
+      "desc": "革順的兒子，立尼族示每族的先祖（民3:18）。"
+    },
+    {
+      "type": "person",
+      "name": "示每",
+      "name_en": "Shimei",
+      "testament": "OT",
+      "desc": "便雅憫人，大衛出逃時咒罵他，後跪求赦免；所羅門最終命人殺他。"
+    }
+  ],
   "俄巴底亞": {
     "type": "person",
     "name": "俄巴底亞",
@@ -4979,13 +5020,25 @@
     "testament": "NT",
     "desc": "該撒利亞的羅馬百夫長，敬畏神又周濟人。神差彼得到他家，成為首批受聖靈、受洗的外邦人。"
   },
-  "迦瑪列": {
-    "type": "person",
-    "name": "迦瑪列",
-    "name_en": "Gamaliel",
-    "testament": "NT",
-    "desc": "受尊敬的法利賽人律法教師，公會中勸眾人勿輕舉妄動對付使徒。保羅年輕時曾在他門下受教。"
-  },
+  "迦瑪列": [
+    {
+      "type": "person",
+      "name": "迦瑪列（瑪拿西支派首領）",
+      "name_en": "Gamaliel (chief of Manasseh)",
+      "books": [
+        "民數記"
+      ],
+      "testament": "OT",
+      "desc": "比大蓿的兒子，出埃及時瑪拿西支派的首領（民1:10）。"
+    },
+    {
+      "type": "person",
+      "name": "迦瑪列",
+      "name_en": "Gamaliel",
+      "testament": "NT",
+      "desc": "受尊敬的法利賽人律法教師，公會中勸眾人勿輕舉妄動對付使徒。保羅年輕時曾在他門下受教。"
+    }
+  ],
   "拿但業": {
     "type": "person",
     "name": "拿但業",
@@ -6150,5 +6203,477 @@
     "lng": 40.0,
     "desc": "幼發拉底河，聖經稱「大河」，是神應許給以色列人迦南地的理想東北界。",
     "name": "伯拉大河"
+  },
+  "示丟珥": {
+    "type": "person",
+    "name_en": "Shedeur",
+    "testament": "OT",
+    "desc": "流便支派首領以利蓿的父親（民1:5）。",
+    "name": "示丟珥"
+  },
+  "以利蓿": {
+    "type": "person",
+    "name_en": "Elizur",
+    "testament": "OT",
+    "desc": "示丟珥的兒子，出埃及時流便支派的首領（民1:5）。",
+    "name": "以利蓿",
+    "reading": "ㄒㄩˋ"
+  },
+  "蘇利沙代": {
+    "type": "person",
+    "name_en": "Zurishaddai",
+    "testament": "OT",
+    "desc": "西緬支派首領示路蔑的父親（民1:6）。",
+    "name": "蘇利沙代"
+  },
+  "示路蔑": {
+    "type": "person",
+    "name_en": "Shelumiel",
+    "testament": "OT",
+    "desc": "蘇利沙代的兒子，出埃及時西緬支派的首領（民1:6）。",
+    "name": "示路蔑"
+  },
+  "蘇押": {
+    "type": "person",
+    "name_en": "Zuar",
+    "testament": "OT",
+    "desc": "以薩迦支派首領拿坦業的父親（民1:8）。",
+    "name": "蘇押"
+  },
+  "拿坦業": {
+    "type": "person",
+    "name_en": "Nethanel",
+    "testament": "OT",
+    "desc": "蘇押的兒子，出埃及時以薩迦支派的首領（民1:8）。",
+    "name": "拿坦業"
+  },
+  "希倫": {
+    "type": "person",
+    "name_en": "Helon",
+    "testament": "OT",
+    "desc": "西布倫支派首領以利押的父親（民1:9）。",
+    "name": "希倫"
+  },
+  "亞米忽": {
+    "type": "person",
+    "name_en": "Ammihud",
+    "testament": "OT",
+    "desc": "以法蓮支派首領以利沙瑪的父親（民1:10）。",
+    "name": "亞米忽"
+  },
+  "以利沙瑪": {
+    "type": "person",
+    "name_en": "Elishama",
+    "testament": "OT",
+    "desc": "亞米忽的兒子，出埃及時以法蓮支派的首領（民1:10）。",
+    "name": "以利沙瑪"
+  },
+  "比大蓿": {
+    "type": "person",
+    "name_en": "Pedahzur",
+    "testament": "OT",
+    "desc": "瑪拿西支派首領迦瑪列的父親（民1:10）。",
+    "name": "比大蓿",
+    "reading": "ㄒㄩˋ"
+  },
+  "基多尼": {
+    "type": "person",
+    "name_en": "Gideoni",
+    "testament": "OT",
+    "desc": "便雅憫支派首領亞比但的父親（民1:11）。",
+    "name": "基多尼"
+  },
+  "亞比但": {
+    "type": "person",
+    "name_en": "Abidan",
+    "testament": "OT",
+    "desc": "基多尼的兒子，出埃及時便雅憫支派的首領（民1:11）。",
+    "name": "亞比但"
+  },
+  "亞米沙代": {
+    "type": "person",
+    "name_en": "Ammishaddai",
+    "testament": "OT",
+    "desc": "但支派首領亞希以謝的父親（民1:12）。",
+    "name": "亞米沙代"
+  },
+  "亞希以謝": {
+    "type": "person",
+    "name_en": "Ahiezer",
+    "testament": "OT",
+    "desc": "亞米沙代的兒子，出埃及時但支派的首領（民1:12）。",
+    "name": "亞希以謝"
+  },
+  "俄蘭": {
+    "type": "person",
+    "name_en": "Ocran",
+    "testament": "OT",
+    "desc": "亞設支派首領帕結的父親（民1:13）。",
+    "name": "俄蘭"
+  },
+  "帕結": {
+    "type": "person",
+    "name_en": "Pagiel",
+    "testament": "OT",
+    "desc": "俄蘭的兒子，出埃及時亞設支派的首領（民1:13）。",
+    "name": "帕結"
+  },
+  "丟珥": {
+    "type": "person",
+    "name_en": "Deuel",
+    "testament": "OT",
+    "desc": "迦得支派首領以利雅薩的父親（民1:14）。",
+    "name": "丟珥"
+  },
+  "以利雅薩": {
+    "type": "person",
+    "name_en": "Eliasaph",
+    "testament": "OT",
+    "desc": "丟珥的兒子，出埃及時迦得支派的首領（民1:14）。",
+    "name": "以利雅薩"
+  },
+  "以南": {
+    "type": "person",
+    "name_en": "Enan",
+    "testament": "OT",
+    "desc": "拿弗他利支派首領亞希拉的父親（民1:15）。",
+    "name": "以南"
+  },
+  "亞希拉": {
+    "type": "person",
+    "name_en": "Ahira",
+    "testament": "OT",
+    "desc": "以南的兒子，出埃及時拿弗他利支派的首領（民1:15）。",
+    "name": "亞希拉"
+  },
+  "哥轄": {
+    "type": "person",
+    "name_en": "Kohath",
+    "testament": "OT",
+    "desc": "利未次子，暗蘭（摩西之父）、以斯哈、希伯倫、烏薛的父親，哥轄族負責搬運聖所至聖之物。",
+    "name": "哥轄"
+  },
+  "革順": {
+    "type": "person",
+    "name_en": "Gershon",
+    "testament": "OT",
+    "desc": "利未長子，立尼、示每的父親，革順族負責看守會幕的帳子與遮蓋。",
+    "name": "革順"
+  },
+  "米拉利": {
+    "type": "person",
+    "name_en": "Merari",
+    "testament": "OT",
+    "desc": "利未三子，抹利、母示的父親，米拉利族負責會幕的板、閂、柱、座等。",
+    "name": "米拉利"
+  },
+  "暗蘭": {
+    "type": "person",
+    "name_en": "Amram",
+    "testament": "OT",
+    "desc": "哥轄的兒子，摩西、亞倫、米利暗的父親。",
+    "name": "暗蘭"
+  },
+  "以斯哈": {
+    "type": "person",
+    "name_en": "Izhar",
+    "testament": "OT",
+    "desc": "哥轄的兒子，可拉的父親。",
+    "name": "以斯哈"
+  },
+  "希伯倫": {
+    "type": "person",
+    "name_en": "Hebron (son of Kohath)",
+    "testament": "OT",
+    "desc": "哥轄的兒子，希伯倫族的先祖（與猶大地城邑希伯崙為不同的字）。",
+    "name": "希伯倫"
+  },
+  "立尼": {
+    "type": "person",
+    "name_en": "Libni",
+    "testament": "OT",
+    "desc": "革順的兒子，立尼族的先祖。",
+    "name": "立尼"
+  },
+  "抹利": {
+    "type": "person",
+    "name_en": "Mahli",
+    "testament": "OT",
+    "desc": "米拉利的兒子，抹利族的先祖。",
+    "name": "抹利"
+  },
+  "母示": {
+    "type": "person",
+    "name_en": "Mushi",
+    "testament": "OT",
+    "desc": "米拉利的兒子，母示族的先祖。",
+    "name": "母示"
+  },
+  "拉伊勒": {
+    "type": "person",
+    "name_en": "Lael",
+    "testament": "OT",
+    "desc": "以利雅薩的父親，革順人宗族首領以利雅薩之父（民3:24）。",
+    "name": "拉伊勒"
+  },
+  "亞比亥": {
+    "type": "person",
+    "name_en": "Abihail",
+    "testament": "OT",
+    "desc": "蘇列的父親，米拉利二宗族首領蘇列之父（民3:35）。",
+    "name": "亞比亥"
+  },
+  "蘇列": {
+    "type": "person",
+    "name_en": "Zuriel",
+    "testament": "OT",
+    "desc": "亞比亥的兒子，出埃及時米拉利二宗族的首領（民3:35）。",
+    "name": "蘇列"
+  },
+  "芫荽子": {
+    "type": "concept",
+    "name_en": "Coriander seed",
+    "testament": "OT",
+    "reading": "ㄩㄢˊ ㄙㄨㄟ ㄗˇ",
+    "desc": "香料植物種子，經文以其形容嗎哪的樣式（民11:7）。",
+    "cat": "plant",
+    "name": "芫荽子"
+  },
+  "伊利達": {
+    "type": "person",
+    "name_en": "Eldad",
+    "testament": "OT",
+    "desc": "以色列的長老之一，蒙聖靈感動在營中說預言（民11:26-27）。",
+    "name": "伊利達"
+  },
+  "米達": {
+    "type": "person",
+    "name_en": "Medad",
+    "testament": "OT",
+    "desc": "以色列的長老之一，與伊利達一同蒙聖靈感動在營中說預言（民11:26-27）。",
+    "name": "米達"
+  },
+  "纛": {
+    "type": "concept",
+    "name": "纛",
+    "name_en": "Standard/Banner",
+    "testament": "OT",
+    "reading": "ㄉㄠˋ",
+    "desc": "各支派、各營的旗號標幟，出埃及時以色列人依此按支派紮營與行軍。",
+    "cat": "holy"
+  },
+  "耶孚尼": {
+    "type": "person",
+    "name_en": "Jephunneh",
+    "testament": "OT",
+    "desc": "迦勒的父親，基尼洗族人（民13:6）。",
+    "name": "耶孚尼"
+  },
+  "撒刻": {
+    "type": "person",
+    "name_en": "Zaccur",
+    "testament": "OT",
+    "desc": "流便支派探子沙母亞的父親（民13:4）。",
+    "name": "撒刻"
+  },
+  "沙母亞": {
+    "type": "person",
+    "name_en": "Shammua",
+    "testament": "OT",
+    "desc": "撒刻的兒子，流便支派十二探子之一（民13:4）。",
+    "name": "沙母亞"
+  },
+  "何利": {
+    "type": "person",
+    "name_en": "Hori",
+    "testament": "OT",
+    "desc": "西緬支派探子沙法的父親（民13:5，與何利人一族無關）。",
+    "name": "何利"
+  },
+  "沙法": {
+    "type": "person",
+    "name_en": "Shaphat",
+    "testament": "OT",
+    "desc": "何利的兒子，西緬支派十二探子之一（民13:5）。",
+    "name": "沙法"
+  },
+  "約色": {
+    "type": "person",
+    "name_en": "Igal (father)",
+    "testament": "OT",
+    "desc": "以薩迦支派探子以迦的父親（民13:7）。",
+    "name": "約色"
+  },
+  "以迦": {
+    "type": "person",
+    "name_en": "Igal",
+    "testament": "OT",
+    "desc": "約色的兒子，以薩迦支派十二探子之一（民13:7）。",
+    "name": "以迦"
+  },
+  "嫩": {
+    "type": "person",
+    "name_en": "Nun",
+    "testament": "OT",
+    "desc": "約書亞（何希阿）的父親，以法蓮支派人。",
+    "name": "嫩"
+  },
+  "何希阿": {
+    "type": "person",
+    "name_en": "Hoshea",
+    "testament": "OT",
+    "desc": "嫩的兒子，即約書亞改名前的本名，以法蓮支派十二探子之一（民13:8、16）。",
+    "name": "何希阿"
+  },
+  "拉孚": {
+    "type": "person",
+    "name_en": "Raphu",
+    "testament": "OT",
+    "desc": "便雅憫支派探子帕提的父親（民13:9）。",
+    "name": "拉孚"
+  },
+  "帕提": {
+    "type": "person",
+    "name_en": "Palti",
+    "testament": "OT",
+    "desc": "拉孚的兒子，便雅憫支派十二探子之一（民13:9）。",
+    "name": "帕提"
+  },
+  "梭底": {
+    "type": "person",
+    "name_en": "Sodi",
+    "testament": "OT",
+    "desc": "西布倫支派探子迦疊的父親（民13:10）。",
+    "name": "梭底"
+  },
+  "迦疊": {
+    "type": "person",
+    "name_en": "Gaddiel",
+    "testament": "OT",
+    "desc": "梭底的兒子，西布倫支派十二探子之一（民13:10）。",
+    "name": "迦疊"
+  },
+  "穌西": {
+    "type": "person",
+    "name_en": "Susi",
+    "testament": "OT",
+    "desc": "瑪拿西支派探子迦底的父親（民13:11）。",
+    "name": "穌西"
+  },
+  "迦底": {
+    "type": "person",
+    "name_en": "Gaddi",
+    "testament": "OT",
+    "desc": "穌西的兒子，瑪拿西支派十二探子之一（民13:11）。",
+    "name": "迦底"
+  },
+  "基瑪利": {
+    "type": "person",
+    "name_en": "Gemalli",
+    "testament": "OT",
+    "desc": "但支派探子亞米利的父親（民13:12）。",
+    "name": "基瑪利"
+  },
+  "亞米利": {
+    "type": "person",
+    "name_en": "Ammiel",
+    "testament": "OT",
+    "desc": "基瑪利的兒子，但支派十二探子之一（民13:12）。",
+    "name": "亞米利"
+  },
+  "米迦勒": {
+    "type": "person",
+    "name_en": "Michael (father)",
+    "testament": "OT",
+    "desc": "亞設支派探子西帖的父親（民13:13，與天使長米迦勒同名不同人）。",
+    "name": "米迦勒"
+  },
+  "西帖": {
+    "type": "person",
+    "name_en": "Sethur",
+    "testament": "OT",
+    "desc": "米迦勒的兒子，亞設支派十二探子之一（民13:13）。",
+    "name": "西帖"
+  },
+  "縛西": {
+    "type": "person",
+    "name_en": "Vophsi",
+    "testament": "OT",
+    "desc": "拿弗他利支派探子拿比的父親（民13:14）。",
+    "name": "縛西"
+  },
+  "拿比": {
+    "type": "person",
+    "name_en": "Nahbi",
+    "testament": "OT",
+    "desc": "縛西的兒子，拿弗他利支派十二探子之一（民13:14）。",
+    "name": "拿比"
+  },
+  "瑪基": {
+    "type": "person",
+    "name_en": "Maki",
+    "testament": "OT",
+    "desc": "迦得支派探子臼利的父親（民13:15）。",
+    "name": "瑪基"
+  },
+  "臼利": {
+    "type": "person",
+    "name_en": "Geuel",
+    "testament": "OT",
+    "desc": "瑪基的兒子，迦得支派十二探子之一（民13:15）。",
+    "name": "臼利"
+  },
+  "利合": {
+    "type": "place",
+    "name_en": "Rehob",
+    "testament": "OT",
+    "desc": "探子窺探迦南地的北方界標之一（民13:21）。",
+    "name": "利合"
+  },
+  "哈馬口": {
+    "type": "place",
+    "name_en": "Lebo-hamath",
+    "testament": "OT",
+    "desc": "迦南地北界的入口，探子窺探路線的終點（民13:21）。",
+    "name": "哈馬口"
+  },
+  "亞希幔": {
+    "type": "person",
+    "name_en": "Ahiman",
+    "testament": "OT",
+    "desc": "希伯崙的亞衲族巨人之一，探子在此看見的三個巨人首領（民13:22）。",
+    "name": "亞希幔"
+  },
+  "示篩": {
+    "type": "person",
+    "name_en": "Sheshai",
+    "testament": "OT",
+    "desc": "希伯崙的亞衲族巨人之一，探子在此看見的三個巨人首領（民13:22）。",
+    "name": "示篩"
+  },
+  "撻買": {
+    "type": "person",
+    "name_en": "Talmai",
+    "testament": "OT",
+    "desc": "希伯崙的亞衲族巨人之一，探子在此看見的三個巨人首領（民13:22）。",
+    "name": "撻買"
+  },
+  "鎖安城": {
+    "type": "place",
+    "name_en": "Zoan",
+    "testament": "OT",
+    "lat": 31.05,
+    "lng": 31.68,
+    "desc": "埃及尼羅河三角洲古城，經文以希伯崙建城早於此城七年，凸顯希伯崙的古老。",
+    "name": "鎖安城"
+  },
+  "何珥瑪": {
+    "type": "place",
+    "name": "何珥瑪",
+    "name_en": "Hormah",
+    "testament": "OT",
+    "lat": 30.75,
+    "lng": 34.75,
+    "desc": "以色列人因窺探迦南後不信而受挫敗退之地，後約書亞征服迦南時攻取此城（民14:45）。"
   }
 }
