@@ -5632,6 +5632,117 @@
     "name": "帷子",
     "cat": "holy"
   },
+  "嗉子": {
+    "type": "concept",
+    "name": "嗉子",
+    "name_en": "Crop (of a bird)",
+    "testament": "OT",
+    "reading": "ㄙㄨˋ ㄗ˙",
+    "desc": "鳥類食道末端儲存食物的囊袋，獻燔祭的鳥類要除去此物與髒物。",
+    "cat": "plant"
+  },
+  "戴鵀": {
+    "type": "concept",
+    "name": "戴鵀",
+    "name_en": "Hoopoe",
+    "testament": "OT",
+    "reading": "ㄉㄞˋ ㄖㄣˊ",
+    "desc": "頭上有羽冠的鳥類，利未記列為不可吃的可憎之物。",
+    "cat": "plant"
+  },
+  "蝘蜓": {
+    "type": "concept",
+    "name": "蝘蜓",
+    "name_en": "Lizard/Gecko",
+    "testament": "OT",
+    "reading": "ㄧㄢˇ ㄊㄧㄥˇ",
+    "desc": "壁虎一類的爬蟲，利未記列為爬物中不潔淨者之一。",
+    "cat": "plant"
+  },
+  "癤子": {
+    "type": "concept",
+    "name": "癤子",
+    "name_en": "Boil",
+    "testament": "OT",
+    "reading": "ㄐㄧㄝˊ ㄗ˙",
+    "desc": "皮膚上的腫塊，若在其間有白毛或現象深於皮，祭司要按大痲瘋條例察看。",
+    "cat": "holy"
+  },
+  "頭疥": {
+    "type": "concept",
+    "name": "頭疥",
+    "name_en": "Scall",
+    "testament": "OT",
+    "reading": "ㄒㄧㄝˋ",
+    "desc": "頭上或鬍鬚上的皮膚病，若現象深於皮且有細黃毛，祭司要定為不潔淨的大痲瘋。",
+    "cat": "holy"
+  },
+  "羅革": {
+    "type": "concept",
+    "name": "羅革",
+    "name_en": "Log",
+    "testament": "OT",
+    "desc": "液量單位，約 0.3 公升，是欣的十二分之一；用於量取贖愆祭所需的油。",
+    "cat": "measure"
+  },
+  "拈鬮": {
+    "type": "concept",
+    "name": "拈鬮",
+    "name_en": "Casting lots",
+    "testament": "OT",
+    "reading": "ㄋㄧㄢˇ ㄐㄧㄡ",
+    "desc": "以抽籤的方式決定歸屬，被視為由神掌管的裁決方式（如贖罪日兩隻公羊分派）。",
+    "cat": "fest"
+  },
+  "摩洛": {
+    "type": "concept",
+    "name": "摩洛",
+    "name_en": "Molech",
+    "testament": "both",
+    "desc": "亞捫人所敬拜的偶像，敬拜方式包括獻兒女為祭，以色列人被嚴令不可效法，違者治死。"
+  },
+  "示羅密": {
+    "type": "person",
+    "name": "示羅密",
+    "name_en": "Shelomith",
+    "testament": "OT",
+    "desc": "但支派底伯利的女兒，其子因與埃及人爭鬥時褻瀆聖名咒詛，被治死（利24:11）。"
+  },
+  "底伯利": {
+    "type": "person",
+    "name": "底伯利",
+    "name_en": "Dibri",
+    "testament": "OT",
+    "desc": "但支派人，示羅密的父親（利24:11）。"
+  },
+  "但支派": {
+    "type": "place",
+    "name": "但支派",
+    "name_en": "Tribe of Dan",
+    "testament": "both",
+    "desc": "雅各之子但的後裔支派，起初分地在猶大與以法蓮之間，後遷至極北的但城。"
+  },
+  "烏薛": {
+    "type": "person",
+    "name": "烏薛",
+    "name_en": "Uzziel",
+    "testament": "OT",
+    "desc": "亞倫的叔父（哥轄之子），米沙利與以利撒反的父親（利10:4）；利未支派中另有同名者。"
+  },
+  "米沙利": {
+    "type": "person",
+    "name": "米沙利",
+    "name_en": "Mishael",
+    "testament": "OT",
+    "desc": "烏薛的兒子，摩西的堂兄弟，因拿答、亞比戶之死奉命將二人的屍體抬出營外（利10:4）。"
+  },
+  "以利撒反": {
+    "type": "person",
+    "name": "以利撒反",
+    "name_en": "Elzaphan",
+    "testament": "OT",
+    "desc": "烏薛的兒子，米沙利的兄弟（利10:4）；後在民數記中被立為哥轄族的族長。"
+  },
   "橛子": {
     "type": "concept",
     "name_en": "Pegs",
