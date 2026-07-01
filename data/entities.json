@@ -5560,13 +5560,29 @@
     "desc": "但支派亞希撒抹的兒子，與比撒列一同蒙神賜智慧建造會幕的巧匠。",
     "name": "亞何利亞伯"
   },
-  "戶珥": {
-    "type": "person",
-    "name_en": "Hur",
-    "testament": "OT",
-    "desc": "與亞倫一同扶住摩西的手，使以色列勝過亞瑪力人；後與亞倫共理民事。",
-    "name": "戶珥"
-  },
+  "戶珥": [
+    {
+      "type": "person",
+      "name": "戶珥（米甸王）",
+      "name_en": "Hur (king of Midian)",
+      "books": [
+        "民數記"
+      ],
+      "chapters": [
+        31,
+        31
+      ],
+      "testament": "OT",
+      "desc": "米甸五王之一，以色列人擊殺米甸時被殺（民31:8）。"
+    },
+    {
+      "type": "person",
+      "name": "戶珥",
+      "name_en": "Hur",
+      "testament": "OT",
+      "desc": "與亞倫一同扶住摩西的手，使以色列勝過亞瑪力人；後與亞倫共理民事。"
+    }
+  ],
   "以利以謝": {
     "type": "person",
     "name_en": "Eliezer",
@@ -7276,5 +7292,526 @@
     "testament": "OT",
     "desc": "米拉利之子抹利的另一種經文轉寫（民26:58，與民3:20的「抹利」為同一人）。",
     "name": "瑪利"
+  },
+  "以未": {
+    "type": "person",
+    "name_en": "Evi",
+    "testament": "OT",
+    "desc": "米甸五王之一，以色列人擊殺米甸時被殺（民31:8）。",
+    "name": "以未"
+  },
+  "利金": {
+    "type": "person",
+    "name_en": "Rekem",
+    "testament": "OT",
+    "desc": "米甸五王之一，以色列人擊殺米甸時被殺（民31:8）。",
+    "name": "利金"
+  },
+  "蘇珥": {
+    "type": "person",
+    "name_en": "Zur",
+    "testament": "OT",
+    "desc": "米甸五王之一，哥斯比的父親，以色列人擊殺米甸時被殺（民31:8）。",
+    "name": "蘇珥"
+  },
+  "利巴": {
+    "type": "person",
+    "name_en": "Reba",
+    "testament": "OT",
+    "desc": "米甸五王之一，以色列人擊殺米甸時被殺（民31:8）。",
+    "name": "利巴"
+  },
+  "亞大錄": {
+    "type": "place",
+    "name_en": "Atroth",
+    "testament": "OT",
+    "desc": "流便、迦得子孫求得之地的城邑之一（民32:3，與亞他錄疑為同地異譯）。",
+    "name": "亞大錄"
+  },
+  "寧拉": {
+    "type": "place",
+    "name_en": "Nimrah",
+    "testament": "OT",
+    "desc": "流便、迦得子孫求得之地的城邑之一（民32:3）。",
+    "name": "寧拉"
+  },
+  "以利亞利": {
+    "type": "place",
+    "name_en": "Elealeh",
+    "testament": "OT",
+    "lat": 31.82,
+    "lng": 35.82,
+    "desc": "流便支派重建的城邑，鄰近希實本（民32:3、37）。",
+    "name": "以利亞利"
+  },
+  "示班": {
+    "type": "place",
+    "name_en": "Sebam",
+    "testament": "OT",
+    "desc": "流便、迦得子孫求得之地的城邑之一（民32:3）。",
+    "name": "示班"
+  },
+  "尼波": {
+    "type": "place",
+    "name_en": "Nebo (town)",
+    "testament": "OT",
+    "lat": 31.77,
+    "lng": 35.73,
+    "desc": "流便支派重建並改名的城邑，與尼波山同名（民32:3、38）。",
+    "name": "尼波"
+  },
+  "比穩": {
+    "type": "place",
+    "name_en": "Beon",
+    "testament": "OT",
+    "desc": "流便、迦得子孫求得之地的城邑之一（民32:3）。",
+    "name": "比穩"
+  },
+  "亞他錄": {
+    "type": "place",
+    "name_en": "Ataroth",
+    "testament": "OT",
+    "lat": 31.53,
+    "lng": 35.72,
+    "desc": "迦得子孫建造的堅固城之一（民32:34，與亞大錄疑為同地異譯）。",
+    "name": "亞他錄"
+  },
+  "朔反": {
+    "type": "place",
+    "name_en": "Shophan",
+    "testament": "OT",
+    "desc": "迦得子孫建造的堅固城之一（民32:35）。",
+    "name": "朔反"
+  },
+  "約比哈": {
+    "type": "place",
+    "name_en": "Jogbehah",
+    "testament": "OT",
+    "desc": "迦得子孫建造的堅固城之一（民32:35）。",
+    "name": "約比哈"
+  },
+  "伯寧拉": {
+    "type": "place",
+    "name_en": "Beth-nimrah",
+    "testament": "OT",
+    "desc": "迦得子孫建造的堅固城之一（民32:36）。",
+    "name": "伯寧拉"
+  },
+  "伯哈蘭": {
+    "type": "place",
+    "name_en": "Beth-haran",
+    "testament": "OT",
+    "desc": "迦得子孫建造的堅固城之一（民32:36）。",
+    "name": "伯哈蘭"
+  },
+  "基列亭": {
+    "type": "place",
+    "name_en": "Kiriathaim",
+    "testament": "OT",
+    "lat": 31.53,
+    "lng": 35.87,
+    "desc": "流便支派重建的城邑（民32:37）。",
+    "name": "基列亭"
+  },
+  "巴力免": {
+    "type": "place",
+    "name_en": "Baal-meon",
+    "testament": "OT",
+    "desc": "流便支派重建並改名的城邑（民32:38）。",
+    "name": "巴力免"
+  },
+  "西比瑪": {
+    "type": "place",
+    "name_en": "Shibmah",
+    "testament": "OT",
+    "desc": "流便支派重建的城邑（民32:38）。",
+    "name": "西比瑪"
+  },
+  "基納": {
+    "type": "place",
+    "name_en": "Kenath",
+    "testament": "OT",
+    "desc": "瑪拿西人挪巴攻取後按己名改稱的城邑（民32:42）。",
+    "name": "基納"
+  },
+  "挪巴": {
+    "type": "person",
+    "name_en": "Nobah",
+    "testament": "OT",
+    "desc": "瑪拿西支派人，攻取基納，按己名改稱該地（民32:42）。",
+    "name": "挪巴"
+  },
+  "書珥": {
+    "type": "place",
+    "name_en": "Shur",
+    "testament": "OT",
+    "desc": "紅海與埃及交界的曠野，以色列人出埃及後經過（民33:8）。",
+    "name": "書珥"
+  },
+  "伊坦": {
+    "type": "place",
+    "name_en": "Etham",
+    "testament": "OT",
+    "desc": "曠野地帶，以色列人在此走了三天路程後到瑪拉（民33:8）。",
+    "name": "伊坦"
+  },
+  "汛的曠野": {
+    "type": "place",
+    "name_en": "Wilderness of Sin",
+    "testament": "OT",
+    "desc": "紅海與西乃之間的曠野，以色列人在此發怨言、神降嗎哪與鵪鶉（出16章）。",
+    "name": "汛的曠野"
+  },
+  "脫加": {
+    "type": "place",
+    "name_en": "Dophkah",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:12）。",
+    "name": "脫加"
+  },
+  "亞錄": {
+    "type": "place",
+    "name_en": "Alush",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:13）。",
+    "name": "亞錄"
+  },
+  "利提瑪": {
+    "type": "place",
+    "name_en": "Rithmah",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:18）。",
+    "name": "利提瑪"
+  },
+  "臨門帕烈": {
+    "type": "place",
+    "name_en": "Rimmon-perez",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:19）。",
+    "name": "臨門帕烈"
+  },
+  "立拿": {
+    "type": "place",
+    "name_en": "Libnah (wilderness station)",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:20，與猶大地的立拿城非同一地）。",
+    "name": "立拿"
+  },
+  "勒撒": {
+    "type": "place",
+    "name_en": "Rissah",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:21）。",
+    "name": "勒撒"
+  },
+  "基希拉他": {
+    "type": "place",
+    "name_en": "Kehelathah",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:22）。",
+    "name": "基希拉他"
+  },
+  "沙斐山": {
+    "type": "place",
+    "name_en": "Mount Shepher",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:23）。",
+    "name": "沙斐山"
+  },
+  "哈拉大": {
+    "type": "place",
+    "name_en": "Haradah",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:24）。",
+    "name": "哈拉大"
+  },
+  "瑪吉希錄": {
+    "type": "place",
+    "name_en": "Makheloth",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:25）。",
+    "name": "瑪吉希錄"
+  },
+  "他哈": {
+    "type": "place",
+    "name_en": "Tahath",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:26）。",
+    "name": "他哈"
+  },
+  "密加": {
+    "type": "place",
+    "name_en": "Mithkah",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:28）。",
+    "name": "密加"
+  },
+  "哈摩拿": {
+    "type": "place",
+    "name_en": "Hashmonah",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:29）。",
+    "name": "哈摩拿"
+  },
+  "摩西錄": {
+    "type": "place",
+    "name_en": "Moseroth",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:30）。",
+    "name": "摩西錄"
+  },
+  "比尼亞干": {
+    "type": "place",
+    "name_en": "Bene-jaakan",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:31）。",
+    "name": "比尼亞干"
+  },
+  "曷哈及甲": {
+    "type": "place",
+    "name_en": "Hor-haggidgad",
+    "testament": "OT",
+    "reading": "ㄏㄜˊ ㄏㄚˊ ㄐㄧˊ ㄐㄧㄚˊ",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:32）。",
+    "name": "曷哈及甲"
+  },
+  "阿博拿": {
+    "type": "place",
+    "name_en": "Abronah",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:34）。",
+    "name": "阿博拿"
+  },
+  "以旬迦別": {
+    "type": "place",
+    "name_en": "Ezion-geber",
+    "testament": "OT",
+    "lat": 29.55,
+    "lng": 34.95,
+    "desc": "紅海北端港口城，以色列人曠野漂流的紮營站，後為所羅門建造船隊之地。",
+    "name": "以旬迦別"
+  },
+  "亞拉得": {
+    "type": "person",
+    "name_en": "Arad (Canaanite king)",
+    "testament": "OT",
+    "desc": "住迦南南地的迦南人王，聽聞以色列人前來（民33:40，與亞拉得城非同一詞條）。",
+    "name": "亞拉得"
+  },
+  "撒摩拿": {
+    "type": "place",
+    "name_en": "Zalmonah",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:41）。",
+    "name": "撒摩拿"
+  },
+  "普嫩": {
+    "type": "place",
+    "name_en": "Punon",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:42）。",
+    "name": "普嫩"
+  },
+  "底本迦得": {
+    "type": "place",
+    "name_en": "Dibon-gad",
+    "testament": "OT",
+    "lat": 31.5,
+    "lng": 35.79,
+    "desc": "迦得支派所在的底本，以色列人曠野漂流末段的紮營站（民33:45，與底本為同一城）。",
+    "name": "底本迦得"
+  },
+  "亞門低比拉太音": {
+    "type": "place",
+    "name_en": "Almon-diblathaim",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民33:46）。",
+    "name": "亞門低比拉太音"
+  },
+  "伯耶施末": {
+    "type": "place",
+    "name_en": "Beth-jeshimoth",
+    "testament": "OT",
+    "lat": 31.78,
+    "lng": 35.6,
+    "desc": "摩押平原沿約但河邊的地標，以色列人紮營範圍的一端（民33:49）。",
+    "name": "伯耶施末"
+  },
+  "亞伯什亭": {
+    "type": "place",
+    "name_en": "Abel-shittim",
+    "testament": "OT",
+    "lat": 31.8,
+    "lng": 35.65,
+    "desc": "摩押平原沿約但河邊的地標，以色列人紮營範圍的另一端（民33:49）。",
+    "name": "亞伯什亭"
+  },
+  "亞克拉濱坡": {
+    "type": "place",
+    "name_en": "Ascent of Akrabbim",
+    "testament": "OT",
+    "desc": "迦南南界的地標，死海西南方的山坡（民34:4）。",
+    "name": "亞克拉濱坡"
+  },
+  "哈薩亞達": {
+    "type": "place",
+    "name_en": "Hazar-addar",
+    "testament": "OT",
+    "desc": "迦南南界的地標之一，位置不詳（民34:4）。",
+    "name": "哈薩亞達"
+  },
+  "押們": {
+    "type": "place",
+    "name_en": "Azmon",
+    "testament": "OT",
+    "desc": "迦南南界的地標，通往埃及小河（民34:4-5）。",
+    "name": "押們"
+  },
+  "西達達": {
+    "type": "place",
+    "name_en": "Zedad",
+    "testament": "OT",
+    "desc": "迦南北界的地標之一，位置不詳（民34:8）。",
+    "name": "西達達"
+  },
+  "西斐崙": {
+    "type": "place",
+    "name_en": "Ziphron",
+    "testament": "OT",
+    "desc": "迦南北界的地標之一，位置不詳（民34:9）。",
+    "name": "西斐崙"
+  },
+  "哈薩以難": {
+    "type": "place",
+    "name_en": "Hazar-enan",
+    "testament": "OT",
+    "desc": "迦南北界的地標，東界的起點（民34:9-10）。",
+    "name": "哈薩以難"
+  },
+  "示番": {
+    "type": "place",
+    "name_en": "Shepham",
+    "testament": "OT",
+    "desc": "迦南東界的地標之一，位置不詳（民34:10-11）。",
+    "name": "示番"
+  },
+  "利比拉": {
+    "type": "place",
+    "name_en": "Riblah",
+    "testament": "OT",
+    "desc": "迦南東界的地標，靠近亞延（民34:11）。",
+    "name": "利比拉"
+  },
+  "示母利": {
+    "type": "person",
+    "name_en": "Shemuel",
+    "testament": "OT",
+    "desc": "亞米忽的兒子，西緬支派分地的首領（民34:20）。",
+    "name": "示母利"
+  },
+  "基斯倫": {
+    "type": "person",
+    "name_en": "Kislon",
+    "testament": "OT",
+    "desc": "以利達的父親，便雅憫支派分地首領以利達之父（民34:21）。",
+    "name": "基斯倫"
+  },
+  "以利達": {
+    "type": "person",
+    "name_en": "Elidad",
+    "testament": "OT",
+    "desc": "基斯倫的兒子，便雅憫支派分地的首領（民34:21）。",
+    "name": "以利達"
+  },
+  "約利": {
+    "type": "person",
+    "name_en": "Jogli",
+    "testament": "OT",
+    "desc": "布基的父親，但支派分地首領布基之父（民34:22）。",
+    "name": "約利"
+  },
+  "布基": {
+    "type": "person",
+    "name_en": "Bukki",
+    "testament": "OT",
+    "desc": "約利的兒子，但支派分地的首領（民34:22）。",
+    "name": "布基"
+  },
+  "以弗": {
+    "type": "person",
+    "name_en": "Ephod",
+    "testament": "OT",
+    "desc": "漢聶的父親，瑪拿西支派分地首領漢聶之父（民34:23）。",
+    "name": "以弗"
+  },
+  "漢聶": {
+    "type": "person",
+    "name_en": "Hanniel",
+    "testament": "OT",
+    "desc": "以弗的兒子，瑪拿西支派分地的首領（民34:23）。",
+    "name": "漢聶"
+  },
+  "拾弗但": {
+    "type": "person",
+    "name_en": "Shiphtan",
+    "testament": "OT",
+    "desc": "基母利的父親，以法蓮支派分地首領基母利之父（民34:24）。",
+    "name": "拾弗但"
+  },
+  "基母利": {
+    "type": "person",
+    "name_en": "Kemuel",
+    "testament": "OT",
+    "desc": "拾弗但的兒子，以法蓮支派分地的首領（民34:24）。",
+    "name": "基母利"
+  },
+  "帕納": {
+    "type": "person",
+    "name_en": "Parnach",
+    "testament": "OT",
+    "desc": "以利撒番的父親，西布倫支派分地首領以利撒番之父（民34:25）。",
+    "name": "帕納"
+  },
+  "以利撒番": {
+    "type": "person",
+    "name_en": "Elizaphan",
+    "testament": "OT",
+    "desc": "帕納的兒子，西布倫支派分地的首領（民34:25）。",
+    "name": "以利撒番"
+  },
+  "阿散": {
+    "type": "person",
+    "name_en": "Azzan",
+    "testament": "OT",
+    "desc": "帕鐵的父親，以薩迦支派分地首領帕鐵之父（民34:26）。",
+    "name": "阿散"
+  },
+  "帕鐵": {
+    "type": "person",
+    "name_en": "Paltiel",
+    "testament": "OT",
+    "desc": "阿散的兒子，以薩迦支派分地的首領（民34:26）。",
+    "name": "帕鐵"
+  },
+  "示羅米": {
+    "type": "person",
+    "name_en": "Shelomi",
+    "testament": "OT",
+    "desc": "亞希忽的父親，亞設支派分地首領亞希忽之父（民34:27）。",
+    "name": "示羅米"
+  },
+  "亞希忽": {
+    "type": "person",
+    "name_en": "Ahihud",
+    "testament": "OT",
+    "desc": "示羅米的兒子，亞設支派分地的首領（民34:27）。",
+    "name": "亞希忽"
+  },
+  "比大黑": {
+    "type": "person",
+    "name_en": "Pedahel",
+    "testament": "OT",
+    "desc": "亞米忽的兒子，拿弗他利支派分地的首領（民34:28）。",
+    "name": "比大黑"
   }
 }
