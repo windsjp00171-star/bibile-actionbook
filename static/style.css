@@ -435,7 +435,7 @@ body {
 .bigmap-panel {
   position: fixed; z-index: 1301;
   left: 50%; top: 50%; transform: translate(-50%, -50%) scale(.97);
-  width: min(94vw, 900px); height: min(86vh, 720px);
+  width: min(97vw, 1200px); height: min(94vh, 880px);
   background: #FBF6EA; border-radius: 16px; padding: 16px;
   box-shadow: 0 12px 48px rgba(0,0,0,.35);
   opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
@@ -443,7 +443,17 @@ body {
 }
 .bigmap-panel.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
 .bigmap-title { font-size: 16px; color: #2A1A08; margin: 0 0 10px; padding-right: 36px; }
-.bigmap-canvas { flex: 1; border-radius: 10px; overflow: hidden; }
+.bigmap-canvas { flex: 1; min-height: 0; border-radius: 10px; overflow: hidden; }
+/* 路線圖面板：地圖拿最大空間，上下輔助區塊收緊高度，不擠壓地圖 */
+#routesPanel { min-height: 0; }
+#routesPanel .search-meta { flex: none; margin-bottom: 6px; }
+#routesPanel .route-picker { flex: none; }
+#routesPanel .route-info { flex: none; max-height: 92px; overflow-y: auto; }
+#routesPanel .bigmap-canvas { flex: 1 1 auto; min-height: 260px; }
+#routesPanel .route-stops { flex: none; max-height: 110px; overflow-y: auto; }
+@media (min-width: 900px) {
+  #routesPanel .bigmap-canvas { min-height: 420px; }
+}
 
 /* 路線圖 */
 .route-picker { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
