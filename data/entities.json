@@ -1733,16 +1733,28 @@
     "lat": 29.5,
     "lng": 32.9
   },
-  "歌珊": {
-    "type": "place",
-    "name": "歌珊",
-    "name_en": "Goshen",
-    "testament": "OT",
-    "desc": "埃及東北三角洲一帶的肥沃土地，約瑟為雅各一家向法老爭取到的居住地，以色列人在此繁衍壯大，後被迫在此為奴。",
-    "verses": "創世記45:10、出埃及記8:22",
-    "lat": 30.5,
-    "lng": 32.0
-  },
+  "歌珊": [
+    {
+      "type": "place",
+      "name": "歌珊（迦南地）",
+      "name_en": "Goshen (region in Canaan)",
+      "books": [
+        "約書亞記"
+      ],
+      "testament": "OT",
+      "desc": "迦南南地的一個地區，約書亞南征範圍所及，與埃及的歌珊地同名不同地（書10:41）。"
+    },
+    {
+      "type": "place",
+      "name": "歌珊",
+      "name_en": "Goshen",
+      "testament": "OT",
+      "desc": "埃及東北三角洲一帶的肥沃土地，約瑟為雅各一家向法老爭取到的居住地，以色列人在此繁衍壯大，後被迫在此為奴。",
+      "verses": "創世記45:10、出埃及記8:22",
+      "lat": 30.5,
+      "lng": 32.0
+    }
+  ],
   "以琳": {
     "type": "place",
     "name": "以琳",
@@ -7069,13 +7081,6 @@
     "desc": "以薩迦的兒子，雅述族的先祖（民26:24）。",
     "name": "雅述"
   },
-  "伸崙": {
-    "type": "person",
-    "name_en": "Shimron",
-    "testament": "OT",
-    "desc": "以薩迦的兒子，伸崙族的先祖（民26:24）。",
-    "name": "伸崙"
-  },
   "西烈": {
     "type": "person",
     "name_en": "Sered",
@@ -7813,5 +7818,222 @@
     "testament": "OT",
     "desc": "亞米忽的兒子，拿弗他利支派分地的首領（民34:28）。",
     "name": "比大黑"
+  },
+  "伸崙": [
+    {
+      "type": "person",
+      "name_en": "Shimron",
+      "testament": "OT",
+      "desc": "以薩迦的兒子，伸崙族的先祖（民26:24）。",
+      "name": "伸崙（以薩迦宗族）",
+      "books": [
+        "民數記"
+      ]
+    },
+    {
+      "type": "place",
+      "name": "伸崙",
+      "name_en": "Shimron (city)",
+      "testament": "OT",
+      "desc": "夏瑣王耶賓聯軍中伸崙王所轄之城（書11:1）。"
+    }
+  ],
+  "撒拉但": {
+    "type": "place",
+    "name_en": "Zarethan",
+    "testament": "OT",
+    "desc": "約但河邊城邑，河水在此斷流以色列人得以過河（書3:16）。",
+    "name": "撒拉但"
+  },
+  "亞當城": {
+    "type": "place",
+    "name_en": "Adam (city)",
+    "testament": "OT",
+    "desc": "約但河邊城邑，靠近撒拉但，河水斷流之處（書3:16）。",
+    "name": "亞當城"
+  },
+  "吉甲": {
+    "type": "place",
+    "name_en": "Gilgal",
+    "testament": "OT",
+    "lat": 31.87,
+    "lng": 35.47,
+    "desc": "以色列人過約但河後安營立十二石記念之地，多次成為以色列人的根據地。",
+    "name": "吉甲"
+  },
+  "火石刀": {
+    "type": "concept",
+    "name_en": "Flint knife",
+    "testament": "OT",
+    "desc": "用堅硬石頭製成的刀，約書亞用以在吉甲為以色列人行割禮（書5:3）。",
+    "cat": "holy",
+    "name": "火石刀"
+  },
+  "除皮山": {
+    "type": "place",
+    "name_en": "Hill of the foreskins (Gibeath-haaraloth)",
+    "testament": "OT",
+    "desc": "吉甲附近的山，約書亞在此為以色列人行割禮，因而得名（書5:3）。",
+    "name": "除皮山"
+  },
+  "亞割谷": {
+    "type": "place",
+    "name_en": "Valley of Achor",
+    "testament": "OT",
+    "lat": 31.85,
+    "lng": 35.42,
+    "desc": "亞干因私藏戰利品被石頭打死之地，「亞割」意為「連累／災禍」（書7:24）。",
+    "name": "亞割谷"
+  },
+  "耶末": {
+    "type": "place",
+    "name_en": "Jarmuth",
+    "testament": "OT",
+    "lat": 31.71,
+    "lng": 34.99,
+    "desc": "迦南南方城邦，其王與耶路撒冷等四王聯合攻打基遍，被約書亞擊敗（書10:5）。",
+    "name": "耶末"
+  },
+  "拉吉": {
+    "type": "place",
+    "name_en": "Lachish",
+    "testament": "OT",
+    "lat": 31.57,
+    "lng": 34.85,
+    "desc": "迦南南方要城，五亞摩利王聯軍之一的所在，後為猶大重要防禦城市。",
+    "name": "拉吉"
+  },
+  "伊磯倫": {
+    "type": "place",
+    "name_en": "Eglon",
+    "testament": "OT",
+    "lat": 31.6,
+    "lng": 34.7,
+    "desc": "迦南南方城邦，五亞摩利王聯軍之一（書10:5），被約書亞攻取。",
+    "name": "伊磯倫"
+  },
+  "伯和崙": {
+    "type": "place",
+    "name_en": "Beth-horon",
+    "testament": "OT",
+    "lat": 31.87,
+    "lng": 35.13,
+    "desc": "以色列人追擊亞摩利聯軍下坡之地，約書亞在此禱告求日頭停住（書10:11）。",
+    "name": "伯和崙"
+  },
+  "瑪基大": {
+    "type": "place",
+    "name_en": "Makkedah",
+    "testament": "OT",
+    "desc": "南征所取要城，五王曾藏身山洞於此附近，後被約書亞攻取（書10:16-28）。",
+    "name": "瑪基大"
+  },
+  "基遍": {
+    "type": "place",
+    "name_en": "Gibeon",
+    "testament": "OT",
+    "lat": 31.85,
+    "lng": 35.18,
+    "desc": "與以色列人立約求和的希未城邦，五亞摩利王聯軍因此攻打基遍，約書亞率軍相救。",
+    "name": "基遍"
+  },
+  "夏瑣": {
+    "type": "place",
+    "name_en": "Hazor",
+    "testament": "OT",
+    "lat": 33.02,
+    "lng": 35.57,
+    "desc": "迦南北方最大城邦，夏瑣王耶賓聯合北方諸王迎戰約書亞，被攻取焚燒（書11章）。",
+    "name": "夏瑣"
+  },
+  "耶賓": {
+    "type": "person",
+    "name_en": "Jabin (king of Hazor)",
+    "testament": "OT",
+    "desc": "夏瑣王，聯合北方諸王迎戰約書亞，戰敗被殺（書11:1）。",
+    "name": "耶賓"
+  },
+  "瑪頓": {
+    "type": "place",
+    "name_en": "Madon",
+    "testament": "OT",
+    "desc": "迦南北方城邦，王約巴聯合夏瑣王耶賓迎戰約書亞（書11:1）。",
+    "name": "瑪頓"
+  },
+  "約巴": {
+    "type": "person",
+    "name_en": "Jobab",
+    "testament": "OT",
+    "desc": "瑪頓王，聯合夏瑣王耶賓迎戰約書亞（書11:1）。",
+    "name": "約巴"
+  },
+  "押煆": {
+    "type": "place",
+    "name_en": "Achshaph",
+    "testament": "OT",
+    "desc": "迦南北方城邦，其王聯合夏瑣王耶賓迎戰約書亞（書11:1）。",
+    "name": "押煆"
+  },
+  "米倫": {
+    "type": "place",
+    "name_en": "Merom",
+    "testament": "OT",
+    "desc": "北方諸王聯軍安營之水域，約書亞在此突襲得勝（書11:5-7）。",
+    "name": "米倫"
+  },
+  "米斯利弗瑪音": {
+    "type": "place",
+    "name_en": "Misrephoth-maim",
+    "testament": "OT",
+    "desc": "約書亞追擊北方聯軍直到之地，位置不詳（書11:8）。",
+    "name": "米斯利弗瑪音"
+  },
+  "米斯巴": {
+    "type": "place",
+    "name_en": "Mizpah (valley near Hermon)",
+    "testament": "OT",
+    "desc": "黑門山下的谷地，約書亞追擊北方聯軍的東界（書11:8，與便雅憫的米斯巴為不同地）。",
+    "name": "米斯巴"
+  },
+  "哈拉山": {
+    "type": "place",
+    "name_en": "Mount Halak",
+    "testament": "OT",
+    "desc": "西珥附近的山，約書亞征服迦南南界的地標（書11:17）。",
+    "name": "哈拉山"
+  },
+  "底璧": {
+    "type": "place",
+    "name_en": "Debir",
+    "testament": "OT",
+    "lat": 31.45,
+    "lng": 35.0,
+    "desc": "猶大山地城邑，約書亞攻取的南方要城之一（書11:21）。",
+    "name": "底璧"
+  },
+  "亞拿伯": {
+    "type": "place",
+    "name_en": "Anab",
+    "testament": "OT",
+    "desc": "猶大山地城邑，約書亞從此剪除亞衲族人（書11:21）。",
+    "name": "亞拿伯"
+  },
+  "亞實突": {
+    "type": "place",
+    "name_en": "Ashdod",
+    "testament": "OT",
+    "lat": 31.8,
+    "lng": 34.65,
+    "desc": "非利士五座主要城邑之一，約書亞未能完全征服此地的亞衲族人（書11:22）。",
+    "name": "亞實突"
+  },
+  "迦薩": {
+    "type": "place",
+    "name": "迦薩",
+    "name_en": "Gaza",
+    "testament": "OT",
+    "lat": 31.5,
+    "lng": 34.47,
+    "desc": "非利士五座主要城邑之一，參孫曾在此被擒受辱，也在此力士推倒殿柱與敵同亡。"
   }
 }
