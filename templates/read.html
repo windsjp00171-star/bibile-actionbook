@@ -812,12 +812,14 @@ function playRoute() {
   _clearRoute();
   _routeMap.invalidateSize();
   const wps = rt.waypoints;
-  _routeMap.setView([wps[0].lat, wps[0].lng], _followZoom(wps), { animate: false });
+  const travelZoom = _followZoom(wps);
+  const stopZoom = Math.min(travelZoom + 2.5, 11);   // 停靠點時拉近，趕路時用 travelZoom 拉遠
+  _routeMap.setView([wps[0].lat, wps[0].lng], stopZoom, { animate: false });
   const disp = _dispPositions(wps);
   const line = L.polyline([], { color: rt.color, weight: 4, opacity: 0.95 }).addTo(_routeMap);
   _routeLayers.push(line);
   const m0 = _routeMarker(rt, wps[0], 0, disp[0]).addTo(_routeMap); _routeLayers.push(m0);
-  _anim = { rt, wps, disp, allPts: wps.map(w => [w.lat, w.lng]), line,
+  _anim = { rt, wps, disp, allPts: wps.map(w => [w.lat, w.lng]), line, travelZoom, stopZoom,
             drawn: [[wps[0].lat, wps[0].lng]], seg: 0, segT0: 0, elapsed: 0 };
   _routePlaying = true; _routePaused = false;
   _setPlayBtn('⏸ 暫停');
@@ -841,7 +843,9 @@ function _routeTick() {
     const e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
     const lat = a.lat + (b.lat - a.lat) * e, lng = a.lng + (b.lng - a.lng) * e;
     A.line.setLatLngs(A.drawn.concat([[lat, lng]]));
-    _routeMap.panTo([lat, lng], { animate: false });
+    // 鏡頭：離站拉遠看路途方向，抵達前再拉近（sin 曲線在 t=0.5 時拉到最遠）
+    const zoom = A.stopZoom - (A.stopZoom - A.travelZoom) * Math.sin(Math.PI * t);
+    _routeMap.setView([lat, lng], zoom, { animate: false });
     if (t < 1) { _routeAnim = requestAnimationFrame(step); }
     else {
       A.drawn.push([b.lat, b.lng]);
