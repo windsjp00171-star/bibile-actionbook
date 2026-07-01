@@ -1210,13 +1210,50 @@
       ]
     }
   ],
-  "拉班": {
-    "type": "person",
-    "name": "拉班",
-    "name_en": "Laban",
+  "拉班": [
+    {
+      "type": "place",
+      "name": "拉班",
+      "name_en": "Laban (wilderness station)",
+      "books": [
+        "申命記"
+      ],
+      "chapters": [
+        1,
+        1
+      ],
+      "testament": "OT",
+      "desc": "摩西在約但河東曠野列舉的地名之一，位置不詳（申1:1）。"
+    },
+    {
+      "type": "person",
+      "name": "拉班",
+      "name_en": "Laban",
+      "testament": "OT",
+      "desc": "利百加的兄弟，雅各的舅父兼岳父。雅各為娶拉結為他服事十四年，拉班數次欺騙他，最終雅各帶家人離去。",
+      "verses": "創世記24、29-31章"
+    }
+  ],
+  "疏弗": {
+    "type": "place",
+    "name": "疏弗",
+    "name_en": "Suph",
     "testament": "OT",
-    "desc": "利百加的兄弟，雅各的舅父兼岳父。雅各為娶拉結為他服事十四年，拉班數次欺騙他，最終雅各帶家人離去。",
-    "verses": "創世記24、29-31章"
+    "desc": "摩西在約但河東曠野列舉的地名之一，位置不詳（申1:1）。"
+  },
+  "陀弗": {
+    "type": "place",
+    "name": "陀弗",
+    "name_en": "Tophel",
+    "testament": "OT",
+    "desc": "摩西在約但河東曠野列舉的地名之一，位置不詳（申1:1）。"
+  },
+  "底撒哈": {
+    "type": "place",
+    "name": "底撒哈",
+    "name_en": "Dizahab",
+    "testament": "OT",
+    "desc": "摩西在約但河東曠野列舉的地名之一，位置不詳（申1:1）。"
   },
   "底拿": {
     "type": "person",
@@ -5769,5 +5806,349 @@
     "desc": "貫穿帳幕板、使之相連的橫木。",
     "name": "閂",
     "cat": "holy"
+  },
+  "西宏": {
+    "type": "person",
+    "name_en": "Sihon",
+    "testament": "OT",
+    "desc": "亞摩利王，都城希實本，拒以色列人借道並出兵攻擊，被摩西擊殺（申2:24-32）。",
+    "name": "西宏"
+  },
+  "大坍": {
+    "type": "person",
+    "name_en": "Dathan",
+    "testament": "OT",
+    "desc": "流便支派以利押的兒子，與可拉一同叛逆摩西，地開口將他們吞滅（申11:6，民16章）。",
+    "name": "大坍"
+  },
+  "亞比蘭": {
+    "type": "person",
+    "name_en": "Abiram",
+    "testament": "OT",
+    "desc": "流便支派以利押的兒子，大坍的兄弟，與可拉一同叛逆摩西，地開口將他們吞滅。",
+    "name": "亞比蘭"
+  },
+  "睚珥": {
+    "type": "person",
+    "name_en": "Jair",
+    "testament": "OT",
+    "reading": "ㄧㄞˊ ㄦˇ",
+    "desc": "瑪拿西的子孫，攻取亞珥歌伯全境，將巴珊地按己名稱為哈倭特睚珥。",
+    "name": "睚珥"
+  },
+  "瑪吉": {
+    "type": "person",
+    "name_en": "Machir",
+    "testament": "OT",
+    "desc": "瑪拿西的兒子，摩西將基列之地賜給他的後裔。",
+    "name": "瑪吉"
+  },
+  "巴珊": {
+    "type": "place",
+    "name_en": "Bashan",
+    "testament": "OT",
+    "lat": 32.8,
+    "lng": 36.0,
+    "desc": "約但河東北的高原地區，噩王的國，後分給瑪拿西半支派，以肥沃畜牧著稱。",
+    "name": "巴珊"
+  },
+  "以得來": {
+    "type": "place",
+    "name_en": "Edrei",
+    "testament": "OT",
+    "lat": 32.63,
+    "lng": 36.11,
+    "desc": "巴珊王噩的都城之一，以色列人在此與噩交戰得勝。",
+    "name": "以得來"
+  },
+  "亞斯他錄": {
+    "type": "place",
+    "name_en": "Ashtaroth",
+    "testament": "OT",
+    "lat": 32.83,
+    "lng": 36.02,
+    "desc": "巴珊王噩的都城之一，後分給瑪拿西半支派。",
+    "name": "亞斯他錄"
+  },
+  "哈倭特睚珥": {
+    "type": "place",
+    "name_en": "Havoth-jair",
+    "testament": "OT",
+    "lat": 32.5,
+    "lng": 35.9,
+    "desc": "瑪拿西子孫睚珥攻取亞珥歌伯全境後，按己名為巴珊地所取的名稱。",
+    "name": "哈倭特睚珥"
+  },
+  "亞珥歌伯": {
+    "type": "place",
+    "name_en": "Argob",
+    "testament": "OT",
+    "lat": 32.75,
+    "lng": 36.05,
+    "desc": "巴珊地的一個地區，睚珥攻取的全境，共六十座城。",
+    "name": "亞珥歌伯"
+  },
+  "亞嫩谷": {
+    "type": "place",
+    "name_en": "Arnon Valley",
+    "testament": "OT",
+    "lat": 31.18,
+    "lng": 35.55,
+    "desc": "摩押與亞摩利人交界的河谷，以色列人過此谷與亞摩利王西宏交戰。",
+    "name": "亞嫩谷"
+  },
+  "亞羅珥": {
+    "type": "place",
+    "name_en": "Aroer",
+    "testament": "OT",
+    "lat": 31.15,
+    "lng": 35.58,
+    "desc": "亞嫩谷邊的城，流便支派所得之地的南界標記。",
+    "name": "亞羅珥"
+  },
+  "基底莫": {
+    "type": "place",
+    "name_en": "Kedemoth",
+    "testament": "OT",
+    "lat": 31.4,
+    "lng": 35.75,
+    "desc": "摩西差遣使者往希實本王西宏求和之地，後分給流便支派。",
+    "name": "基底莫"
+  },
+  "雅博河": {
+    "type": "place",
+    "name_en": "Jabbok River",
+    "testament": "OT",
+    "lat": 32.15,
+    "lng": 35.75,
+    "desc": "約但河的支流，亞捫人與亞摩利人的邊界；雅各曾在此與神摔跤。",
+    "name": "雅博河"
+  },
+  "西雲山": {
+    "type": "place",
+    "name_en": "Mount Senir",
+    "testament": "OT",
+    "lat": 33.42,
+    "lng": 35.85,
+    "desc": "黑門山的別名之一（西頓人稱西連，亞摩利人稱西雲）。",
+    "name": "西雲山"
+  },
+  "毗斯迦山": {
+    "type": "place",
+    "name_en": "Mount Pisgah",
+    "testament": "OT",
+    "lat": 31.77,
+    "lng": 35.73,
+    "desc": "尼波山所屬的山脈，摩西在此舉目觀看應許之地全境，隨後去世。",
+    "name": "毗斯迦山"
+  },
+  "尼波山": {
+    "type": "place",
+    "name_en": "Mount Nebo",
+    "testament": "OT",
+    "lat": 31.77,
+    "lng": 35.73,
+    "desc": "毗斯迦山的一個山頂，摩西登此山觀看迦南全地，在此去世（申34:1）。",
+    "name": "尼波山"
+  },
+  "伯毗珥": {
+    "type": "place",
+    "name_en": "Beth-peor",
+    "testament": "OT",
+    "lat": 31.77,
+    "lng": 35.72,
+    "desc": "摩押地毗斯迦山對面的谷中一城，以色列人曾在此安營。",
+    "name": "伯毗珥"
+  },
+  "基尼烈": {
+    "type": "place",
+    "name_en": "Chinnereth",
+    "testament": "OT",
+    "lat": 32.83,
+    "lng": 35.59,
+    "desc": "加利利海的舊稱，位於約但河上游，形如豎琴。",
+    "name": "基尼烈"
+  },
+  "鹽海": {
+    "type": "place",
+    "name_en": "Salt Sea",
+    "testament": "OT",
+    "lat": 31.5,
+    "lng": 35.5,
+    "desc": "死海的舊稱，因含鹽量極高、魚類無法存活得名。",
+    "name": "鹽海"
+  },
+  "米利巴水": {
+    "type": "place",
+    "name_en": "Waters of Meribah",
+    "testament": "OT",
+    "lat": 30.84,
+    "lng": 34.45,
+    "desc": "加低斯的水源地，摩西擊石出水處，因以色列人在此與神爭鬧得名「爭鬧」。",
+    "name": "米利巴水"
+  },
+  "尋的曠野": {
+    "type": "place",
+    "name_en": "Wilderness of Zin",
+    "testament": "OT",
+    "lat": 30.7,
+    "lng": 34.6,
+    "desc": "加低斯一帶的曠野，以色列人在此漂流，摩西在此擊石出水。",
+    "name": "尋的曠野"
+  },
+  "摩押平原": {
+    "type": "place",
+    "name_en": "Plains of Moab",
+    "testament": "OT",
+    "lat": 31.87,
+    "lng": 35.62,
+    "desc": "約但河東、耶利哥對面的平原，以色列人進迦南前的最後紮營地，摩西在此頒佈申命記。",
+    "name": "摩押平原"
+  },
+  "何利人": {
+    "type": "concept",
+    "name_en": "Horites",
+    "testament": "OT",
+    "desc": "原住西珥山的民族，被以掃子孫（以東人）除滅取代其地。",
+    "name": "何利人"
+  },
+  "迦斐託人": {
+    "type": "concept",
+    "name_en": "Caphtorites",
+    "testament": "OT",
+    "desc": "從迦斐託（克里特島）出來的民族，除滅迦薩一帶的亞衛人。",
+    "name": "迦斐託人"
+  },
+  "亞衛人": {
+    "type": "concept",
+    "name_en": "Avvim",
+    "testament": "OT",
+    "desc": "原住迦薩一帶鄉村的民族，被迦斐託人除滅取代。",
+    "name": "亞衛人"
+  },
+  "基述人": {
+    "type": "concept",
+    "name_en": "Geshurites",
+    "testament": "OT",
+    "desc": "巴珊地的一支民族，與瑪迦人並列為睚珥攻取全境的交界。",
+    "name": "基述人"
+  },
+  "瑪迦人": {
+    "type": "concept",
+    "name_en": "Maacathites",
+    "testament": "OT",
+    "desc": "巴珊地的一支民族，與基述人並列為睚珥攻取全境的交界。",
+    "name": "瑪迦人"
+  },
+  "揝": {
+    "type": "concept",
+    "name_en": "Clench (the hand)",
+    "testament": "OT",
+    "reading": "ㄗㄢˇ",
+    "desc": "握緊、攥住，申15:7指不可對窮乏的弟兄握緊手袖不幫補。",
+    "cat": "holy",
+    "name": "揝"
+  },
+  "摶麵盆": {
+    "type": "concept",
+    "name_en": "Kneading bowl",
+    "testament": "OT",
+    "reading": "ㄊㄨㄢˊ ㄇㄧㄢˋ ㄆㄣˊ",
+    "desc": "揉麵用的盆子，申28:5應許蒙福之物之一。",
+    "cat": "holy",
+    "name": "摶麵盆"
+  },
+  "茵蔯": {
+    "type": "concept",
+    "name_en": "Wormwood",
+    "testament": "OT",
+    "reading": "ㄧㄣ ㄔㄣˊ",
+    "desc": "味苦的植物，喻指偏離神、心生苦毒惡根的結果。",
+    "cat": "plant",
+    "name": "茵蔯"
+  },
+  "七七節": {
+    "type": "concept",
+    "name_en": "Feast of Weeks (Shavuot)",
+    "testament": "OT",
+    "desc": "舊約對五旬節的稱呼，因在逾越節後數七個七日（四十九天）而得名，即收割節。",
+    "cat": "fest",
+    "name": "七七節"
+  },
+  "押瑪": {
+    "type": "place",
+    "name_en": "Admah",
+    "testament": "OT",
+    "desc": "與所多瑪、蛾摩拉並列被耶和華傾覆的平原城市之一（申29:23，確切位置不詳）。",
+    "name": "押瑪"
+  },
+  "洗扁": {
+    "type": "place",
+    "name_en": "Zeboiim",
+    "testament": "OT",
+    "desc": "與所多瑪、蛾摩拉並列被耶和華傾覆的平原城市之一（申29:23，確切位置不詳）。",
+    "name": "洗扁"
+  },
+  "他備拉": {
+    "type": "place",
+    "name_en": "Taberah",
+    "testament": "OT",
+    "desc": "意為「燃燒」，以色列人在此因發怨言、耶和華降火，故得此名（申9:22，位置不詳）。",
+    "name": "他備拉"
+  },
+  "瑪撒": {
+    "type": "place",
+    "name_en": "Massah",
+    "testament": "OT",
+    "desc": "意為「試探」，以色列人在此因無水抱怨、試探耶和華（申9:22，位置不詳）。",
+    "name": "瑪撒"
+  },
+  "基博羅哈他瓦": {
+    "type": "place",
+    "name_en": "Kibroth-hattaavah",
+    "testament": "OT",
+    "desc": "意為「貪慾的墳墓」，以色列人在此因貪食肉而遭神懲罰、多人死亡（申9:22）。",
+    "name": "基博羅哈他瓦"
+  },
+  "谷歌大": {
+    "type": "place",
+    "name_en": "Gudgodah",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的一個紮營站（申10:7，位置不詳）。",
+    "name": "谷歌大"
+  },
+  "約巴他": {
+    "type": "place",
+    "name_en": "Jotbathah",
+    "testament": "OT",
+    "desc": "有溪水之地，以色列人曠野漂流的紮營站之一（申10:7，位置不詳）。",
+    "name": "約巴他"
+  },
+  "亞拉巴": {
+    "type": "place",
+    "name_en": "Arabah",
+    "testament": "OT",
+    "lat": 31.0,
+    "lng": 35.45,
+    "desc": "約但河谷及死海以南延伸至紅海的狹長裂谷地帶，泛稱一整片區域而非單一地點。",
+    "name": "亞拉巴"
+  },
+  "利巴嫩山": {
+    "type": "place",
+    "name_en": "Mount Lebanon",
+    "testament": "OT",
+    "lat": 33.8,
+    "lng": 35.9,
+    "desc": "黎巴嫩山脈，位於迦南極北，以香柏木著稱，常作為應許之地的北界標記。",
+    "name": "利巴嫩山"
+  },
+  "伯拉大河": {
+    "type": "place",
+    "name_en": "Euphrates (the Great River)",
+    "testament": "OT",
+    "lat": 34.5,
+    "lng": 40.0,
+    "desc": "幼發拉底河，聖經稱「大河」，是神應許給以色列人迦南地的理想東北界。",
+    "name": "伯拉大河"
   }
 }
