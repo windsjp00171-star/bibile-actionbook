@@ -5941,15 +5941,6 @@
     "desc": "巴珊地的一個地區，睚珥攻取的全境，共六十座城。",
     "name": "亞珥歌伯"
   },
-  "亞嫩谷": {
-    "type": "place",
-    "name_en": "Arnon Valley",
-    "testament": "OT",
-    "lat": 31.18,
-    "lng": 35.55,
-    "desc": "摩押與亞摩利人交界的河谷，以色列人過此谷與亞摩利王西宏交戰。",
-    "name": "亞嫩谷"
-  },
   "亞羅珥": {
     "type": "place",
     "name_en": "Aroer",
@@ -6675,5 +6666,189 @@
     "lat": 30.75,
     "lng": 34.75,
     "desc": "以色列人因窺探迦南後不信而受挫敗退之地，後約書亞征服迦南時攻取此城（民14:45）。"
+  },
+  "可拉": {
+    "type": "person",
+    "name_en": "Korah",
+    "testament": "both",
+    "desc": "利未人以斯哈之子，聯合大坍、亞比蘭一同叛逆摩西與亞倫的祭司職分，地開口將他們吞滅（民16章）；以掃後裔中另有同名的以東族長（創36章），非同一人。",
+    "name": "可拉"
+  },
+  "季拉": {
+    "type": "concept",
+    "name_en": "Gerah",
+    "testament": "OT",
+    "desc": "重量單位，是舍客勒的二十分之一，用於聖所估價。",
+    "cat": "measure",
+    "name": "季拉"
+  },
+  "何珥山": {
+    "type": "place",
+    "name_en": "Mount Hor",
+    "testament": "OT",
+    "lat": 30.32,
+    "lng": 35.4,
+    "desc": "亞倫去世之地，以色列人從加低斯前往此山（民20:22-28）。",
+    "name": "何珥山"
+  },
+  "亞嫩": {
+    "type": "place",
+    "name_en": "Arnon (river/valley)",
+    "testament": "OT",
+    "lat": 31.18,
+    "lng": 35.55,
+    "desc": "摩押與亞摩利人交界的河谷及河流，以色列人過此與亞摩利王西宏交戰，經文中作「亞嫩谷」或「亞嫩河」。",
+    "name": "亞嫩"
+  },
+  "阿伯": {
+    "type": "place",
+    "name_en": "Oboth",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民21:10-11）。",
+    "name": "阿伯"
+  },
+  "以耶亞巴琳": {
+    "type": "place",
+    "name_en": "Iye-abarim",
+    "testament": "OT",
+    "lat": 31.3,
+    "lng": 35.75,
+    "desc": "與摩押相對的曠野紮營站，位於亞巴琳山區邊界（民21:11）。",
+    "name": "以耶亞巴琳"
+  },
+  "亞巴琳": {
+    "type": "place",
+    "name_en": "Abarim",
+    "testament": "OT",
+    "lat": 31.3,
+    "lng": 35.75,
+    "desc": "摩押東側的山區，尼波山、毗斯迦山皆屬此山脈，摩西在此觀看應許之地。",
+    "name": "亞巴琳"
+  },
+  "撒烈谷": {
+    "type": "place",
+    "name_en": "Zered Valley",
+    "testament": "OT",
+    "lat": 31.0,
+    "lng": 35.6,
+    "desc": "摩押與以東交界的河谷，以色列人曠野漂流末段經過之地。",
+    "name": "撒烈谷"
+  },
+  "蘇法": {
+    "type": "place",
+    "name_en": "Suphah",
+    "testament": "OT",
+    "desc": "耶和華戰記所題之地名，與哇哈伯並提，位置不詳（民21:14）。",
+    "name": "蘇法"
+  },
+  "哇哈伯": {
+    "type": "place",
+    "name_en": "Vaheb",
+    "testament": "OT",
+    "desc": "耶和華戰記所題之地名，位置不詳（民21:14）。",
+    "name": "哇哈伯"
+  },
+  "亞珥城": {
+    "type": "place",
+    "name_en": "Ar",
+    "testament": "OT",
+    "lat": 31.3,
+    "lng": 35.7,
+    "desc": "摩押的主要城邑之一，靠近亞嫩河谷（民21:15）。",
+    "name": "亞珥城"
+  },
+  "圭": {
+    "type": "concept",
+    "name_en": "Scepter/Staff",
+    "testament": "OT",
+    "desc": "首領所用的杖，民21:18記尊貴人用圭用杖挖井，象徵權柄與勞力的結合。",
+    "cat": "holy",
+    "name": "圭"
+  },
+  "瑪他拿": {
+    "type": "place",
+    "name_en": "Mattanah",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民21:18-19）。",
+    "name": "瑪他拿"
+  },
+  "拿哈列": {
+    "type": "place",
+    "name_en": "Nahaliel",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民21:19）。",
+    "name": "拿哈列"
+  },
+  "巴末": {
+    "type": "place",
+    "name_en": "Bamoth",
+    "testament": "OT",
+    "desc": "以色列人曠野漂流的紮營站之一，位置不詳（民21:19-20）。",
+    "name": "巴末"
+  },
+  "希實本": {
+    "type": "place",
+    "name_en": "Heshbon",
+    "testament": "OT",
+    "lat": 31.8,
+    "lng": 35.8,
+    "desc": "亞摩利王西宏的都城，以色列人攻取後分給流便支派，後又歸迦得。",
+    "name": "希實本"
+  },
+  "亞摩利": {
+    "type": "place",
+    "name_en": "Amorite",
+    "testament": "OT",
+    "desc": "亞摩利人／地的簡稱，迦南七族之一，勢力強盛，西宏、噩皆為其王。",
+    "name": "亞摩利"
+  },
+  "丘壇": {
+    "type": "concept",
+    "name_en": "High place",
+    "testament": "both",
+    "desc": "山丘或高處築起的祭壇，常用於偶像敬拜，以色列諸王屢因容留丘壇被神責備。",
+    "cat": "holy",
+    "name": "丘壇"
+  },
+  "基抹": {
+    "type": "concept",
+    "name_en": "Chemosh",
+    "testament": "OT",
+    "desc": "摩押人所敬拜的偶像神，所羅門晚年因妃嬪引誘也曾為其築壇，遭神憎惡。",
+    "name": "基抹"
+  },
+  "底本": {
+    "type": "place",
+    "name_en": "Dibon",
+    "testament": "OT",
+    "lat": 31.5,
+    "lng": 35.79,
+    "desc": "摩押地的城邑，以色列人攻取希實本後波及之地，後分給迦得支派。",
+    "name": "底本"
+  },
+  "挪法": {
+    "type": "place",
+    "name_en": "Nophah",
+    "testament": "OT",
+    "desc": "希實本延伸至米底巴一帶被毀滅的地區之一，位置不詳（民21:30）。",
+    "name": "挪法"
+  },
+  "米底巴": {
+    "type": "place",
+    "name_en": "Medeba",
+    "testament": "OT",
+    "lat": 31.72,
+    "lng": 35.79,
+    "desc": "摩押地的城邑，希實本戰事波及的邊界地標之一。",
+    "name": "米底巴"
+  },
+  "雅謝": {
+    "type": "place",
+    "name_en": "Jazer",
+    "testament": "OT",
+    "lat": 31.85,
+    "lng": 35.9,
+    "desc": "亞摩利人的鎮市，摩西打發人窺探後以色列人佔領，趕出當地亞摩利人。",
+    "name": "雅謝"
   }
 }
