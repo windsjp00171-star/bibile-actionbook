@@ -2379,13 +2379,22 @@
     "testament": "NT",
     "desc": "原名掃羅，法利賽人，大馬士革路上遇見復活基督後歸信，成為外邦人使徒。"
   },
-  "西拉": {
-    "type": "person",
-    "name": "西拉",
-    "name_en": "Silas",
-    "testament": "NT",
-    "desc": "保羅第二次宣教旅程同伴，與保羅同在腓立比監獄中讚美神。"
-  },
+  "西拉": [
+    {
+      "type": "person",
+      "name": "西拉（亞設之女）",
+      "name_en": "Serah",
+      "testament": "OT",
+      "desc": "亞設的女兒，出埃及人口普查中列名（民26:46）。"
+    },
+    {
+      "type": "person",
+      "name": "西拉",
+      "name_en": "Silas",
+      "testament": "NT",
+      "desc": "保羅第二次宣教旅程同伴，與保羅同在腓立比監獄中讚美神。"
+    }
+  ],
   "提摩太": {
     "type": "person",
     "name": "提摩太",
@@ -3358,12 +3367,25 @@
       "desc": "基甸之子，殺死七十個兄弟奪權，自立為王，後被婦人丟磨石砸頭而死。"
     }
   ],
-  "以利": {
-    "type": "person",
-    "name": "以利",
-    "name_en": "Eli",
-    "desc": "示羅大祭司，撒母耳的屬靈父親，因縱容兒子的罪被神審判，聞約櫃被擄跌死。"
-  },
+  "以利": [
+    {
+      "type": "person",
+      "name": "以利（迦得支派宗族）",
+      "name_en": "Eri (clan of Gad)",
+      "books": [
+        "民數記"
+      ],
+      "testament": "OT",
+      "desc": "迦得支派的一個宗族首領，出埃及人口普查中列名（民26:16）。"
+    },
+    {
+      "type": "person",
+      "name": "以利",
+      "name_en": "Eli",
+      "testament": "OT",
+      "desc": "示羅大祭司，撒母耳的屬靈父親，因縱容兒子的罪被神審判，聞約櫃被擄跌死。"
+    }
+  ],
   "亞比煞": {
     "type": "person",
     "name": "亞比煞",
@@ -6850,5 +6872,409 @@
     "lng": 35.9,
     "desc": "亞摩利人的鎮市，摩西打發人窺探後以色列人佔領，趕出當地亞摩利人。",
     "name": "雅謝"
+  },
+  "西撥": {
+    "type": "person",
+    "name_en": "Zippor",
+    "testament": "OT",
+    "desc": "摩押王巴勒的父親（民22:2）。",
+    "name": "西撥"
+  },
+  "胡瑣": {
+    "type": "place",
+    "name_en": "Huzoth",
+    "testament": "OT",
+    "desc": "摩押境內基列地的一處，巴勒與巴蘭同行至此（民22:39，位置不詳）。",
+    "name": "胡瑣"
+  },
+  "毗珥山": {
+    "type": "place",
+    "name_en": "Peor",
+    "testament": "OT",
+    "lat": 31.76,
+    "lng": 35.73,
+    "desc": "摩押境內下望曠野的山頂，巴勒領巴蘭到此觀看以色列營（民23:28）；後以色列人在此因巴力毗珥犯罪。",
+    "name": "毗珥山"
+  },
+  "毗珥": {
+    "type": "place",
+    "name_en": "Peor",
+    "testament": "OT",
+    "lat": 31.76,
+    "lng": 35.73,
+    "desc": "巴力毗珥的簡稱，以色列人在此與摩押女子行淫、拜偶像，因而遭瘟疫（民25:18）。",
+    "name": "毗珥"
+  },
+  "亞甲": {
+    "type": "person",
+    "name_en": "Agag",
+    "testament": "OT",
+    "desc": "似為亞瑪力王的稱號或人名，巴蘭預言以色列王必超過亞甲（民24:7）；掃羅時代亦有亞瑪力王亞甲（撒上15章）。",
+    "name": "亞甲"
+  },
+  "基尼": {
+    "type": "concept",
+    "name_en": "Kenite",
+    "testament": "OT",
+    "desc": "基尼人的簡稱，與以色列友好的遊牧民族。",
+    "cat": "people",
+    "name": "基尼"
+  },
+  "心利": {
+    "type": "person",
+    "name_en": "Zimri",
+    "testament": "OT",
+    "desc": "西緬支派一宗族首領，與米甸女子哥斯比一同行淫，被非尼哈刺死（民25:14）；與後來以色列王心利非同一人。",
+    "name": "心利"
+  },
+  "撒路": {
+    "type": "person",
+    "name_en": "Salu",
+    "testament": "OT",
+    "desc": "西緬支派首領心利的父親（民25:14）。",
+    "name": "撒路"
+  },
+  "哥斯比": {
+    "type": "person",
+    "name_en": "Cozbi",
+    "testament": "OT",
+    "desc": "米甸首領的女兒，與心利一同行淫，二人被非尼哈刺死（民25:18）。",
+    "name": "哥斯比"
+  },
+  "哈諾": {
+    "type": "person",
+    "name_en": "Hanoch",
+    "testament": "OT",
+    "desc": "流便的兒子，哈諾族的先祖（民26:5）。",
+    "name": "哈諾"
+  },
+  "法路": {
+    "type": "person",
+    "name_en": "Pallu",
+    "testament": "OT",
+    "desc": "流便的兒子，法路族的先祖（民26:5）。",
+    "name": "法路"
+  },
+  "希斯倫": {
+    "type": "person",
+    "name_en": "Hezron (son of Reuben)",
+    "testament": "OT",
+    "desc": "流便的兒子，希斯倫族的先祖（民26:6，與猶大支派的希斯崙為不同人）。",
+    "name": "希斯倫"
+  },
+  "迦米": {
+    "type": "person",
+    "name_en": "Carmi",
+    "testament": "OT",
+    "desc": "流便的兒子，迦米族的先祖（民26:6）。",
+    "name": "迦米"
+  },
+  "尼母利": {
+    "type": "person",
+    "name_en": "Nemuel",
+    "testament": "OT",
+    "desc": "西緬的兒子，尼母利族的先祖（民26:12）。",
+    "name": "尼母利"
+  },
+  "雅憫": {
+    "type": "person",
+    "name_en": "Jamin",
+    "testament": "OT",
+    "desc": "西緬的兒子，雅憫族的先祖（民26:12）。",
+    "name": "雅憫"
+  },
+  "雅斤": {
+    "type": "person",
+    "name_en": "Jachin",
+    "testament": "OT",
+    "desc": "西緬的兒子，雅斤族的先祖（民26:12）。",
+    "name": "雅斤"
+  },
+  "洗分": {
+    "type": "person",
+    "name_en": "Zephon",
+    "testament": "OT",
+    "desc": "迦得的兒子，洗分族的先祖（民26:15）。",
+    "name": "洗分"
+  },
+  "哈基": {
+    "type": "person",
+    "name_en": "Haggi",
+    "testament": "OT",
+    "desc": "迦得的兒子，哈基族的先祖（民26:15）。",
+    "name": "哈基"
+  },
+  "書尼": {
+    "type": "person",
+    "name_en": "Shuni",
+    "testament": "OT",
+    "desc": "迦得的兒子，書尼族的先祖（民26:15）。",
+    "name": "書尼"
+  },
+  "阿斯尼": {
+    "type": "person",
+    "name_en": "Ozni",
+    "testament": "OT",
+    "desc": "迦得的兒子，阿斯尼族的先祖（民26:16）。",
+    "name": "阿斯尼"
+  },
+  "亞律": {
+    "type": "person",
+    "name_en": "Arod",
+    "testament": "OT",
+    "desc": "迦得的兒子，亞律族的先祖（民26:17）。",
+    "name": "亞律"
+  },
+  "亞列利": {
+    "type": "person",
+    "name_en": "Areli",
+    "testament": "OT",
+    "desc": "迦得的兒子，亞列利族的先祖（民26:17）。",
+    "name": "亞列利"
+  },
+  "陀拉": {
+    "type": "person",
+    "name_en": "Tola",
+    "testament": "OT",
+    "desc": "以薩迦的兒子，陀拉族的先祖（民26:23）。",
+    "name": "陀拉"
+  },
+  "普瓦": {
+    "type": "person",
+    "name_en": "Puvah",
+    "testament": "OT",
+    "desc": "以薩迦的兒子，普瓦族的先祖（民26:23）。",
+    "name": "普瓦"
+  },
+  "雅述": {
+    "type": "person",
+    "name_en": "Jashub",
+    "testament": "OT",
+    "desc": "以薩迦的兒子，雅述族的先祖（民26:24）。",
+    "name": "雅述"
+  },
+  "伸崙": {
+    "type": "person",
+    "name_en": "Shimron",
+    "testament": "OT",
+    "desc": "以薩迦的兒子，伸崙族的先祖（民26:24）。",
+    "name": "伸崙"
+  },
+  "西烈": {
+    "type": "person",
+    "name_en": "Sered",
+    "testament": "OT",
+    "desc": "西布倫的兒子，西烈族的先祖（民26:26）。",
+    "name": "西烈"
+  },
+  "以倫": {
+    "type": "person",
+    "name_en": "Elon",
+    "testament": "OT",
+    "desc": "西布倫的兒子，以倫族的先祖（民26:26）。",
+    "name": "以倫"
+  },
+  "雅利": {
+    "type": "person",
+    "name_en": "Jahleel",
+    "testament": "OT",
+    "desc": "西布倫的兒子，雅利族的先祖（民26:26）。",
+    "name": "雅利"
+  },
+  "伊以謝": {
+    "type": "person",
+    "name_en": "Iezer",
+    "testament": "OT",
+    "desc": "基列的兒子，伊以謝族的先祖（民26:30）。",
+    "name": "伊以謝"
+  },
+  "希勒": {
+    "type": "person",
+    "name_en": "Helek",
+    "testament": "OT",
+    "desc": "基列的兒子，希勒族的先祖（民26:30）。",
+    "name": "希勒"
+  },
+  "亞斯烈": {
+    "type": "person",
+    "name_en": "Asriel",
+    "testament": "OT",
+    "desc": "基列的兒子，亞斯烈族的先祖（民26:31）。",
+    "name": "亞斯烈"
+  },
+  "示米大": {
+    "type": "person",
+    "name_en": "Shemida",
+    "testament": "OT",
+    "desc": "基列的兒子，示米大族的先祖（民26:32）。",
+    "name": "示米大"
+  },
+  "希弗": {
+    "type": "person",
+    "name_en": "Hepher",
+    "testament": "OT",
+    "desc": "基列的兒子，希弗族的先祖，西羅非哈的父親（民26:32-33）。",
+    "name": "希弗"
+  },
+  "西羅非哈": {
+    "type": "person",
+    "name_en": "Zelophehad",
+    "testament": "OT",
+    "desc": "希弗的兒子，無子僅有五女，其女兒的產業繼承案促成神頒佈女兒可承業的律例（民26-27、36章）。",
+    "name": "西羅非哈"
+  },
+  "瑪拉": {
+    "type": "person",
+    "name_en": "Mahlah",
+    "testament": "OT",
+    "desc": "西羅非哈的女兒之一（民26:33、27:1）。",
+    "name": "瑪拉"
+  },
+  "挪阿": {
+    "type": "person",
+    "name_en": "Noah",
+    "testament": "OT",
+    "desc": "西羅非哈的女兒之一（民26:33、27:1，與創世記洪水的挪亞非同名同字）。",
+    "name": "挪阿"
+  },
+  "曷拉": {
+    "type": "person",
+    "name_en": "Hoglah",
+    "testament": "OT",
+    "desc": "西羅非哈的女兒之一（民26:33、27:1）。",
+    "name": "曷拉"
+  },
+  "密迦": {
+    "type": "person",
+    "name_en": "Milcah",
+    "testament": "OT",
+    "desc": "西羅非哈的女兒之一（民26:33、27:1，與亞伯拉罕兄弟拿鶴之妻密迦非同一人）。",
+    "name": "密迦"
+  },
+  "得撒": {
+    "type": "person",
+    "name_en": "Tirzah",
+    "testament": "OT",
+    "desc": "西羅非哈的女兒之一（民26:33、27:1，與後來以法蓮山地的得撒城非同一地）。",
+    "name": "得撒"
+  },
+  "書提拉": {
+    "type": "person",
+    "name_en": "Shuthelah",
+    "testament": "OT",
+    "desc": "以法蓮的兒子，書提拉族的先祖（民26:35）。",
+    "name": "書提拉"
+  },
+  "比結": {
+    "type": "person",
+    "name_en": "Becher",
+    "testament": "OT",
+    "desc": "以法蓮的兒子，比結族的先祖（民26:35）。",
+    "name": "比結"
+  },
+  "他罕": {
+    "type": "person",
+    "name_en": "Tahan",
+    "testament": "OT",
+    "desc": "以法蓮的兒子，他罕族的先祖（民26:35）。",
+    "name": "他罕"
+  },
+  "以蘭": {
+    "type": "person",
+    "name_en": "Eran",
+    "testament": "OT",
+    "desc": "書提拉的兒子，以蘭族的先祖（民26:36）。",
+    "name": "以蘭"
+  },
+  "書反": {
+    "type": "person",
+    "name_en": "Shupham",
+    "testament": "OT",
+    "desc": "便雅憫的兒子，書反族的先祖（民26:39）。",
+    "name": "書反"
+  },
+  "戶反": {
+    "type": "person",
+    "name_en": "Hupham",
+    "testament": "OT",
+    "desc": "便雅憫的兒子，戶反族的先祖（民26:39）。",
+    "name": "戶反"
+  },
+  "比拉": {
+    "type": "person",
+    "name_en": "Bela",
+    "testament": "OT",
+    "desc": "便雅憫的兒子，其子亞勒、乃幔各成一族（民26:40）。",
+    "name": "比拉"
+  },
+  "亞勒": {
+    "type": "person",
+    "name_en": "Ard",
+    "testament": "OT",
+    "desc": "比拉的兒子，亞勒族的先祖（民26:40）。",
+    "name": "亞勒"
+  },
+  "乃幔": {
+    "type": "person",
+    "name_en": "Naaman (son of Bela)",
+    "testament": "OT",
+    "desc": "比拉的兒子，乃幔族的先祖（民26:40，與敘利亞元帥乃縵非同一人）。",
+    "name": "乃幔"
+  },
+  "音拿": {
+    "type": "person",
+    "name_en": "Imnah",
+    "testament": "OT",
+    "desc": "亞設的兒子，音拿族的先祖（民26:44）。",
+    "name": "音拿"
+  },
+  "亦施韋": {
+    "type": "person",
+    "name_en": "Ishvi",
+    "testament": "OT",
+    "desc": "亞設的兒子，亦施韋族的先祖（民26:44）。",
+    "name": "亦施韋"
+  },
+  "比利亞": {
+    "type": "person",
+    "name_en": "Beriah",
+    "testament": "OT",
+    "desc": "亞設的兒子，比利亞族的先祖（民26:44）。",
+    "name": "比利亞"
+  },
+  "雅薛": {
+    "type": "person",
+    "name_en": "Jahzeel",
+    "testament": "OT",
+    "desc": "拿弗他利的兒子，雅薛族的先祖（民26:48）。",
+    "name": "雅薛"
+  },
+  "沽尼": {
+    "type": "person",
+    "name_en": "Guni",
+    "testament": "OT",
+    "desc": "拿弗他利的兒子，沽尼族的先祖（民26:48）。",
+    "name": "沽尼"
+  },
+  "耶色": {
+    "type": "person",
+    "name_en": "Jezer",
+    "testament": "OT",
+    "desc": "拿弗他利的兒子，耶色族的先祖（民26:49）。",
+    "name": "耶色"
+  },
+  "示冷": {
+    "type": "person",
+    "name_en": "Shillem",
+    "testament": "OT",
+    "desc": "拿弗他利的兒子，示冷族的先祖（民26:49）。",
+    "name": "示冷"
+  },
+  "瑪利": {
+    "type": "person",
+    "name_en": "Mahli (alt. spelling)",
+    "testament": "OT",
+    "desc": "米拉利之子抹利的另一種經文轉寫（民26:58，與民3:20的「抹利」為同一人）。",
+    "name": "瑪利"
   }
 }
