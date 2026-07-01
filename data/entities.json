@@ -7130,13 +7130,25 @@
     "desc": "基列的兒子，示米大族的先祖（民26:32）。",
     "name": "示米大"
   },
-  "希弗": {
-    "type": "person",
-    "name_en": "Hepher",
-    "testament": "OT",
-    "desc": "基列的兒子，希弗族的先祖，西羅非哈的父親（民26:32-33）。",
-    "name": "希弗"
-  },
+  "希弗": [
+    {
+      "type": "place",
+      "name": "希弗（迦南城邦）",
+      "name_en": "Hepher (city)",
+      "books": [
+        "約書亞記"
+      ],
+      "testament": "OT",
+      "desc": "約書亞征服的迦南三十一王之城邦之一（書12:17）。"
+    },
+    {
+      "type": "person",
+      "name": "希弗",
+      "name_en": "Hepher",
+      "testament": "OT",
+      "desc": "基列的兒子，希弗族的先祖，西羅非哈的父親（民26:32-33）。"
+    }
+  ],
   "西羅非哈": {
     "type": "person",
     "name_en": "Zelophehad",
@@ -7172,13 +7184,25 @@
     "desc": "西羅非哈的女兒之一（民26:33、27:1，與亞伯拉罕兄弟拿鶴之妻密迦非同一人）。",
     "name": "密迦"
   },
-  "得撒": {
-    "type": "person",
-    "name_en": "Tirzah",
-    "testament": "OT",
-    "desc": "西羅非哈的女兒之一（民26:33、27:1，與後來以法蓮山地的得撒城非同一地）。",
-    "name": "得撒"
-  },
+  "得撒": [
+    {
+      "type": "place",
+      "name": "得撒（城邦）",
+      "name_en": "Tirzah (city)",
+      "books": [
+        "約書亞記"
+      ],
+      "testament": "OT",
+      "desc": "約書亞征服的迦南三十一王之城邦之一（書12:24），後成為以法蓮山地要城。"
+    },
+    {
+      "type": "person",
+      "name": "得撒",
+      "name_en": "Tirzah",
+      "testament": "OT",
+      "desc": "西羅非哈的女兒之一（民26:33、27:1，與後來以法蓮山地的得撒城非同一地）。"
+    }
+  ],
   "書提拉": {
     "type": "person",
     "name_en": "Shuthelah",
@@ -8035,5 +8059,241 @@
     "lat": 31.5,
     "lng": 34.47,
     "desc": "非利士五座主要城邑之一，參孫曾在此被擒受辱，也在此力士推倒殿柱與敵同亡。"
+  },
+  "基色": {
+    "type": "place",
+    "name_en": "Gezer",
+    "testament": "OT",
+    "lat": 31.87,
+    "lng": 34.9,
+    "desc": "約書亞征服的迦南三十一王之城邦之一，後成為利未人的城。",
+    "name": "基色"
+  },
+  "基德": {
+    "type": "place",
+    "name_en": "Kedesh (Judah)",
+    "testament": "OT",
+    "desc": "約書亞征服的迦南三十一王之城邦之一（書12:13）。",
+    "name": "基德"
+  },
+  "亞杜蘭": {
+    "type": "place",
+    "name_en": "Adullam",
+    "testament": "OT",
+    "lat": 31.61,
+    "lng": 34.99,
+    "desc": "約書亞征服的迦南三十一王之城邦之一，後大衛曾在此洞穴避難。",
+    "name": "亞杜蘭"
+  },
+  "他普亞": {
+    "type": "place",
+    "name_en": "Tappuah",
+    "testament": "OT",
+    "desc": "約書亞征服的迦南三十一王之城邦之一（書12:17）。",
+    "name": "他普亞"
+  },
+  "亞弗": {
+    "type": "place",
+    "name_en": "Aphek (Canaan king city)",
+    "testament": "OT",
+    "desc": "約書亞征服的迦南三十一王之城邦之一（書12:18，與撒上4章非利士安營的亞弗同名）。",
+    "name": "亞弗"
+  },
+  "拉沙崙": {
+    "type": "place",
+    "name_en": "Lasharon",
+    "testament": "OT",
+    "desc": "約書亞征服的迦南三十一王之城邦之一（書12:18）。",
+    "name": "拉沙崙"
+  },
+  "伸崙米崙": {
+    "type": "place",
+    "name_en": "Shimron-meron",
+    "testament": "OT",
+    "desc": "約書亞征服的迦南三十一王之城邦之一（書12:20）。",
+    "name": "伸崙米崙"
+  },
+  "押煞": {
+    "type": "place",
+    "name_en": "Achshaph (alt. spelling)",
+    "testament": "OT",
+    "desc": "約書亞征服的迦南三十一王之城邦之一（書12:20，與書11:1的「押煆」為同地異譯）。",
+    "name": "押煞"
+  },
+  "他納": {
+    "type": "place",
+    "name_en": "Taanach",
+    "testament": "OT",
+    "lat": 32.57,
+    "lng": 35.3,
+    "desc": "約書亞征服的迦南三十一王之城邦之一，位於米吉多附近。",
+    "name": "他納"
+  },
+  "基低斯": {
+    "type": "place",
+    "name_en": "Kedesh (Naphtali)",
+    "testament": "OT",
+    "lat": 33.11,
+    "lng": 35.53,
+    "desc": "拿弗他利地的城邦，約書亞征服迦南三十一王之一，後成為逃城與利未人的城。",
+    "name": "基低斯"
+  },
+  "約念": {
+    "type": "place",
+    "name_en": "Jokneam",
+    "testament": "OT",
+    "desc": "迦密附近的城邦，約書亞征服的迦南三十一王之一（書12:22）。",
+    "name": "約念"
+  },
+  "多珥": {
+    "type": "place",
+    "name_en": "Dor",
+    "testament": "OT",
+    "lat": 32.62,
+    "lng": 34.92,
+    "desc": "沿海山崗城邦，約書亞征服的迦南三十一王之一。",
+    "name": "多珥"
+  },
+  "戈印": {
+    "type": "place",
+    "name_en": "Goiim (in Gilgal)",
+    "testament": "OT",
+    "desc": "吉甲附近的城邦，約書亞征服的迦南三十一王之一（書12:23）。",
+    "name": "戈印"
+  },
+  "西曷河": {
+    "type": "place",
+    "name_en": "Shihor",
+    "testament": "OT",
+    "desc": "埃及邊界的河流，迦南地南界的地標（書13:3）。",
+    "name": "西曷河"
+  },
+  "亞實基倫": {
+    "type": "place",
+    "name_en": "Ashkelon",
+    "testament": "OT",
+    "lat": 31.67,
+    "lng": 34.57,
+    "desc": "非利士五座主要城邑之一。",
+    "name": "亞實基倫"
+  },
+  "迦巴勒人": {
+    "type": "place",
+    "name_en": "Gebalites",
+    "testament": "OT",
+    "desc": "迦巴勒（比布羅）一帶的民族，位於利巴嫩沿海（書13:5）。",
+    "name": "迦巴勒人"
+  },
+  "撒迦": {
+    "type": "place",
+    "name_en": "Salcah",
+    "testament": "OT",
+    "lat": 32.48,
+    "lng": 36.7,
+    "desc": "巴珊地的邊界城邑（書13:11）。",
+    "name": "撒迦"
+  },
+  "雅雜": {
+    "type": "place",
+    "name_en": "Jahaz",
+    "testament": "OT",
+    "desc": "流便支派所得希實本平原的城邑之一（書13:18）。",
+    "name": "雅雜"
+  },
+  "米法押": {
+    "type": "place",
+    "name_en": "Mephaath",
+    "testament": "OT",
+    "desc": "流便支派所得希實本平原的城邑之一（書13:18）。",
+    "name": "米法押"
+  },
+  "細列哈沙轄": {
+    "type": "place",
+    "name_en": "Zereth-shahar",
+    "testament": "OT",
+    "desc": "流便支派所得谷中山的城邑（書13:19）。",
+    "name": "細列哈沙轄"
+  },
+  "伯耶西末": {
+    "type": "place",
+    "name_en": "Beth-jeshimoth (alt. spelling)",
+    "testament": "OT",
+    "lat": 31.78,
+    "lng": 35.6,
+    "desc": "流便支派所得城邑（書13:20，與民33:49的「伯耶施末」為同地異譯）。",
+    "name": "伯耶西末"
+  },
+  "拉巴": {
+    "type": "place",
+    "name_en": "Rabbah",
+    "testament": "OT",
+    "lat": 31.95,
+    "lng": 35.93,
+    "desc": "亞捫人的都城，流便支派邊界近旁的地標（書13:25）。",
+    "name": "拉巴"
+  },
+  "拉抹米斯巴": {
+    "type": "place",
+    "name_en": "Ramath-mizpeh",
+    "testament": "OT",
+    "desc": "迦得支派所得的城邑之一（書13:26）。",
+    "name": "拉抹米斯巴"
+  },
+  "比多寧": {
+    "type": "place",
+    "name_en": "Betonim",
+    "testament": "OT",
+    "desc": "迦得支派所得的城邑之一（書13:26）。",
+    "name": "比多寧"
+  },
+  "伯亞蘭": {
+    "type": "place",
+    "name_en": "Beth-haram",
+    "testament": "OT",
+    "desc": "迦得支派所得谷中的城邑之一（書13:27）。",
+    "name": "伯亞蘭"
+  },
+  "撒分": {
+    "type": "place",
+    "name_en": "Zaphon",
+    "testament": "OT",
+    "desc": "迦得支派所得谷中的城邑之一（書13:27）。",
+    "name": "撒分"
+  },
+  "巴末巴力": {
+    "type": "place",
+    "name_en": "Bamoth-baal",
+    "testament": "OT",
+    "desc": "流便支派所得希實本平原的城邑之一（書13:17）。",
+    "name": "巴末巴力"
+  },
+  "伯巴力勉": {
+    "type": "place",
+    "name_en": "Beth-baal-meon",
+    "testament": "OT",
+    "desc": "流便支派所得希實本平原的城邑之一（書13:17）。",
+    "name": "伯巴力勉"
+  },
+  "基尼洗族": {
+    "type": "concept",
+    "name_en": "Kenizzite (clan)",
+    "testament": "OT",
+    "desc": "基尼洗人的另一種經文轉寫，迦勒所屬的宗族（書14:6）。",
+    "cat": "people",
+    "name": "基尼洗族"
+  },
+  "亞巴": {
+    "type": "person",
+    "name_en": "Arba",
+    "testament": "OT",
+    "desc": "亞衲族中最尊大的人，希伯崙古名「基列亞巴」即因他得名（書14:15）。",
+    "name": "亞巴"
+  },
+  "利巴嫩": {
+    "type": "place",
+    "name": "利巴嫩",
+    "name_en": "Lebanon",
+    "testament": "OT",
+    "desc": "利巴嫩山區的通稱，以香柏木著稱，常作應許之地北界的標記。"
   }
 }
