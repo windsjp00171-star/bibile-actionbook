@@ -1,6 +1,6 @@
 {
-  "name": "聖經全書",
-  "short_name": "聖經",
+  "name": "聖經互動書",
+  "short_name": "聖經互動書",
   "description": "和合本聖經互動閱讀器",
   "start_url": "/",
   "display": "standalone",
