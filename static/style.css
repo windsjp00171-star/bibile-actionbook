@@ -412,6 +412,10 @@ body {
 .card-badge.anno-person  { background: #8B3A1A; }
 .card-badge.anno-place   { background: #2A5C3A; }
 .card-badge.anno-concept { background: #4A3080; }
+.map-avail {
+  display: inline-block; font-size: 10px; padding: 2px 7px; margin-left: 4px;
+  border-radius: 10px; background: #E8DCC4; color: #6B5636; font-weight: 500;
+}
 .card-name { font-size: 18px; font-weight: 500; color: #2A1A08; margin: 0 0 10px; }
 .card-reading { font-size: 13px; color: #B5651D; font-weight: 400; letter-spacing: .05em; margin-left: 4px; }
 .card-en { font-size: 14px; color: #9C8866; font-weight: 400; }

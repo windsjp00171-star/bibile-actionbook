@@ -1010,6 +1010,9 @@ function openCard(name) {
   _curEntity = name;
   document.getElementById('cardBadge').textContent = TYPE_LABEL[ent.type] || '';
   document.getElementById('cardBadge').className = 'card-badge anno-' + ent.type;
+  if (ent.type === 'place' && ent.lat != null) {
+    document.getElementById('cardBadge').innerHTML += ' <span class="map-avail" title="有地圖座標">📍地圖</span>';
+  }
   document.getElementById('cardName').innerHTML = _esc(ent.name) +
     (ent.reading ? ' <span class="card-reading">' + _esc(ent.reading) + '</span>' : '') +
     (ent.name_en ? '<span class="card-en">　' + _esc(ent.name_en) + '</span>' : '');
