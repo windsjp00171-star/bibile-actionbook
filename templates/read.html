@@ -543,6 +543,7 @@ function openBookMap() {
       }
       _bookMap.eachLayer(l => { if (l instanceof L.CircleMarker) _bookMap.removeLayer(l); });
       const pts = [];
+      const markers = {};   // key -> marker，供清單點擊時飛過去、開標籤
       const openFromKey = (key) => { if (ENTITIES[key] || RELATED_BRIEF[key]) { closeBookMap(); openCard(key); } };
       // 座標很接近的點會在縮小檢視時疊在一起、擋住彼此無法點擊，先把重複／極接近的點錯開
       const seen = {};
@@ -552,22 +553,31 @@ function openBookMap() {
         const lat = n === 0 ? p.lat : p.lat + 0.045 * n;
         const lng = n === 0 ? p.lng : p.lng + 0.03 * n;
         // 常駐標籤在地點多時會整片疊字看不清、擋住彼此，改用滑過才顯示；
-        // 名稱清單改放地圖下方（見下方 renderBookMapList），是主要瀏覽方式
-        L.circleMarker([lat, lng], { radius: 6, fillColor: '#8B6840', color: '#fff', weight: 1.5, fillOpacity: 1 })
+        // 名稱清單改放地圖下方（見下方 renderBookMapList），點清單會飛過去並亮起對應圖標
+        const marker = L.circleMarker([lat, lng], { radius: 6, fillColor: '#8B6840', color: '#fff', weight: 1.5, fillOpacity: 1 })
           .bindTooltip(p.name, { direction: 'top' })
           .on('click', () => openFromKey(p.key))
           .addTo(_bookMap);
+        markers[p.key] = { marker, lat, lng };
         pts.push([lat, lng]);
       });
       _bookMap.invalidateSize();
       if (pts.length > 1) _bookMap.fitBounds(pts, { padding: [40, 40] });
       else if (pts.length === 1) _bookMap.setView(pts[0], 7);
       else _bookMap.setView([31.5, 35], 6);
-      renderBookMapList(d.places || [], openFromKey);
+      const focusFromKey = (key) => {
+        const m = markers[key];
+        if (!m) return;
+        _bookMap.flyTo([m.lat, m.lng], Math.max(_bookMap.getZoom(), 8), { duration: 0.6 });
+        m.marker.setStyle({ radius: 10, fillColor: '#B5651D' });
+        m.marker.openTooltip();
+        setTimeout(() => m.marker.setStyle({ radius: 6, fillColor: '#8B6840' }), 1600);
+      };
+      renderBookMapList(d.places || [], focusFromKey);
     }, 80);
   });
 }
-function renderBookMapList(places, openFromKey) {
+function renderBookMapList(places, focusFromKey) {
   const box = document.getElementById('bookMapList');
   if (!box) return;
   box.innerHTML = '';
@@ -575,7 +585,7 @@ function renderBookMapList(places, openFromKey) {
     const row = document.createElement('div');
     row.className = 'place-item';
     row.textContent = p.name;
-    row.onclick = () => openFromKey(p.key);
+    row.onclick = () => focusFromKey(p.key);
     box.appendChild(row);
   });
 }
