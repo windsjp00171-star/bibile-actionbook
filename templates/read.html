@@ -841,9 +841,15 @@ function _routeTick() {
     const e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
     const lat = a.lat + (b.lat - a.lat) * e, lng = a.lng + (b.lng - a.lng) * e;
     A.line.setLatLngs(A.drawn.concat([[lat, lng]]));
+    // 位置每影格都更新（便宜、平滑）
+    _routeMap.panTo([lat, lng], { animate: false });
     // 鏡頭：離站拉遠看路途方向，抵達前再拉近（sin 曲線在 t=0.5 時拉到最遠）
+    // 縮放等級變動會讓地圖重新排版圖磚，每影格都變會閃爍，改成變化夠大才真的觸發
     const zoom = A.stopZoom - (A.stopZoom - A.travelZoom) * Math.sin(Math.PI * t);
-    _routeMap.setView([lat, lng], zoom, { animate: false });
+    if (Math.abs(zoom - (A.lastZoom == null ? A.stopZoom : A.lastZoom)) > 0.12) {
+      _routeMap.setZoom(zoom, { animate: false });
+      A.lastZoom = zoom;
+    }
     if (t < 1) { _routeAnim = requestAnimationFrame(step); }
     else {
       A.drawn.push([b.lat, b.lng]);
