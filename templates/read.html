@@ -53,8 +53,6 @@
   <button class="search-trigger" id="tbRoutes" onclick="openRoutes()">🧭 路線圖</button>
   <button class="search-trigger" id="tbBookmarks" onclick="openBookmarks()">🔖 我的書籤</button>
 
-  <a class="resume-banner" id="resumeBanner" href="#" style="display:none"></a>
-
   <div class="route-here-bar" id="routeHereBar" style="display:none"></div>
 
   <main class="passage" id="passage">
@@ -1154,24 +1152,6 @@ function markRead(root) {
   });
 }
 document.querySelectorAll('.sidebar, .drawer').forEach(markRead);
-
-// 「繼續上次閱讀」橫幅：只在首頁（撒上17 預設入口）且上次讀的是別章時出現。
-// 先讀舊的 last（本次造訪前的記錄），避免被剛才的寫入覆蓋。
-(function() {
-  const prevLast = (window.__prevLast = window.__prevLast);
-  // 用造訪前的快照判斷
-  const snapshot = JSON.parse(localStorage.getItem('bible-progress-prev') || 'null');
-  const isHome = (CUR_BOOK === '撒母耳記上' && CUR_CH === 17);
-  if (isHome && snapshot && snapshot.last &&
-      !(snapshot.last.book === CUR_BOOK && snapshot.last.chapter === CUR_CH)) {
-    const b = document.getElementById('resumeBanner');
-    b.textContent = '↩ 繼續閱讀 ' + snapshot.last.book + ' 第' + snapshot.last.chapter + '章';
-    b.href = '/read/' + snapshot.last.book + '/' + snapshot.last.chapter;
-    b.style.display = 'block';
-  }
-  // 更新「造訪前快照」供下次首頁判斷
-  localStorage.setItem('bible-progress-prev', JSON.stringify(_prog));
-})();
 
 // ── AI explain（只從實體卡片的按鈕觸發）────────────────────────
 const REF = CUR_BOOK + ' 第' + CUR_CH + '章';

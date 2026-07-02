@@ -152,23 +152,6 @@ body {
 .legend-dot.anno-concept{ background: #4A3080; }
 .legend-hint { color: #A08B66; font-size: 11px; margin-left: auto; }
 
-/* ── Resume reading banner ── */
-.resume-banner {
-  display: block;
-  max-width: 640px;
-  margin: 0 auto 16px;
-  padding: 11px 16px;
-  border-radius: 8px;
-  background: #2C1A0E;
-  color: var(--nav-title);
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  text-align: center;
-  transition: background 0.15s;
-}
-.resume-banner:hover { background: #3A220E; }
-
 /* ── Read progress markers (sidebar) ── */
 .read-count {
   float: right;
