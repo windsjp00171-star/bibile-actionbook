@@ -835,10 +835,11 @@ function playRoute() {
   _routeMap.invalidateSize();
   const wps = rt.waypoints;
   const allPts = wps.map(w => [w.lat, w.lng]);
-  // 播放時視角固定不動（跟暫停畫面一樣，一次把整條路線的範圍抓好），
-  // 圖磚只在一開始載入一次就不再變動；之前讓鏡頭跟著移動/縮放，
-  // 圖磚來不及載入完就被打斷重載，才是畫面看起來一直閃、甚至整片空白的真正原因
-  _routeMap.fitBounds(allPts, { padding: [45, 45], animate: false });
+  // 縮放全程固定不變（只算一次能容下整條路線的縮放等級），圖磚只需在這個
+  // 解析度載入一次；鏡頭仍會平移跟著走保留移動感——放大縮小才是最容易讓
+  // 圖磚被打斷重載而閃爍/空白的操作，單純平移 Leaflet 本來就處理得平順
+  const fixedZoom = _routeMap.getBoundsZoom(L.latLngBounds(allPts), false, [45, 45]);
+  _routeMap.setView(allPts[0], fixedZoom, { animate: false });
   const disp = _dispPositions(wps);
   const line = L.polyline([], { color: rt.color, weight: 4, opacity: 0.95 }).addTo(_routeMap);
   _routeLayers.push(line);
