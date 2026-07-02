@@ -276,7 +276,9 @@
       "type": "place",
       "name": "希斯崙（邊界地標）",
       "name_en": "Hezron (place)",
-      "books": ["約書亞記"],
+      "books": [
+        "約書亞記"
+      ],
       "testament": "OT",
       "desc": "猶大支派南界的地標之一（書15:3）。"
     },
@@ -463,7 +465,9 @@
       "type": "place",
       "name": "該隱（城邑）",
       "name_en": "Kain (city)",
-      "books": ["約書亞記"],
+      "books": [
+        "約書亞記"
+      ],
       "testament": "OT",
       "desc": "猶大支派山地的城邑之一（書15:57，與亞當夏娃長子該隱非同名同義）。"
     },
@@ -565,13 +569,26 @@
     "desc": "拉麥的妻子之一，雅八與猶八之母。",
     "verses": "創世記"
   },
-  "洗拉": {
-    "type": "person",
-    "name": "洗拉",
-    "name_en": "Zillah",
-    "desc": "拉麥的另一位妻子，土八該隱與拿瑪之母。",
-    "verses": "創世記"
-  },
+  "洗拉": [
+    {
+      "type": "place",
+      "name": "洗拉（便雅憫城邑）",
+      "name_en": "Zelah",
+      "books": [
+        "約書亞記"
+      ],
+      "testament": "OT",
+      "desc": "便雅憫支派所得的城邑之一（書18:28）。"
+    },
+    {
+      "type": "person",
+      "name": "洗拉",
+      "name_en": "Zillah",
+      "testament": "OT",
+      "desc": "拉麥的另一位妻子，土八該隱與拿瑪之母。",
+      "verses": "創世記"
+    }
+  ],
   "雅八": {
     "type": "person",
     "name": "雅八",
@@ -598,17 +615,19 @@
       "type": "place",
       "name": "拿瑪（城邑）",
       "name_en": "Naamah (city)",
-      "books": ["約書亞記"],
+      "books": [
+        "約書亞記"
+      ],
       "testament": "OT",
       "desc": "猶大支派平原地帶的城邑之一（書15:41）。"
     },
     {
-    "type": "person",
-    "name": "拿瑪",
-    "name_en": "Naamah",
-    "testament": "OT",
-    "desc": "土八該隱的妹子，拉麥與洗拉之女，名載於該隱家譜。",
-    "verses": "創世記"
+      "type": "person",
+      "name": "拿瑪",
+      "name_en": "Naamah",
+      "testament": "OT",
+      "desc": "土八該隱的妹子，拉麥與洗拉之女，名載於該隱家譜。",
+      "verses": "創世記"
     }
   ],
   "蛇": {
@@ -7171,6 +7190,7 @@
       "books": [
         "約書亞記"
       ],
+      "chapters": [12, 12],
       "testament": "OT",
       "desc": "約書亞征服的迦南三十一王之城邦之一（書12:17）。"
     },
@@ -8979,13 +8999,31 @@
     "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
     "name": "約甸"
   },
-  "基比亞": {
-    "type": "place",
-    "name_en": "Gibeah (Judah)",
-    "testament": "OT",
-    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
-    "name": "基比亞"
-  },
+  "基比亞": [
+    {
+      "type": "place",
+      "name": "基比亞（猶大）",
+      "name_en": "Gibeah (Judah)",
+      "books": [
+        "約書亞記"
+      ],
+      "chapters": [
+        15,
+        15
+      ],
+      "testament": "OT",
+      "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62，與便雅憫的基比亞為不同城）。"
+    },
+    {
+      "type": "place",
+      "name_en": "Gibeah (Benjamin)",
+      "testament": "OT",
+      "lat": 31.85,
+      "lng": 35.3,
+      "desc": "便雅憫支派要城，士師記基比亞暴行發生地，後為掃羅的家鄉與早期王都。",
+      "name": "基比亞"
+    }
+  ],
   "哈忽": {
     "type": "place",
     "name_en": "Halhul",
@@ -9069,5 +9107,207 @@
     "name_en": "Ashnah",
     "testament": "OT",
     "desc": "猶大支派高原地帶的城邑之一（書15:33）。"
+  },
+  "路斯": {
+    "type": "place",
+    "name_en": "Luz",
+    "testament": "OT",
+    "desc": "伯特利的舊名或鄰近城邑，以法蓮支派邊界地標（書16:2）。",
+    "name": "路斯"
+  },
+  "亞基人": {
+    "type": "concept",
+    "name_en": "Archites",
+    "testament": "OT",
+    "desc": "以法蓮支派邊界一帶的民族（書16:2）。",
+    "cat": "people",
+    "name": "亞基人"
+  },
+  "亞他綠": {
+    "type": "place",
+    "name_en": "Ataroth (Ephraim)",
+    "testament": "OT",
+    "desc": "以法蓮支派邊界地標之一（書16:2、5）。",
+    "name": "亞他綠"
+  },
+  "押利提人": {
+    "type": "concept",
+    "name_en": "Japhletites",
+    "testament": "OT",
+    "desc": "以法蓮支派邊界一帶的民族（書16:3）。",
+    "cat": "people",
+    "name": "押利提人"
+  },
+  "亞他綠亞達": {
+    "type": "place",
+    "name_en": "Ataroth-addar",
+    "testament": "OT",
+    "desc": "以法蓮支派東界地標（書16:5）。",
+    "name": "亞他綠亞達"
+  },
+  "密米他": {
+    "type": "place",
+    "name_en": "Michmethath",
+    "testament": "OT",
+    "desc": "以法蓮支派北界地標（書16:6）。",
+    "name": "密米他"
+  },
+  "他納示羅": {
+    "type": "place",
+    "name_en": "Taanath-shiloh",
+    "testament": "OT",
+    "desc": "以法蓮支派邊界地標（書16:6）。",
+    "name": "他納示羅"
+  },
+  "雅挪哈": {
+    "type": "place",
+    "name_en": "Janoah",
+    "testament": "OT",
+    "desc": "以法蓮支派邊界地標（書16:6-7）。",
+    "name": "雅挪哈"
+  },
+  "拿拉": {
+    "type": "place",
+    "name_en": "Naarah",
+    "testament": "OT",
+    "desc": "以法蓮支派邊界地標，靠近耶利哥（書16:7）。",
+    "name": "拿拉"
+  },
+  "加拿河": {
+    "type": "place",
+    "name_en": "Brook Kanah",
+    "testament": "OT",
+    "desc": "以法蓮支派西界，通到海為止（書16:8）。",
+    "name": "加拿河"
+  },
+  "亞比以謝": {
+    "type": "person",
+    "name_en": "Abiezer",
+    "testament": "OT",
+    "desc": "基列的兒子，瑪拿西宗族之一（書17:2，與民26:30「伊以謝」為同地異譯）。",
+    "name": "亞比以謝"
+  },
+  "伯善": {
+    "type": "place",
+    "name_en": "Beth-shean",
+    "testament": "OT",
+    "lat": 32.5,
+    "lng": 35.5,
+    "desc": "耶斯列平原要城，瑪拿西支派未能完全征服的迦南人城邑之一（書17:11）。",
+    "name": "伯善"
+  },
+  "以伯蓮": {
+    "type": "place",
+    "name_en": "Ibleam",
+    "testament": "OT",
+    "desc": "瑪拿西支派未能完全征服的迦南人城邑之一（書17:11）。",
+    "name": "以伯蓮"
+  },
+  "隱多珥": {
+    "type": "place",
+    "name_en": "Endor",
+    "testament": "OT",
+    "desc": "瑪拿西支派未能完全征服的迦南人城邑之一（書17:11，後掃羅曾在此求問通靈婦人）。",
+    "name": "隱多珥"
+  },
+  "伊麥基悉": {
+    "type": "place",
+    "name_en": "Emek-keziz",
+    "testament": "OT",
+    "desc": "便雅憫支派所得的城邑之一（書18:21）。",
+    "name": "伊麥基悉"
+  },
+  "洗瑪臉": {
+    "type": "place",
+    "name_en": "Zemaraim",
+    "testament": "OT",
+    "desc": "便雅憫支派所得的城邑之一（書18:22）。",
+    "name": "洗瑪臉"
+  },
+  "亞文": {
+    "type": "place",
+    "name_en": "Avvim",
+    "testament": "OT",
+    "desc": "便雅憫支派所得的城邑之一（書18:23）。",
+    "name": "亞文"
+  },
+  "俄弗拉": {
+    "type": "place",
+    "name_en": "Ophrah",
+    "testament": "OT",
+    "desc": "便雅憫支派所得的城邑之一（書18:23）。",
+    "name": "俄弗拉"
+  },
+  "基法阿摩尼": {
+    "type": "place",
+    "name_en": "Kephar-ammoni",
+    "testament": "OT",
+    "desc": "便雅憫支派所得的城邑之一（書18:24）。",
+    "name": "基法阿摩尼"
+  },
+  "俄弗尼": {
+    "type": "place",
+    "name_en": "Ophni",
+    "testament": "OT",
+    "desc": "便雅憫支派所得的城邑之一（書18:24）。",
+    "name": "俄弗尼"
+  },
+  "迦巴": {
+    "type": "place",
+    "name_en": "Geba",
+    "testament": "OT",
+    "lat": 31.85,
+    "lng": 35.24,
+    "desc": "便雅憫支派要城之一（書18:24）。",
+    "name": "迦巴"
+  },
+  "比錄": {
+    "type": "place",
+    "name_en": "Beeroth",
+    "testament": "OT",
+    "desc": "便雅憫支派所得的城邑之一（書18:25）。",
+    "name": "比錄"
+  },
+  "基非拉": {
+    "type": "place",
+    "name_en": "Kephirah",
+    "testament": "OT",
+    "desc": "便雅憫支派所得的城邑之一（書18:26）。",
+    "name": "基非拉"
+  },
+  "摩撒": {
+    "type": "place",
+    "name_en": "Mozah",
+    "testament": "OT",
+    "desc": "便雅憫支派所得的城邑之一（書18:26）。",
+    "name": "摩撒"
+  },
+  "利堅": {
+    "type": "place",
+    "name_en": "Rekem",
+    "testament": "OT",
+    "desc": "便雅憫支派所得的城邑之一（書18:27，與米甸王利金非同名）。",
+    "name": "利堅"
+  },
+  "伊利毗勒": {
+    "type": "place",
+    "name_en": "Irpeel",
+    "testament": "OT",
+    "desc": "便雅憫支派所得的城邑之一（書18:27）。",
+    "name": "伊利毗勒"
+  },
+  "他拉拉": {
+    "type": "place",
+    "name_en": "Taralah",
+    "testament": "OT",
+    "desc": "便雅憫支派所得的城邑之一（書18:27）。",
+    "name": "他拉拉"
+  },
+  "以利弗": {
+    "type": "place",
+    "name_en": "Eleph",
+    "testament": "OT",
+    "desc": "便雅憫支派所得的城邑之一（書18:28）。",
+    "name": "以利弗"
   }
 }
