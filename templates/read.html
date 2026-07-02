@@ -805,16 +805,6 @@ function drawRoute(rt) {
     else if (pts.length === 1) _routeMap.setView(pts[0], 7);
   }, 80);
 }
-// 計算「跟隨縮放」：能容下最長一段的縮放等級，讓每段都不會超出畫面
-function _followZoom(wps) {
-  let z = 13;
-  for (let i = 0; i < wps.length - 1; i++) {
-    const b = L.latLngBounds([[wps[i].lat, wps[i].lng], [wps[i + 1].lat, wps[i + 1].lng]]);
-    const zi = _routeMap.getBoundsZoom(b, false, [60, 60]);
-    if (zi < z) z = zi;
-  }
-  return Math.max(4, Math.min(z, 8));
-}
 // 播放／暫停切換
 function togglePlay() {
   if (_routePlaying && !_routePaused) { pauseRoute(); }
@@ -844,14 +834,18 @@ function playRoute() {
   _clearRoute();
   _routeMap.invalidateSize();
   const wps = rt.waypoints;
-  const travelZoom = _followZoom(wps);
-  const stopZoom = Math.min(travelZoom + 2.5, 11);   // 停靠點時拉近，趕路時用 travelZoom 拉遠
-  _routeMap.setView([wps[0].lat, wps[0].lng], stopZoom, { animate: false });
+  const allPts = wps.map(w => [w.lat, w.lng]);
+  // 播放時視角固定不動（跟暫停畫面一樣，一次把整條路線的範圍抓好），
+  // 圖磚只在一開始載入一次就不再變動；之前讓鏡頭跟著移動/縮放，
+  // 圖磚來不及載入完就被打斷重載，才是畫面看起來一直閃、甚至整片空白的真正原因
+  _routeMap.fitBounds(allPts, { padding: [45, 45], animate: false });
   const disp = _dispPositions(wps);
   const line = L.polyline([], { color: rt.color, weight: 4, opacity: 0.95 }).addTo(_routeMap);
   _routeLayers.push(line);
+  const traveler = L.circleMarker(allPts[0], { radius: 7, fillColor: '#fff', color: rt.color, weight: 3, fillOpacity: 1 }).addTo(_routeMap);
+  _routeLayers.push(traveler);
   const m0 = _routeMarker(rt, wps[0], 0, disp[0]).addTo(_routeMap); _routeLayers.push(m0);
-  _anim = { rt, wps, disp, allPts: wps.map(w => [w.lat, w.lng]), line, travelZoom, stopZoom,
+  _anim = { rt, wps, disp, allPts, line, traveler,
             drawn: [[wps[0].lat, wps[0].lng]], seg: 0, segT0: 0, elapsed: 0 };
   _routePlaying = true; _routePaused = false;
   _setPlayBtn('⏸ 暫停');
@@ -860,8 +854,7 @@ function playRoute() {
 const _SEG_BASE = 900;  // 每段基準毫秒（再乘速度倍率）
 function _routeTick() {
   const A = _anim; if (!A) return;
-  if (A.seg >= A.wps.length - 1) {       // 播完
-    _routeMap.flyToBounds(A.allPts, { padding: [45, 45], duration: 1.0 });
+  if (A.seg >= A.wps.length - 1) {       // 播完，視角本來就沒動過，不用再飛回去
     _routePlaying = false; _routePaused = false;
     _setPlayBtn('▶ 重新播放');
     return;
@@ -875,24 +868,9 @@ function _routeTick() {
     const e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
     const lat = a.lat + (b.lat - a.lat) * e, lng = a.lng + (b.lng - a.lng) * e;
     A.line.setLatLngs(A.drawn.concat([[lat, lng]]));
-    // 地圖中心點改成節流更新（約每 80ms 一次），而不是每影格（約16ms）都呼叫 panTo。
-    // 高頻程式化平移本身就會讓瀏覽器持續重繪、看起來像在閃，軌跡線仍每影格畫、維持平滑
-    if (!A.lastPan || now - A.lastPan > 80) {
-      _routeMap.panTo([lat, lng], { animate: false });
-      A.lastPan = now;
-    }
-    // 鏡頭：離站拉遠看路途方向，抵達前再拉近。setZoom 一定會觸發圖磚重排，
-    // 之前用連續 sin 曲線每影格都微調，一段裡仍會呼叫十幾次而閃爍；
-    // 改成整段只切兩次（出發後拉遠一次、抵達前拉近一次），視覺上仍有遠近感但不閃
-    if (A.travelZoom !== A.stopZoom) {
-      if (t > 0.15 && A.lastZoom !== A.travelZoom) {
-        _routeMap.setZoom(A.travelZoom, { animate: false });
-        A.lastZoom = A.travelZoom;
-      } else if (t > 0.85 && A.lastZoom !== A.stopZoom) {
-        _routeMap.setZoom(A.stopZoom, { animate: false });
-        A.lastZoom = A.stopZoom;
-      }
-    }
+    // 視角在整段播放期間固定不動（見 playRoute 的 fitBounds），這裡只移動
+    // 代表目前位置的小圓點，不碰地圖中心/縮放，圖磚完全不會被打斷重載
+    A.traveler.setLatLng([lat, lng]);
     if (t < 1) { _routeAnim = requestAnimationFrame(step); }
     else {
       A.drawn.push([b.lat, b.lng]);
