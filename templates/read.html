@@ -565,13 +565,14 @@ function openBookMap() {
       if (pts.length > 1) _bookMap.fitBounds(pts, { padding: [40, 40] });
       else if (pts.length === 1) _bookMap.setView(pts[0], 7);
       else _bookMap.setView([31.5, 35], 6);
+      // 點清單：地圖飛過去＋圖標亮起＋顯示地名，短暫停留後直接開背景資料卡片（一次到位）
       const focusFromKey = (key) => {
         const m = markers[key];
         if (!m) return;
-        _bookMap.flyTo([m.lat, m.lng], Math.max(_bookMap.getZoom(), 8), { duration: 0.6 });
+        _bookMap.flyTo([m.lat, m.lng], Math.max(_bookMap.getZoom(), 8), { duration: 0.5 });
         m.marker.setStyle({ radius: 10, fillColor: '#B5651D' });
         m.marker.openTooltip();
-        setTimeout(() => m.marker.setStyle({ radius: 6, fillColor: '#8B6840' }), 1600);
+        setTimeout(() => openFromKey(key), 550);
       };
       renderBookMapList(d.places || [], focusFromKey);
     }, 80);
