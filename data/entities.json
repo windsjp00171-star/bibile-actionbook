@@ -271,13 +271,24 @@
     "desc": "猶大與他瑪所生之子，猶大支派重要宗族之祖。路得記末的家譜由他起算，經波阿斯傳至大衛。",
     "verses": "路得記"
   },
-  "希斯崙": {
-    "type": "person",
-    "name": "希斯崙",
-    "name_en": "Hezron",
-    "desc": "法勒斯之子，猶大支派族長之一，大衛家譜中承上啟下的一代。",
-    "verses": "路得記"
-  },
+  "希斯崙": [
+    {
+      "type": "place",
+      "name": "希斯崙（邊界地標）",
+      "name_en": "Hezron (place)",
+      "books": ["約書亞記"],
+      "testament": "OT",
+      "desc": "猶大支派南界的地標之一（書15:3）。"
+    },
+    {
+      "type": "person",
+      "name": "希斯崙",
+      "name_en": "Hezron",
+      "testament": "OT",
+      "desc": "法勒斯之子，猶大支派族長之一，大衛家譜中承上啟下的一代。",
+      "verses": "路得記"
+    }
+  ],
   "亞米拿達": {
     "type": "person",
     "name": "亞米拿達",
@@ -447,13 +458,24 @@
     "desc": "神用亞當的肋骨所造的第一個女人，名意「眾生之母」。受蛇引誘先吃禁果並給丈夫，致人類墮落；神預言其後裔要傷蛇的頭。",
     "verses": "創世記"
   },
-  "該隱": {
-    "type": "person",
-    "name": "該隱",
-    "name_en": "Cain",
-    "desc": "亞當與夏娃的長子，種地的。因供物不蒙悅納而嫉妒，殺害弟弟亞伯，成為聖經首宗兇殺。受咒詛流離飄蕩，神立記號保全其命，後住挪得之地建城。",
-    "verses": "創世記"
-  },
+  "該隱": [
+    {
+      "type": "place",
+      "name": "該隱（城邑）",
+      "name_en": "Kain (city)",
+      "books": ["約書亞記"],
+      "testament": "OT",
+      "desc": "猶大支派山地的城邑之一（書15:57，與亞當夏娃長子該隱非同名同義）。"
+    },
+    {
+      "type": "person",
+      "name": "該隱",
+      "name_en": "Cain",
+      "testament": "OT",
+      "desc": "亞當與夏娃的長子，種地的。因供物不蒙悅納而嫉妒，殺害弟弟亞伯，成為聖經首宗兇殺。受咒詛流離飄蕩，神立記號保全其命，後住挪得之地建城。",
+      "verses": "創世記"
+    }
+  ],
   "亞伯": {
     "type": "person",
     "name": "亞伯",
@@ -571,13 +593,24 @@
     "desc": "拉麥與洗拉之子，打造各樣銅鐵利器的，金屬冶煉工藝的先驅。",
     "verses": "創世記"
   },
-  "拿瑪": {
+  "拿瑪": [
+    {
+      "type": "place",
+      "name": "拿瑪（城邑）",
+      "name_en": "Naamah (city)",
+      "books": ["約書亞記"],
+      "testament": "OT",
+      "desc": "猶大支派平原地帶的城邑之一（書15:41）。"
+    },
+    {
     "type": "person",
     "name": "拿瑪",
     "name_en": "Naamah",
+    "testament": "OT",
     "desc": "土八該隱的妹子，拉麥與洗拉之女，名載於該隱家譜。",
     "verses": "創世記"
-  },
+    }
+  ],
   "蛇": {
     "type": "concept",
     "name": "蛇",
@@ -8135,7 +8168,7 @@
     "testament": "OT",
     "lat": 33.11,
     "lng": 35.53,
-    "desc": "拿弗他利地的城邦，約書亞征服迦南三十一王之一，後成為逃城與利未人的城。",
+    "desc": "拿弗他利地的城邦，約書亞征服迦南三十一王之一，後成為逃城與利未人的城。（猶大南地另有一同名城邑，書15:23。）",
     "name": "基低斯"
   },
   "約念": {
@@ -8295,5 +8328,746 @@
     "name_en": "Lebanon",
     "testament": "OT",
     "desc": "利巴嫩山區的通稱，以香柏木著稱，常作應許之地北界的標記。"
+  },
+  "海汊": {
+    "type": "concept",
+    "name_en": "Bay/Inlet",
+    "testament": "OT",
+    "reading": "ㄏㄞˇ ㄔㄚˋ",
+    "desc": "海灣岔口，死海南端邊界地標（書15:2）。",
+    "cat": "holy",
+    "name": "海汊"
+  },
+  "亞達珥": {
+    "type": "place",
+    "name_en": "Addar",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "亞達珥"
+  },
+  "甲加": {
+    "type": "place",
+    "name_en": "Karka",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "甲加"
+  },
+  "波罕": {
+    "type": "place",
+    "name_en": "Bohan",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "波罕"
+  },
+  "伯曷拉": {
+    "type": "place",
+    "name_en": "Beth-hoglah",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "伯曷拉"
+  },
+  "伯亞拉巴": {
+    "type": "place",
+    "name_en": "Beth-arabah",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "伯亞拉巴"
+  },
+  "亞都冥坡": {
+    "type": "place",
+    "name_en": "Ascent of Adummim",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "亞都冥坡"
+  },
+  "隱示麥泉": {
+    "type": "place",
+    "name_en": "En-shemesh",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "隱示麥泉"
+  },
+  "隱羅結": {
+    "type": "place",
+    "name_en": "En-rogel",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "隱羅結"
+  },
+  "欣嫩子谷": {
+    "type": "place",
+    "name_en": "Valley of Ben-hinnom",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "欣嫩子谷"
+  },
+  "利乏音谷": {
+    "type": "place",
+    "name_en": "Valley of Rephaim",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "利乏音谷"
+  },
+  "尼弗多亞": {
+    "type": "place",
+    "name_en": "Waters of Nephtoah",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "尼弗多亞"
+  },
+  "以弗崙山": {
+    "type": "place",
+    "name_en": "Mount Ephron",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "以弗崙山"
+  },
+  "耶琳山": {
+    "type": "place",
+    "name_en": "Mount Jearim",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "耶琳山"
+  },
+  "伯示麥": {
+    "type": "place",
+    "name_en": "Beth-shemesh",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "伯示麥"
+  },
+  "施基崙": {
+    "type": "place",
+    "name_en": "Shikkeron",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "施基崙"
+  },
+  "巴拉山": {
+    "type": "place",
+    "name_en": "Mount Baalah",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "巴拉山"
+  },
+  "雅比聶": {
+    "type": "place",
+    "name_en": "Jabneel",
+    "testament": "OT",
+    "desc": "猶大支派南／北界地標，位置多不詳，僅供識別（書15章）。",
+    "name": "雅比聶"
+  },
+  "耶布斯": {
+    "type": "place",
+    "name_en": "Jebus",
+    "testament": "OT",
+    "lat": 31.7767,
+    "lng": 35.2345,
+    "desc": "耶路撒冷的古名，耶布斯人所居之城（書15:8）。",
+    "name": "耶布斯"
+  },
+  "巴拉": {
+    "type": "place",
+    "name_en": "Baalah",
+    "testament": "OT",
+    "lat": 31.75,
+    "lng": 35.1,
+    "desc": "猶大支派城邑，即基列耶琳（書15:9、29）。",
+    "name": "巴拉"
+  },
+  "亭納": {
+    "type": "place",
+    "name_en": "Timnah",
+    "testament": "OT",
+    "desc": "猶大高原城邑，參孫娶妻與非利士人相關之地（書15:10）。",
+    "name": "亭納"
+  },
+  "甲薛": {
+    "type": "place",
+    "name_en": "Kabzeel",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "甲薛"
+  },
+  "以得": {
+    "type": "place",
+    "name_en": "Eder",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "以得"
+  },
+  "雅姑珥": {
+    "type": "place",
+    "name_en": "Jagur",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "雅姑珥"
+  },
+  "基拿": {
+    "type": "place",
+    "name_en": "Kinah",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "基拿"
+  },
+  "底摩拿": {
+    "type": "place",
+    "name_en": "Dimonah",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "底摩拿"
+  },
+  "亞大達": {
+    "type": "place",
+    "name_en": "Adadah",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "亞大達"
+  },
+  "以提楠": {
+    "type": "place",
+    "name_en": "Ithnan",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "以提楠"
+  },
+  "提鍊": {
+    "type": "place",
+    "name_en": "Telem",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "提鍊"
+  },
+  "比亞綠": {
+    "type": "place",
+    "name_en": "Bealoth",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "比亞綠"
+  },
+  "夏瑣哈大他": {
+    "type": "place",
+    "name_en": "Hazor-hadattah",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "夏瑣哈大他"
+  },
+  "亞曼": {
+    "type": "place",
+    "name_en": "Amam",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "亞曼"
+  },
+  "示瑪": {
+    "type": "place",
+    "name_en": "Shema",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "示瑪"
+  },
+  "摩拉大": {
+    "type": "place",
+    "name_en": "Moladah",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "摩拉大"
+  },
+  "哈薩迦大": {
+    "type": "place",
+    "name_en": "Hazar-gaddah",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "哈薩迦大"
+  },
+  "黑實門": {
+    "type": "place",
+    "name_en": "Heshmon",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "黑實門"
+  },
+  "伯帕列": {
+    "type": "place",
+    "name_en": "Beth-pelet",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "伯帕列"
+  },
+  "哈薩書亞": {
+    "type": "place",
+    "name_en": "Hazar-shual",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "哈薩書亞"
+  },
+  "比斯約他": {
+    "type": "place",
+    "name_en": "Biziothiah",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "比斯約他"
+  },
+  "以因": {
+    "type": "place",
+    "name_en": "Ain",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "以因"
+  },
+  "以森": {
+    "type": "place",
+    "name_en": "Ezem",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "以森"
+  },
+  "伊勒多臘": {
+    "type": "place",
+    "name_en": "Eltolad",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "伊勒多臘"
+  },
+  "基失": {
+    "type": "place",
+    "name_en": "Kesil",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "基失"
+  },
+  "麥瑪拿": {
+    "type": "place",
+    "name_en": "Madmannah",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "麥瑪拿"
+  },
+  "三撒拿": {
+    "type": "place",
+    "name_en": "Sansannah",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "三撒拿"
+  },
+  "利巴勿": {
+    "type": "place",
+    "name_en": "Lebaoth",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "利巴勿"
+  },
+  "實忻": {
+    "type": "place",
+    "name_en": "Shilhim",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "實忻"
+  },
+  "亞因": {
+    "type": "place",
+    "name_en": "Ain (south)",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一，靠近以東交界（書15:21-32）。",
+    "name": "亞因"
+  },
+  "西弗": {
+    "type": "place",
+    "name_en": "Ziph (south Judah)",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一（書15:24，與大衛逃亡的西弗曠野同名不同地）。",
+    "name": "西弗"
+  },
+  "加略希斯崙": {
+    "type": "place",
+    "name_en": "Kerioth-hezron",
+    "testament": "OT",
+    "desc": "猶大支派城邑，即夏瑣（書15:25）。",
+    "name": "加略希斯崙"
+  },
+  "臨門": {
+    "type": "place",
+    "name_en": "Rimmon (south Judah)",
+    "testament": "OT",
+    "desc": "猶大支派儘南邊的城邑之一（書15:32）。",
+    "name": "臨門"
+  },
+  "以實陶": {
+    "type": "place",
+    "name_en": "Eshtaol",
+    "testament": "OT",
+    "desc": "猶大支派高原地帶的城邑之一（書15:33-36）。",
+    "name": "以實陶"
+  },
+  "撒挪亞": {
+    "type": "place",
+    "name_en": "Zanoah",
+    "testament": "OT",
+    "desc": "猶大支派高原地帶的城邑之一（書15:33-36）。",
+    "name": "撒挪亞"
+  },
+  "隱干寧": {
+    "type": "place",
+    "name_en": "En-gannim",
+    "testament": "OT",
+    "desc": "猶大支派高原地帶的城邑之一（書15:33-36）。",
+    "name": "隱干寧"
+  },
+  "以楠": {
+    "type": "place",
+    "name_en": "Enam",
+    "testament": "OT",
+    "desc": "猶大支派高原地帶的城邑之一（書15:33-36）。",
+    "name": "以楠"
+  },
+  "亞底他音": {
+    "type": "place",
+    "name_en": "Adithaim",
+    "testament": "OT",
+    "desc": "猶大支派高原地帶的城邑之一（書15:33-36）。",
+    "name": "亞底他音"
+  },
+  "基底拉": {
+    "type": "place",
+    "name_en": "Gederah",
+    "testament": "OT",
+    "desc": "猶大支派高原地帶的城邑之一（書15:33-36）。",
+    "name": "基底拉"
+  },
+  "基底羅他音": {
+    "type": "place",
+    "name_en": "Gederothaim",
+    "testament": "OT",
+    "desc": "猶大支派高原地帶的城邑之一（書15:33-36）。",
+    "name": "基底羅他音"
+  },
+  "洗楠": {
+    "type": "place",
+    "name_en": "Zenan",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "洗楠"
+  },
+  "哈大沙": {
+    "type": "place",
+    "name_en": "Hadashah",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "哈大沙"
+  },
+  "麥大迦得": {
+    "type": "place",
+    "name_en": "Migdal-gad",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "麥大迦得"
+  },
+  "底連": {
+    "type": "place",
+    "name_en": "Dilean",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "底連"
+  },
+  "約帖": {
+    "type": "place",
+    "name_en": "Jokthe-el",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "約帖"
+  },
+  "波斯加": {
+    "type": "place",
+    "name_en": "Bozkath",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "波斯加"
+  },
+  "迦本": {
+    "type": "place",
+    "name_en": "Cabbon",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "迦本"
+  },
+  "拉幔": {
+    "type": "place",
+    "name_en": "Lahmam",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "拉幔"
+  },
+  "基提利": {
+    "type": "place",
+    "name_en": "Kithlish",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "基提利"
+  },
+  "基低羅": {
+    "type": "place",
+    "name_en": "Gederoth",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "基低羅"
+  },
+  "伯大袞": {
+    "type": "place",
+    "name_en": "Beth-dagon",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "伯大袞"
+  },
+  "以帖": {
+    "type": "place",
+    "name_en": "Ether",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "以帖"
+  },
+  "亞珊": {
+    "type": "place",
+    "name_en": "Ashan",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "亞珊"
+  },
+  "益弗他": {
+    "type": "place",
+    "name_en": "Iphtah",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "益弗他"
+  },
+  "尼悉": {
+    "type": "place",
+    "name_en": "Nezib",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "尼悉"
+  },
+  "基伊拉": {
+    "type": "place",
+    "name_en": "Keilah",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "基伊拉"
+  },
+  "亞革悉": {
+    "type": "place",
+    "name_en": "Achzib (Judah lowland)",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "亞革悉"
+  },
+  "瑪利沙": {
+    "type": "place",
+    "name_en": "Mareshah",
+    "testament": "OT",
+    "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。",
+    "name": "瑪利沙"
+  },
+  "沙密": {
+    "type": "place",
+    "name_en": "Shamir",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "沙密"
+  },
+  "雅提珥": {
+    "type": "place",
+    "name_en": "Jattir",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "雅提珥"
+  },
+  "以實提莫": {
+    "type": "place",
+    "name_en": "Eshtemoa",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "以實提莫"
+  },
+  "亞念": {
+    "type": "place",
+    "name_en": "Anim",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "亞念"
+  },
+  "何倫": {
+    "type": "place",
+    "name_en": "Holon",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "何倫"
+  },
+  "基羅": {
+    "type": "place",
+    "name_en": "Giloh",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "基羅"
+  },
+  "亞拉": {
+    "type": "place",
+    "name_en": "Arab",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "亞拉"
+  },
+  "度瑪": {
+    "type": "place",
+    "name_en": "Dumah",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "度瑪"
+  },
+  "以珊": {
+    "type": "place",
+    "name_en": "Eshan",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "以珊"
+  },
+  "雅農": {
+    "type": "place",
+    "name_en": "Janum",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "雅農"
+  },
+  "伯他普亞": {
+    "type": "place",
+    "name_en": "Beth-tappuah",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "伯他普亞"
+  },
+  "亞非加": {
+    "type": "place",
+    "name_en": "Aphekah",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "亞非加"
+  },
+  "宏他": {
+    "type": "place",
+    "name_en": "Humtah",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "宏他"
+  },
+  "洗珥": {
+    "type": "place",
+    "name_en": "Zior",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "洗珥"
+  },
+  "淤他": {
+    "type": "place",
+    "name_en": "Juttah",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "淤他"
+  },
+  "約甸": {
+    "type": "place",
+    "name_en": "Jokdeam",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "約甸"
+  },
+  "基比亞": {
+    "type": "place",
+    "name_en": "Gibeah (Judah)",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "基比亞"
+  },
+  "哈忽": {
+    "type": "place",
+    "name_en": "Halhul",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "哈忽"
+  },
+  "伯夙": {
+    "type": "place",
+    "name_en": "Beth-zur",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "伯夙"
+  },
+  "基突": {
+    "type": "place",
+    "name_en": "Gedor",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "基突"
+  },
+  "瑪臘": {
+    "type": "place",
+    "name_en": "Maarath",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "瑪臘"
+  },
+  "伯亞諾": {
+    "type": "place",
+    "name_en": "Beth-anoth",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "伯亞諾"
+  },
+  "伊勒提君": {
+    "type": "place",
+    "name_en": "Eltekon",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "伊勒提君"
+  },
+  "基列巴力": {
+    "type": "place",
+    "name_en": "Kiriath-baal",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "基列巴力"
+  },
+  "密丁": {
+    "type": "place",
+    "name_en": "Middin",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "密丁"
+  },
+  "西迦迦": {
+    "type": "place",
+    "name_en": "Secacah",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "西迦迦"
+  },
+  "匿珊": {
+    "type": "place",
+    "name_en": "Nibshan",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "匿珊"
+  },
+  "鹽城": {
+    "type": "place",
+    "name_en": "City of Salt",
+    "testament": "OT",
+    "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。",
+    "name": "鹽城"
+  },
+  "亞實拿": {
+    "type": "place",
+    "name": "亞實拿",
+    "name_en": "Ashnah",
+    "testament": "OT",
+    "desc": "猶大支派高原地帶的城邑之一（書15:33）。"
   }
 }
