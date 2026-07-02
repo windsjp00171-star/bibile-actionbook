@@ -152,23 +152,6 @@ body {
 .legend-dot.anno-concept{ background: #4A3080; }
 .legend-hint { color: #A08B66; font-size: 11px; margin-left: auto; }
 
-/* ── Resume reading banner ── */
-.resume-banner {
-  display: block;
-  max-width: 640px;
-  margin: 0 auto 16px;
-  padding: 11px 16px;
-  border-radius: 8px;
-  background: #2C1A0E;
-  color: var(--nav-title);
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  text-align: center;
-  transition: background 0.15s;
-}
-.resume-banner:hover { background: #3A220E; }
-
 /* ── Read progress markers (sidebar) ── */
 .read-count {
   float: right;
@@ -412,6 +395,10 @@ body {
 .card-badge.anno-person  { background: #8B3A1A; }
 .card-badge.anno-place   { background: #2A5C3A; }
 .card-badge.anno-concept { background: #4A3080; }
+.map-avail {
+  display: inline-block; font-size: 10px; padding: 2px 7px; margin-left: 4px;
+  border-radius: 10px; background: #E8DCC4; color: #6B5636; font-weight: 500;
+}
 .card-name { font-size: 18px; font-weight: 500; color: #2A1A08; margin: 0 0 10px; }
 .card-reading { font-size: 13px; color: #B5651D; font-weight: 400; letter-spacing: .05em; margin-left: 4px; }
 .card-en { font-size: 14px; color: #9C8866; font-weight: 400; }
