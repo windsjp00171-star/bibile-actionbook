@@ -875,8 +875,12 @@ function _routeTick() {
     const e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
     const lat = a.lat + (b.lat - a.lat) * e, lng = a.lng + (b.lng - a.lng) * e;
     A.line.setLatLngs(A.drawn.concat([[lat, lng]]));
-    // 位置每影格都更新（便宜、平滑，不觸發圖磚重排）
-    _routeMap.panTo([lat, lng], { animate: false });
+    // 地圖中心點改成節流更新（約每 80ms 一次），而不是每影格（約16ms）都呼叫 panTo。
+    // 高頻程式化平移本身就會讓瀏覽器持續重繪、看起來像在閃，軌跡線仍每影格畫、維持平滑
+    if (!A.lastPan || now - A.lastPan > 80) {
+      _routeMap.panTo([lat, lng], { animate: false });
+      A.lastPan = now;
+    }
     // 鏡頭：離站拉遠看路途方向，抵達前再拉近。setZoom 一定會觸發圖磚重排，
     // 之前用連續 sin 曲線每影格都微調，一段裡仍會呼叫十幾次而閃爍；
     // 改成整段只切兩次（出發後拉遠一次、抵達前拉近一次），視覺上仍有遠近感但不閃
