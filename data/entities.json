@@ -25,13 +25,29 @@
    "verses": "使徒行傳、書信"
   }
  ],
- "歌利亞": {
-  "type": "person",
-  "name": "歌利亞",
-  "name_en": "Goliath",
-  "desc": "迦特的非利士巨人戰士，身高約六肘零一虎口（近三公尺），披重甲。連續四十天叫陣辱罵以色列軍與神，最終被大衛一石擊倒斬首。",
-  "verses": "撒上17:4-11、17:48-51"
- },
+ "歌利亞": [
+  {
+   "type": "person",
+   "name": "歌利亞",
+   "name_en": "Goliath",
+   "desc": "迦特的非利士巨人戰士，身高約六肘零一虎口（近三公尺），披重甲。連續四十天叫陣辱罵以色列軍與神，最終被大衛一石擊倒斬首。",
+   "verses": "撒上17:4-11、17:48-51"
+  },
+  {
+   "type": "person",
+   "name": "歌利亞（伊勒哈難所殺）",
+   "name_en": "Goliath (slain by Elhanan)",
+   "books": [
+    "撒母耳記下"
+   ],
+   "chapters": [
+    21,
+    21
+   ],
+   "testament": "OT",
+   "desc": "伯利恆人朵多的兒子伊勒哈難所殺的迦特人，槍桿粗如織布的機軸；歷代志上20:5記載伊勒哈難所殺者為「歌利亞的兄弟拉哈米」，學者對此經文的關係看法不一（撒下21:19）。"
+  }
+ ],
  "耶西": {
   "type": "person",
   "name": "耶西",
@@ -81,13 +97,29 @@
   "desc": "耶西的次子，跟隨掃羅出征，與大哥以利押同在以拉谷的戰陣中。",
   "verses": "撒上17:13"
  },
- "沙瑪": {
-  "type": "person",
-  "name": "沙瑪",
-  "name_en": "Shammah",
-  "desc": "耶西的三子，與兩位兄長一同從軍，在前線與非利士人對峙。",
-  "verses": "撒上17:13"
- },
+ "沙瑪": [
+  {
+   "type": "person",
+   "name": "沙瑪",
+   "name_en": "Shammah",
+   "desc": "耶西的三子，與兩位兄長一同從軍，在前線與非利士人對峙。",
+   "verses": "撒上17:13"
+  },
+  {
+   "type": "person",
+   "name": "沙瑪（大衛勇士）",
+   "name_en": "Shammah (mighty man)",
+   "books": [
+    "撒母耳記下"
+   ],
+   "chapters": [
+    23,
+    23
+   ],
+   "testament": "OT",
+   "desc": "大衛三勇士之一，曾獨力守住一塊紅豆田擊退非利士人（撒下23:11-12）；23:25另有一位「哈律人沙瑪」同列三十勇士名錄，是否同一人經文未明。"
+  }
+ ],
  "押尼珥": {
   "type": "person",
   "name": "押尼珥",
@@ -1146,13 +1178,29 @@
   "desc": "亞伯拉罕的原名，意為「尊貴的父」。神立約應許他成為多國之父時，將他改名為亞伯拉罕。",
   "verses": ""
  },
- "約拿單": {
-  "type": "person",
-  "name": "約拿單",
-  "name_en": "Jonathan",
-  "desc": "掃羅的長子，勇猛的戰士。與大衛情同手足、立約相護，多次救大衛脫離父親掃羅的追殺，最終與父同死於基利波山。",
-  "verses": ""
- },
+ "約拿單": [
+  {
+   "type": "person",
+   "name": "約拿單（掃羅之子）",
+   "name_en": "Jonathan",
+   "desc": "掃羅的長子，勇猛的戰士。與大衛情同手足、立約相護，多次救大衛脫離父親掃羅的追殺，最終與父同死於基利波山。",
+   "verses": ""
+  },
+  {
+   "type": "person",
+   "name": "約拿單（雅善之子）",
+   "name_en": "Jonathan son of Jashen",
+   "books": [
+    "撒母耳記下"
+   ],
+   "chapters": [
+    23,
+    23
+   ],
+   "testament": "OT",
+   "desc": "雅善的兒子，大衛三十勇士之一，與掃羅之子約拿單同名而不同人（撒下23:32）。"
+  }
+ ],
  "摩利亞": {
   "type": "place",
   "name": "摩利亞",
@@ -2616,12 +2664,24 @@
   "name_en": "Jezebel",
   "desc": "腓尼基公主，亞哈王之妻，屠殺先知、推崇巴力，象徵邪惡王后。"
  },
- "約沙法": {
-  "type": "person",
-  "name": "約沙法",
-  "name_en": "Jehoshaphat",
-  "desc": "南國猶大的敬虔王，致力改革宗教，倚靠神贏得戰爭。"
- },
+ "約沙法": [
+  {
+   "type": "person",
+   "name": "約沙法（猶大王）",
+   "name_en": "Jehoshaphat",
+   "desc": "南國猶大的敬虔王，致力改革宗教，倚靠神贏得戰爭。"
+  },
+  {
+   "type": "person",
+   "name": "約沙法（大衛的史官）",
+   "name_en": "Jehoshaphat (David's recorder)",
+   "books": [
+    "撒母耳記下"
+   ],
+   "testament": "OT",
+   "desc": "亞希律的兒子，大衛的史官，與後來的猶大王約沙法同名而不同人（撒下8:16、20:24）。"
+  }
+ ],
  "希西家": {
   "type": "person",
   "name": "希西家",
@@ -2755,14 +2815,30 @@
   "desc": "耶穌設立的紀念禮，以餅象徵身體、杯象徵血，記念主直到他再來。",
   "cat": "fest"
  },
- "拿單": {
-  "type": "person",
-  "name": "拿單（先知）",
-  "name_en": "Nathan",
-  "testament": "OT",
-  "desc": "大衛王的先知，以「富人奪窮人羊羔」的比喻指出大衛奪拔示巴之罪，後協助所羅門繼位。另有大衛之子同名。",
-  "verses": "撒母耳記下、列王紀上"
- },
+ "拿單": [
+  {
+   "type": "person",
+   "name": "拿單（先知）",
+   "name_en": "Nathan",
+   "testament": "OT",
+   "desc": "大衛王的先知，以「富人奪窮人羊羔」的比喻指出大衛奪拔示巴之罪，後協助所羅門繼位。另有大衛之子同名。",
+   "verses": "撒母耳記下、列王紀上"
+  },
+  {
+   "type": "person",
+   "name": "拿單（大衛之子）",
+   "name_en": "Nathan (son of David)",
+   "books": [
+    "撒母耳記下"
+   ],
+   "chapters": [
+    5,
+    5
+   ],
+   "testament": "OT",
+   "desc": "大衛在耶路撒冷所生的兒子之一，與先知拿單同名而不同人（撒下5:14）。"
+  }
+ ],
  "烏利亞": {
   "type": "person",
   "name": "烏利亞",
@@ -3459,7 +3535,8 @@
   },
   {
    "books": [
-    "士師記"
+    "士師記",
+    "撒母耳記下"
    ],
    "type": "person",
    "name": "亞比米勒（基甸之子）",
@@ -3550,12 +3627,28 @@
   "name_en": "Hazael",
   "desc": "亞蘭王，以利沙預見他將殘害以色列人，他殺死前王便哈達後登位。"
  },
- "米非波設": {
-  "type": "person",
-  "name": "米非波設",
-  "name_en": "Mephibosheth",
-  "desc": "約拿單之子，兩腳皆瘸，大衛因與約拿單的盟約而厚待他、賜他田地。"
- },
+ "米非波設": [
+  {
+   "type": "person",
+   "name": "米非波設（約拿單之子）",
+   "name_en": "Mephibosheth",
+   "desc": "約拿單之子，兩腳皆瘸，大衛因與約拿單的盟約而厚待他、賜他田地。"
+  },
+  {
+   "type": "person",
+   "name": "米非波設（掃羅與利斯巴之子）",
+   "name_en": "Mephibosheth (son of Saul)",
+   "books": [
+    "撒母耳記下"
+   ],
+   "chapters": [
+    21,
+    21
+   ],
+   "testament": "OT",
+   "desc": "掃羅與妃嬪利斯巴所生的兒子，因掃羅曾殺害基遍人，大衛為平息基遍人怨恨，將他與另六名掃羅後裔交出處死（撒下21:8-9）。"
+  }
+ ],
  "西拿基立": {
   "type": "person",
   "name": "西拿基立",
@@ -3762,14 +3855,30 @@
    }
   ]
  },
- "以利亞撒": {
-  "type": "person",
-  "name": "以利亞撒",
-  "name_en": "Eleazar",
-  "testament": "OT",
-  "desc": "主要指亞倫的第三子，繼父任大祭司，與約書亞一同分配迦南地業。舊約另有大衛勇士等同名者。",
-  "verses": "民數記、約書亞記"
- },
+ "以利亞撒": [
+  {
+   "type": "person",
+   "name": "以利亞撒",
+   "name_en": "Eleazar",
+   "testament": "OT",
+   "desc": "主要指亞倫的第三子，繼父任大祭司，與約書亞一同分配迦南地業。舊約另有大衛勇士等同名者。",
+   "verses": "民數記、約書亞記"
+  },
+  {
+   "type": "person",
+   "name": "以利亞撒（大衛勇士）",
+   "name_en": "Eleazar (mighty man)",
+   "books": [
+    "撒母耳記下"
+   ],
+   "chapters": [
+    23,
+    23
+   ],
+   "testament": "OT",
+   "desc": "亞合人朵多的兒子，大衛三勇士之一，曾獨力擊殺非利士人直到手臂疲乏（撒下23:9-10）。"
+  }
+ ],
  "便哈達": {
   "type": "person",
   "name": "便哈達",
@@ -4813,15 +4922,31 @@
   "testament": "both",
   "desc": "雅弗的後裔與其所居之地，常與歌革並提，象徵末世敵對神的遠方勢力。"
  },
- "示巴": {
-  "type": "place",
-  "name": "示巴",
-  "name_en": "Sheba",
-  "testament": "OT",
-  "desc": "阿拉伯南部（今葉門一帶）富庶的古國，以香料黃金聞名。示巴女王曾來試所羅門的智慧。",
-  "lat": 15.4,
-  "lng": 44.2
- },
+ "示巴": [
+  {
+   "type": "place",
+   "name": "示巴",
+   "name_en": "Sheba",
+   "testament": "OT",
+   "desc": "阿拉伯南部（今葉門一帶）富庶的古國，以香料黃金聞名。示巴女王曾來試所羅門的智慧。",
+   "lat": 15.4,
+   "lng": 44.2
+  },
+  {
+   "type": "person",
+   "name": "示巴（比基利之子）",
+   "name_en": "Sheba son of Bichri",
+   "books": [
+    "撒母耳記下"
+   ],
+   "chapters": [
+    20,
+    20
+   ],
+   "testament": "OT",
+   "desc": "便雅憫人比基利的兒子，趁押沙龍叛變平息後鼓動以色列人背離大衛，逃入亞比拉城，最終被城中婦人斬首平息（撒下20章）。"
+  }
+ ],
  "底但": {
   "type": "place",
   "name": "底但",
@@ -5028,14 +5153,30 @@
   "desc": "閃之子，洪水後二年所生，是希伯與亞伯拉罕一系的先祖。",
   "verses": "創世記5、創世記11"
  },
- "沙拉": {
-  "type": "person",
-  "name": "沙拉",
-  "name_en": "",
-  "testament": "OT",
-  "desc": "亞法撒之子，希伯之父，閃到亞伯拉罕族譜中的一代。",
-  "verses": "創世記5、創世記11"
- },
+ "沙拉": [
+  {
+   "type": "person",
+   "name": "沙拉（亞法撒之子）",
+   "name_en": "",
+   "testament": "OT",
+   "desc": "亞法撒之子，希伯之父，閃到亞伯拉罕族譜中的一代。",
+   "verses": "創世記5、創世記11"
+  },
+  {
+   "type": "person",
+   "name": "沙拉（大衛勇士之父）",
+   "name_en": "Sharar/Sacar (father of Ahiam)",
+   "books": [
+    "撒母耳記下"
+   ],
+   "chapters": [
+    23,
+    23
+   ],
+   "testament": "OT",
+   "desc": "哈拉人，大衛三十勇士之一亞希暗的父親（撒下23:33）。"
+  }
+ ],
  "希伯": {
   "type": "person",
   "name": "希伯",
@@ -6043,13 +6184,25 @@
   "desc": "瑪拿西的子孫，攻取亞珥歌伯全境，將巴珊地按己名稱為哈倭特睚珥。",
   "name": "睚珥"
  },
- "瑪吉": {
-  "type": "person",
-  "name_en": "Machir",
-  "testament": "OT",
-  "desc": "瑪拿西的兒子，摩西將基列之地賜給他的後裔。",
-  "name": "瑪吉"
- },
+ "瑪吉": [
+  {
+   "type": "person",
+   "name_en": "Machir",
+   "testament": "OT",
+   "desc": "瑪拿西的兒子，摩西將基列之地賜給他的後裔。",
+   "name": "瑪吉（瑪拿西之子）"
+  },
+  {
+   "type": "person",
+   "name": "瑪吉（羅底巴人）",
+   "name_en": "Machir of Lo-debar",
+   "books": [
+    "撒母耳記下"
+   ],
+   "testament": "OT",
+   "desc": "羅底巴人亞米利的兒子，米非波設曾寄居其家，大衛逃避押沙龍時也曾供應糧食（撒下9:4、17:27）。"
+  }
+ ],
  "巴珊": {
   "type": "place",
   "name_en": "Bashan",
@@ -6399,20 +6552,48 @@
   "desc": "西布倫支派首領以利押的父親（民1:9）。",
   "name": "希倫"
  },
- "亞米忽": {
-  "type": "person",
-  "name_en": "Ammihud",
-  "testament": "OT",
-  "desc": "以法蓮支派首領以利沙瑪的父親（民1:10）。",
-  "name": "亞米忽"
- },
- "以利沙瑪": {
-  "type": "person",
-  "name_en": "Elishama",
-  "testament": "OT",
-  "desc": "亞米忽的兒子，出埃及時以法蓮支派的首領（民1:10）。",
-  "name": "以利沙瑪"
- },
+ "亞米忽": [
+  {
+   "type": "person",
+   "name_en": "Ammihud",
+   "testament": "OT",
+   "desc": "以法蓮支派首領以利沙瑪的父親（民1:10）。",
+   "name": "亞米忽（以利沙瑪之父）"
+  },
+  {
+   "type": "person",
+   "name": "亞米忽（基述王）",
+   "name_en": "Ammihud (king of Geshur)",
+   "books": [
+    "撒母耳記下"
+   ],
+   "testament": "OT",
+   "desc": "基述王達買的父親，押沙龍的外曾祖父（撒下13:37）。"
+  }
+ ],
+ "以利沙瑪": [
+  {
+   "type": "person",
+   "name_en": "Elishama",
+   "testament": "OT",
+   "desc": "亞米忽的兒子，出埃及時以法蓮支派的首領（民1:10）。",
+   "name": "以利沙瑪（以法蓮首領）"
+  },
+  {
+   "type": "person",
+   "name": "以利沙瑪（大衛之子）",
+   "name_en": "Elishama (son of David)",
+   "books": [
+    "撒母耳記下"
+   ],
+   "chapters": [
+    5,
+    5
+   ],
+   "testament": "OT",
+   "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:16）。"
+  }
+ ],
  "比大蓿": {
   "type": "person",
   "name_en": "Pedahzur",
@@ -6621,13 +6802,29 @@
   "desc": "流便支派探子沙母亞的父親（民13:4）。",
   "name": "撒刻"
  },
- "沙母亞": {
-  "type": "person",
-  "name_en": "Shammua",
-  "testament": "OT",
-  "desc": "撒刻的兒子，流便支派十二探子之一（民13:4）。",
-  "name": "沙母亞"
- },
+ "沙母亞": [
+  {
+   "type": "person",
+   "name_en": "Shammua",
+   "testament": "OT",
+   "desc": "撒刻的兒子，流便支派十二探子之一（民13:4）。",
+   "name": "沙母亞（流便探子）"
+  },
+  {
+   "type": "person",
+   "name": "沙母亞（大衛之子）",
+   "name_en": "Shammua (son of David)",
+   "books": [
+    "撒母耳記下"
+   ],
+   "chapters": [
+    5,
+    5
+   ],
+   "testament": "OT",
+   "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:14）。"
+  }
+ ],
  "何利": {
   "type": "person",
   "name_en": "Hori",
@@ -6731,13 +6928,25 @@
   "desc": "但支派探子亞米利的父親（民13:12）。",
   "name": "基瑪利"
  },
- "亞米利": {
-  "type": "person",
-  "name_en": "Ammiel",
-  "testament": "OT",
-  "desc": "基瑪利的兒子，但支派十二探子之一（民13:12）。",
-  "name": "亞米利"
- },
+ "亞米利": [
+  {
+   "type": "person",
+   "name_en": "Ammiel",
+   "testament": "OT",
+   "desc": "基瑪利的兒子，但支派十二探子之一（民13:12）。",
+   "name": "亞米利（但支派探子）"
+  },
+  {
+   "type": "person",
+   "name": "亞米利（瑪吉之父）",
+   "name_en": "Ammiel (father of Machir)",
+   "books": [
+    "撒母耳記下"
+   ],
+   "testament": "OT",
+   "desc": "羅底巴人，瑪吉的父親，米非波設曾寄居其子瑪吉家中（撒下9:4、17:27）。"
+  }
+ ],
  "米迦勒": {
   "type": "person",
   "name_en": "Michael (father)",
@@ -7947,13 +8156,25 @@
   "desc": "帕鐵的父親，以薩迦支派分地首領帕鐵之父（民34:26）。",
   "name": "阿散"
  },
- "帕鐵": {
-  "type": "person",
-  "name_en": "Paltiel",
-  "testament": "OT",
-  "desc": "阿散的兒子，以薩迦支派分地的首領（民34:26）。",
-  "name": "帕鐵"
- },
+ "帕鐵": [
+  {
+   "type": "person",
+   "name_en": "Paltiel",
+   "testament": "OT",
+   "desc": "阿散的兒子，以薩迦支派分地的首領（民34:26）。",
+   "name": "帕鐵（以薩迦首領）"
+  },
+  {
+   "type": "person",
+   "name": "帕鐵（米甲後夫）",
+   "name_en": "Palti/Paltiel (husband of Michal)",
+   "books": [
+    "撒母耳記下"
+   ],
+   "testament": "OT",
+   "desc": "拉億的兒子，掃羅將女兒米甲另嫁給他為妻，即撒上25:44的「帕提」（撒下3:15-16）。"
+  }
+ ],
  "示羅米": {
   "type": "person",
   "name_en": "Shelomi",
@@ -8815,13 +9036,25 @@
   "desc": "猶大支派城邑，即夏瑣（書15:25）。",
   "name": "加略希斯崙"
  },
- "臨門": {
-  "type": "place",
-  "name_en": "Rimmon (south Judah)",
-  "testament": "OT",
-  "desc": "猶大支派儘南邊的城邑之一（書15:32）。",
-  "name": "臨門"
- },
+ "臨門": [
+  {
+   "type": "place",
+   "name_en": "Rimmon (south Judah)",
+   "testament": "OT",
+   "desc": "猶大支派儘南邊的城邑之一（書15:32）。",
+   "name": "臨門（猶大城邑）"
+  },
+  {
+   "type": "person",
+   "name": "臨門（比錄人）",
+   "name_en": "Rimmon of Beeroth",
+   "books": [
+    "撒母耳記下"
+   ],
+   "testament": "OT",
+   "desc": "比錄人，利甲與巴拿的父親，二子謀殺伊施波設（撒下4:2-9）。"
+  }
+ ],
  "以實陶": {
   "type": "place",
   "name_en": "Eshtaol",
@@ -9290,13 +9523,29 @@
   "desc": "以法蓮支派西界，通到海為止（書16:8）。",
   "name": "加拿河"
  },
- "亞比以謝": {
-  "type": "person",
-  "name_en": "Abiezer",
-  "testament": "OT",
-  "desc": "基列的兒子，瑪拿西宗族之一（書17:2，與民26:30「伊以謝」為同地異譯）。",
-  "name": "亞比以謝"
- },
+ "亞比以謝": [
+  {
+   "type": "person",
+   "name_en": "Abiezer",
+   "testament": "OT",
+   "desc": "基列的兒子，瑪拿西宗族之一（書17:2，與民26:30「伊以謝」為同地異譯）。",
+   "name": "亞比以謝（瑪拿西宗族）"
+  },
+  {
+   "type": "person",
+   "name": "亞比以謝（大衛勇士）",
+   "name_en": "Abiezer (mighty man)",
+   "books": [
+    "撒母耳記下"
+   ],
+   "chapters": [
+    23,
+    23
+   ],
+   "testament": "OT",
+   "desc": "亞拿突人，大衛三十勇士之一（撒下23:27）。"
+  }
+ ],
  "伯善": {
   "type": "place",
   "name_en": "Beth-shean",
@@ -9560,16 +9809,28 @@
   "desc": "基比亞邊界一地，掃羅曾在此地的石榴樹下安營（撒上14:2）。",
   "name": "米磯崙"
  },
- "亞希突": {
-  "type": "person",
-  "name_en": "Ahitub",
-  "testament": "OT",
-  "books": [
-   "撒母耳記上"
-  ],
-  "desc": "非尼哈之子、以迦博之弟、以利的孫子，亞希亞與亞希米勒之父（撒上14:3、22:9）。",
-  "name": "亞希突"
- },
+ "亞希突": [
+  {
+   "type": "person",
+   "name_en": "Ahitub",
+   "testament": "OT",
+   "books": [
+    "撒母耳記上"
+   ],
+   "desc": "非尼哈之子、以迦博之弟、以利的孫子，亞希亞與亞希米勒之父（撒上14:3、22:9）。",
+   "name": "亞希突"
+  },
+  {
+   "type": "person",
+   "name": "亞希突（撒督之父）",
+   "name_en": "Ahitub (father of Zadok)",
+   "books": [
+    "撒母耳記下"
+   ],
+   "testament": "OT",
+   "desc": "祭司撒督的父親，與以利一系的亞希突同名（撒下8:17）。"
+  }
+ ],
  "亞希亞": {
   "type": "person",
   "name_en": "Ahijah",
@@ -9735,16 +9996,28 @@
   "desc": "迦勒族的大富戶，亞比該的丈夫，為人剛愎兇惡，怠慢大衛的求助，後被耶和華擊打而死（撒上25章）。",
   "name": "拿八"
  },
- "亞比該": {
-  "type": "person",
-  "name_en": "Abigail",
-  "testament": "OT",
-  "books": [
-   "撒母耳記上"
-  ],
-  "desc": "拿八之妻，聰明俊美，及時送上禮物勸阻大衛動怒報復；拿八死後成為大衛的妻子（撒上25章）。",
-  "name": "亞比該"
- },
+ "亞比該": [
+  {
+   "type": "person",
+   "name_en": "Abigail",
+   "testament": "OT",
+   "books": [
+    "撒母耳記上"
+   ],
+   "desc": "拿八之妻，聰明俊美，及時送上禮物勸阻大衛動怒報復；拿八死後成為大衛的妻子（撒上25章）。",
+   "name": "亞比該（拿八之妻）"
+  },
+  {
+   "type": "person",
+   "name": "亞比該（大衛的外甥女）",
+   "name_en": "Abigail (David's niece/sister)",
+   "books": [
+    "撒母耳記下"
+   ],
+   "testament": "OT",
+   "desc": "洗魯雅之妹，以特拉之妻，亞瑪撒之母，與拿八之妻亞比該同名而不同人（撒下17:25）。"
+  }
+ ],
  "迦琳": {
   "type": "place",
   "name_en": "Gallim",
@@ -9808,7 +10081,8 @@
   "name_en": "Jezreel",
   "testament": "OT",
   "books": [
-   "撒母耳記上"
+   "撒母耳記上",
+   "撒母耳記下"
   ],
   "desc": "以色列北部平原一城與泉水之地，非利士人曾在此安營，也是大衛之妻亞希暖的家鄉（撒上29:1、25:43）。",
   "name": "耶斯列"
@@ -9998,5 +10272,974 @@
    "撒母耳記上"
   ],
   "desc": "猶大支派的一個宗族，居於猶大南方，大衛在洗革拉期間曾侵掠其鄰近的亞瑪力人（撒上27:10）。"
+ },
+ "弓歌": {
+  "type": "concept",
+  "name_en": "Song of the Bow",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "大衛為掃羅與約拿單所作的哀歌，教導猶大人傳唱，記在雅煞珥書上（撒下1:18）。",
+  "name": "弓歌"
+ },
+ "雅煞珥書": {
+  "type": "concept",
+  "name_en": "Book of Jashar",
+  "testament": "OT",
+  "desc": "一部現已失傳的古代詩歌集，聖經曾引用其中內容（撒下1:18，另見書10:13）。",
+  "name": "雅煞珥書"
+ },
+ "伊施波設": {
+  "type": "person",
+  "name_en": "Ish-bosheth",
+  "testament": "OT",
+  "desc": "掃羅之子，掃羅死後由元帥押尼珥擁立為王治理以色列，與大衛對峙兩年，後被部下謀殺（撒下2-4章）。",
+  "name": "伊施波設"
+ },
+ "亞書利": {
+  "type": "concept",
+  "name_en": "Ashurites",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "伊施波設所治理領土中的一族群或地區（撒下2:9）。",
+  "name": "亞書利"
+ },
+ "希利甲哈素林": {
+  "type": "place",
+  "name_en": "Helkath Hazzurim",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "意為「刀劍之地」，約押與押尼珥雙方年輕人捉對格鬥兩敗俱傷之地，位於基遍（撒下2:16）。",
+  "name": "希利甲哈素林"
+ },
+ "亞撒黑": {
+  "type": "person",
+  "name_en": "Asahel",
+  "testament": "OT",
+  "desc": "洗魯雅的兒子，約押與亞比篩的兄弟，腳快如野鹿，追殺押尼珥時反被刺死（撒下2:18-23）。",
+  "name": "亞撒黑"
+ },
+ "畢倫": {
+  "type": "place",
+  "name_en": "Bithron",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "約但河東的一處峽谷地帶，押尼珥撤退經過之地（撒下2:29）。",
+  "name": "畢倫"
+ },
+ "示法提雅": {
+  "type": "person",
+  "name_en": "Shephatiah",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "大衛與妻子亞比他在希伯崙所生的兒子（撒下3:4）。",
+  "name": "示法提雅"
+ },
+ "亞比他": {
+  "type": "person",
+  "name_en": "Abital",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "大衛的妻子，示法提雅之母（撒下3:4）。",
+  "name": "亞比他"
+ },
+ "以特念": {
+  "type": "person",
+  "name_en": "Ithream",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "大衛與妻子以格拉在希伯崙所生的兒子（撒下3:5）。",
+  "name": "以特念"
+ },
+ "以格拉": {
+  "type": "person",
+  "name_en": "Eglah",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "大衛的妻子，以特念之母（撒下3:5）。",
+  "name": "以格拉"
+ },
+ "利斯巴": {
+  "type": "person",
+  "name_en": "Rizpah",
+  "testament": "OT",
+  "desc": "愛亞的女兒，掃羅的妃嬪，其子被交予基遍人處死後，她在磐石上看守屍首直到下雨，大衛因此深受感動（撒下3:7、21:8-11）。",
+  "name": "利斯巴"
+ },
+ "愛亞": {
+  "type": "person",
+  "name_en": "Aiah",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "利斯巴的父親（撒下3:7、21:8）。",
+  "name": "愛亞"
+ },
+ "巴戶琳": {
+  "type": "place",
+  "name_en": "Bahurim",
+  "testament": "OT",
+  "desc": "便雅憫地一村莊，米甲的丈夫帕鐵曾跟她哭到此處，大衛逃避押沙龍時示每也在此咒罵他（撒下3:16、16:5）。",
+  "name": "巴戶琳"
+ },
+ "西拉井": {
+  "type": "place",
+  "name_en": "Well of Sirah",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "約押派人追回押尼珥、將他騙回殺害之地（撒下3:26）。",
+  "name": "西拉井"
+ },
+ "利甲": {
+  "type": "person",
+  "name_en": "Rechab",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "比錄人臨門的兒子，與兄弟巴拿謀殺伊施波設，後被大衛處死（撒下4:2-12）。",
+  "name": "利甲"
+ },
+ "巴拿": [
+  {
+   "type": "person",
+   "name_en": "Baanah",
+   "testament": "OT",
+   "books": [
+    "撒母耳記下"
+   ],
+   "desc": "比錄人臨門的兒子，與兄弟利甲謀殺伊施波設，後被大衛處死（撒下4:2-12）。",
+   "name": "巴拿（利甲之父）"
+  },
+  {
+   "type": "person",
+   "name": "巴拿（尼陀法人）",
+   "name_en": "Baanah the Netophathite",
+   "books": [
+    "撒母耳記下"
+   ],
+   "chapters": [
+    23,
+    23
+   ],
+   "testament": "OT",
+   "desc": "尼陀法人，大衛三十勇士之一希立的父親，與謀殺伊施波設的巴拿同名而不同人（撒下23:29）。"
+  }
+ ],
+ "錫安": {
+  "type": "place",
+  "name_en": "Zion",
+  "testament": "both",
+  "desc": "耶路撒冷的保障要塞，大衛攻取後稱為「大衛的城」，後常泛指耶路撒冷全城或象徵神的居所（撒下5:7）。",
+  "name": "錫安"
+ },
+ "益轄": {
+  "type": "person",
+  "name_en": "Ibhar",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:15）。",
+  "name": "益轄"
+ },
+ "以利書亞": {
+  "type": "person",
+  "name_en": "Elishua",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:15）。",
+  "name": "以利書亞"
+ },
+ "尼斐": {
+  "type": "person",
+  "name_en": "Nepheg",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:15）。",
+  "name": "尼斐"
+ },
+ "雅非亞": {
+  "type": "person",
+  "name_en": "Japhia",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:15）。",
+  "name": "雅非亞"
+ },
+ "以利雅大": {
+  "type": "person",
+  "name_en": "Eliada",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:16）。",
+  "name": "以利雅大"
+ },
+ "以利法列": [
+  {
+   "type": "person",
+   "name_en": "Eliphelet (son of David)",
+   "testament": "OT",
+   "books": [
+    "撒母耳記下"
+   ],
+   "chapters": [
+    5,
+    5
+   ],
+   "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:16）。",
+   "name": "以利法列"
+  },
+  {
+   "type": "person",
+   "name": "以利法列（大衛勇士）",
+   "name_en": "Eliphelet (mighty man)",
+   "books": [
+    "撒母耳記下"
+   ],
+   "chapters": [
+    23,
+    23
+   ],
+   "testament": "OT",
+   "desc": "瑪迦人亞哈拜的兒子，大衛的勇士之一（撒下23:34）。"
+  }
+ ],
+ "巴力毗拉心": {
+  "type": "place",
+  "name_en": "Baal Perazim",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "意為「沖破之主」，大衛在此擊敗非利士人並因此命名（撒下5:20）。",
+  "name": "巴力毗拉心"
+ },
+ "桑林": {
+  "type": "concept",
+  "name_en": "balsam trees",
+  "testament": "OT",
+  "desc": "一片樹林，耶和華指示大衛從桑林對面繞道攻擊非利士人，聽見樹梢有腳步聲便是出戰的兆頭（撒下5:23-24）。",
+  "name": "桑林"
+ },
+ "烏撒": {
+  "type": "person",
+  "name_en": "Uzzah",
+  "testament": "OT",
+  "desc": "亞比拿達的兒子，因伸手扶約櫃而被耶和華擊殺，該地因此被稱為毗列斯烏撒（撒下6:3-8）。",
+  "name": "烏撒"
+ },
+ "亞希約": {
+  "type": "person",
+  "name_en": "Ahio",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "亞比拿達的兒子，烏撒的兄弟，一同駕新車運送約櫃（撒下6:3-4）。",
+  "name": "亞希約"
+ },
+ "拿艮": {
+  "type": "place",
+  "name_en": "Nacon",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "運送約櫃途中經過的禾場，牛失前蹄、烏撒因扶約櫃而被擊殺之地（撒下6:6）。",
+  "name": "拿艮"
+ },
+ "毗列斯烏撒": {
+  "type": "place",
+  "name_en": "Perez Uzzah",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "意為「擊殺烏撒」，因耶和華在此擊殺烏撒而得名（撒下6:8）。",
+  "name": "毗列斯烏撒"
+ },
+ "哈大底謝": {
+  "type": "person",
+  "name_en": "Hadadezer",
+  "testament": "OT",
+  "desc": "瑣巴王，多次與大衛交戰，大馬色的亞蘭人曾出兵援助他卻仍被大衛擊敗（撒下8:3-12、10章）。",
+  "name": "哈大底謝"
+ },
+ "哈馬": {
+  "type": "place",
+  "name_en": "Hamath",
+  "testament": "OT",
+  "desc": "敘利亞北方的亞蘭人城邦，其王陀以聽聞大衛擊敗哈大底謝後遣使道賀（撒下8:9）。",
+  "name": "哈馬"
+ },
+ "陀以": {
+  "type": "person",
+  "name_en": "Toi",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "哈馬王，聽見大衛擊敗世仇哈大底謝，遣子約蘭帶禮物向大衛道賀（撒下8:9-10）。",
+  "name": "陀以"
+ },
+ "亞希律": {
+  "type": "person",
+  "name_en": "Ahilud",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "約沙法（大衛的史官，非後來的猶大王約沙法）的父親（撒下8:16、20:24）。",
+  "name": "亞希律"
+ },
+ "撒督": {
+  "type": "person",
+  "name_en": "Zadok",
+  "testament": "OT",
+  "desc": "亞希突的兒子，大衛時代的祭司長，忠於大衛、押沙龍叛變時堅持護送約櫃回城，後協助所羅門登基（撒下8:17、15章、王上1章）。",
+  "name": "撒督"
+ },
+ "西萊雅": {
+  "type": "person",
+  "name_en": "Seraiah",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "大衛的書記（撒下8:17，又作示法、示瓦）。",
+  "name": "西萊雅"
+ },
+ "洗巴": {
+  "type": "person",
+  "name_en": "Ziba",
+  "testament": "OT",
+  "desc": "掃羅家的僕人，大衛尋訪掃羅後裔時被找來問話，後奉派服事米非波設，押沙龍叛變時誣陷米非波設以圖謀產業（撒下9、16、19章）。",
+  "name": "洗巴"
+ },
+ "羅底巴": {
+  "type": "place",
+  "name_en": "Lo-debar",
+  "testament": "OT",
+  "desc": "約但河東一城，米非波設曾寄居於此、亞捫戰爭時瑪吉曾在此供應大衛軍需（撒下9:4-5、17:27）。",
+  "name": "羅底巴"
+ },
+ "哈嫩": {
+  "type": "person",
+  "name_en": "Hanun",
+  "testament": "OT",
+  "desc": "亞捫王拿轄的兒子，羞辱大衛派去弔唁的使者，引發以色列與亞捫、亞蘭聯軍的戰爭（撒下10章）。",
+  "name": "哈嫩"
+ },
+ "伯利合": {
+  "type": "place",
+  "name_en": "Beth-rehob",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "亞蘭人的一地，亞捫人曾雇其兵協助對抗以色列（撒下10:6）。",
+  "name": "伯利合"
+ },
+ "瑪迦": {
+  "type": "place",
+  "name_en": "Maacah",
+  "testament": "OT",
+  "desc": "約但河東北一亞蘭小國，其王曾協助亞捫人對抗大衛（撒下10:6-8）。",
+  "name": "瑪迦"
+ },
+ "陀伯": {
+  "type": "place",
+  "name_en": "Tob",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "約但河東一地，曾出兵協助亞捫人對抗大衛（撒下10:6，另見耶弗他曾逃至此地，士11:3）。",
+  "name": "陀伯"
+ },
+ "耶底底亞": {
+  "type": "person",
+  "name_en": "Jedidiah",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "意為「耶和華所愛」，先知拿單為所羅門所取的別名，表明耶和華對他的愛（撒下12:25）。",
+  "name": "耶底底亞"
+ },
+ "約拿達": {
+  "type": "person",
+  "name_en": "Jonadab",
+  "testament": "OT",
+  "desc": "大衛長兄示米亞的兒子，為人狡猾，獻計助暗嫩玷污他瑪（撒下13:3-5、32-35）。",
+  "name": "約拿達"
+ },
+ "示米亞": {
+  "type": "person",
+  "name_en": "Shimeah",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "大衛的長兄，約拿達的父親（撒下13:3，撒上16:9作「沙瑪」）。",
+  "name": "示米亞"
+ },
+ "巴力夏瑣": {
+  "type": "place",
+  "name_en": "Baal Hazor",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "靠近以法蓮的一處，押沙龍在此設宴剪羊毛時謀殺暗嫩（撒下13:23）。",
+  "name": "巴力夏瑣"
+ },
+ "達買": {
+  "type": "person",
+  "name_en": "Talmai",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "基述王，押沙龍外祖父，押沙龍殺暗嫩後逃往投奔他（撒下13:37、3:3）。",
+  "name": "達買"
+ },
+ "基述": {
+  "type": "place",
+  "name_en": "Geshur",
+  "testament": "OT",
+  "desc": "約但河東北的亞蘭小國，押沙龍外祖父達買為此地王，押沙龍殺暗嫩後逃亡至此避難三年（撒下13:37-38、15:8）。",
+  "name": "基述"
+ },
+ "提哥亞": {
+  "type": "place",
+  "name_en": "Tekoa",
+  "testament": "OT",
+  "desc": "猶大南方一城，約押從此請來一位聰明婦人向大衛進言，勸他召回押沙龍（撒下14:2）。",
+  "name": "提哥亞"
+ },
+ "伯墨哈": {
+  "type": "place",
+  "name_en": "Beth-merhak",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "意為「遠方之家」，大衛逃離押沙龍時出城暫歇之處（撒下15:17）。",
+  "name": "伯墨哈"
+ },
+ "比利提": {
+  "type": "concept",
+  "name_en": "Pelethites",
+  "testament": "OT",
+  "desc": "與基利提人並列，隨同大衛的親兵衛隊族群，可能為非利士系傭兵，由比拿雅統轄（撒下8:18、15:18）。",
+  "name": "比利提"
+ },
+ "汲淪溪": {
+  "type": "place",
+  "name_en": "Kidron",
+  "testament": "both",
+  "desc": "耶路撒冷城東的溪谷，大衛逃避押沙龍時曾涉溪而過，後來耶穌客西馬尼園之夜也曾越過此溪（撒下15:23，另見約18:1）。",
+  "name": "汲淪溪"
+ },
+ "亞希多弗": {
+  "type": "person",
+  "name_en": "Ahithophel",
+  "testament": "OT",
+  "desc": "大衛的謀士，足智多謀，卻背叛大衛加入押沙龍陣營；獻計未被採納後自縊而死（撒下15-17章）。",
+  "name": "亞希多弗"
+ },
+ "亞希瑪斯": {
+  "type": "person",
+  "name_en": "Ahimaaz",
+  "testament": "OT",
+  "desc": "祭司撒督的兒子，押沙龍叛變期間為大衛傳遞情報，後又是最早跑去報告押沙龍死訊的人之一（撒下15:36、17-18章）。",
+  "name": "亞希瑪斯"
+ },
+ "戶篩": {
+  "type": "person",
+  "name_en": "Hushai",
+  "testament": "OT",
+  "desc": "亞基人，大衛的朋友，奉命假意投靠押沙龍以破壞亞希多弗的計謀（撒下15:32-37、17章）。",
+  "name": "戶篩"
+ },
+ "以特拉": {
+  "type": "person",
+  "name_en": "Ithra/Jether",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "以實瑪利人，與拿轄的女兒亞比該（大衛的外甥女）親近生下亞瑪撒（撒下17:25）。",
+  "name": "以特拉"
+ },
+ "亞瑪撒": {
+  "type": "person",
+  "name_en": "Amasa",
+  "testament": "OT",
+  "desc": "大衛的外甥，以特拉之子，押沙龍叛變時被立為元帥，叛亂平息後大衛欲以他代替約押，卻被約押暗殺（撒下17:25、19:13、20:9-10）。",
+  "name": "亞瑪撒"
+ },
+ "朔比": {
+  "type": "person",
+  "name_en": "Shobi",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "亞捫族拉巴人拿轄的兒子，大衛逃避押沙龍時供應糧食器具（撒下17:27）。",
+  "name": "朔比"
+ },
+ "巴西萊": {
+  "type": "person",
+  "name_en": "Barzillai",
+  "testament": "OT",
+  "desc": "基列的羅基琳人，大衛逃避押沙龍時供應糧食，大衛歸回時邀他同住王宮，他因年邁婉拒，改推薦兒子金罕代替（撒下17:27、19:31-39）。",
+  "name": "巴西萊"
+ },
+ "以太": [
+  {
+   "type": "person",
+   "name_en": "Ittai the Gittite",
+   "testament": "OT",
+   "books": [
+    "撒母耳記下"
+   ],
+   "desc": "迦特人，投效大衛的外族勇士，押沙龍叛變時堅定隨同大衛逃亡，後受命統領三分之一軍隊（撒下15:19-22、18:2、5）。",
+   "name": "以太（迦特人）"
+  },
+  {
+   "type": "person",
+   "name": "以太（便雅憫人）",
+   "name_en": "Ittai the Benjamite",
+   "books": [
+    "撒母耳記下"
+   ],
+   "chapters": [
+    23,
+    23
+   ],
+   "testament": "OT",
+   "desc": "便雅憫族基比亞人利拜的兒子，大衛三十勇士之一，與迦特人以太同名而不同人（撒下23:29）。"
+  }
+ ],
+ "古示人": {
+  "type": "person",
+  "name_en": "the Cushite",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "約押派去向大衛報告押沙龍死訊的信使（撒下18:21-32）。",
+  "name": "古示人"
+ },
+ "羅基琳": {
+  "type": "place",
+  "name_en": "Rogelim",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "基列地一處，巴西萊的家鄉（撒下17:27、19:31）。",
+  "name": "羅基琳"
+ },
+ "比基利": {
+  "type": "person",
+  "name_en": "Bichri",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "便雅憫人，示巴（發動叛亂的匪徒）的父親（撒下20:1）。",
+  "name": "比基利"
+ },
+ "亞比拉": {
+  "type": "place",
+  "name_en": "Abel of Beth-maacah",
+  "testament": "OT",
+  "desc": "以色列北境一城，示巴叛亂時逃入此城，城中一聰明婦人獻計、將示巴首級丟出城牆平息戰事（撒下20:14-22）。",
+  "name": "亞比拉"
+ },
+ "亞摩尼": {
+  "type": "person",
+  "name_en": "Armoni",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "掃羅與利斯巴所生的兒子，因掃羅曾殺害基遍人，後被交予基遍人處死（撒下21:8-9）。",
+  "name": "亞摩尼"
+ },
+ "以實比諾": {
+  "type": "person",
+  "name_en": "Ishbi-benob",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "非利士偉人（巨人族）的後代，佩帶新刀銅槍欲殺大衛，被亞比篩所殺（撒下21:16-17）。",
+  "name": "以實比諾"
+ },
+ "西比該": {
+  "type": "person",
+  "name_en": "Sibbecai",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "戶沙人，大衛的勇士，殺了非利士偉人的一個兒子撒弗（撒下21:18）。",
+  "name": "西比該"
+ },
+ "撒弗": {
+  "type": "person",
+  "name_en": "Saph",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "非利士偉人（巨人族）的一個兒子，被西比該所殺（撒下21:18）。",
+  "name": "撒弗"
+ },
+ "歌伯": {
+  "type": "place",
+  "name_en": "Gob",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "以色列人與非利士偉人族數度交戰之地（撒下21:18-19）。",
+  "name": "歌伯"
+ },
+ "牆垣": {
+  "type": "concept",
+  "name_en": "rampart",
+  "reading": "ㄑㄧㄤˊ ㄩㄢˊ",
+  "testament": "OT",
+  "desc": "城牆、防禦牆的古語說法，大衛在詩歌中形容靠神的力量能跳過牆垣（撒下22:30）。",
+  "name": "牆垣"
+ },
+ "拿轄": {
+  "type": "person",
+  "name": "拿轄",
+  "name_en": "Nahash",
+  "testament": "OT",
+  "desc": "亞捫人的王，掃羅早年曾擊敗他解救基列雅比（撒上11章），其子哈嫩繼位後羞辱大衛使者、引發戰爭（撒下10章）；撒下17:25稱大衛的外甥女亞比該、洗魯雅為「拿轄的女兒」，與此人是否同一位、或此處另有所指，學者看法不一。"
+ },
+ "提備斯": {
+  "type": "place",
+  "name": "提備斯",
+  "name_en": "Thebez",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "基甸之子亞比米勒被婦人從城牆丟磨石砸死之地（撒下11:21，另見士9:50-54）。"
+ },
+ "耶路巴力": {
+  "type": "person",
+  "name": "耶路巴力",
+  "name_en": "Jerubbaal",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "士師基甸的別名，意為「讓巴力爭辯」，因他拆毀巴力祭壇而得名（撒下11:21，另見士6:32）。"
+ },
+ "耶路比設": {
+  "type": "person",
+  "name": "耶路比設",
+  "name_en": "Jerubbesheth",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "士師基甸的別名「耶路巴力」的另一種寫法，以「羞恥」代替「巴力」（撒下11:21）。"
+ },
+ "約設巴設": {
+  "type": "person",
+  "name_en": "Josheb-basshebeth",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "大衛三勇士之首，又稱伊斯尼人亞底挪，一時擊殺八百人（撒下23:8）。",
+  "name": "約設巴設"
+ },
+ "亞底挪": {
+  "type": "person",
+  "name_en": "Adino",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "三勇士之首約設巴設的別名（撒下23:8）。",
+  "name": "亞底挪"
+ },
+ "亞利伊勒": {
+  "type": "person",
+  "name_en": "Ariel",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "摩押人，其兩個兒子被大衛勇士比拿雅所殺（撒下23:20）。",
+  "name": "亞利伊勒"
+ },
+ "比拿雅": {
+  "type": "person",
+  "name_en": "Benaiah",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "耶何耶大的兒子，甲薛勇士，統轄大衛的基利提人和比利提人親兵，曾徒手奪埃及勇士的槍將他殺死、下坑殺獅子，後受立為護衛長（撒下8:18、23:20-23）；23:30另有一位「比拉頓人比拿雅」同列三十勇士名錄，是否同一人經文未明。",
+  "name": "比拿雅"
+ },
+ "伊勒哈難": {
+  "type": "person",
+  "name_en": "Elhanan",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "伯利恆人朵多的兒子，大衛的勇士，殺了迦特人歌利亞（撒下21:19、23:24）；此歌利亞與大衛所殺的歌利亞關係為何，歷代志上20:5另有不同記載，學者看法不一。",
+  "name": "伊勒哈難"
+ },
+ "以利加": {
+  "type": "person",
+  "name_en": "Elika",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "哈律人，大衛三十勇士之一（撒下23:25）。",
+  "name": "以利加"
+ },
+ "希利斯": {
+  "type": "person",
+  "name_en": "Helez",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "帕勒提人，大衛三十勇士之一（撒下23:26）。",
+  "name": "希利斯"
+ },
+ "以拉": {
+  "type": "person",
+  "name_en": "Ira",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "提哥亞人益吉的兒子，大衛三十勇士之一（撒下23:26）；23:38另有一位「以帖人以拉」同列勇士名錄，是不同人。",
+  "name": "以拉"
+ },
+ "米本乃": {
+  "type": "person",
+  "name_en": "Mebunnai",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "戶沙人，大衛三十勇士之一（撒下23:27）。",
+  "name": "米本乃"
+ },
+ "撒們": {
+  "type": "person",
+  "name_en": "Zalmon",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "亞合人，大衛三十勇士之一（撒下23:28）。",
+  "name": "撒們"
+ },
+ "瑪哈萊": {
+  "type": "person",
+  "name_en": "Maharai",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "尼陀法人，大衛三十勇士之一（撒下23:28）。",
+  "name": "瑪哈萊"
+ },
+ "希立": {
+  "type": "person",
+  "name_en": "Heleb/Heled",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "尼陀法人巴拿的兒子，大衛三十勇士之一（撒下23:29）。",
+  "name": "希立"
+ },
+ "希太": {
+  "type": "person",
+  "name_en": "Hiddai",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "迦實溪人，大衛三十勇士之一（撒下23:30）。",
+  "name": "希太"
+ },
+ "亞比亞本": {
+  "type": "person",
+  "name_en": "Abi-albon",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "伯亞拉巴人，大衛三十勇士之一（撒下23:31）。",
+  "name": "亞比亞本"
+ },
+ "押斯瑪弗": {
+  "type": "person",
+  "name_en": "Azmaveth",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "巴魯米人，大衛三十勇士之一（撒下23:31）。",
+  "name": "押斯瑪弗"
+ },
+ "以利雅哈巴": {
+  "type": "person",
+  "name_en": "Eliahba",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "沙本人，大衛三十勇士之一（撒下23:32）。",
+  "name": "以利雅哈巴"
+ },
+ "亞希暗": {
+  "type": "person",
+  "name_en": "Ahiam",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "哈拉人沙拉的兒子，大衛三十勇士之一（撒下23:33）。",
+  "name": "亞希暗"
+ },
+ "以連": {
+  "type": "person",
+  "name_en": "Eliam",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "基羅人亞希多弗的兒子，大衛三十勇士之一，也是拔示巴的父親（撒下23:34、11:3）。",
+  "name": "以連"
+ },
+ "希斯萊": {
+  "type": "person",
+  "name_en": "Hezrai/Hezro",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "迦密人，大衛三十勇士之一（撒下23:35）。",
+  "name": "希斯萊"
+ },
+ "帕萊": {
+  "type": "person",
+  "name_en": "Paarai",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "亞巴人，大衛三十勇士之一（撒下23:35）。",
+  "name": "帕萊"
+ },
+ "以甲": {
+  "type": "person",
+  "name_en": "Igal",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "瑣巴人拿單的兒子，大衛三十勇士之一（撒下23:36）。",
+  "name": "以甲"
+ },
+ "巴尼": {
+  "type": "person",
+  "name_en": "Bani",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "迦得人，大衛三十勇士之一（撒下23:36）。",
+  "name": "巴尼"
+ },
+ "洗勒": {
+  "type": "person",
+  "name_en": "Zelek",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "亞捫人，大衛三十勇士之一（撒下23:37）。",
+  "name": "洗勒"
+ },
+ "拿哈萊": {
+  "type": "person",
+  "name_en": "Naharai",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "比錄人，洗魯雅的兒子約押的拿兵器者，大衛三十勇士之一（撒下23:37）。",
+  "name": "拿哈萊"
+ },
+ "迦立": {
+  "type": "person",
+  "name_en": "Gareb",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "以帖人，大衛三十勇士之一（撒下23:38）。",
+  "name": "迦立"
+ },
+ "朔罷": {
+  "type": "person",
+  "name": "朔罷",
+  "name_en": "Shobab",
+  "testament": "OT",
+  "books": [
+   "撒母耳記下"
+  ],
+  "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:14）。"
  }
 }
