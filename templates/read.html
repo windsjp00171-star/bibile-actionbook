@@ -542,12 +542,18 @@ function openBookMap() {
       }
       _bookMap.eachLayer(l => { if (l instanceof L.CircleMarker) _bookMap.removeLayer(l); });
       const pts = [];
+      // 座標很接近的點會在縮小檢視時疊在一起、擋住彼此無法點擊，先把重複／極接近的點錯開
+      const seen = {};
       (d.places || []).forEach(p => {
-        L.circleMarker([p.lat, p.lng], { radius: 6, fillColor: '#8B6840', color: '#fff', weight: 1.5, fillOpacity: 1 })
-          .bindTooltip(p.name, { permanent: true, direction: 'top' })
+        const key = p.lat.toFixed(2) + ',' + p.lng.toFixed(2);
+        const n = seen[key] || 0; seen[key] = n + 1;
+        const lat = n === 0 ? p.lat : p.lat + 0.045 * n;
+        const lng = n === 0 ? p.lng : p.lng + 0.03 * n;
+        L.circleMarker([lat, lng], { radius: 6, fillColor: '#8B6840', color: '#fff', weight: 1.5, fillOpacity: 1 })
+          .bindTooltip(p.name, { direction: 'top' })   // 常駐標籤會在點多時全部疊字看不清，改成滑過/點擊才顯示
           .on('click', () => { if (ENTITIES[p.key] || RELATED_BRIEF[p.key]) { closeBookMap(); openCard(p.key); } })
           .addTo(_bookMap);
-        pts.push([p.lat, p.lng]);
+        pts.push([lat, lng]);
       });
       _bookMap.invalidateSize();
       if (pts.length > 1) _bookMap.fitBounds(pts, { padding: [40, 40] });
