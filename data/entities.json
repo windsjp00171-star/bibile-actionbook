@@ -1278,14 +1278,26 @@
   "desc": "撒萊的埃及婢女，因撒萊不孕而被送給亞伯蘭為妾，生以實瑪利。曾兩度被逐入曠野，神親自向她顯現應許保護。",
   "verses": "創世記16、21章"
  },
- "以實瑪利": {
-  "type": "person",
-  "name": "以實瑪利",
-  "name_en": "Ishmael",
-  "testament": "both",
-  "desc": "亞伯拉罕與夏甲之子，亞伯拉罕的長子。被逐後在曠野由神保護，成為十二族的祖先，一般視為阿拉伯民族先祖。",
-  "verses": "創世記16-21章"
- },
+ "以實瑪利": [
+  {
+   "type": "person",
+   "name": "以實瑪利",
+   "name_en": "Ishmael",
+   "testament": "both",
+   "desc": "亞伯拉罕與夏甲之子，亞伯拉罕的長子。被逐後在曠野由神保護，成為十二族的祖先，一般視為阿拉伯民族先祖。",
+   "verses": "創世記16-21章"
+  },
+  {
+   "type": "person",
+   "name": "以實瑪利（尼探雅之子）",
+   "name_en": "Ishmael son of Nethaniah",
+   "books": [
+    "列王紀下"
+   ],
+   "testament": "OT",
+   "desc": "尼探雅的兒子，軍長之一，暗殺了巴比倫所立的省長基大利（王下25:23-25）。"
+  }
+ ],
  "以撒": {
   "type": "person",
   "name": "以撒",
@@ -2627,11 +2639,8 @@
  "耶羅波安": [
   {
    "books": [
-    "列王紀上"
-   ],
-   "chapters": [
-    11,
-    14
+    "列王紀上",
+    "列王紀下"
    ],
    "type": "person",
    "name": "耶羅波安一世",
@@ -2680,6 +2689,16 @@
    ],
    "testament": "OT",
    "desc": "亞希律的兒子，大衛的史官，與後來的猶大王約沙法同名而不同人（撒下8:16、20:24）。"
+  },
+  {
+   "type": "person",
+   "name": "約沙法（帕路亞之子）",
+   "name_en": "Jehoshaphat (son of Paruah)",
+   "books": [
+    "列王紀上"
+   ],
+   "testament": "OT",
+   "desc": "帕路亞的兒子，所羅門在以薩迦地的糧食官員，與大衛的史官約沙法同名而不同人（王上4:17）。"
   }
  ],
  "希西家": {
@@ -2839,12 +2858,24 @@
    "desc": "大衛在耶路撒冷所生的兒子之一，與先知拿單同名而不同人（撒下5:14）。"
   }
  ],
- "烏利亞": {
-  "type": "person",
-  "name": "烏利亞",
-  "name_en": "Uriah",
-  "desc": "赫人軍官，拔示巴的丈夫，大衛故意安排他衝前陣戰死以奪其妻。"
- },
+ "烏利亞": [
+  {
+   "type": "person",
+   "name": "烏利亞（赫人）",
+   "name_en": "Uriah",
+   "desc": "赫人軍官，拔示巴的丈夫，大衛故意安排他衝前陣戰死以奪其妻。"
+  },
+  {
+   "type": "person",
+   "name": "烏利亞（祭司）",
+   "name_en": "Uriah the priest",
+   "books": [
+    "列王紀下"
+   ],
+   "testament": "OT",
+   "desc": "亞哈斯時代的祭司，奉王命仿大馬色的壇造了一座新壇，與拔示巴的丈夫赫人烏利亞同名而不同人（王下16:10-16）。"
+  }
+ ],
  "基哈西": {
   "type": "person",
   "name": "基哈西",
@@ -3659,7 +3690,7 @@
   "type": "person",
   "name": "烏西雅",
   "name_en": "Uzziah",
-  "desc": "猶大長壽之王，以賽亞蒙召在他死後那年，因擅闖聖殿獻香而染痲瘋。"
+  "desc": "猶大長壽之王，以賽亞蒙召在他死後那年，因擅闖聖殿獻香而染痲瘋。又名亞撒利雅。"
  },
  "約珥": {
   "type": "person",
@@ -3757,7 +3788,7 @@
   "cat": "measure"
  },
  "以色列人": {
-  "type": "place",
+  "type": "concept",
   "name": "以色列人",
   "name_en": "Israelites",
   "desc": "以色列的後裔，猶太人的祖先",
@@ -9831,13 +9862,25 @@
    "desc": "祭司撒督的父親，與以利一系的亞希突同名（撒下8:17）。"
   }
  ],
- "亞希亞": {
-  "type": "person",
-  "name_en": "Ahijah",
-  "testament": "OT",
-  "desc": "亞希突的兒子，掃羅在基比亞時穿以弗得的祭司（撒上14:3、18）。",
-  "name": "亞希亞"
- },
+ "亞希亞": [
+  {
+   "type": "person",
+   "name_en": "Ahijah",
+   "testament": "OT",
+   "desc": "亞希突的兒子，掃羅在基比亞時穿以弗得的祭司（撒上14:3、18）。",
+   "name": "亞希亞"
+  },
+  {
+   "type": "person",
+   "name": "亞希亞（示沙之子）",
+   "name_en": "Ahiah (son of Shisha)",
+   "books": [
+    "列王紀上"
+   ],
+   "testament": "OT",
+   "desc": "示沙的兒子，所羅門的書記之一，與挪伯祭司之子亞希亞同名而不同人（王上4:3）。"
+  }
+ ],
  "播薛": {
   "type": "place",
   "name_en": "Bozez",
@@ -10442,6 +10485,16 @@
    ],
    "testament": "OT",
    "desc": "尼陀法人，大衛三十勇士之一希立的父親，與謀殺伊施波設的巴拿同名而不同人（撒下23:29）。"
+  },
+  {
+   "type": "person",
+   "name": "巴拿（亞希律之子）",
+   "name_en": "Baana (son of Ahilud)",
+   "books": [
+    "列王紀上"
+   ],
+   "testament": "OT",
+   "desc": "亞希律的兒子，所羅門在他納、米吉多一帶的糧食官員（王上4:12）。"
   }
  ],
  "錫安": {
@@ -10626,16 +10679,28 @@
   "desc": "亞希突的兒子，大衛時代的祭司長，忠於大衛、押沙龍叛變時堅持護送約櫃回城，後協助所羅門登基（撒下8:17、15章、王上1章）。",
   "name": "撒督"
  },
- "西萊雅": {
-  "type": "person",
-  "name_en": "Seraiah",
-  "testament": "OT",
-  "books": [
-   "撒母耳記下"
-  ],
-  "desc": "大衛的書記（撒下8:17，又作示法、示瓦）。",
-  "name": "西萊雅"
- },
+ "西萊雅": [
+  {
+   "type": "person",
+   "name_en": "Seraiah",
+   "testament": "OT",
+   "books": [
+    "撒母耳記下"
+   ],
+   "desc": "大衛的書記（撒下8:17，又作示法、示瓦）。",
+   "name": "西萊雅"
+  },
+  {
+   "type": "person",
+   "name": "西萊雅（單戶蔑之子）",
+   "name_en": "Seraiah son of Tanhumeth",
+   "books": [
+    "列王紀下"
+   ],
+   "testament": "OT",
+   "desc": "尼陀法人單戶蔑的兒子，軍長之一，耶路撒冷陷落後歸順巴比倫所立的省長基大利（王下25:23）。"
+  }
+ ],
  "洗巴": {
   "type": "person",
   "name_en": "Ziba",
@@ -11241,5 +11306,687 @@
    "撒母耳記下"
   ],
   "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:14）。"
- }
+ },
+ "提斯比人": {
+  "type": "place",
+  "name_en": "",
+  "testament": "OT",
+  "desc": "以利亞的家鄉提斯比，位於約但河東的基列地（王上17:1、王下1:8）。",
+  "name": "提斯比人"
+ },
+ "迦密山": {
+  "type": "place",
+  "name_en": "Mount Carmel",
+  "testament": "OT",
+  "desc": "以利沙從伯特利上山，又從山回到撒瑪利亞。",
+  "name": "迦密山"
+ },
+ "尼八": {
+  "type": "person",
+  "name_en": "Nebat",
+  "testament": "OT",
+  "desc": "耶羅波安的父親，耶羅波安使以色列人陷在罪裡。",
+  "name": "尼八"
+ },
+ "書念": {
+  "type": "place",
+  "name_en": "Shunem",
+  "testament": "OT",
+  "desc": "一位婦人的籍貫，以利沙吩咐僕人基哈西叫她來。",
+  "name": "書念"
+ },
+ "巴力沙利沙": {
+  "type": "place",
+  "name_en": "Baal-shalisha",
+  "testament": "OT",
+  "desc": "一個人從這裡來，帶著初熟大麥作的餅和新穗子送給神人。",
+  "name": "巴力沙利沙"
+ },
+ "亞罷拿": {
+  "type": "place",
+  "name_en": "Abana",
+  "testament": "OT",
+  "desc": "大馬色的河之一。",
+  "name": "亞罷拿"
+ },
+ "法珥法": {
+  "type": "place",
+  "name_en": "Pharpar",
+  "testament": "OT",
+  "desc": "大馬色的河之一。",
+  "name": "法珥法"
+ },
+ "多坍": {
+  "type": "place",
+  "name_en": "Dothan",
+  "testament": "OT",
+  "desc": "亞蘭王要捉拿的人所在的地方。",
+  "name": "多坍"
+ },
+ "西比亞": {
+  "type": "person",
+  "name_en": "Zibiah",
+  "testament": "OT",
+  "desc": "約阿施的母親，是別是巴人。",
+  "name": "西比亞"
+ },
+ "迦特希弗": {
+  "type": "place",
+  "name_en": "Gath Hepher",
+  "testament": "OT",
+  "desc": "先知約拿的籍貫。",
+  "name": "迦特希弗"
+ },
+ "耶可利雅": {
+  "type": "person",
+  "name_en": "Jecoliah",
+  "testament": "OT",
+  "desc": "亞瑪謝的兒子烏西雅的母親，是耶路撒冷人。",
+  "name": "耶可利雅"
+ },
+ "米拿現": {
+  "type": "person",
+  "name_en": "Menahem",
+  "testament": "OT",
+  "desc": "從得撒起攻打提斐薩，擊殺城中一切的人。",
+  "name": "米拿現"
+ },
+ "提斐薩": {
+  "type": "place",
+  "name_en": "Tiphsah",
+  "testament": "OT",
+  "desc": "米拿現攻打的城，城中一切的人被擊殺。",
+  "name": "提斐薩"
+ },
+ "以雲": {
+  "type": "place",
+  "name_en": "Ijon",
+  "testament": "OT",
+  "desc": "亞述王提革拉毗列色奪取的以色列地之一。",
+  "name": "以雲"
+ },
+ "亞伯伯瑪迦": {
+  "type": "place",
+  "name_en": "Abel-beth-maachah",
+  "testament": "OT",
+  "desc": "亞述王提革拉毗列色奪取的以色列地之一。",
+  "name": "亞伯伯瑪迦"
+ },
+ "亞挪": {
+  "type": "place",
+  "name_en": "Janoah",
+  "testament": "OT",
+  "desc": "亞述王提革拉毗列色奪取的以色列地之一。",
+  "name": "亞挪"
+ },
+ "提革拉毗列色": {
+  "type": "person",
+  "name_en": "Tiglath-pileser",
+  "testament": "OT",
+  "desc": "亞述王，亞哈斯王上大馬色去迎接他。",
+  "name": "提革拉毗列色"
+ },
+ "撒縵以色": {
+  "type": "person",
+  "name_en": "Shalmaneser",
+  "testament": "OT",
+  "desc": "亞述王，上來攻擊何細亞，何細亞就服事他、給他進貢。",
+  "name": "撒縵以色"
+ },
+ "古他": {
+  "type": "place",
+  "name_en": "Cuthah",
+  "testament": "OT",
+  "desc": "亞述王遷移人來安置在撒瑪利亞的城邑的地方之一。",
+  "name": "古他"
+ },
+ "亞瓦": {
+  "type": "place",
+  "name_en": "Avva",
+  "testament": "OT",
+  "desc": "亞述王遷移人來安置在撒瑪利亞的城邑的地方之一。",
+  "name": "亞瓦"
+ },
+ "西法瓦音": {
+  "type": "place",
+  "name_en": "Sepharvaim",
+  "testament": "OT",
+  "desc": "亞述王遷移人來安置在撒瑪利亞的城邑的地方之一。",
+  "name": "西法瓦音"
+ },
+ "匿哈": {
+  "type": "concept",
+  "name_en": "",
+  "testament": "OT",
+  "desc": "亞瓦人所造的像。",
+  "name": "匿哈"
+ },
+ "他珥他": {
+  "type": "concept",
+  "name_en": "",
+  "testament": "OT",
+  "desc": "亞瓦人所造的像。",
+  "name": "他珥他"
+ },
+ "亞拿米勒": {
+  "type": "concept",
+  "name_en": "Anammelech",
+  "testament": "OT",
+  "desc": "西法瓦音人獻兒女焚燒的神之一。",
+  "name": "亞拿米勒"
+ },
+ "以利亞敬": {
+  "type": "person",
+  "name_en": "Eliakim",
+  "testament": "OT",
+  "desc": "希勒家的兒子，家宰，對拉伯沙基說話。",
+  "name": "以利亞敬"
+ },
+ "舍伯那": {
+  "type": "person",
+  "name_en": "Shebna",
+  "testament": "OT",
+  "desc": "書記，對拉伯沙基說話。",
+  "name": "舍伯那"
+ },
+ "約亞": {
+  "type": "person",
+  "name_en": "Joah",
+  "testament": "OT",
+  "desc": "史官，對拉伯沙基說話。",
+  "name": "約亞"
+ },
+ "拉伯沙基": {
+  "type": "person",
+  "name_en": "Rabshakeh",
+  "testament": "OT",
+  "desc": "亞述王的使者，以利亞敬、舍伯那、約亞對他說話。",
+  "name": "拉伯沙基"
+ },
+ "亞薩": {
+  "type": "person",
+  "name_en": "Asaph",
+  "testament": "OT",
+  "desc": "史官約亞的父親。",
+  "name": "亞薩"
+ },
+ "亞摩斯": {
+  "type": "person",
+  "name_en": "Amoz",
+  "testament": "OT",
+  "desc": "先知以賽亞的父親。",
+  "name": "亞摩斯"
+ },
+ "特哈加": {
+  "type": "person",
+  "name_en": "Tirhakah",
+  "testament": "OT",
+  "desc": "古實王，亞述王聽說他出來要爭戰。",
+  "name": "特哈加"
+ },
+ "歌散": {
+  "type": "place",
+  "name_en": "Gozan",
+  "testament": "OT",
+  "desc": "亞述王列祖所毀滅的國之一。",
+  "name": "歌散"
+ },
+ "利色": {
+  "type": "place",
+  "name_en": "Rezeph",
+  "testament": "OT",
+  "desc": "亞述王列祖所毀滅的國之一。",
+  "name": "利色"
+ },
+ "提拉撒": {
+  "type": "place",
+  "name_en": "Telassar",
+  "testament": "OT",
+  "desc": "亞述王列祖所毀滅的國之一，伊甸人屬此地。",
+  "name": "提拉撒"
+ },
+ "沙利色": {
+  "type": "person",
+  "name_en": "Sharezer",
+  "testament": "OT",
+  "desc": "亞述王西拿基立的兒子，用刀殺了他父親。",
+  "name": "沙利色"
+ },
+ "尼斯洛": {
+  "type": "concept",
+  "name_en": "Nisroch",
+  "testament": "OT",
+  "desc": "亞述王西拿基立的神。",
+  "name": "尼斯洛"
+ },
+ "以撒哈頓": {
+  "type": "person",
+  "name_en": "Esarhaddon",
+  "testament": "OT",
+  "desc": "亞述王西拿基立的兒子，接續他作王。",
+  "name": "以撒哈頓"
+ },
+ "協西巴": {
+  "type": "person",
+  "name_en": "Hephzibah",
+  "testament": "OT",
+  "desc": "瑪拿西的母親。",
+  "name": "協西巴"
+ },
+ "線鉈": {
+  "type": "concept",
+  "name_en": "",
+  "testament": "OT",
+  "desc": "亞哈家所用的測量工具，將拉在耶路撒冷上。",
+  "name": "線鉈"
+ },
+ "米舒利密": {
+  "type": "person",
+  "name_en": "Meshullemeth",
+  "testament": "OT",
+  "desc": "亞們的母親，是約提巴人哈魯斯的女兒。",
+  "name": "米舒利密"
+ },
+ "約提巴": {
+  "type": "place",
+  "name_en": "Jotbah",
+  "testament": "OT",
+  "desc": "哈魯斯的籍貫。",
+  "name": "約提巴"
+ },
+ "哈魯斯": {
+  "type": "person",
+  "name_en": "Haruz",
+  "testament": "OT",
+  "desc": "米舒利密的父親，是約提巴人。",
+  "name": "哈魯斯"
+ },
+ "耶底大": {
+  "type": "person",
+  "name_en": "Jedidah",
+  "testament": "OT",
+  "desc": "約西亞的母親，是波斯加人亞大雅的女兒。",
+  "name": "耶底大"
+ },
+ "米書蘭": {
+  "type": "person",
+  "name_en": "Meshullam",
+  "testament": "OT",
+  "desc": "亞薩利的祖父。",
+  "name": "米書蘭"
+ },
+ "亞薩利": {
+  "type": "person",
+  "name_en": "Azaliah",
+  "testament": "OT",
+  "desc": "沙番的父親，米書蘭的孫子。",
+  "name": "亞薩利"
+ },
+ "沙番": {
+  "type": "person",
+  "name_en": "Shaphan",
+  "testament": "OT",
+  "desc": "書記，亞薩利的兒子，約西亞王差遣他上耶和華殿去。",
+  "name": "沙番"
+ },
+ "亞希甘": {
+  "type": "person",
+  "name_en": "Ahikam",
+  "testament": "OT",
+  "desc": "沙番的兒子，祭司希勒家吩咐他。",
+  "name": "亞希甘"
+ },
+ "米該亞": {
+  "type": "person",
+  "name_en": "Micaiah",
+  "testament": "OT",
+  "desc": "亞革波的父親。",
+  "name": "米該亞"
+ },
+ "亞革波": {
+  "type": "person",
+  "name_en": "Achbor",
+  "testament": "OT",
+  "desc": "米該亞的兒子，祭司希勒家吩咐他。",
+  "name": "亞革波"
+ },
+ "亞撒雅": {
+  "type": "person",
+  "name_en": "Asaiah",
+  "testament": "OT",
+  "desc": "王的臣僕，祭司希勒家吩咐他。",
+  "name": "亞撒雅"
+ },
+ "戶勒大": {
+  "type": "person",
+  "name_en": "Huldah",
+  "testament": "OT",
+  "desc": "女先知，掌管禮服沙龍的妻，住在耶路撒冷第二區。",
+  "name": "戶勒大"
+ },
+ "哈珥哈斯": {
+  "type": "person",
+  "name_en": "Harhas",
+  "testament": "OT",
+  "desc": "沙龍的祖父。",
+  "name": "哈珥哈斯"
+ },
+ "特瓦": {
+  "type": "person",
+  "name_en": "Tikvah",
+  "testament": "OT",
+  "desc": "沙龍的父親，哈珥哈斯的兒子。",
+  "name": "特瓦"
+ },
+ "陀斐特": {
+  "type": "place",
+  "name_en": "Topheth",
+  "testament": "OT",
+  "desc": "欣嫩子谷的一個地方，約西亞王污穢了它，不許人在那裡使兒女經火獻給摩洛。",
+  "name": "陀斐特"
+ },
+ "米勒公": {
+  "type": "concept",
+  "name_en": "Milcom",
+  "testament": "OT",
+  "desc": "亞捫人可憎的神，所羅門曾為其築丘壇。",
+  "name": "米勒公"
+ },
+ "瑪探雅": {
+  "type": "person",
+  "name_en": "Mattaniah",
+  "testament": "OT",
+  "desc": "約雅斤的叔叔，巴比倫王立他代替約雅斤作王，並給他改名叫西底家。",
+  "name": "瑪探雅"
+ },
+ "基大利": {
+  "type": "person",
+  "name_en": "Gedaliah",
+  "testament": "OT",
+  "desc": "巴比倫王所立的省長，眾軍長和屬他們的人都到米斯巴見他。",
+  "name": "基大利"
+ },
+ "尼探雅": {
+  "type": "person",
+  "name_en": "Nethaniah",
+  "testament": "OT",
+  "desc": "以實瑪利的父親，軍長之一。",
+  "name": "尼探雅"
+ },
+ "加利亞": {
+  "type": "person",
+  "name_en": "Kareah",
+  "testament": "OT",
+  "desc": "約哈難的父親，軍長之一。",
+  "name": "加利亞"
+ },
+ "單戶蔑": {
+  "type": "person",
+  "name_en": "Tanhumeth",
+  "testament": "OT",
+  "desc": "西萊雅的父親，尼陀法人。",
+  "name": "單戶蔑"
+ },
+ "雅撒尼亞": {
+  "type": "person",
+  "name_en": "Jaazaniah",
+  "testament": "OT",
+  "desc": "瑪迦人的兒子，軍長之一。",
+  "name": "雅撒尼亞"
+ },
+ "耶何耶大": {
+  "type": "person",
+  "name_en": "Jehoiada",
+  "testament": "OT",
+  "desc": "比拿雅的父親。",
+  "name": "耶何耶大"
+ },
+ "示沙": {
+  "type": "person",
+  "name_en": "Shisha",
+  "testament": "OT",
+  "desc": "以利何烈和亞希亞的父親。",
+  "name": "示沙"
+ },
+ "以利何烈": {
+  "type": "person",
+  "name_en": "Elihoreph",
+  "testament": "OT",
+  "desc": "示沙的兒子，作書記。",
+  "name": "以利何烈"
+ },
+ "亞希煞": {
+  "type": "person",
+  "name_en": "Ahishar",
+  "testament": "OT",
+  "desc": "作家宰。",
+  "name": "亞希煞"
+ },
+ "亞比大": {
+  "type": "person",
+  "name_en": "Abda",
+  "testament": "OT",
+  "desc": "亞多尼蘭的父親。",
+  "name": "亞比大"
+ },
+ "亞多尼蘭": {
+  "type": "person",
+  "name_en": "Adoniram",
+  "testament": "OT",
+  "desc": "亞比大的兒子，掌管服苦的人。",
+  "name": "亞多尼蘭"
+ },
+ "瑪迦斯": {
+  "type": "place",
+  "name_en": "Makaz",
+  "testament": "OT",
+  "desc": "便底甲所管轄的地區之一。",
+  "name": "瑪迦斯"
+ },
+ "沙賓": {
+  "type": "place",
+  "name_en": "Shaalbim",
+  "testament": "OT",
+  "desc": "便底甲所管轄的地區之一。",
+  "name": "沙賓"
+ },
+ "以倫伯哈南": {
+  "type": "place",
+  "name_en": "Elon Beth-hanan",
+  "testament": "OT",
+  "desc": "便底甲所管轄的地區之一。",
+  "name": "以倫伯哈南"
+ },
+ "便底甲": {
+  "type": "person",
+  "name_en": "Ben-Dekar",
+  "testament": "OT",
+  "desc": "管理瑪迦斯、沙賓、伯示麥、以倫伯哈南的人。",
+  "name": "便底甲"
+ },
+ "亞魯泊": {
+  "type": "place",
+  "name_en": "Arubboth",
+  "testament": "OT",
+  "desc": "便希悉所管轄的地區之一。",
+  "name": "亞魯泊"
+ },
+ "便希悉": {
+  "type": "person",
+  "name_en": "Ben-Hesed",
+  "testament": "OT",
+  "desc": "管理亞魯泊、梭哥和希弗全地的人。",
+  "name": "便希悉"
+ },
+ "便亞比拿達": {
+  "type": "person",
+  "name_en": "Ben-Abinadab",
+  "testament": "OT",
+  "desc": "在多珥山岡的人，娶了所羅門的女兒他法為妻。",
+  "name": "便亞比拿達"
+ },
+ "他法": {
+  "type": "person",
+  "name_en": "Taphath",
+  "testament": "OT",
+  "desc": "所羅門的女兒，便亞比拿達的妻子。",
+  "name": "他法"
+ },
+ "撒拉他拿": {
+  "type": "place",
+  "name_en": "Zarethan",
+  "testament": "OT",
+  "desc": "靠近耶斯列下邊伯善全地的一個地方。",
+  "name": "撒拉他拿"
+ },
+ "亞伯米何拉": {
+  "type": "place",
+  "name_en": "Abel-meholah",
+  "testament": "OT",
+  "desc": "伯善全地的一個地方，直到約念之外。",
+  "name": "亞伯米何拉"
+ },
+ "便基別": {
+  "type": "person",
+  "name_en": "Ben-Geber",
+  "testament": "OT",
+  "desc": "在基列的拉末，管理基列的瑪拿西子孫睚珥的城邑和巴珊的亞珥歌伯地的人。",
+  "name": "便基別"
+ },
+ "易多": {
+  "type": "person",
+  "name_en": "Iddo",
+  "testament": "OT",
+  "desc": "亞希拿達的父親。",
+  "name": "易多"
+ },
+ "亞希拿達": {
+  "type": "person",
+  "name_en": "Ahinadab",
+  "testament": "OT",
+  "desc": "易多的兒子，在瑪哈念。",
+  "name": "亞希拿達"
+ },
+ "帕路亞": {
+  "type": "person",
+  "name_en": "Paruah",
+  "testament": "OT",
+  "desc": "約沙法的父親。",
+  "name": "帕路亞"
+ },
+ "以探": {
+  "type": "person",
+  "name_en": "Ethan",
+  "testament": "OT",
+  "desc": "以斯拉人，所羅門的智慧勝過他。",
+  "name": "以探"
+ },
+ "瑪曷": {
+  "type": "person",
+  "name_en": "Mahol",
+  "testament": "OT",
+  "desc": "希幔、甲各、達大的父親。",
+  "name": "瑪曷"
+ },
+ "希幔": {
+  "type": "person",
+  "name_en": "Heman",
+  "testament": "OT",
+  "desc": "瑪曷的兒子，所羅門的智慧勝過他。",
+  "name": "希幔"
+ },
+ "甲各": {
+  "type": "person",
+  "name_en": "Calcol",
+  "testament": "OT",
+  "desc": "瑪曷的兒子，所羅門的智慧勝過他。",
+  "name": "甲各"
+ },
+ "達大": {
+  "type": "person",
+  "name_en": "Darda",
+  "testament": "OT",
+  "desc": "瑪曷的兒子，所羅門的智慧勝過他。",
+  "name": "達大"
+ },
+ "亞大雅": {
+  "type": "person",
+  "name_en": "Adaiah",
+  "testament": "OT",
+  "books": [
+   "列王紀下"
+  ],
+  "desc": "波斯加人，約西亞王之母耶底大的父親（王下22:1）。",
+  "name": "亞大雅"
+ },
+ "以斯拉人": {
+  "type": "concept",
+  "name_en": "Ezrahite",
+  "testament": "OT",
+  "books": [
+   "列王紀上"
+  ],
+  "desc": "以探、希幔等人的族群稱謂，與文士以斯拉無關（王上4:31）。",
+  "name": "以斯拉人"
+ },
+ "亞得米勒": [
+  {
+   "type": "concept",
+   "name": "亞得米勒（西法瓦音的神）",
+   "name_en": "Adrammelech (deity)",
+   "books": [
+    "列王紀下"
+   ],
+   "chapters": [
+    17,
+    17
+   ],
+   "testament": "OT",
+   "desc": "西法瓦音人所獻兒女焚燒的神祇之一（王下17:31）。"
+  },
+  {
+   "type": "person",
+   "name": "亞得米勒（西拿基立之子）",
+   "name_en": "Adrammelech (son of Sennacherib)",
+   "books": [
+    "列王紀下"
+   ],
+   "chapters": [
+    19,
+    19
+   ],
+   "testament": "OT",
+   "desc": "亞述王西拿基立的兒子，與兄弟沙利色合謀弒父後逃往亞拉臘地（王下19:37）。"
+  }
+ ],
+ "沙龍": [
+  {
+   "type": "person",
+   "name": "沙龍（以色列王）",
+   "name_en": "Shallum (king of Israel)",
+   "books": [
+    "列王紀下"
+   ],
+   "chapters": [
+    15,
+    15
+   ],
+   "testament": "OT",
+   "desc": "雅比的兒子，刺殺撒迦利雅篡位，作以色列王僅一個月，即被米拿現所殺（王下15:10-15）。"
+  },
+  {
+   "type": "person",
+   "name": "沙龍（戶勒大之夫）",
+   "name_en": "Shallum (husband of Huldah)",
+   "books": [
+    "列王紀下"
+   ],
+   "chapters": [
+    22,
+    22
+   ],
+   "testament": "OT",
+   "desc": "哈珥哈斯的孫子、特瓦的兒子，掌管禮服，女先知戶勒大之夫（王下22:14）。"
+  }
+ ]
 }
