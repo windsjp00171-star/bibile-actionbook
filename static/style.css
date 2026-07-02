@@ -441,6 +441,20 @@ body {
 @media (min-width: 900px) {
   #routesPanel .bigmap-canvas { min-height: 420px; }
 }
+/* 本卷地圖面板：地圖下方加地點清單，避免地圖上常駐標籤在地點多時互相重疊 */
+#bookMapPanel .bigmap-canvas { flex: 1 1 auto; min-height: 200px; }
+.place-list {
+  flex: none; max-height: 130px; overflow-y: auto; margin-top: 8px;
+  display: flex; flex-wrap: wrap; gap: 6px; align-content: flex-start;
+}
+.place-item {
+  padding: 5px 11px; border-radius: 14px; cursor: pointer;
+  background: #F5ECD8; border: 1px solid #E6D8BC; color: #3A2A14; font-size: 12.5px;
+}
+.place-item:active { background: #EADBBE; }
+@media (min-width: 900px) {
+  .place-list { max-height: 170px; }
+}
 
 /* 路線圖 */
 .route-picker { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }

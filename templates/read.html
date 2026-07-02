@@ -145,8 +145,9 @@
 <aside class="bigmap-panel" id="bookMapPanel">
   <button class="card-close" onclick="closeBookMap()" aria-label="關閉">✕</button>
   <h3 class="bigmap-title">本卷地圖　{{ book }}</h3>
-  <div class="search-meta">💡 本卷所有地點聚成一圖；點任一標記看背景資料。</div>
+  <div class="search-meta">💡 本卷所有地點聚成一圖；點下方清單會先定位到地圖上的地點、再開背景資料，也可以直接點地圖標記。</div>
   <div class="bigmap-canvas" id="bookMap"></div>
+  <div class="place-list" id="bookMapList"></div>
 </aside>
 
 <!-- 聖經路線圖 -->
@@ -542,6 +543,8 @@ function openBookMap() {
       }
       _bookMap.eachLayer(l => { if (l instanceof L.CircleMarker) _bookMap.removeLayer(l); });
       const pts = [];
+      const markers = {};   // key -> marker，供清單點擊時飛過去、開標籤
+      const openFromKey = (key) => { if (ENTITIES[key] || RELATED_BRIEF[key]) { closeBookMap(); openCard(key); } };
       // 座標很接近的點會在縮小檢視時疊在一起、擋住彼此無法點擊，先把重複／極接近的點錯開
       const seen = {};
       (d.places || []).forEach(p => {
@@ -549,17 +552,42 @@ function openBookMap() {
         const n = seen[key] || 0; seen[key] = n + 1;
         const lat = n === 0 ? p.lat : p.lat + 0.045 * n;
         const lng = n === 0 ? p.lng : p.lng + 0.03 * n;
-        L.circleMarker([lat, lng], { radius: 6, fillColor: '#8B6840', color: '#fff', weight: 1.5, fillOpacity: 1 })
-          .bindTooltip(p.name, { direction: 'top' })   // 常駐標籤會在點多時全部疊字看不清，改成滑過/點擊才顯示
-          .on('click', () => { if (ENTITIES[p.key] || RELATED_BRIEF[p.key]) { closeBookMap(); openCard(p.key); } })
+        // 常駐標籤在地點多時會整片疊字看不清、擋住彼此，改用滑過才顯示；
+        // 名稱清單改放地圖下方（見下方 renderBookMapList），點清單會飛過去並亮起對應圖標
+        const marker = L.circleMarker([lat, lng], { radius: 6, fillColor: '#8B6840', color: '#fff', weight: 1.5, fillOpacity: 1 })
+          .bindTooltip(p.name, { direction: 'top' })
+          .on('click', () => openFromKey(p.key))
           .addTo(_bookMap);
+        markers[p.key] = { marker, lat, lng };
         pts.push([lat, lng]);
       });
       _bookMap.invalidateSize();
       if (pts.length > 1) _bookMap.fitBounds(pts, { padding: [40, 40] });
       else if (pts.length === 1) _bookMap.setView(pts[0], 7);
       else _bookMap.setView([31.5, 35], 6);
+      // 點清單：地圖飛過去＋圖標亮起＋顯示地名，短暫停留後直接開背景資料卡片（一次到位）
+      const focusFromKey = (key) => {
+        const m = markers[key];
+        if (!m) return;
+        _bookMap.flyTo([m.lat, m.lng], Math.max(_bookMap.getZoom(), 8), { duration: 0.5 });
+        m.marker.setStyle({ radius: 10, fillColor: '#B5651D' });
+        m.marker.openTooltip();
+        setTimeout(() => openFromKey(key), 550);
+      };
+      renderBookMapList(d.places || [], focusFromKey);
     }, 80);
+  });
+}
+function renderBookMapList(places, focusFromKey) {
+  const box = document.getElementById('bookMapList');
+  if (!box) return;
+  box.innerHTML = '';
+  places.slice().sort((a, b) => a.name.localeCompare(b.name, 'zh-Hant')).forEach(p => {
+    const row = document.createElement('div');
+    row.className = 'place-item';
+    row.textContent = p.name;
+    row.onclick = () => focusFromKey(p.key);
+    box.appendChild(row);
   });
 }
 function closeBookMap() {
