@@ -405,6 +405,10 @@ body {
 .card-map-wrap { position: relative; margin-bottom: 12px; }
 .card-map { width: 100%; height: 260px; border-radius: 8px; }
 .map-focus-label { font-weight: 600; font-size: 13px; }
+.map-popup { font-size: 13px; color: #3A2A14; max-width: 220px; }
+.map-popup b { font-size: 14px; color: #2A1A08; }
+.map-popup p { margin: 6px 0; line-height: 1.6; font-weight: 300; }
+.map-popup a { color: #2A5C3A; font-weight: 600; text-decoration: none; font-size: 12.5px; }
 .leaflet-tooltip { font-size: 12px; padding: 2px 7px; }
 .map-expand-btn {
   position: absolute; right: 8px; bottom: 8px; z-index: 500;
@@ -431,29 +435,40 @@ body {
 .bigmap-panel.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
 .bigmap-title { font-size: 16px; color: #2A1A08; margin: 0 0 10px; padding-right: 36px; }
 .bigmap-canvas { flex: 1; min-height: 0; border-radius: 10px; overflow: hidden; }
-/* 路線圖面板：地圖拿最大空間，上下輔助區塊收緊高度，不擠壓地圖 */
+/* 路線圖面板：地圖拿最大空間，上方輔助區塊收緊高度，不擠壓地圖 */
 #routesPanel { min-height: 0; }
 #routesPanel .search-meta { flex: none; margin-bottom: 6px; }
 #routesPanel .route-picker { flex: none; }
 #routesPanel .route-info { flex: none; max-height: 92px; overflow-y: auto; }
-#routesPanel .bigmap-canvas { flex: 1 1 auto; min-height: 260px; }
-#routesPanel .route-stops { flex: none; max-height: 110px; overflow-y: auto; }
-@media (min-width: 900px) {
-  #routesPanel .bigmap-canvas { min-height: 420px; }
+/* 地圖＋清單改成左右並排（像 Google 地圖路線那樣），不再擠在同一欄的上下方向，
+   避免面板高度不夠時把清單擠到看不見 */
+.bigmap-body { flex: 1 1 auto; min-height: 0; display: flex; gap: 10px; }
+.bigmap-body .bigmap-canvas { flex: 1 1 auto; min-height: 220px; }
+#routesPanel .route-stops {
+  flex: none; width: 230px; max-height: none; overflow-y: auto;
+  border-left: 1px solid #E6D8BC; padding-left: 10px;
 }
-/* 本卷地圖面板：地圖下方加地點清單，避免地圖上常駐標籤在地點多時互相重疊 */
-#bookMapPanel .bigmap-canvas { flex: 1 1 auto; min-height: 200px; }
+/* 本卷地圖面板：地點清單放在地圖右側，取代常駐標籤，避免地點多時互相重疊 */
 .place-list {
-  flex: none; max-height: 130px; overflow-y: auto; margin-top: 8px;
-  display: flex; flex-wrap: wrap; gap: 6px; align-content: flex-start;
+  flex: none; width: 190px; max-height: none; overflow-y: auto;
+  border-left: 1px solid #E6D8BC; padding-left: 10px;
 }
 .place-item {
-  padding: 5px 11px; border-radius: 14px; cursor: pointer;
-  background: #F5ECD8; border: 1px solid #E6D8BC; color: #3A2A14; font-size: 12.5px;
+  padding: 7px 10px; border-radius: 8px; cursor: pointer;
+  background: #F5ECD8; border: 1px solid #E6D8BC; color: #3A2A14; font-size: 13px;
+  margin-bottom: 5px;
 }
 .place-item:active { background: #EADBBE; }
-@media (min-width: 900px) {
-  .place-list { max-height: 170px; }
+/* 手機窄螢幕改回上下堆疊，並排空間不夠 */
+@media (max-width: 640px) {
+  .bigmap-body { flex-direction: column; }
+  .bigmap-body .bigmap-canvas { min-height: 200px; }
+  #routesPanel .route-stops, .place-list {
+    width: auto; max-height: 130px;
+    border-left: none; border-top: 1px solid #E6D8BC; padding-left: 0; padding-top: 8px;
+  }
+  .place-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .place-item { margin-bottom: 0; }
 }
 
 /* 路線圖 */

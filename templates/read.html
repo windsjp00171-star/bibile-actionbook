@@ -145,9 +145,11 @@
 <aside class="bigmap-panel" id="bookMapPanel">
   <button class="card-close" onclick="closeBookMap()" aria-label="關閉">✕</button>
   <h3 class="bigmap-title">本卷地圖　{{ book }}</h3>
-  <div class="search-meta">💡 本卷所有地點聚成一圖；點下方清單會先定位到地圖上的地點、再開背景資料，也可以直接點地圖標記。</div>
-  <div class="bigmap-canvas" id="bookMap"></div>
-  <div class="place-list" id="bookMapList"></div>
+  <div class="search-meta">💡 本卷所有地點聚成一圖；點右側清單會定位到地圖上的地點並顯示資訊，也可以直接點地圖標記。</div>
+  <div class="bigmap-body">
+    <div class="bigmap-canvas" id="bookMap"></div>
+    <div class="place-list" id="bookMapList"></div>
+  </div>
 </aside>
 
 <!-- 聖經路線圖 -->
@@ -158,8 +160,10 @@
   <div class="search-meta">💡 選一條路線 →「▶ 播放」鏡頭跟著行程走；點停靠點看經文出處、可調速度。</div>
   <div class="route-picker" id="routePicker"></div>
   <div class="route-info" id="routeInfo"></div>
-  <div class="bigmap-canvas" id="routeMap"></div>
-  <div class="route-stops" id="routeStops"></div>
+  <div class="bigmap-body">
+    <div class="bigmap-canvas" id="routeMap"></div>
+    <div class="route-stops" id="routeStops"></div>
+  </div>
 </aside>
 
 <!-- 本章世系結構圖 -->
@@ -543,8 +547,13 @@ function openBookMap() {
       }
       _bookMap.eachLayer(l => { if (l instanceof L.CircleMarker) _bookMap.removeLayer(l); });
       const pts = [];
-      const markers = {};   // key -> marker，供清單點擊時飛過去、開標籤
-      const openFromKey = (key) => { if (ENTITIES[key] || RELATED_BRIEF[key]) { closeBookMap(); openCard(key); } };
+      const markers = {};   // key -> marker，供清單點擊時定位、開 popup
+      const popupHtml = (p) => '<div class="map-popup">' +
+        '<b>' + _esc(p.name) + '</b>' +
+        (p.desc ? '<p>' + _esc(p.desc) + '</p>' : '') +
+        (ENTITIES[p.key] || RELATED_BRIEF[p.key]
+          ? '<a href="javascript:void(0)" onclick="closeBookMap();openCard(\'' + p.key.replace(/'/g, "\\'") + '\')">查看完整資料 →</a>' : '') +
+        '</div>';
       // 座標很接近的點會在縮小檢視時疊在一起、擋住彼此無法點擊，先把重複／極接近的點錯開
       const seen = {};
       (d.places || []).forEach(p => {
@@ -553,10 +562,10 @@ function openBookMap() {
         const lat = n === 0 ? p.lat : p.lat + 0.045 * n;
         const lng = n === 0 ? p.lng : p.lng + 0.03 * n;
         // 常駐標籤在地點多時會整片疊字看不清、擋住彼此，改用滑過才顯示；
-        // 名稱清單改放地圖下方（見下方 renderBookMapList），點清單會飛過去並亮起對應圖標
+        // 點圖標／清單直接彈出 popup 顯示簡介，不整個跳走離開地圖
         const marker = L.circleMarker([lat, lng], { radius: 6, fillColor: '#8B6840', color: '#fff', weight: 1.5, fillOpacity: 1 })
           .bindTooltip(p.name, { direction: 'top' })
-          .on('click', () => openFromKey(p.key))
+          .bindPopup(popupHtml(p))
           .addTo(_bookMap);
         markers[p.key] = { marker, lat, lng };
         pts.push([lat, lng]);
@@ -565,14 +574,12 @@ function openBookMap() {
       if (pts.length > 1) _bookMap.fitBounds(pts, { padding: [40, 40] });
       else if (pts.length === 1) _bookMap.setView(pts[0], 7);
       else _bookMap.setView([31.5, 35], 6);
-      // 點清單：地圖飛過去＋圖標亮起＋顯示地名，短暫停留後直接開背景資料卡片（一次到位）
+      // 點清單：地圖定位過去＋直接彈出資訊 popup，停留在地圖上，不跳走
       const focusFromKey = (key) => {
         const m = markers[key];
         if (!m) return;
-        _bookMap.flyTo([m.lat, m.lng], Math.max(_bookMap.getZoom(), 8), { duration: 0.5 });
-        m.marker.setStyle({ radius: 10, fillColor: '#B5651D' });
-        m.marker.openTooltip();
-        setTimeout(() => openFromKey(key), 550);
+        _bookMap.panTo([m.lat, m.lng], { animate: true });
+        m.marker.openPopup();
       };
       renderBookMapList(d.places || [], focusFromKey);
     }, 80);
@@ -683,6 +690,7 @@ function highlightChip(el) {
   el.classList.add('active');
 }
 function selectRoute(id, focusStop) {
+  _stopAnim();   // 切換路線前先徹底停掉舊路線可能還在跑的動畫，否則新路線按播放會整個靜默不動
   fetch('/api/routes?id=' + encodeURIComponent(id)).then(r => r.json()).then(rt => {
     _curRoute = rt;
     document.getElementById('routeInfo').innerHTML =
@@ -812,6 +820,14 @@ function togglePlay() {
   else { playRoute(); }
 }
 function _setPlayBtn(txt) { const b = document.getElementById('routePlay'); if (b) b.textContent = txt; }
+// 完全停止動畫（不同於暫停：暫停後按播放要能接續，這裡是「切換路線」時要徹底歸零，
+// 不然切到新路線後 _routePlaying 還殘留 true，按播放會誤觸發成「暫停」而整個不動）
+function _stopAnim() {
+  if (_routeAnim) { cancelAnimationFrame(_routeAnim); _routeAnim = null; }
+  if (_routeTimer) { clearTimeout(_routeTimer); _routeTimer = null; }
+  _routePlaying = false; _routePaused = false; _anim = null;
+  _setPlayBtn('▶ 播放');
+}
 function pauseRoute() {
   _routePaused = true;
   if (_routeAnim) { cancelAnimationFrame(_routeAnim); _routeAnim = null; }
@@ -869,9 +885,10 @@ function _routeTick() {
     const e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
     const lat = a.lat + (b.lat - a.lat) * e, lng = a.lng + (b.lng - a.lng) * e;
     A.line.setLatLngs(A.drawn.concat([[lat, lng]]));
-    // 視角在整段播放期間固定不動（見 playRoute 的 fitBounds），這裡只移動
-    // 代表目前位置的小圓點，不碰地圖中心/縮放，圖磚完全不會被打斷重載
     A.traveler.setLatLng([lat, lng]);
+    // 鏡頭平移跟著目前位置走，縮放全程固定（見 playRoute 算好的 fixedZoom）不再變動，
+    // 純平移 Leaflet 處理得平順不會讓圖磚被打斷重載
+    _routeMap.panTo([lat, lng], { animate: false });
     if (t < 1) { _routeAnim = requestAnimationFrame(step); }
     else {
       A.drawn.push([b.lat, b.lng]);
