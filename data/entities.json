@@ -4296,7 +4296,8 @@
   "name_en": "Calamus",
   "testament": "OT",
   "desc": "一種帶香氣的蘆葦類植物根莖，是調製聖膏油的香料成分之一。",
-  "cat": "plant"
+  "cat": "plant",
+  "reading": "ㄔㄤ ㄆㄨˊ"
  },
  "牛膝草": {
   "type": "concept",
@@ -4632,7 +4633,8 @@
   "name_en": "Acacia Wood",
   "testament": "OT",
   "desc": "曠野生長、堅硬耐蛀的木材，會幕、約櫃、各樣聖物多以皂莢木製作再包金。",
-  "cat": "plant"
+  "cat": "plant",
+  "reading": "ㄗㄠˋ ㄐㄧㄚˊ ㄇㄨˋ"
  },
  "橄欖樹": {
   "type": "concept",
@@ -4704,7 +4706,8 @@
   "name_en": "Thorns/Briers",
   "testament": "both",
   "desc": "帶刺的野生植物。人類墮落後，神咒詛地長出荊棘和蒺藜，象徵勞苦與審判。",
-  "cat": "plant"
+  "cat": "plant",
+  "reading": "ㄐㄧˊ ㄌㄧˊ"
  },
  "荊棘": {
   "type": "concept",
@@ -4728,7 +4731,8 @@
   "name_en": "Reed",
   "testament": "both",
   "desc": "水邊細長易折的草本植物。摩西嬰孩時藏於蘆葦中；聖經以「壓傷的蘆葦」喻軟弱者，主不折斷。",
-  "cat": "plant"
+  "cat": "plant",
+  "reading": "ㄌㄨˊ ㄨㄟˇ"
  },
  "蓖麻": {
   "type": "concept",
@@ -4736,7 +4740,8 @@
   "name_en": "Plant/Gourd",
   "testament": "OT",
   "desc": "神為約拿預備、一夜長成的大葉植物，為他遮蔭；次日枯死，藉此教導約拿憐憫尼尼微。",
-  "cat": "plant"
+  "cat": "plant",
+  "reading": "ㄅㄧˋ ㄇㄚˊ"
  },
  "松樹": {
   "type": "concept",
@@ -5149,7 +5154,8 @@
   "name": "歌篾",
   "name_en": "Gomer",
   "testament": "OT",
-  "desc": "雅弗的長子，是古代居黑海北方一帶民族（辛梅里安人）的祖先。（今黑海北方）"
+  "desc": "雅弗的長子，是古代居黑海北方一帶民族（辛梅里安人）的祖先。（今黑海北方）",
+  "reading": "ㄍㄜ ㄇㄧㄝˋ"
  },
  "土巴": {
   "type": "place",
@@ -6226,7 +6232,8 @@
   "name_en": "Dathan",
   "testament": "OT",
   "desc": "流便支派以利押的兒子，與可拉一同叛逆摩西，地開口將他們吞滅（申11:6，民16章）。",
-  "name": "大坍"
+  "name": "大坍",
+  "reading": "ㄉㄚˋ ㄊㄢ"
  },
  "亞比蘭": {
   "type": "person",
@@ -7197,7 +7204,8 @@
   "testament": "OT",
   "desc": "首領所用的杖，民21:18記尊貴人用圭用杖挖井，象徵權柄與勞力的結合。",
   "cat": "holy",
-  "name": "圭"
+  "name": "圭",
+  "reading": "ㄍㄨㄟ"
  },
  "瑪他拿": {
   "type": "place",
@@ -8350,7 +8358,8 @@
   "lat": 31.6,
   "lng": 34.7,
   "desc": "迦南南方城邦，五亞摩利王聯軍之一（書10:5），被約書亞攻取。（位於今日以色列）",
-  "name": "伊磯倫"
+  "name": "伊磯倫",
+  "reading": "ㄧ ㄐㄧ ㄌㄨㄣˊ"
  },
  "伯和崙": {
   "type": "place",
@@ -9262,7 +9271,8 @@
   "name_en": "Beth-dagon",
   "testament": "OT",
   "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。（位於今日以色列）",
-  "name": "伯大袞"
+  "name": "伯大袞",
+  "reading": "ㄅㄛˊ ㄉㄚˋ ㄍㄨㄣˇ"
  },
  "以帖": {
   "type": "place",
@@ -9827,7 +9837,8 @@
   "name_en": "Dagon",
   "testament": "OT",
   "desc": "非利士人所拜的神祇，供奉於亞實突的大袞廟。耶和華的約櫃被擄至此後，大袞像仆倒斷首斷手（撒上5章）。",
-  "name": "大袞"
+  "name": "大袞",
+  "reading": "ㄉㄚˋ ㄍㄨㄣˇ"
  },
  "基列耶琳": {
   "type": "place",
@@ -9894,7 +9905,8 @@
   "name_en": "Migron",
   "testament": "OT",
   "desc": "基比亞邊界一地，掃羅曾在此地的石榴樹下安營（撒上14:2）。",
-  "name": "米磯崙"
+  "name": "米磯崙",
+  "reading": "ㄇㄧˇ ㄐㄧ ㄌㄨㄣˊ"
  },
  "亞希突": [
   {
@@ -10384,7 +10396,8 @@
   "books": [
    "撒母耳記上"
   ],
-  "desc": "猶大支派的一個宗族，居於猶大南方，大衛在洗革拉期間曾侵掠其鄰近的亞瑪力人（撒上27:10）。"
+  "desc": "猶大支派的一個宗族，居於猶大南方，大衛在洗革拉期間曾侵掠其鄰近的亞瑪力人（撒上27:10）。",
+  "reading": "ㄧㄝ ㄌㄚ ㄇㄧㄝˋ"
  },
  "弓歌": {
   "type": "concept",
@@ -11449,7 +11462,8 @@
   "name_en": "Dothan",
   "testament": "OT",
   "desc": "亞蘭王要捉拿的人所在的地方。（位於今日以色列）",
-  "name": "多坍"
+  "name": "多坍",
+  "reading": "ㄉㄨㄛ ㄊㄢ"
  },
  "西比亞": {
   "type": "person",
@@ -11666,7 +11680,8 @@
   "name_en": "",
   "testament": "OT",
   "desc": "亞哈家所用的測量工具，將拉在耶路撒冷上。",
-  "name": "線鉈"
+  "name": "線鉈",
+  "reading": "ㄒㄧㄢˋ ㄊㄨㄛˊ"
  },
  "米舒利密": {
   "type": "person",
