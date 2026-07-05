@@ -189,7 +189,7 @@ _ROUTE_ABBR = {
     "創": "創世記", "出": "出埃及記", "利": "利未記", "民": "民數記", "申": "申命記",
     "書": "約書亞記", "士": "士師記", "得": "路得記", "撒上": "撒母耳記上", "撒下": "撒母耳記下",
     "王上": "列王紀上", "王下": "列王紀下", "拉": "以斯拉記", "尼": "尼希米記", "詩": "詩篇",
-    "賽": "以賽亞書", "耶": "耶利米書", "結": "以西結書", "但": "但以理書",
+    "賽": "以賽亞書", "耶": "耶利米書", "結": "以西結書", "但": "但以理書", "拿": "約拿書",
     "太": "馬太福音", "可": "馬可福音", "路": "路加福音", "約": "約翰福音", "徒": "使徒行傳",
 }
 _ROUTE_REF_RE = re.compile(r"^([一-鿿]+?(?:上|下)?)(\d+)(?::(\d+))?")
@@ -230,9 +230,17 @@ def cmd_routecheck(args):
                 flags.append(f"  ⚠ #{i+1} {name}：{book} {ch} 章不存在")
                 continue
             joined = "".join(chap.values())
-            # 地名整體或去尾字（山/地/曠野/溪/海/平原/城）後是否出現
-            stem = re.sub(r"(山|地|曠野|溪|河|海|平原|城|的.*)$", "", name)
-            if name not in joined and (not stem or stem not in joined):
+            # 拆解「主名（別名）」「名1／名2」複合顯示格式，任一段落比對到即算通過；
+            # 各段再去尾字（山/地/曠野/溪/海/平原/城）比對一次
+            parts = re.split("／", re.sub(r"（.*?）", "", name)) + re.findall(r"（(.*?)）", name)
+            parts = [p for p in parts if p] or [name]
+            found = False
+            for p in parts:
+                stem = re.sub(r"(山|地|曠野|溪|河|海|平原|城|的.*)$", "", p)
+                if p in joined or (stem and stem in joined):
+                    found = True
+                    break
+            if not found:
                 flags.append(f"  ⚠ #{i+1} {name}：未在 {book} {ch} 出現（ref={ref}）")
         total_flags += len(flags)
         mark = "✓" if not flags else f"{len(flags)} 處待查"
