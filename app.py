@@ -566,6 +566,15 @@ def search_page():
     return render_template("search.html", q=(request.args.get("q") or "").strip())
 
 
+@app.route("/kings")
+def kings_page():
+    """南北國列王對照表：純參考頁，資料為列王紀/歷代志原文記載的在位年數與交叉紀年。"""
+    path = os.path.join(os.path.dirname(__file__), "data", "kings_timeline.json")
+    with open(path, encoding="utf-8") as f:
+        timeline = json.load(f)
+    return render_template("kings.html", timeline=timeline)
+
+
 @app.route("/api/entities")
 def api_entities():
     """人物/地點/概念索引：列出全部詞條（依類型分組）。

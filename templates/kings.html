@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>南北國列王對照表 · 聖經互動全書</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<style>
+.kp-wrap{max-width:720px;margin:0 auto;padding:28px 18px 60px;}
+.kp-back{display:inline-block;margin-bottom:16px;color:#8B6840;text-decoration:none;font-size:13px;}
+.kp-head{text-align:center;margin-bottom:8px;}
+.kp-title{font-size:22px;color:#2A1A08;letter-spacing:.08em;margin-bottom:4px;}
+.kp-sub{font-size:13px;color:#9C8866;}
+.kp-note{font-size:12px;color:#9C8866;background:#F5ECD8;border-radius:8px;padding:10px 12px;margin:16px 0 24px;line-height:1.7;}
+.kp-section-title{font-size:16px;letter-spacing:.06em;margin:26px 0 10px;padding-bottom:6px;border-bottom:2px solid;}
+.kp-section-title.israel{color:#2A5C3A;border-color:#2A5C3A;}
+.kp-section-title.judah{color:#8B3A1A;border-color:#8B3A1A;}
+.kp-row{display:flex;gap:10px;padding:10px 8px;border-bottom:1px solid #ece2d2;align-items:baseline;}
+.kp-row.usurp{background:#FBF3E3;}
+.kp-name{flex:0 0 150px;font-size:15px;color:#3A2A14;font-weight:500;}
+.kp-years{flex:0 0 64px;font-size:13px;color:#7A5830;}
+.kp-body{flex:1;font-size:12.5px;color:#6B5A44;line-height:1.6;}
+.kp-note-tag{display:inline-block;font-size:11px;color:#B03A1A;background:#F7E4D8;border-radius:6px;padding:1px 6px;margin-left:6px;}
+</style>
+</head>
+<body class="search-page">
+<div class="kp-wrap">
+  <a class="kp-back" href="/">‹ 回首頁</a>
+  <div class="kp-head">
+    <div class="kp-title">南北國列王對照表</div>
+    <div class="kp-sub">所羅門死後國家分裂，北國以色列與南國猶大並存的列王</div>
+  </div>
+  <div class="kp-note">{{ timeline.note }}</div>
+
+  <div class="kp-section-title israel">北國以色列（{{ timeline.israel|length }} 位王，皆非大衛家血脈）</div>
+  {% for k in timeline.israel %}
+  <div class="kp-row{% if k.note %} usurp{% endif %}">
+    <div class="kp-name">{{ k.name }}</div>
+    <div class="kp-years">{{ k.years }}</div>
+    <div class="kp-body">
+      {{ k.sync }}{% if k.sync and k.ref %}（{{ k.ref }}）{% elif k.ref %}{{ k.ref }}{% endif %}
+      {% if k.note %}<span class="kp-note-tag">{{ k.note }}</span>{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="kp-section-title judah">南國猶大（{{ timeline.judah|length }} 位王／篡位者，大衛家血脈延續）</div>
+  {% for k in timeline.judah %}
+  <div class="kp-row{% if k.note %} usurp{% endif %}">
+    <div class="kp-name">{{ k.name }}</div>
+    <div class="kp-years">{{ k.years }}</div>
+    <div class="kp-body">
+      {{ k.sync }}{% if k.sync and k.ref %}（{{ k.ref }}）{% elif k.ref %}{{ k.ref }}{% endif %}
+      {% if k.note %}<span class="kp-note-tag">{{ k.note }}</span>{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+
+  <p style="text-align:center;font-size:11px;color:#B0A088;margin-top:30px">經文採用《和合本》（Chinese Union Version，1919）· 公有領域</p>
+</div>
+</body>
+</html>
