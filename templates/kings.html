@@ -12,6 +12,10 @@
 .kp-title{font-size:22px;color:#2A1A08;letter-spacing:.08em;margin-bottom:4px;}
 .kp-sub{font-size:13px;color:#9C8866;}
 .kp-note{font-size:12px;color:#9C8866;background:#F5ECD8;border-radius:8px;padding:10px 12px;margin:16px 0 24px;line-height:1.7;}
+.kp-story{background:#FEF8EC;border:1px solid #E5D5B0;border-radius:10px;padding:14px 16px;margin-bottom:22px;}
+.kp-story-title{font-size:14px;color:#8B3A1A;font-weight:500;margin-bottom:6px;letter-spacing:.04em;}
+.kp-story p{font-size:13.5px;color:#4A3A28;line-height:1.9;}
+.kp-story b{color:#2A5C3A;font-weight:600;}
 .kp-section-title{font-size:16px;letter-spacing:.06em;margin:26px 0 10px;padding-bottom:6px;border-bottom:2px solid;}
 .kp-section-title.israel{color:#2A5C3A;border-color:#2A5C3A;}
 .kp-section-title.judah{color:#8B3A1A;border-color:#8B3A1A;}
@@ -31,6 +35,11 @@
     <div class="kp-sub">所羅門死後國家分裂，北國以色列與南國猶大並存的列王</div>
   </div>
   <div class="kp-note">{{ timeline.note }}</div>
+
+  <div class="kp-story">
+    <div class="kp-story-title">分裂始末</div>
+    <p>所羅門晚年拜偶像，神藉示羅的先知<b>亞希雅</b>預告要將十個支派從所羅門手中奪走，賜給他的臣僕<b>耶羅波安</b>（王上11:29-31）。所羅門死後，百姓求新王<b>羅波安</b>減輕服苦役的重擔；羅波安不聽老臣「服事百姓、好話回答」的建議，反倒採納少年臣僕的主意，強硬回覆「我父親使你們負重軛，我必使你們負更重的軛」（王上12:1-14）。百姓憤而擁立耶羅波安為王，除猶大支派外，十個支派自此脫離大衛家，南北分裂就此定型（王上12:16-20）。</p>
+  </div>
 
   <div class="kp-section-title israel">北國以色列（{{ timeline.israel|length }} 位王，皆非大衛家血脈）</div>
   {% for k in timeline.israel %}
