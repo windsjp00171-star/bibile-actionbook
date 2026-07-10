@@ -336,7 +336,8 @@ def chapter_entities(book, chapter):
                 continue
             v = ENTITIES.get(data_name)
             if v is not None:
-                result[data_name] = v[0] if isinstance(v, list) else v
+                e = _resolve_entity(data_name, book, chapter) or v
+                result[data_name] = e[0] if isinstance(e, list) else e
     return result
 
 
