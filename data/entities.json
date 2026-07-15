@@ -18875,5 +18875,187 @@
   "name_en": "Eshek",
   "testament": "OT",
   "desc": "亞悉的兄弟，烏蘭的父親（代上8:39）。"
+ },
+ "烏太": {
+  "type": "person",
+  "name": "烏太",
+  "name_en": "Uthai",
+  "testament": "OT",
+  "desc": "被擄歸回後住在耶路撒冷的猶大支派法勒斯子孫之一（代上9:4）。"
+ },
+ "音利": {
+  "type": "person",
+  "name": "音利",
+  "name_en": "Imri",
+  "testament": "OT",
+  "desc": "巴尼的兒子，烏太的先祖（代上9:4）。"
+ },
+ "耶烏利": {
+  "type": "person",
+  "name": "耶烏利",
+  "name_en": "Jeuel",
+  "testament": "OT",
+  "desc": "謝拉子孫中歸回耶路撒冷的族長之一（代上9:6）。"
+ },
+ "哈西努": {
+  "type": "person",
+  "name": "哈西努",
+  "name_en": "Hasenuah",
+  "testament": "OT",
+  "desc": "撒路的曾祖，便雅憫支派歸回者世系之一（代上9:7）。"
+ },
+ "伊比尼雅": {
+  "type": "person",
+  "name": "伊比尼雅",
+  "name_en": "Ibneiah",
+  "testament": "OT",
+  "desc": "耶羅罕的兒子，便雅憫支派歸回者之一（代上9:8）。"
+ },
+ "米基立": {
+  "type": "person",
+  "name": "米基立",
+  "name_en": "Micri",
+  "testament": "OT",
+  "desc": "烏西的祖父，便雅憫支派歸回者世系之一（代上9:8）。"
+ },
+ "耶何雅立": {
+  "type": "person",
+  "name": "耶何雅立",
+  "name_en": "Jehoiarib",
+  "testament": "OT",
+  "desc": "歸回耶路撒冷的祭司之一（代上9:10）。"
+ },
+ "亞薩利雅": {
+  "type": "person",
+  "name": "亞薩利雅",
+  "name_en": "Azariah",
+  "testament": "OT",
+  "desc": "管理神殿的祭司，希勒家的兒子（代上9:11），與同名的猶大王亞撒利雅非同一人。"
+ },
+ "巴施戶珥": {
+  "type": "person",
+  "name": "巴施戶珥",
+  "name_en": "Pashhur",
+  "testament": "OT",
+  "desc": "瑪基雅的曾孫，亞大雅的先祖，歸回祭司世系之一（代上9:12）。"
+ },
+ "亞第業": {
+  "type": "person",
+  "name": "亞第業",
+  "name_en": "Adiel",
+  "testament": "OT",
+  "desc": "瑪賽的父親，歸回祭司世系之一（代上9:12）。"
+ },
+ "瑪賽": {
+  "type": "person",
+  "name": "瑪賽",
+  "name_en": "Maasai",
+  "testament": "OT",
+  "desc": "亞第業的兒子，歸回祭司之一（代上9:12）。"
+ },
+ "雅希細拉": {
+  "type": "person",
+  "name": "雅希細拉",
+  "name_en": "Jahzerah",
+  "testament": "OT",
+  "desc": "米書蘭的父親，歸回祭司世系之一（代上9:12）。"
+ },
+ "米實利密": {
+  "type": "person",
+  "name": "米實利密",
+  "name_en": "Meshillemith",
+  "testament": "OT",
+  "desc": "音麥的兒子，歸回祭司世系之一（代上9:12）。"
+ },
+ "音麥": {
+  "type": "person",
+  "name": "音麥",
+  "name_en": "Immer",
+  "testament": "OT",
+  "desc": "歸回祭司世系之一的先祖（代上9:12）。"
+ },
+ "押利甘": {
+  "type": "person",
+  "name": "押利甘",
+  "name_en": "Azrikam",
+  "testament": "OT",
+  "desc": "哈述的父親，米拉利支派歸回利未人世系之一（代上9:14）。"
+ },
+ "哈述": {
+  "type": "person",
+  "name": "哈述",
+  "name_en": "Hashabiah/Hasshub",
+  "testament": "OT",
+  "desc": "示瑪雅的父親，米拉利支派歸回利未人世系之一（代上9:14）。"
+ },
+ "拔巴甲": {
+  "type": "person",
+  "name": "拔巴甲",
+  "name_en": "Bakbakkar",
+  "testament": "OT",
+  "desc": "歸回的利未人之一（代上9:15）。"
+ },
+ "黑勒施": {
+  "type": "person",
+  "name": "黑勒施",
+  "name_en": "Heresh",
+  "testament": "OT",
+  "desc": "歸回的利未人之一（代上9:15）。"
+ },
+ "迦拉": {
+  "type": "person",
+  "name": "迦拉",
+  "name_en": "Galal",
+  "testament": "OT",
+  "desc": "歸回的利未人之一（代上9:15），與耶杜頓一系的迦拉同名（代上9:16）。"
+ },
+ "俄巴底": {
+  "type": "person",
+  "name": "俄巴底",
+  "name_en": "Obadiah",
+  "testament": "OT",
+  "desc": "示瑪雅的兒子，耶杜頓一系歸回利未人（代上9:16），與先知俄巴底亞非同一人。"
+ },
+ "亞谷": {
+  "type": "person",
+  "name": "亞谷",
+  "name_en": "Akkub",
+  "testament": "OT",
+  "desc": "守門的利未人之一（代上9:17）。"
+ },
+ "達們": {
+  "type": "person",
+  "name": "達們",
+  "name_en": "Talmon",
+  "testament": "OT",
+  "desc": "守門的利未人之一（代上9:17）。"
+ },
+ "可利": {
+  "type": "person",
+  "name": "可利",
+  "name_en": "Kore",
+  "testament": "OT",
+  "desc": "以比雅撒的孫子，守門利未人沙龍的先祖（代上9:19）。"
+ },
+ "米施利米雅": {
+  "type": "person",
+  "name": "米施利米雅",
+  "name_en": "Meshelemiah",
+  "testament": "OT",
+  "desc": "看守會幕之門者撒迦利雅的父親（代上9:21）。"
+ },
+ "瑪他提雅": {
+  "type": "person",
+  "name": "瑪他提雅",
+  "name_en": "Mattithiah",
+  "testament": "OT",
+  "desc": "可拉族沙龍的長子，管理盤中烤物的利未人（代上9:31）。"
+ },
+ "雅拉": {
+  "type": "person",
+  "name": "雅拉",
+  "name_en": "Jarah",
+  "testament": "OT",
+  "desc": "亞哈斯的兒子，掃羅家系世系之一，歷代志上8:35作「他利亞」（代上9:42）。"
  }
 }
