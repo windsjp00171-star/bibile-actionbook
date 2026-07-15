@@ -10962,16 +10962,32 @@
   "desc": "亞比拿達的兒子，因伸手扶約櫃而被耶和華擊殺，該地因此被稱為毗列斯烏撒（撒下6:3-8）。",
   "name": "烏撒"
  },
- "亞希約": {
-  "type": "person",
-  "name_en": "Ahio",
-  "testament": "OT",
-  "books": [
-   "撒母耳記下"
-  ],
-  "desc": "亞比拿達的兒子，烏撒的兄弟，一同駕新車運送約櫃（撒下6:3-4）。",
-  "name": "亞希約"
- },
+ "亞希約": [
+  {
+   "type": "person",
+   "name_en": "Ahio",
+   "testament": "OT",
+   "books": [
+    "撒母耳記下"
+   ],
+   "desc": "亞比拿達的兒子，烏撒的兄弟，一同駕新車運送約櫃（撒下6:3-4）。",
+   "name": "亞希約"
+  },
+  {
+   "type": "person",
+   "name": "亞希約",
+   "name_en": "Ahio (Benjamite)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    8,
+    9
+   ],
+   "desc": "便雅憫支派世系之一，比利亞的兒子（代上8:14）；另有基遍之子亞希約（代上8:31、9:37），與運送約櫃的亞希約非同一人。"
+  }
+ ],
  "拿艮": {
   "type": "place",
   "name_en": "Nacon",
@@ -12373,16 +12389,32 @@
   "desc": "瑪曷的兒子，所羅門的智慧勝過他。",
   "name": "達大"
  },
- "亞大雅": {
-  "type": "person",
-  "name_en": "Adaiah",
-  "testament": "OT",
-  "books": [
-   "列王紀下"
-  ],
-  "desc": "波斯加人，約西亞王之母耶底大的父親（王下22:1）。",
-  "name": "亞大雅"
- },
+ "亞大雅": [
+  {
+   "type": "person",
+   "name_en": "Adaiah",
+   "testament": "OT",
+   "books": [
+    "列王紀下"
+   ],
+   "desc": "波斯加人，約西亞王之母耶底大的父親（王下22:1）。",
+   "name": "亞大雅"
+  },
+  {
+   "type": "person",
+   "name": "亞大雅",
+   "name_en": "Adaiah (Benjamite)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    8,
+    8
+   ],
+   "desc": "示每的兒子，便雅憫支派世系之一（代上8:21），與約西亞王外祖父亞大雅非同一人。"
+  }
+ ],
  "以斯拉人": {
   "type": "concept",
   "name_en": "Ezrahite",
@@ -17414,13 +17446,36 @@
   "testament": "OT",
   "desc": "亞述王，擄走流便支派首領備拉，後又擄走流便人、迦得人、瑪拿西半支派人（代上5:6,26，王下15:29另稱其為「普勒」）。"
  },
- "耶利": {
-  "type": "person",
-  "name": "耶利",
-  "name_en": "Jeiel",
-  "testament": "OT",
-  "desc": "流便支派按家譜作族長的人之一（代上5:7）。"
- },
+ "耶利": [
+  {
+   "type": "person",
+   "name": "耶利",
+   "name_en": "Jeiel",
+   "testament": "OT",
+   "desc": "流便支派按家譜作族長的人之一（代上5:7）。",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    5,
+    5
+   ]
+  },
+  {
+   "type": "person",
+   "name": "耶利",
+   "name_en": "Jeiel (father of Gibeon)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    8,
+    9
+   ],
+   "desc": "基遍的父親，掃羅家系先祖之一，妻子名叫瑪迦（代上8:29，9:35重述同一世系）。"
+  }
+ ],
  "撒迦利雅": {
   "type": "person",
   "name": "撒迦利雅",
@@ -18400,5 +18455,425 @@
   "name_en": "Hanniel",
   "testament": "OT",
   "desc": "瑣法的兒子，亞設支派世系之一（代上7:36）。"
+ },
+ "亞實別": {
+  "type": "person",
+  "name": "亞實別",
+  "name_en": "Ashbel",
+  "testament": "OT",
+  "desc": "便雅憫的次子（代上8:1）。"
+ },
+ "亞哈拉": {
+  "type": "person",
+  "name": "亞哈拉",
+  "name_en": "Aharah",
+  "testament": "OT",
+  "desc": "便雅憫的三子（代上8:1）。"
+ },
+ "挪哈": {
+  "type": "person",
+  "name": "挪哈",
+  "name_en": "Nohah",
+  "testament": "OT",
+  "desc": "便雅憫的四子（代上8:2）。"
+ },
+ "拉法": {
+  "type": "person",
+  "name": "拉法",
+  "name_en": "Rapha",
+  "testament": "OT",
+  "desc": "便雅憫的五子（代上8:2），另有摩撒之孫、比尼亞之子同名的拉法，也是掃羅家系後裔之一（代上8:37）。"
+ },
+ "基拉": {
+  "type": "person",
+  "name": "基拉",
+  "name_en": "Gera",
+  "testament": "OT",
+  "desc": "比拉的兒子，便雅憫支派世系之一（代上8:3,5,7）。"
+ },
+ "亞比忽": {
+  "type": "person",
+  "name": "亞比忽",
+  "name_en": "Abihud",
+  "testament": "OT",
+  "desc": "比拉的兒子，便雅憫支派世系之一（代上8:3）。"
+ },
+ "亞何亞": {
+  "type": "person",
+  "name": "亞何亞",
+  "name_en": "Ahoah",
+  "testament": "OT",
+  "desc": "比拉的兒子，便雅憫支派世系之一（代上8:4）。"
+ },
+ "示孚汛": {
+  "type": "person",
+  "name": "示孚汛",
+  "name_en": "Shephuphan",
+  "testament": "OT",
+  "desc": "比拉的兒子，便雅憫支派世系之一（代上8:5）。"
+ },
+ "戶蘭": {
+  "type": "person",
+  "name": "戶蘭",
+  "name_en": "Huram",
+  "testament": "OT",
+  "desc": "比拉的兒子，便雅憫支派世系之一（代上8:5）。"
+ },
+ "沙哈連": {
+  "type": "person",
+  "name": "沙哈連",
+  "name_en": "Shaharaim",
+  "testament": "OT",
+  "desc": "便雅憫支派的一位族長，在摩押地生子（代上8:8）。"
+ },
+ "賀得": {
+  "type": "person",
+  "name": "賀得",
+  "name_en": "Hodesh",
+  "testament": "OT",
+  "desc": "沙哈連的妻子（代上8:9）。"
+ },
+ "洗比雅": {
+  "type": "person",
+  "name": "洗比雅",
+  "name_en": "Zebiah",
+  "testament": "OT",
+  "desc": "沙哈連與賀得的兒子（代上8:9）。"
+ },
+ "瑪拉干": {
+  "type": "person",
+  "name": "瑪拉干",
+  "name_en": "Malcam",
+  "testament": "OT",
+  "desc": "沙哈連與賀得的兒子（代上8:9）。"
+ },
+ "耶烏斯": {
+  "type": "person",
+  "name": "耶烏斯",
+  "name_en": "Jeuz",
+  "testament": "OT",
+  "desc": "沙哈連與賀得的兒子（代上8:10）。"
+ },
+ "沙迦": {
+  "type": "person",
+  "name": "沙迦",
+  "name_en": "Sachia",
+  "testament": "OT",
+  "desc": "沙哈連與賀得的兒子（代上8:10）。"
+ },
+ "米瑪": {
+  "type": "person",
+  "name": "米瑪",
+  "name_en": "Mirmah",
+  "testament": "OT",
+  "desc": "沙哈連與賀得的兒子（代上8:10）。"
+ },
+ "亞比突": {
+  "type": "person",
+  "name": "亞比突",
+  "name_en": "Abitub",
+  "testament": "OT",
+  "desc": "沙哈連與戶伸的兒子（代上8:11）。"
+ },
+ "以利巴力": {
+  "type": "person",
+  "name": "以利巴力",
+  "name_en": "Elpaal",
+  "testament": "OT",
+  "desc": "沙哈連與戶伸的兒子（代上8:11-12,18）。"
+ },
+ "米珊": {
+  "type": "person",
+  "name": "米珊",
+  "name_en": "Misham",
+  "testament": "OT",
+  "desc": "以利巴力的兒子（代上8:12）。"
+ },
+ "阿挪": {
+  "type": "place",
+  "name": "阿挪",
+  "name_en": "Ono",
+  "testament": "OT",
+  "desc": "沙麥所建立的城之一（代上8:12）。"
+ },
+ "羅德": {
+  "type": "place",
+  "name": "羅德",
+  "name_en": "Lod",
+  "testament": "OT",
+  "desc": "沙麥所建立的城之一（代上8:12）。"
+ },
+ "沙煞": {
+  "type": "person",
+  "name": "沙煞",
+  "name_en": "Shashak",
+  "testament": "OT",
+  "desc": "比利亞的兒子，便雅憫支派世系之一（代上8:14,25）。"
+ },
+ "耶利末": {
+  "type": "person",
+  "name": "耶利末",
+  "name_en": "Jeremoth",
+  "testament": "OT",
+  "desc": "比利亞的兒子，便雅憫支派世系之一（代上8:14）。"
+ },
+ "西巴第雅": {
+  "type": "person",
+  "name": "西巴第雅",
+  "name_en": "Zebadiah",
+  "testament": "OT",
+  "desc": "比利亞的兒子，便雅憫支派世系之一（代上8:15,17）。"
+ },
+ "亞得": {
+  "type": "person",
+  "name": "亞得",
+  "name_en": "Ader",
+  "testament": "OT",
+  "desc": "比利亞的兒子，便雅憫支派世系之一（代上8:15）。"
+ },
+ "約哈": {
+  "type": "person",
+  "name": "約哈",
+  "name_en": "Jobab",
+  "testament": "OT",
+  "desc": "比利亞的兒子，便雅憫支派世系之一（代上8:16,18）。"
+ },
+ "希西基": {
+  "type": "person",
+  "name": "希西基",
+  "name_en": "Hezeki",
+  "testament": "OT",
+  "desc": "以利巴力的兒子，便雅憫支派世系之一（代上8:17）。"
+ },
+ "伊施米萊": {
+  "type": "person",
+  "name": "伊施米萊",
+  "name_en": "Ishmerai",
+  "testament": "OT",
+  "desc": "以利巴力的兒子，便雅憫支派世系之一（代上8:18）。"
+ },
+ "伊斯利亞": {
+  "type": "person",
+  "name": "伊斯利亞",
+  "name_en": "Izliah",
+  "testament": "OT",
+  "desc": "以利巴力的兒子，便雅憫支派世系之一（代上8:18）。"
+ },
+ "雅金": {
+  "type": "person",
+  "name": "雅金",
+  "name_en": "Jakim",
+  "testament": "OT",
+  "desc": "示每的兒子，便雅憫支派世系之一（代上8:19）。"
+ },
+ "細基利": {
+  "type": "person",
+  "name": "細基利",
+  "name_en": "Zichri",
+  "testament": "OT",
+  "desc": "示每的兒子，便雅憫支派世系之一（代上8:19,23,27）。"
+ },
+ "撒底": {
+  "type": "person",
+  "name": "撒底",
+  "name_en": "Zabdi",
+  "testament": "OT",
+  "desc": "示每的兒子，便雅憫支派世系之一（代上8:19）。"
+ },
+ "以利乃": {
+  "type": "person",
+  "name": "以利乃",
+  "name_en": "Elienai",
+  "testament": "OT",
+  "desc": "示每的兒子，便雅憫支派世系之一（代上8:20）。"
+ },
+ "洗勒太": {
+  "type": "person",
+  "name": "洗勒太",
+  "name_en": "Zillethai",
+  "testament": "OT",
+  "desc": "示每的兒子，便雅憫支派世系之一（代上8:20）。"
+ },
+ "比拉雅": {
+  "type": "person",
+  "name": "比拉雅",
+  "name_en": "Pelaiah",
+  "testament": "OT",
+  "desc": "示每的兒子，便雅憫支派世系之一（代上8:21）。"
+ },
+ "申拉": {
+  "type": "person",
+  "name": "申拉",
+  "name_en": "Shimrath",
+  "testament": "OT",
+  "desc": "示每的兒子，便雅憫支派世系之一（代上8:21）。"
+ },
+ "伊施班": {
+  "type": "person",
+  "name": "伊施班",
+  "name_en": "Ishpan",
+  "testament": "OT",
+  "desc": "沙煞的兒子，便雅憫支派世系之一（代上8:22）。"
+ },
+ "哈難": {
+  "type": "person",
+  "name": "哈難",
+  "name_en": "Hanan",
+  "testament": "OT",
+  "desc": "沙煞的兒子（代上8:23），與亞悉的兒子同名（代上8:38）。"
+ },
+ "亞伯頓": {
+  "type": "person",
+  "name": "亞伯頓",
+  "name_en": "Abdon",
+  "testament": "OT",
+  "desc": "沙煞的兒子（代上8:23），與耶利之子亞伯頓同名（代上8:30）。"
+ },
+ "安陀提雅": {
+  "type": "person",
+  "name": "安陀提雅",
+  "name_en": "Anthothijah",
+  "testament": "OT",
+  "desc": "沙煞的兒子，便雅憫支派世系之一（代上8:24）。"
+ },
+ "伊弗底雅": {
+  "type": "person",
+  "name": "伊弗底雅",
+  "name_en": "Iphdeiah",
+  "testament": "OT",
+  "desc": "沙煞的兒子，便雅憫支派世系之一（代上8:25）。"
+ },
+ "珊示萊": {
+  "type": "person",
+  "name": "珊示萊",
+  "name_en": "Shamsherai",
+  "testament": "OT",
+  "desc": "耶羅罕的兒子，便雅憫支派世系之一（代上8:26）。"
+ },
+ "示哈利": {
+  "type": "person",
+  "name": "示哈利",
+  "name_en": "Shehariah",
+  "testament": "OT",
+  "desc": "耶羅罕的兒子，便雅憫支派世系之一（代上8:26）。"
+ },
+ "雅利西": {
+  "type": "person",
+  "name": "雅利西",
+  "name_en": "Jaresiah",
+  "testament": "OT",
+  "desc": "耶羅罕的兒子，便雅憫支派世系之一（代上8:27）。"
+ },
+ "基多": {
+  "type": "person",
+  "name": "基多",
+  "name_en": "Gedor",
+  "testament": "OT",
+  "desc": "耶利與瑪迦的兒子，基遍支派世系之一（代上8:31）。"
+ },
+ "米基羅": {
+  "type": "person",
+  "name": "米基羅",
+  "name_en": "Mikloth",
+  "testament": "OT",
+  "desc": "耶利與瑪迦的兒子，示米暗的父親（代上8:31-32）。"
+ },
+ "示米暗": {
+  "type": "person",
+  "name": "示米暗",
+  "name_en": "Shimeam",
+  "testament": "OT",
+  "desc": "米基羅的兒子（代上8:32）。"
+ },
+ "伊施巴力": {
+  "type": "person",
+  "name": "伊施巴力",
+  "name_en": "Eshbaal",
+  "testament": "OT",
+  "desc": "掃羅的兒子，即伊施波設（代上8:33，撒下2:8作「伊施波設」）。"
+ },
+ "米力巴力": {
+  "type": "person",
+  "name": "米力巴力",
+  "name_en": "Merib-baal",
+  "testament": "OT",
+  "desc": "約拿單的兒子，即米非波設（代上8:34，撒下4:4作「米非波設」）。"
+ },
+ "毗敦": {
+  "type": "person",
+  "name": "毗敦",
+  "name_en": "Pithon",
+  "testament": "OT",
+  "desc": "米力巴力（米非波設）的兒子（代上8:35）。"
+ },
+ "米勒": {
+  "type": "person",
+  "name": "米勒",
+  "name_en": "Melech",
+  "testament": "OT",
+  "desc": "米力巴力（米非波設）的兒子（代上8:35）。"
+ },
+ "他利亞": {
+  "type": "person",
+  "name": "他利亞",
+  "name_en": "Tarea/Tahrea",
+  "testament": "OT",
+  "desc": "米力巴力（米非波設）的兒子（代上8:35）。"
+ },
+ "耶何阿達": {
+  "type": "person",
+  "name": "耶何阿達",
+  "name_en": "Jehoaddah",
+  "testament": "OT",
+  "desc": "亞哈斯的兒子，掃羅家系世系之一（代上8:36）。"
+ },
+ "亞斯瑪威": {
+  "type": "person",
+  "name": "亞斯瑪威",
+  "name_en": "Azmaveth",
+  "testament": "OT",
+  "desc": "耶何阿達的兒子，掃羅家系世系之一（代上8:36）。"
+ },
+ "比尼亞": {
+  "type": "person",
+  "name": "比尼亞",
+  "name_en": "Binea",
+  "testament": "OT",
+  "desc": "摩撒的兒子，掃羅家系世系之一（代上8:37）。"
+ },
+ "亞悉": {
+  "type": "person",
+  "name": "亞悉",
+  "name_en": "Azel",
+  "testament": "OT",
+  "desc": "以利亞薩的兒子，掃羅家系後裔，有六個兒子（代上8:37-38）。"
+ },
+ "波基路": {
+  "type": "person",
+  "name": "波基路",
+  "name_en": "Bocheru",
+  "testament": "OT",
+  "desc": "亞悉的兒子（代上8:38）。"
+ },
+ "示亞利雅": {
+  "type": "person",
+  "name": "示亞利雅",
+  "name_en": "Sheariah",
+  "testament": "OT",
+  "desc": "亞悉的兒子（代上8:38）。"
+ },
+ "俄巴底雅": {
+  "type": "person",
+  "name": "俄巴底雅",
+  "name_en": "Obadiah",
+  "testament": "OT",
+  "desc": "亞悉的兒子，掃羅家系後裔（代上8:38），與同名先知俄巴底亞非同一人。"
+ },
+ "以設": {
+  "type": "person",
+  "name": "以設",
+  "name_en": "Eshek",
+  "testament": "OT",
+  "desc": "亞悉的兄弟，烏蘭的父親（代上8:39）。"
  }
 }
