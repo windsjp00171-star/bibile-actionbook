@@ -121,7 +121,8 @@
    "name": "沙瑪（大衛勇士）",
    "name_en": "Shammah (mighty man)",
    "books": [
-    "撒母耳記下"
+    "撒母耳記下",
+    "歷代志上"
    ],
    "chapters": [
     23,
@@ -7795,6 +7796,20 @@
    "name_en": "Hepher",
    "testament": "OT",
    "desc": "基列的兒子，希弗族的先祖，西羅非哈的父親（民26:32-33）。"
+  },
+  {
+   "type": "person",
+   "name": "希弗",
+   "name_en": "Hepher (mighty man)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    11,
+    11
+   ],
+   "desc": "米基拉人，大衛勇士之一（代上11:36），與西羅非哈之父希弗非同名同義。"
   }
  ],
  "西羅非哈": {
@@ -10714,7 +10729,8 @@
   "name_en": "Carmel (of Judah)",
   "testament": "OT",
   "books": [
-   "撒母耳記上"
+   "撒母耳記上",
+   "歷代志上"
   ],
   "desc": "猶大南方一城，拿八與亞比該的家鄉，掃羅曾在此為自己立記念碑（撒上15:12、25章）。（位於今日以色列）",
   "name": "迦密",
@@ -10987,14 +11003,15 @@
    "name": "巴拿（尼陀法人）",
    "name_en": "Baanah the Netophathite",
    "books": [
-    "撒母耳記下"
+    "撒母耳記下",
+    "歷代志上"
    ],
    "chapters": [
     23,
     23
    ],
    "testament": "OT",
-   "desc": "尼陀法人，大衛三十勇士之一希立的父親，與謀殺伊施波設的巴拿同名而不同人（撒下23:29）。"
+   "desc": "尼陀法人，大衛三十勇士之一希立的父親，與謀殺伊施波設的巴拿同名而不同人（撒下23:29）。（代上11:30同一世系）"
   },
   {
    "type": "person",
@@ -11547,9 +11564,10 @@
   "name_en": "Sibbecai",
   "testament": "OT",
   "books": [
-   "撒母耳記下"
+   "撒母耳記下",
+   "歷代志上"
   ],
-  "desc": "戶沙人，大衛的勇士，殺了非利士偉人的一個兒子撒弗（撒下21:18）。",
+  "desc": "戶沙人，大衛的勇士，殺了非利士偉人的一個兒子撒弗（撒下21:18）。（代上11:29、20:4同一世系）",
   "name": "西比該"
  },
  "撒弗": {
@@ -11653,7 +11671,8 @@
   "name_en": "Benaiah",
   "testament": "OT",
   "books": [
-   "撒母耳記下"
+   "撒母耳記下",
+   "歷代志上"
   ],
   "desc": "耶何耶大的兒子，甲薛勇士，統轄大衛的基利提人和比利提人親兵，曾徒手奪埃及勇士的槍將他殺死、下坑殺獅子，後受立為護衛長（撒下8:18、23:20-23）；23:30另有一位「比拉頓人比拿雅」同列三十勇士名錄，是否同一人經文未明。",
   "name": "比拿雅"
@@ -11762,9 +11781,10 @@
   "name_en": "Maharai",
   "testament": "OT",
   "books": [
-   "撒母耳記下"
+   "撒母耳記下",
+   "歷代志上"
   ],
-  "desc": "尼陀法人，大衛三十勇士之一（撒下23:28）。",
+  "desc": "尼陀法人，大衛三十勇士之一（撒下23:28）。（代上11:30同一世系）",
   "name": "瑪哈萊"
  },
  "希立": {
@@ -11772,9 +11792,10 @@
   "name_en": "Heleb/Heled",
   "testament": "OT",
   "books": [
-   "撒母耳記下"
+   "撒母耳記下",
+   "歷代志上"
   ],
-  "desc": "尼陀法人巴拿的兒子，大衛三十勇士之一（撒下23:29）。",
+  "desc": "尼陀法人巴拿的兒子，大衛三十勇士之一（撒下23:29）。（代上11:30同一世系）",
   "name": "希立"
  },
  "希太": {
@@ -11802,9 +11823,10 @@
   "name_en": "Azmaveth",
   "testament": "OT",
   "books": [
-   "撒母耳記下"
+   "撒母耳記下",
+   "歷代志上"
   ],
-  "desc": "巴魯米人，大衛三十勇士之一（撒下23:31）。",
+  "desc": "巴魯米人，大衛三十勇士之一（撒下23:31）。（代上11:33同一世系）",
   "name": "押斯瑪弗"
  },
  "以利雅哈巴": {
@@ -11812,9 +11834,10 @@
   "name_en": "Eliahba",
   "testament": "OT",
   "books": [
-   "撒母耳記下"
+   "撒母耳記下",
+   "歷代志上"
   ],
-  "desc": "沙本人，大衛三十勇士之一（撒下23:32）。",
+  "desc": "沙本人，大衛三十勇士之一（撒下23:32）。（代上11:33同一世系）",
   "name": "以利雅哈巴"
  },
  "亞希暗": {
@@ -11822,9 +11845,10 @@
   "name_en": "Ahiam",
   "testament": "OT",
   "books": [
-   "撒母耳記下"
+   "撒母耳記下",
+   "歷代志上"
   ],
-  "desc": "哈拉人沙拉的兒子，大衛三十勇士之一（撒下23:33）。",
+  "desc": "哈拉人沙拉（代上11:35作「沙甲」）的兒子，大衛三十勇士之一（撒下23:33、代上11:35）。",
   "name": "亞希暗"
  },
  "以連": {
@@ -11894,9 +11918,10 @@
   "name_en": "Zelek",
   "testament": "OT",
   "books": [
-   "撒母耳記下"
+   "撒母耳記下",
+   "歷代志上"
   ],
-  "desc": "亞捫人，大衛三十勇士之一（撒下23:37）。",
+  "desc": "亞捫人，大衛三十勇士之一（撒下23:37、代上11:39同一人）。",
   "name": "洗勒"
  },
  "拿哈萊": {
@@ -11904,9 +11929,10 @@
   "name_en": "Naharai",
   "testament": "OT",
   "books": [
-   "撒母耳記下"
+   "撒母耳記下",
+   "歷代志上"
   ],
-  "desc": "比錄人，洗魯雅的兒子約押的拿兵器者，大衛三十勇士之一（撒下23:37）。",
+  "desc": "比錄人，洗魯雅的兒子約押的拿兵器者，大衛三十勇士之一（撒下23:37）。（代上11:39同一世系）",
   "name": "拿哈萊"
  },
  "迦立": {
@@ -11914,9 +11940,10 @@
   "name_en": "Gareb",
   "testament": "OT",
   "books": [
-   "撒母耳記下"
+   "撒母耳記下",
+   "歷代志上"
   ],
-  "desc": "以帖人，大衛三十勇士之一（撒下23:38）。",
+  "desc": "以帖人，大衛三十勇士之一（撒下23:38）。（代上11:40同一世系）",
   "name": "迦立"
  },
  "朔罷": {
@@ -17677,6 +17704,20 @@
     9
    ],
    "desc": "基遍的父親，掃羅家系先祖之一，妻子名叫瑪迦（代上8:29，9:35重述同一世系）。"
+  },
+  {
+   "type": "person",
+   "name": "耶利",
+   "name_en": "Jeiel (mighty man)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    11,
+    11
+   ],
+   "desc": "亞羅珥人何坦的兒子，大衛勇士之一（代上11:44），與流便支派族長、基遍之父耶利皆非同名同義。"
   }
  ],
  "撒迦利雅": {
@@ -18834,13 +18875,29 @@
   "testament": "OT",
   "desc": "比利亞的兒子，便雅憫支派世系之一（代上8:15）。"
  },
- "約哈": {
-  "type": "person",
-  "name": "約哈",
-  "name_en": "Jobab",
-  "testament": "OT",
-  "desc": "比利亞的兒子，便雅憫支派世系之一（代上8:16,18）。"
- },
+ "約哈": [
+  {
+   "type": "person",
+   "name": "約哈",
+   "name_en": "Jobab",
+   "testament": "OT",
+   "desc": "比利亞的兒子，便雅憫支派世系之一（代上8:16,18）。"
+  },
+  {
+   "type": "person",
+   "name": "約哈",
+   "name_en": "Joha (Tizite)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    11,
+    11
+   ],
+   "desc": "提洗人申利的兒子，大衛勇士耶疊的兄弟（代上11:45），與便雅憫支派比利亞之子約哈非同名同義。"
+  }
+ ],
  "希西基": {
   "type": "person",
   "name": "希西基",
@@ -19327,5 +19384,362 @@
   "name_en": "Abdeel",
   "testament": "OT",
   "desc": "示利米雅的父親，約雅敬王的官員世系之一（耶36:26）。"
+ },
+ "大衛城": {
+  "type": "place",
+  "name": "大衛城",
+  "name_en": "City of David",
+  "testament": "OT",
+  "desc": "大衛攻取耶布斯人的錫安保障後的稱號，即耶路撒冷（代上11:5,7）。"
+ },
+ "米羅": {
+  "type": "place",
+  "name": "米羅",
+  "name_en": "Millo",
+  "testament": "OT",
+  "desc": "耶路撒冷城內的一處建築（可能是護城牆或高台），大衛從此起四圍建築城牆（代上11:8）。"
+ },
+ "巴斯達閔": {
+  "type": "place",
+  "name": "巴斯達閔",
+  "name_en": "Pas-dammim",
+  "testament": "OT",
+  "desc": "非利士人聚集打仗之地，以利亞撒在此擊殺非利士人（代上11:13，撒上17:1作「以弗大憫」）。"
+ },
+ "哈律人": {
+  "type": "place",
+  "name": "哈律人",
+  "name_en": "Hararite",
+  "testament": "OT",
+  "desc": "大衛勇士沙瑪的籍貫稱號（代上11:27）。"
+ },
+ "比倫人": {
+  "type": "place",
+  "name": "比倫人",
+  "name_en": "Pelonite",
+  "testament": "OT",
+  "desc": "大衛勇士希利斯、亞希雅的籍貫稱號（代上11:27,36）。"
+ },
+ "提哥亞人": {
+  "type": "place",
+  "name": "提哥亞人",
+  "name_en": "Tekoite",
+  "testament": "OT",
+  "desc": "大衛勇士以拉的籍貫稱號（代上11:28）。"
+ },
+ "益吉": {
+  "type": "person",
+  "name": "益吉",
+  "name_en": "Ikkesh",
+  "testament": "OT",
+  "desc": "提哥亞人，大衛勇士以拉的父親（代上11:28）。"
+ },
+ "亞拿突人": {
+  "type": "place",
+  "name": "亞拿突人",
+  "name_en": "Anathothite",
+  "testament": "OT",
+  "desc": "大衛勇士亞比以謝的籍貫稱號（代上11:28）。"
+ },
+ "戶沙人": {
+  "type": "place",
+  "name": "戶沙人",
+  "name_en": "Hushathite",
+  "testament": "OT",
+  "desc": "大衛勇士西比該的籍貫稱號（代上11:29）。"
+ },
+ "以來": {
+  "type": "person",
+  "name": "以來",
+  "name_en": "Ilai",
+  "testament": "OT",
+  "desc": "亞合人，大衛勇士之一（代上11:29，撒下23:28作「撒們」）。"
+ },
+ "便雅憫族": {
+  "type": "place",
+  "name": "便雅憫族",
+  "name_en": "Benjamite",
+  "testament": "OT",
+  "desc": "大衛勇士以太所屬的支派（代上11:31）。"
+ },
+ "基比亞人": {
+  "type": "place",
+  "name": "基比亞人",
+  "name_en": "Gibeathite",
+  "testament": "OT",
+  "desc": "大衛勇士以太的籍貫稱號（代上11:31）。"
+ },
+ "利拜": {
+  "type": "person",
+  "name": "利拜",
+  "name_en": "Ribai",
+  "testament": "OT",
+  "desc": "基比亞人，大衛勇士以太的父親（代上11:31）。"
+ },
+ "比拉頓人": {
+  "type": "place",
+  "name": "比拉頓人",
+  "name_en": "Pirathonite",
+  "testament": "OT",
+  "desc": "大衛勇士比拿雅的籍貫稱號（代上11:31）。"
+ },
+ "迦實溪人": {
+  "type": "place",
+  "name": "迦實溪人",
+  "name_en": "from the brooks of Gaash",
+  "testament": "OT",
+  "desc": "大衛勇士戶萊的籍貫稱號（代上11:32）。"
+ },
+ "戶萊": {
+  "type": "person",
+  "name": "戶萊",
+  "name_en": "Hurai",
+  "testament": "OT",
+  "desc": "迦實溪人，大衛勇士之一（代上11:32）。"
+ },
+ "亞拉巴人": {
+  "type": "place",
+  "name": "亞拉巴人",
+  "name_en": "Arbathite",
+  "testament": "OT",
+  "desc": "大衛勇士亞比的籍貫稱號（代上11:32）。"
+ },
+ "亞比": {
+  "type": "person",
+  "name": "亞比",
+  "name_en": "Abiel",
+  "testament": "OT",
+  "desc": "亞拉巴人，大衛勇士之一（代上11:32）。"
+ },
+ "巴路米人": {
+  "type": "place",
+  "name": "巴路米人",
+  "name_en": "Baharumite",
+  "testament": "OT",
+  "desc": "大衛勇士押斯瑪弗的籍貫稱號（代上11:33）。"
+ },
+ "沙本人": {
+  "type": "place",
+  "name": "沙本人",
+  "name_en": "Shaalbonite",
+  "testament": "OT",
+  "desc": "大衛勇士以利雅哈巴的籍貫稱號（代上11:33）。"
+ },
+ "基孫人": {
+  "type": "place",
+  "name": "基孫人",
+  "name_en": "Gizonite",
+  "testament": "OT",
+  "desc": "大衛勇士哈深眾子的籍貫稱號（代上11:34）。"
+ },
+ "哈深": {
+  "type": "person",
+  "name": "哈深",
+  "name_en": "Hashem",
+  "testament": "OT",
+  "desc": "基孫人，其眾子皆為大衛勇士（代上11:34）。"
+ },
+ "哈拉人": {
+  "type": "place",
+  "name": "哈拉人",
+  "name_en": "Hararite",
+  "testament": "OT",
+  "desc": "大衛勇士約拿單、亞希暗的籍貫稱號（代上11:34-35）。"
+ },
+ "沙基": {
+  "type": "person",
+  "name": "沙基",
+  "name_en": "Sacar",
+  "testament": "OT",
+  "desc": "哈拉人，大衛勇士約拿單的父親（代上11:34）。"
+ },
+ "以利法勒": {
+  "type": "person",
+  "name": "以利法勒",
+  "name_en": "Eliphal",
+  "testament": "OT",
+  "desc": "吾珥的兒子，大衛勇士之一（代上11:35）。"
+ },
+ "米基拉人": {
+  "type": "place",
+  "name": "米基拉人",
+  "name_en": "Mecherathite",
+  "testament": "OT",
+  "desc": "大衛勇士希弗的籍貫稱號（代上11:36）。"
+ },
+ "迦密人": {
+  "type": "place",
+  "name": "迦密人",
+  "name_en": "Carmelite",
+  "testament": "OT",
+  "desc": "大衛勇士希斯羅的籍貫稱號（代上11:37）。"
+ },
+ "希斯羅": {
+  "type": "person",
+  "name": "希斯羅",
+  "name_en": "Hezro",
+  "testament": "OT",
+  "desc": "迦密人，大衛勇士之一（代上11:37）。"
+ },
+ "伊斯拜": {
+  "type": "person",
+  "name": "伊斯拜",
+  "name_en": "Ezbai",
+  "testament": "OT",
+  "desc": "拿萊的父親，大衛勇士之一（代上11:37）。"
+ },
+ "拿萊": {
+  "type": "person",
+  "name": "拿萊",
+  "name_en": "Naarai",
+  "testament": "OT",
+  "desc": "伊斯拜的兒子，大衛勇士之一（代上11:37）。"
+ },
+ "哈基利": {
+  "type": "person",
+  "name": "哈基利",
+  "name_en": "Hagri",
+  "testament": "OT",
+  "desc": "彌伯哈的父親，大衛勇士之一（代上11:38）。"
+ },
+ "彌伯哈": {
+  "type": "person",
+  "name": "彌伯哈",
+  "name_en": "Mibhar",
+  "testament": "OT",
+  "desc": "哈基利的兒子，大衛勇士之一（代上11:38）。"
+ },
+ "比錄人": {
+  "type": "place",
+  "name": "比錄人",
+  "name_en": "Berothite",
+  "testament": "OT",
+  "desc": "大衛勇士拿哈萊的籍貫稱號（代上11:39）。"
+ },
+ "亞萊": {
+  "type": "person",
+  "name": "亞萊",
+  "name_en": "Ahlai",
+  "testament": "OT",
+  "desc": "撒拔的父親，大衛勇士之一（代上11:41），與示珊之女婿系統中的亞萊為異寫同名。"
+ },
+ "示撒": {
+  "type": "person",
+  "name": "示撒",
+  "name_en": "Shiza",
+  "testament": "OT",
+  "desc": "流便人，大衛勇士亞第拿的父親（代上11:42）。"
+ },
+ "亞第拿": {
+  "type": "person",
+  "name": "亞第拿",
+  "name_en": "Adina",
+  "testament": "OT",
+  "desc": "流便人示撒的兒子，大衛勇士、流便支派的一個族長（代上11:42）。"
+ },
+ "彌特尼人": {
+  "type": "place",
+  "name": "彌特尼人",
+  "name_en": "Mithnite",
+  "testament": "OT",
+  "desc": "大衛勇士約沙法的籍貫稱號（代上11:43）。"
+ },
+ "亞施他拉人": {
+  "type": "place",
+  "name": "亞施他拉人",
+  "name_en": "Ashterathite",
+  "testament": "OT",
+  "desc": "大衛勇士烏西亞的籍貫稱號（代上11:44）。"
+ },
+ "烏西亞": {
+  "type": "person",
+  "name": "烏西亞",
+  "name_en": "Uzzia",
+  "testament": "OT",
+  "desc": "亞施他拉人，大衛勇士之一（代上11:44）。"
+ },
+ "亞羅珥人": {
+  "type": "place",
+  "name": "亞羅珥人",
+  "name_en": "Aroerite",
+  "testament": "OT",
+  "desc": "大衛勇士沙瑪、耶利的籍貫稱號（代上11:44）。"
+ },
+ "提洗人": {
+  "type": "place",
+  "name": "提洗人",
+  "name_en": "Tizite",
+  "testament": "OT",
+  "desc": "大衛勇士耶疊的籍貫稱號（代上11:45）。"
+ },
+ "瑪哈未人": {
+  "type": "place",
+  "name": "瑪哈未人",
+  "name_en": "Mahavite",
+  "testament": "OT",
+  "desc": "大衛勇士以利業的籍貫稱號（代上11:46）。"
+ },
+ "以利業": {
+  "type": "person",
+  "name": "以利業",
+  "name_en": "Eliel",
+  "testament": "OT",
+  "desc": "瑪哈未人，大衛勇士之一（代上11:46,47）。"
+ },
+ "伊利拿安": {
+  "type": "person",
+  "name": "伊利拿安",
+  "name_en": "Elnaam",
+  "testament": "OT",
+  "desc": "耶利拜、約沙未雅的父親，大衛勇士世系之一（代上11:46）。"
+ },
+ "耶利拜": {
+  "type": "person",
+  "name": "耶利拜",
+  "name_en": "Jeribai",
+  "testament": "OT",
+  "desc": "伊利拿安的兒子，大衛勇士之一（代上11:46）。"
+ },
+ "約沙未雅": {
+  "type": "person",
+  "name": "約沙未雅",
+  "name_en": "Joshaviah",
+  "testament": "OT",
+  "desc": "伊利拿安的兒子，大衛勇士之一（代上11:46）。"
+ },
+ "伊特瑪": {
+  "type": "person",
+  "name": "伊特瑪",
+  "name_en": "Ithmah",
+  "testament": "OT",
+  "desc": "摩押人，大衛勇士之一（代上11:46）。"
+ },
+ "米瑣八人": {
+  "type": "place",
+  "name": "米瑣八人",
+  "name_en": "Mezobaite",
+  "testament": "OT",
+  "desc": "大衛勇士雅西業的籍貫稱號（代上11:47）。"
+ },
+ "雅西業": {
+  "type": "person",
+  "name": "雅西業",
+  "name_en": "Jaasiel",
+  "testament": "OT",
+  "desc": "米瑣八人，大衛勇士之一（代上11:47）。"
+ },
+ "沙甲": {
+  "type": "person",
+  "name": "沙甲",
+  "name_en": "Sacar/Sharar",
+  "testament": "OT",
+  "books": [
+   "歷代志上"
+  ],
+  "chapters": [
+   11,
+   11
+  ],
+  "desc": "哈拉人，大衛勇士亞希暗的父親（代上11:35，撒下23:33作「沙拉」）。"
  }
 }
