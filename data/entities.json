@@ -1697,6 +1697,20 @@
    "name_en": "Issachar (tribe)",
    "testament": "both",
    "desc": "以薩迦支派，定居耶斯列平原一帶肥沃土地，雅各形容他們像「強壯的驢，臥在羊圈之中」，情願服勞役也要享安逸（創49:14-15）。"
+  },
+  {
+   "type": "person",
+   "name": "以薩迦（俄別以東之子）",
+   "name_en": "Issachar (son of Obed-edom)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    26,
+    26
+   ],
+   "desc": "俄別以東的七子，守門利未人之一（代上26:5），與雅各第九子、以薩迦支派非同名同義。"
   }
  ],
  "西布倫": [
@@ -5226,6 +5240,20 @@
     8
    ],
    "desc": "沙煞的兒子，便雅憫支派世系之一（代上8:24），與波斯灣古國以攔非同名同義。"
+  },
+  {
+   "type": "person",
+   "name": "以攔（米施利米雅之子）",
+   "name_en": "Elam (son of Meshelemiah)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    26,
+    26
+   ],
+   "desc": "米施利米雅的五子，可拉族守門利未人之一（代上26:3），與波斯灣古國以攔、沙煞之子以攔皆非同名同義。"
   }
  ],
  "加帕多家": {
@@ -20075,20 +20103,36 @@
   "testament": "OT",
   "desc": "米瑣八人，大衛勇士之一（代上11:47）。"
  },
- "沙甲": {
-  "type": "person",
-  "name": "沙甲",
-  "name_en": "Sacar/Sharar",
-  "testament": "OT",
-  "books": [
-   "歷代志上"
-  ],
-  "chapters": [
-   11,
-   11
-  ],
-  "desc": "哈拉人，大衛勇士亞希暗的父親（代上11:35，撒下23:33作「沙拉」）。"
- },
+ "沙甲": [
+  {
+   "type": "person",
+   "name": "沙甲",
+   "name_en": "Sacar/Sharar",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    11,
+    11
+   ],
+   "desc": "哈拉人，大衛勇士亞希暗的父親（代上11:35，撒下23:33作「沙拉」）。"
+  },
+  {
+   "type": "person",
+   "name": "沙甲（俄別以東之子）",
+   "name_en": "Sacar (son of Obed-edom)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    26,
+    26
+   ],
+   "desc": "俄別以東的四子，守門利未人之一（代上26:4），與大衛勇士亞希暗之父沙甲非同一人。"
+  }
+ ],
  "耶薛": {
   "type": "person",
   "name": "耶薛",
@@ -20700,5 +20744,96 @@
   "name_en": "Izri",
   "testament": "OT",
   "desc": "掣籤分得第四班，依名冊順序對應耶杜頓之子西利（代上25:3），或為同一人異寫（代上25:11）。"
+ },
+ "耶提聶": {
+  "type": "person",
+  "name": "耶提聶",
+  "name_en": "Jathniel",
+  "testament": "OT",
+  "desc": "米施利米雅的四子，可拉族守門利未人之一（代上26:2）。"
+ },
+ "約薩拔": {
+  "type": "person",
+  "name": "約薩拔",
+  "name_en": "Jozabad",
+  "testament": "OT",
+  "desc": "俄別以東的次子，守門利未人之一（代上26:4）。"
+ },
+ "西瑪迦": {
+  "type": "person",
+  "name": "西瑪迦",
+  "name_en": "Shemachiah",
+  "testament": "OT",
+  "desc": "示瑪雅的兒子，俄別以東的孫子，守門利未人壯士之一（代上26:7）。"
+ },
+ "俄得尼": {
+  "type": "person",
+  "name": "俄得尼",
+  "name_en": "Othni",
+  "testament": "OT",
+  "desc": "示瑪雅的兒子，俄別以東的孫子，守門利未人壯士之一（代上26:7）。"
+ },
+ "利法益": {
+  "type": "person",
+  "name": "利法益",
+  "name_en": "Rephael",
+  "testament": "OT",
+  "desc": "示瑪雅的兒子，俄別以東的孫子，守門利未人壯士之一（代上26:7）。"
+ },
+ "毗烏利太": {
+  "type": "person",
+  "name": "毗烏利太",
+  "name_en": "Peullethai",
+  "testament": "OT",
+  "desc": "俄別以東的八子，守門利未人之一（代上26:5）。"
+ },
+ "底巴利雅": {
+  "type": "person",
+  "name": "底巴利雅",
+  "name_en": "Tebaliah",
+  "testament": "OT",
+  "desc": "何薩的四子，米拉利族守門利未人之一（代上26:11）。"
+ },
+ "示利米雅": {
+  "type": "person",
+  "name": "示利米雅",
+  "name_en": "Shelemiah",
+  "testament": "OT",
+  "desc": "掣籤守東門的利未人，即米施利米雅的簡稱或同一人（代上26:1,14）。"
+ },
+ "書聘": {
+  "type": "person",
+  "name": "書聘",
+  "name_en": "Shuppim",
+  "testament": "OT",
+  "desc": "與何薩一同守西門的利未人（代上26:16）。"
+ },
+ "沙利基門": {
+  "type": "place",
+  "name": "沙利基門",
+  "name_en": "Shallecheth gate",
+  "testament": "OT",
+  "desc": "聖殿西門的名稱，靠近書聘與何薩守衛的通道（代上26:16）。"
+ },
+ "耶希伊利": {
+  "type": "person",
+  "name": "耶希伊利",
+  "name_en": "Jehieli",
+  "testament": "OT",
+  "desc": "革順族拉但的子孫，作族長，掌管聖殿府庫（代上26:21-22）。"
+ },
+ "西坦": {
+  "type": "person",
+  "name": "西坦",
+  "name_en": "Zetham",
+  "testament": "OT",
+  "desc": "耶希伊利的兒子，掌管耶和華殿府庫的利未人之一（代上26:22）。"
+ },
+ "烏泄": {
+  "type": "person",
+  "name": "烏泄",
+  "name_en": "Uzziel",
+  "testament": "OT",
+  "desc": "哥轄四大宗族之一，即代上23:12「烏薛」，本節異寫（代上26:23）。"
  }
 }
