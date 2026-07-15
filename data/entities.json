@@ -3418,6 +3418,20 @@
     "士師記"
    ],
    "desc": "亞比以謝族人，士師基甸的父親。眾人因基甸拆毀巴力的壇要治死基甸時，約阿施出面為兒子辯護：「巴力若果是神，讓他為自己爭論罷」（士6:11、25-32）。"
+  },
+  {
+   "type": "person",
+   "name": "約阿施",
+   "name_en": "Joash (son of Becher)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    7,
+    7
+   ],
+   "desc": "便雅憫支派比結的兒子（代上7:8），與猶大王、以色列王、基甸父親等同名者皆非同一人。"
   }
  ],
  "巴比倫河": {
@@ -12437,6 +12451,20 @@
    ],
    "testament": "OT",
    "desc": "哈珥哈斯的孫子、特瓦的兒子，掌管禮服，女先知戶勒大之夫（王下22:14）。"
+  },
+  {
+   "type": "person",
+   "name": "沙龍",
+   "name_en": "Shallum (son of Bilhah's line)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    7,
+    7
+   ],
+   "desc": "拿弗他利的兒子（代上7:13），與同名的以色列王沙龍等人非同一人。"
   }
  ],
  "哈列的樹林": {
@@ -17924,5 +17952,453 @@
   "name_en": "Jahzah",
   "testament": "OT",
   "desc": "米拉利族在流便支派地中所得的城邑之一（代上6:78）。"
+ },
+ "耶勒": {
+  "type": "person",
+  "name": "耶勒",
+  "name_en": "Jeriel",
+  "testament": "OT",
+  "desc": "陀拉的兒子，以薩迦支派族長之一（代上7:2）。"
+ },
+ "雅買": {
+  "type": "person",
+  "name": "雅買",
+  "name_en": "Jahmai",
+  "testament": "OT",
+  "desc": "陀拉的兒子，以薩迦支派族長之一（代上7:2）。"
+ },
+ "易伯散": {
+  "type": "person",
+  "name": "易伯散",
+  "name_en": "Ibsam",
+  "testament": "OT",
+  "desc": "陀拉的兒子，以薩迦支派族長之一（代上7:2）。"
+ },
+ "伊斯拉希": {
+  "type": "person",
+  "name": "伊斯拉希",
+  "name_en": "Izrahiah",
+  "testament": "OT",
+  "desc": "烏西的兒子，以薩迦支派世系之一（代上7:3）。"
+ },
+ "伊示雅": {
+  "type": "person",
+  "name": "伊示雅",
+  "name_en": "Isshiah",
+  "testament": "OT",
+  "desc": "伊斯拉希的兒子，以薩迦支派族長之一（代上7:3）。"
+ },
+ "耶疊": {
+  "type": "person",
+  "name": "耶疊",
+  "name_en": "Jediael",
+  "testament": "OT",
+  "desc": "便雅憫的兒子（代上7:6,10-11）。"
+ },
+ "以斯本": {
+  "type": "person",
+  "name": "以斯本",
+  "name_en": "Ezbon",
+  "testament": "OT",
+  "desc": "比拉的兒子，便雅憫支派族長之一（代上7:7）。"
+ },
+ "耶利摩": {
+  "type": "person",
+  "name": "耶利摩",
+  "name_en": "Jeremoth",
+  "testament": "OT",
+  "desc": "比拉的兒子，便雅憫支派族長之一（代上7:7），另有比結之子同名（代上7:8）。"
+ },
+ "細米拉": {
+  "type": "person",
+  "name": "細米拉",
+  "name_en": "Zemirah",
+  "testament": "OT",
+  "desc": "比結的兒子，便雅憫支派世系之一（代上7:8）。"
+ },
+ "暗利": {
+  "type": "person",
+  "name": "暗利",
+  "name_en": "Omri",
+  "testament": "OT",
+  "desc": "比結的兒子，便雅憫支派世系之一（代上7:8），與同名的以色列王暗利非同一人。"
+ },
+ "亞拉篾": {
+  "type": "person",
+  "name": "亞拉篾",
+  "name_en": "Alameth",
+  "testament": "OT",
+  "desc": "比結的兒子，便雅憫支派世系之一（代上7:8）。"
+ },
+ "比勒罕": {
+  "type": "person",
+  "name": "比勒罕",
+  "name_en": "Bilhan",
+  "testament": "OT",
+  "desc": "耶疊的兒子，便雅憫支派世系之一（代上7:10）。"
+ },
+ "以忽": {
+  "type": "person",
+  "name": "以忽",
+  "name_en": "Ehud",
+  "testament": "OT",
+  "desc": "比勒罕的兒子，便雅憫支派世系之一（代上7:10），與士師以笏非同一人。"
+ },
+ "基拿拿": {
+  "type": "person",
+  "name": "基拿拿",
+  "name_en": "Chenaanah",
+  "testament": "OT",
+  "desc": "比勒罕的兒子，便雅憫支派世系之一（代上7:10）。"
+ },
+ "細坦": {
+  "type": "person",
+  "name": "細坦",
+  "name_en": "Zethan",
+  "testament": "OT",
+  "desc": "比勒罕的兒子，便雅憫支派世系之一（代上7:10）。"
+ },
+ "亞希沙哈": {
+  "type": "person",
+  "name": "亞希沙哈",
+  "name_en": "Ahishahar",
+  "testament": "OT",
+  "desc": "比勒罕的兒子，便雅憫支派世系之一（代上7:10）。"
+ },
+ "以珥": {
+  "type": "person",
+  "name": "以珥",
+  "name_en": "Ir",
+  "testament": "OT",
+  "desc": "書品與戶品的父親（代上7:12）。"
+ },
+ "書品": {
+  "type": "person",
+  "name": "書品",
+  "name_en": "Shuppim",
+  "testament": "OT",
+  "desc": "以珥的兒子（代上7:12）。"
+ },
+ "戶品": {
+  "type": "person",
+  "name": "戶品",
+  "name_en": "Huppim",
+  "testament": "OT",
+  "desc": "以珥的兒子（代上7:12）。"
+ },
+ "亞黑": {
+  "type": "person",
+  "name": "亞黑",
+  "name_en": "Aher",
+  "testament": "OT",
+  "desc": "戶伸的父親（代上7:12）。"
+ },
+ "戶伸": {
+  "type": "person",
+  "name": "戶伸",
+  "name_en": "Hushim",
+  "testament": "OT",
+  "desc": "亞黑的兒子（代上7:12）。"
+ },
+ "毗利施": {
+  "type": "person",
+  "name": "毗利施",
+  "name_en": "Peresh",
+  "testament": "OT",
+  "desc": "瑪吉與瑪迦的兒子，基列的兄弟（代上7:16）。"
+ },
+ "示利施": {
+  "type": "person",
+  "name": "示利施",
+  "name_en": "Sheresh",
+  "testament": "OT",
+  "desc": "毗利施的兄弟（代上7:16）。"
+ },
+ "烏蘭": {
+  "type": "person",
+  "name": "烏蘭",
+  "name_en": "Ulam",
+  "testament": "OT",
+  "desc": "示利施的兒子（代上7:16-17）。"
+ },
+ "哈摩利吉": {
+  "type": "person",
+  "name": "哈摩利吉",
+  "name_en": "Hammoleketh",
+  "testament": "OT",
+  "desc": "基列的妹子（代上7:18）。"
+ },
+ "伊施荷": {
+  "type": "person",
+  "name": "伊施荷",
+  "name_en": "Ishhod",
+  "testament": "OT",
+  "desc": "哈摩利吉的兒子（代上7:18）。"
+ },
+ "亞現": {
+  "type": "person",
+  "name": "亞現",
+  "name_en": "Ahian",
+  "testament": "OT",
+  "desc": "示米大的兒子，瑪拿西支派世系之一（代上7:19）。"
+ },
+ "利克希": {
+  "type": "person",
+  "name": "利克希",
+  "name_en": "Likhi",
+  "testament": "OT",
+  "desc": "示米大的兒子，瑪拿西支派世系之一（代上7:19）。"
+ },
+ "阿尼安": {
+  "type": "person",
+  "name": "阿尼安",
+  "name_en": "Aniam",
+  "testament": "OT",
+  "desc": "示米大的兒子，瑪拿西支派世系之一（代上7:19）。"
+ },
+ "比列": {
+  "type": "person",
+  "name": "比列",
+  "name_en": "Bered",
+  "testament": "OT",
+  "desc": "書提拉的兒子，以法蓮支派世系之一（代上7:20）。"
+ },
+ "以拉大": {
+  "type": "person",
+  "name": "以拉大",
+  "name_en": "Eladah",
+  "testament": "OT",
+  "desc": "比列的兒子，以法蓮支派世系之一（代上7:20）。"
+ },
+ "以謝": {
+  "type": "person",
+  "name": "以謝",
+  "name_en": "Ezer",
+  "testament": "OT",
+  "desc": "以法蓮的兒子，下去奪取迦特人牲畜時被當地迦特人殺死（代上7:21）。"
+ },
+ "舍伊拉": {
+  "type": "person",
+  "name": "舍伊拉",
+  "name_en": "Sheerah",
+  "testament": "OT",
+  "desc": "以法蓮的女兒，建築上下伯和崙與烏羨舍伊拉（代上7:24）。"
+ },
+ "利悉": {
+  "type": "person",
+  "name": "利悉",
+  "name_en": "Rezeph",
+  "testament": "OT",
+  "desc": "利法的兒子，以法蓮支派世系之一（代上7:25）。"
+ },
+ "拉但": {
+  "type": "person",
+  "name": "拉但",
+  "name_en": "Ladan",
+  "testament": "OT",
+  "desc": "他罕的兒子，以法蓮支派世系之一，約書亞的先祖（代上7:26），與革順支派拉但（代上23:7）非同一人。"
+ },
+ "拿蘭": {
+  "type": "place",
+  "name": "拿蘭",
+  "name_en": "Naaran",
+  "testament": "OT",
+  "desc": "以法蓮人所得地業的一處村莊（代上7:28）。"
+ },
+ "亦施瓦": {
+  "type": "person",
+  "name": "亦施瓦",
+  "name_en": "Ishvah",
+  "testament": "OT",
+  "desc": "亞設的兒子（代上7:30）。"
+ },
+ "希別": {
+  "type": "person",
+  "name": "希別",
+  "name_en": "Heber",
+  "testament": "OT",
+  "desc": "比利亞的兒子，亞設支派世系之一（代上7:31-32）。"
+ },
+ "瑪結": {
+  "type": "person",
+  "name": "瑪結",
+  "name_en": "Malchiel",
+  "testament": "OT",
+  "desc": "比利亞的兒子，比撒威之祖（代上7:31）。"
+ },
+ "比撒威": {
+  "type": "person",
+  "name": "比撒威",
+  "name_en": "Birzavith",
+  "testament": "OT",
+  "desc": "瑪結的兒子（代上7:31）。"
+ },
+ "雅弗勒": {
+  "type": "person",
+  "name": "雅弗勒",
+  "name_en": "Japhlet",
+  "testament": "OT",
+  "desc": "希別的兒子，亞設支派世系之一（代上7:32-33）。"
+ },
+ "朔默": {
+  "type": "person",
+  "name": "朔默",
+  "name_en": "Shomer",
+  "testament": "OT",
+  "desc": "希別的兒子，亞設支派世系之一（代上7:32,34）。"
+ },
+ "何坦": {
+  "type": "person",
+  "name": "何坦",
+  "name_en": "Hotham",
+  "testament": "OT",
+  "desc": "希別的兒子，亞設支派世系之一（代上7:32）。"
+ },
+ "書雅": {
+  "type": "person",
+  "name": "書雅",
+  "name_en": "Shua",
+  "testament": "OT",
+  "desc": "希別的女兒（代上7:32）。"
+ },
+ "巴薩": {
+  "type": "person",
+  "name": "巴薩",
+  "name_en": "Pasach",
+  "testament": "OT",
+  "desc": "雅弗勒的兒子（代上7:33）。"
+ },
+ "賓哈": {
+  "type": "person",
+  "name": "賓哈",
+  "name_en": "Bimhal",
+  "testament": "OT",
+  "desc": "雅弗勒的兒子（代上7:33）。"
+ },
+ "亞施法": {
+  "type": "person",
+  "name": "亞施法",
+  "name_en": "Ashvath",
+  "testament": "OT",
+  "desc": "雅弗勒的兒子（代上7:33）。"
+ },
+ "羅迦": {
+  "type": "person",
+  "name": "羅迦",
+  "name_en": "Rohgah",
+  "testament": "OT",
+  "desc": "朔默的兒子，亞設支派世系之一（代上7:34）。"
+ },
+ "耶戶巴": {
+  "type": "person",
+  "name": "耶戶巴",
+  "name_en": "Jehubbah",
+  "testament": "OT",
+  "desc": "朔默的兒子，亞設支派世系之一（代上7:34）。"
+ },
+ "希連": {
+  "type": "person",
+  "name": "希連",
+  "name_en": "Helem",
+  "testament": "OT",
+  "desc": "朔默的兄弟，亞設支派世系之一（代上7:35）。"
+ },
+ "音那": {
+  "type": "person",
+  "name": "音那",
+  "name_en": "Imnah",
+  "testament": "OT",
+  "desc": "希連的兒子，亞設支派世系之一（代上7:35）。"
+ },
+ "示利斯": {
+  "type": "person",
+  "name": "示利斯",
+  "name_en": "Shilshah",
+  "testament": "OT",
+  "desc": "希連的兒子，亞設支派世系之一（代上7:35）。"
+ },
+ "亞抹": {
+  "type": "person",
+  "name": "亞抹",
+  "name_en": "Amal",
+  "testament": "OT",
+  "desc": "希連的兒子，亞設支派世系之一（代上7:35）。"
+ },
+ "書阿勒": {
+  "type": "person",
+  "name": "書阿勒",
+  "name_en": "Shual",
+  "testament": "OT",
+  "desc": "瑣法的兒子，亞設支派世系之一（代上7:36）。"
+ },
+ "比利": {
+  "type": "person",
+  "name": "比利",
+  "name_en": "Beri",
+  "testament": "OT",
+  "desc": "瑣法的兒子，亞設支派世系之一（代上7:36）。"
+ },
+ "音拉": {
+  "type": "person",
+  "name": "音拉",
+  "name_en": "Imrah",
+  "testament": "OT",
+  "desc": "瑣法的兒子，亞設支派世系之一（代上7:36）。"
+ },
+ "河得": {
+  "type": "person",
+  "name": "河得",
+  "name_en": "Hod",
+  "testament": "OT",
+  "desc": "瑣法的兒子，亞設支派世系之一（代上7:37）。"
+ },
+ "珊瑪": {
+  "type": "person",
+  "name": "珊瑪",
+  "name_en": "Shamma",
+  "testament": "OT",
+  "desc": "瑣法的兒子，亞設支派世系之一（代上7:37）。"
+ },
+ "施沙": {
+  "type": "person",
+  "name": "施沙",
+  "name_en": "Shilshah",
+  "testament": "OT",
+  "desc": "瑣法的兒子，亞設支派世系之一（代上7:37），與希連之子示利斯同名異譯。"
+ },
+ "毗斯巴": {
+  "type": "person",
+  "name": "毗斯巴",
+  "name_en": "Bezpar/Pispa",
+  "testament": "OT",
+  "desc": "益帖的兒子（代上7:38）。"
+ },
+ "烏拉": {
+  "type": "person",
+  "name": "烏拉",
+  "name_en": "Ulla",
+  "testament": "OT",
+  "desc": "亞設支派的一位族長（代上7:39）。"
+ },
+ "漢尼業": {
+  "type": "person",
+  "name": "漢尼業",
+  "name_en": "Haniel",
+  "testament": "OT",
+  "desc": "烏拉的兒子（代上7:39）。"
+ },
+ "利寫": {
+  "type": "person",
+  "name": "利寫",
+  "name_en": "Rezia",
+  "testament": "OT",
+  "desc": "烏拉的兒子（代上7:39）。"
+ },
+ "哈尼弗": {
+  "type": "person",
+  "name": "哈尼弗",
+  "name_en": "Hanniel",
+  "testament": "OT",
+  "desc": "瑣法的兒子，亞設支派世系之一（代上7:36）。"
  }
 }
