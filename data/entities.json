@@ -9395,7 +9395,7 @@
    ],
    "chapters": [
     23,
-    23
+    24
    ],
    "desc": "母示的兒子，米拉利支派世系之一（代上23:23、24:30），與猶大支派城邑以得非同一名稱概念。"
   }
@@ -9814,13 +9814,29 @@
   "desc": "猶大支派平原地帶的城邑之一（書15:37-44）。（位於今日以色列）",
   "name": "瑪利沙"
  },
- "沙密": {
-  "type": "place",
-  "name_en": "Shamir",
-  "testament": "OT",
-  "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。（位於今日以色列）",
-  "name": "沙密"
- },
+ "沙密": [
+  {
+   "type": "place",
+   "name_en": "Shamir",
+   "testament": "OT",
+   "desc": "猶大支派山地或曠野地帶的城邑之一（書15:48-62）。（位於今日以色列）",
+   "name": "沙密"
+  },
+  {
+   "type": "person",
+   "name": "沙密（米迦之子）",
+   "name_en": "Shamir (son of Micah)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    24,
+    24
+   ],
+   "desc": "米迦（烏薛之孫）的兒子，利未支派世系之一（代上24:24），與猶大支派城邑沙密非同一名稱概念。"
+  }
+ ],
  "雅提珥": {
   "type": "place",
   "name_en": "Jattir",
@@ -20439,5 +20455,152 @@
   "name_en": "Jesiah/Isshiah",
   "testament": "OT",
   "desc": "烏薛的次子，利未支派世系之一（代上23:20，24:25作「伊示雅」）。"
+ },
+ "哈琳": {
+  "type": "person",
+  "name": "哈琳",
+  "name_en": "Harim",
+  "testament": "OT",
+  "desc": "大衛所定二十四班祭司之一，第三籤（代上24:8）。"
+ },
+ "梭琳": {
+  "type": "person",
+  "name": "梭琳",
+  "name_en": "Seorim",
+  "testament": "OT",
+  "desc": "大衛所定二十四班祭司之一，第四籤（代上24:8）。"
+ },
+ "米雅民": {
+  "type": "person",
+  "name": "米雅民",
+  "name_en": "Mijamin",
+  "testament": "OT",
+  "desc": "大衛所定二十四班祭司之一，第六籤（代上24:9）。"
+ },
+ "哈歌斯": {
+  "type": "person",
+  "name": "哈歌斯",
+  "name_en": "Hakkoz",
+  "testament": "OT",
+  "desc": "大衛所定二十四班祭司之一，第七籤（代上24:10）。"
+ },
+ "耶書亞": {
+  "type": "person",
+  "name": "耶書亞",
+  "name_en": "Jeshua",
+  "testament": "OT",
+  "desc": "大衛所定二十四班祭司之一，第九籤（代上24:11），與被擄歸回的大祭司約書亞（拉2:2）非同一人。"
+ },
+ "胡巴": {
+  "type": "person",
+  "name": "胡巴",
+  "name_en": "Huppah",
+  "testament": "OT",
+  "desc": "大衛所定二十四班祭司之一，第十三籤（代上24:13）。"
+ },
+ "耶是比押": {
+  "type": "person",
+  "name": "耶是比押",
+  "name_en": "Jeshebeab",
+  "testament": "OT",
+  "desc": "大衛所定二十四班祭司之一，第十四籤（代上24:13）。"
+ },
+ "璧迦": {
+  "type": "person",
+  "name": "璧迦",
+  "name_en": "Bilgah",
+  "testament": "OT",
+  "desc": "大衛所定二十四班祭司之一，第十五籤（代上24:14）。"
+ },
+ "希悉": {
+  "type": "person",
+  "name": "希悉",
+  "name_en": "Hezir",
+  "testament": "OT",
+  "desc": "大衛所定二十四班祭司之一，第十七籤（代上24:15）。"
+ },
+ "哈闢悉": {
+  "type": "person",
+  "name": "哈闢悉",
+  "name_en": "Happizzez",
+  "testament": "OT",
+  "desc": "大衛所定二十四班祭司之一，第十八籤（代上24:15）。"
+ },
+ "毗他希雅": {
+  "type": "person",
+  "name": "毗他希雅",
+  "name_en": "Pethahiah",
+  "testament": "OT",
+  "desc": "大衛所定二十四班祭司之一，第十九籤（代上24:16）。"
+ },
+ "迦末": {
+  "type": "person",
+  "name": "迦末",
+  "name_en": "Gamul",
+  "testament": "OT",
+  "desc": "大衛所定二十四班祭司之一，第二十二籤（代上24:17）。"
+ },
+ "第來雅": {
+  "type": "person",
+  "name": "第來雅",
+  "name_en": "Delaiah",
+  "testament": "OT",
+  "desc": "大衛所定二十四班祭司之一，第二十三籤（代上24:18）。"
+ },
+ "瑪西亞": {
+  "type": "person",
+  "name": "瑪西亞",
+  "name_en": "Maaziah",
+  "testament": "OT",
+  "desc": "大衛所定二十四班祭司之一，第二十四籤（代上24:18）。"
+ },
+ "書巴業": {
+  "type": "person",
+  "name": "書巴業",
+  "name_en": "Shubael",
+  "testament": "OT",
+  "desc": "暗蘭的子孫，利未支派世系之一（代上24:20，23:16作「細布業」，或為同一人異寫）。"
+ },
+ "耶希底亞": {
+  "type": "person",
+  "name": "耶希底亞",
+  "name_en": "Jehdeiah",
+  "testament": "OT",
+  "desc": "書巴業的子孫，利未支派世系之一（代上24:20）。"
+ },
+ "示羅摩": {
+  "type": "person",
+  "name": "示羅摩",
+  "name_en": "Shelomith/Shelomoth",
+  "testament": "OT",
+  "desc": "以斯哈的子孫，利未支派世系之一（代上24:22）。"
+ },
+ "雅西雅": {
+  "type": "person",
+  "name": "雅西雅",
+  "name_en": "Jaaziah",
+  "testament": "OT",
+  "desc": "米拉利的兒子，利未支派世系之一（代上24:26-27），與同名的抹利、母示為兄弟。"
+ },
+ "比挪": {
+  "type": "person",
+  "name": "比挪",
+  "name_en": "Beno",
+  "testament": "OT",
+  "desc": "雅西雅的兒子，米拉利支派世系之一（代上24:26-27）。"
+ },
+ "朔含": {
+  "type": "person",
+  "name": "朔含",
+  "name_en": "Shoham",
+  "testament": "OT",
+  "desc": "米拉利支派世系之一，雅西雅之子比挪的兄弟（代上24:27）。"
+ },
+ "伊比利": {
+  "type": "person",
+  "name": "伊比利",
+  "name_en": "Ibri",
+  "testament": "OT",
+  "desc": "米拉利支派世系之一，雅西雅之子比挪的兄弟（代上24:27）。"
  }
 }
