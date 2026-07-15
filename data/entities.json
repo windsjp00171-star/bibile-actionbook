@@ -1986,7 +1986,17 @@
    "name_en": "Manasseh",
    "testament": "OT",
    "desc": "約瑟的長子，以法蓮的兄長。雅各為他們祝福時交叉雙手，以小子以法蓮為先，預示其後裔更為強盛。",
-   "verses": "創世記48章"
+   "verses": "創世記48章",
+   "books": [
+    "創世記"
+   ]
+  },
+  {
+   "type": "place",
+   "name": "瑪拿西",
+   "name_en": "Manasseh (tribe)",
+   "testament": "both",
+   "desc": "瑪拿西支派，約瑟長子瑪拿西的後裔，唯一分成兩半的支派：半支派在約但河東的巴珊、基列一帶定居（民32章），另一半在約但河西迦南地與以法蓮相鄰。"
   },
   {
    "type": "person",
@@ -2000,14 +2010,26 @@
    "desc": "希西家的兒子，十二歲登基，在位五十五年——猶大歷代諸王在位最長的一位，卻也是最惡的王之一：重建父親拆毀的丘壇、敬拜巴力、使兒子經火獻祭、行邪術，又流許多義人的血（王下21:1-9）。歷代志下33章記載他後來被亞述擄到巴比倫，在苦難中向神自卑悔改，被允准歸回耶路撒冷。"
   }
  ],
- "以法蓮": {
-  "type": "person",
-  "name": "以法蓮",
-  "name_en": "Ephraim",
-  "testament": "OT",
-  "desc": "約瑟的次子，瑪拿西的弟弟。雅各以右手按其頭給予長子祝福，其支派後來成為北國以色列的核心，北國常被稱為「以法蓮」。",
-  "verses": "創世記48章"
- },
+ "以法蓮": [
+  {
+   "type": "person",
+   "name": "以法蓮",
+   "name_en": "Ephraim",
+   "testament": "OT",
+   "desc": "約瑟的次子，瑪拿西的弟弟。雅各以右手按其頭給予長子祝福，其支派後來成為北國以色列的核心，北國常被稱為「以法蓮」。",
+   "verses": "創世記48章",
+   "books": [
+    "創世記"
+   ]
+  },
+  {
+   "type": "place",
+   "name": "以法蓮",
+   "name_en": "Ephraim (tribe)",
+   "testament": "both",
+   "desc": "以法蓮支派，約瑟次子以法蓮的後裔，領地在迦南中部山地，是北國十支派中最強盛的一支，先知書中常以「以法蓮」代稱整個北國以色列。"
+  }
+ ],
  "西奈山": {
   "type": "place",
   "name": "西奈山",
@@ -17337,5 +17359,208 @@
   "name_en": "Meunites",
   "testament": "OT",
   "desc": "被希西家年間西緬人攻擊滅盡的族群之一（代上4:41，也見代下20:1、26:7），或與士師記10:12的馬雲人有關。"
+ },
+ "備拉": {
+  "type": "person",
+  "name": "備拉",
+  "name_en": "Beerah",
+  "testament": "OT",
+  "desc": "巴力的兒子，流便支派的首領，被亞述王提革拉毗尼色擄去（代上5:6）。"
+ },
+ "提革拉毗尼色": {
+  "type": "person",
+  "name": "提革拉毗尼色",
+  "name_en": "Tiglath-pileser",
+  "testament": "OT",
+  "desc": "亞述王，擄走流便支派首領備拉，後又擄走流便人、迦得人、瑪拿西半支派人（代上5:6,26，王下15:29另稱其為「普勒」）。"
+ },
+ "耶利": {
+  "type": "person",
+  "name": "耶利",
+  "name_en": "Jeiel",
+  "testament": "OT",
+  "desc": "流便支派按家譜作族長的人之一（代上5:7）。"
+ },
+ "撒迦利雅": {
+  "type": "person",
+  "name": "撒迦利雅",
+  "name_en": "Zechariah",
+  "testament": "OT",
+  "desc": "流便支派按家譜作族長的人之一（代上5:7），與同名的以色列王撒迦利亞非同一人。"
+ },
+ "夏甲人": {
+  "type": "place",
+  "name": "夏甲人",
+  "name_en": "Hagrites",
+  "testament": "OT",
+  "desc": "流便支派曾與之爭戰的遊牧民族，其牲畜與帳棚後被奪取（代上5:10,19-21）。"
+ },
+ "雅乃": {
+  "type": "person",
+  "name": "雅乃",
+  "name_en": "Janai",
+  "testament": "OT",
+  "desc": "迦得支派住在巴珊的族人之一（代上5:12）。"
+ },
+ "約賴": {
+  "type": "person",
+  "name": "約賴",
+  "name_en": "Jorai",
+  "testament": "OT",
+  "desc": "迦得支派族弟兄之一（代上5:13）。"
+ },
+ "雅干": {
+  "type": "person",
+  "name": "雅干",
+  "name_en": "Jachan",
+  "testament": "OT",
+  "desc": "迦得支派族弟兄之一（代上5:13）。"
+ },
+ "戶利": {
+  "type": "person",
+  "name": "戶利",
+  "name_en": "Huri",
+  "testament": "OT",
+  "desc": "亞比孩的父親，迦得支派世系之一（代上5:14）。"
+ },
+ "耶羅亞": {
+  "type": "person",
+  "name": "耶羅亞",
+  "name_en": "Jaroah",
+  "testament": "OT",
+  "desc": "戶利的父親，迦得支派世系之一（代上5:14）。"
+ },
+ "耶示篩": {
+  "type": "person",
+  "name": "耶示篩",
+  "name_en": "Jeshishai",
+  "testament": "OT",
+  "desc": "米迦勒的父親，迦得支派世系之一（代上5:14）。"
+ },
+ "耶哈多": {
+  "type": "person",
+  "name": "耶哈多",
+  "name_en": "Jahdo",
+  "testament": "OT",
+  "desc": "布斯的兒子，迦得支派世系之一（代上5:14）。"
+ },
+ "布斯": {
+  "type": "person",
+  "name": "布斯",
+  "name_en": "Buz",
+  "testament": "OT",
+  "desc": "耶哈多的父親，迦得支派世系之一（代上5:14）。"
+ },
+ "古尼": {
+  "type": "person",
+  "name": "古尼",
+  "name_en": "Guni",
+  "testament": "OT",
+  "desc": "押比疊的祖父，迦得支派族長世系之一（代上5:15）。"
+ },
+ "押比疊": {
+  "type": "person",
+  "name": "押比疊",
+  "name_en": "Abdiel",
+  "testament": "OT",
+  "desc": "亞希的父親，迦得支派族長世系之一（代上5:15）。"
+ },
+ "亞希": {
+  "type": "person",
+  "name": "亞希",
+  "name_en": "Ahi",
+  "testament": "OT",
+  "desc": "古尼的孫子，押比疊的兒子，迦得支派的一位族長（代上5:15）。"
+ },
+ "沙崙": {
+  "type": "place",
+  "name": "沙崙",
+  "name_en": "Sharon",
+  "testament": "OT",
+  "desc": "迦得支派居住地附近的郊野，與地中海沿岸的沙崙平原同名（代上5:16）。"
+ },
+ "伊突人": {
+  "type": "place",
+  "name": "伊突人",
+  "name_en": "Iturea",
+  "testament": "OT",
+  "desc": "流便人、迦得人、瑪拿西半支派人爭戰的對象之一（代上5:19）。"
+ },
+ "拿非施人": {
+  "type": "place",
+  "name": "拿非施人",
+  "name_en": "Naphish",
+  "testament": "OT",
+  "desc": "流便人、迦得人、瑪拿西半支派人爭戰的對象之一（代上5:19）。"
+ },
+ "挪答人": {
+  "type": "place",
+  "name": "挪答人",
+  "name_en": "Nodab",
+  "testament": "OT",
+  "desc": "流便人、迦得人、瑪拿西半支派人爭戰的對象之一（代上5:19）。"
+ },
+ "黑門山": {
+  "type": "place",
+  "name": "黑門山",
+  "name_en": "Mount Hermon",
+  "testament": "OT",
+  "desc": "巴珊北邊的山，瑪拿西半支派居住範圍延伸至此，亞摩利人稱之為示尼珥（代上5:23、申3:9）。"
+ },
+ "以列": {
+  "type": "person",
+  "name": "以列",
+  "name_en": "Jediael/Iddo",
+  "testament": "OT",
+  "desc": "瑪拿西半支派的一位族長（代上5:24）。"
+ },
+ "亞斯列": {
+  "type": "person",
+  "name": "亞斯列",
+  "name_en": "Azriel",
+  "testament": "OT",
+  "desc": "瑪拿西半支派的一位族長（代上5:24）。"
+ },
+ "何達威雅": {
+  "type": "person",
+  "name": "何達威雅",
+  "name_en": "Hodaviah",
+  "testament": "OT",
+  "desc": "瑪拿西半支派的一位族長（代上5:24）。"
+ },
+ "雅疊": {
+  "type": "person",
+  "name": "雅疊",
+  "name_en": "Jahdiel",
+  "testament": "OT",
+  "desc": "瑪拿西半支派的一位族長（代上5:24）。"
+ },
+ "普勒": {
+  "type": "person",
+  "name": "普勒",
+  "name_en": "Pul",
+  "testament": "OT",
+  "desc": "亞述王，即提革拉毗尼色（王下15:19,29；代上5:26並稱兩名），擄走流便人、迦得人、瑪拿西半支派人。"
+ },
+ "哈臘": {
+  "type": "place",
+  "name": "哈臘",
+  "name_en": "Halah",
+  "testament": "OT",
+  "desc": "流便人、迦得人、瑪拿西半支派人被擄去之地（代上5:26）。"
+ },
+ "哈博": {
+  "type": "place",
+  "name": "哈博",
+  "name_en": "Habor",
+  "testament": "OT",
+  "desc": "流便人、迦得人、瑪拿西半支派人被擄去之地，一條河流（代上5:26）。"
+ },
+ "哈拉": {
+  "type": "place",
+  "name": "哈拉",
+  "name_en": "Hara",
+  "testament": "OT",
+  "desc": "流便人、迦得人、瑪拿西半支派人被擄去之地（代上5:26）。"
  }
 }
