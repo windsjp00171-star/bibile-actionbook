@@ -29,7 +29,10 @@
    "type": "person",
    "name": "掃羅（以東王）",
    "name_en": "Shaul of Edom",
-   "books": ["創世記", "歷代志上"],
+   "books": [
+    "創世記",
+    "歷代志上"
+   ],
    "desc": "大河邊利河伯人，繼桑拉之後作以東王，與以色列第一位君王掃羅非同名同義（創36:37-38、代上1:48-49）。"
   }
  ],
@@ -10083,7 +10086,10 @@
    "name": "拉瑪",
    "name_en": "Raamah",
    "testament": "OT",
-   "books": ["創世記", "歷代志上"],
+   "books": [
+    "創世記",
+    "歷代志上"
+   ],
    "desc": "古實的兒子，示巴和底但的父親，與便雅憫地的城邑拉瑪非同名同義（創10:7、代上1:9）。"
   }
  ],
@@ -11486,7 +11492,10 @@
    "name": "以拉",
    "name_en": "Elah (Edomite chief)",
    "testament": "OT",
-   "books": ["創世記", "歷代志上"],
+   "books": [
+    "創世記",
+    "歷代志上"
+   ],
    "desc": "以東的一位族長（創36:41、代上1:52）。"
   }
  ],
@@ -12015,7 +12024,9 @@
    "type": "person",
    "name_en": "Achbor",
    "testament": "OT",
-   "books": ["列王紀下"],
+   "books": [
+    "列王紀下"
+   ],
    "desc": "米該亞的兒子，約西亞王差往女先知戶勒大處求問律法書內容的官員之一（王下22:12-14）。",
    "name": "亞革波"
   },
@@ -12024,7 +12035,9 @@
    "name": "亞革波",
    "name_en": "Achbor (father of Elnathan)",
    "testament": "OT",
-   "books": ["耶利米書"],
+   "books": [
+    "耶利米書"
+   ],
    "desc": "以利拿單的父親，以利拿單是約雅敬王差往埃及緝拿先知烏利亞、後又勸諫王不要燒毀耶利米書卷的首領之一（耶26:22、36:12）。"
   },
   {
@@ -12032,7 +12045,10 @@
    "name": "亞革波",
    "name_en": "Achbor (father of Baal-hanan)",
    "testament": "OT",
-   "books": ["創世記", "歷代志上"],
+   "books": [
+    "創世記",
+    "歷代志上"
+   ],
    "desc": "以東王巴勒哈南的父親（創36:38、代上1:49）。"
   }
  ],
@@ -15073,13 +15089,32 @@
   "testament": "OT",
   "desc": "基甸追擊米甸王西巴、撒慕拿得勝後，由此坡道返回戰場的路線（士8:13）。"
  },
- "益帖": {
-  "type": "person",
-  "name": "益帖",
-  "name_en": "Jether",
-  "testament": "OT",
-  "desc": "基甸的長子。基甸擒獲米甸王西巴、撒慕拿後，本要益帖動手處死二王以羞辱他們，但益帖因年幼害怕不敢拔刀（士8:20）。"
- },
+ "益帖": [
+  {
+   "type": "person",
+   "name": "益帖",
+   "name_en": "Jether",
+   "testament": "OT",
+   "desc": "基甸的長子。基甸擒獲米甸王西巴、撒慕拿後，本要益帖動手處死二王以羞辱他們，但益帖因年幼害怕不敢拔刀（士8:20）。",
+   "books": [
+    "士師記"
+   ]
+  },
+  {
+   "type": "person",
+   "name": "益帖",
+   "name_en": "Jether/Ithra",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    2,
+    2
+   ],
+   "desc": "歷代志上2章有兩位益帖：以實瑪利人益帖，亞瑪撒的父親（代上2:17，撒下17:25作「以特拉」）；另有雅大的兒子益帖，早死無子（代上2:32）。"
+  }
+ ],
  "米羅達巴拉但": {
   "type": "person",
   "name": "米羅達巴拉但",
@@ -15258,101 +15293,1200 @@
   "testament": "OT",
   "desc": "示羅附近的地標城鎮，士師記末了描述示羅的年節位置時以此為方位參照（士21:19）。"
  },
- "提拉": {"type": "person", "name": "提拉", "name_en": "Tiras", "testament": "OT", "desc": "雅弗的兒子（創10:2、代上1:5），聖經對其後裔再無其他記載。"},
- "亞實基拿": {"type": "person", "name": "亞實基拿", "name_en": "Ashkenaz", "testament": "OT", "desc": "歌篾的兒子，雅弗的孫子（創10:3、代上1:6）。"},
- "低法": {"type": "person", "name": "低法", "name_en": "Diphath", "testament": "OT", "desc": "歌篾的兒子，創世記10:3作「利法」（代上1:6）。"},
- "利法": {"type": "person", "name": "利法", "name_en": "Riphath", "testament": "OT", "desc": "歌篾的兒子，歷代志上1:6作「低法」（創10:3）。"},
- "陀迦瑪": {"type": "person", "name": "陀迦瑪", "name_en": "Togarmah", "testament": "OT", "desc": "歌篾的兒子，雅弗的孫子（創10:3、代上1:6）。"},
- "基提": {"type": "person", "name": "基提", "name_en": "Kittim", "testament": "OT", "desc": "雅完的兒子，雅弗的孫子（創10:4、代上1:7）。"},
- "多單": {"type": "person", "name": "多單", "name_en": "Dodanim", "testament": "OT", "desc": "雅完的兒子，歷代志上1:7註「有作羅單的」（創10:4）。"},
- "羅單": {"type": "person", "name": "羅單", "name_en": "Rodanim", "testament": "OT", "desc": "多單的異寫，雅完的兒子（代上1:7）。"},
- "麥西": {"type": "place", "name": "麥西", "name_en": "Mizraim", "testament": "OT", "desc": "含的兒子，即埃及（創10:6、代上1:8）。"},
- "弗": {"type": "place", "name": "弗", "name_en": "Put", "testament": "OT", "desc": "含的兒子（創10:6、代上1:8）。"},
- "撒弗他": {"type": "person", "name": "撒弗他", "name_en": "Sabtah", "testament": "OT", "desc": "古實的兒子（創10:7、代上1:9）。"},
- "撒弗提迦": {"type": "person", "name": "撒弗提迦", "name_en": "Sabteca", "testament": "OT", "desc": "古實的兒子（創10:7、代上1:9）。"},
- "路低人": {"type": "place", "name": "路低人", "name_en": "Ludim", "testament": "OT", "desc": "麥西（埃及）的後裔支派之一（創10:13、代上1:11）。"},
- "亞拿米人": {"type": "place", "name": "亞拿米人", "name_en": "Anamim", "testament": "OT", "desc": "麥西（埃及）的後裔支派之一（創10:13、代上1:11）。"},
- "利哈比人": {"type": "place", "name": "利哈比人", "name_en": "Lehabim", "testament": "OT", "desc": "麥西（埃及）的後裔支派之一（創10:13、代上1:11）。"},
- "拿弗土希人": {"type": "place", "name": "拿弗土希人", "name_en": "Naphtuhim", "testament": "OT", "desc": "麥西（埃及）的後裔支派之一（創10:13、代上1:11）。"},
- "帕斯魯細人": {"type": "place", "name": "帕斯魯細人", "name_en": "Pathrusim", "testament": "OT", "desc": "麥西（埃及）的後裔支派之一（創10:14、代上1:12）。"},
- "迦斯路希人": {"type": "place", "name": "迦斯路希人", "name_en": "Casluhim", "testament": "OT", "desc": "麥西（埃及）的後裔支派之一，非利士人由此而出（創10:14、代上1:12）。"},
- "赫": {"type": "person", "name": "赫", "name_en": "Heth", "testament": "OT", "desc": "迦南的兒子，赫人（西臺人）的先祖（創10:15、代上1:13）。"},
- "西尼人": {"type": "place", "name": "西尼人", "name_en": "Sinites", "testament": "OT", "desc": "迦南的後裔支派之一（創10:17、代上1:15）。"},
- "亞瓦底人": {"type": "place", "name": "亞瓦底人", "name_en": "Arvadites", "testament": "OT", "desc": "迦南的後裔支派之一（創10:18、代上1:16）。"},
- "洗瑪利人": {"type": "place", "name": "洗瑪利人", "name_en": "Zemarites", "testament": "OT", "desc": "迦南的後裔支派之一（創10:18、代上1:16）。"},
- "哈馬人": {"type": "place", "name": "哈馬人", "name_en": "Hamathites", "testament": "OT", "desc": "迦南的後裔支派之一（創10:18、代上1:16）。"},
- "路德": {"type": "person", "name": "路德", "name_en": "Lud", "testament": "OT", "desc": "閃的兒子（創10:22、代上1:17）。"},
- "烏斯": {"type": "person", "name": "烏斯", "name_en": "Uz", "testament": "OT", "desc": "亞蘭的兒子，閃的孫子（創10:23、代上1:17），與底珊的兒子同名（代上1:42）。"},
- "戶勒": {"type": "person", "name": "戶勒", "name_en": "Hul", "testament": "OT", "desc": "亞蘭的兒子，閃的孫子（創10:23、代上1:17）。"},
- "基帖": {"type": "person", "name": "基帖", "name_en": "Gether", "testament": "OT", "desc": "亞蘭的兒子，閃的孫子（創10:23、代上1:17）。"},
- "瑪施": {"type": "person", "name": "瑪施", "name_en": "Mash", "testament": "OT", "desc": "亞蘭的兒子，歷代志上1:17作「米設」（創10:23）。"},
- "約坍": {"type": "person", "name": "約坍", "name_en": "Joktan", "testament": "OT", "desc": "希伯的兒子，法勒的兄弟（創10:25、代上1:19）。"},
- "亞摩答": {"type": "person", "name": "亞摩答", "name_en": "Almodad", "testament": "OT", "desc": "約坍的兒子（創10:26、代上1:20）。"},
- "沙列": {"type": "person", "name": "沙列", "name_en": "Sheleph", "testament": "OT", "desc": "約坍的兒子（創10:26、代上1:20）。"},
- "哈薩瑪非": {"type": "person", "name": "哈薩瑪非", "name_en": "Hazarmaveth", "testament": "OT", "desc": "約坍的兒子（創10:26、代上1:20）。"},
- "耶拉": {"type": "person", "name": "耶拉", "name_en": "Jerah", "testament": "OT", "desc": "約坍的兒子（創10:26、代上1:20）。"},
- "哈多蘭": {"type": "person", "name": "哈多蘭", "name_en": "Hadoram", "testament": "OT", "desc": "約坍的兒子（創10:27、代上1:21）。"},
- "烏薩": {"type": "person", "name": "烏薩", "name_en": "Uzal", "testament": "OT", "desc": "約坍的兒子（創10:27、代上1:21）。"},
- "德拉": {"type": "person", "name": "德拉", "name_en": "Diklah", "testament": "OT", "desc": "約坍的兒子（創10:27、代上1:21）。"},
- "以巴錄": {"type": "person", "name": "以巴錄", "name_en": "Ebal", "testament": "OT", "desc": "約坍的兒子（代上1:22，創世記10:28作「俄巴錄」）。"},
- "亞比瑪利": {"type": "person", "name": "亞比瑪利", "name_en": "Abimael", "testament": "OT", "desc": "約坍的兒子（創10:28、代上1:22）。"},
- "阿斐": {"type": "person", "name": "阿斐", "name_en": "Ophir", "testament": "OT", "desc": "約坍的兒子（創10:29、代上1:23）。"},
- "基達": {"type": "person", "name": "基達", "name_en": "Kedar", "testament": "OT", "desc": "以實瑪利的次子（創25:13、代上1:29）。"},
- "押德別": {"type": "person", "name": "押德別", "name_en": "Adbeel", "testament": "OT", "desc": "以實瑪利的兒子（創25:13、代上1:29）。"},
- "米比衫": {"type": "person", "name": "米比衫", "name_en": "Mibsam", "testament": "OT", "desc": "以實瑪利的兒子（創25:13、代上1:29）。"},
- "米施瑪": {"type": "person", "name": "米施瑪", "name_en": "Mishma", "testament": "OT", "desc": "以實瑪利的兒子（創25:14、代上1:30）。"},
- "哈達": {"type": "person", "name": "哈達", "name_en": "Hadad", "testament": "OT", "desc": "以實瑪利的兒子（代上1:30），與同名的以東王非同一人（代上1:46、50）。"},
- "提瑪": {"type": "person", "name": "提瑪", "name_en": "Tema", "testament": "OT", "desc": "以實瑪利的兒子（創25:15、代上1:30）。"},
- "伊突": {"type": "person", "name": "伊突", "name_en": "Jetur", "testament": "OT", "desc": "以實瑪利的兒子（創25:15、代上1:31）。"},
- "拿非施": {"type": "person", "name": "拿非施", "name_en": "Naphish", "testament": "OT", "desc": "以實瑪利的兒子（創25:15、代上1:31）。"},
- "基底瑪": {"type": "person", "name": "基底瑪", "name_en": "Kedemah", "testament": "OT", "desc": "以實瑪利的兒子（創25:15、代上1:31）。"},
- "以法": {"type": "person", "name": "以法", "name_en": "Ephah", "testament": "OT", "desc": "米甸的兒子，亞伯拉罕與基土拉所生的孫子（創25:4、代上1:33）。"},
- "以勒大": {"type": "person", "name": "以勒大", "name_en": "Eldaah", "testament": "OT", "desc": "米甸的兒子，亞伯拉罕與基土拉所生的孫子（創25:4、代上1:33）。"},
- "耶烏施": {"type": "person", "name": "耶烏施", "name_en": "Jeush", "testament": "OT", "desc": "以掃的兒子（創36:5、代上1:35）。"},
- "雅蘭": {"type": "person", "name": "雅蘭", "name_en": "Jalam", "testament": "OT", "desc": "以掃的兒子（創36:5、代上1:35）。"},
- "阿抹": {"type": "person", "name": "阿抹", "name_en": "Omar", "testament": "OT", "desc": "以掃之子以利法的兒子（創36:11、代上1:36）。"},
- "洗玻": {"type": "person", "name": "洗玻", "name_en": "Zepho", "testament": "OT", "desc": "以掃之子以利法的兒子（創36:11、代上1:36）。"},
- "迦坦": {"type": "person", "name": "迦坦", "name_en": "Gatam", "testament": "OT", "desc": "以掃之子以利法的兒子（創36:11、代上1:36）。"},
- "拿哈": {"type": "person", "name": "拿哈", "name_en": "Nahath", "testament": "OT", "desc": "以掃之子流珥的兒子（創36:13、代上1:37）。"},
- "米撒": {"type": "person", "name": "米撒", "name_en": "Mizzah", "testament": "OT", "desc": "以掃之子流珥的兒子（創36:13、代上1:37）。"},
- "羅坍": {"type": "person", "name": "羅坍", "name_en": "Lotan", "testament": "OT", "desc": "西珥的兒子，何利人的族長（創36:20、代上1:38）。"},
- "朔巴": {"type": "person", "name": "朔巴", "name_en": "Shobal", "testament": "OT", "desc": "西珥的兒子，何利人的族長（創36:20、代上1:38）。"},
- "祭便": {"type": "person", "name": "祭便", "name_en": "Zibeon", "testament": "OT", "desc": "西珥的兒子，何利人的族長（創36:20、代上1:38）。"},
- "亞拿": {"type": "person", "name": "亞拿", "name_en": "Anah", "testament": "OT", "desc": "西珥的兒子（創36:20、代上1:38）。"},
- "底順": {"type": "person", "name": "底順", "name_en": "Dishon", "testament": "OT", "desc": "西珥的兒子（創36:21、代上1:38），與亞拿之子底順同名（代上1:41）。"},
- "以察": {"type": "person", "name": "以察", "name_en": "Ezer", "testament": "OT", "desc": "西珥的兒子，何利人的族長（創36:21、代上1:38）。"},
- "底珊": {"type": "person", "name": "底珊", "name_en": "Dishan", "testament": "OT", "desc": "西珥的兒子（創36:21、代上1:38）。"},
- "荷幔": {"type": "person", "name": "荷幔", "name_en": "Homam", "testament": "OT", "desc": "羅坍的兒子，歷代志上1:39異寫（創世記36:22作「希幔」）。"},
- "亞勒文": {"type": "person", "name": "亞勒文", "name_en": "Alvan", "testament": "OT", "desc": "朔巴的兒子（代上1:40，創世記36:23作異寫「亞勒瓦」）。"},
- "瑪拿轄": {"type": "person", "name": "瑪拿轄", "name_en": "Manahath", "testament": "OT", "desc": "朔巴的兒子（創36:23、代上1:40）。"},
- "示非": {"type": "person", "name": "示非", "name_en": "Shephi", "testament": "OT", "desc": "朔巴的兒子（代上1:40，創世記36:23作「示玻」）。"},
- "阿南": {"type": "person", "name": "阿南", "name_en": "Onam", "testament": "OT", "desc": "祭便的兒子（創36:24、代上1:40），與猶大支派同名者非同一人（代上2:26,28）。"},
- "亞雅": {"type": "person", "name": "亞雅", "name_en": "Aiah", "testament": "OT", "desc": "祭便的兒子（創36:24、代上1:40）。"},
- "哈默蘭": {"type": "person", "name": "哈默蘭", "name_en": "Hemdan", "testament": "OT", "desc": "亞拿之子底順的兒子（代上1:41，創世記36:26作「亨但」）。"},
- "伊是班": {"type": "person", "name": "伊是班", "name_en": "Eshban", "testament": "OT", "desc": "亞拿之子底順的兒子（創36:26、代上1:41）。"},
- "益蘭": {"type": "person", "name": "益蘭", "name_en": "Ithran", "testament": "OT", "desc": "亞拿之子底順的兒子（創36:26、代上1:41）。"},
- "基蘭": {"type": "person", "name": "基蘭", "name_en": "Cheran", "testament": "OT", "desc": "亞拿之子底順的兒子（創36:26、代上1:41）。"},
- "辟罕": {"type": "person", "name": "辟罕", "name_en": "Bilhan", "testament": "OT", "desc": "以察的兒子（創36:27、代上1:42）。"},
- "撒番": {"type": "person", "name": "撒番", "name_en": "Zaavan", "testament": "OT", "desc": "以察的兒子（創36:27、代上1:42）。"},
- "比珥": {"type": "person", "name": "比珥", "name_en": "Beor", "testament": "OT", "desc": "以東王比拉的父親（創36:32、代上1:43）。"},
- "亭哈巴": {"type": "place", "name": "亭哈巴", "name_en": "Dinhabah", "testament": "OT", "desc": "以東王比拉的京城（創36:32、代上1:43）。"},
- "波斯拉": {"type": "place", "name": "波斯拉", "name_en": "Bozrah", "testament": "OT", "desc": "以東王謝拉的兒子約巴的家鄉（創36:33、代上1:44）。"},
- "戶珊": {"type": "person", "name": "戶珊", "name_en": "Husham", "testament": "OT", "desc": "提幔地人，繼約巴之後作以東王（創36:34、代上1:45）。"},
- "比達": {"type": "person", "name": "比達", "name_en": "Bedad", "testament": "OT", "desc": "以東王哈達（在摩押地擊敗米甸人者）的父親（創36:35、代上1:46）。"},
- "亞未得": {"type": "place", "name": "亞未得", "name_en": "Avith", "testament": "OT", "desc": "以東王哈達的京城（創36:35、代上1:46）。"},
- "瑪士利加": {"type": "place", "name": "瑪士利加", "name_en": "Masrekah", "testament": "OT", "desc": "以東王桑拉的家鄉（創36:36、代上1:47）。"},
- "桑拉": {"type": "person", "name": "桑拉", "name_en": "Samlah", "testament": "OT", "desc": "繼哈達之後作以東王（創36:36、代上1:47）。"},
- "利河伯": {"type": "place", "name": "利河伯", "name_en": "Rehoboth", "testament": "OT", "desc": "大河（幼發拉底河）邊的一座城，以東王掃羅的家鄉（創36:37、代上1:48）。"},
- "巴勒哈南": {"type": "person", "name": "巴勒哈南", "name_en": "Baal-hanan", "testament": "OT", "desc": "亞革波的兒子，繼掃羅之後作以東王（創36:38、代上1:49）。"},
- "巴伊": {"type": "place", "name": "巴伊", "name_en": "Pai", "testament": "OT", "desc": "以東王哈達（巴勒哈南之後繼位者）的京城，創世記36:39作「巴烏」（代上1:50）。"},
- "米希他別": {"type": "person", "name": "米希他別", "name_en": "Mehetabel", "testament": "OT", "desc": "以東王哈達的妻子，米薩合的孫女、瑪特列的女兒（創36:39、代上1:50）。"},
- "米薩合": {"type": "person", "name": "米薩合", "name_en": "Me-zahab", "testament": "OT", "desc": "米希他別的祖父（創36:39、代上1:50）。"},
- "瑪特列": {"type": "person", "name": "瑪特列", "name_en": "Matred", "testament": "OT", "desc": "米希他別的母親（創36:39、代上1:50）。"},
- "亞勒瓦": {"type": "person", "name": "亞勒瓦", "name_en": "Alvah", "testament": "OT", "desc": "以東的一位族長（代上1:51，創世記36:40異寫「亞勒文」）。"},
- "耶帖": {"type": "person", "name": "耶帖", "name_en": "Jetheth", "testament": "OT", "desc": "以東的一位族長（創36:40、代上1:51）。"},
- "亞何利巴瑪": {"type": "person", "name": "亞何利巴瑪", "name_en": "Oholibamah", "testament": "OT", "books": ["歷代志上"], "desc": "以東的一位族長，歷代志上1:52譯法，創世記36:41作「阿何利巴瑪」，與以掃之妻同名。"},
- "阿何利巴瑪": {"type": "person", "name": "阿何利巴瑪", "name_en": "Oholibamah", "testament": "OT", "books": ["創世記"], "desc": "以東的一位族長，創世記36:41譯法，歷代志上1:52作「亞何利巴瑪」，與以掃之妻同名。"},
- "比嫩": {"type": "person", "name": "比嫩", "name_en": "Pinon", "testament": "OT", "desc": "以東的一位族長（創36:41、代上1:52）。"},
- "米比薩": {"type": "person", "name": "米比薩", "name_en": "Mibzar", "testament": "OT", "desc": "以東的一位族長（創36:42、代上1:53）。"},
- "瑪基疊": {"type": "person", "name": "瑪基疊", "name_en": "Magdiel", "testament": "OT", "desc": "以東的一位族長（創36:43、代上1:54）。"}
+ "提拉": {
+  "type": "person",
+  "name": "提拉",
+  "name_en": "Tiras",
+  "testament": "OT",
+  "desc": "雅弗的兒子（創10:2、代上1:5），聖經對其後裔再無其他記載。"
+ },
+ "亞實基拿": {
+  "type": "person",
+  "name": "亞實基拿",
+  "name_en": "Ashkenaz",
+  "testament": "OT",
+  "desc": "歌篾的兒子，雅弗的孫子（創10:3、代上1:6）。"
+ },
+ "低法": {
+  "type": "person",
+  "name": "低法",
+  "name_en": "Diphath",
+  "testament": "OT",
+  "desc": "歌篾的兒子，創世記10:3作「利法」（代上1:6）。"
+ },
+ "利法": {
+  "type": "person",
+  "name": "利法",
+  "name_en": "Riphath",
+  "testament": "OT",
+  "desc": "歌篾的兒子，歷代志上1:6作「低法」（創10:3）。"
+ },
+ "陀迦瑪": {
+  "type": "person",
+  "name": "陀迦瑪",
+  "name_en": "Togarmah",
+  "testament": "OT",
+  "desc": "歌篾的兒子，雅弗的孫子（創10:3、代上1:6）。"
+ },
+ "基提": {
+  "type": "person",
+  "name": "基提",
+  "name_en": "Kittim",
+  "testament": "OT",
+  "desc": "雅完的兒子，雅弗的孫子（創10:4、代上1:7）。"
+ },
+ "多單": {
+  "type": "person",
+  "name": "多單",
+  "name_en": "Dodanim",
+  "testament": "OT",
+  "desc": "雅完的兒子，歷代志上1:7註「有作羅單的」（創10:4）。"
+ },
+ "羅單": {
+  "type": "person",
+  "name": "羅單",
+  "name_en": "Rodanim",
+  "testament": "OT",
+  "desc": "多單的異寫，雅完的兒子（代上1:7）。"
+ },
+ "麥西": {
+  "type": "place",
+  "name": "麥西",
+  "name_en": "Mizraim",
+  "testament": "OT",
+  "desc": "含的兒子，即埃及（創10:6、代上1:8）。"
+ },
+ "弗": {
+  "type": "place",
+  "name": "弗",
+  "name_en": "Put",
+  "testament": "OT",
+  "desc": "含的兒子（創10:6、代上1:8）。"
+ },
+ "撒弗他": {
+  "type": "person",
+  "name": "撒弗他",
+  "name_en": "Sabtah",
+  "testament": "OT",
+  "desc": "古實的兒子（創10:7、代上1:9）。"
+ },
+ "撒弗提迦": {
+  "type": "person",
+  "name": "撒弗提迦",
+  "name_en": "Sabteca",
+  "testament": "OT",
+  "desc": "古實的兒子（創10:7、代上1:9）。"
+ },
+ "路低人": {
+  "type": "place",
+  "name": "路低人",
+  "name_en": "Ludim",
+  "testament": "OT",
+  "desc": "麥西（埃及）的後裔支派之一（創10:13、代上1:11）。"
+ },
+ "亞拿米人": {
+  "type": "place",
+  "name": "亞拿米人",
+  "name_en": "Anamim",
+  "testament": "OT",
+  "desc": "麥西（埃及）的後裔支派之一（創10:13、代上1:11）。"
+ },
+ "利哈比人": {
+  "type": "place",
+  "name": "利哈比人",
+  "name_en": "Lehabim",
+  "testament": "OT",
+  "desc": "麥西（埃及）的後裔支派之一（創10:13、代上1:11）。"
+ },
+ "拿弗土希人": {
+  "type": "place",
+  "name": "拿弗土希人",
+  "name_en": "Naphtuhim",
+  "testament": "OT",
+  "desc": "麥西（埃及）的後裔支派之一（創10:13、代上1:11）。"
+ },
+ "帕斯魯細人": {
+  "type": "place",
+  "name": "帕斯魯細人",
+  "name_en": "Pathrusim",
+  "testament": "OT",
+  "desc": "麥西（埃及）的後裔支派之一（創10:14、代上1:12）。"
+ },
+ "迦斯路希人": {
+  "type": "place",
+  "name": "迦斯路希人",
+  "name_en": "Casluhim",
+  "testament": "OT",
+  "desc": "麥西（埃及）的後裔支派之一，非利士人由此而出（創10:14、代上1:12）。"
+ },
+ "赫": {
+  "type": "person",
+  "name": "赫",
+  "name_en": "Heth",
+  "testament": "OT",
+  "desc": "迦南的兒子，赫人（西臺人）的先祖（創10:15、代上1:13）。"
+ },
+ "西尼人": {
+  "type": "place",
+  "name": "西尼人",
+  "name_en": "Sinites",
+  "testament": "OT",
+  "desc": "迦南的後裔支派之一（創10:17、代上1:15）。"
+ },
+ "亞瓦底人": {
+  "type": "place",
+  "name": "亞瓦底人",
+  "name_en": "Arvadites",
+  "testament": "OT",
+  "desc": "迦南的後裔支派之一（創10:18、代上1:16）。"
+ },
+ "洗瑪利人": {
+  "type": "place",
+  "name": "洗瑪利人",
+  "name_en": "Zemarites",
+  "testament": "OT",
+  "desc": "迦南的後裔支派之一（創10:18、代上1:16）。"
+ },
+ "哈馬人": {
+  "type": "place",
+  "name": "哈馬人",
+  "name_en": "Hamathites",
+  "testament": "OT",
+  "desc": "迦南的後裔支派之一（創10:18、代上1:16）。"
+ },
+ "路德": {
+  "type": "person",
+  "name": "路德",
+  "name_en": "Lud",
+  "testament": "OT",
+  "desc": "閃的兒子（創10:22、代上1:17）。"
+ },
+ "烏斯": {
+  "type": "person",
+  "name": "烏斯",
+  "name_en": "Uz",
+  "testament": "OT",
+  "desc": "亞蘭的兒子，閃的孫子（創10:23、代上1:17），與底珊的兒子同名（代上1:42）。"
+ },
+ "戶勒": {
+  "type": "person",
+  "name": "戶勒",
+  "name_en": "Hul",
+  "testament": "OT",
+  "desc": "亞蘭的兒子，閃的孫子（創10:23、代上1:17）。"
+ },
+ "基帖": {
+  "type": "person",
+  "name": "基帖",
+  "name_en": "Gether",
+  "testament": "OT",
+  "desc": "亞蘭的兒子，閃的孫子（創10:23、代上1:17）。"
+ },
+ "瑪施": {
+  "type": "person",
+  "name": "瑪施",
+  "name_en": "Mash",
+  "testament": "OT",
+  "desc": "亞蘭的兒子，歷代志上1:17作「米設」（創10:23）。"
+ },
+ "約坍": {
+  "type": "person",
+  "name": "約坍",
+  "name_en": "Joktan",
+  "testament": "OT",
+  "desc": "希伯的兒子，法勒的兄弟（創10:25、代上1:19）。"
+ },
+ "亞摩答": {
+  "type": "person",
+  "name": "亞摩答",
+  "name_en": "Almodad",
+  "testament": "OT",
+  "desc": "約坍的兒子（創10:26、代上1:20）。"
+ },
+ "沙列": {
+  "type": "person",
+  "name": "沙列",
+  "name_en": "Sheleph",
+  "testament": "OT",
+  "desc": "約坍的兒子（創10:26、代上1:20）。"
+ },
+ "哈薩瑪非": {
+  "type": "person",
+  "name": "哈薩瑪非",
+  "name_en": "Hazarmaveth",
+  "testament": "OT",
+  "desc": "約坍的兒子（創10:26、代上1:20）。"
+ },
+ "耶拉": {
+  "type": "person",
+  "name": "耶拉",
+  "name_en": "Jerah",
+  "testament": "OT",
+  "desc": "約坍的兒子（創10:26、代上1:20）。"
+ },
+ "哈多蘭": {
+  "type": "person",
+  "name": "哈多蘭",
+  "name_en": "Hadoram",
+  "testament": "OT",
+  "desc": "約坍的兒子（創10:27、代上1:21）。"
+ },
+ "烏薩": {
+  "type": "person",
+  "name": "烏薩",
+  "name_en": "Uzal",
+  "testament": "OT",
+  "desc": "約坍的兒子（創10:27、代上1:21）。"
+ },
+ "德拉": {
+  "type": "person",
+  "name": "德拉",
+  "name_en": "Diklah",
+  "testament": "OT",
+  "desc": "約坍的兒子（創10:27、代上1:21）。"
+ },
+ "以巴錄": {
+  "type": "person",
+  "name": "以巴錄",
+  "name_en": "Ebal",
+  "testament": "OT",
+  "desc": "約坍的兒子（代上1:22，創世記10:28作「俄巴錄」）。"
+ },
+ "亞比瑪利": {
+  "type": "person",
+  "name": "亞比瑪利",
+  "name_en": "Abimael",
+  "testament": "OT",
+  "desc": "約坍的兒子（創10:28、代上1:22）。"
+ },
+ "阿斐": {
+  "type": "person",
+  "name": "阿斐",
+  "name_en": "Ophir",
+  "testament": "OT",
+  "desc": "約坍的兒子（創10:29、代上1:23）。"
+ },
+ "基達": {
+  "type": "person",
+  "name": "基達",
+  "name_en": "Kedar",
+  "testament": "OT",
+  "desc": "以實瑪利的次子（創25:13、代上1:29）。"
+ },
+ "押德別": {
+  "type": "person",
+  "name": "押德別",
+  "name_en": "Adbeel",
+  "testament": "OT",
+  "desc": "以實瑪利的兒子（創25:13、代上1:29）。"
+ },
+ "米比衫": {
+  "type": "person",
+  "name": "米比衫",
+  "name_en": "Mibsam",
+  "testament": "OT",
+  "desc": "以實瑪利的兒子（創25:13、代上1:29）。"
+ },
+ "米施瑪": {
+  "type": "person",
+  "name": "米施瑪",
+  "name_en": "Mishma",
+  "testament": "OT",
+  "desc": "以實瑪利的兒子（創25:14、代上1:30）。"
+ },
+ "哈達": {
+  "type": "person",
+  "name": "哈達",
+  "name_en": "Hadad",
+  "testament": "OT",
+  "desc": "以實瑪利的兒子（代上1:30），與同名的以東王非同一人（代上1:46、50）。"
+ },
+ "提瑪": {
+  "type": "person",
+  "name": "提瑪",
+  "name_en": "Tema",
+  "testament": "OT",
+  "desc": "以實瑪利的兒子（創25:15、代上1:30）。"
+ },
+ "伊突": {
+  "type": "person",
+  "name": "伊突",
+  "name_en": "Jetur",
+  "testament": "OT",
+  "desc": "以實瑪利的兒子（創25:15、代上1:31）。"
+ },
+ "拿非施": {
+  "type": "person",
+  "name": "拿非施",
+  "name_en": "Naphish",
+  "testament": "OT",
+  "desc": "以實瑪利的兒子（創25:15、代上1:31）。"
+ },
+ "基底瑪": {
+  "type": "person",
+  "name": "基底瑪",
+  "name_en": "Kedemah",
+  "testament": "OT",
+  "desc": "以實瑪利的兒子（創25:15、代上1:31）。"
+ },
+ "以法": {
+  "type": "person",
+  "name": "以法",
+  "name_en": "Ephah",
+  "testament": "OT",
+  "desc": "米甸的兒子，亞伯拉罕與基土拉所生的孫子（創25:4、代上1:33）。"
+ },
+ "以勒大": {
+  "type": "person",
+  "name": "以勒大",
+  "name_en": "Eldaah",
+  "testament": "OT",
+  "desc": "米甸的兒子，亞伯拉罕與基土拉所生的孫子（創25:4、代上1:33）。"
+ },
+ "耶烏施": {
+  "type": "person",
+  "name": "耶烏施",
+  "name_en": "Jeush",
+  "testament": "OT",
+  "desc": "以掃的兒子（創36:5、代上1:35）。"
+ },
+ "雅蘭": {
+  "type": "person",
+  "name": "雅蘭",
+  "name_en": "Jalam",
+  "testament": "OT",
+  "desc": "以掃的兒子（創36:5、代上1:35）。"
+ },
+ "阿抹": {
+  "type": "person",
+  "name": "阿抹",
+  "name_en": "Omar",
+  "testament": "OT",
+  "desc": "以掃之子以利法的兒子（創36:11、代上1:36）。"
+ },
+ "洗玻": {
+  "type": "person",
+  "name": "洗玻",
+  "name_en": "Zepho",
+  "testament": "OT",
+  "desc": "以掃之子以利法的兒子（創36:11、代上1:36）。"
+ },
+ "迦坦": {
+  "type": "person",
+  "name": "迦坦",
+  "name_en": "Gatam",
+  "testament": "OT",
+  "desc": "以掃之子以利法的兒子（創36:11、代上1:36）。"
+ },
+ "拿哈": {
+  "type": "person",
+  "name": "拿哈",
+  "name_en": "Nahath",
+  "testament": "OT",
+  "desc": "以掃之子流珥的兒子（創36:13、代上1:37）。"
+ },
+ "米撒": {
+  "type": "person",
+  "name": "米撒",
+  "name_en": "Mizzah",
+  "testament": "OT",
+  "desc": "以掃之子流珥的兒子（創36:13、代上1:37）。"
+ },
+ "羅坍": {
+  "type": "person",
+  "name": "羅坍",
+  "name_en": "Lotan",
+  "testament": "OT",
+  "desc": "西珥的兒子，何利人的族長（創36:20、代上1:38）。"
+ },
+ "朔巴": {
+  "type": "person",
+  "name": "朔巴",
+  "name_en": "Shobal",
+  "testament": "OT",
+  "desc": "西珥的兒子，何利人的族長（創36:20、代上1:38）。"
+ },
+ "祭便": {
+  "type": "person",
+  "name": "祭便",
+  "name_en": "Zibeon",
+  "testament": "OT",
+  "desc": "西珥的兒子，何利人的族長（創36:20、代上1:38）。"
+ },
+ "亞拿": {
+  "type": "person",
+  "name": "亞拿",
+  "name_en": "Anah",
+  "testament": "OT",
+  "desc": "西珥的兒子（創36:20、代上1:38）。"
+ },
+ "底順": {
+  "type": "person",
+  "name": "底順",
+  "name_en": "Dishon",
+  "testament": "OT",
+  "desc": "西珥的兒子（創36:21、代上1:38），與亞拿之子底順同名（代上1:41）。"
+ },
+ "以察": {
+  "type": "person",
+  "name": "以察",
+  "name_en": "Ezer",
+  "testament": "OT",
+  "desc": "西珥的兒子，何利人的族長（創36:21、代上1:38）。"
+ },
+ "底珊": {
+  "type": "person",
+  "name": "底珊",
+  "name_en": "Dishan",
+  "testament": "OT",
+  "desc": "西珥的兒子（創36:21、代上1:38）。"
+ },
+ "荷幔": {
+  "type": "person",
+  "name": "荷幔",
+  "name_en": "Homam",
+  "testament": "OT",
+  "desc": "羅坍的兒子，歷代志上1:39異寫（創世記36:22作「希幔」）。"
+ },
+ "亞勒文": {
+  "type": "person",
+  "name": "亞勒文",
+  "name_en": "Alvan",
+  "testament": "OT",
+  "desc": "朔巴的兒子（代上1:40，創世記36:23作異寫「亞勒瓦」）。"
+ },
+ "瑪拿轄": {
+  "type": "person",
+  "name": "瑪拿轄",
+  "name_en": "Manahath",
+  "testament": "OT",
+  "desc": "朔巴的兒子（創36:23、代上1:40）。"
+ },
+ "示非": {
+  "type": "person",
+  "name": "示非",
+  "name_en": "Shephi",
+  "testament": "OT",
+  "desc": "朔巴的兒子（代上1:40，創世記36:23作「示玻」）。"
+ },
+ "阿南": {
+  "type": "person",
+  "name": "阿南",
+  "name_en": "Onam",
+  "testament": "OT",
+  "desc": "祭便的兒子（創36:24、代上1:40），與猶大支派同名者非同一人（代上2:26,28）。"
+ },
+ "亞雅": {
+  "type": "person",
+  "name": "亞雅",
+  "name_en": "Aiah",
+  "testament": "OT",
+  "desc": "祭便的兒子（創36:24、代上1:40）。"
+ },
+ "哈默蘭": {
+  "type": "person",
+  "name": "哈默蘭",
+  "name_en": "Hemdan",
+  "testament": "OT",
+  "desc": "亞拿之子底順的兒子（代上1:41，創世記36:26作「亨但」）。"
+ },
+ "伊是班": {
+  "type": "person",
+  "name": "伊是班",
+  "name_en": "Eshban",
+  "testament": "OT",
+  "desc": "亞拿之子底順的兒子（創36:26、代上1:41）。"
+ },
+ "益蘭": {
+  "type": "person",
+  "name": "益蘭",
+  "name_en": "Ithran",
+  "testament": "OT",
+  "desc": "亞拿之子底順的兒子（創36:26、代上1:41）。"
+ },
+ "基蘭": {
+  "type": "person",
+  "name": "基蘭",
+  "name_en": "Cheran",
+  "testament": "OT",
+  "desc": "亞拿之子底順的兒子（創36:26、代上1:41）。"
+ },
+ "辟罕": {
+  "type": "person",
+  "name": "辟罕",
+  "name_en": "Bilhan",
+  "testament": "OT",
+  "desc": "以察的兒子（創36:27、代上1:42）。"
+ },
+ "撒番": {
+  "type": "person",
+  "name": "撒番",
+  "name_en": "Zaavan",
+  "testament": "OT",
+  "desc": "以察的兒子（創36:27、代上1:42）。"
+ },
+ "比珥": {
+  "type": "person",
+  "name": "比珥",
+  "name_en": "Beor",
+  "testament": "OT",
+  "desc": "以東王比拉的父親（創36:32、代上1:43）。"
+ },
+ "亭哈巴": {
+  "type": "place",
+  "name": "亭哈巴",
+  "name_en": "Dinhabah",
+  "testament": "OT",
+  "desc": "以東王比拉的京城（創36:32、代上1:43）。"
+ },
+ "波斯拉": {
+  "type": "place",
+  "name": "波斯拉",
+  "name_en": "Bozrah",
+  "testament": "OT",
+  "desc": "以東王謝拉的兒子約巴的家鄉（創36:33、代上1:44）。"
+ },
+ "戶珊": {
+  "type": "person",
+  "name": "戶珊",
+  "name_en": "Husham",
+  "testament": "OT",
+  "desc": "提幔地人，繼約巴之後作以東王（創36:34、代上1:45）。"
+ },
+ "比達": {
+  "type": "person",
+  "name": "比達",
+  "name_en": "Bedad",
+  "testament": "OT",
+  "desc": "以東王哈達（在摩押地擊敗米甸人者）的父親（創36:35、代上1:46）。"
+ },
+ "亞未得": {
+  "type": "place",
+  "name": "亞未得",
+  "name_en": "Avith",
+  "testament": "OT",
+  "desc": "以東王哈達的京城（創36:35、代上1:46）。"
+ },
+ "瑪士利加": {
+  "type": "place",
+  "name": "瑪士利加",
+  "name_en": "Masrekah",
+  "testament": "OT",
+  "desc": "以東王桑拉的家鄉（創36:36、代上1:47）。"
+ },
+ "桑拉": {
+  "type": "person",
+  "name": "桑拉",
+  "name_en": "Samlah",
+  "testament": "OT",
+  "desc": "繼哈達之後作以東王（創36:36、代上1:47）。"
+ },
+ "利河伯": {
+  "type": "place",
+  "name": "利河伯",
+  "name_en": "Rehoboth",
+  "testament": "OT",
+  "desc": "大河（幼發拉底河）邊的一座城，以東王掃羅的家鄉（創36:37、代上1:48）。"
+ },
+ "巴勒哈南": {
+  "type": "person",
+  "name": "巴勒哈南",
+  "name_en": "Baal-hanan",
+  "testament": "OT",
+  "desc": "亞革波的兒子，繼掃羅之後作以東王（創36:38、代上1:49）。"
+ },
+ "巴伊": {
+  "type": "place",
+  "name": "巴伊",
+  "name_en": "Pai",
+  "testament": "OT",
+  "desc": "以東王哈達（巴勒哈南之後繼位者）的京城，創世記36:39作「巴烏」（代上1:50）。"
+ },
+ "米希他別": {
+  "type": "person",
+  "name": "米希他別",
+  "name_en": "Mehetabel",
+  "testament": "OT",
+  "desc": "以東王哈達的妻子，米薩合的孫女、瑪特列的女兒（創36:39、代上1:50）。"
+ },
+ "米薩合": {
+  "type": "person",
+  "name": "米薩合",
+  "name_en": "Me-zahab",
+  "testament": "OT",
+  "desc": "米希他別的祖父（創36:39、代上1:50）。"
+ },
+ "瑪特列": {
+  "type": "person",
+  "name": "瑪特列",
+  "name_en": "Matred",
+  "testament": "OT",
+  "desc": "米希他別的母親（創36:39、代上1:50）。"
+ },
+ "亞勒瓦": {
+  "type": "person",
+  "name": "亞勒瓦",
+  "name_en": "Alvah",
+  "testament": "OT",
+  "desc": "以東的一位族長（代上1:51，創世記36:40異寫「亞勒文」）。"
+ },
+ "耶帖": {
+  "type": "person",
+  "name": "耶帖",
+  "name_en": "Jetheth",
+  "testament": "OT",
+  "desc": "以東的一位族長（創36:40、代上1:51）。"
+ },
+ "亞何利巴瑪": {
+  "type": "person",
+  "name": "亞何利巴瑪",
+  "name_en": "Oholibamah",
+  "testament": "OT",
+  "books": [
+   "歷代志上"
+  ],
+  "desc": "以東的一位族長，歷代志上1:52譯法，創世記36:41作「阿何利巴瑪」，與以掃之妻同名。"
+ },
+ "阿何利巴瑪": {
+  "type": "person",
+  "name": "阿何利巴瑪",
+  "name_en": "Oholibamah",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "以東的一位族長，創世記36:41譯法，歷代志上1:52作「亞何利巴瑪」，與以掃之妻同名。"
+ },
+ "比嫩": {
+  "type": "person",
+  "name": "比嫩",
+  "name_en": "Pinon",
+  "testament": "OT",
+  "desc": "以東的一位族長（創36:41、代上1:52）。"
+ },
+ "米比薩": {
+  "type": "person",
+  "name": "米比薩",
+  "name_en": "Mibzar",
+  "testament": "OT",
+  "desc": "以東的一位族長（創36:42、代上1:53）。"
+ },
+ "瑪基疊": {
+  "type": "person",
+  "name": "瑪基疊",
+  "name_en": "Magdiel",
+  "testament": "OT",
+  "desc": "以東的一位族長（創36:43、代上1:54）。"
+ },
+ "珥": {
+  "type": "person",
+  "name": "珥",
+  "name_en": "Er",
+  "testament": "OT",
+  "desc": "猶大的長子，迦南人書亞女兒所生，因在耶和華眼中看為惡而被神擊殺（創38:3-7、代上2:3）。"
+ },
+ "哈母勒": {
+  "type": "person",
+  "name": "哈母勒",
+  "name_en": "Hamul",
+  "testament": "OT",
+  "desc": "法勒斯的兒子，希斯崙的兄弟（創46:12、代上2:5）。"
+ },
+ "大拉": {
+  "type": "person",
+  "name": "大拉",
+  "name_en": "Darda",
+  "testament": "OT",
+  "desc": "謝拉的兒子，歷代志上2:6作「達大」（王上4:31作「達大」）。"
+ },
+ "蘭": {
+  "type": "person",
+  "name": "蘭",
+  "name_en": "Ram",
+  "testament": "OT",
+  "desc": "希斯崙的兒子，耶拉篾的兄弟，波阿斯的先祖（代上2:9-10、路3:33「亞蘭」為異寫）。"
+ },
+ "基路拜": {
+  "type": "person",
+  "name": "基路拜",
+  "name_en": "Chelubai",
+  "testament": "OT",
+  "desc": "希斯崙的兒子，即迦勒（代上2:9，2:18又稱「迦勒」）。"
+ },
+ "拉代": {
+  "type": "person",
+  "name": "拉代",
+  "name_en": "Radai",
+  "testament": "OT",
+  "desc": "耶西的五子，大衛的哥哥（代上2:14）。"
+ },
+ "阿鮮": {
+  "type": "person",
+  "name": "阿鮮",
+  "name_en": "Ozem",
+  "testament": "OT",
+  "desc": "耶西的六子，大衛的哥哥（代上2:15），與耶拉篾之子同名（代上2:25）。"
+ },
+ "阿蘇巴": {
+  "type": "person",
+  "name": "阿蘇巴",
+  "name_en": "Azubah",
+  "testament": "OT",
+  "desc": "希斯崙之子迦勒的第一任妻子，耶設、朔罷、押墩的母親（代上2:18-19）。"
+ },
+ "耶略": {
+  "type": "person",
+  "name": "耶略",
+  "name_en": "Jerioth",
+  "testament": "OT",
+  "desc": "迦勒的妻子或阿蘇巴之女，經文用法不易確定，與阿蘇巴同時提及（代上2:18）。"
+ },
+ "耶設": {
+  "type": "person",
+  "name": "耶設",
+  "name_en": "Jesher",
+  "testament": "OT",
+  "desc": "迦勒與阿蘇巴的兒子（代上2:18）。"
+ },
+ "押墩": {
+  "type": "person",
+  "name": "押墩",
+  "name_en": "Ardon",
+  "testament": "OT",
+  "desc": "迦勒與阿蘇巴的兒子（代上2:18）。"
+ },
+ "西割": {
+  "type": "person",
+  "name": "西割",
+  "name_en": "Segub",
+  "testament": "OT",
+  "desc": "希斯崙年老時與瑪吉的女兒所生的兒子，睚珥的父親（代上2:21-22）。"
+ },
+ "亞蘭人": {
+  "type": "place",
+  "name": "亞蘭人",
+  "name_en": "Arameans/Syrians",
+  "testament": "OT",
+  "desc": "與基述人一同奪取睚珥城邑及基納的族群（代上2:23）。"
+ },
+ "亞比雅": {
+  "type": "person",
+  "name": "亞比雅",
+  "name_en": "Abijah",
+  "testament": "OT",
+  "desc": "希斯崙死後的妻子，亞施戶的母親（代上2:24）。"
+ },
+ "亞施戶": {
+  "type": "person",
+  "name": "亞施戶",
+  "name_en": "Ashhur",
+  "testament": "OT",
+  "desc": "希斯崙遺腹子，提哥亞的父親（代上2:24）。"
+ },
+ "亞他拉": {
+  "type": "person",
+  "name": "亞他拉",
+  "name_en": "Atarah",
+  "testament": "OT",
+  "desc": "耶拉篾的另一位妻子，阿南的母親（代上2:26）。"
+ },
+ "布拿": {
+  "type": "person",
+  "name": "布拿",
+  "name_en": "Bunah",
+  "testament": "OT",
+  "desc": "耶拉篾的兒子（代上2:25）。"
+ },
+ "阿連": {
+  "type": "person",
+  "name": "阿連",
+  "name_en": "Oren",
+  "testament": "OT",
+  "desc": "耶拉篾的兒子（代上2:25）。"
+ },
+ "瑪斯": {
+  "type": "person",
+  "name": "瑪斯",
+  "name_en": "Maaz",
+  "testament": "OT",
+  "desc": "耶拉篾長子蘭的兒子（代上2:27）。"
+ },
+ "以結": {
+  "type": "person",
+  "name": "以結",
+  "name_en": "Jekamiah/Eker",
+  "testament": "OT",
+  "desc": "蘭的兒子（代上2:27，或作耶加米雅之異名支系）。"
+ },
+ "沙買": {
+  "type": "person",
+  "name": "沙買",
+  "name_en": "Shammai",
+  "testament": "OT",
+  "desc": "阿南的兒子（代上2:28），與希斯崙支派另一位沙買同名（代上2:44-45）。"
+ },
+ "雅大": {
+  "type": "person",
+  "name": "雅大",
+  "name_en": "Jada",
+  "testament": "OT",
+  "desc": "阿南的兒子，益帖與約拿單的父親（代上2:28,32）。"
+ },
+ "亞比述": {
+  "type": "person",
+  "name": "亞比述",
+  "name_en": "Abishur",
+  "testament": "OT",
+  "desc": "沙買的兒子（代上2:28-29）。"
+ },
+ "亞比孩": {
+  "type": "person",
+  "name": "亞比孩",
+  "name_en": "Abihail",
+  "testament": "OT",
+  "desc": "亞比述的妻子（代上2:29）。"
+ },
+ "亞辦": {
+  "type": "person",
+  "name": "亞辦",
+  "name_en": "Ahban",
+  "testament": "OT",
+  "desc": "亞比述與亞比孩的兒子（代上2:29）。"
+ },
+ "摩利": {
+  "type": "person",
+  "name": "摩利",
+  "name_en": "Molid",
+  "testament": "OT",
+  "desc": "亞比述與亞比孩的兒子（代上2:29）。"
+ },
+ "西列": {
+  "type": "person",
+  "name": "西列",
+  "name_en": "Seled",
+  "testament": "OT",
+  "desc": "拿答的兒子，死時無子（代上2:30）。"
+ },
+ "亞遍": {
+  "type": "person",
+  "name": "亞遍",
+  "name_en": "Appaim",
+  "testament": "OT",
+  "desc": "拿答的兒子，以示的父親（代上2:30-31）。"
+ },
+ "以示": {
+  "type": "person",
+  "name": "以示",
+  "name_en": "Ishi",
+  "testament": "OT",
+  "desc": "亞遍的兒子，示珊的父親（代上2:31）。"
+ },
+ "示珊": {
+  "type": "person",
+  "name": "示珊",
+  "name_en": "Sheshan",
+  "testament": "OT",
+  "desc": "以示的兒子，沒有兒子只有女兒，將女兒嫁給埃及僕人耶哈（代上2:31,34-35）。"
+ },
+ "亞來": {
+  "type": "person",
+  "name": "亞來",
+  "name_en": "Ahlai",
+  "testament": "OT",
+  "desc": "示珊一系的後裔，經文提及但世系銜接不易確定（代上2:31）。"
+ },
+ "比勒": {
+  "type": "person",
+  "name": "比勒",
+  "name_en": "Peleth",
+  "testament": "OT",
+  "desc": "約拿單的兒子（代上2:33）。"
+ },
+ "撒薩": {
+  "type": "person",
+  "name": "撒薩",
+  "name_en": "Zaza",
+  "testament": "OT",
+  "desc": "約拿單的兒子（代上2:33）。"
+ },
+ "撒拉篾": {
+  "type": "person",
+  "name": "撒拉篾",
+  "name_en": "Jerahmeel",
+  "testament": "OT",
+  "desc": "比勒與撒薩等人的先祖統稱，即耶拉篾支系子孫（代上2:33）。"
+ },
+ "耶哈": {
+  "type": "person",
+  "name": "耶哈",
+  "name_en": "Jarha",
+  "testament": "OT",
+  "desc": "示珊的埃及僕人，娶示珊之女為妻，生亞太（代上2:34-35）。"
+ },
+ "亞太": {
+  "type": "person",
+  "name": "亞太",
+  "name_en": "Attai",
+  "testament": "OT",
+  "desc": "耶哈與示珊之女所生的兒子（代上2:35-36）。"
+ },
+ "撒拔": {
+  "type": "person",
+  "name": "撒拔",
+  "name_en": "Zabad",
+  "testament": "OT",
+  "desc": "拿單的兒子（代上2:36）。"
+ },
+ "以弗拉": {
+  "type": "person",
+  "name": "以弗拉",
+  "name_en": "Ephlal",
+  "testament": "OT",
+  "desc": "撒拔的兒子，俄備得的父親（代上2:37）。"
+ },
+ "以利亞薩": {
+  "type": "person",
+  "name": "以利亞薩",
+  "name_en": "Eleasah",
+  "testament": "OT",
+  "desc": "希利斯的兒子（代上2:39）。"
+ },
+ "西斯買": {
+  "type": "person",
+  "name": "西斯買",
+  "name_en": "Sismai",
+  "testament": "OT",
+  "desc": "以利亞薩的兒子（代上2:40）。"
+ },
+ "耶加米雅": {
+  "type": "person",
+  "name": "耶加米雅",
+  "name_en": "Jekamiah",
+  "testament": "OT",
+  "desc": "西斯買之子沙龍的兒子（代上2:41）。"
+ },
+ "米沙": {
+  "type": "person",
+  "name": "米沙",
+  "name_en": "Mesha",
+  "testament": "OT",
+  "desc": "迦勒（耶拉篾兄弟）的長子，西弗之祖（代上2:42）。"
+ },
+ "利肯": {
+  "type": "person",
+  "name": "利肯",
+  "name_en": "Rekem",
+  "testament": "OT",
+  "desc": "希伯崙的兒子（代上2:43-44）。"
+ },
+ "拉含": {
+  "type": "person",
+  "name": "拉含",
+  "name_en": "Raham",
+  "testament": "OT",
+  "desc": "示瑪的兒子，約干之祖（代上2:44）。"
+ },
+ "約干": {
+  "type": "place",
+  "name": "約干",
+  "name_en": "Jorkeam",
+  "testament": "OT",
+  "desc": "拉含之子（代上2:44，或作地名，其後裔稱約干）。"
+ },
+ "迦謝": {
+  "type": "person",
+  "name": "迦謝",
+  "name_en": "Gazez",
+  "testament": "OT",
+  "desc": "迦勒之妾以法所生的兒子（代上2:46）。"
+ },
+ "迦卸": {
+  "type": "person",
+  "name": "迦卸",
+  "name_en": "Gazez (son of Haran)",
+  "testament": "OT",
+  "desc": "哈蘭的兒子，與其祖父同名（代上2:46）。"
+ },
+ "利健": {
+  "type": "person",
+  "name": "利健",
+  "name_en": "Regem",
+  "testament": "OT",
+  "desc": "雅代的兒子（代上2:47）。"
+ },
+ "基珊": {
+  "type": "person",
+  "name": "基珊",
+  "name_en": "Gesham",
+  "testament": "OT",
+  "desc": "雅代的兒子（代上2:47）。"
+ },
+ "毗力": {
+  "type": "person",
+  "name": "毗力",
+  "name_en": "Pelet",
+  "testament": "OT",
+  "desc": "雅代的兒子（代上2:47）。"
+ },
+ "沙亞弗": {
+  "type": "person",
+  "name": "沙亞弗",
+  "name_en": "Shaaph",
+  "testament": "OT",
+  "desc": "雅代的兒子（代上2:47），與迦勒之妾瑪迦所生的麥瑪拿之祖沙亞弗同名（代上2:49）。"
+ },
+ "示別": {
+  "type": "person",
+  "name": "示別",
+  "name_en": "Sheber",
+  "testament": "OT",
+  "desc": "迦勒之妾瑪迦的兒子（代上2:49）。"
+ },
+ "特哈拿": {
+  "type": "person",
+  "name": "特哈拿",
+  "name_en": "Tirhanah",
+  "testament": "OT",
+  "desc": "迦勒之妾瑪迦的兒子（代上2:49）。"
+ },
+ "抹比拿": {
+  "type": "person",
+  "name": "抹比拿",
+  "name_en": "Machbenah",
+  "testament": "OT",
+  "desc": "迦勒之妾瑪迦的後裔（代上2:49）。"
+ },
+ "示法": {
+  "type": "person",
+  "name": "示法",
+  "name_en": "Sheva",
+  "testament": "OT",
+  "desc": "基比亞之祖，迦勒之妾瑪迦的後裔（代上2:49）。"
+ },
+ "押撒": {
+  "type": "person",
+  "name": "押撒",
+  "name_en": "Achsah",
+  "testament": "OT",
+  "desc": "迦勒的女兒（代上2:49，與俄陀聶之妻押撒同名，見書15:17）。"
+ },
+ "薩瑪": {
+  "type": "person",
+  "name": "薩瑪",
+  "name_en": "Salma",
+  "testament": "OT",
+  "desc": "戶珥的兒子，伯利恆之祖（代上2:51,54）。"
+ },
+ "哈勒": {
+  "type": "person",
+  "name": "哈勒",
+  "name_en": "Hareph",
+  "testament": "OT",
+  "desc": "戶珥的兒子，伯迦得之祖（代上2:51）。"
+ },
+ "哈羅以": {
+  "type": "person",
+  "name": "哈羅以",
+  "name_en": "Haroeh",
+  "testament": "OT",
+  "desc": "朔巴的子孫（代上2:52，或與2:53「利亞雅」為同一名之異寫）。"
+ },
+ "米努哈人": {
+  "type": "place",
+  "name": "米努哈人",
+  "name_en": "Manahathites",
+  "testament": "OT",
+  "desc": "朔巴子孫的一半族人，即瑪拿哈人（代上2:52）。"
+ },
+ "瑪拿哈人": {
+  "type": "place",
+  "name": "瑪拿哈人",
+  "name_en": "Manahathites",
+  "testament": "OT",
+  "desc": "米努哈人的異寫，朔巴／薩瑪子孫的一族（代上2:52,54）。"
+ },
+ "以帖人": {
+  "type": "place",
+  "name": "以帖人",
+  "name_en": "Ithrites",
+  "testament": "OT",
+  "desc": "基列耶琳的一族（代上2:53）。"
+ },
+ "布特人": {
+  "type": "place",
+  "name": "布特人",
+  "name_en": "Puthites",
+  "testament": "OT",
+  "desc": "基列耶琳的一族（代上2:53）。"
+ },
+ "舒瑪人": {
+  "type": "place",
+  "name": "舒瑪人",
+  "name_en": "Shumathites",
+  "testament": "OT",
+  "desc": "基列耶琳的一族（代上2:53）。"
+ },
+ "密來人": {
+  "type": "place",
+  "name": "密來人",
+  "name_en": "Mishraites",
+  "testament": "OT",
+  "desc": "基列耶琳的一族，瑣拉人與以實陶人皆由此而出（代上2:53）。"
+ },
+ "以實陶人": {
+  "type": "place",
+  "name": "以實陶人",
+  "name_en": "Eshtaolites",
+  "testament": "OT",
+  "desc": "由基列耶琳密來族而出的一族（代上2:53）。"
+ },
+ "尼陀法人": {
+  "type": "place",
+  "name": "尼陀法人",
+  "name_en": "Netophathites",
+  "testament": "OT",
+  "desc": "薩瑪（伯利恆之祖）的子孫（代上2:54）。"
+ },
+ "亞他綠伯約押人": {
+  "type": "place",
+  "name": "亞他綠伯約押人",
+  "name_en": "Atroth-beth-joab",
+  "testament": "OT",
+  "desc": "薩瑪的子孫之一，地名兼族名（代上2:54）。"
+ },
+ "瑣利人": {
+  "type": "place",
+  "name": "瑣利人",
+  "name_en": "Zorites",
+  "testament": "OT",
+  "desc": "薩瑪的子孫，一半瑪拿哈人之一族（代上2:54）。"
+ },
+ "雅比斯": {
+  "type": "place",
+  "name": "雅比斯",
+  "name_en": "Jabez",
+  "testament": "OT",
+  "desc": "眾文士家所居之地（代上2:55），與同名人物雅比斯（代上4:9-10）非同一事。"
+ },
+ "示米押人": {
+  "type": "place",
+  "name": "示米押人",
+  "name_en": "Shimeathites",
+  "testament": "OT",
+  "desc": "雅比斯文士家的一族（代上2:55）。"
+ },
+ "蘇甲人": {
+  "type": "place",
+  "name": "蘇甲人",
+  "name_en": "Sucathites",
+  "testament": "OT",
+  "desc": "雅比斯文士家的一族（代上2:55）。"
+ },
+ "哈末": {
+  "type": "person",
+  "name": "哈末",
+  "name_en": "Hammath",
+  "testament": "OT",
+  "desc": "基尼人利甲家的先祖（代上2:55）。"
+ }
 }
