@@ -3563,6 +3563,20 @@
     12
    ],
    "desc": "基比亞人示瑪的兒子，大衛麾下便雅憫勇士之一（代上12:3），與猶大王、以色列王、基甸父親等同名者皆非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "約阿施（掌管油庫）",
+   "name_en": "Joash (keeper of oil stores)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    27,
+    27
+   ],
+   "desc": "大衛所派掌管油庫的官員（代上27:28），與猶大王、以色列王、基甸父親等同名者皆非同一人。"
   }
  ],
  "巴比倫河": {
@@ -13909,16 +13923,32 @@
   ],
   "desc": "利瑪利的兒子，比加轄的將軍，弒君篡位後作以色列王二十年，曾與亞蘭王便哈達聯手攻打猶大王亞哈斯（王下15:25-16:5），後被何細亞背叛擊殺。"
  },
- "何細亞": {
-  "type": "person",
-  "name": "何細亞",
-  "name_en": "Hoshea",
-  "testament": "OT",
-  "books": [
-   "列王紀下"
-  ],
-  "desc": "以拉的兒子，以色列末代王，弒比加篡位；因背叛亞述王撒縵以色、轉向埃及求援，被亞述圍困撒瑪利亞三年後攻陷，以色列全國被擄到亞述，北國自此滅亡（王下17:1-6）。"
- },
+ "何細亞": [
+  {
+   "type": "person",
+   "name": "何細亞",
+   "name_en": "Hoshea",
+   "testament": "OT",
+   "books": [
+    "列王紀下"
+   ],
+   "desc": "以拉的兒子，以色列末代王，弒比加篡位；因背叛亞述王撒縵以色、轉向埃及求援，被亞述圍困撒瑪利亞三年後攻陷，以色列全國被擄到亞述，北國自此滅亡（王下17:1-6）。"
+  },
+  {
+   "type": "person",
+   "name": "何細亞（以法蓮支派首領）",
+   "name_en": "Hoshea (chief of Ephraim)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    27,
+    27
+   ],
+   "desc": "阿撒細雅的兒子，大衛所派管理以法蓮支派的首領（代上27:20），與以色列末代王何細亞非同一人。"
+  }
+ ],
  "約哈斯": [
   {
    "type": "person",
@@ -20835,5 +20865,159 @@
   "name_en": "Uzziel",
   "testament": "OT",
   "desc": "哥轄四大宗族之一，即代上23:12「烏薛」，本節異寫（代上26:23）。"
+ },
+ "亞哈希人": {
+  "type": "place",
+  "name": "亞哈希人",
+  "name_en": "Ahohite",
+  "testament": "OT",
+  "desc": "二月班班長朵代的籍貫稱號（代上27:4）。"
+ },
+ "朵代": {
+  "type": "person",
+  "name": "朵代",
+  "name_en": "Dodai",
+  "testament": "OT",
+  "desc": "亞哈希人，二月班班長（代上27:4）。"
+ },
+ "密基羅": {
+  "type": "person",
+  "name": "密基羅",
+  "name_en": "Mikloth",
+  "testament": "OT",
+  "desc": "朵代所屬二月班的副官（代上27:4）。"
+ },
+ "暗米薩拔": {
+  "type": "person",
+  "name": "暗米薩拔",
+  "name_en": "Ammizabad",
+  "testament": "OT",
+  "desc": "比拿雅（甲薛勇士、護衛長）的兒子，協助管理三月班（代上27:6）。"
+ },
+ "伊斯拉人": {
+  "type": "place",
+  "name": "伊斯拉人",
+  "name_en": "Izrahite",
+  "testament": "OT",
+  "desc": "五月班班長珊合的籍貫稱號（代上27:8）。"
+ },
+ "珊合": {
+  "type": "person",
+  "name": "珊合",
+  "name_en": "Shamhuth",
+  "testament": "OT",
+  "desc": "伊斯拉人，五月班班長（代上27:8）。"
+ },
+ "黑玳": {
+  "type": "person",
+  "name": "黑玳",
+  "name_en": "Heldai",
+  "testament": "OT",
+  "desc": "俄陀聶族尼陀法人，十二月班班長（代上27:15）。"
+ },
+ "俄巴第雅": {
+  "type": "person",
+  "name": "俄巴第雅",
+  "name_en": "Obadiah",
+  "testament": "OT",
+  "desc": "伊施瑪雅的父親，西布倫支派首領之一（代上27:19），同名異寫「俄巴底雅」多人皆非此人。"
+ },
+ "阿撒細雅": {
+  "type": "person",
+  "name": "阿撒細雅",
+  "name_en": "Azaziah",
+  "testament": "OT",
+  "desc": "何細亞（以法蓮支派首領）的父親（代上27:20）。"
+ },
+ "亞疊": {
+  "type": "person",
+  "name": "亞疊",
+  "name_en": "Adiel",
+  "testament": "OT",
+  "desc": "押斯馬威（掌管王府庫者）的父親（代上27:25）。"
+ },
+ "押斯馬威": {
+  "type": "person",
+  "name": "押斯馬威",
+  "name_en": "Azmaveth",
+  "testament": "OT",
+  "desc": "亞疊的兒子，掌管大衛王府庫（代上27:25），與大衛勇士押斯瑪弗非同一人。"
+ },
+ "以斯利": {
+  "type": "person",
+  "name": "以斯利",
+  "name_en": "Ezri",
+  "testament": "OT",
+  "desc": "基綠的兒子，掌管大衛耕田種地的官員（代上27:26）。"
+ },
+ "實弗米人": {
+  "type": "place",
+  "name": "實弗米人",
+  "name_en": "Shiphmite",
+  "testament": "OT",
+  "desc": "掌管葡萄園酒窖的撒巴底的籍貫稱號（代上27:27）。"
+ },
+ "撒巴底": {
+  "type": "person",
+  "name": "撒巴底",
+  "name_en": "Zabdi",
+  "testament": "OT",
+  "desc": "實弗米人，掌管大衛葡萄園酒窖（代上27:27）。"
+ },
+ "基第利人": {
+  "type": "place",
+  "name": "基第利人",
+  "name_en": "Gederite",
+  "testament": "OT",
+  "desc": "掌管高原橄欖樹和桑樹的巴勒哈南的籍貫稱號（代上27:28）。"
+ },
+ "施提賚": {
+  "type": "person",
+  "name": "施提賚",
+  "name_en": "Shitrai",
+  "testament": "OT",
+  "desc": "沙崙人，掌管大衛在沙崙牧放的牛群（代上27:29）。"
+ },
+ "亞第賚": {
+  "type": "person",
+  "name": "亞第賚",
+  "name_en": "Adlai",
+  "testament": "OT",
+  "desc": "沙法（掌管山谷牧養牛群者）的父親（代上27:29）。"
+ },
+ "米崙人": {
+  "type": "place",
+  "name": "米崙人",
+  "name_en": "Meronothite",
+  "testament": "OT",
+  "desc": "掌管驢群的耶希底亞的籍貫稱號（代上27:30），與代上26:30米拉利族之地不同。"
+ },
+ "雅悉": {
+  "type": "person",
+  "name": "雅悉",
+  "name_en": "Jaziz",
+  "testament": "OT",
+  "desc": "夏甲人，掌管大衛的羊群（代上27:30）。"
+ },
+ "哈摩尼": {
+  "type": "person",
+  "name": "哈摩尼",
+  "name_en": "Hachmoni",
+  "testament": "OT",
+  "desc": "耶歇（王眾子師傅）的父親（代上27:32）。"
+ },
+ "阿比勒": {
+  "type": "person",
+  "name": "阿比勒",
+  "name_en": "Obil",
+  "testament": "OT",
+  "desc": "以實瑪利人，掌管大衛的駝群（代上27:30）。"
+ },
+ "伊施瑪雅": {
+  "type": "person",
+  "name": "伊施瑪雅",
+  "name_en": "Ishmaiah",
+  "testament": "OT",
+  "desc": "俄巴第雅的兒子，大衛所派管理西布倫支派的首領（代上27:19）。"
  }
 }
