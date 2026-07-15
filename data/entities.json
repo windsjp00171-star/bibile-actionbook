@@ -11100,16 +11100,28 @@
   "desc": "大衛長兄示米亞的兒子，為人狡猾，獻計助暗嫩玷污他瑪（撒下13:3-5、32-35）。",
   "name": "約拿達"
  },
- "示米亞": {
-  "type": "person",
-  "name_en": "Shimeah",
-  "testament": "OT",
-  "books": [
-   "撒母耳記下"
-  ],
-  "desc": "大衛的長兄，約拿達的父親（撒下13:3，撒上16:9作「沙瑪」）。",
-  "name": "示米亞"
- },
+ "示米亞": [
+  {
+   "type": "person",
+   "name_en": "Shimeah",
+   "testament": "OT",
+   "books": [
+    "撒母耳記下"
+   ],
+   "desc": "大衛的長兄，約拿達的父親（撒下13:3，撒上16:9作「沙瑪」）。",
+   "name": "示米亞"
+  },
+  {
+   "type": "person",
+   "name": "示米亞",
+   "name_en": "Shammua/Shimea",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "desc": "大衛在耶路撒冷所生的兒子之一，撒母耳記下5:14作「沙母亞」，與大衛長兄示米亞非同一人（代上3:5）。"
+  }
+ ],
  "巴力夏瑣": {
   "type": "place",
   "name_en": "Baal Hazor",
@@ -11675,7 +11687,8 @@
   "name_en": "Shobab",
   "testament": "OT",
   "books": [
-   "撒母耳記下"
+   "撒母耳記下",
+   "歷代志上"
   ],
   "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:14）。"
  },
@@ -16488,5 +16501,236 @@
   "name_en": "Hammath",
   "testament": "OT",
   "desc": "基尼人利甲家的先祖（代上2:55）。"
+ },
+ "但以利": {
+  "type": "person",
+  "name": "但以利",
+  "name_en": "Daniel",
+  "testament": "OT",
+  "desc": "大衛與亞比該所生的次子，撒母耳記下3:3稱他為「基利押」（代上3:1）。"
+ },
+ "拔書亞": {
+  "type": "person",
+  "name": "拔書亞",
+  "name_en": "Bath-shua",
+  "testament": "OT",
+  "desc": "亞米利的女兒，所羅門的母親，即拔示巴，歷代志上對其父名用不同音譯（代上3:5，參撒下11:3）。"
+ },
+ "挪迦": {
+  "type": "person",
+  "name": "挪迦",
+  "name_en": "Nogah",
+  "testament": "OT",
+  "desc": "大衛在耶路撒冷所生的兒子之一（代上3:7）。"
+ },
+ "耶哥尼雅": {
+  "type": "person",
+  "name": "耶哥尼雅",
+  "name_en": "Jeconiah",
+  "testament": "OT",
+  "desc": "約雅敬的兒子，猶大末代王之一，即約雅斤，被擄至巴比倫，歷代志上多用此名（代上3:16-17，參王下24:6-15）。"
+ },
+ "撒拉鐵": {
+  "type": "person",
+  "name": "撒拉鐵",
+  "name_en": "Shealtiel",
+  "testament": "OT",
+  "desc": "被擄的耶哥尼雅（約雅斤）的兒子，所羅巴伯之父（代上3:17-19，參拉3:2、太1:12）。"
+ },
+ "瑪基蘭": {
+  "type": "person",
+  "name": "瑪基蘭",
+  "name_en": "Malchiram",
+  "testament": "OT",
+  "desc": "耶哥尼雅的兒子（代上3:18）。"
+ },
+ "毗大雅": {
+  "type": "person",
+  "name": "毗大雅",
+  "name_en": "Pedaiah",
+  "testament": "OT",
+  "desc": "耶哥尼雅的兒子，經文另記所羅巴伯是他的兒子（代上3:18-19），與撒拉鐵之子所羅巴伯的記載略有出入。"
+ },
+ "示拿薩": {
+  "type": "person",
+  "name": "示拿薩",
+  "name_en": "Shenazzar",
+  "testament": "OT",
+  "desc": "耶哥尼雅的兒子（代上3:18）。"
+ },
+ "耶加米": {
+  "type": "person",
+  "name": "耶加米",
+  "name_en": "Jekamiah",
+  "testament": "OT",
+  "desc": "耶哥尼雅的兒子（代上3:18）。"
+ },
+ "何沙瑪": {
+  "type": "person",
+  "name": "何沙瑪",
+  "name_en": "Hoshama",
+  "testament": "OT",
+  "desc": "耶哥尼雅的兒子（代上3:18）。"
+ },
+ "尼大比雅": {
+  "type": "person",
+  "name": "尼大比雅",
+  "name_en": "Nedabiah",
+  "testament": "OT",
+  "desc": "耶哥尼雅的兒子（代上3:18）。"
+ },
+ "哈舒巴": {
+  "type": "person",
+  "name": "哈舒巴",
+  "name_en": "Hashubah",
+  "testament": "OT",
+  "desc": "所羅巴伯的兒子（代上3:20）。"
+ },
+ "阿黑": {
+  "type": "person",
+  "name": "阿黑",
+  "name_en": "Ohel",
+  "testament": "OT",
+  "desc": "所羅巴伯的兒子（代上3:20）。"
+ },
+ "比利家": {
+  "type": "person",
+  "name": "比利家",
+  "name_en": "Berechiah",
+  "testament": "OT",
+  "desc": "所羅巴伯的兒子（代上3:20），與撒迦利亞先知之父比利家同名（亞1:1）。"
+ },
+ "哈撒底": {
+  "type": "person",
+  "name": "哈撒底",
+  "name_en": "Hasadiah",
+  "testament": "OT",
+  "desc": "所羅巴伯的兒子（代上3:20）。"
+ },
+ "于沙希悉": {
+  "type": "person",
+  "name": "于沙希悉",
+  "name_en": "Jushab-hesed",
+  "testament": "OT",
+  "desc": "所羅巴伯的兒子（代上3:20）。"
+ },
+ "毗拉提": {
+  "type": "person",
+  "name": "毗拉提",
+  "name_en": "Pelatiah",
+  "testament": "OT",
+  "desc": "哈拿尼雅的兒子（代上3:21）。"
+ },
+ "耶篩亞": {
+  "type": "person",
+  "name": "耶篩亞",
+  "name_en": "Jeshaiah",
+  "testament": "OT",
+  "desc": "哈拿尼雅的兒子（代上3:21）。"
+ },
+ "利法雅": {
+  "type": "person",
+  "name": "利法雅",
+  "name_en": "Rephaiah",
+  "testament": "OT",
+  "desc": "大衛世系後裔一支之祖，與其眾子一同列於族譜（代上3:21）。"
+ },
+ "亞珥難": {
+  "type": "person",
+  "name": "亞珥難",
+  "name_en": "Arnan",
+  "testament": "OT",
+  "desc": "大衛世系後裔一支之祖，與其眾子一同列於族譜（代上3:21）。"
+ },
+ "示迦尼": {
+  "type": "person",
+  "name": "示迦尼",
+  "name_en": "Shecaniah",
+  "testament": "OT",
+  "desc": "大衛世系後裔一支之祖，示瑪雅的父親（代上3:21-22）。"
+ },
+ "示瑪雅": {
+  "type": "person",
+  "name": "示瑪雅",
+  "name_en": "Shemaiah",
+  "testament": "OT",
+  "desc": "示迦尼的兒子（代上3:22）。"
+ },
+ "哈突": {
+  "type": "person",
+  "name": "哈突",
+  "name_en": "Hattush",
+  "testament": "OT",
+  "desc": "示瑪雅的兒子（代上3:22）。"
+ },
+ "巴利亞": {
+  "type": "person",
+  "name": "巴利亞",
+  "name_en": "Berechiah/Bariah",
+  "testament": "OT",
+  "desc": "示瑪雅的兒子（代上3:22）。"
+ },
+ "尼利雅": {
+  "type": "person",
+  "name": "尼利雅",
+  "name_en": "Neariah",
+  "testament": "OT",
+  "desc": "示瑪雅的兒子，以利約乃的父親（代上3:22-23）。"
+ },
+ "以利約乃": {
+  "type": "person",
+  "name": "以利約乃",
+  "name_en": "Elioenai",
+  "testament": "OT",
+  "desc": "尼利雅的兒子（代上3:23-24）。"
+ },
+ "亞斯利干": {
+  "type": "person",
+  "name": "亞斯利干",
+  "name_en": "Azrikam",
+  "testament": "OT",
+  "desc": "尼利雅的兒子（代上3:23）。"
+ },
+ "何大雅": {
+  "type": "person",
+  "name": "何大雅",
+  "name_en": "Hodaviah",
+  "testament": "OT",
+  "desc": "以利約乃的兒子（代上3:24）。"
+ },
+ "以利亞實": {
+  "type": "person",
+  "name": "以利亞實",
+  "name_en": "Eliashib",
+  "testament": "OT",
+  "desc": "以利約乃的兒子（代上3:24）。"
+ },
+ "毗萊雅": {
+  "type": "person",
+  "name": "毗萊雅",
+  "name_en": "Pelaiah",
+  "testament": "OT",
+  "desc": "以利約乃的兒子（代上3:24）。"
+ },
+ "阿谷": {
+  "type": "person",
+  "name": "阿谷",
+  "name_en": "Akkub",
+  "testament": "OT",
+  "desc": "以利約乃的兒子（代上3:24）。"
+ },
+ "第萊雅": {
+  "type": "person",
+  "name": "第萊雅",
+  "name_en": "Delaiah",
+  "testament": "OT",
+  "desc": "以利約乃的兒子（代上3:24）。"
+ },
+ "阿拿尼": {
+  "type": "person",
+  "name": "阿拿尼",
+  "name_en": "Anani",
+  "testament": "OT",
+  "desc": "以利約乃的兒子（代上3:24）。"
  }
 }
