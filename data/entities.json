@@ -3449,6 +3449,20 @@
     7
    ],
    "desc": "便雅憫支派比結的兒子（代上7:8），與猶大王、以色列王、基甸父親等同名者皆非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "約阿施（示瑪之子）",
+   "name_en": "Joash (son of Shema)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    12,
+    12
+   ],
+   "desc": "基比亞人示瑪的兒子，大衛麾下便雅憫勇士之一（代上12:3），與猶大王、以色列王、基甸父親等同名者皆非同一人。"
   }
  ],
  "巴比倫河": {
@@ -9352,6 +9366,20 @@
     8
    ],
    "desc": "比利亞的兄弟，亞雅崙居民的族長之一，曾驅逐迦特人（代上8:13），與猶大支派城邑示瑪非同名同義。"
+  },
+  {
+   "type": "person",
+   "name": "示瑪（基比亞人）",
+   "name_en": "Shema (Gibeathite)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    12,
+    12
+   ],
+   "desc": "基比亞人，大衛麾下勇士亞希以謝、約阿施的父親（代上12:3），與代上8:13比利亞之弟示瑪非同一人。"
   }
  ],
  "摩拉大": {
@@ -19741,5 +19769,145 @@
    11
   ],
   "desc": "哈拉人，大衛勇士亞希暗的父親（代上11:35，撒下23:33作「沙拉」）。"
+ },
+ "耶薛": {
+  "type": "person",
+  "name": "耶薛",
+  "name_en": "Jeziel",
+  "testament": "OT",
+  "desc": "亞斯瑪威的兒子，投奔大衛的便雅憫勇士之一（代上12:3）。"
+ },
+ "比拉迦": {
+  "type": "person",
+  "name": "比拉迦",
+  "name_en": "Beracah",
+  "testament": "OT",
+  "desc": "投奔大衛的便雅憫勇士之一（代上12:3）。"
+ },
+ "以實買雅": {
+  "type": "person",
+  "name": "以實買雅",
+  "name_en": "Ishmaiah",
+  "testament": "OT",
+  "desc": "基遍人，大衛「三十勇士」中的一位首領（代上12:4）。"
+ },
+ "雅哈悉": {
+  "type": "person",
+  "name": "雅哈悉",
+  "name_en": "Jaaziel",
+  "testament": "OT",
+  "desc": "投奔大衛的勇士之一（代上12:4）。"
+ },
+ "基得拉人": {
+  "type": "place",
+  "name": "基得拉人",
+  "name_en": "Gederathite",
+  "testament": "OT",
+  "desc": "猶大支派基得拉城的居民稱號，約撒拔的籍貫（代上12:4）。"
+ },
+ "約撒拔": {
+  "type": "person",
+  "name": "約撒拔",
+  "name_en": "Jozabad",
+  "testament": "OT",
+  "desc": "基得拉人，投奔大衛的勇士之一（代上12:4）；另有瑪拿西支派千夫長同名者投奔大衛（代上12:20）。"
+ },
+ "伊利烏賽": {
+  "type": "person",
+  "name": "伊利烏賽",
+  "name_en": "Eluzai",
+  "testament": "OT",
+  "desc": "投奔大衛的勇士之一（代上12:5）。"
+ },
+ "比亞利雅": {
+  "type": "person",
+  "name": "比亞利雅",
+  "name_en": "Bealiah",
+  "testament": "OT",
+  "desc": "投奔大衛的勇士之一（代上12:5）。"
+ },
+ "示瑪利雅": {
+  "type": "person",
+  "name": "示瑪利雅",
+  "name_en": "Shemariah",
+  "testament": "OT",
+  "desc": "投奔大衛的勇士之一（代上12:5）。"
+ },
+ "哈律弗人": {
+  "type": "place",
+  "name": "哈律弗人",
+  "name_en": "Haruphite",
+  "testament": "OT",
+  "desc": "大衛勇士示法提雅的籍貫稱號（代上12:5）。"
+ },
+ "可拉人": {
+  "type": "place",
+  "name": "可拉人",
+  "name_en": "Korahite",
+  "testament": "OT",
+  "desc": "利未支派可拉族後裔的稱號，此處指投奔大衛的一批勇士（代上12:6），與利未人可拉本人非同一人。"
+ },
+ "耶西亞": {
+  "type": "person",
+  "name": "耶西亞",
+  "name_en": "Jesiah",
+  "testament": "OT",
+  "desc": "可拉族人，投奔大衛的勇士之一（代上12:6）。"
+ },
+ "亞薩列": {
+  "type": "person",
+  "name": "亞薩列",
+  "name_en": "Azarel",
+  "testament": "OT",
+  "desc": "可拉族人，投奔大衛的勇士之一（代上12:6）。"
+ },
+ "約以謝": {
+  "type": "person",
+  "name": "約以謝",
+  "name_en": "Joezer",
+  "testament": "OT",
+  "desc": "可拉族人，投奔大衛的勇士之一（代上12:6）。"
+ },
+ "猶拉": {
+  "type": "person",
+  "name": "猶拉",
+  "name_en": "Joelah",
+  "testament": "OT",
+  "desc": "基多人耶羅罕的兒子，投奔大衛的勇士之一（代上12:7）。"
+ },
+ "以薛": {
+  "type": "person",
+  "name": "以薛",
+  "name_en": "Ezer",
+  "testament": "OT",
+  "desc": "迦得支派軍長之一，投奔大衛的十一位軍長之首（代上12:9），與以法蓮之子以謝非同名。"
+ },
+ "彌施瑪拿": {
+  "type": "person",
+  "name": "彌施瑪拿",
+  "name_en": "Mishmannah",
+  "testament": "OT",
+  "desc": "迦得支派軍長之一，投奔大衛（代上12:10）。"
+ },
+ "以利薩巴": {
+  "type": "person",
+  "name": "以利薩巴",
+  "name_en": "Elzabad",
+  "testament": "OT",
+  "desc": "迦得支派軍長之一，投奔大衛（代上12:12）。"
+ },
+ "末巴奈": {
+  "type": "person",
+  "name": "末巴奈",
+  "name_en": "Machbannai",
+  "testament": "OT",
+  "desc": "迦得支派軍長之一，十一位軍長中最末一位，投奔大衛（代上12:13）。"
+ },
+ "押拿": {
+  "type": "person",
+  "name": "押拿",
+  "name_en": "Adnah",
+  "testament": "OT",
+  "desc": "瑪拿西支派千夫長，投奔大衛的勇士之一（代上12:20）。"
  }
 }
