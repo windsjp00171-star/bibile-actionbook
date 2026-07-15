@@ -11664,16 +11664,28 @@
   "desc": "瑣巴人拿單的兒子，大衛三十勇士之一（撒下23:36）。",
   "name": "以甲"
  },
- "巴尼": {
-  "type": "person",
-  "name_en": "Bani",
-  "testament": "OT",
-  "books": [
-   "撒母耳記下"
-  ],
-  "desc": "迦得人，大衛三十勇士之一（撒下23:36）。",
-  "name": "巴尼"
- },
+ "巴尼": [
+  {
+   "type": "person",
+   "name_en": "Bani",
+   "testament": "OT",
+   "books": [
+    "撒母耳記下"
+   ],
+   "desc": "迦得人，大衛三十勇士之一（撒下23:36）。",
+   "name": "巴尼"
+  },
+  {
+   "type": "person",
+   "name": "巴尼",
+   "name_en": "Bani (Levite)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "desc": "米拉利支派歌唱者世系之一，沙麥的父親（代上6:46），與大衛勇士巴尼非同一人。"
+  }
+ ],
  "洗勒": {
   "type": "person",
   "name_en": "Zelek",
@@ -17562,5 +17574,355 @@
   "name_en": "Hara",
   "testament": "OT",
   "desc": "流便人、迦得人、瑪拿西半支派人被擄去之地（代上5:26）。"
+ },
+ "歌轄": {
+  "type": "person",
+  "name": "歌轄",
+  "name_en": "Kohath",
+  "testament": "OT",
+  "desc": "利未的兒子，歷代志上6:2用法，即「哥轄」（代上6:1作「哥轄」，兩者同一人）。"
+ },
+ "亞比書": {
+  "type": "person",
+  "name": "亞比書",
+  "name_en": "Abishua",
+  "testament": "OT",
+  "desc": "非尼哈的兒子，大祭司世系之一（代上6:4-5,50-51）。"
+ },
+ "烏西": {
+  "type": "person",
+  "name": "烏西",
+  "name_en": "Uzzi",
+  "testament": "OT",
+  "desc": "布基的兒子，大祭司世系之一（代上6:5-6,51）。"
+ },
+ "西拉希雅": {
+  "type": "person",
+  "name": "西拉希雅",
+  "name_en": "Zerahiah",
+  "testament": "OT",
+  "desc": "烏西的兒子，大祭司世系之一（代上6:6,51）。"
+ },
+ "米拉約": {
+  "type": "person",
+  "name": "米拉約",
+  "name_en": "Meraioth",
+  "testament": "OT",
+  "desc": "西拉希雅的兒子，大祭司世系之一（代上6:6-7,52）。"
+ },
+ "亞瑪利雅": {
+  "type": "person",
+  "name": "亞瑪利雅",
+  "name_en": "Amariah",
+  "testament": "OT",
+  "desc": "大祭司世系中的一位（代上6:7,11,52），族譜中出現不只一次同名者。"
+ },
+ "希勒家": {
+  "type": "person",
+  "name": "希勒家",
+  "name_en": "Hilkiah",
+  "testament": "OT",
+  "desc": "沙龍的兒子，大祭司世系之一（代上6:13），與約西亞年間發現律法書的大祭司希勒家同名。"
+ },
+ "約薩答": {
+  "type": "person",
+  "name": "約薩答",
+  "name_en": "Jehozadak",
+  "testament": "OT",
+  "desc": "西萊雅的兒子，猶大被擄巴比倫時一同被擄去的大祭司（代上6:14-15）。"
+ },
+ "薪瑪": {
+  "type": "person",
+  "name": "薪瑪",
+  "name_en": "Shimea",
+  "testament": "OT",
+  "desc": "約亞的父親，革順支派世系之一（代上6:20,42）。"
+ },
+ "耶特賴": {
+  "type": "person",
+  "name": "耶特賴",
+  "name_en": "Jeatherai",
+  "testament": "OT",
+  "desc": "謝拉的兒子，革順支派世系之一（代上6:21）。"
+ },
+ "亞惜": {
+  "type": "person",
+  "name": "亞惜",
+  "name_en": "Assir",
+  "testament": "OT",
+  "desc": "可拉的兒子，哥轄支派世系之一（代上6:22-23,37）。"
+ },
+ "以比雅撒": {
+  "type": "person",
+  "name": "以比雅撒",
+  "name_en": "Ebiasaph",
+  "testament": "OT",
+  "desc": "以利加拿的兒子，哥轄支派世系之一（代上6:23,37）。"
+ },
+ "烏列": {
+  "type": "person",
+  "name": "烏列",
+  "name_en": "Uriel",
+  "testament": "OT",
+  "desc": "他哈的兒子，哥轄支派世系之一（代上6:24）。"
+ },
+ "少羅": {
+  "type": "person",
+  "name": "少羅",
+  "name_en": "Shaul",
+  "testament": "OT",
+  "desc": "烏西雅的兒子，哥轄支派世系之一（代上6:24），與同名的以色列首位君王掃羅非同一人。"
+ },
+ "亞瑪賽": {
+  "type": "person",
+  "name": "亞瑪賽",
+  "name_en": "Amasai",
+  "testament": "OT",
+  "desc": "以利加拿的兒子（代上6:25,35）。"
+ },
+ "亞希摩": {
+  "type": "person",
+  "name": "亞希摩",
+  "name_en": "Ahimoth",
+  "testament": "OT",
+  "desc": "以利加拿的兒子（代上6:25）。"
+ },
+ "瑣菲": {
+  "type": "person",
+  "name": "瑣菲",
+  "name_en": "Zophai",
+  "testament": "OT",
+  "desc": "以利加拿的兒子（代上6:26）。"
+ },
+ "亞比亞": {
+  "type": "person",
+  "name": "亞比亞",
+  "name_en": "Abijah",
+  "testament": "OT",
+  "desc": "撒母耳的次子（代上6:28），與同名的猶大王亞比雅非同一人。"
+ },
+ "哈基雅": {
+  "type": "person",
+  "name": "哈基雅",
+  "name_en": "Haggiah",
+  "testament": "OT",
+  "desc": "示米亞的兒子，米拉利支派世系之一（代上6:30）。"
+ },
+ "陀亞": {
+  "type": "person",
+  "name": "陀亞",
+  "name_en": "Toah",
+  "testament": "OT",
+  "desc": "以列的兒子，哥轄支派歌唱者世系之一（代上6:34）。"
+ },
+ "瑪哈": {
+  "type": "person",
+  "name": "瑪哈",
+  "name_en": "Mahath",
+  "testament": "OT",
+  "desc": "以利加拿的兒子，哥轄支派歌唱者世系之一（代上6:35）。"
+ },
+ "巴西雅": {
+  "type": "person",
+  "name": "巴西雅",
+  "name_en": "Pashhur/Baaseiah",
+  "testament": "OT",
+  "desc": "米迦勒的父親，亞薩一系世系之一（代上6:40）。"
+ },
+ "瑪基雅": {
+  "type": "person",
+  "name": "瑪基雅",
+  "name_en": "Malchijah",
+  "testament": "OT",
+  "desc": "伊特尼的父親，亞薩一系世系之一（代上6:40）。"
+ },
+ "伊特尼": {
+  "type": "person",
+  "name": "伊特尼",
+  "name_en": "Ethni",
+  "testament": "OT",
+  "desc": "謝拉的兒子，亞薩一系世系之一（代上6:41）。"
+ },
+ "基示": {
+  "type": "person",
+  "name": "基示",
+  "name_en": "Kish",
+  "testament": "OT",
+  "desc": "亞伯底的父親，米拉利支派歌唱者世系之一（代上6:44）。"
+ },
+ "亞伯底": {
+  "type": "person",
+  "name": "亞伯底",
+  "name_en": "Abdi",
+  "testament": "OT",
+  "desc": "瑪鹿的父親，米拉利支派歌唱者世系之一（代上6:44）。"
+ },
+ "瑪鹿": {
+  "type": "person",
+  "name": "瑪鹿",
+  "name_en": "Malluch",
+  "testament": "OT",
+  "desc": "哈沙比雅的父親，米拉利支派歌唱者世系之一（代上6:44-45）。"
+ },
+ "哈沙比雅": {
+  "type": "person",
+  "name": "哈沙比雅",
+  "name_en": "Hashabiah",
+  "testament": "OT",
+  "desc": "亞瑪謝的父親，米拉利支派歌唱者世系之一（代上6:45）。"
+ },
+ "暗西": {
+  "type": "person",
+  "name": "暗西",
+  "name_en": "Amzi",
+  "testament": "OT",
+  "desc": "巴尼的父親，米拉利支派歌唱者世系之一（代上6:46）。"
+ },
+ "沙麥": {
+  "type": "person",
+  "name": "沙麥",
+  "name_en": "Shemer",
+  "testament": "OT",
+  "desc": "末力的父親，米拉利支派歌唱者世系之一（代上6:46）。"
+ },
+ "末力": {
+  "type": "person",
+  "name": "末力",
+  "name_en": "Mahli",
+  "testament": "OT",
+  "desc": "母示的父親，米拉利支派歌唱者世系之一（代上6:47）。"
+ },
+ "希崙": {
+  "type": "place",
+  "name": "希崙",
+  "name_en": "Hilen",
+  "testament": "OT",
+  "desc": "亞倫子孫（哥轄族）所得的城邑之一（代上6:58）。"
+ },
+ "阿勒篾": {
+  "type": "place",
+  "name": "阿勒篾",
+  "name_en": "Almon",
+  "testament": "OT",
+  "desc": "亞倫子孫在便雅憫地所得的城邑之一（代上6:60）。"
+ },
+ "亞拿突": {
+  "type": "place",
+  "name": "亞拿突",
+  "name_en": "Anathoth",
+  "testament": "OT",
+  "desc": "亞倫子孫在便雅憫地所得的城邑之一，也是先知耶利米的家鄉（代上6:60、耶1:1）。"
+ },
+ "約緬": {
+  "type": "place",
+  "name": "約緬",
+  "name_en": "Jokmeam",
+  "testament": "OT",
+  "desc": "哥轄族在以法蓮支派地中所得的城邑之一（代上6:68）。"
+ },
+ "亞雅崙": {
+  "type": "place",
+  "name": "亞雅崙",
+  "name_en": "Aijalon",
+  "testament": "OT",
+  "desc": "哥轄族在以法蓮支派地中所得的城邑之一（代上6:69）。"
+ },
+ "迦特臨門": {
+  "type": "place",
+  "name": "迦特臨門",
+  "name_en": "Gath-rimmon",
+  "testament": "OT",
+  "desc": "哥轄族在以法蓮支派地中所得的城邑之一（代上6:69）。"
+ },
+ "比連": {
+  "type": "place",
+  "name": "比連",
+  "name_en": "Bileam",
+  "testament": "OT",
+  "desc": "哥轄族其餘的人在瑪拿西半支派地中所得的城邑之一（代上6:70）。"
+ },
+ "哥蘭": {
+  "type": "place",
+  "name": "哥蘭",
+  "name_en": "Golan",
+  "testament": "OT",
+  "desc": "革順族在巴珊瑪拿西半支派地中所得的城邑之一（代上6:71）。"
+ },
+ "大比拉": {
+  "type": "place",
+  "name": "大比拉",
+  "name_en": "Daberath",
+  "testament": "OT",
+  "desc": "革順族在以薩迦支派地中所得的城邑之一（代上6:72）。"
+ },
+ "拉末": {
+  "type": "place",
+  "name": "拉末",
+  "name_en": "Ramoth",
+  "testament": "OT",
+  "desc": "革順族在以薩迦支派地中所得的城邑之一（代上6:73），與約但河東的基列拉末非同地。"
+ },
+ "亞年": {
+  "type": "place",
+  "name": "亞年",
+  "name_en": "Anem",
+  "testament": "OT",
+  "desc": "革順族在以薩迦支派地中所得的城邑之一（代上6:73）。"
+ },
+ "瑪沙": {
+  "type": "place",
+  "name": "瑪沙",
+  "name_en": "Mashal",
+  "testament": "OT",
+  "desc": "革順族在亞設支派地中所得的城邑之一（代上6:74）。"
+ },
+ "押頓": {
+  "type": "place",
+  "name": "押頓",
+  "name_en": "Abdon",
+  "testament": "OT",
+  "desc": "革順族在亞設支派地中所得的城邑之一（代上6:74）。"
+ },
+ "戶割": {
+  "type": "place",
+  "name": "戶割",
+  "name_en": "Hukok",
+  "testament": "OT",
+  "desc": "革順族在亞設支派地中所得的城邑之一（代上6:75）。"
+ },
+ "哈們": {
+  "type": "place",
+  "name": "哈們",
+  "name_en": "Hammon",
+  "testament": "OT",
+  "desc": "革順族在拿弗他利支派地中所得的城邑之一（代上6:76）。"
+ },
+ "臨摩挪": {
+  "type": "place",
+  "name": "臨摩挪",
+  "name_en": "Rimmono",
+  "testament": "OT",
+  "desc": "米拉利族在西布倫支派地中所得的城邑之一（代上6:77）。"
+ },
+ "比悉": {
+  "type": "place",
+  "name": "比悉",
+  "name_en": "Bezer",
+  "testament": "OT",
+  "desc": "米拉利族在流便支派地中所得的城邑之一（代上6:78）。"
+ },
+ "他泊": {
+  "type": "place",
+  "name": "他泊",
+  "name_en": "Tabor (city)",
+  "testament": "OT",
+  "desc": "米拉利族在西布倫支派地中所得的城邑之一（代上6:77），與他泊山非同一地。"
+ },
+ "雅哈撒": {
+  "type": "place",
+  "name": "雅哈撒",
+  "name_en": "Jahzah",
+  "testament": "OT",
+  "desc": "米拉利族在流便支派地中所得的城邑之一（代上6:78）。"
  }
 }
