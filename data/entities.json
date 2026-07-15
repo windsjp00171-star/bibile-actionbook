@@ -335,13 +335,29 @@
    "verses": "路得記"
   }
  ],
- "亞米拿達": {
-  "type": "person",
-  "name": "亞米拿達",
-  "name_en": "Amminadab",
-  "desc": "蘭之子、拿順之父，出埃及世代的猶大支派要員，列於大衛家譜。",
-  "verses": "路得記"
- },
+ "亞米拿達": [
+  {
+   "type": "person",
+   "name": "亞米拿達",
+   "name_en": "Amminadab",
+   "desc": "蘭之子、拿順之父，出埃及世代的猶大支派要員，列於大衛家譜。",
+   "verses": "路得記"
+  },
+  {
+   "type": "person",
+   "name": "亞米拿達（烏薛子孫）",
+   "name_en": "Amminadab (Levite)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    15,
+    15
+   ],
+   "desc": "烏薛宗族的一位族長，與抬約櫃的利未人（代上15:10-11），與蘭之子、拿順之父的猶大支派亞米拿達非同一人。"
+  }
+ ],
  "拿順": {
   "type": "person",
   "name": "拿順",
@@ -5719,15 +5735,31 @@
   "lat": 31.95,
   "lng": 34.9
  },
- "希伯崙": {
-  "type": "place",
-  "name": "希伯崙",
-  "name_en": "Hebron",
-  "testament": "OT",
-  "desc": "猶大山地古城，又名基列亞巴。亞伯拉罕在此買麥比拉洞葬撒拉，列祖多葬於此；後為大衛初登基的王城。（今巴勒斯坦西岸地區）",
-  "lat": 31.53,
-  "lng": 35.1
- },
+ "希伯崙": [
+  {
+   "type": "place",
+   "name": "希伯崙",
+   "name_en": "Hebron",
+   "testament": "OT",
+   "desc": "猶大山地古城，又名基列亞巴。亞伯拉罕在此買麥比拉洞葬撒拉，列祖多葬於此；後為大衛初登基的王城。（今巴勒斯坦西岸地區）",
+   "lat": 31.53,
+   "lng": 35.1
+  },
+  {
+   "type": "person",
+   "name": "希伯崙（哥轄之子）",
+   "name_en": "Hebron (son of Kohath)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    15,
+    15
+   ],
+   "desc": "哥轄的兒子，利未支派一個宗族的始祖（代上15:9用地名字形「希伯崙」，其他經文多作「希伯倫」，如代上6:2,18、23:12），與猶大山地古城希伯崙非同一地名概念。"
+  }
+ ],
  "基列亞巴": {
   "type": "place",
   "name": "基列亞巴",
@@ -11742,17 +11774,33 @@
   "desc": "摩押人，其兩個兒子被大衛勇士比拿雅所殺（撒下23:20）。",
   "name": "亞利伊勒"
  },
- "比拿雅": {
-  "type": "person",
-  "name_en": "Benaiah",
-  "testament": "OT",
-  "books": [
-   "撒母耳記下",
-   "歷代志上"
-  ],
-  "desc": "耶何耶大的兒子，甲薛勇士，統轄大衛的基利提人和比利提人親兵，曾徒手奪埃及勇士的槍將他殺死、下坑殺獅子，後受立為護衛長（撒下8:18、23:20-23）；23:30另有一位「比拉頓人比拿雅」同列三十勇士名錄，是否同一人經文未明。",
-  "name": "比拿雅"
- },
+ "比拿雅": [
+  {
+   "type": "person",
+   "name_en": "Benaiah",
+   "testament": "OT",
+   "books": [
+    "撒母耳記下",
+    "歷代志上"
+   ],
+   "desc": "耶何耶大的兒子，甲薛勇士，統轄大衛的基利提人和比利提人親兵，曾徒手奪埃及勇士的槍將他殺死、下坑殺獅子，後受立為護衛長（撒下8:18、23:20-23）；23:30另有一位「比拉頓人比拿雅」同列三十勇士名錄，是否同一人經文未明。",
+   "name": "比拿雅"
+  },
+  {
+   "type": "person",
+   "name": "比拿雅（利未歌唱者）",
+   "name_en": "Benaiah (Levite singer)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    15,
+    15
+   ],
+   "desc": "大衛所立的利未歌唱者之一，鼓瑟（代上15:18,20），與甲薛勇士、護衛長比拿雅非同一人。"
+  }
+ ],
  "伊勒哈難": {
   "type": "person",
   "name_en": "Elhanan",
@@ -12232,13 +12280,36 @@
   "desc": "亞述王的使者，以利亞敬、舍伯那、約亞對他說話。",
   "name": "拉伯沙基"
  },
- "亞薩": {
-  "type": "person",
-  "name_en": "Asaph",
-  "testament": "OT",
-  "desc": "史官約亞的父親。",
-  "name": "亞薩"
- },
+ "亞薩": [
+  {
+   "type": "person",
+   "name": "亞薩",
+   "name_en": "Asaph",
+   "testament": "OT",
+   "desc": "比利家的兒子，革順支派利未人，大衛所立的歌唱班首領之一，與希幔、以探同司敲鈸（代上15:17,19、16:5、25:1-2），詩篇50篇及73-83篇皆題「亞薩的詩」。"
+  },
+  {
+   "type": "person",
+   "name": "亞薩（約亞之父）",
+   "name_en": "Asaph (father of Joah the recorder)",
+   "testament": "OT",
+   "books": [
+    "列王紀下",
+    "以賽亞書"
+   ],
+   "desc": "史官約亞的父親，希西家時代的官員（王下18:18,37，賽36:3,22），與利未歌唱者亞薩非同一人。"
+  },
+  {
+   "type": "place",
+   "name": "亞薩",
+   "name_en": "Azal",
+   "testament": "OT",
+   "books": [
+    "撒迦利亞書"
+   ],
+   "desc": "末世異象中橄欖山震開後百姓逃往的山谷地名（亞14:5），與利未歌唱者亞薩非同一人。"
+  }
+ ],
  "亞摩斯": {
   "type": "person",
   "name_en": "Amoz",
@@ -12630,13 +12701,25 @@
   "desc": "約沙法的父親。",
   "name": "帕路亞"
  },
- "以探": {
-  "type": "person",
-  "name_en": "Ethan",
-  "testament": "OT",
-  "desc": "以斯拉人，所羅門的智慧勝過他。",
-  "name": "以探"
- },
+ "以探": [
+  {
+   "type": "person",
+   "name": "以探",
+   "name_en": "Ethan (Levite musician)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "desc": "米拉利支派利未人，大衛所立的歌唱班首領之一，職掌敲鈸，代上15:17稱他為古沙雅的兒子，6:44家譜則作基示的兒子（同一世系不同稱法）。"
+  },
+  {
+   "type": "person",
+   "name_en": "Ethan",
+   "testament": "OT",
+   "desc": "以斯拉人，所羅門的智慧勝過他。",
+   "name": "以探"
+  }
+ ],
  "瑪曷": {
   "type": "person",
   "name_en": "Mahol",
@@ -12644,13 +12727,25 @@
   "desc": "希幔、甲各、達大的父親。",
   "name": "瑪曷"
  },
- "希幔": {
-  "type": "person",
-  "name_en": "Heman",
-  "testament": "OT",
-  "desc": "瑪曷的兒子，所羅門的智慧勝過他。",
-  "name": "希幔"
- },
+ "希幔": [
+  {
+   "type": "person",
+   "name": "希幔",
+   "name_en": "Heman (Levite musician)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "desc": "約珥的兒子，撒母耳的孫子，哥轄支派利未人，大衛所立的歌唱班首領之一，職掌敲鈸（代上6:33、15:17,19、16:41-42、25:1,4-6）。"
+  },
+  {
+   "type": "person",
+   "name_en": "Heman",
+   "testament": "OT",
+   "desc": "瑪曷的兒子，所羅門的智慧勝過他。",
+   "name": "希幔"
+  }
+ ],
  "甲各": {
   "type": "person",
   "name_en": "Calcol",
@@ -17794,6 +17889,20 @@
     11
    ],
    "desc": "亞羅珥人何坦的兒子，大衛勇士之一（代上11:44），與流便支派族長、基遍之父耶利皆非同名同義。"
+  },
+  {
+   "type": "person",
+   "name": "耶利（利未歌唱者）",
+   "name_en": "Jeiel (Levite singer)",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    15,
+    15
+   ],
+   "desc": "大衛所立的利未歌唱者之一，彈琴，調用第八（代上15:18,21），與流便支派族長、基遍之父、大衛勇士等同名者皆非同一人。"
   }
  ],
  "撒迦利雅": {
@@ -17922,13 +18031,29 @@
   "testament": "OT",
   "desc": "巴珊北邊的山，瑪拿西半支派居住範圍延伸至此，亞摩利人稱之為示尼珥（代上5:23、申3:9）。"
  },
- "以列": {
-  "type": "person",
-  "name": "以列",
-  "name_en": "Jediael/Iddo",
-  "testament": "OT",
-  "desc": "瑪拿西半支派的一位族長（代上5:24）。"
- },
+ "以列": [
+  {
+   "type": "person",
+   "name": "以列",
+   "name_en": "Jediael/Iddo",
+   "testament": "OT",
+   "desc": "瑪拿西半支派的一位族長（代上5:24）。"
+  },
+  {
+   "type": "person",
+   "name": "以列（希伯崙子孫）",
+   "name_en": "Jeriah/Jerimoth",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    15,
+    15
+   ],
+   "desc": "希伯崙宗族的一位族長，與抬約櫃的利未人（代上15:9,11），與瑪拿西支派的以列非同一人。"
+  }
+ ],
  "亞斯列": {
   "type": "person",
   "name": "亞斯列",
@@ -19971,5 +20096,99 @@
   "name_en": "Beeliada",
   "testament": "OT",
   "desc": "大衛在耶路撒冷所生的兒子之一，撒下5:16作「以利雅大」（代上14:7）。"
+ },
+ "古沙雅": {
+  "type": "person",
+  "name": "古沙雅",
+  "name_en": "Kushaiah",
+  "testament": "OT",
+  "desc": "米拉利支派利未人，大衛所立歌唱者以探的父親（代上15:17）。"
+ },
+ "耶歇": {
+  "type": "person",
+  "name": "耶歇",
+  "name_en": "Jehiel",
+  "testament": "OT",
+  "desc": "大衛所立的利未歌唱者之一，彈瑟（代上15:18,20）。"
+ },
+ "烏尼": {
+  "type": "person",
+  "name": "烏尼",
+  "name_en": "Unni",
+  "testament": "OT",
+  "desc": "大衛所立的利未歌唱者之一，彈瑟（代上15:18,20）。"
+ },
+ "瑪西雅": {
+  "type": "person",
+  "name": "瑪西雅",
+  "name_en": "Maaseiah",
+  "testament": "OT",
+  "desc": "大衛所立的利未歌唱者之一，鼓瑟（代上15:18,20）。",
+  "books": [
+   "歷代志上"
+  ]
+ },
+ "以利斐利戶": {
+  "type": "person",
+  "name": "以利斐利戶",
+  "name_en": "Elipheleh",
+  "testament": "OT",
+  "desc": "大衛所立的利未歌唱者之一，彈琴，調用第八（代上15:18,21）。"
+ },
+ "彌克尼雅": {
+  "type": "person",
+  "name": "彌克尼雅",
+  "name_en": "Mikneiah",
+  "testament": "OT",
+  "desc": "大衛所立的利未歌唱者之一，彈琴，調用第八（代上15:18,21）。"
+ },
+ "亞撒西雅": {
+  "type": "person",
+  "name": "亞撒西雅",
+  "name_en": "Azaziah",
+  "testament": "OT",
+  "desc": "大衛所立的利未歌唱者之一，彈琴，調用第八（代上15:21）。"
+ },
+ "基拿尼雅": {
+  "type": "person",
+  "name": "基拿尼雅",
+  "name_en": "Chenaniah",
+  "testament": "OT",
+  "desc": "利未人的族長，歌唱人的首領，因精通樂理而負責教導歌唱（代上15:22,27）。"
+ },
+ "示巴尼": {
+  "type": "person",
+  "name": "示巴尼",
+  "name_en": "Shebaniah",
+  "testament": "OT",
+  "desc": "抬約櫃時在神前吹號的祭司之一（代上15:24）。"
+ },
+ "比拿亞": {
+  "type": "person",
+  "name": "比拿亞",
+  "name_en": "Benaiah",
+  "testament": "OT",
+  "desc": "抬約櫃時在神前吹號的祭司之一（代上15:24），與甲薛勇士、護衛長比拿雅非同一人。"
+ },
+ "耶希亞": {
+  "type": "person",
+  "name": "耶希亞",
+  "name_en": "Jehiah",
+  "testament": "OT",
+  "desc": "約櫃前守門的利未人之一，與俄別以東同守門（代上15:24）。"
+ },
+ "便": {
+  "type": "person",
+  "name": "便",
+  "name_en": "Ben",
+  "testament": "OT",
+  "desc": "大衛所立的利未歌唱者之一（代上15:18）。"
+ },
+ "示米拉末": {
+  "type": "person",
+  "name": "示米拉末",
+  "name_en": "Shemiramoth",
+  "testament": "OT",
+  "desc": "大衛所立的利未歌唱者之一，彈瑟（代上15:18,20）。"
  }
 }
