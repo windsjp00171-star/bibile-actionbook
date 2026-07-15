@@ -20324,13 +20324,29 @@
   "testament": "OT",
   "desc": "米拉利支派利未人，大衛所立歌唱者以探的父親（代上15:17）。"
  },
- "耶歇": {
-  "type": "person",
-  "name": "耶歇",
-  "name_en": "Jehiel",
-  "testament": "OT",
-  "desc": "大衛所立的利未歌唱者之一，彈瑟（代上15:18,20）。"
- },
+ "耶歇": [
+  {
+   "type": "person",
+   "name": "耶歇",
+   "name_en": "Jehiel",
+   "testament": "OT",
+   "desc": "大衛所立的利未歌唱者之一，彈瑟（代上15:18,20）。"
+  },
+  {
+   "type": "person",
+   "name": "耶歇（革順人）",
+   "name_en": "Jehiel the Gershonite",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    29,
+    29
+   ],
+   "desc": "革順族利未人，經手管理百姓為建殿所獻的寶石，送入耶和華殿的府庫（代上29:8），與大衛所立的利未歌唱者耶歇非必為同一人。"
+  }
+ ],
  "烏尼": {
   "type": "person",
   "name": "烏尼",
