@@ -1587,6 +1587,76 @@
    "name_en": "Gad (tribe)",
    "testament": "both",
    "desc": "迦得支派，選擇定居約但河東的基列地（民32章），雅各形容他們「被敵軍追逼，卻要追逼他們的腳跟」（創49:19），以驍勇善戰聞名。"
+  },
+  {
+   "type": "person",
+   "name": "迦得（先見）",
+   "name_en": "Gad the seer",
+   "testament": "OT",
+   "books": [
+    "撒母耳記上"
+   ],
+   "chapters": [
+    22,
+    22
+   ],
+   "desc": "大衛的先見（先知），大衛逃亡時勸他離開山寨往猶大地去（撒上22:5）。"
+  },
+  {
+   "type": "person",
+   "name": "迦得（先見）",
+   "name_en": "Gad the seer",
+   "testament": "OT",
+   "books": [
+    "撒母耳記下"
+   ],
+   "chapters": [
+    24,
+    24
+   ],
+   "desc": "大衛的先見（先知），數點百姓事件中傳達耶和華三災之選、又吩咐大衛築壇獻祭（撒下24:11-19）。"
+  },
+  {
+   "type": "person",
+   "name": "迦得（先見）",
+   "name_en": "Gad the seer",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    21,
+    21
+   ],
+   "desc": "大衛的先見（先知），數點百姓事件中傳達耶和華三災之選、又吩咐大衛築壇獻祭（代上21:9-19，撒下24章平行記載）。"
+  },
+  {
+   "type": "person",
+   "name": "迦得（先見）",
+   "name_en": "Gad the seer",
+   "testament": "OT",
+   "books": [
+    "歷代志上"
+   ],
+   "chapters": [
+    29,
+    29
+   ],
+   "desc": "大衛的先見（先知），大衛的事蹟記在他的書上（代上29:29）。"
+  },
+  {
+   "type": "person",
+   "name": "迦得（先見）",
+   "name_en": "Gad the seer",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    29,
+    29
+   ],
+   "desc": "大衛的先見（先知），希西家整頓聖殿敬拜時援引他與拿單所吩咐的定例（代下29:25）。"
   }
  ],
  "亞設": [
@@ -20281,5 +20351,12 @@
   "name_en": "Lahmi",
   "testament": "OT",
   "desc": "迦特人歌利亞的兄弟，被睚珥的兒子伊勒哈難所殺（代上20:5，撒下21:19平行記載未提此名，直接說伊勒哈難殺了歌利亞）。"
+ },
+ "迦得谷": {
+  "type": "place",
+  "name": "迦得谷",
+  "name_en": "the valley of Gad",
+  "testament": "OT",
+  "desc": "約但河東的一處山谷，大衛數點百姓時約押巡行至此安營（撒下24:5）。"
  }
 }
