@@ -20602,5 +20602,103 @@
   "name_en": "Ibri",
   "testament": "OT",
   "desc": "米拉利支派世系之一，雅西雅之子比挪的兄弟（代上24:27）。"
+ },
+ "亞薩利拉": {
+  "type": "person",
+  "name": "亞薩利拉",
+  "name_en": "Asarelah",
+  "testament": "OT",
+  "desc": "亞薩的兒子，大衛所立的歌唱班之一，24:14作「耶薩利拉」（代上25:2）。"
+ },
+ "耶薩利拉": {
+  "type": "person",
+  "name": "耶薩利拉",
+  "name_en": "Jesharelah",
+  "testament": "OT",
+  "desc": "亞薩的兒子，掣籤分班中的第七班，即25:2「亞薩利拉」的異寫（代上25:14）。"
+ },
+ "布基雅": {
+  "type": "person",
+  "name": "布基雅",
+  "name_en": "Bukkiah",
+  "testament": "OT",
+  "desc": "希幔的兒子，大衛所立的歌唱班之一，掣籤分得第六班（代上25:4,13）。"
+ },
+ "哈拿尼": {
+  "type": "person",
+  "name": "哈拿尼",
+  "name_en": "Hanani",
+  "testament": "OT",
+  "desc": "希幔的兒子，大衛所立的歌唱班之一，掣籤分得第十八班（代上25:4,25）。"
+ },
+ "以利亞他": {
+  "type": "person",
+  "name": "以利亞他",
+  "name_en": "Eliathah",
+  "testament": "OT",
+  "desc": "希幔的兒子，大衛所立的歌唱班之一，掣籤分得第二十班（代上25:4,27）。"
+ },
+ "基大利提": {
+  "type": "person",
+  "name": "基大利提",
+  "name_en": "Giddalti",
+  "testament": "OT",
+  "desc": "希幔的兒子，大衛所立的歌唱班之一，掣籤分得第二十二班，與耶杜頓之子基大利同名異人（代上25:4,29）。"
+ },
+ "羅幔提以謝": {
+  "type": "person",
+  "name": "羅幔提以謝",
+  "name_en": "Romamti-ezer",
+  "testament": "OT",
+  "desc": "希幔的兒子，大衛所立的歌唱班之一，掣籤分得第二十四班，即末班（代上25:4,31）。"
+ },
+ "瑪哈秀": {
+  "type": "person",
+  "name": "瑪哈秀",
+  "name_en": "Mahazioth",
+  "testament": "OT",
+  "desc": "希幔的兒子，大衛所立的歌唱班之一，掣籤分得第二十三班（代上25:4,30）。"
+ },
+ "亞薩烈": {
+  "type": "person",
+  "name": "亞薩烈",
+  "name_en": "Asarelah",
+  "testament": "OT",
+  "desc": "掣籤分得第十一班，依名冊順序對應希幔之子烏薛（代上25:4），或為同一人異寫（代上25:18）。"
+ },
+ "西利": {
+  "type": "person",
+  "name": "西利",
+  "name_en": "Zeri",
+  "testament": "OT",
+  "desc": "耶杜頓的兒子，大衛所立的歌唱班之一（代上25:3）。"
+ },
+ "約施比加沙": {
+  "type": "person",
+  "name": "約施比加沙",
+  "name_en": "Joshbekashah",
+  "testament": "OT",
+  "desc": "希幔的兒子，大衛所立的歌唱班之一，掣籤分得第十七班（代上25:4,24）。"
+ },
+ "瑪羅提": {
+  "type": "person",
+  "name": "瑪羅提",
+  "name_en": "Malloth",
+  "testament": "OT",
+  "desc": "希幔的兒子，大衛所立的歌唱班之一，掣籤分得第十九班（代上25:4,26）。"
+ },
+ "何提": {
+  "type": "person",
+  "name": "何提",
+  "name_en": "Hothir",
+  "testament": "OT",
+  "desc": "希幔的兒子，大衛所立的歌唱班之一，掣籤分得第二十一班（代上25:4,28）。"
+ },
+ "伊洗利": {
+  "type": "person",
+  "name": "伊洗利",
+  "name_en": "Izri",
+  "testament": "OT",
+  "desc": "掣籤分得第四班，依名冊順序對應耶杜頓之子西利（代上25:3），或為同一人異寫（代上25:11）。"
  }
 }
