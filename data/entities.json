@@ -21224,5 +21224,12 @@
   "name_en": "Ephron",
   "testament": "OT",
   "desc": "代下13:19「以法拉音」的另一種讀法（原文兩種抄本異文）。"
+ },
+ "洗法谷": {
+  "type": "place",
+  "name": "洗法谷",
+  "name_en": "valley of Zephathah",
+  "testament": "OT",
+  "desc": "瑪利沙附近的山谷，亞撒與古實王謝拉在此擺陣交戰（代下14:10）。"
  }
 }
