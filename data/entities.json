@@ -19245,13 +19245,29 @@
   "testament": "OT",
   "desc": "希別的兒子，亞設支派世系之一（代上7:32-33）。"
  },
- "朔默": {
-  "type": "person",
-  "name": "朔默",
-  "name_en": "Shomer",
-  "testament": "OT",
-  "desc": "希別的兒子，亞設支派世系之一（代上7:32,34）。"
- },
+ "朔默": [
+  {
+   "type": "person",
+   "name": "朔默",
+   "name_en": "Shomer",
+   "testament": "OT",
+   "desc": "希別的兒子，亞設支派世系之一（代上7:32,34）。"
+  },
+  {
+   "type": "person",
+   "name": "朔默（摩押婦人）",
+   "name_en": "Shomer (Moabite woman)",
+   "testament": "OT",
+   "books": [
+    "列王紀下"
+   ],
+   "chapters": [
+    12,
+    12
+   ],
+   "desc": "摩押婦人，弒殺約阿施王之臣僕約薩拔的母親，代下24:26作「示米利」（王下12:21），與亞設支派世系的朔默非同一人。"
+  }
+ ],
  "何坦": {
   "type": "person",
   "name": "何坦",
@@ -21642,5 +21658,26 @@
   "name_en": "Mattan",
   "testament": "OT",
   "desc": "巴力的祭司，亞他利雅被殺後，眾民拆毀巴力廟時將他殺於壇前（代下23:17）。"
+ },
+ "示米押": {
+  "type": "person",
+  "name": "示米押",
+  "name_en": "Shimeath",
+  "testament": "OT",
+  "desc": "亞捫婦人，弒殺約阿施王之臣僕（代下24:26作撒拔、王下12:21作約撒甲）的母親，王下12:21同名（代下24:26）。"
+ },
+ "示米利": {
+  "type": "person",
+  "name": "示米利",
+  "name_en": "Shimrith",
+  "testament": "OT",
+  "desc": "摩押婦人，弒殺約阿施王之臣僕約薩拔的母親（代下24:26，王下12:21作「朔默」）。"
+ },
+ "約撒甲": {
+  "type": "person",
+  "name": "約撒甲",
+  "name_en": "Jozacar",
+  "testament": "OT",
+  "desc": "示米押的兒子，弒殺約阿施王的臣僕之一，代下24:26作「撒拔」（王下12:21）。"
  }
 }
