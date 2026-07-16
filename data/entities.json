@@ -12134,6 +12134,20 @@
     15
    ],
    "desc": "大衛所立的利未歌唱者之一，鼓瑟（代上15:18,20），與甲薛勇士、護衛長比拿雅非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "比拿雅（雅哈悉先祖）",
+   "name_en": "Benaiah (ancestor of Jahaziel)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    20,
+    20
+   ],
+   "desc": "雅哈悉家譜中的一位先祖（代下20:14），與甲薛勇士護衛長、利未歌唱者等同名者皆非同一人。"
   }
  ],
  "伊勒哈難": {
@@ -18304,6 +18318,20 @@
     16
    ],
    "desc": "大衛所立的利未歌唱者之一，彈琴，調用第八（代上15:18,21、16:5），與流便支派族長、基遍之父、大衛勇士等同名者皆非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "耶利（雅哈悉先祖）",
+   "name_en": "Jeiel (ancestor of Jahaziel)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    20,
+    20
+   ],
+   "desc": "雅哈悉家譜中的一位先祖（代下20:14），與流便支派族長、基遍之父、大衛勇士、利未歌唱者等同名者皆非同一人。"
   }
  ],
  "撒迦利雅": {
@@ -20380,13 +20408,29 @@
   "testament": "OT",
   "desc": "亞斯瑪威的兒子，投奔大衛的便雅憫勇士之一（代上12:3）。"
  },
- "比拉迦": {
-  "type": "person",
-  "name": "比拉迦",
-  "name_en": "Beracah",
-  "testament": "OT",
-  "desc": "投奔大衛的便雅憫勇士之一（代上12:3）。"
- },
+ "比拉迦": [
+  {
+   "type": "person",
+   "name": "比拉迦",
+   "name_en": "Beracah",
+   "testament": "OT",
+   "desc": "投奔大衛的便雅憫勇士之一（代上12:3）。"
+  },
+  {
+   "type": "place",
+   "name": "比拉迦谷",
+   "name_en": "valley of Berachah",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    20,
+    20
+   ],
+   "desc": "意為「稱頌」，約沙法戰勝摩押亞捫聯軍後，猶大人在此稱頌耶和華而得名（代下20:26）。"
+  }
+ ],
  "以實買雅": {
   "type": "person",
   "name": "以實買雅",
@@ -21417,5 +21461,40 @@
   "name_en": "Amasiah",
   "testament": "OT",
   "desc": "細基利的兒子，約沙法麾下猶大支派的千夫長，甘心奉獻自己事奉耶和華（代下17:16）。"
+ },
+ "哈洗遜他瑪": {
+  "type": "place",
+  "name": "哈洗遜他瑪",
+  "name_en": "Hazazon-tamar",
+  "testament": "OT",
+  "desc": "即隱基底，摩押、亞捫聯軍在此紮營攻打約沙法（代下20:2）。"
+ },
+ "洗斯坡": {
+  "type": "place",
+  "name": "洗斯坡",
+  "name_en": "Ziz",
+  "testament": "OT",
+  "desc": "摩押、亞捫聯軍上來攻打猶大所經之路（代下20:16）。"
+ },
+ "耶魯伊勒": {
+  "type": "place",
+  "name": "耶魯伊勒",
+  "name_en": "Jeruel",
+  "testament": "OT",
+  "desc": "曠野名，位於猶大軍隊將遇敵之谷口附近（代下20:16）。"
+ },
+ "示利希": {
+  "type": "person",
+  "name": "示利希",
+  "name_en": "Shilhi",
+  "testament": "OT",
+  "desc": "約沙法的外祖父，王母阿蘇巴的父親（代下20:31）。"
+ },
+ "多大瓦": {
+  "type": "person",
+  "name": "多大瓦",
+  "name_en": "Dodavah",
+  "testament": "OT",
+  "desc": "瑪利沙人以利以謝的父親，以利以謝曾預言約沙法與亞哈謝合造的船必破壞（代下20:37）。"
  }
 }
