@@ -21203,5 +21203,26 @@
   "name_en": "Micaiah (alt. spelling)",
   "testament": "OT",
   "desc": "押沙龍的女兒瑪迦，羅波安所娶最寵愛的妻子，代下13:2又作「米該亞」（代下11:20旁註）。"
+ },
+ "耶沙拿": {
+  "type": "place",
+  "name": "耶沙拿",
+  "name_en": "Jeshanah",
+  "testament": "OT",
+  "desc": "亞比雅追趕耶羅波安時攻取的城鎮之一（代下13:19）。"
+ },
+ "以法拉音": {
+  "type": "place",
+  "name": "以法拉音",
+  "name_en": "Ephrain",
+  "testament": "OT",
+  "desc": "亞比雅追趕耶羅波安時攻取的城鎮之一，經文旁註或作「以弗倫」（代下13:19）。"
+ },
+ "以弗倫": {
+  "type": "place",
+  "name": "以弗倫",
+  "name_en": "Ephron",
+  "testament": "OT",
+  "desc": "代下13:19「以法拉音」的另一種讀法（原文兩種抄本異文）。"
  }
 }
