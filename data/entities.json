@@ -11351,16 +11351,32 @@
   "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:15）。（代上14:6同一世系）",
   "name": "雅非亞"
  },
- "以利雅大": {
-  "type": "person",
-  "name_en": "Eliada",
-  "testament": "OT",
-  "books": [
-   "撒母耳記下"
-  ],
-  "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:16）。",
-  "name": "以利雅大"
- },
+ "以利雅大": [
+  {
+   "type": "person",
+   "name_en": "Eliada",
+   "testament": "OT",
+   "books": [
+    "撒母耳記下"
+   ],
+   "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:16）。",
+   "name": "以利雅大"
+  },
+  {
+   "type": "person",
+   "name": "以利雅大（便雅憫勇士）",
+   "name_en": "Eliada (Benjamite warrior)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    17,
+    17
+   ],
+   "desc": "便雅憫支派大能的勇士，約沙法麾下軍長之一，率領二十萬拿弓箭盾牌的兵（代下17:17），與大衛之子以利雅大非同一人。"
+  }
+ ],
  "以利法列": [
   {
    "type": "person",
@@ -21255,5 +21271,33 @@
   "testament": "OT",
   "desc": "北非一帶的民族，曾隨埃及王示撒出兵攻打耶路撒冷（代下12:3）。",
   "cat": "nation"
+ },
+ "便亥伊勒": {
+  "type": "person",
+  "name": "便亥伊勒",
+  "name_en": "Ben-hail",
+  "testament": "OT",
+  "desc": "約沙法差遣往猶大各城教訓百姓的臣子之一（代下17:7）。"
+ },
+ "多比雅": {
+  "type": "person",
+  "name": "多比雅",
+  "name_en": "Tobijah",
+  "testament": "OT",
+  "desc": "約沙法差遣往猶大各城教訓百姓的利未人之一（代下17:8）。"
+ },
+ "駝巴多尼雅": {
+  "type": "person",
+  "name": "駝巴多尼雅",
+  "name_en": "Tob-adonijah",
+  "testament": "OT",
+  "desc": "約沙法差遣往猶大各城教訓百姓的利未人之一（代下17:8）。"
+ },
+ "亞瑪斯雅": {
+  "type": "person",
+  "name": "亞瑪斯雅",
+  "name_en": "Amasiah",
+  "testament": "OT",
+  "desc": "細基利的兒子，約沙法麾下猶大支派的千夫長，甘心奉獻自己事奉耶和華（代下17:16）。"
  }
 }
