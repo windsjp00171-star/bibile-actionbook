@@ -750,15 +750,31 @@
   "verses": "創世記",
   "cat": "theo"
  },
- "伊甸": {
-  "type": "place",
-  "name": "伊甸",
-  "name_en": "Eden",
-  "desc": "神在東方所立的園子，安置始祖之地，有四道河分流，園中有生命樹與分別善惡樹。傳統認為位於兩河流域一帶。人犯罪後被逐出，東邊由基路伯把守。（今伊拉克境內）",
-  "verses": "創世記",
-  "lat": 33.3,
-  "lng": 44.4
- },
+ "伊甸": [
+  {
+   "type": "place",
+   "name": "伊甸",
+   "name_en": "Eden",
+   "desc": "神在東方所立的園子，安置始祖之地，有四道河分流，園中有生命樹與分別善惡樹。傳統認為位於兩河流域一帶。人犯罪後被逐出，東邊由基路伯把守。（今伊拉克境內）",
+   "verses": "創世記",
+   "lat": 33.3,
+   "lng": 44.4
+  },
+  {
+   "type": "person",
+   "name": "伊甸（約亞之子）",
+   "name_en": "Eden (son of Joah)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    29,
+    29
+   ],
+   "desc": "約亞的兒子，革順支派利未人，代下29:12列為希西家潔淨聖殿的利未人之一，與伊甸園非同名同義。"
+  }
+ ],
  "比遜": {
   "type": "place",
   "name": "比遜",
@@ -4151,6 +4167,20 @@
    "name_en": "Shimei",
    "testament": "OT",
    "desc": "便雅憫人，大衛出逃時咒罵他，後跪求赦免；所羅門最終命人殺他。"
+  },
+  {
+   "type": "person",
+   "name": "示每（希幔之子孫）",
+   "name_en": "Shimei (Hemanite)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    29,
+    29
+   ],
+   "desc": "希幔的子孫，代下29:14列為希西家潔淨聖殿的利未人之一，與咒罵大衛的便雅憫人示每非同一人。"
   }
  ],
  "俄巴底亞": {
@@ -4199,12 +4229,28 @@
   "name_en": "Uzziah",
   "desc": "猶大長壽之王，以賽亞蒙召在他死後那年，因擅闖聖殿獻香而染痲瘋。又名亞撒利雅。"
  },
- "約珥": {
-  "type": "person",
-  "name": "約珥",
-  "name_en": "Joel",
-  "desc": "先知，用蝗蟲災難預言末世耶和華大日，並預告聖靈將澆灌眾人。"
- },
+ "約珥": [
+  {
+   "type": "person",
+   "name": "約珥",
+   "name_en": "Joel",
+   "desc": "先知，用蝗蟲災難預言末世耶和華大日，並預告聖靈將澆灌眾人。"
+  },
+  {
+   "type": "person",
+   "name": "約珥（亞撒利雅之子）",
+   "name_en": "Joel (son of Azariah)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    29,
+    29
+   ],
+   "desc": "亞撒利雅的兒子，哥轄支派利未人（代上6:36），代下29:12列為希西家潔淨聖殿的利未人之一，與先知約珥非同一人。"
+  }
+ ],
  "撒非喇": {
   "type": "person",
   "name": "撒非喇",
@@ -6745,13 +6791,29 @@
   "testament": "both",
   "desc": "雅各之子但的後裔支派，起初分地在猶大與以法蓮之間，後遷至極北的但城。"
  },
- "烏薛": {
-  "type": "person",
-  "name": "烏薛",
-  "name_en": "Uzziel",
-  "testament": "OT",
-  "desc": "亞倫的叔父（哥轄之子），米沙利與以利撒反的父親（利10:4）；利未支派中另有同名者。"
- },
+ "烏薛": [
+  {
+   "type": "person",
+   "name": "烏薛",
+   "name_en": "Uzziel",
+   "testament": "OT",
+   "desc": "亞倫的叔父（哥轄之子），米沙利與以利撒反的父親（利10:4）；利未支派中另有同名者。"
+  },
+  {
+   "type": "person",
+   "name": "烏薛（耶杜頓之子孫）",
+   "name_en": "Uzziel (Jeduthunite)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    29,
+    29
+   ],
+   "desc": "耶杜頓的子孫，代下29:14列為希西家潔淨聖殿的利未人之一，與亞倫叔父烏薛非同一人。"
+  }
+ ],
  "米沙利": {
   "type": "person",
   "name": "米沙利",
@@ -11119,13 +11181,29 @@
   "desc": "指被耶和華的靈感動、隨先知一同發預言般的言語舉動，掃羅曾兩度受感說話（撒上10:5-13、19:20-24）。",
   "name": "受感說話"
  },
- "基士": {
-  "type": "person",
-  "name_en": "Kish",
-  "testament": "OT",
-  "desc": "便雅憫人，亞別的兒子，掃羅的父親，家中丟失驢群促成掃羅與撒母耳相遇（撒上9章）。",
-  "name": "基士"
- },
+ "基士": [
+  {
+   "type": "person",
+   "name_en": "Kish",
+   "testament": "OT",
+   "desc": "便雅憫人，亞別的兒子，掃羅的父親，家中丟失驢群促成掃羅與撒母耳相遇（撒上9章）。",
+   "name": "基士"
+  },
+  {
+   "type": "person",
+   "name": "基士（亞伯底之子）",
+   "name_en": "Kish (son of Abdi)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    29,
+    29
+   ],
+   "desc": "亞伯底的兒子，米拉利支派利未人，代下29:12列為希西家潔淨聖殿的利未人之一，與掃羅的父親基士非同一人。"
+  }
+ ],
  "亞斐亞": {
   "type": "person",
   "name_en": "Aphiah",
@@ -12731,13 +12809,29 @@
   "desc": "書記，對拉伯沙基說話。",
   "name": "舍伯那"
  },
- "約亞": {
-  "type": "person",
-  "name_en": "Joah",
-  "testament": "OT",
-  "desc": "史官，對拉伯沙基說話。",
-  "name": "約亞"
- },
+ "約亞": [
+  {
+   "type": "person",
+   "name_en": "Joah",
+   "testament": "OT",
+   "desc": "史官，對拉伯沙基說話。",
+   "name": "約亞"
+  },
+  {
+   "type": "person",
+   "name": "約亞（薪瑪之子）",
+   "name_en": "Joah (son of Zimmah)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    29,
+    29
+   ],
+   "desc": "薪瑪的兒子、伊甸的父親，革順支派利未人，代下29:12列為希西家潔淨聖殿的利未人之一，與希西家時代對拉伯沙基說話的史官約亞非同一人。"
+  }
+ ],
  "拉伯沙基": {
   "type": "person",
   "name_en": "Rabshakeh",
@@ -13002,13 +13096,29 @@
   "desc": "亞捫人可憎的神，所羅門曾為其築丘壇。",
   "name": "米勒公"
  },
- "瑪探雅": {
-  "type": "person",
-  "name_en": "Mattaniah",
-  "testament": "OT",
-  "desc": "約雅斤的叔叔，巴比倫王立他代替約雅斤作王，並給他改名叫西底家。",
-  "name": "瑪探雅"
- },
+ "瑪探雅": [
+  {
+   "type": "person",
+   "name_en": "Mattaniah",
+   "testament": "OT",
+   "desc": "約雅斤的叔叔，巴比倫王立他代替約雅斤作王，並給他改名叫西底家。",
+   "name": "瑪探雅"
+  },
+  {
+   "type": "person",
+   "name": "瑪探雅（亞薩之子孫）",
+   "name_en": "Mattaniah (Asaphite)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    29,
+    29
+   ],
+   "desc": "亞薩的子孫，代下29:13列為希西家潔淨聖殿的利未人之一，與被改名西底家的瑪探雅非同一人。"
+  }
+ ],
  "基大利": {
   "type": "person",
   "name_en": "Gedaliah",
@@ -13217,7 +13327,8 @@
    "name_en": "Heman (Levite musician)",
    "testament": "OT",
    "books": [
-    "歷代志上"
+    "歷代志上",
+    "歷代志下"
    ],
    "desc": "約珥的兒子，撒母耳的孫子，哥轄支派利未人，大衛所立的歌唱班首領之一，職掌敲鈸（代上6:33、15:17,19、16:41-42、25:1,4-6）。"
   },
@@ -17733,13 +17844,29 @@
   "testament": "OT",
   "desc": "大衛世系後裔一支之祖，示瑪雅的父親（代上3:21-22）。"
  },
- "示瑪雅": {
-  "type": "person",
-  "name": "示瑪雅",
-  "name_en": "Shemaiah",
-  "testament": "OT",
-  "desc": "示迦尼的兒子（代上3:22）。"
- },
+ "示瑪雅": [
+  {
+   "type": "person",
+   "name": "示瑪雅",
+   "name_en": "Shemaiah",
+   "testament": "OT",
+   "desc": "示迦尼的兒子（代上3:22）。"
+  },
+  {
+   "type": "person",
+   "name": "示瑪雅（耶杜頓之子孫）",
+   "name_en": "Shemaiah (Jeduthunite)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    29,
+    29
+   ],
+   "desc": "耶杜頓的子孫，代下29:14列為希西家潔淨聖殿的利未人之一，與示迦尼之子示瑪雅非同一人。"
+  }
+ ],
  "哈突": {
   "type": "person",
   "name": "哈突",
@@ -18055,13 +18182,29 @@
   "testament": "OT",
   "desc": "以拉的兒子（代上4:15）。"
  },
- "耶哈利勒": {
-  "type": "person",
-  "name": "耶哈利勒",
-  "name_en": "Jehallelel",
-  "testament": "OT",
-  "desc": "西弗、西法等人的父親（代上4:16）。"
- },
+ "耶哈利勒": [
+  {
+   "type": "person",
+   "name": "耶哈利勒",
+   "name_en": "Jehallelel",
+   "testament": "OT",
+   "desc": "西弗、西法等人的父親（代上4:16）。"
+  },
+  {
+   "type": "person",
+   "name": "耶哈利勒（米拉利支派）",
+   "name_en": "Jehallelel (Merarite)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    29,
+    29
+   ],
+   "desc": "米拉利支派利未人，另一位亞撒利雅的父親，代下29:12列為希西家潔淨聖殿的利未人之一，與猶大支派的耶哈利勒非同一人。"
+  }
+ ],
  "西法": {
   "type": "person",
   "name": "西法",
@@ -18386,13 +18529,29 @@
   "testament": "OT",
   "desc": "亞龍的父親，西緬支派族長世系之一（代上4:37）。"
  },
- "申利": {
-  "type": "person",
-  "name": "申利",
-  "name_en": "Shimri",
-  "testament": "OT",
-  "desc": "耶大雅的父親，西緬支派族長世系之一（代上4:37）。"
- },
+ "申利": [
+  {
+   "type": "person",
+   "name": "申利",
+   "name_en": "Shimri",
+   "testament": "OT",
+   "desc": "耶大雅的父親，西緬支派族長世系之一（代上4:37）。"
+  },
+  {
+   "type": "person",
+   "name": "申利（以利撒反之子）",
+   "name_en": "Shimri (son of Elizaphan)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    29,
+    29
+   ],
+   "desc": "以利撒反的子孫，代下29:13列為希西家潔淨聖殿的利未人之一，與西緬支派耶大雅之父申利非同一人。"
+  }
+ ],
  "米烏尼人": {
   "type": "place",
   "name": "米烏尼人",
@@ -18498,6 +18657,20 @@
     26
    ],
    "desc": "烏西雅王的書記，與官長瑪西雅一同數點軍兵（代下26:11），與其他同名者皆非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "耶利（以利撒反之子孫）",
+   "name_en": "Jeuel (Elizaphanite)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    29,
+    29
+   ],
+   "desc": "以利撒反的子孫，申利之兄弟，代下29:13列為希西家潔淨聖殿的利未人之一，與其他同名者皆非同一人。"
   }
  ],
  "撒迦利雅": {
@@ -18843,7 +19016,7 @@
   "name": "瑪哈",
   "name_en": "Mahath",
   "testament": "OT",
-  "desc": "以利加拿的兒子，哥轄支派歌唱者世系之一（代上6:35）。"
+  "desc": "亞瑪賽的兒子，哥轄支派歌唱者世系之一，希幔的先祖（代上6:35），代下29:12列為希西家潔淨聖殿的利未人之一。"
  },
  "巴西雅": {
   "type": "person",
@@ -20799,6 +20972,20 @@
     29
    ],
    "desc": "革順族利未人，經手管理百姓為建殿所獻的寶石，送入耶和華殿的府庫（代上29:8），與大衛所立的利未歌唱者耶歇非必為同一人。"
+  },
+  {
+   "type": "person",
+   "name": "耶歇（希幔之子孫）",
+   "name_en": "Jehiel (Hemanite)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    29,
+    29
+   ],
+   "desc": "希幔的子孫，代下29:14列為希西家潔淨聖殿的利未人之一，與大衛所立的利未歌唱者耶歇非同一人。"
   }
  ],
  "烏尼": {
