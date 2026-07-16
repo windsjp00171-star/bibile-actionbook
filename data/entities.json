@@ -22347,5 +22347,35 @@
   "name_en": "Shecaniah",
   "testament": "OT",
   "desc": "祭司之一，在祭司各城中協助分配供物（代下31:15），與其他同名者非同一人。"
+ },
+ "何賽": {
+  "type": "person",
+  "name": "何賽",
+  "name_en": "Hozai",
+  "testament": "OT",
+  "desc": "一位先見，瑪拿西悔改後的言行與禱告記在他的書上（代下33:19），此書並未流傳下來。"
+ },
+ "魚門": {
+  "type": "place",
+  "name": "魚門",
+  "name_en": "Fish Gate",
+  "testament": "OT",
+  "desc": "耶路撒冷城北面的一座城門，因鄰近魚市而得名，瑪拿西曾在此一帶擴建城牆（代下33:14），尼希米重建城牆時也修復此門（尼3:3、12:39）。"
+ },
+ "亞舍拉": {
+  "type": "concept",
+  "name": "亞舍拉",
+  "name_en": "Asherah",
+  "testament": "OT",
+  "desc": "迦南人的豐產女神，也指為她所立的木製偶像柱（亞舍拉像），以色列人屢次效法外邦人敬拜她，惹耶和華發怒。",
+  "cat": "theo"
+ },
+ "先見": {
+  "type": "concept",
+  "name": "先見",
+  "name_en": "Seer",
+  "testament": "both",
+  "desc": "與先知同義的舊約稱呼，強調藉異象、異能「看見」神旨意的一面。",
+  "cat": "role"
  }
 }
