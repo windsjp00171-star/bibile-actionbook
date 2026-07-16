@@ -21751,5 +21751,19 @@
   "name_en": "Jabneh",
   "testament": "OT",
   "desc": "非利士人的城邑之一，烏西雅王拆毀此城（代下26:6）。"
+ },
+ "耶路沙": {
+  "type": "person",
+  "name": "耶路沙",
+  "name_en": "Jerushah",
+  "testament": "OT",
+  "desc": "撒督的女兒，猶大王約坦的母親（代下27:1）。"
+ },
+ "俄斐勒": {
+  "type": "place",
+  "name": "俄斐勒",
+  "name_en": "Ophel",
+  "testament": "OT",
+  "desc": "耶路撒冷城內大衛城與聖殿山之間的一處山丘地帶，約坦曾在此多有建造，與產金之地俄斐非同名同義（代下27:3）。"
  }
 }
