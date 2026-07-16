@@ -3179,6 +3179,20 @@
      "target": "被殺的祭司撒迦利亞"
     }
    ]
+  },
+  {
+   "type": "person",
+   "name": "撒迦利亞（哥轄支派督催）",
+   "name_en": "Zechariah (Kohathite overseer)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    34,
+    34
+   ],
+   "desc": "哥轄支派利未人，與米書蘭一同督催約西亞修理耶和華殿的工程（代下34:12），與被擄歸回後的先知撒迦利亞、施洗約翰之父撒迦利亞皆非同一人。"
   }
  ],
  "瑪拉基": {
@@ -12727,15 +12741,72 @@
   "desc": "耶羅波安的父親，耶羅波安使以色列人陷在罪裡。",
   "name": "尼八"
  },
- "書念": {
-  "type": "place",
-  "name_en": "Shunem",
-  "testament": "OT",
-  "desc": "一位婦人的籍貫，以利沙吩咐僕人基哈西叫她來。（位於今日以色列）",
-  "name": "書念",
-  "lat": 32.57,
-  "lng": 35.34
- },
+ "書念": [
+  {
+   "type": "place",
+   "name_en": "Shunem",
+   "testament": "OT",
+   "desc": "一位婦人的籍貫，以利沙吩咐僕人基哈西叫她來。（位於今日以色列）",
+   "name": "書念",
+   "lat": 32.57,
+   "lng": 35.34,
+   "books": [
+    "約書亞記"
+   ],
+   "chapters": [
+    19,
+    19
+   ]
+  },
+  {
+   "type": "place",
+   "name_en": "Shunem",
+   "testament": "OT",
+   "desc": "一位婦人的籍貫，以利沙吩咐僕人基哈西叫她來。（位於今日以色列）",
+   "name": "書念",
+   "lat": 32.57,
+   "lng": 35.34,
+   "books": [
+    "撒母耳記上"
+   ],
+   "chapters": [
+    28,
+    28
+   ]
+  },
+  {
+   "type": "place",
+   "name_en": "Shunem",
+   "testament": "OT",
+   "desc": "一位婦人的籍貫，以利沙吩咐僕人基哈西叫她來。（位於今日以色列）",
+   "name": "書念",
+   "lat": 32.57,
+   "lng": 35.34,
+   "books": [
+    "列王紀上"
+   ],
+   "chapters": [
+    1,
+    2
+   ]
+  },
+  {
+   "type": "place",
+   "name_en": "Shunem",
+   "testament": "OT",
+   "desc": "一位婦人的籍貫，以利沙吩咐僕人基哈西叫她來。（位於今日以色列）",
+   "name": "書念",
+   "lat": 32.57,
+   "lng": 35.34,
+   "books": [
+    "列王紀下"
+   ],
+   "chapters": [
+    4,
+    4
+   ]
+  }
+ ],
  "巴力沙利沙": {
   "type": "place",
   "name_en": "Baal-shalisha",
@@ -12918,6 +12989,20 @@
     29
    ],
    "desc": "薪瑪的兒子、伊甸的父親，革順支派利未人，代下29:12列為希西家潔淨聖殿的利未人之一，與希西家時代對拉伯沙基說話的史官約亞非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "約亞（約西亞史官）",
+   "name_en": "Joah (recorder under Josiah)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    34,
+    34
+   ],
+   "desc": "約哈斯的兒子，史官，約西亞王差遣他與希勒家、沙番一同修理耶和華殿（代下34:8），與希西家年間對拉伯沙基說話的史官約亞非同一人。"
   }
  ],
  "拉伯沙基": {
@@ -13056,13 +13141,29 @@
   "desc": "約西亞的母親，是波斯加人亞大雅的女兒。",
   "name": "耶底大"
  },
- "米書蘭": {
-  "type": "person",
-  "name_en": "Meshullam",
-  "testament": "OT",
-  "desc": "亞薩利的祖父。",
-  "name": "米書蘭"
- },
+ "米書蘭": [
+  {
+   "type": "person",
+   "name_en": "Meshullam",
+   "testament": "OT",
+   "desc": "亞薩利的祖父。",
+   "name": "米書蘭"
+  },
+  {
+   "type": "person",
+   "name": "米書蘭（哥轄支派督催）",
+   "name_en": "Meshullam (Kohathite overseer)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    34,
+    34
+   ],
+   "desc": "哥轄支派利未人，與撒迦利亞一同督催約西亞修理耶和華殿的工程（代下34:12），與希勒家族譜中亞薩利的祖父米書蘭非同一人。"
+  }
+ ],
  "亞薩利": {
   "type": "person",
   "name_en": "Azaliah",
@@ -13564,6 +13665,20 @@
     7
    ],
    "desc": "拿弗他利的兒子（代上7:13），與同名的以色列王沙龍等人非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "沙龍（戶勒大之夫）",
+   "name_en": "Shallum (husband of Huldah)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    34,
+    34
+   ],
+   "desc": "哈斯拉的孫子、特瓦的兒子，掌管禮服，女先知戶勒大的丈夫（代下34:22），與以色列王沙龍、代上7章的沙龍皆非同一人，即列王紀下22:14的同一人。"
   }
  ],
  "哈列的樹林": {
@@ -14517,6 +14632,20 @@
     13
    ],
    "desc": "耶戶的兒子，以色列王，在位十七年，因亞蘭王哈薛的欺壓向耶和華懇求，神就賜以色列一位拯救者（王下13:1-9）。"
+  },
+  {
+   "type": "person",
+   "name": "約哈斯（約亞之父）",
+   "name_en": "Joahaz (father of Joah)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    34,
+    34
+   ],
+   "desc": "史官約亞的父親，約西亞王差遣約亞修理耶和華殿（代下34:8），與猶大王約哈斯非同一人。"
   }
  ],
  "掃羅（以色列王）": {
@@ -16486,6 +16615,20 @@
     24
    ],
    "desc": "烏薛的長子，利未支派世系之一，伊示雅（耶西雅）的兄長（代上23:20、24:24-25），與士師記的但支派米迦非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "米迦（亞比頓之父）",
+   "name_en": "Micah (father of Abdon)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    34,
+    34
+   ],
+   "desc": "亞比頓的父親，亞比頓是約西亞王差遣求問女先知戶勒大的臣僕之一（代下34:20），與士師記的米迦、烏薛長子米迦皆非同一人。"
   }
  ],
  "革舜": {
@@ -18069,13 +18212,29 @@
   "testament": "OT",
   "desc": "朔巴的兒子（代上4:2）。"
  },
- "雅哈": {
-  "type": "person",
-  "name": "雅哈",
-  "name_en": "Jahath",
-  "testament": "OT",
-  "desc": "利亞雅的兒子（代上4:2）。"
- },
+ "雅哈": [
+  {
+   "type": "person",
+   "name": "雅哈",
+   "name_en": "Jahath",
+   "testament": "OT",
+   "desc": "利亞雅的兒子（代上4:2）。"
+  },
+  {
+   "type": "person",
+   "name": "雅哈（米拉利支派督工）",
+   "name_en": "Jahath (Merarite overseer)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    34,
+    34
+   ],
+   "desc": "米拉利支派利未人，與俄巴底一同督工約西亞修理耶和華殿（代下34:12），與猶大支派利亞雅之子雅哈非同一人。"
+  }
+ ],
  "亞戶買": {
   "type": "person",
   "name": "亞戶買",
@@ -19061,13 +19220,29 @@
    "desc": "祭司之一，在祭司各城中協助分配供物（代下31:15），與大祭司世系中的亞瑪利雅非同一人。"
   }
  ],
- "希勒家": {
-  "type": "person",
-  "name": "希勒家",
-  "name_en": "Hilkiah",
-  "testament": "OT",
-  "desc": "沙龍的兒子，大祭司世系之一（代上6:13），與約西亞年間發現律法書的大祭司希勒家同名。"
- },
+ "希勒家": [
+  {
+   "type": "person",
+   "name": "希勒家",
+   "name_en": "Hilkiah",
+   "testament": "OT",
+   "desc": "沙龍的兒子，大祭司世系之一（代上6:13），與約西亞年間發現律法書的大祭司希勒家同名。"
+  },
+  {
+   "type": "person",
+   "name": "希勒家（約西亞大祭司）",
+   "name_en": "Hilkiah (high priest under Josiah)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    34,
+    35
+   ],
+   "desc": "約西亞年間的大祭司，修殿時在聖殿裡發現摩西所傳耶和華的律法書，交給書記沙番，促成約西亞的宗教改革（代下34:14-22、35:8），與代上6:13族譜中的希勒家同名而非確定同一人。"
+  }
+ ],
  "約薩答": {
   "type": "person",
   "name": "約薩答",
@@ -20369,13 +20544,29 @@
   "testament": "OT",
   "desc": "歸回耶路撒冷的祭司之一（代上9:10）。"
  },
- "亞薩利雅": {
-  "type": "person",
-  "name": "亞薩利雅",
-  "name_en": "Azariah",
-  "testament": "OT",
-  "desc": "管理神殿的祭司，希勒家的兒子（代上9:11），與同名的猶大王亞撒利雅非同一人。"
- },
+ "亞薩利雅": [
+  {
+   "type": "person",
+   "name": "亞薩利雅",
+   "name_en": "Azariah",
+   "testament": "OT",
+   "desc": "管理神殿的祭司，希勒家的兒子（代上9:11），與同名的猶大王亞撒利雅非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "亞薩利雅（沙番之父）",
+   "name_en": "Azaliah (father of Shaphan)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    34,
+    34
+   ],
+   "desc": "書記沙番的父親，約西亞王差遣沙番上耶和華殿修殿（代下34:8），與管理神殿、希勒家之子的亞薩利雅非同一人。"
+  }
+ ],
  "巴施戶珥": {
   "type": "person",
   "name": "巴施戶珥",
@@ -20453,13 +20644,29 @@
   "testament": "OT",
   "desc": "歸回的利未人之一（代上9:15），與耶杜頓一系的迦拉同名（代上9:16）。"
  },
- "俄巴底": {
-  "type": "person",
-  "name": "俄巴底",
-  "name_en": "Obadiah",
-  "testament": "OT",
-  "desc": "示瑪雅的兒子，耶杜頓一系歸回利未人（代上9:16），與先知俄巴底亞非同一人。"
- },
+ "俄巴底": [
+  {
+   "type": "person",
+   "name": "俄巴底",
+   "name_en": "Obadiah",
+   "testament": "OT",
+   "desc": "示瑪雅的兒子，耶杜頓一系歸回利未人（代上9:16），與先知俄巴底亞非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "俄巴底（米拉利支派督工）",
+   "name_en": "Obadiah (Merarite overseer)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    34,
+    34
+   ],
+   "desc": "米拉利支派利未人，與雅哈一同督工約西亞修理耶和華殿（代下34:12），與被擄歸回的耶杜頓一系利未人俄巴底非同一人。"
+  }
+ ],
  "亞谷": {
   "type": "person",
   "name": "亞谷",
@@ -21280,6 +21487,20 @@
     28
    ],
    "desc": "猶大王亞哈斯的兒子，以法蓮勇士細基利入侵時將他殺死（代下28:7），與其他同名者皆非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "瑪西雅（約西亞邑宰）",
+   "name_en": "Maaseiah (governor under Josiah)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    34,
+    34
+   ],
+   "desc": "耶路撒冷邑宰，約西亞王差遣他與沙番、約亞一同修理耶和華殿（代下34:8），與其他同名者皆非同一人。"
   }
  ],
  "以利斐利戶": {
@@ -22376,6 +22597,44 @@
   "name_en": "Seer",
   "testament": "both",
   "desc": "與先知同義的舊約稱呼，強調藉異象、異能「看見」神旨意的一面。",
+  "cat": "role"
+ },
+ "亞比頓": {
+  "type": "person",
+  "name": "亞比頓",
+  "name_en": "Abdon",
+  "testament": "OT",
+  "desc": "米迦的兒子，約西亞王差遣去求問女先知戶勒大的臣僕之一（代下34:20），列王紀下22:12平行記載作「亞革波」。"
+ },
+ "哈斯拉": {
+  "type": "person",
+  "name": "哈斯拉",
+  "name_en": "Hasrah",
+  "testament": "OT",
+  "desc": "特瓦的父親、沙龍的祖父，沙龍是女先知戶勒大的丈夫（代下34:22），列王紀下22:14平行記載作「哈珥哈斯」。"
+ },
+ "木偶": {
+  "type": "concept",
+  "name": "木偶",
+  "name_en": "Asherah Pole",
+  "testament": "OT",
+  "desc": "為迦南女神亞舍拉所立的木製偶像柱，常與巴力的祭壇一同被拜、也一同被敬虔的君王砍毀。",
+  "cat": "theo"
+ },
+ "日像": {
+  "type": "concept",
+  "name": "日像",
+  "name_en": "Sun Pillar",
+  "testament": "OT",
+  "desc": "獻給日神的石造香壇或柱狀偶像，常與巴力、亞舍拉並列，屬迦南異教崇拜的一部分，被歷代改革的君王拆毀。",
+  "cat": "theo"
+ },
+ "女先知": {
+  "type": "concept",
+  "name": "女先知",
+  "name_en": "Prophetess",
+  "testament": "both",
+  "desc": "蒙神揀選、傳講神旨意的女性，舊約中如戶勒大、底波拉、米利暗皆是。",
   "cat": "role"
  }
 }
