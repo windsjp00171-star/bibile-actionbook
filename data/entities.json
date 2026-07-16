@@ -11636,6 +11636,20 @@
     9
    ],
    "desc": "基遍的父親耶利的妻子（代上8:29、9:35），與大衛之妻瑪迦、亞蘭小國瑪迦非同名同義。"
+  },
+  {
+   "type": "person",
+   "name": "瑪迦（押沙龍之女）",
+   "name_en": "Maacah (daughter of Absalom)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    11,
+    13
+   ],
+   "desc": "押沙龍的女兒，羅波安最寵愛的妻子，亞比雅的母親，13:2稱她是基比亞人烏列的女兒「米該亞」，或因押沙龍早逝而由外祖父烏列撫養（代下11:20-22、13:2）。"
   }
  ],
  "陀伯": {
@@ -12654,13 +12668,29 @@
   "desc": "沙番的兒子，祭司希勒家吩咐他。",
   "name": "亞希甘"
  },
- "米該亞": {
-  "type": "person",
-  "name_en": "Micaiah",
-  "testament": "OT",
-  "desc": "亞革波的父親。",
-  "name": "米該亞"
- },
+ "米該亞": [
+  {
+   "type": "person",
+   "name_en": "Micaiah",
+   "testament": "OT",
+   "desc": "亞革波的父親。",
+   "name": "米該亞"
+  },
+  {
+   "type": "person",
+   "name": "米該亞（烏列之女）",
+   "name_en": "Micaiah (daughter of Uriel)",
+   "testament": "OT",
+   "books": [
+    "歷代志下"
+   ],
+   "chapters": [
+    13,
+    13
+   ],
+   "desc": "基比亞人烏列的女兒，亞比雅王的母親，即代上11:20的瑪迦，經文註明又作「瑪迦」（代下13:2），與亞革波之父米該亞非同一人。"
+  }
+ ],
  "亞革波": [
   {
    "type": "person",
@@ -21145,5 +21175,33 @@
   "name_en": "Eloth",
   "testament": "OT",
   "desc": "以東地靠海的港口城市，與以旬迦別相鄰，所羅門在此經營航運（代下8:17）。"
+ },
+ "亞多萊音": {
+  "type": "place",
+  "name": "亞多萊音",
+  "name_en": "Adoraim",
+  "testament": "OT",
+  "desc": "羅波安為保障所修築的猶大堅固城之一（代下11:9）。"
+ },
+ "瑪哈拉": {
+  "type": "person",
+  "name": "瑪哈拉",
+  "name_en": "Mahalath",
+  "testament": "OT",
+  "desc": "大衛之子耶利摩的女兒，羅波安所娶的妻子之一（代下11:18）。"
+ },
+ "撒罕": {
+  "type": "person",
+  "name": "撒罕",
+  "name_en": "Zaham",
+  "testament": "OT",
+  "desc": "羅波安與瑪哈拉所生的兒子之一（代下11:19）。"
+ },
+ "米該雅": {
+  "type": "person",
+  "name": "米該雅",
+  "name_en": "Micaiah (alt. spelling)",
+  "testament": "OT",
+  "desc": "押沙龍的女兒瑪迦，羅波安所娶最寵愛的妻子，代下13:2又作「米該亞」（代下11:20旁註）。"
  }
 }
