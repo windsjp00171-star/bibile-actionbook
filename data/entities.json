@@ -23103,13 +23103,29 @@
   "testament": "OT",
   "desc": "以斯拉記2章被擄歸回的家族先祖之一（尼希米記7章有平行記載）（拉2章）。"
  },
- "利宏": {
-  "type": "person",
-  "name": "利宏",
-  "name_en": "Rehum",
-  "testament": "OT",
-  "desc": "以斯拉記2章被擄歸回的家族先祖之一（尼希米記7章有平行記載）（拉2章）。"
- },
+ "利宏": [
+  {
+   "type": "person",
+   "name": "利宏",
+   "name_en": "Rehum",
+   "testament": "OT",
+   "desc": "以斯拉記2章被擄歸回的家族先祖之一（尼希米記7章有平行記載）（拉2章）。"
+  },
+  {
+   "type": "person",
+   "name": "利宏（省長）",
+   "name_en": "Rehum the commander",
+   "testament": "OT",
+   "books": [
+    "以斯拉記"
+   ],
+   "chapters": [
+    4,
+    4
+   ],
+   "desc": "波斯所立的省長，與書記伸帥一同上本控告耶路撒冷人重建城牆，致使聖殿工程一度停工（拉4:8-23），與拉2章歸回的家族先祖利宏非同一人。"
+  }
+ ],
  "薩土": {
   "type": "person",
   "name": "薩土",
@@ -23480,5 +23496,124 @@
   "name_en": "Henadad",
   "testament": "OT",
   "desc": "利未人，其子孫與甲篾一同督理重建耶和華殿的工程（拉3:9），尼希米記3:18,24、10:9亦提及其子孫。"
+ },
+ "大利烏": {
+  "type": "person",
+  "name": "大利烏",
+  "name_en": "Darius",
+  "testament": "OT",
+  "desc": "波斯王，在位第二年耶路撒冷聖殿工程停工的局面結束、恢復建造（拉4:5,24、5-6章），與瑪代人大利烏（但以理書）非同一人。"
+ },
+ "亞哈隨魯": {
+  "type": "person",
+  "name": "亞哈隨魯",
+  "name_en": "Ahasuerus (Xerxes)",
+  "testament": "OT",
+  "desc": "波斯王，拉4:6提及在他登基之初有人上本控告猶大人，即以斯帖記中立以斯帖為王后的波斯王。"
+ },
+ "比施蘭": {
+  "type": "person",
+  "name": "比施蘭",
+  "name_en": "Bishlam",
+  "testament": "OT",
+  "desc": "亞達薛西年間上本控告猶大人的波斯官員之一（拉4:7）。"
+ },
+ "米特利達": {
+  "type": "person",
+  "name": "米特利達",
+  "name_en": "Mithredath",
+  "testament": "OT",
+  "desc": "亞達薛西年間上本控告猶大人的波斯官員之一（拉4:7），與古列元年庫官米提利達為不同轉寫、不同時代的人。"
+ },
+ "他別": {
+  "type": "person",
+  "name": "他別",
+  "name_en": "Tabeel",
+  "testament": "OT",
+  "desc": "亞達薛西年間上本控告猶大人的波斯官員之一（拉4:7）。"
+ },
+ "伸帥": {
+  "type": "person",
+  "name": "伸帥",
+  "name_en": "Shimshai",
+  "testament": "OT",
+  "desc": "書記，與省長利宏一同上本控告耶路撒冷人重建城牆（拉4:8-23）。"
+ },
+ "亞斯那巴": {
+  "type": "person",
+  "name": "亞斯那巴",
+  "name_en": "Osnappar (Ashurbanipal)",
+  "testament": "OT",
+  "desc": "亞述大君王，將底拿人等多族遷移安置在撒瑪利亞城（拉4:10），一般認為即亞述王亞述巴尼拔。"
+ },
+ "底拿人": {
+  "type": "place",
+  "name": "底拿人",
+  "name_en": "Dinaites",
+  "testament": "OT",
+  "desc": "亞述大君王亞斯那巴遷移安置在撒瑪利亞城的外族之一（拉4:9-10），與猶大人爭競、上本控告重建耶路撒冷城牆一事。"
+ },
+ "亞法薩提迦人": {
+  "type": "place",
+  "name": "亞法薩提迦人",
+  "name_en": "Apharsathchites",
+  "testament": "OT",
+  "desc": "亞述大君王亞斯那巴遷移安置在撒瑪利亞城的外族之一（拉4:9-10），與猶大人爭競、上本控告重建耶路撒冷城牆一事。"
+ },
+ "他毗拉人": {
+  "type": "place",
+  "name": "他毗拉人",
+  "name_en": "Tarpelites",
+  "testament": "OT",
+  "desc": "亞述大君王亞斯那巴遷移安置在撒瑪利亞城的外族之一（拉4:9-10），與猶大人爭競、上本控告重建耶路撒冷城牆一事。"
+ },
+ "亞法撒人": {
+  "type": "place",
+  "name": "亞法撒人",
+  "name_en": "Apharsites",
+  "testament": "OT",
+  "desc": "亞述大君王亞斯那巴遷移安置在撒瑪利亞城的外族之一（拉4:9-10），與猶大人爭競、上本控告重建耶路撒冷城牆一事。"
+ },
+ "亞基衛人": {
+  "type": "place",
+  "name": "亞基衛人",
+  "name_en": "Archevites",
+  "testament": "OT",
+  "desc": "亞述大君王亞斯那巴遷移安置在撒瑪利亞城的外族之一（拉4:9-10），與猶大人爭競、上本控告重建耶路撒冷城牆一事。"
+ },
+ "巴比倫人": {
+  "type": "place",
+  "name": "巴比倫人",
+  "name_en": "Babylonians",
+  "testament": "OT",
+  "desc": "亞述大君王亞斯那巴遷移安置在撒瑪利亞城的外族之一（拉4:9-10），與猶大人爭競、上本控告重建耶路撒冷城牆一事。"
+ },
+ "書珊迦人": {
+  "type": "place",
+  "name": "書珊迦人",
+  "name_en": "Susanchites",
+  "testament": "OT",
+  "desc": "亞述大君王亞斯那巴遷移安置在撒瑪利亞城的外族之一（拉4:9-10），與猶大人爭競、上本控告重建耶路撒冷城牆一事。"
+ },
+ "底亥人": {
+  "type": "place",
+  "name": "底亥人",
+  "name_en": "Dehavites",
+  "testament": "OT",
+  "desc": "亞述大君王亞斯那巴遷移安置在撒瑪利亞城的外族之一（拉4:9-10），與猶大人爭競、上本控告重建耶路撒冷城牆一事。"
+ },
+ "以攔人": {
+  "type": "place",
+  "name": "以攔人",
+  "name_en": "Elamites",
+  "testament": "OT",
+  "desc": "亞述大君王亞斯那巴遷移安置在撒瑪利亞城的外族之一（拉4:9-10），與猶大人爭競、上本控告重建耶路撒冷城牆一事。"
+ },
+ "河西": {
+  "type": "place",
+  "name": "河西",
+  "name_en": "Beyond the River",
+  "testament": "OT",
+  "desc": "波斯帝國行省名，指幼發拉底河以西地區，涵蓋敘利亞、腓尼基、巴勒斯坦一帶，猶大地屬其轄下（拉4:10起、5-8章屢次提及）。"
  }
 }
