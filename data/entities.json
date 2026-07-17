@@ -6673,13 +6673,29 @@
   "lat": 33.4,
   "lng": 35.86
  },
- "約哈難": {
-  "type": "person",
-  "name": "約哈難",
-  "name_en": "Johanan",
-  "testament": "OT",
-  "desc": "舊約多人同名。著名者為加利亞之子約哈難，耶路撒冷陷落後率餘民、不顧耶利米勸阻下埃及。"
- },
+ "約哈難": [
+  {
+   "type": "person",
+   "name": "約哈難",
+   "name_en": "Johanan",
+   "testament": "OT",
+   "desc": "舊約多人同名。著名者為加利亞之子約哈難，耶路撒冷陷落後率餘民、不顧耶利米勸阻下埃及。"
+  },
+  {
+   "type": "person",
+   "name": "約哈難（多比雅之子）",
+   "name_en": "Jehohanan (son of Tobiah)",
+   "testament": "OT",
+   "books": [
+    "尼希米記"
+   ],
+   "chapters": [
+    6,
+    6
+   ],
+   "desc": "亞捫人多比雅的兒子，娶了比利迦兒子米書蘭的女兒為妻（尼6:18），與加利亞之子約哈難等同名者皆非同一人。"
+  }
+ ],
  "尼布撒拉旦": {
   "type": "person",
   "name": "尼布撒拉旦",
@@ -10660,6 +10676,20 @@
     2,
     2
    ]
+  },
+  {
+   "type": "person",
+   "name": "亞拉（多比雅之岳父）",
+   "name_en": "Arah (father-in-law of Tobiah)",
+   "testament": "OT",
+   "books": [
+    "尼希米記"
+   ],
+   "chapters": [
+    6,
+    6
+   ],
+   "desc": "多比雅的岳父（尼6:18），與猶大支派城邑亞拉、拉2章歸回家族先祖亞拉皆非同名同義。"
   }
  ],
  "度瑪": {
@@ -13763,7 +13793,7 @@
    ],
    "chapters": [
     3,
-    3
+    6
    ],
    "desc": "尼希米重建耶路撒冷城牆時參與修造的人物之一（尼3章），比利迦的兒子，米示薩別的孫子（尼3:4,30），與亞薩利的祖父米書蘭非同一人。"
   }
@@ -18869,13 +18899,29 @@
   "testament": "OT",
   "desc": "大衛世系後裔一支之祖，與其眾子一同列於族譜（代上3:21）。"
  },
- "示迦尼": {
-  "type": "person",
-  "name": "示迦尼",
-  "name_en": "Shecaniah",
-  "testament": "OT",
-  "desc": "大衛世系後裔一支之祖，示瑪雅的父親（代上3:21-22）。"
- },
+ "示迦尼": [
+  {
+   "type": "person",
+   "name": "示迦尼",
+   "name_en": "Shecaniah",
+   "testament": "OT",
+   "desc": "大衛世系後裔一支之祖，示瑪雅的父親（代上3:21-22）。"
+  },
+  {
+   "type": "person",
+   "name": "示迦尼（多比雅之岳父）",
+   "name_en": "Shecaniah (father-in-law of Tobiah)",
+   "testament": "OT",
+   "books": [
+    "尼希米記"
+   ],
+   "chapters": [
+    6,
+    6
+   ],
+   "desc": "多比雅的岳父，亞拉的兒子（尼6:18），與大衛世系後裔一支之祖示迦尼非同一人。"
+  }
+ ],
  "示瑪雅": [
   {
    "type": "person",
@@ -18939,6 +18985,20 @@
     10
    ],
    "desc": "以斯拉記10章娶外邦女子的以色列人之一，此名在本章不只一處出現（拉10:21,31），經文未進一步區分是否同一人，與其他同名者皆非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "示瑪雅（第來雅之子）",
+   "name_en": "Shemaiah (son of Delaiah)",
+   "testament": "OT",
+   "books": [
+    "尼希米記"
+   ],
+   "chapters": [
+    6,
+    6
+   ],
+   "desc": "米希大別的孫子、第來雅的兒子，被多比雅和參巴拉賄買、假意勸尼希米躲入聖殿以陷害他的名聲（尼6:10-13），與示迦尼之子示瑪雅等同名者皆非同一人。"
   }
  ],
  "哈突": {
@@ -23052,13 +23112,29 @@
   "testament": "OT",
   "desc": "大衛所定二十四班祭司之一，第二十二籤（代上24:17）。"
  },
- "第來雅": {
-  "type": "person",
-  "name": "第來雅",
-  "name_en": "Delaiah",
-  "testament": "OT",
-  "desc": "大衛所定二十四班祭司之一，第二十三籤（代上24:18）。"
- },
+ "第來雅": [
+  {
+   "type": "person",
+   "name": "第來雅",
+   "name_en": "Delaiah",
+   "testament": "OT",
+   "desc": "大衛所定二十四班祭司之一，第二十三籤（代上24:18）。"
+  },
+  {
+   "type": "person",
+   "name": "第來雅（米希大別之子）",
+   "name_en": "Delaiah (son of Mehetabel)",
+   "testament": "OT",
+   "books": [
+    "尼希米記"
+   ],
+   "chapters": [
+    6,
+    6
+   ],
+   "desc": "米希大別的兒子，示瑪雅的父親（尼6:10），與大衛所定二十四班祭司之一的第來雅非同一人。"
+  }
+ ],
  "瑪西亞": {
   "type": "person",
   "name": "瑪西亞",
@@ -24729,13 +24805,29 @@
   "testament": "OT",
   "desc": "教習之一，以斯拉派去迦西斐雅招募利未人的使者（拉8:16）。"
  },
- "挪亞底": {
-  "type": "person",
-  "name": "挪亞底",
-  "name_en": "Noadiah",
-  "testament": "OT",
-  "desc": "賓內的兒子，利未人，與烏利亞的兒子米利末一同秤點聖殿的金銀器皿（拉8:33），與女先知挪亞底非同一人。"
- },
+ "挪亞底": [
+  {
+   "type": "person",
+   "name": "挪亞底",
+   "name_en": "Noadiah",
+   "testament": "OT",
+   "desc": "賓內的兒子，利未人，與烏利亞的兒子米利末一同秤點聖殿的金銀器皿（拉8:33），與女先知挪亞底非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "挪亞底（女先知）",
+   "name_en": "Noadiah (prophetess)",
+   "testament": "OT",
+   "books": [
+    "尼希米記"
+   ],
+   "chapters": [
+    6,
+    6
+   ],
+   "desc": "女先知，與其餘的先知一同企圖恐嚇尼希米、阻撓他重建城牆（尼6:14），與賓內之子、利未人挪亞底非同一人。"
+  }
+ ],
  "以別": {
   "type": "person",
   "name": "以別",
@@ -25370,5 +25462,27 @@
   "name_en": "Uzai",
   "testament": "OT",
   "desc": "尼希米重建耶路撒冷城牆時參與修造的人物之一（尼3章），巴拉的父親（尼3:25）。"
+ },
+ "迦施慕": {
+  "type": "person",
+  "name": "迦施慕",
+  "name_en": "Gashmu (=Geshem)",
+  "testament": "OT",
+  "desc": "亞拉伯人基善的別名，與參巴拉、多比雅一同散布謠言、企圖恐嚇尼希米（尼6:6），即尼2:19、6:1-2的基善。"
+ },
+ "米希大別": {
+  "type": "person",
+  "name": "米希大別",
+  "name_en": "Mehetabel",
+  "testament": "OT",
+  "desc": "第來雅的父親，示瑪雅的祖父（尼6:10）。"
+ },
+ "以祿月": {
+  "type": "concept",
+  "name": "以祿月",
+  "name_en": "Elul",
+  "testament": "OT",
+  "desc": "猶太曆的六月（陽曆八、九月間），尼希米重建的耶路撒冷城牆於此月完工，歷時五十二天（尼6:15）。",
+  "cat": "time"
  }
 }
