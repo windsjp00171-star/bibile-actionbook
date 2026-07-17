@@ -13597,13 +13597,26 @@
   "desc": "在基列的拉末，管理基列的瑪拿西子孫睚珥的城邑和巴珊的亞珥歌伯地的人。",
   "name": "便基別"
  },
- "易多": {
-  "type": "person",
-  "name_en": "Iddo",
-  "testament": "OT",
-  "desc": "亞希拿達的父親。",
-  "name": "易多"
- },
+ "易多": [
+  {
+   "type": "person",
+   "name_en": "Iddo",
+   "testament": "OT",
+   "desc": "亞希拿達的父親。",
+   "name": "易多"
+  },
+  {
+   "type": "person",
+   "name": "易多（撒迦利亞之祖父）",
+   "name_en": "Iddo (grandfather of Zechariah)",
+   "testament": "OT",
+   "books": [
+    "以斯拉記",
+    "撒迦利亞書"
+   ],
+   "desc": "先知撒迦利亞的祖父（拉5:1、6:14，亞1:1,7），與其他同名者是否同一人經文未明言。"
+  }
+ ],
  "亞希拿達": {
   "type": "person",
   "name_en": "Ahinadab",
@@ -23615,5 +23628,26 @@
   "name_en": "Beyond the River",
   "testament": "OT",
   "desc": "波斯帝國行省名，指幼發拉底河以西地區，涵蓋敘利亞、腓尼基、巴勒斯坦一帶，猶大地屬其轄下（拉4:10起、5-8章屢次提及）。"
+ },
+ "達乃": {
+  "type": "person",
+  "name": "達乃",
+  "name_en": "Tattenai",
+  "testament": "OT",
+  "desc": "波斯河西省的總督，質疑猶大人重建聖殿的授權，上本奏告大利烏王，後來大利烏查核古列的詔令、下令不得阻撓（拉5:3-6、6:6-13）。"
+ },
+ "示他波斯乃": {
+  "type": "person",
+  "name": "示他波斯乃",
+  "name_en": "Shethar-boznai",
+  "testament": "OT",
+  "desc": "波斯官員，與河西總督達乃一同上本奏告大利烏王，質疑猶大人重建聖殿的授權（拉5:6、6:6,13）。"
+ },
+ "亞法薩迦人": {
+  "type": "place",
+  "name": "亞法薩迦人",
+  "name_en": "Apharsachites",
+  "testament": "OT",
+  "desc": "河西總督達乃同黨的官員族群之一（拉5:6、6:6）。"
  }
 }
