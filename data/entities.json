@@ -23649,5 +23649,20 @@
   "name_en": "Apharsachites",
   "testament": "OT",
   "desc": "河西總督達乃同黨的官員族群之一（拉5:6、6:6）。"
+ },
+ "亞馬他": {
+  "type": "place",
+  "name": "亞馬他",
+  "name_en": "Achmetha (Ecbatana)",
+  "testament": "OT",
+  "desc": "瑪代省的都城，古列詔令原卷在此宮內尋得，證實猶大人重建聖殿獲授權（拉6:2）。（今伊朗哈馬丹）"
+ },
+ "亞達月": {
+  "type": "concept",
+  "name": "亞達月",
+  "name_en": "Adar",
+  "testament": "OT",
+  "cat": "time",
+  "desc": "猶太曆的十二月（陽曆二、三月間），聖殿於大利烏王第六年此月完工（拉6:15），普珥節的由來也定於此月（斯3、8-9章）。"
  }
 }
