@@ -28414,5 +28414,103 @@
   "name_en": "Hoshaiah",
   "testament": "OT",
   "desc": "城牆告成之禮時，帶領猶大首領一半、隨第一隊稱謝者行進的人（尼12:32）。"
+ },
+ "印度": {
+  "type": "place",
+  "name": "印度",
+  "name_en": "India",
+  "testament": "OT",
+  "desc": "亞哈隨魯王國版圖的東界，其疆域從印度直到古實（衣索比亞），統管一百二十七省（斯1:1、8:9）。"
+ },
+ "米戶幔": {
+  "type": "person",
+  "name": "米戶幔",
+  "name_en": "Mehuman",
+  "testament": "OT",
+  "desc": "亞哈隨魯王面前侍立、奉命去請王后瓦實提赴宴的七個太監之一（斯1:10）。"
+ },
+ "比斯他": {
+  "type": "person",
+  "name": "比斯他",
+  "name_en": "Biztha",
+  "testament": "OT",
+  "desc": "亞哈隨魯王面前侍立、奉命去請王后瓦實提赴宴的七個太監之一（斯1:10）。"
+ },
+ "哈波拿": {
+  "type": "person",
+  "name": "哈波拿",
+  "name_en": "Harbona",
+  "testament": "OT",
+  "desc": "亞哈隨魯王面前侍立、奉命去請王后瓦實提赴宴的七個太監之一（斯1:10），後於斯7:9建議王將哈曼掛在自己所預備的木架上。"
+ },
+ "比革他": {
+  "type": "person",
+  "name": "比革他",
+  "name_en": "Bigtha",
+  "testament": "OT",
+  "desc": "亞哈隨魯王面前侍立、奉命去請王后瓦實提赴宴的七個太監之一（斯1:10）。"
+ },
+ "亞拔他": {
+  "type": "person",
+  "name": "亞拔他",
+  "name_en": "Abagtha",
+  "testament": "OT",
+  "desc": "亞哈隨魯王面前侍立、奉命去請王后瓦實提赴宴的七個太監之一（斯1:10）。"
+ },
+ "西達": {
+  "type": "person",
+  "name": "西達",
+  "name_en": "Zethar",
+  "testament": "OT",
+  "desc": "亞哈隨魯王面前侍立、奉命去請王后瓦實提赴宴的七個太監之一（斯1:10）。"
+ },
+ "甲迦": {
+  "type": "person",
+  "name": "甲迦",
+  "name_en": "Carkas",
+  "testament": "OT",
+  "desc": "亞哈隨魯王面前侍立、奉命去請王后瓦實提赴宴的七個太監之一（斯1:10）。"
+ },
+ "甲示拿": {
+  "type": "person",
+  "name": "甲示拿",
+  "name_en": "Carshena",
+  "testament": "OT",
+  "desc": "在王左右常見王面、國中坐高位、達時務的波斯和瑪代七大臣之一（斯1:13-14）。"
+ },
+ "示達": {
+  "type": "person",
+  "name": "示達",
+  "name_en": "Shethar",
+  "testament": "OT",
+  "desc": "在王左右常見王面、國中坐高位、達時務的波斯和瑪代七大臣之一（斯1:13-14）。"
+ },
+ "押瑪他": {
+  "type": "person",
+  "name": "押瑪他",
+  "name_en": "Admatha",
+  "testament": "OT",
+  "desc": "在王左右常見王面、國中坐高位、達時務的波斯和瑪代七大臣之一（斯1:13-14）。"
+ },
+ "他施斯": {
+  "type": "person",
+  "name": "他施斯",
+  "name_en": "Tarshish",
+  "testament": "OT",
+  "desc": "在王左右常見王面、國中坐高位、達時務的波斯和瑪代七大臣之一（斯1:13-14），與地名他施（他施船隻的目的地）非同名同義。"
+ },
+ "米力": {
+  "type": "person",
+  "name": "米力",
+  "name_en": "Meres",
+  "testament": "OT",
+  "desc": "在王左右常見王面、國中坐高位、達時務的波斯和瑪代七大臣之一（斯1:13-14）。"
+ },
+ "瑪西拿": {
+  "type": "person",
+  "name": "瑪西拿",
+  "name_en": "Marsena",
+  "testament": "OT",
+  "desc": "在王左右常見王面、國中坐高位、達時務的波斯和瑪代七大臣之一（斯1:13-14）。"
  }
 }
