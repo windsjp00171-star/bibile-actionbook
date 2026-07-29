@@ -113,3 +113,11 @@ review comment 要處理的話，可以直接轉 ready + merge，不用每次都
 `docs/handoff-*.md` 記錄「這一輪做到哪、踩過什麼坑」，每次 session 快結束、
 或使用者主動問要不要交接時才寫一份新的（不要在正常工作中打斷去寫）。這份
 CLAUDE.md 不需要每次更新進度，只在**判斷標準或技術眉角本身有變化**時才動它。
+
+## 跨專案總覽
+
+12 個專案的清冊（用途、部署平台、正式網址、共通地雷）在 **CLAUDE-DESIGN** repo 的
+`PROJECTS.md`：https://github.com/windsjp00171-star/CLAUDE-DESIGN/blob/main/PROJECTS.md
+
+需要「其他專案跑在哪、網址是什麼」時去查那份，不要憑印象。
+換部署平台或網址時記得回去更新它。
