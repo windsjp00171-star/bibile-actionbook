@@ -1,0 +1,18 @@
+{# PWA 的共用 head 片段。四個頁面都要 include，缺一個就會出現「從那頁進站時
+   瀏覽器看不到 manifest、不跳安裝提示」的狀況（先前只有 read.html 有）。 #}
+<meta name="theme-color" content="#2C1A0E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="聖經全書">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/static/icon-192.png">
+<link rel="icon" href="/static/icon-192.png">
+<script>
+// SW 從根目錄註冊，scope 才涵蓋 / 與 /read/*。
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(() => {});
+  });
+}
+</script>

@@ -4,7 +4,7 @@ import json
 import hashlib
 from datetime import date, datetime, timezone
 from urllib.parse import unquote_to_bytes
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_from_directory
 from markupsafe import Markup, escape
 from supabase import create_client
 
@@ -816,6 +816,28 @@ def api_progress():
         return jsonify({"records": r.data or []})
     except Exception:
         return jsonify({"records": []})
+
+
+@app.route("/sw.js")
+def service_worker():
+    """Service worker 必須從網站根目錄送出。
+
+    SW 的預設控制範圍（scope）就是它自己所在的目錄，放在 /static/sw.js 只能控制
+    /static/*，碰不到 / 與 /read/*——離線快取因此形同虛設，Chrome 也會因為
+    「沒有 SW 控制 start_url」而不給安裝。檔案仍留在 static/ 方便維護，這裡只是
+    換一個根目錄的網址送出去。
+    """
+    resp = send_from_directory(app.static_folder, "sw.js", mimetype="text/javascript")
+    resp.headers["Service-Worker-Allowed"] = "/"
+    resp.headers["Cache-Control"] = "no-cache"
+    return resp
+
+
+@app.route("/manifest.json")
+def manifest():
+    """跟 sw.js 一樣放到根目錄，讓 scope 與 start_url 都落在 / 底下。"""
+    return send_from_directory(app.static_folder, "manifest.json",
+                               mimetype="application/manifest+json")
 
 
 @app.route("/")
