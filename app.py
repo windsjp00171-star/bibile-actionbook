@@ -3,11 +3,39 @@ import re
 import json
 import hashlib
 from datetime import date, datetime, timezone
+from urllib.parse import unquote_to_bytes
 from flask import Flask, render_template, request, jsonify
 from markupsafe import Markup, escape
 from supabase import create_client
 
 app = Flask(__name__)
+
+
+class _DecodePathInfo:
+    """Vercel 的 WSGI 轉接層沒有對 PATH_INFO 做 percent-decode。
+
+    WSGI 規格要求 PATH_INFO 是「已解碼」的路徑，但 Vercel 直接把原始 URL 塞進來，
+    Flask 於是收到字面上的 `/read/%E5%89%B5%E4%B8%96%E8%A8%98/2`，書卷名對不上
+    cuv.json 的鍵，每一章都變成「查無此章經文」（本站書卷名全是中文，等於全站掛掉）。
+
+    這裡照 WSGI 慣例補回來：解碼成 bytes 後用 latin-1 存進 PATH_INFO，Werkzeug 之後
+    會自己 latin-1 → bytes → UTF-8 還原成中文。只在 Vercel 上啟用（VERCEL 是 Vercel
+    runtime 內建的環境變數），本機與 gunicorn 走原本正確的路徑，順便避開路徑裡真的
+    含有 %25 時被二次解碼的邊界情況。
+    """
+
+    def __init__(self, wsgi_app):
+        self.wsgi_app = wsgi_app
+
+    def __call__(self, environ, start_response):
+        path = environ.get("PATH_INFO", "")
+        if "%" in path:
+            environ["PATH_INFO"] = unquote_to_bytes(path).decode("latin-1")
+        return self.wsgi_app(environ, start_response)
+
+
+if os.environ.get("VERCEL") or os.environ.get("VERCEL_ENV"):
+    app.wsgi_app = _DecodePathInfo(app.wsgi_app)
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
