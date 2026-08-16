@@ -13,9 +13,13 @@
 
 ## 二、Vercel 設定
 1. Vercel → Add New Project → Import 這個 GitHub repo
-2. Framework Preset 選 **Other**，Build/Output 全部留空——`vercel.json` 已經
-   把所有路徑 rewrite 到 `api/index.py`，那支檔案只是 import 根目錄的 `app`，
-   Vercel 的 Python runtime 會自動把它當 WSGI handler
+2. Framework Preset 應該會自動偵測成 **Flask**，Build/Output 全部留空。
+   Vercel 的 Flask 原生支援會在 `app.py`／`index.py`／`server.py`／`main.py`
+   （根目錄或 `src/`、`app/`）裡找名為 `app` 的 Flask instance——本專案根目錄的
+   `app.py` 正好符合，**不需要任何轉接檔或 rewrite**，整個 app 會變成一支
+   Vercel Function，所有路徑都導進去。
+   `vercel.json` 只做兩件事：`includeFiles` 確保 `cuv.json`／`data`／`templates`／
+   `static` 進到 bundle，以及把 `maxDuration` 放寬到 30 秒給 AI 解釋用。
 3. 到 **Settings → Environment Variables** 加：
 
 | 變數 | 值 | 必要 |
@@ -40,12 +44,15 @@
 - **點一個分句** → 跳出 AI 解釋，切換兒童／慕道友／小組長深度不同
 - 同一句點第二次 → 角落標「快取」、秒出（沒燒 API）
 
-## 四、serverless 的兩個眉角
+## 四、serverless 的三個眉角
 - **冷啟動**：`app.py` 在 import 時把 `cuv.json`(3.4M) + `entities.json`(0.8M)
   讀進記憶體，實測約 0.5 秒。之後同一個 instance 的請求都是熱的。
-- **記憶體快取不跨 instance**：`vercel.json` 設了 `maxDuration: 30`、
-  `memory: 1024`。AI 解釋的行程內快取在 serverless 下命中率低，真正的快取層
-  是 Supabase——所以**務必把 Supabase 環境變數設好**，否則熱門經文會重複燒 API。
+- **記憶體快取不跨 instance**：AI 解釋的行程內快取在 serverless 下命中率低，
+  真正的快取層是 Supabase——所以**務必把 Supabase 環境變數設好**，否則熱門經文
+  會重複燒 API。
+- **靜態檔走 function 不走 CDN**：Vercel 建議靜態檔放 `public/**` 由 CDN 送，
+  但本專案的 `static/` 只有 72K，且模板都用 Flask 的 `url_for('static', ...)`，
+  維持由 Flask 自己送（請求還是會進到同一支 function）。真的嫌慢再搬。
 
 ## 五、成本心法
 三層快取：手刻字典 → Supabase 永久快取 → AI 只生成一次。
