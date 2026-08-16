@@ -3,13 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#2C1A0E">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="聖經全書">
 <title>{{ book }} 第{{ chapter }}章 — 聖經全書</title>
-<link rel="manifest" href="/static/manifest.json">
-<link rel="apple-touch-icon" href="/static/icon-192.png">
+{% include '_pwa.html' %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
@@ -239,11 +234,6 @@ const LINEAGE = {{ lineage_json | safe }};
 const TYPE_LABEL = { person: '人物', place: '地點', concept: '族群／概念' };
 // 關係顯示順序與標籤
 const REL_ORDER = ['父母','母','子女','手足','配偶','師長','門生','同工','敵對','主','婢女','臣僕','祖父','孫'];
-
-// ── Service Worker ──────────────────────────────────────────────
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/static/sw.js').catch(() => {});
-}
 
 // ── Font size ───────────────────────────────────────────────────
 let fontSize = parseInt(localStorage.getItem('bible-fs') || '18');

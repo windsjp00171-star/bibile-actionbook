@@ -1,0 +1,81 @@
+{# 安裝入口。只放首頁（start_url），不要每頁都跳。
+
+   兩種瀏覽器行為差很多：
+   - Chrome / Edge（Android、桌機）：會丟 beforeinstallprompt，攔下來自己畫按鈕，
+     點了才呼叫 prompt()。不攔的話瀏覽器自己那條提示很容易被滑掉。
+   - iOS Safari：從來不會有 beforeinstallprompt，只能手動「分享 → 加入主畫面」，
+     所以改成顯示指引文字。
+   已經是安裝後開啟（standalone）時整個不顯示。 #}
+<style>
+.install-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:18px;z-index:900;
+  display:none;align-items:center;gap:12px;max-width:calc(100vw - 32px);
+  padding:11px 14px;border-radius:12px;
+  background:linear-gradient(135deg,#3D1F08 0%,#5C3010 100%);
+  border:1px solid var(--gold-faint);box-shadow:0 6px 24px rgba(0,0,0,.55);
+  font-size:14px;color:var(--cream);line-height:1.5;}
+.install-bar.show{display:flex;}
+.install-bar b{color:var(--gold);font-weight:500;}
+.install-bar button{font:inherit;cursor:pointer;border-radius:8px;white-space:nowrap;}
+.install-go{padding:7px 14px;border:1px solid var(--gold);background:var(--gold);color:#2C1A0E;font-weight:500;}
+.install-go:hover{background:#E0B75C;}
+.install-x{padding:7px 9px;border:1px solid var(--gold-faint);background:transparent;color:var(--gold-dim);}
+.install-x:hover{color:var(--gold);}
+</style>
+
+<div class="install-bar" id="installBar">
+  <span id="installText"></span>
+  <button class="install-go" id="installGo" hidden>安裝</button>
+  <button class="install-x" id="installX" aria-label="關閉">✕</button>
+</div>
+
+<script>
+(function () {
+  var bar  = document.getElementById('installBar');
+  var text = document.getElementById('installText');
+  var go   = document.getElementById('installGo');
+  var deferred = null;
+
+  // 已經以 app 形式開啟就不用再提示。
+  var standalone = window.matchMedia('(display-mode: standalone)').matches
+                || window.navigator.standalone === true;
+  if (standalone || localStorage.getItem('bible-install-dismissed') === '1') return;
+
+  document.getElementById('installX').addEventListener('click', function () {
+    bar.classList.remove('show');
+    localStorage.setItem('bible-install-dismissed', '1');
+  });
+
+  // Chrome / Edge：攔下瀏覽器的安裝提示，改用自己的按鈕。
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault();
+    deferred = e;
+    text.innerHTML = '把<b>聖經全書</b>裝到主畫面，離線也能讀';
+    go.hidden = false;
+    bar.classList.add('show');
+  });
+
+  go.addEventListener('click', function () {
+    if (!deferred) return;
+    deferred.prompt();
+    deferred.userChoice.finally(function () {
+      deferred = null;
+      bar.classList.remove('show');
+    });
+  });
+
+  window.addEventListener('appinstalled', function () {
+    bar.classList.remove('show');
+    localStorage.setItem('bible-install-dismissed', '1');
+  });
+
+  // iOS Safari：沒有 beforeinstallprompt，只能給手動步驟。
+  var ua = navigator.userAgent;
+  var iOS = /iPad|iPhone|iPod/.test(ua)
+         || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var iOSSafari = iOS && /Safari/.test(ua) && !/CriOS|FxiOS|EdgiOS|OPiOS/.test(ua);
+  if (iOSSafari) {
+    text.innerHTML = '裝到主畫面：點下方的<b>分享</b>，選<b>加入主畫面</b>';
+    bar.classList.add('show');
+  }
+})();
+</script>
