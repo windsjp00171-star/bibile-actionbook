@@ -749,3 +749,45 @@ body {
     width: 38px; height: 4px; border-radius: 2px; background: #C9A96E66;
   }
 }
+
+/* ── 桌面側欄收合 ──────────────────────────────────────────────
+   手機（<=600px）本來就隱藏側欄改用 drawer，這組規則只在桌面生效。 */
+.nav-toggle {
+  position: fixed;
+  top: 14px;
+  left: 178px;
+  z-index: 60;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #3A220E;
+  border-radius: 7px;
+  background: var(--nav-bg);
+  color: var(--nav-book);
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  transition: left .22s ease, color .15s ease, background .15s ease;
+}
+.nav-toggle:hover { color: var(--nav-title); background: var(--nav-active-bg); }
+
+.sidebar { transition: width .22s ease; }
+
+body.nav-collapsed .sidebar {
+  width: 0;
+  min-width: 0;
+  overflow: hidden;
+  border-right: 1px solid #E2D4B8;
+}
+body.nav-collapsed .nav-toggle {
+  left: 10px;
+  background: rgba(44, 26, 14, .92);
+}
+
+@media (max-width: 600px) {
+  .nav-toggle { display: none; }
+  /* 手機維持原本行為：側欄隱藏、走 drawer，不受收合狀態影響 */
+  body.nav-collapsed .sidebar { width: 210px; }
+}
