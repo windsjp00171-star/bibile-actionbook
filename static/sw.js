@@ -54,7 +54,7 @@ function networkFirst(req) {
 
 self.addEventListener('fetch', e => {
   // POST 不能進 Cache Storage（cache.put 會丟 InvalidStateError），
-  // /api/explain 就是 POST，直接放行不要攔。
+  // /api/feedback 就是 POST，直接放行不要攔。
   if (e.request.method !== 'GET') return;
 
   const url = new URL(e.request.url);

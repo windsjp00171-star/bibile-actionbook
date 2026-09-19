@@ -1,0 +1,12 @@
+# 離線工具用的相依，不會部署到 Vercel（網站本身的相依在 requirements.txt）。
+# 用到的檔案：gen_annotations.py、tools/draft_entities.py、scripts/auto_fill_entities.py
+#
+# 注意：google-generativeai 會拖進約 150MB 的 google/grpc 相依，正是它讓
+# Vercel bundle 破 500MB 建置失敗過。它只能留在這裡，絕對不要放回
+# requirements.txt（原委見 DEPLOY.md 第五節）。
+-r requirements.txt
+groq>=0.11
+requests>=2.31
+httpx>=0.27
+google-generativeai>=0.8
+anthropic>=0.40

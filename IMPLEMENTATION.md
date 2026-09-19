@@ -49,16 +49,13 @@
 ### 3. 互動地圖
 地名卡片內嵌 Leaflet 小地圖（焦點地名固定標籤、其他地名點擊顯名避免擁擠），可「⛶ 放大地圖」到全螢幕大圖，所有地名標清楚、自動框住全部地點、點地名跳轉。
 
-### 4. 分齡 AI 解釋
-卡片內「✦ AI 深入解釋」按鈕，依程度（兒童/慕道友/小組長）生成解釋。三層快取控成本：手刻字典 → Supabase 永久快取 → Groq/Gemini 即時生成（受每日上限保護）。
-
-### 5. 人物關係網（聖經宇宙）
+### 4. 人物關係網（聖經宇宙）
 卡片底部顯示關係 chip（父母/子女/手足/配偶/敵對/師長/門生/同工），點 chip 跳到那個人，可一層層在人物宇宙裡遊走。
 
-### 6. 首頁流程
+### 5. 首頁流程
 開書動畫（星點背景、點書本→光芒→淡出）→ 存檔選單（最近兩筆閱讀紀錄）→ 三層選書（新舊約→經卷→章節）→ 導向閱讀頁。
 
-### 7. 回報機制
+### 6. 回報機制
 - **標錯**：卡片上按「⚑ 標註有誤」
 - **漏標**：閱讀頁底「⚑ 本章有漏標或標錯？回報」，打字描述
 - 都進 Supabase `entity_feedback` 表
@@ -101,7 +98,6 @@
 | `/read/<book>/<chapter>` | GET | 閱讀頁（標註、地圖、世系圖） |
 | `/api/books` | GET | 選書資料 `{ot:[{order,name,chapters}],nt:[...]}` |
 | `/api/progress` | GET/POST | 存檔讀寫（裝置ID當user_id） |
-| `/api/explain` | POST | AI 解釋（三層快取） |
 | `/api/feedback` | POST | 標註回報 |
 
 ---
@@ -112,7 +108,6 @@
 |---|---|---|
 | `user_reading_progress` | user_id, book_name, chapter, updated_at | 首頁存檔（`supabase_reading_progress.sql`） |
 | `entity_feedback` | entity, book, chapter, note, created_at | 標註回報（`supabase_feedback.sql`） |
-| `ai_explanations` | cache_key, content | AI 解釋永久快取（`supabase_schema.sql`） |
 
 無登入系統，存檔以前端產生的「裝置 ID」（localStorage `bible-device-id`）識別。
 
@@ -143,7 +138,7 @@ gunicorn app:app          # 生產
 flask run                 # 開發
 ```
 
-環境變數：`SUPABASE_URL`、`SUPABASE_SERVICE_ROLE_KEY`、`GROQ_API_KEY`、`GEMINI_API_KEY`、`FLASK_SECRET_KEY`。
+環境變數：`SUPABASE_URL`、`SUPABASE_SERVICE_ROLE_KEY`、`FLASK_SECRET_KEY`。
 
 上線前確認三張 Supabase 表已建立（跑對應的 `.sql`）。
 

@@ -5,11 +5,10 @@
 > 的平台（Render / Fly / 自架）都還是能直接跑，`app.py` 本身沒有為了 Vercel
 > 改動任何東西。
 
-## 一、建快取表（Supabase）
-在 Supabase 專案的 **SQL Editor** 貼上 `supabase_schema.sql` 全文，按 Run。
-（沒做也能跑，只是快取重啟就失憶；做了才永久共用。）
-書籤／閱讀進度／回饋另有 `supabase_bookmarks.sql`、`supabase_reading_progress.sql`、
-`supabase_feedback.sql`。
+## 一、建資料表（Supabase）
+在 Supabase 專案的 **SQL Editor** 依序貼上並執行：
+`supabase_bookmarks.sql`（書籤）、`supabase_reading_progress.sql`（閱讀進度）、
+`supabase_feedback.sql`（標註回報）。沒建也能讀經，只是這三項功能不會留存。
 
 ## 二、Vercel 設定
 1. Vercel → Add New Project → Import 這個 GitHub repo
@@ -19,37 +18,27 @@
    `app.py` 正好符合，**不需要任何轉接檔或 rewrite**，整個 app 會變成一支
    Vercel Function，所有路徑都導進去。
    `vercel.json` 只做兩件事：`includeFiles` 確保 `cuv.json`／`data`／`templates`／
-   `static` 進到 bundle，以及把 `maxDuration` 放寬到 30 秒給 AI 解釋用。
+   `static` 進到 bundle，以及 `maxDuration`。
 3. 到 **Settings → Environment Variables** 加：
 
 | 變數 | 值 | 必要 |
 |---|---|---|
-| `GROQ_API_KEY` | Groq key（這個 app 專用） | AI 解釋（擇一） |
-| `GEMINI_API_KEY` | 或改用 Gemini key | AI 解釋（擇一） |
-| `GEMINI_MODEL` | 用 Gemini 時建議填 `gemini-2.5-flash` | 選填 |
-| `SUPABASE_URL` | Supabase 專案 URL | 快取／書籤／進度 |
+| `SUPABASE_URL` | Supabase 專案 URL | 書籤／進度／回報 |
 | `SUPABASE_SERVICE_ROLE_KEY` | Supabase service role key | 同上 |
 | `FLASK_SECRET_KEY` | 任意亂數字串 | 建議 |
-| `EXPLAIN_DAILY_CAP` | 每日 AI 生成上限（預設 500） | 選填・成本保險絲 |
 
 > 環境變數記得三個環境（Production / Preview / Development）都勾，不然
 > preview 部署會少 key。改完要 **Redeploy** 才吃得到。
 
-> AI 解釋的 provider 自動偵測：有 `GROQ_API_KEY` 優先用 Groq（快、免費），
-> 否則用 `GEMINI_API_KEY`。兩個都沒設，閱讀與手刻標注照常，只是即時解釋停用。
-
 ## 三、驗證
-- 開首頁 → 撒上17 應顯示標注（紅人名／綠地名／紫概念）
+- 開首頁 → 撒上17 應顯示標註（紅人名／綠地名／紫概念）
 - 點地名 → 卡片含地圖
-- **點一個分句** → 跳出 AI 解釋，切換兒童／慕道友／小組長深度不同
-- 同一句點第二次 → 角落標「快取」、秒出（沒燒 API）
+- 點人名 → 卡片含關係與世系
+- 桌面版左上箭頭可收合書卷側欄，重新整理後狀態保留
 
-## 四、serverless 的三個眉角
+## 四、serverless 的兩個眉角
 - **冷啟動**：`app.py` 在 import 時把 `cuv.json`(3.4M) + `entities.json`(0.8M)
   讀進記憶體，實測約 0.5 秒。之後同一個 instance 的請求都是熱的。
-- **記憶體快取不跨 instance**：AI 解釋的行程內快取在 serverless 下命中率低，
-  真正的快取層是 Supabase——所以**務必把 Supabase 環境變數設好**，否則熱門經文
-  會重複燒 API。
 - **靜態檔走 function 不走 CDN**：Vercel 建議靜態檔放 `public/**` 由 CDN 送，
   但本專案的 `static/` 只有 72K，且模板都用 Flask 的 `url_for('static', ...)`，
   維持由 Flask 自己送（請求還是會進到同一支 function）。真的嫌慢再搬。
@@ -85,10 +74,9 @@ Error: Total bundle size (616.03 MB) exceeds the maximum function size (500 MB).
 
 ### 成因二：相依套件的體重
 
-`google-generativeai` 會拖進 `google-api-python-client`(103MB) +
-`google`(25MB) + `grpc`(19MB)，site-packages 從 68MB 膨脹到 219MB。
-它只被用在 `_ai_explain()` 裡 8 行的 Gemini 後備路徑，已改成**直接打 REST**
-（`requests` 本來就在相依裡），參數與原本 SDK 版等價。
+歷史紀錄：`google-generativeai` 曾經把 site-packages 從 68MB 撐到 219MB
+（它會拖進 `google-api-python-client` 103MB + `google` 25MB + `grpc` 19MB）。
+AI 解釋功能後來整個移除，這顆相依也跟著消失了。
 
 新增相依前先量一下：
 
@@ -97,8 +85,6 @@ python3 -m venv /tmp/sz && /tmp/sz/bin/pip install -r requirements.txt
 du -sh /tmp/sz/lib/python3.*/site-packages
 ```
 
-本機 site-packages 抓在 200MB 以內大致安全。
-
-## 六、成本心法
-三層快取：手刻字典 → Supabase 永久快取 → AI 只生成一次。
-熱門經文幾天就被點滿快取，實際打到 API 的只有冷門首點，邊際成本趨近零。
+本機 site-packages 抓在 200MB 以內大致安全。`requirements.txt` 只放網站真正
+需要的東西；`tools/`、`scripts/` 的離線工具相依放 `requirements-dev.txt`，
+不會進到 bundle。
