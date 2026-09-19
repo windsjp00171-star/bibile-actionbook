@@ -12,6 +12,14 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+<script>
+// 在側欄畫出來之前就套用上次的收合狀態，避免閃動。
+try {
+  if (localStorage.getItem('bible-nav-collapsed') === '1') {
+    document.body.classList.add('nav-collapsed');
+  }
+} catch (e) {}
+</script>
 
 <header class="mob-header">
   <button class="burger" onclick="openDrawer()" aria-label="目錄">☰</button>
@@ -20,6 +28,10 @@
 
 <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
 <nav class="drawer" id="drawer">{{ nav_html | safe }}</nav>
+
+<button class="nav-toggle" id="navToggle" type="button"
+        aria-label="收合書卷選單" aria-expanded="true"
+        onclick="toggleNav()">‹</button>
 
 <nav class="sidebar">{{ nav_html | safe }}</nav>
 
@@ -256,6 +268,25 @@ function closeDrawer() {
   document.getElementById('drawer').classList.remove('open');
   document.getElementById('overlay').classList.remove('open');
 }
+
+function toggleNav() {
+  var collapsed = document.body.classList.toggle('nav-collapsed');
+  var btn = document.getElementById('navToggle');
+  btn.textContent = collapsed ? '\u203a' : '\u2039';
+  btn.setAttribute('aria-label', collapsed ? '\u5c55\u958b\u66f8\u5377\u9078\u55ae' : '\u6536\u5408\u66f8\u5377\u9078\u55ae');
+  btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+  try { localStorage.setItem('bible-nav-collapsed', collapsed ? '1' : '0'); } catch (e) {}
+}
+
+// 重新整理後讓按鈕箭頭方向跟已還原的狀態一致
+(function () {
+  if (document.body.classList.contains('nav-collapsed')) {
+    var btn = document.getElementById('navToggle');
+    btn.textContent = '\u203a';
+    btn.setAttribute('aria-label', '\u5c55\u958b\u66f8\u5377\u9078\u55ae');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+})();
 
 // ── Anno card ───────────────────────────────────────────────────
 let _map = null, _layer = null;
