@@ -474,13 +474,29 @@ def _ai_explain(text, ref, level, context=""):
 
     gem_key = os.environ.get("GEMINI_API_KEY")
     if gem_key:
-        import google.generativeai as genai
-        genai.configure(api_key=gem_key)
-        model = genai.GenerativeModel(
-            os.environ.get("GEMINI_MODEL", "gemini-2.5-flash"),
-            system_instruction=system)
-        r = model.generate_content(user, generation_config={"temperature": 0.2})
-        return (r.text or "").strip()
+        # 直接打 REST，不用 google-generativeai SDK：那顆 SDK 會拖進
+        # google-api-python-client(103MB) + google(25MB) + grpc(19MB)，
+        # 而 Vercel 的 function 上限是 500MB——裝著它建置就會失敗
+        # （實際炸過：Total bundle size 616.03 MB）。這裡的參數與原本
+        # SDK 版本等價：同樣只設 temperature，不設輸出上限（2.5-flash
+        # 會先花 token 思考，設上限容易回空字串）。
+        import requests
+        model = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+        resp = requests.post(
+            "https://generativelanguage.googleapis.com/v1beta/models/"
+            f"{model}:generateContent",
+            headers={"x-goog-api-key": gem_key},
+            json={
+                "systemInstruction": {"parts": [{"text": system}]},
+                "contents": [{"role": "user", "parts": [{"text": user}]}],
+                "generationConfig": {"temperature": 0.2},
+            },
+            timeout=25,
+        )
+        resp.raise_for_status()
+        cands = resp.json().get("candidates") or []
+        parts = (cands[0].get("content") or {}).get("parts") if cands else None
+        return "".join(p.get("text", "") for p in (parts or [])).strip()
 
     return None
 

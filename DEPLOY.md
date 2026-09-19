@@ -54,6 +54,29 @@
   但本專案的 `static/` 只有 72K，且模板都用 Flask 的 `url_for('static', ...)`，
   維持由 Flask 自己送（請求還是會進到同一支 function）。真的嫌慢再搬。
 
-## 五、成本心法
+## 五、相依套件的硬限制（別再把 SDK 裝回來）
+
+Vercel 的 function bundle 上限是 **500MB**，超過直接建置失敗：
+
+```
+Error: Total bundle size (616.03 MB) exceeds the maximum function size (500 MB).
+```
+
+這是真的發生過的事故。兇手是 `google-generativeai`，它會拖進
+`google-api-python-client`(103MB) + `google`(25MB) + `grpc`(19MB)，本機量到
+site-packages 從 68MB 膨脹到 219MB，Vercel 上更大。
+
+所以 **Gemini 改成直接打 REST**（`requests` 本來就在相依裡），程式在
+`app.py` 的 `_ai_explain()`，參數與原本 SDK 版等價。新增相依前先想一下這條線，
+可以用下面的方式量：
+
+```bash
+python3 -m venv /tmp/sz && /tmp/sz/bin/pip install -r requirements.txt
+du -sh /tmp/sz/lib/python3.*/site-packages
+```
+
+抓到 500MB 以內大致等於本機 site-packages 200MB 以內。
+
+## 六、成本心法
 三層快取：手刻字典 → Supabase 永久快取 → AI 只生成一次。
 熱門經文幾天就被點滿快取，實際打到 API 的只有冷門首點，邊際成本趨近零。
