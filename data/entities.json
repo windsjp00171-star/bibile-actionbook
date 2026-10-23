@@ -11920,6 +11920,7 @@
   "name_en": "Beth Aven",
   "testament": "OT",
   "books": [
+   "約書亞記",
    "撒母耳記上"
   ],
   "desc": "便雅憫地一處，靠近密抹，以色列人追殺非利士人直到此地（撒上13:5、14:23）。",
@@ -12191,16 +12192,28 @@
   "desc": "便雅憫地一城，帕提（米甲後夫）的家鄉（撒上25:44）。",
   "name": "迦琳"
  },
- "拉億": {
-  "type": "person",
-  "name_en": "Laish",
-  "testament": "OT",
-  "books": [
-   "撒母耳記上"
-  ],
-  "desc": "迦琳人，帕提（米甲後夫）的父親（撒上25:44）。",
-  "name": "拉億"
- },
+ "拉億": [
+  {
+   "type": "person",
+   "name_en": "Laish",
+   "testament": "OT",
+   "books": [
+    "撒母耳記上"
+   ],
+   "desc": "迦琳人，帕提（米甲後夫）的父親（撒上25:44）。",
+   "name": "拉億"
+  },
+  {
+   "type": "place",
+   "name": "拉億",
+   "name_en": "Laish",
+   "testament": "OT",
+   "desc": "北方安居無慮的城，在靠近伯利合的谷地；但人攻取後焚燒，重建並改名為但（士18:7、27-29）。",
+   "books": [
+    "士師記"
+   ]
+  }
+ ],
  "哈基拉山": {
   "type": "place",
   "name_en": "Hachilah",
@@ -12246,6 +12259,7 @@
   "name_en": "Jezreel",
   "testament": "OT",
   "books": [
+   "士師記",
    "撒母耳記上",
    "撒母耳記下"
   ],
@@ -12376,16 +12390,32 @@
   "desc": "基士的祖父（撒上9:1）。",
   "name": "洗羅"
  },
- "亞別": {
-  "type": "person",
-  "name_en": "Abiel",
-  "testament": "OT",
-  "books": [
-   "撒母耳記上"
-  ],
-  "desc": "基士的父親、掃羅的祖父，也是尼珥的父親（撒上9:1、14:51）。",
-  "name": "亞別"
- },
+ "亞別": [
+  {
+   "type": "person",
+   "name_en": "Abiel",
+   "testament": "OT",
+   "books": [
+    "撒母耳記上"
+   ],
+   "desc": "基士的父親、掃羅的祖父，也是尼珥的父親（撒上9:1、14:51）。",
+   "name": "亞別"
+  },
+  {
+   "type": "place",
+   "name": "亞別",
+   "name_en": "Abez",
+   "testament": "OT",
+   "desc": "以薩迦支派分得的城邑（書19:20）；確切位置不詳。",
+   "books": [
+    "約書亞記"
+   ],
+   "chapters": [
+    19,
+    19
+   ]
+  }
+ ],
  "迦密": {
   "type": "place",
   "name_en": "Carmel (of Judah)",
@@ -12827,17 +12857,47 @@
    "desc": "以斯哈的兒子，可拉的兄弟（6:21）。"
   }
  ],
- "雅非亞": {
-  "type": "person",
-  "name_en": "Japhia",
-  "testament": "OT",
-  "books": [
-   "撒母耳記下",
-   "歷代志上"
-  ],
-  "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:15）。（代上14:6同一世系）",
-  "name": "雅非亞"
- },
+ "雅非亞": [
+  {
+   "type": "person",
+   "name_en": "Japhia",
+   "testament": "OT",
+   "books": [
+    "撒母耳記下",
+    "歷代志上"
+   ],
+   "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:15）。（代上14:6同一世系）",
+   "name": "雅非亞"
+  },
+  {
+   "type": "person",
+   "name": "雅非亞",
+   "name_en": "Japhia",
+   "testament": "OT",
+   "desc": "拉吉王，與耶路撒冷王聯合攻打基遍的五王之一（書10:3）。",
+   "books": [
+    "約書亞記"
+   ],
+   "chapters": [
+    10,
+    10
+   ]
+  },
+  {
+   "type": "place",
+   "name": "雅非亞",
+   "name_en": "Japhia",
+   "testament": "OT",
+   "desc": "西布倫支派地界上的城邑（書19:12）；確切位置不詳。",
+   "books": [
+    "約書亞記"
+   ],
+   "chapters": [
+    19,
+    19
+   ]
+  }
+ ],
  "以利雅大": [
   {
    "type": "person",
@@ -13258,6 +13318,7 @@
   "name_en": "Beth-rehob",
   "testament": "OT",
   "books": [
+   "士師記",
    "撒母耳記下"
   ],
   "desc": "亞蘭人的一地，亞捫人曾雇其兵協助對抗以色列（撒下10:6）。（今敘利亞南部或黎巴嫩東部）",
@@ -13637,6 +13698,7 @@
   "name_en": "Thebez",
   "testament": "OT",
   "books": [
+   "士師記",
    "撒母耳記下"
   ],
   "desc": "基甸之子亞比米勒被婦人從城牆丟磨石砸死之地（撒下11:21，另見士9:50-54）。（位於今日約旦）",
@@ -28804,16 +28866,28 @@
   ],
   "desc": "基拉耳王亞比米勒的軍長，曾與亞比米勒同到別是巴，與亞伯拉罕、以撒立約（21:22、32；26:26）。"
  },
- "亭拿": {
-  "type": "place",
-  "name": "亭拿",
-  "name_en": "Timnah",
-  "testament": "OT",
-  "books": [
-   "創世記"
-  ],
-  "desc": "猶大地的城鎮，猶大上去剪羊毛的地方；他瑪裝扮後坐在往亭拿路上的伊拿印城門口（38:12-14）。"
- },
+ "亭拿": [
+  {
+   "type": "place",
+   "name": "亭拿",
+   "name_en": "Timnah",
+   "testament": "OT",
+   "books": [
+    "創世記"
+   ],
+   "desc": "猶大地的城鎮，猶大上去剪羊毛的地方；他瑪裝扮後坐在往亭拿路上的伊拿印城門口（38:12-14）。"
+  },
+  {
+   "type": "place",
+   "name": "亭拿",
+   "name_en": "Timnah",
+   "testament": "OT",
+   "desc": "非利士人的城，參孫下到亭拿，看見一個非利士女子，求父母為他娶來（士14:1-5）。",
+   "books": [
+    "士師記"
+   ]
+  }
+ ],
  "以拿": {
   "type": "person",
   "name": "以拿",
@@ -28873,16 +28947,6 @@
    "創世記"
   ],
   "desc": "寧錄所建王國最初的城邑之一，在示拿地（10:10）；一般認為即美索不達米亞南部的烏魯克。"
- },
- "甲尼": {
-  "type": "place",
-  "name": "甲尼",
-  "name_en": "Calneh",
-  "testament": "OT",
-  "books": [
-   "創世記"
-  ],
-  "desc": "寧錄所建王國最初的城邑之一，在示拿地（10:10）；確切位置不詳。"
  },
  "利鮮": {
   "type": "place",
@@ -29241,16 +29305,6 @@
   ],
   "desc": "迦得的兒子，隨雅各下埃及（46:16）。"
  },
- "以希": {
-  "type": "person",
-  "name": "以希",
-  "name_en": "Ehi",
-  "testament": "OT",
-  "books": [
-   "創世記"
-  ],
-  "desc": "便雅憫的兒子，隨雅各下埃及（46:21）。"
- },
  "羅實": {
   "type": "person",
   "name": "羅實",
@@ -29318,9 +29372,6 @@
   "name": "伊甸園",
   "name_en": "Garden of Eden",
   "testament": "OT",
-  "books": [
-   "創世記"
-  ],
   "desc": "即伊甸，耶和華神將那人安置在這園子裡，使他修理看守（2:15）。",
   "lat": 33.3,
   "lng": 44.4
@@ -29330,10 +29381,6 @@
   "name": "西珥山",
   "name_en": "Mount Seir",
   "testament": "OT",
-  "books": [
-   "創世記",
-   "申命記"
-  ],
   "desc": "即西珥，原是何利人居住的山地（14:6），後來成為以掃後裔以東人的居所（36:8-9）。",
   "lat": 30.5,
   "lng": 35.5
@@ -29343,10 +29390,6 @@
   "name": "基列山",
   "name_en": "Mount Gilead",
   "testament": "OT",
-  "books": [
-   "創世記",
-   "申命記"
-  ],
   "desc": "約旦河東基列地的山區；雅各帶家眷逃離拉班，渡河後面向基列山行去，拉班追上來，兩人在此立約（31:21-25）。",
   "lat": 32.0,
   "lng": 35.8
@@ -29366,9 +29409,6 @@
   "name": "亞拉臘山",
   "name_en": "Mount Ararat",
   "testament": "OT",
-  "books": [
-   "創世記"
-  ],
   "desc": "即亞拉臘，洪水消退後挪亞的方舟停靠之處（8:4）。",
   "lat": 39.7,
   "lng": 44.3
@@ -29428,10 +29468,7 @@
   "name": "埃及河",
   "name_en": "River of Egypt",
   "testament": "OT",
-  "books": [
-   "創世記"
-  ],
-  "desc": "神應許賜給亞伯蘭後裔之地的西南界，「從埃及河直到幼發拉底大河」（15:18）；學者對它是哪條河有不同看法。"
+  "desc": "埃及的河。創15:18神應許賜給亞伯蘭後裔之地的西南界是「埃及河」，學者對它指尼羅河或迦南地西南的埃及小河（瓦迪阿里什）有不同看法；摩8:8的「埃及河」指尼羅河。"
  },
  "便亞米": {
   "type": "person",
@@ -29448,9 +29485,6 @@
   "name": "基拉耳谷",
   "name_en": "Valley of Gerar",
   "testament": "OT",
-  "books": [
-   "創世記"
-  ],
   "desc": "基拉耳附近的谷地，以撒離開非利士人之地後在此支搭帳棚，重挖亞伯拉罕當年所挖的井（26:17-18）。",
   "lat": 31.35,
   "lng": 34.58
@@ -29500,9 +29534,6 @@
   "name": "希伯崙谷",
   "name_en": "Valley of Hebron",
   "testament": "OT",
-  "books": [
-   "創世記"
-  ],
   "desc": "雅各打發約瑟出希伯崙谷，往示劍去探望哥哥們（37:14）。",
   "lat": 31.53,
   "lng": 35.1
@@ -29641,9 +29672,6 @@
   "name": "非利士海",
   "name_en": "Sea of the Philistines",
   "testament": "OT",
-  "books": [
-   "出埃及記"
-  ],
   "desc": "即地中海，神應許以色列的疆界「從紅海直到非利士海」（23:31）。"
  },
  "何巴": {
@@ -29653,7 +29681,8 @@
   "testament": "OT",
   "desc": "米甸人流珥的兒子，摩西的岳父（或作內兄）；摩西請他留下，作以色列人在曠野紮營行路的眼目（10:29-32）。",
   "books": [
-   "民數記"
+   "民數記",
+   "士師記"
   ]
  },
  "哈洗錄": {
@@ -29714,7 +29743,8 @@
   "desc": "摩押地的山，山頂可下望曠野（民21:20）；巴勒曾領巴蘭到毗斯迦山頂築壇（民23:14）。",
   "books": [
    "民數記",
-   "申命記"
+   "申命記",
+   "約書亞記"
   ]
  },
  "亞珥": {
@@ -29766,7 +29796,8 @@
   "testament": "OT",
   "desc": "以色列人在約旦河東摩押平原的駐紮處；百姓在此與摩押女子行淫亂，隨從巴力毗珥（25:1-3）。",
   "books": [
-   "民數記"
+   "民數記",
+   "約書亞記"
   ]
  },
  "亞希蘭": {
@@ -29956,9 +29987,1238 @@
   "name": "巴蘭山",
   "name_en": "Mount Paran",
   "testament": "OT",
-  "desc": "摩西祝福時說，耶和華從西乃而來，從西珥向以色列顯現，從巴蘭山發出光輝（申33:2）。",
+  "desc": "與西乃、西珥並列的山地，經文詩歌描述耶和華從巴蘭山發出光輝（申33:2）、聖者從巴蘭山而來（哈3:3）。"
+ },
+ "伊利多拉": {
+  "type": "place",
+  "name": "伊利多拉",
+  "name_en": "Eltolad",
+  "testament": "OT",
+  "desc": "西緬支派分得的城邑之一（19:4）；確切位置不詳。",
   "books": [
-   "申命記"
+   "約書亞記"
   ]
+ },
+ "比土力": {
+  "type": "place",
+  "name": "比土力",
+  "name_en": "Bethul",
+  "testament": "OT",
+  "desc": "西緬支派分得的城邑之一（19:4）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "伯瑪加博": {
+  "type": "place",
+  "name": "伯瑪加博",
+  "name_en": "Beth-marcaboth",
+  "testament": "OT",
+  "desc": "西緬支派分得的城邑之一（19:5）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "伯利巴勿": {
+  "type": "place",
+  "name": "伯利巴勿",
+  "name_en": "Beth-lebaoth",
+  "testament": "OT",
+  "desc": "西緬支派分得的城邑之一（19:6）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "沙魯險": {
+  "type": "place",
+  "name": "沙魯險",
+  "name_en": "Sharuhen",
+  "testament": "OT",
+  "desc": "西緬支派分得的城邑之一（19:6）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "利門": {
+  "type": "place",
+  "name": "利門",
+  "name_en": "Rimmon",
+  "testament": "OT",
+  "desc": "西緬支派分得的城邑之一（19:7）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "撒立": {
+  "type": "place",
+  "name": "撒立",
+  "name_en": "Sarid",
+  "testament": "OT",
+  "desc": "西布倫支派分得的城邑之一（19:10）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "瑪拉拉": {
+  "type": "place",
+  "name": "瑪拉拉",
+  "name_en": "Maralah",
+  "testament": "OT",
+  "desc": "西布倫支派分得的城邑之一（19:11）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "大巴設": {
+  "type": "place",
+  "name": "大巴設",
+  "name_en": "Dabbesheth",
+  "testament": "OT",
+  "desc": "西布倫支派分得的城邑之一（19:11）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "吉斯綠他泊": {
+  "type": "place",
+  "name": "吉斯綠他泊",
+  "name_en": "Chisloth-tabor",
+  "testament": "OT",
+  "desc": "西布倫支派分得的城邑之一（19:12）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "以特加汛": {
+  "type": "place",
+  "name": "以特加汛",
+  "name_en": "Eth-kazin",
+  "testament": "OT",
+  "desc": "西布倫支派分得的城邑之一（19:13）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "尼亞": {
+  "type": "place",
+  "name": "尼亞",
+  "name_en": "Neah",
+  "testament": "OT",
+  "desc": "西布倫支派分得的城邑之一（19:13）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "哈拿頓": {
+  "type": "place",
+  "name": "哈拿頓",
+  "name_en": "Hannathon",
+  "testament": "OT",
+  "desc": "西布倫支派分得的城邑之一（19:14）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "加他": {
+  "type": "place",
+  "name": "加他",
+  "name_en": "Kattath",
+  "testament": "OT",
+  "desc": "西布倫支派分得的城邑之一（19:15）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "以大拉": {
+  "type": "place",
+  "name": "以大拉",
+  "name_en": "Idalah",
+  "testament": "OT",
+  "desc": "西布倫支派分得的城邑之一（19:15）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "伊弗他伊勒谷": {
+  "type": "place",
+  "name": "伊弗他伊勒谷",
+  "name_en": "Valley of Iphtah-el",
+  "testament": "OT",
+  "desc": "西布倫與亞設兩支派交界上的山谷（書19:14、27）。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "基蘇律": {
+  "type": "place",
+  "name": "基蘇律",
+  "name_en": "Chesulloth",
+  "testament": "OT",
+  "desc": "以薩迦支派分得的城邑之一（19:18）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "哈弗連": {
+  "type": "place",
+  "name": "哈弗連",
+  "name_en": "Haphraim",
+  "testament": "OT",
+  "desc": "以薩迦支派分得的城邑之一（19:19）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "示按": {
+  "type": "place",
+  "name": "示按",
+  "name_en": "Shion",
+  "testament": "OT",
+  "desc": "以薩迦支派分得的城邑之一（19:19）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "亞拿哈拉": {
+  "type": "place",
+  "name": "亞拿哈拉",
+  "name_en": "Anaharath",
+  "testament": "OT",
+  "desc": "以薩迦支派分得的城邑之一（19:19）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "拉璧": {
+  "type": "place",
+  "name": "拉璧",
+  "name_en": "Rabbith",
+  "testament": "OT",
+  "desc": "以薩迦支派分得的城邑之一（19:20）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "利篾": {
+  "type": "place",
+  "name": "利篾",
+  "name_en": "Remeth",
+  "testament": "OT",
+  "desc": "以薩迦支派分得的城邑之一（19:21）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "隱哈大": {
+  "type": "place",
+  "name": "隱哈大",
+  "name_en": "En-haddah",
+  "testament": "OT",
+  "desc": "以薩迦支派分得的城邑之一（19:21）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "伯帕薛": {
+  "type": "place",
+  "name": "伯帕薛",
+  "name_en": "Beth-pazzez",
+  "testament": "OT",
+  "desc": "以薩迦支派分得的城邑之一（19:21）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "沙哈洗瑪": {
+  "type": "place",
+  "name": "沙哈洗瑪",
+  "name_en": "Shahazimah",
+  "testament": "OT",
+  "desc": "以薩迦支派分得的城邑之一（19:22）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "哈利": {
+  "type": "place",
+  "name": "哈利",
+  "name_en": "Hali",
+  "testament": "OT",
+  "desc": "亞設支派分得的城邑之一（19:25）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "比田": {
+  "type": "place",
+  "name": "比田",
+  "name_en": "Beten",
+  "testament": "OT",
+  "desc": "亞設支派分得的城邑之一（19:25）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "亞拉米勒": {
+  "type": "place",
+  "name": "亞拉米勒",
+  "name_en": "Allammelech",
+  "testament": "OT",
+  "desc": "亞設支派分得的城邑之一（19:26）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "亞末": {
+  "type": "place",
+  "name": "亞末",
+  "name_en": "Amad",
+  "testament": "OT",
+  "desc": "亞設支派分得的城邑之一（19:26）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "希曷立納": {
+  "type": "place",
+  "name": "希曷立納",
+  "name_en": "Shihor-libnath",
+  "testament": "OT",
+  "desc": "亞設支派分得的城邑之一（19:26）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "伯以墨": {
+  "type": "place",
+  "name": "伯以墨",
+  "name_en": "Beth-emek",
+  "testament": "OT",
+  "desc": "亞設支派分得的城邑之一（19:27）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "尼業": {
+  "type": "place",
+  "name": "尼業",
+  "name_en": "Neiel",
+  "testament": "OT",
+  "desc": "亞設支派分得的城邑之一（19:27）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "迦步勒": {
+  "type": "place",
+  "name": "迦步勒",
+  "name_en": "Cabul",
+  "testament": "OT",
+  "desc": "亞設支派分得的城邑之一（19:27）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "義伯崙": {
+  "type": "place",
+  "name": "義伯崙",
+  "name_en": "Ebron",
+  "testament": "OT",
+  "desc": "亞設支派分得的城邑之一（19:28）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "加拿": {
+  "type": "place",
+  "name": "加拿",
+  "name_en": "Kanah",
+  "testament": "OT",
+  "desc": "亞設支派分得的城邑之一（19:28）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "烏瑪": {
+  "type": "place",
+  "name": "烏瑪",
+  "name_en": "Ummah",
+  "testament": "OT",
+  "desc": "亞設支派分得的城邑之一（19:30）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "希利弗": {
+  "type": "place",
+  "name": "希利弗",
+  "name_en": "Heleph",
+  "testament": "OT",
+  "desc": "拿弗他利支派分得的城邑之一（19:33）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "亞大米尼吉": {
+  "type": "place",
+  "name": "亞大米尼吉",
+  "name_en": "Adami-nekeb",
+  "testament": "OT",
+  "desc": "拿弗他利支派分得的城邑之一（19:33）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "拉共": {
+  "type": "place",
+  "name": "拉共",
+  "name_en": "Lakkum",
+  "testament": "OT",
+  "desc": "拿弗他利支派分得的城邑之一（19:33）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "亞斯納他泊": {
+  "type": "place",
+  "name": "亞斯納他泊",
+  "name_en": "Aznoth-tabor",
+  "testament": "OT",
+  "desc": "拿弗他利支派分得的城邑之一（19:34）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "西丁": {
+  "type": "place",
+  "name": "西丁",
+  "name_en": "Ziddim",
+  "testament": "OT",
+  "desc": "拿弗他利支派分得的城邑之一（19:35）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "側耳": {
+  "type": "place",
+  "name": "側耳",
+  "name_en": "Zer",
+  "testament": "OT",
+  "desc": "拿弗他利支派分得的城邑之一（19:35）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "撒拿音": {
+  "type": "place",
+  "name": "撒拿音",
+  "name_en": "Zaanannim",
+  "testament": "OT",
+  "desc": "拿弗他利支派地界上的地方（書19:33）；基尼人希百曾在撒拿音的橡樹旁支搭帳棚（士4:11）。",
+  "books": [
+   "約書亞記",
+   "士師記"
+  ]
+ },
+ "黑甲": {
+  "type": "place",
+  "name": "黑甲",
+  "name_en": "Helkath",
+  "testament": "OT",
+  "desc": "亞設支派分得的城邑（書19:25），後來分給革順族的利未人（21:31）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "米沙勒": {
+  "type": "place",
+  "name": "米沙勒",
+  "name_en": "Mishal",
+  "testament": "OT",
+  "desc": "亞設支派分得的城邑（書19:26），後來分給革順族的利未人（21:30）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "拿哈拉": {
+  "type": "place",
+  "name": "拿哈拉",
+  "name_en": "Nahalal",
+  "testament": "OT",
+  "desc": "西布倫支派分得的城邑（書19:15），後來分給米拉利族的利未人（21:35）；確切位置不詳。",
+  "books": [
+   "約書亞記",
+   "士師記"
+  ]
+ },
+ "伊利提基": {
+  "type": "place",
+  "name": "伊利提基",
+  "name_en": "Eltekeh",
+  "testament": "OT",
+  "desc": "但支派分得的城邑（書19:44），後來分給哥轄族的利未人（21:23）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "基比頓": {
+  "type": "place",
+  "name": "基比頓",
+  "name_en": "Gibbethon",
+  "testament": "OT",
+  "desc": "但支派分得的城邑（書19:44），後來分給哥轄族的利未人（21:23）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "利善": {
+  "type": "place",
+  "name": "利善",
+  "name_en": "Leshem",
+  "testament": "OT",
+  "desc": "即拉億，但支派在原分地之外攻取此城，改名為但（書19:47）。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "亭拿西拉": {
+  "type": "place",
+  "name": "亭拿西拉",
+  "name_en": "Timnath-serah",
+  "testament": "OT",
+  "desc": "以法蓮山地的城，約書亞向以色列人要來作產業，重修居住，死後葬在這裡（書19:50；24:30）。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "亭拿希烈": {
+  "type": "place",
+  "name": "亭拿希烈",
+  "name_en": "Timnath-heres",
+  "testament": "OT",
+  "desc": "即亭拿西拉，約書亞葬在以法蓮山地迦實山北邊的亭拿希烈（士2:9；書24:30）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "亞多尼洗德": {
+  "type": "person",
+  "name": "亞多尼洗德",
+  "name_en": "Adoni-zedek",
+  "testament": "OT",
+  "desc": "耶路撒冷王；聽說基遍與以色列和好，聯合希伯崙、耶末、拉吉、伊磯倫四王攻打基遍，被約書亞擊敗，五王藏在瑪基大洞裡被處死（書10:1-27）。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "何咸": {
+  "type": "person",
+  "name": "何咸",
+  "name_en": "Hoham",
+  "testament": "OT",
+  "desc": "希伯崙王，與耶路撒冷王聯合攻打基遍的五王之一（書10:3）。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "毗蘭": {
+  "type": "person",
+  "name": "毗蘭",
+  "name_en": "Piram",
+  "testament": "OT",
+  "desc": "耶末王，與耶路撒冷王聯合攻打基遍的五王之一（書10:3）。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "荷蘭": {
+  "type": "person",
+  "name": "荷蘭",
+  "name_en": "Horam",
+  "testament": "OT",
+  "desc": "基色王，上來幫助拉吉，被約書亞擊殺（書10:33）。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "示巴琳": {
+  "type": "place",
+  "name": "示巴琳",
+  "name_en": "Shebarim",
+  "testament": "OT",
+  "desc": "艾城的人追趕以色列人到城門外，直到示巴琳，殺了三十六人（書7:5）。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "亞雅崙谷": {
+  "type": "place",
+  "name": "亞雅崙谷",
+  "name_en": "Valley of Aijalon",
+  "testament": "OT",
+  "desc": "即亞雅崙一帶的山谷；約書亞在此向天宣告「月亮啊，你要止在亞雅崙谷」（書10:12）。"
+ },
+ "米亞拉": {
+  "type": "place",
+  "name": "米亞拉",
+  "name_en": "Mearah",
+  "testament": "OT",
+  "desc": "「西頓人的米亞拉」，約書亞年老時尚未得的地方（書13:4）；位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "黑門": {
+  "type": "place",
+  "name": "黑門",
+  "name_en": "Hermon",
+  "testament": "OT",
+  "desc": "即黑門山，巴珊王噩的國以黑門全山為界（書13:11）。"
+ },
+ "基撒崙": {
+  "type": "place",
+  "name": "基撒崙",
+  "name_en": "Kesalon",
+  "testament": "OT",
+  "desc": "猶大支派北界的一點，經過耶琳山（即基撒崙）旁（書15:10）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "大拿": {
+  "type": "place",
+  "name": "大拿",
+  "name_en": "Dannah",
+  "testament": "OT",
+  "desc": "猶大山地的城邑之一（書15:49）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "基列西弗": {
+  "type": "place",
+  "name": "基列西弗",
+  "name_en": "Kiriath-sepher",
+  "testament": "OT",
+  "desc": "猶大山地的城，後稱底璧；迦勒懸賞攻取此城的人可娶女兒押撒，俄陀聶攻取了這城（書15:15-17；士1:11-13）。",
+  "books": [
+   "約書亞記",
+   "士師記"
+  ]
+ },
+ "基列薩拿": {
+  "type": "place",
+  "name": "基列薩拿",
+  "name_en": "Kiriath-sannah",
+  "testament": "OT",
+  "desc": "即底璧，猶大山地的城邑之一（書15:49）。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "隱他普亞": {
+  "type": "place",
+  "name": "隱他普亞",
+  "name_en": "En-tappuah",
+  "testament": "OT",
+  "desc": "瑪拿西支派地界上的地方，靠近他普亞（書17:7）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "隱示麥": {
+  "type": "place",
+  "name": "隱示麥",
+  "name_en": "En-shemesh",
+  "testament": "OT",
+  "desc": "猶大與便雅憫交界上的泉（書18:17）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "基利綠": {
+  "type": "place",
+  "name": "基利綠",
+  "name_en": "Geliloth",
+  "testament": "OT",
+  "desc": "便雅憫地界北界上的一點（書18:17）；確切位置不詳。",
+  "books": [
+   "約書亞記"
+  ]
+ },
+ "基尼烈海": {
+  "type": "place",
+  "name": "基尼烈海",
+  "name_en": "Sea of Chinnereth",
+  "testament": "OT",
+  "desc": "即加利利海（書12:3；13:27）。",
+  "lat": 32.83,
+  "lng": 35.59
+ },
+ "亞多尼比色": {
+  "type": "person",
+  "name": "亞多尼比色",
+  "name_en": "Adoni-bezek",
+  "testament": "OT",
+  "desc": "比色王，被猶大和西緬人擊敗；他曾剁去七十個王的手腳大拇指，自己也被照樣對待（士1:4-7）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "西布勒": {
+  "type": "person",
+  "name": "西布勒",
+  "name_en": "Zebul",
+  "testament": "OT",
+  "desc": "示劍城的官，亞比米勒的臣僕；向亞比米勒通報迦勒的叛變，並勸他出城迎戰（士9:28-41）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "希百": {
+  "type": "person",
+  "name": "希百",
+  "name_en": "Heber",
+  "testament": "OT",
+  "desc": "基尼人，摩西內兄何巴的後裔，與迦南王耶賓和好；他的妻子雅億殺死了西西拉（士4:11、17-21）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "以比讚": {
+  "type": "person",
+  "name": "以比讚",
+  "name_en": "Ibzan",
+  "testament": "OT",
+  "desc": "伯利恆人，作以色列的士師七年，有三十個兒子、三十個女兒（士12:8-10）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "夏羅設": {
+  "type": "place",
+  "name": "夏羅設",
+  "name_en": "Harosheth",
+  "testament": "OT",
+  "desc": "迦南王耶賓的軍長西西拉所住的地方，巴拉追殺他的兵車直到此（士4:2、13、16）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "普拉": {
+  "type": "person",
+  "name": "普拉",
+  "name_en": "Purah",
+  "testament": "OT",
+  "desc": "基甸的僕人，基甸帶他夜裡下到米甸營偷聽（士7:10-11）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "希列": {
+  "type": "person",
+  "name": "希列",
+  "name_en": "Hillel",
+  "testament": "OT",
+  "desc": "比拉頓人，士師押頓的父親（士12:13、15）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "利希": {
+  "type": "place",
+  "name": "利希",
+  "name_en": "Lehi",
+  "testament": "OT",
+  "desc": "猶大地的地方，非利士人在此追趕參孫，參孫用新驢腮骨殺了一千人（士15:9-15）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "拉末利希": {
+  "type": "place",
+  "name": "拉末利希",
+  "name_en": "Ramath-lehi",
+  "testament": "OT",
+  "desc": "參孫殺人後把驢腮骨扔掉之處，因此得名（士15:17）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "隱哈歌利": {
+  "type": "place",
+  "name": "隱哈歌利",
+  "name_en": "En-hakkore",
+  "testament": "OT",
+  "desc": "參孫極渴時向神呼求，神使利希的窟窿裂開，水流出來，那泉因此得名（士15:18-19）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "臨門磐": {
+  "type": "place",
+  "name": "臨門磐",
+  "name_en": "Rock of Rimmon",
+  "testament": "OT",
+  "desc": "便雅憫逃兵六百人逃往曠野的磐石，在那裡住了四個月（士20:45-47）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "伯亞納": {
+  "type": "place",
+  "name": "伯亞納",
+  "name_en": "Beth-anath",
+  "testament": "OT",
+  "desc": "拿弗他利支派沒有趕出迦南居民的城（士1:33）；確切位置不詳。",
+  "books": [
+   "約書亞記",
+   "士師記"
+  ]
+ },
+ "波金": {
+  "type": "place",
+  "name": "波金",
+  "name_en": "Bokim",
+  "testament": "OT",
+  "desc": "耶和華的使者從吉甲上到波金，責備以色列人；百姓放聲大哭，因此得名，意思是「哭泣」（士2:1-5）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "比色": {
+  "type": "place",
+  "name": "比色",
+  "name_en": "Bezek",
+  "testament": "OT",
+  "desc": "猶大和西緬人在此擊殺迦南人和比利洗人，並擒獲亞多尼比色（士1:4-5）；確切位置不詳。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "洗法": {
+  "type": "place",
+  "name": "洗法",
+  "name_en": "Zephath",
+  "testament": "OT",
+  "desc": "猶大與西緬攻取的迦南城，被徹底毀滅，改名何珥瑪（士1:17）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "基倫": {
+  "type": "place",
+  "name": "基倫",
+  "name_en": "Kitron",
+  "testament": "OT",
+  "desc": "西布倫支派沒有趕出迦南居民的城（士1:30）；確切位置不詳。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "希烈山": {
+  "type": "place",
+  "name": "希烈山",
+  "name_en": "Mount Heres",
+  "testament": "OT",
+  "desc": "亞摩利人堅持居住在希烈山、亞雅崙和沙賓（士1:35）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "迦實山": {
+  "type": "place",
+  "name": "迦實山",
+  "name_en": "Mount Gaash",
+  "testament": "OT",
+  "desc": "約書亞葬在以法蓮山地迦實山北邊的亭拿希烈（士2:9）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "西伊拉": {
+  "type": "place",
+  "name": "西伊拉",
+  "name_en": "Seirah",
+  "testament": "OT",
+  "desc": "以笏殺了摩押王伊磯倫後逃到的地方，他隨即在以法蓮山地吹角招集以色列人（士3:26-27）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "基順": {
+  "type": "place",
+  "name": "基順",
+  "name_en": "Kishon",
+  "testament": "OT",
+  "desc": "即基順河，流經耶斯列平原；底波拉之歌稱它為「基順古河」，沖掉了西西拉的軍兵（士5:21）。"
+ },
+ "米羅斯": {
+  "type": "place",
+  "name": "米羅斯",
+  "name_en": "Meroz",
+  "testament": "OT",
+  "desc": "底波拉之歌中，耶和華的使者吩咐咒詛的地方，因為它沒有來幫助耶和華（士5:23）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "哈律泉": {
+  "type": "place",
+  "name": "哈律泉",
+  "name_en": "Spring of Harod",
+  "testament": "OT",
+  "desc": "基甸和跟隨他的百姓紮營之處，米甸營在北邊的平原（士7:1）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "摩利岡": {
+  "type": "place",
+  "name": "摩利岡",
+  "name_en": "Hill of Moreh",
+  "testament": "OT",
+  "desc": "米甸營在摩利岡前的平原（士7:1）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "西利拉": {
+  "type": "place",
+  "name": "西利拉",
+  "name_en": "Zererah",
+  "testament": "OT",
+  "desc": "基甸夜襲後，米甸兵逃到伯哈示他，直到西利拉（士7:22）；確切位置不詳。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "伯哈示他": {
+  "type": "place",
+  "name": "伯哈示他",
+  "name_en": "Beth-shittah",
+  "testament": "OT",
+  "desc": "米甸兵被擊潰後逃往之處（士7:22）；確切位置不詳。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "他巴": {
+  "type": "place",
+  "name": "他巴",
+  "name_en": "Tabbath",
+  "testament": "OT",
+  "desc": "米甸兵被擊潰後逃往之處，在亞伯米何拉邊界附近（士7:22）；確切位置不詳。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "加各": {
+  "type": "place",
+  "name": "加各",
+  "name_en": "Karkor",
+  "testament": "OT",
+  "desc": "米甸王西巴和撒慕拿帶一萬五千人駐紮之處（士8:10）；確切位置不詳。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "亞魯瑪": {
+  "type": "place",
+  "name": "亞魯瑪",
+  "name_en": "Arumah",
+  "testament": "OT",
+  "desc": "亞比米勒居住的地方（士9:41）；確切位置不詳。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "撒們山": {
+  "type": "place",
+  "name": "撒們山",
+  "name_en": "Mount Zalmon",
+  "testament": "OT",
+  "desc": "亞比米勒帶人上撒們山砍柴枝，用來焚燒示劍樓的人（士9:48）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "加們": {
+  "type": "place",
+  "name": "加們",
+  "name_en": "Kamon",
+  "testament": "OT",
+  "desc": "士師睚珥死後葬在加們（士10:5）；確切位置不詳。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "巴力他瑪": {
+  "type": "place",
+  "name": "巴力他瑪",
+  "name_en": "Baal-tamar",
+  "testament": "OT",
+  "desc": "以色列人在便雅憫戰役中，從原處起來在巴力他瑪擺陣（士20:33）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "馬利迦巴": {
+  "type": "place",
+  "name": "馬利迦巴",
+  "name_en": "Maareh-geba",
+  "testament": "OT",
+  "desc": "以色列的伏兵從馬利迦巴衝出（士20:33）；確切位置不詳。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "基列雅比": {
+  "type": "place",
+  "name": "基列雅比",
+  "name_en": "Jabesh-gilead",
+  "testament": "OT",
+  "desc": "約旦河東基列地的城；士師時代因沒有上到米斯巴聚會被會眾攻擊，只留下四百個未嫁的處女給便雅憫人為妻（士21:8-14）。亞捫人圍困此城時掃羅發兵解救（撒上11章）；非利士人把掃羅和他兒子的屍首掛在伯珊城牆，基列雅比人夜裡取下火化埋葬（撒上31:11-13）。"
+ },
+ "瑪哈尼但": {
+  "type": "place",
+  "name": "瑪哈尼但",
+  "name_en": "Mahaneh-dan",
+  "testament": "OT",
+  "desc": "但人在基列耶琳後面紮營之處，因此得名（士18:12）；耶和華的靈也曾在這裡開始感動參孫（13:25）。",
+  "books": [
+   "士師記"
+  ]
+ },
+ "巴力比利土": {
+  "type": "concept",
+  "name": "巴力比利土",
+  "name_en": "Baal-berith",
+  "testament": "OT",
+  "desc": "示劍人的神，意思是「立約的巴力」；以色列人離棄耶和華去拜它（士8:33），示劍人從它的廟裡取銀子給亞比米勒（9:4）。",
+  "books": [
+   "士師記"
+  ],
+  "cat": "theo"
+ },
+ "拉甲": {
+  "type": "place",
+  "name": "拉甲",
+  "name_en": "Rakkath",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "拿弗他利支派分得的城邑之一（19:35）；確切位置不詳。"
+ },
+ "亞大瑪": {
+  "type": "place",
+  "name": "亞大瑪",
+  "name_en": "Adamah",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "拿弗他利支派分得的城邑之一（19:36）；確切位置不詳。"
+ },
+ "隱夏瑣": {
+  "type": "place",
+  "name": "隱夏瑣",
+  "name_en": "En-hazor",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "拿弗他利支派分得的城邑之一（19:37）；確切位置不詳。"
+ },
+ "以利穩": {
+  "type": "place",
+  "name": "以利穩",
+  "name_en": "Iron",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "拿弗他利支派分得的城邑之一（19:38）；確切位置不詳。"
+ },
+ "密大伊勒": {
+  "type": "place",
+  "name": "密大伊勒",
+  "name_en": "Migdal-el",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "拿弗他利支派分得的城邑之一（19:38）；確切位置不詳。"
+ },
+ "和璉": {
+  "type": "place",
+  "name": "和璉",
+  "name_en": "Horem",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "拿弗他利支派分得的城邑之一（19:38）；確切位置不詳。"
+ },
+ "伊珥示麥": {
+  "type": "place",
+  "name": "伊珥示麥",
+  "name_en": "Ir-shemesh",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "但支派分得的城邑之一（19:41）；確切位置不詳。"
+ },
+ "沙拉賓": {
+  "type": "place",
+  "name": "沙拉賓",
+  "name_en": "Shaalabbin",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "但支派分得的城邑之一（19:42）；確切位置不詳。"
+ },
+ "伊提拉": {
+  "type": "place",
+  "name": "伊提拉",
+  "name_en": "Ithlah",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "但支派分得的城邑之一（19:42）；確切位置不詳。"
+ },
+ "亭拿他": {
+  "type": "place",
+  "name": "亭拿他",
+  "name_en": "Timnathah",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "但支派分得的城邑之一（19:43）；確切位置不詳。"
+ },
+ "伊胡得": {
+  "type": "place",
+  "name": "伊胡得",
+  "name_en": "Jehud",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "但支派分得的城邑之一（19:45）；確切位置不詳。"
+ },
+ "比尼比拉": {
+  "type": "place",
+  "name": "比尼比拉",
+  "name_en": "Bene-berak",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "但支派分得的城邑之一（19:45）；確切位置不詳。"
+ },
+ "美耶昆": {
+  "type": "place",
+  "name": "美耶昆",
+  "name_en": "Me-jarkon",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "但支派分得的城邑之一（19:46）；確切位置不詳。"
+ },
+ "拉昆": {
+  "type": "place",
+  "name": "拉昆",
+  "name_en": "Rakkon",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "但支派分得的城邑之一（19:46）；確切位置不詳。"
+ },
+ "何崙": {
+  "type": "place",
+  "name": "何崙",
+  "name_en": "Holon",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "猶大支派分出、給亞倫子孫的利未人城邑（21:15）；確切位置不詳。"
+ },
+ "亞勒們": {
+  "type": "place",
+  "name": "亞勒們",
+  "name_en": "Almon",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "便雅憫支派分出、給亞倫子孫的利未人城邑（21:18）；確切位置不詳。"
+ },
+ "基伯先": {
+  "type": "place",
+  "name": "基伯先",
+  "name_en": "Kibzaim",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "以法蓮支派分出、給哥轄族利未人的城邑（21:22）；確切位置不詳。"
+ },
+ "比施提拉": {
+  "type": "place",
+  "name": "比施提拉",
+  "name_en": "Beeshterah",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "瑪拿西半支派分出、給革順族利未人的城邑（21:27）；確切位置不詳。"
+ },
+ "哈末多珥": {
+  "type": "place",
+  "name": "哈末多珥",
+  "name_en": "Hammoth-dor",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "拿弗他利支派分出、給革順族利未人的城邑（21:32）；確切位置不詳。"
+ },
+ "加珥坦": {
+  "type": "place",
+  "name": "加珥坦",
+  "name_en": "Kartan",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "拿弗他利支派分出、給革順族利未人的城邑（21:32）；確切位置不詳。"
+ },
+ "加珥他": {
+  "type": "place",
+  "name": "加珥他",
+  "name_en": "Kartah",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "西布倫支派分出、給米拉利族利未人的城邑（21:34）；確切位置不詳。"
+ },
+ "丁拿": {
+  "type": "place",
+  "name": "丁拿",
+  "name_en": "Dimnah",
+  "testament": "OT",
+  "books": [
+   "約書亞記"
+  ],
+  "desc": "西布倫支派分出、給米拉利族利未人的城邑（21:35）；確切位置不詳。"
  }
 }
