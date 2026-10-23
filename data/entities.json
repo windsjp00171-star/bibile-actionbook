@@ -12804,17 +12804,29 @@
   "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:15）。（代上14:5同一世系）",
   "name": "以利書亞"
  },
- "尼斐": {
-  "type": "person",
-  "name_en": "Nepheg",
-  "testament": "OT",
-  "books": [
-   "撒母耳記下",
-   "歷代志上"
-  ],
-  "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:15）。（代上14:6同一世系）",
-  "name": "尼斐"
- },
+ "尼斐": [
+  {
+   "type": "person",
+   "name_en": "Nepheg",
+   "testament": "OT",
+   "books": [
+    "撒母耳記下",
+    "歷代志上"
+   ],
+   "desc": "大衛在耶路撒冷所生的兒子之一（撒下5:15）。（代上14:6同一世系）",
+   "name": "尼斐"
+  },
+  {
+   "type": "person",
+   "name": "尼斐",
+   "name_en": "Nepheg",
+   "testament": "OT",
+   "books": [
+    "出埃及記"
+   ],
+   "desc": "以斯哈的兒子，可拉的兄弟（6:21）。"
+  }
+ ],
  "雅非亞": {
   "type": "person",
   "name_en": "Japhia",
@@ -28969,7 +28981,8 @@
   "name_en": "Emim",
   "testament": "OT",
   "books": [
-   "創世記"
+   "創世記",
+   "申命記"
   ],
   "desc": "住在沙微基列亭的古老族群，被基大老瑪聯軍殺敗（14:5）；申2:10-11說他們身量高大，與亞衲人一樣，也算為利乏音人。",
   "cat": "people"
@@ -29192,7 +29205,8 @@
   "name_en": "Jemuel",
   "testament": "OT",
   "books": [
-   "創世記"
+   "創世記",
+   "出埃及記"
   ],
   "desc": "西緬的兒子，隨雅各下埃及（46:10）。"
  },
@@ -29202,7 +29216,8 @@
   "name_en": "Ohad",
   "testament": "OT",
   "books": [
-   "創世記"
+   "創世記",
+   "出埃及記"
   ],
   "desc": "西緬的兒子，隨雅各下埃及（46:10）。"
  },
@@ -29316,7 +29331,8 @@
   "name_en": "Mount Seir",
   "testament": "OT",
   "books": [
-   "創世記"
+   "創世記",
+   "申命記"
   ],
   "desc": "即西珥，原是何利人居住的山地（14:6），後來成為以掃後裔以東人的居所（36:8-9）。",
   "lat": 30.5,
@@ -29328,7 +29344,8 @@
   "name_en": "Mount Gilead",
   "testament": "OT",
   "books": [
-   "創世記"
+   "創世記",
+   "申命記"
   ],
   "desc": "約旦河東基列地的山區；雅各帶家眷逃離拉班，渡河後面向基列山行去，拉班追上來，兩人在此立約（31:21-25）。",
   "lat": 32.0,
@@ -29526,5 +29543,422 @@
   "name_en": "Ai",
   "testament": "OT",
   "desc": "伯特利東邊的城，亞伯蘭曾在伯特利與艾之間支搭帳棚築壇（創12:8、13:3）；後來約書亞攻打的艾城即此（書7-8章）。"
+ },
+ "比東": {
+  "type": "place",
+  "name": "比東",
+  "name_en": "Pithom",
+  "testament": "OT",
+  "books": [
+   "出埃及記"
+  ],
+  "desc": "以色列人為法老建造的積貨城之一，與蘭塞並稱（1:11）；確切位置不詳。"
+ },
+ "施弗拉": {
+  "type": "person",
+  "name": "施弗拉",
+  "name_en": "Shiphrah",
+  "testament": "OT",
+  "books": [
+   "出埃及記"
+  ],
+  "desc": "希伯來的接生婆，敬畏神，不肯遵照法老的命令殺死希伯來人的男嬰（1:15-21）。"
+ },
+ "普阿": {
+  "type": "person",
+  "name": "普阿",
+  "name_en": "Puah",
+  "testament": "OT",
+  "books": [
+   "出埃及記"
+  ],
+  "desc": "希伯來的接生婆，與施弗拉一同敬畏神，不肯殺死男嬰，神因此賜她們家室（1:15-21）。"
+ },
+ "約基別": {
+  "type": "person",
+  "name": "約基別",
+  "name_en": "Jochebed",
+  "testament": "OT",
+  "books": [
+   "出埃及記",
+   "民數記"
+  ],
+  "desc": "暗蘭的妻子，也是他父親的姊妹，生了亞倫和摩西（6:20）；民26:59說她是利未的女兒，也生了米利暗。"
+ },
+ "西提利": {
+  "type": "person",
+  "name": "西提利",
+  "name_en": "Sithri",
+  "testament": "OT",
+  "books": [
+   "出埃及記"
+  ],
+  "desc": "利未支派哥轄族，烏薛的兒子（6:22）。"
+ },
+ "以利沙巴": {
+  "type": "person",
+  "name": "以利沙巴",
+  "name_en": "Elisheba",
+  "testament": "OT",
+  "books": [
+   "出埃及記"
+  ],
+  "desc": "亞米拿達的女兒，拿順的妹妹，嫁給亞倫為妻，生了拿答、亞比戶、以利亞撒、以他瑪（6:23）。"
+ },
+ "以倘": {
+  "type": "place",
+  "name": "以倘",
+  "name_en": "Etham",
+  "testament": "OT",
+  "books": [
+   "出埃及記",
+   "民數記"
+  ],
+  "desc": "以色列人出埃及後從疏割起行，安營在曠野邊的以倘（13:20）。"
+ },
+ "何烈": {
+  "type": "place",
+  "name": "何烈",
+  "name_en": "Horeb",
+  "testament": "OT",
+  "books": [
+   "出埃及記"
+  ],
+  "desc": "「神的山」（3:1）；摩西在此見到荊棘火焰，領受使命，以色列人也在此地的磐石得水喝（17:6）。"
+ },
+ "米利巴": {
+  "type": "place",
+  "name": "米利巴",
+  "name_en": "Meribah",
+  "testament": "OT",
+  "books": [
+   "出埃及記"
+  ],
+  "desc": "以色列人在利非訂因沒有水喝而與摩西爭鬧、試探耶和華，摩西給此地起名瑪撒，又叫米利巴，意思是「爭鬧」（17:7）。"
+ },
+ "非利士海": {
+  "type": "place",
+  "name": "非利士海",
+  "name_en": "Sea of the Philistines",
+  "testament": "OT",
+  "books": [
+   "出埃及記"
+  ],
+  "desc": "即地中海，神應許以色列的疆界「從紅海直到非利士海」（23:31）。"
+ },
+ "何巴": {
+  "type": "person",
+  "name": "何巴",
+  "name_en": "Hobab",
+  "testament": "OT",
+  "desc": "米甸人流珥的兒子，摩西的岳父（或作內兄）；摩西請他留下，作以色列人在曠野紮營行路的眼目（10:29-32）。",
+  "books": [
+   "民數記"
+  ]
+ },
+ "哈洗錄": {
+  "type": "place",
+  "name": "哈洗錄",
+  "name_en": "Hazeroth",
+  "testament": "OT",
+  "desc": "以色列人離開基博羅哈他瓦後的駐紮處；米利暗和亞倫在此因摩西娶古實女子而毀謗他，米利暗因此長了大痲瘋（11:35；12:1-16）。",
+  "books": [
+   "民數記",
+   "申命記"
+  ]
+ },
+ "以實各谷": {
+  "type": "place",
+  "name": "以實各谷",
+  "name_en": "Valley of Eshcol",
+  "testament": "OT",
+  "desc": "十二探子在此砍下一枝帶一挂葡萄的葡萄樹，兩個人用杠抬回（13:23-24；32:9）。",
+  "books": [
+   "民數記",
+   "申命記"
+  ]
+ },
+ "亞他林": {
+  "type": "place",
+  "name": "亞他林",
+  "name_en": "Atharim",
+  "testament": "OT",
+  "desc": "亞拉得王聽說以色列人從亞他林路來，就出來攻擊他們（21:1）；位置不詳。",
+  "books": [
+   "民數記"
+  ]
+ },
+ "亞嫩河": {
+  "type": "place",
+  "name": "亞嫩河",
+  "name_en": "Arnon",
+  "testament": "OT",
+  "desc": "即亞嫩，摩押與亞摩利人的界河，從曠野流出（21:13）。",
+  "lat": 31.18,
+  "lng": 35.55
+ },
+ "亞嫩谷": {
+  "type": "place",
+  "name": "亞嫩谷",
+  "name_en": "Arnon Valley",
+  "testament": "OT",
+  "desc": "即亞嫩河谷，耶和華吩咐以色列人過亞嫩谷，與亞摩利王西宏爭戰（申2:24）。",
+  "lat": 31.18,
+  "lng": 35.55
+ },
+ "毗斯迦": {
+  "type": "place",
+  "name": "毗斯迦",
+  "name_en": "Pisgah",
+  "testament": "OT",
+  "desc": "摩押地的山，山頂可下望曠野（民21:20）；巴勒曾領巴蘭到毗斯迦山頂築壇（民23:14）。",
+  "books": [
+   "民數記",
+   "申命記"
+  ]
+ },
+ "亞珥": {
+  "type": "place",
+  "name": "亞珥",
+  "name_en": "Ar",
+  "testament": "OT",
+  "desc": "摩押的城與其地，西宏之戰中被火焰燒盡（民21:28）；耶和華已將亞珥賜給羅得的子孫為業（申2:9）。",
+  "books": [
+   "民數記",
+   "申命記"
+  ]
+ },
+ "毗奪": {
+  "type": "place",
+  "name": "毗奪",
+  "name_en": "Pethor",
+  "testament": "OT",
+  "desc": "米所波大米大河邊的城，先知巴蘭的本鄉；摩押王巴勒差人來此召巴蘭咒詛以色列（民22:5；申23:4）。",
+  "books": [
+   "民數記",
+   "申命記"
+  ]
+ },
+ "基列胡瑣": {
+  "type": "place",
+  "name": "基列胡瑣",
+  "name_en": "Kiriath-huzoth",
+  "testament": "OT",
+  "desc": "摩押地的城，巴勒迎接巴蘭後，領他來到這裡，宰牛羊款待他（22:39-40）。",
+  "books": [
+   "民數記"
+  ]
+ },
+ "瑣腓田": {
+  "type": "place",
+  "name": "瑣腓田",
+  "name_en": "Field of Zophim",
+  "testament": "OT",
+  "desc": "巴勒領巴蘭上去築壇獻祭之處，在毗斯迦山頂（23:14）。",
+  "books": [
+   "民數記"
+  ]
+ },
+ "什亭": {
+  "type": "place",
+  "name": "什亭",
+  "name_en": "Shittim",
+  "testament": "OT",
+  "desc": "以色列人在約旦河東摩押平原的駐紮處；百姓在此與摩押女子行淫亂，隨從巴力毗珥（25:1-3）。",
+  "books": [
+   "民數記"
+  ]
+ },
+ "亞希蘭": {
+  "type": "person",
+  "name": "亞希蘭",
+  "name_en": "Ahiram",
+  "testament": "OT",
+  "desc": "便雅憫的兒子，亞希蘭族的先祖（26:38）。",
+  "books": [
+   "民數記"
+  ]
+ },
+ "書含": {
+  "type": "person",
+  "name": "書含",
+  "name_en": "Shuham",
+  "testament": "OT",
+  "desc": "但的兒子，書含族的先祖，是但支派唯一記載的族（26:42-43）。",
+  "books": [
+   "民數記"
+  ]
+ },
+ "亞巴琳山": {
+  "type": "place",
+  "name": "亞巴琳山",
+  "name_en": "Abarim",
+  "testament": "OT",
+  "desc": "摩押地的山脈，包括尼波山；耶和華叫摩西上這山觀看所賜給以色列人的地（民27:12；申32:49）。",
+  "books": [
+   "民數記",
+   "申命記"
+  ]
+ },
+ "加低斯米利巴": {
+  "type": "place",
+  "name": "加低斯米利巴",
+  "name_en": "Meribah-kadesh",
+  "testament": "OT",
+  "desc": "尋的曠野中的加低斯水泉；以色列人在此爭鬧，摩西和亞倫沒有在眾人眼前尊耶和華為聖（民27:14；20:1-13）。",
+  "books": [
+   "民數記"
+  ],
+  "lat": 30.84,
+  "lng": 34.45
+ },
+ "亞延": {
+  "type": "place",
+  "name": "亞延",
+  "name_en": "Ain",
+  "testament": "OT",
+  "desc": "以色列地東界上的一處，在利比拉東邊（34:11）；位置不詳。",
+  "books": [
+   "民數記"
+  ]
+ },
+ "基尼烈湖": {
+  "type": "place",
+  "name": "基尼烈湖",
+  "name_en": "Lake Chinnereth",
+  "testament": "OT",
+  "desc": "即基尼烈，後來的加利利海，以色列地東界以此湖東邊為界（民34:11）。",
+  "lat": 32.83,
+  "lng": 35.59
+ },
+ "加低斯巴尼亞": {
+  "type": "place",
+  "name": "加低斯巴尼亞",
+  "name_en": "Kadesh-barnea",
+  "testament": "OT",
+  "desc": "即加低斯，以色列人從這裡差派十二探子（民32:8），也是迦南地南界的一個點（34:4）。",
+  "lat": 30.84,
+  "lng": 34.45
+ },
+ "亞拉巴海": {
+  "type": "place",
+  "name": "亞拉巴海",
+  "name_en": "Sea of the Arabah",
+  "testament": "OT",
+  "desc": "即鹽海（死海）（申3:17；4:49）。",
+  "lat": 31.5,
+  "lng": 35.5
+ },
+ "亞衲": {
+  "type": "concept",
+  "name": "亞衲",
+  "name_en": "Anakim",
+  "testament": "OT",
+  "desc": "身材高大的民族，與以米人一樣也算為利乏音人（申2:10-11）；探子曾見亞衲人而心裡懼怕（民13:28、33）。",
+  "cat": "people"
+ },
+ "撒烈溪": {
+  "type": "place",
+  "name": "撒烈溪",
+  "name_en": "Zered",
+  "testament": "OT",
+  "desc": "以色列人過了撒烈溪，標誌三十八年曠野飄流、那一代兵丁死盡的轉折（申2:13-14）。",
+  "books": [
+   "申命記"
+  ]
+ },
+ "散送冥": {
+  "type": "concept",
+  "name": "散送冥",
+  "name_en": "Zamzummim",
+  "testament": "OT",
+  "desc": "亞捫人對住在那裡的利乏音人的稱呼（申2:20）。",
+  "books": [
+   "申命記"
+  ],
+  "cat": "people"
+ },
+ "西連": {
+  "type": "place",
+  "name": "西連",
+  "name_en": "Sirion",
+  "testament": "OT",
+  "desc": "西頓人對黑門山的稱呼（申3:9）。",
+  "books": [
+   "申命記"
+  ]
+ },
+ "比羅比尼亞干": {
+  "type": "place",
+  "name": "比羅比尼亞干",
+  "name_en": "Beeroth Bene-jaakan",
+  "testament": "OT",
+  "desc": "以色列人起行之處，也作「亞干井」（申10:6）。",
+  "books": [
+   "申命記"
+  ]
+ },
+ "摩西拉": {
+  "type": "place",
+  "name": "摩西拉",
+  "name_en": "Moserah",
+  "testament": "OT",
+  "desc": "以色列人的紮營處，亞倫死在那裡、葬在那裡（申10:6）。",
+  "books": [
+   "申命記"
+  ]
+ },
+ "以巴路山": {
+  "type": "place",
+  "name": "以巴路山",
+  "name_en": "Mount Ebal",
+  "testament": "OT",
+  "desc": "以色列人過約旦河後，要在此山上陳明咒詛的話，並築壇獻祭（申11:29；27:4、13）。",
+  "lat": 32.24,
+  "lng": 35.27
+ },
+ "基利心山": {
+  "type": "place",
+  "name": "基利心山",
+  "name_en": "Mount Gerizim",
+  "testament": "OT",
+  "desc": "以色列人過約旦河後，要在此山上陳明祝福的話（申11:29；27:12）。",
+  "lat": 32.2,
+  "lng": 35.27
+ },
+ "西海": {
+  "type": "place",
+  "name": "西海",
+  "name_en": "Western Sea",
+  "testament": "OT",
+  "desc": "即地中海，神應許的疆界「直到西海」（申11:24；34:2）。"
+ },
+ "耶書崙": {
+  "type": "concept",
+  "name": "耶書崙",
+  "name_en": "Jeshurun",
+  "testament": "OT",
+  "desc": "對以色列的美稱，意思是「正直者」；摩西責備他肥胖後離棄造他的神（申32:15；33:5、26）。",
+  "cat": "people"
+ },
+ "以拉他": {
+  "type": "place",
+  "name": "以拉他",
+  "name_en": "Elath",
+  "testament": "OT",
+  "desc": "以東境內亞拉巴路上經過的地方，靠近以旬迦別（申2:8）。",
+  "books": [
+   "申命記"
+  ]
+ },
+ "巴蘭山": {
+  "type": "place",
+  "name": "巴蘭山",
+  "name_en": "Mount Paran",
+  "testament": "OT",
+  "desc": "摩西祝福時說，耶和華從西乃而來，從西珥向以色列顯現，從巴蘭山發出光輝（申33:2）。",
+  "books": [
+   "申命記"
+  ]
  }
 }
