@@ -79,7 +79,11 @@ def sparks_chapter(code, ch):
         names = [_TAG.sub("", m).strip() for m in _PN.findall(s["contentStyle"])]
         names = [n for n in names if n]
         if names:
-            out.setdefault(int(s["sectionCode"]), []).extend(names)
+            nums = [int(x) for x in re.findall(r"\d+", s["sectionCode"])]
+            if not nums:
+                continue
+            for vn in range(nums[0], nums[-1] + 1):   # 合併節（如 29-30）每節都記
+                out.setdefault(vn, []).extend(names)
     os.makedirs(CACHE, exist_ok=True)
     json.dump(out, open(path, "w", encoding="utf-8"), ensure_ascii=False)
     return out
@@ -145,7 +149,7 @@ def main():
         tag = "有詞條但沒標到" if known else "無詞條"
         # 單卷＝同名衝突風險低；多卷＝需人工分群（寧缺勿錯）
         kind = "單卷" if len(dist) == 1 else f"{len(dist)}卷"
-        bk = " ".join(f"{b}{c}" for b, c in sorted(dist.items(), key=lambda x: -x[1]))
+        bk = " ".join(f"{b}×{c}" for b, c in sorted(dist.items(), key=lambda x: -x[1]))
         return f"{name} ×{n} [{tag}|{kind}] {bk}  例 {', '.join(refs)}"
 
     if a.out:
