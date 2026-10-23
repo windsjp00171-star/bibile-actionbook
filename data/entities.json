@@ -8847,13 +8847,29 @@
   "desc": "巴力毗珥的簡稱，以色列人在此與摩押女子行淫、拜偶像，因而遭瘟疫（民25:18）。（今約旦河東岸，屬今日約旦）",
   "name": "毗珥"
  },
- "亞甲": {
-  "type": "person",
-  "name_en": "Agag",
-  "testament": "OT",
-  "desc": "似為亞瑪力王的稱號或人名，巴蘭預言以色列王必超過亞甲（民24:7）；掃羅時代亦有亞瑪力王亞甲（撒上15章）。",
-  "name": "亞甲"
- },
+ "亞甲": [
+  {
+   "type": "person",
+   "name_en": "Agag",
+   "testament": "OT",
+   "desc": "似為亞瑪力王的稱號或人名，巴蘭預言以色列王必超過亞甲（民24:7）；掃羅時代亦有亞瑪力王亞甲（撒上15章）。",
+   "name": "亞甲"
+  },
+  {
+   "type": "place",
+   "name": "亞甲",
+   "name_en": "Akkad",
+   "testament": "OT",
+   "books": [
+    "創世記"
+   ],
+   "chapters": [
+    10,
+    10
+   ],
+   "desc": "寧錄所建王國最初的城邑之一，在示拿地（10:10）；古代美索不達米亞北部的城邑。"
+  }
+ ],
  "基尼": {
   "type": "concept",
   "name_en": "Kenite",
@@ -12512,16 +12528,29 @@
   "desc": "掃羅之子，掃羅死後由元帥押尼珥擁立為王治理以色列，與大衛對峙兩年，後被部下謀殺（撒下2-4章）。",
   "name": "伊施波設"
  },
- "亞書利": {
-  "type": "concept",
-  "name_en": "Ashurites",
-  "testament": "OT",
-  "books": [
-   "撒母耳記下"
-  ],
-  "desc": "伊施波設所治理領土中的一族群或地區（撒下2:9）。",
-  "name": "亞書利"
- },
+ "亞書利": [
+  {
+   "type": "concept",
+   "name_en": "Ashurites",
+   "testament": "OT",
+   "books": [
+    "撒母耳記下"
+   ],
+   "desc": "伊施波設所治理領土中的一族群或地區（撒下2:9）。",
+   "name": "亞書利"
+  },
+  {
+   "type": "concept",
+   "name": "亞書利",
+   "name_en": "Asshurim",
+   "testament": "OT",
+   "books": [
+    "創世記"
+   ],
+   "cat": "people",
+   "desc": "底但的後裔所形成的一族（25:3），底但是亞伯拉罕與基土拉的孫子。"
+  }
+ ],
  "希利甲哈素林": {
   "type": "place",
   "name_en": "Helkath Hazzurim",
@@ -28742,5 +28771,760 @@
   "name_en": "Keren-happuch",
   "testament": "OT",
   "desc": "約伯晚年所生的三女，名意「盛眼影的角」（伯42:14-15）。"
+ },
+ "西訂谷": {
+  "type": "place",
+  "name": "西訂谷",
+  "name_en": "Siddim",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "創14章五王與基大老瑪聯軍交戰之處，經文註明「就是鹽海」，約在死海南端一帶；谷中有許多石漆坑（14:3、10）。"
+ },
+ "非各": {
+  "type": "person",
+  "name": "非各",
+  "name_en": "Phicol",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "基拉耳王亞比米勒的軍長，曾與亞比米勒同到別是巴，與亞伯拉罕、以撒立約（21:22、32；26:26）。"
+ },
+ "亭拿": {
+  "type": "place",
+  "name": "亭拿",
+  "name_en": "Timnah",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "猶大地的城鎮，猶大上去剪羊毛的地方；他瑪裝扮後坐在往亭拿路上的伊拿印城門口（38:12-14）。"
+ },
+ "以拿": {
+  "type": "person",
+  "name": "以拿",
+  "name_en": "Irad",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "該隱的後裔，以諾的兒子，米戶雅利的父親（4:18）。"
+ },
+ "沙微谷": {
+  "type": "place",
+  "name": "沙微谷",
+  "name_en": "Shaveh",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "亞伯蘭擊敗基大老瑪聯軍凱旋時，所多瑪王出來迎接之處，經文註明「就是王谷」（14:17）；確切位置不詳。"
+ },
+ "王谷": {
+  "type": "place",
+  "name": "王谷",
+  "name_en": "King's Valley",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "即沙微谷，所多瑪王在此迎接得勝歸來的亞伯蘭（14:17）；確切位置不詳。"
+ },
+ "迦累得": {
+  "type": "place",
+  "name": "迦累得",
+  "name_en": "Galeed",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "雅各與岳父拉班立約時堆石為證之處；拉班用亞蘭話稱這堆石頭為「耶迦·撒哈杜他」，雅各稱「迦累得」，意思都是「見證堆」（31:47-48）。"
+ },
+ "伊拿印": {
+  "type": "place",
+  "name": "伊拿印",
+  "name_en": "Enaim",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "往亭拿路上的地方；他瑪裝扮後坐在這裡的城門口，猶大因此遇見她（38:14、21）。"
+ },
+ "以力": {
+  "type": "place",
+  "name": "以力",
+  "name_en": "Erech",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "寧錄所建王國最初的城邑之一，在示拿地（10:10）；一般認為即美索不達米亞南部的烏魯克。"
+ },
+ "甲尼": {
+  "type": "place",
+  "name": "甲尼",
+  "name_en": "Calneh",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "寧錄所建王國最初的城邑之一，在示拿地（10:10）；確切位置不詳。"
+ },
+ "利鮮": {
+  "type": "place",
+  "name": "利鮮",
+  "name_en": "Resen",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "亞述的城，位於尼尼微與迦拉之間（10:12）。"
+ },
+ "拉沙": {
+  "type": "place",
+  "name": "拉沙",
+  "name_en": "Lasha",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "迦南境界的一個端點，經文描述境界從西頓經基拉耳到迦薩，又向所多瑪、蛾摩拉、押瑪、洗扁，直到拉沙（10:19）；位置不詳。"
+ },
+ "俄巴路": {
+  "type": "person",
+  "name": "俄巴路",
+  "name_en": "Obal",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "約坍的兒子，閃的後裔（10:28）。"
+ },
+ "西發": {
+  "type": "place",
+  "name": "西發",
+  "name_en": "Sephar",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "約坍後裔居住地的東界，經文說「直到西發東邊的山」（10:30）；位置不詳。"
+ },
+ "亦迦": {
+  "type": "person",
+  "name": "亦迦",
+  "name_en": "Iscah",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "亞伯蘭的兄弟哈蘭的女兒，密迦的姊妹（11:29）；經文沒有再記她的事蹟。"
+ },
+ "比沙": {
+  "type": "person",
+  "name": "比沙",
+  "name_en": "Birsha",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "蛾摩拉王，與所多瑪等四城的王共同反叛基大老瑪（14:2）。"
+ },
+ "示納": {
+  "type": "person",
+  "name": "示納",
+  "name_en": "Shinab",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "押瑪王，與所多瑪等四城的王共同反叛基大老瑪（14:2）。"
+ },
+ "哈麥": {
+  "type": "place",
+  "name": "哈麥",
+  "name_en": "Ham",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "基大老瑪聯軍殺敗蘇西人之處（14:5）；確切位置不詳。"
+ },
+ "蘇西人": {
+  "type": "concept",
+  "name": "蘇西人",
+  "name_en": "Zuzim",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "住在哈麥的古老族群，被基大老瑪聯軍殺敗（14:5）。",
+  "cat": "people"
+ },
+ "以米人": {
+  "type": "concept",
+  "name": "以米人",
+  "name_en": "Emim",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "住在沙微基列亭的古老族群，被基大老瑪聯軍殺敗（14:5）；申2:10-11說他們身量高大，與亞衲人一樣，也算為利乏音人。",
+  "cat": "people"
+ },
+ "何把": {
+  "type": "place",
+  "name": "何把",
+  "name_en": "Hobah",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "亞伯蘭追擊基大老瑪聯軍所到最遠之處，在大馬色左邊（14:15），即北方。"
+ },
+ "撒冷": {
+  "type": "place",
+  "name": "撒冷",
+  "name_en": "Salem",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "麥基洗德作王的城，經文稱他為「撒冷王」（14:18）；詩76:2以撒冷與錫安並稱，傳統上認為就是耶路撒冷。"
+ },
+ "巴列": {
+  "type": "place",
+  "name": "巴列",
+  "name_en": "Bered",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "庇耳拉海萊井所在之處，在加低斯和巴列中間（16:14）。"
+ },
+ "基薛": {
+  "type": "person",
+  "name": "基薛",
+  "name_en": "Chesed",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "亞伯拉罕的兄弟拿鶴與密迦所生的兒子之一（22:20-22）。"
+ },
+ "哈瑣": {
+  "type": "person",
+  "name": "哈瑣",
+  "name_en": "Hazo",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "亞伯拉罕的兄弟拿鶴與密迦所生的兒子之一（22:20-22）。"
+ },
+ "必達": {
+  "type": "person",
+  "name": "必達",
+  "name_en": "Pildash",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "亞伯拉罕的兄弟拿鶴與密迦所生的兒子之一（22:20-22）。"
+ },
+ "益拉": {
+  "type": "person",
+  "name": "益拉",
+  "name_en": "Jidlaph",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "亞伯拉罕的兄弟拿鶴與密迦所生的兒子之一（22:20-22）。"
+ },
+ "流瑪": {
+  "type": "person",
+  "name": "流瑪",
+  "name_en": "Reumah",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "拿鶴的妾，生了提八、迦含、他轄、瑪迦（22:24）。"
+ },
+ "提八": {
+  "type": "person",
+  "name": "提八",
+  "name_en": "Tebah",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "拿鶴與妾流瑪所生的兒子（22:24）。"
+ },
+ "他轄": {
+  "type": "person",
+  "name": "他轄",
+  "name_en": "Tahash",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "拿鶴與妾流瑪所生的兒子（22:24）。"
+ },
+ "利都是": {
+  "type": "person",
+  "name": "利都是",
+  "name_en": "Letushim",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "底但的兒子，亞伯拉罕與基土拉的後裔（25:3）。"
+ },
+ "利烏米": {
+  "type": "person",
+  "name": "利烏米",
+  "name_en": "Leummim",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "底但的兒子，亞伯拉罕與基土拉的後裔（25:3）。"
+ },
+ "亞德別": {
+  "type": "person",
+  "name": "亞德別",
+  "name_en": "Adbeel",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "以實瑪利的兒子之一（25:13）。"
+ },
+ "哈大": {
+  "type": "person",
+  "name": "哈大",
+  "name_en": "Hadad",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "以實瑪利的兒子之一（25:15）。"
+ },
+ "埃色": {
+  "type": "place",
+  "name": "埃色",
+  "name_en": "Esek",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "以撒的僕人在基拉耳谷挖得的井，基拉耳的牧人與以撒的牧人爭奪，所以名叫埃色，意思是「相爭」（26:20）。"
+ },
+ "西提拿": {
+  "type": "place",
+  "name": "西提拿",
+  "name_en": "Sitnah",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "以撒的僕人又挖的一口井，同樣引起爭奪，所以名叫西提拿，意思是「敵對」（26:21）。"
+ },
+ "猶滴": {
+  "type": "person",
+  "name": "猶滴",
+  "name_en": "Judith",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "赫人比利的女兒，以掃四十歲時娶她為妻，她與另一位赫人妻子使以撒和利百加心裡愁煩（26:34-35）。"
+ },
+ "雅博": {
+  "type": "place",
+  "name": "雅博",
+  "name_en": "Jabbok",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "約旦河東的河，雅各帶家眷夜裡渡過雅博渡口，在此與一個人摔跤直到天亮，後來得名以色列（32:22-28）。",
+  "lat": 32.1,
+  "lng": 35.55
+ },
+ "示玻": {
+  "type": "person",
+  "name": "示玻",
+  "name_en": "Shepho",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "何利人朔巴的兒子，西珥的後裔（36:23）。"
+ },
+ "欣但": {
+  "type": "person",
+  "name": "欣但",
+  "name_en": "Hemdan",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "何利人底顯的兒子，西珥的後裔（36:26）。"
+ },
+ "巴烏": {
+  "type": "place",
+  "name": "巴烏",
+  "name_en": "Pau",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "以東王哈達的京城（36:39）。"
+ },
+ "耶母利": {
+  "type": "person",
+  "name": "耶母利",
+  "name_en": "Jemuel",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "西緬的兒子，隨雅各下埃及（46:10）。"
+ },
+ "阿轄": {
+  "type": "person",
+  "name": "阿轄",
+  "name_en": "Ohad",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "西緬的兒子，隨雅各下埃及（46:10）。"
+ },
+ "洗非芸": {
+  "type": "person",
+  "name": "洗非芸",
+  "name_en": "Ziphion",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "迦得的兒子，隨雅各下埃及（46:16）。"
+ },
+ "亞羅底": {
+  "type": "person",
+  "name": "亞羅底",
+  "name_en": "Arodi",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "迦得的兒子，隨雅各下埃及（46:16）。"
+ },
+ "以希": {
+  "type": "person",
+  "name": "以希",
+  "name_en": "Ehi",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "便雅憫的兒子，隨雅各下埃及（46:21）。"
+ },
+ "羅實": {
+  "type": "person",
+  "name": "羅實",
+  "name_en": "Rosh",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "便雅憫的兒子，隨雅各下埃及（46:21）。"
+ },
+ "母平": {
+  "type": "person",
+  "name": "母平",
+  "name_en": "Muppim",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "便雅憫的兒子，隨雅各下埃及（46:21）。"
+ },
+ "戶平": {
+  "type": "person",
+  "name": "戶平",
+  "name_en": "Huppim",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "便雅憫的兒子，隨雅各下埃及（46:21）。"
+ },
+ "巴旦": {
+  "type": "place",
+  "name": "巴旦",
+  "name_en": "Paddan",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "雅各提到拉結死在他從巴旦回來的路上（48:7）；即巴旦亞蘭，雅各在拉班處居住之地（25:20、28:2）。"
+ },
+ "以弗崙": {
+  "type": "person",
+  "name": "以弗崙",
+  "name_en": "Ephron",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "赫人瑣轄的兒子，幔利前麥比拉田的主人；亞伯拉罕向他以四百舍客勒銀子買下田地和田裡的洞，埋葬妻子撒拉（23:8-18）。"
+ },
+ "麥比拉": {
+  "type": "place",
+  "name": "麥比拉",
+  "name_en": "Machpelah",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "幔利前（希伯崙）的田和田頭的洞，亞伯拉罕向以弗崙買下作墓地；撒拉、亞伯拉罕、以撒、利百加、利亞都葬在這裡（23:17-19；49:30-31），雅各也葬於此（50:13）。",
+  "lat": 31.52,
+  "lng": 35.11
+ },
+ "伊甸園": {
+  "type": "place",
+  "name": "伊甸園",
+  "name_en": "Garden of Eden",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "即伊甸，耶和華神將那人安置在這園子裡，使他修理看守（2:15）。",
+  "lat": 33.3,
+  "lng": 44.4
+ },
+ "西珥山": {
+  "type": "place",
+  "name": "西珥山",
+  "name_en": "Mount Seir",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "即西珥，原是何利人居住的山地（14:6），後來成為以掃後裔以東人的居所（36:8-9）。",
+  "lat": 30.5,
+  "lng": 35.5
+ },
+ "基列山": {
+  "type": "place",
+  "name": "基列山",
+  "name_en": "Mount Gilead",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "約旦河東基列地的山區；雅各帶家眷逃離拉班，渡河後面向基列山行去，拉班追上來，兩人在此立約（31:21-25）。",
+  "lat": 32.0,
+  "lng": 35.8
+ },
+ "以拉撒": {
+  "type": "place",
+  "name": "以拉撒",
+  "name_en": "Ellasar",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "亞略作王的城邑，亞略是反攻所多瑪等城的四王聯軍之一（14:1、9）；位置不詳。"
+ },
+ "亞拉臘山": {
+  "type": "place",
+  "name": "亞拉臘山",
+  "name_en": "Mount Ararat",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "即亞拉臘，洪水消退後挪亞的方舟停靠之處（8:4）。",
+  "lat": 39.7,
+  "lng": 44.3
+ },
+ "善以別": {
+  "type": "person",
+  "name": "善以別",
+  "name_en": "Shemeber",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "洗扁王，與所多瑪等四城的王共同反叛基大老瑪（14:2）。"
+ },
+ "亞特律加寧": {
+  "type": "place",
+  "name": "亞特律加寧",
+  "name_en": "Ashteroth-karnaim",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "基大老瑪聯軍在此殺敗利乏音人（14:5）；約在巴珊一帶。"
+ },
+ "沙微基列亭": {
+  "type": "place",
+  "name": "沙微基列亭",
+  "name_en": "Shaveh-kiriathaim",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "基大老瑪聯軍在此殺敗以米人（14:5）；確切位置不詳。"
+ },
+ "伊勒巴蘭": {
+  "type": "place",
+  "name": "伊勒巴蘭",
+  "name_en": "El-paran",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "基大老瑪聯軍追擊何利人所到最遠之處，在曠野邊上（14:6）。"
+ },
+ "安密巴": {
+  "type": "place",
+  "name": "安密巴",
+  "name_en": "En-mishpat",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "即加低斯，基大老瑪聯軍回師途中殺敗亞瑪力人之處（14:7）。"
+ },
+ "埃及河": {
+  "type": "place",
+  "name": "埃及河",
+  "name_en": "River of Egypt",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "神應許賜給亞伯蘭後裔之地的西南界，「從埃及河直到幼發拉底大河」（15:18）；學者對它是哪條河有不同看法。"
+ },
+ "便亞米": {
+  "type": "person",
+  "name": "便亞米",
+  "name_en": "Ben-ammi",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "羅得的小女兒與父親所生的兒子，是亞捫人的祖先（19:38）。"
+ },
+ "基拉耳谷": {
+  "type": "place",
+  "name": "基拉耳谷",
+  "name_en": "Valley of Gerar",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "基拉耳附近的谷地，以撒離開非利士人之地後在此支搭帳棚，重挖亞伯拉罕當年所挖的井（26:17-18）。",
+  "lat": 31.35,
+  "lng": 34.58
+ },
+ "伊利伊羅伊以色列": {
+  "type": "place",
+  "name": "伊利伊羅伊以色列",
+  "name_en": "El-elohe-Israel",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "雅各在示劍買地後所築祭壇的名字，意思是「神，以色列的神」（33:20）。"
+ },
+ "伊勒伯特利": {
+  "type": "place",
+  "name": "伊勒伯特利",
+  "name_en": "El-bethel",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "雅各回到伯特利所築祭壇的名字，意思是「伯特利之神」，因他逃避哥哥時，神曾在那裡向他顯現（35:7）。"
+ },
+ "便俄尼": {
+  "type": "person",
+  "name": "便俄尼",
+  "name_en": "Ben-oni",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "拉結難產臨死前給剛出生的兒子起的名字，意思是「我苦難的兒子」；雅各隨即改稱他為便雅憫（35:18）。"
+ },
+ "以得臺": {
+  "type": "place",
+  "name": "以得臺",
+  "name_en": "Migdal-eder",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "雅各在拉結死後起行，越過以得臺那邊支搭帳棚（35:21）；字面意思是「群羊之塔」。"
+ },
+ "希伯崙谷": {
+  "type": "place",
+  "name": "希伯崙谷",
+  "name_en": "Valley of Hebron",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "雅各打發約瑟出希伯崙谷，往示劍去探望哥哥們（37:14）。",
+  "lat": 31.53,
+  "lng": 35.1
+ },
+ "亞伯麥西": {
+  "type": "place",
+  "name": "亞伯麥西",
+  "name_en": "Abel-mizraim",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "約旦河東亞達禾場一帶的地方，埃及人為雅各的喪事大大哀哭，迦南居民因此稱此地為亞伯麥西（50:10-11）。"
+ },
+ "庇耳拉海萊": {
+  "type": "place",
+  "name": "庇耳拉海萊",
+  "name_en": "Beer-lahai-roi",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "夏甲在曠野遇見耶和華的使者後所起名的井，在加低斯與巴列中間（16:13-14）；以撒後來靠近這裡居住（25:11）。"
+ },
+ "伊迦爾撒哈杜他": {
+  "type": "place",
+  "name": "伊迦爾撒哈杜他",
+  "name_en": "Jegar-sahadutha",
+  "testament": "OT",
+  "books": [
+   "創世記"
+  ],
+  "desc": "拉班用亞蘭話給與雅各立約的石堆起的名字，雅各則稱為迦累得，意思都是「以石堆為證」（31:47）。"
+ },
+ "艾": {
+  "type": "place",
+  "name": "艾",
+  "name_en": "Ai",
+  "testament": "OT",
+  "desc": "伯特利東邊的城，亞伯蘭曾在伯特利與艾之間支搭帳棚築壇（創12:8、13:3）；後來約書亞攻打的艾城即此（書7-8章）。"
  }
 }

@@ -76,7 +76,7 @@ def sparks_chapter(code, ch):
     for s in data["sectionList"]:
         if s.get("isTitle"):
             continue
-        names = [_TAG.sub("", m).strip() for m in _PN.findall(s["contentStyle"])]
+        names = [_TAG.sub("", m).strip().replace("‧", "") for m in _PN.findall(s["contentStyle"])]
         names = [n for n in names if n]
         if names:
             nums = [int(x) for x in re.findall(r"\d+", s["sectionCode"])]
@@ -126,9 +126,12 @@ def main():
                     if name not in text:
                         mismatch += 1          # 兩版本用字不同，無法判定
                         continue
-                    if any(name in t or t in name for t in marked_txt):
+                    if any(name in t for t in marked_txt):
                         continue
-                    m = missing.setdefault(name, [0, [], name in mark_bible.ENTITIES, {}])
+                    # 只標到名字的片段（如「善以別」只標「以別」）也算漏標，另行註記
+                    frag = any(t in name for t in marked_txt)
+                    key = name + ("〔碎片〕" if frag else "")
+                    m = missing.setdefault(key, [0, [], name in mark_bible.ENTITIES, {}])
                     m[0] += 1
                     m[3][book] = m[3].get(book, 0) + 1
                     if len(m[1]) < 3:
