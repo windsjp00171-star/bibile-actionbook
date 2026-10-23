@@ -93,6 +93,7 @@ def main():
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--reverse", action="store_true")
     ap.add_argument("--limit", type=int, default=40)
+    ap.add_argument("--out", help="把完整報告（含全部書卷分布）寫入此檔，終端只印計數")
     a = ap.parse_args()
 
     cuv = json.load(open(os.path.join(ROOT, "cuv.json"), encoding="utf-8"))
@@ -123,8 +124,9 @@ def main():
                         continue
                     if any(name in t or t in name for t in marked_txt):
                         continue
-                    m = missing.setdefault(name, [0, [], name in mark_bible.ENTITIES])
+                    m = missing.setdefault(name, [0, [], name in mark_bible.ENTITIES, {}])
                     m[0] += 1
+                    m[3][book] = m[3].get(book, 0) + 1
                     if len(m[1]) < 3:
                         m[1].append(f"{book}{ch}:{v}")
                 if a.reverse:
@@ -139,9 +141,23 @@ def main():
     scope = "全本" if a.all else f"{a.book}{(' ' + str(a.chapter)) if a.chapter else ''}"
     items = sorted(missing.items(), key=lambda x: -x[1][0])
     print(f"# {scope}：sparks 視為專名、我們沒標到 {len(items)} 種（共 {sum(m[0] for m in missing.values())} 處）；用字不同略過 {mismatch} 處")
-    for name, (n, refs, known) in items[: a.limit]:
-        tag = "有詞條但沒標到（檢查 books/消歧義）" if known else "無詞條"
-        print(f"  {name} ×{n}  {tag}  例 {', '.join(refs)}")
+    def line(name, n, refs, known, dist):
+        tag = "有詞條但沒標到" if known else "無詞條"
+        # 單卷＝同名衝突風險低；多卷＝需人工分群（寧缺勿錯）
+        kind = "單卷" if len(dist) == 1 else f"{len(dist)}卷"
+        bk = " ".join(f"{b}{c}" for b, c in sorted(dist.items(), key=lambda x: -x[1]))
+        return f"{name} ×{n} [{tag}|{kind}] {bk}  例 {', '.join(refs)}"
+
+    if a.out:
+        with open(a.out, "w", encoding="utf-8") as f:
+            f.write(f"# {scope} 漏標報告（sparks pn 參照）\n")
+            for name, (n, refs, known, dist) in items:
+                f.write(line(name, n, refs, known, dist) + "\n")
+        single = sum(1 for _, m in items if len(m[3]) == 1)
+        print(f"# 完整報告已寫入 {a.out}：單卷 {single} 種（風險低）、多卷 {len(items) - single} 種（需分群）")
+    else:
+        for name, (n, refs, known, dist) in items[: a.limit]:
+            print("  " + line(name, n, refs, known, dist))
     if a.reverse:
         ex = sorted(extra.items(), key=lambda x: -x[1][0])[: a.limit]
         print(f"# 我們有標、sparks 沒視為專名（疑似誤標或 sparks 漏，需人工看）{len(extra)} 種")
