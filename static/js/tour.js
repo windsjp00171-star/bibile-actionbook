@@ -12,41 +12,41 @@
 (function () {
   if (window.SpotlightTour) return;
 
-  // 主色：沿用 app 墨綠（#2A5C3A）與較深的 #21492e
+  // 主色：沿用 app 墨綠（#2B3A4E）與較深的 #1F2A3A
   var STYLE_ID = 'spotlight-tour-style';
   var CSS = '' +
     '#st-overlay{position:fixed;inset:0;z-index:10000;display:none;}' +
-    '#st-hole{position:fixed;border-radius:12px;box-shadow:0 0 0 9999px rgba(42,26,8,.66);' +
-      'transition:all .32s cubic-bezier(.22,1,.36,1);pointer-events:none;border:2px solid rgba(42,92,58,.95);}' +
+    '#st-hole{position:fixed;border-radius:12px;box-shadow:0 0 0 9999px rgba(20,23,26,.7);' +
+      'transition:all .32s cubic-bezier(.22,1,.36,1);pointer-events:none;border:2px solid rgba(226,166,46,.95);}' +
     '#st-tip{position:fixed;z-index:10001;max-width:320px;width:calc(100vw - 32px);' +
-      'background:#FBF6EA;border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.35);' +
+      'background:#FAFAF7;border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.35);' +
       'padding:18px 18px 14px;box-sizing:border-box;' +
       'font-family:"Noto Serif TC","Songti TC","PingFang TC","Microsoft JhengHei",serif;' +
       'transition:top .3s cubic-bezier(.22,1,.36,1),left .3s cubic-bezier(.22,1,.36,1);' +
       'opacity:0;animation:stFade .3s ease forwards;}' +
     '@keyframes stFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}' +
-    '#st-tip .st-step{font-size:.72rem;font-weight:700;color:#2A5C3A;letter-spacing:.05em;margin-bottom:6px;}' +
-    '#st-tip .st-title{font-size:1.05rem;font-weight:800;color:#2A1A08;line-height:1.4;margin-bottom:6px;}' +
-    '#st-tip .st-text{font-size:.88rem;color:#5A4628;line-height:1.7;}' +
+    '#st-tip .st-step{font-size:.72rem;font-weight:700;color:#2B3A4E;letter-spacing:.05em;margin-bottom:6px;}' +
+    '#st-tip .st-title{font-size:1.05rem;font-weight:800;color:#1C1F23;line-height:1.4;margin-bottom:6px;}' +
+    '#st-tip .st-text{font-size:.88rem;color:#3B4047;line-height:1.7;}' +
     '#st-tip .st-dots{display:flex;gap:5px;margin-top:14px;flex-wrap:wrap;}' +
-    '#st-tip .st-dot{width:7px;height:7px;border-radius:50%;background:#E0D2B4;transition:background .2s,width .2s;}' +
-    '#st-tip .st-dot.on{background:#2A5C3A;width:18px;border-radius:4px;}' +
+    '#st-tip .st-dot{width:7px;height:7px;border-radius:50%;background:#DAD9D0;transition:background .2s,width .2s;}' +
+    '#st-tip .st-dot.on{background:#2B3A4E;width:18px;border-radius:4px;}' +
     '#st-tip .st-btns{display:flex;align-items:center;gap:8px;margin-top:14px;}' +
-    '#st-tip .st-skip{background:none;border:none;color:#A89878;font-size:.82rem;cursor:pointer;padding:8px 2px;margin-right:auto;font-family:inherit;}' +
-    '#st-tip .st-skip:hover{color:#8B6840;}' +
+    '#st-tip .st-skip{background:none;border:none;color:#666C75;font-size:.82rem;cursor:pointer;padding:8px 2px;margin-right:auto;font-family:inherit;}' +
+    '#st-tip .st-skip:hover{color:#666C75;}' +
     '#st-tip .st-btn{border:none;border-radius:9px;padding:9px 16px;font-size:.85rem;font-weight:700;' +
       'cursor:pointer;font-family:inherit;transition:background .15s,transform .1s;}' +
     '#st-tip .st-btn:active{transform:scale(.96);}' +
-    '#st-tip .st-prev{background:#EFE6D2;color:#6B5436;}' +
-    '#st-tip .st-prev:hover{background:#e5d8be;}' +
-    '#st-tip .st-next{background:#2A5C3A;color:#fff;}' +
-    '#st-tip .st-next:hover{background:#21492e;}' +
-    '#st-tip .st-arrow{position:absolute;width:14px;height:14px;background:#FBF6EA;transform:rotate(45deg);}' +
+    '#st-tip .st-prev{background:#E9E8E1;color:#4A5058;}' +
+    '#st-tip .st-prev:hover{background:#DAD9D0;}' +
+    '#st-tip .st-next{background:#2B3A4E;color:#fff;}' +
+    '#st-tip .st-next:hover{background:#1F2A3A;}' +
+    '#st-tip .st-arrow{position:absolute;width:14px;height:14px;background:#FAFAF7;transform:rotate(45deg);}' +
     '#st-banner{position:fixed;top:0;left:0;right:0;z-index:10002;' +
-      'background:linear-gradient(90deg,#21492e,#2A5C3A);color:#fff;' +
+      'background:linear-gradient(90deg,#1F2A3A,#2B3A4E);color:#fff;' +
       'display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;' +
       'padding:11px 16px;font-size:.92rem;font-weight:700;text-align:center;' +
-      'box-shadow:0 4px 16px rgba(42,92,58,.45);' +
+      'box-shadow:0 4px 16px rgba(43,58,78,.4);' +
       'font-family:"Noto Serif TC","PingFang TC","Microsoft JhengHei",serif;' +
       'animation:stBannerIn .35s cubic-bezier(.22,1,.36,1) both;}' +
     '@keyframes stBannerIn{from{transform:translateY(-100%)}to{transform:none}}' +

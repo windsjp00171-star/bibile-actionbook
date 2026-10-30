@@ -6,7 +6,7 @@ function closeAllPanels() {
   });
 }
 const PAGE_TOUR_STEPS = [
-  { title: '歡迎！這是教學導覽 👋', text: '不會用沒關係～我會把這一頁的功能一個一個打開、圈出來、用白話說給你聽。看著綠色框框、按「下一步」就好；想停隨時按「結束導覽」。' },
+  { title: '歡迎！這是教學導覽 👋', text: '不會用沒關係～我會把這一頁的功能一個一個打開、圈出來、用白話說給你聽。看著金色框框、按「下一步」就好；想停隨時按「結束導覽」。' },
   { sel: '[data-tour="legend"]', title: '標註說明', text: '經文中有底線的詞，分人物（紅）、地點（綠）、族群／概念（紫）三類。', spot: 6 },
   { sel: '[data-tour="anno"]', title: '點詞看背景', text: '點任一個有底線的詞，會跳出小卡片：人物生平、地點地圖、概念解釋（生僻字還附注音）。我現在幫你打開一張看看。', spot: 4 },
   { before: () => { const a = document.querySelector('[data-tour="anno"]'); if (a) a.click(); }, beforeWait: 380,
