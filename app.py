@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import hashlib
 from datetime import datetime, timezone
 from urllib.parse import unquote_to_bytes
 from flask import Flask, render_template, request, jsonify, send_from_directory, url_for
@@ -10,17 +11,26 @@ from supabase import create_client
 app = Flask(__name__)
 
 
+_STATIC_HASH = {}
+
+
+def _static_version(filename):
+    """靜態檔內容的短雜湊。sw.js 對 /static/ 是 cache-first，檔案改了但網址不變的話，
+    已安裝的 PWA 會一直用舊版。不用 mtime：Vercel 上檔案修改時間不保證隨部署改變，
+    曾因此讓舊 style.css 一直被沿用。內容雜湊只在檔案真的變了才會變。"""
+    if filename not in _STATIC_HASH:
+        try:
+            with open(os.path.join(app.static_folder, filename), "rb") as f:
+                _STATIC_HASH[filename] = hashlib.md5(f.read()).hexdigest()[:10]
+        except OSError:
+            _STATIC_HASH[filename] = "0"
+    return _STATIC_HASH[filename]
+
+
 @app.context_processor
 def _inject_static_v():
-    """static 檔加上 ?v=<mtime>。sw.js 對 /static/ 是 cache-first，檔案改了但網址不變
-    的話，已安裝的 PWA 會一直用舊版 JS，跟新版模板對不上。"""
     def static_v(filename):
-        path = os.path.join(app.static_folder, filename)
-        try:
-            v = int(os.path.getmtime(path))
-        except OSError:
-            v = 0
-        return url_for("static", filename=filename, v=v)
+        return url_for("static", filename=filename, v=_static_version(filename))
     return {"static_v": static_v}
 
 

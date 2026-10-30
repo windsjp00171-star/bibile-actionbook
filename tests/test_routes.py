@@ -39,6 +39,22 @@ def test_read_page_has_tour_hooks_and_versioned_assets(client):
     assert "/static/js/read-core.js?v=" in html
 
 
+def test_static_version_follows_content_not_mtime(tmp_path):
+    p = os.path.join(app_module.app.static_folder, "style.css")
+    before = os.stat(p).st_mtime
+    os.utime(p, (before + 1000, before + 1000))
+    app_module._STATIC_HASH.clear()
+    v1 = app_module._static_version("style.css")
+    os.utime(p, (before, before))
+    app_module._STATIC_HASH.clear()
+    assert v1 == app_module._static_version("style.css")
+
+
+def test_header_art_rules_live_in_section_art_css():
+    css = open(os.path.join(app_module.app.static_folder, "section-art.css"), encoding="utf-8").read()
+    assert ".header-art" in css and "overflow:hidden" in css
+
+
 def test_missing_chapter_does_not_crash(client):
     assert client.get("/read/" + quote("不存在的書") + "/1").status_code < 500
 
