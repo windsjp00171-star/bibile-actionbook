@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>全本搜尋 · 聖經互動全書</title>
 {% include '_pwa.html' %}
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ static_v('style.css') }}">
 <style>
 .sp-wrap{max-width:720px;margin:0 auto;padding:28px 18px 60px;}
 .sp-head{text-align:center;margin-bottom:20px;}
@@ -43,7 +43,7 @@
   <div id="results" data-tour="search-results"></div>
   <p style="text-align:center;font-size:11px;color:#B0A088;margin-top:30px">經文採用《和合本》（Chinese Union Version，1919）· 公有領域</p>
 </div>
-<script src="{{ url_for('static', filename='js/tour.js') }}"></script>
+<script src="{{ static_v('js/tour.js') }}"></script>
 <script>
 const SEARCH_TOUR_STEPS = [
   { title: '歡迎！這是搜尋教學 👋', text: '這頁可以一次搜尋整本聖經（66 卷）。我帶你看怎麼用，看完按「下一步」就好。' },

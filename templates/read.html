@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ static_v('style.css') }}">
 </head>
 <body>
 <script>
@@ -221,7 +221,7 @@ try {
 </button>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="{{ url_for('static', filename='js/tour.js') }}"></script>
+<script src="{{ static_v('js/tour.js') }}"></script>
 <script>
 const ENTITIES = {{ entities_json | safe }};
 const RELATIONS = {{ relations_json | safe }};
