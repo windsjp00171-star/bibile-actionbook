@@ -593,7 +593,7 @@
    "type": "person",
    "name": "該隱",
    "name_en": "Cain",
-   "testament": "OT",
+   "testament": "both",
    "desc": "亞當與夏娃的長子，種地的。因供物不蒙悅納而嫉妒，殺害弟弟亞伯，成為聖經首宗兇殺。受咒詛流離飄蕩，神立記號保全其命，後住挪得之地建城。",
    "verses": "創世記"
   }
@@ -661,6 +661,17 @@
    "chapters": [
     3,
     3
+   ]
+  },
+  {
+   "type": "person",
+   "name": "以諾",
+   "name_en": "Enoch",
+   "testament": "NT",
+   "desc": "雅列的兒子，與神同行三百年，神將他取去；他因信被接去不至於見死（來11:5；猶1:14）。",
+   "books": [
+    "希伯來書",
+    "猶大書"
    ]
   }
  ],
@@ -6235,7 +6246,7 @@
   "type": "concept",
   "name": "歌革",
   "name_en": "Gog",
-  "testament": "OT",
+  "testament": "both",
   "desc": "以西結書與啟示錄預言中，末世率列國攻擊神子民的勢力首領，與「瑪各地」相連。",
   "cat": "people"
  },
@@ -7112,7 +7123,7 @@
    "type": "concept",
    "name": "巴力",
    "name_en": "Baal",
-   "testament": "OT",
+   "testament": "both",
    "desc": "迦南人的風暴與豐收之神，最常見的偶像。以色列屢次背棄耶和華去拜巴力，先知（如以利亞）力斥之。",
    "cat": "theo"
   },
@@ -8697,7 +8708,7 @@
  "米迦勒": {
   "type": "person",
   "name_en": "Michael (father)",
-  "testament": "OT",
+  "testament": "both",
   "desc": "亞設支派探子西帖的父親（民13:13，與天使長米迦勒同名不同人）。",
   "name": "米迦勒"
  },
@@ -16407,7 +16418,7 @@
   "type": "person",
   "name": "麥基洗德",
   "name_en": "Melchizedek",
-  "testament": "OT",
+  "testament": "both",
   "desc": "撒冷王，同時是「至高神的祭司」，帶餅和酒迎接得勝歸來的亞伯蘭並為他祝福，亞伯蘭則將所得的十分之一給他（創14:18-20）。詩篇110:4預言彌賽亞「照著麥基洗德的等次永遠為祭司」，新約希伯來書引申其「無族譜世系」的祭司身分，作為基督祭司職分超越亞倫世系的預表。",
   "verses": "創世記14章、詩篇110:4"
  },
@@ -29757,6 +29768,7 @@
    "testament": "OT",
    "books": [
     "創世記",
+    "希伯來書",
     "詩篇"
    ],
    "desc": "麥基洗德作王的城，經文稱他為「撒冷王」（14:18）；詩76:2以撒冷與錫安並稱，傳統上認為就是耶路撒冷。"
@@ -30365,9 +30377,10 @@
   "testament": "OT",
   "books": [
    "出埃及記",
+   "民數記",
    "詩篇"
   ],
-  "desc": "以色列人在利非訂因沒有水喝而與摩西爭鬧、試探耶和華，摩西給此地起名瑪撒，又叫米利巴，意思是「爭鬧」（17:7）。"
+  "desc": "以色列人在利非訂因沒有水喝而與摩西爭鬧、試探耶和華，摩西給此地起名瑪撒，又叫米利巴，意思是「爭鬧」（17:7）。民數記20:13的「米利巴水」是以色列人在加低斯又一次與摩西爭鬧、試探耶和華之處。"
  },
  "非利士海": {
   "type": "place",
@@ -32370,9 +32383,10 @@
   "name": "多珥山岡",
   "name_en": "Naphath-dor",
   "testament": "OT",
-  "desc": "所羅門的行政區，由便亞比拿達管理，他娶了所羅門的女兒（王上4:11）。",
+  "desc": "多珥一帶的山岡；北方諸王聯軍的一部分在西邊多珥山岡（書11:2），也是所羅門的行政區，由便亞比拿達管理（王上4:11）。",
   "books": [
-   "列王紀上"
+   "列王紀上",
+   "約書亞記"
   ]
  },
  "亞祿": {
@@ -32686,7 +32700,7 @@
   "type": "place",
   "name": "錫安山",
   "name_en": "Mount Zion",
-  "testament": "OT",
+  "testament": "both",
   "desc": "即錫安，耶路撒冷的山，神使耶路撒冷剩下的人必從錫安山逃脫（王下19:31）。",
   "lat": 31.77,
   "lng": 35.235
@@ -33361,16 +33375,32 @@
   ],
   "cat": "theo"
  },
- "尼利亞": {
-  "type": "person",
-  "name": "尼利亞",
-  "name_en": "Neriah",
-  "testament": "OT",
-  "desc": "巴錄的父親（耶32:12；36:4）。",
-  "books": [
-   "耶利米書"
-  ]
- },
+ "尼利亞": [
+  {
+   "type": "person",
+   "name": "尼利亞",
+   "name_en": "Neriah",
+   "testament": "OT",
+   "desc": "巴錄的父親（耶32:12；36:4）。",
+   "books": [
+    "耶利米書"
+   ]
+  },
+  {
+   "type": "person",
+   "name": "尼利亞",
+   "name_en": "Nereus",
+   "testament": "NT",
+   "desc": "羅馬教會中保羅問安的人，與他的姊妹一同被問安（羅16:15）。",
+   "books": [
+    "羅馬書"
+   ],
+   "chapters": [
+    16,
+    16
+   ]
+  }
+ ],
  "以伯米勒": {
   "type": "person",
   "name": "以伯米勒",
@@ -33540,10 +33570,11 @@
   "name": "便雅憫門",
   "name_en": "Benjamin Gate",
   "testament": "OT",
-  "desc": "耶路撒冷的城門；耶利米要出城往便雅憫地時，在此被守門官拿住（耶37:13）。",
+  "desc": "以便雅憫命名的城門；耶利米要出耶路撒冷的便雅憫門時被拿住（耶37:13），撒迦利亞也提到耶路撒冷的便雅憫門（亞14:10），以西結異象中新城也有便雅憫門（結48:32）。",
   "books": [
-   "耶利米書",
-   "撒迦利亞書"
+   "以西結書",
+   "撒迦利亞書",
+   "耶利米書"
   ]
  },
  "伊利雅": {
@@ -33660,16 +33691,6 @@
    "耶利米書"
   ]
  },
- "以法蓮山": {
-  "type": "place",
-  "name": "以法蓮山",
-  "name_en": "Mount Ephraim",
-  "testament": "OT",
-  "desc": "以法蓮山地一帶；有人從以法蓮山傳揚災禍的信息（耶4:15）。",
-  "books": [
-   "耶利米書"
-  ]
- },
  "烏法": {
   "type": "place",
   "name": "烏法",
@@ -33706,10 +33727,7 @@
   "name": "摩利沙",
   "name_en": "Moresheth",
   "testament": "OT",
-  "desc": "先知彌迦的家鄉；耶利米提到摩利沙人彌迦曾向希西家說預言（耶26:18）。",
-  "books": [
-   "耶利米書"
-  ]
+  "desc": "先知彌迦的家鄉（彌1:1）；耶利米提到摩利沙人彌迦曾向希西家說預言（耶26:18）。"
  },
  "迦立山": {
   "type": "place",
@@ -34511,10 +34529,7 @@
   "name": "古實河",
   "name_en": "Rivers of Cush",
   "testament": "OT",
-  "desc": "古實（上埃及南方）地的河；西番雅預言從古實河外有人給耶和華獻祭（番3:10）。",
-  "books": [
-   "西番雅書"
-  ]
+  "desc": "古實（上埃及南方）地的河；以賽亞提到「古實河外」的國（賽18:1），西番雅預言從古實河外有人給耶和華獻祭（番3:10）。"
  },
  "約撒答": {
   "type": "person",
@@ -35243,7 +35258,8 @@
   "testament": "NT",
   "desc": "小亞細亞的城；保羅和巴拿巴第一次宣教旅程中在以哥念傳道，被猶太人和外邦人攻擊（徒13:51；14:1-6）。",
   "books": [
-   "使徒行傳"
+   "使徒行傳",
+   "提摩太後書"
   ]
  },
  "特羅亞": {
@@ -35300,7 +35316,8 @@
   "testament": "NT",
   "desc": "小亞細亞西岸的港口；保羅在這裡召來以弗所的長老，向他們辭別（徒20:15-38）。",
   "books": [
-   "使徒行傳"
+   "使徒行傳",
+   "提摩太後書"
   ]
  },
  "西流基": {
@@ -35593,16 +35610,32 @@
   ],
   "cat": "theo"
  },
- "耶孫": {
-  "type": "person",
-  "name": "耶孫",
-  "name_en": "Jason",
-  "testament": "NT",
-  "desc": "帖撒羅尼迦的信徒，接待保羅和西拉在家中；猶太人攻擊他的家，把他拉到地方官面前（徒17:5-9）。",
-  "books": [
-   "使徒行傳"
-  ]
- },
+ "耶孫": [
+  {
+   "type": "person",
+   "name": "耶孫",
+   "name_en": "Jason",
+   "testament": "NT",
+   "desc": "帖撒羅尼迦的信徒，接待保羅和西拉在家中；猶太人攻擊他的家，把他拉到地方官面前（徒17:5-9）。",
+   "books": [
+    "使徒行傳"
+   ]
+  },
+  {
+   "type": "person",
+   "name": "耶孫",
+   "name_en": "Jason",
+   "testament": "NT",
+   "desc": "保羅的親屬，在哥林多向羅馬的信徒問安（羅16:21）。",
+   "books": [
+    "羅馬書"
+   ],
+   "chapters": [
+    16,
+    16
+   ]
+  }
+ ],
  "迦流": {
   "type": "person",
   "name": "迦流",
@@ -35623,16 +35656,32 @@
    "使徒行傳"
   ]
  },
- "猶士都": {
-  "type": "person",
-  "name": "猶士都",
-  "name_en": "Justus",
-  "testament": "NT",
-  "desc": "約瑟的別名，又稱巴撒巴，被推薦補選使徒（徒1:23）。",
-  "books": [
-   "使徒行傳"
-  ]
- },
+ "猶士都": [
+  {
+   "type": "person",
+   "name": "猶士都",
+   "name_en": "Justus",
+   "testament": "NT",
+   "desc": "約瑟的別名，又稱巴撒巴，被推薦補選使徒（徒1:23）。",
+   "books": [
+    "使徒行傳"
+   ]
+  },
+  {
+   "type": "person",
+   "name": "猶士都",
+   "name_en": "Jesus called Justus",
+   "testament": "NT",
+   "desc": "又稱耶數，是保羅在割禮派中僅有的同工，成為保羅的安慰（西4:11）。",
+   "books": [
+    "歌羅西書"
+   ],
+   "chapters": [
+    4,
+    4
+   ]
+  }
+ ],
  "以尼雅": {
   "type": "person",
   "name": "以尼雅",
@@ -35693,16 +35742,29 @@
    "使徒行傳"
   ]
  },
- "尼哥拉": {
-  "type": "person",
-  "name": "尼哥拉",
-  "name_en": "Nicolas",
-  "testament": "NT",
-  "desc": "耶路撒冷教會選出的七位管理飯食的人之一，是進猶太教的安提阿人（徒6:5）。",
-  "books": [
-   "使徒行傳"
-  ]
- },
+ "尼哥拉": [
+  {
+   "type": "person",
+   "name": "尼哥拉",
+   "name_en": "Nicolas",
+   "testament": "NT",
+   "desc": "耶路撒冷教會選出的七位管理飯食的人之一，是進猶太教的安提阿人（徒6:5）。",
+   "books": [
+    "使徒行傳"
+   ]
+  },
+  {
+   "type": "concept",
+   "name": "尼哥拉",
+   "name_en": "Nicolaitans",
+   "testament": "NT",
+   "desc": "「尼哥拉一黨」，以弗所和別迦摩教會提到的一派人；主恨惡他們的行為（啟2:6、15）；經文沒有說明他們與使徒行傳的執事尼哥拉是否有關。",
+   "books": [
+    "啟示錄"
+   ],
+   "cat": "people"
+  }
+ ],
  "羅大": {
   "type": "person",
   "name": "羅大",
@@ -35733,16 +35795,32 @@
    "使徒行傳"
   ]
  },
- "路求": {
-  "type": "person",
-  "name": "路求",
-  "name_en": "Lucius",
-  "testament": "NT",
-  "desc": "古利奈人，安提阿教會的先知和教師之一（徒13:1）。",
-  "books": [
-   "使徒行傳"
-  ]
- },
+ "路求": [
+  {
+   "type": "person",
+   "name": "路求",
+   "name_en": "Lucius",
+   "testament": "NT",
+   "desc": "古利奈人，安提阿教會的先知和教師之一（徒13:1）。",
+   "books": [
+    "使徒行傳"
+   ]
+  },
+  {
+   "type": "person",
+   "name": "路求",
+   "name_en": "Lucius",
+   "testament": "NT",
+   "desc": "保羅的親屬，在哥林多向羅馬的信徒問安（羅16:21）。",
+   "books": [
+    "羅馬書"
+   ],
+   "chapters": [
+    16,
+    16
+   ]
+  }
+ ],
  "馬念": {
   "type": "person",
   "name": "馬念",
@@ -35811,7 +35889,8 @@
   "testament": "NT",
   "desc": "哥林多會堂的管會堂的，和全家都信了主，並且受了洗（徒18:8）。",
   "books": [
-   "使徒行傳"
+   "使徒行傳",
+   "哥林多前書"
   ]
  },
  "推喇奴": {
@@ -35882,6 +35961,578 @@
   "desc": "馬耳他島的首領，接待保羅一行三日；他的父親患病，被保羅醫好（徒28:7-8）。",
   "books": [
    "使徒行傳"
+  ]
+ },
+ "以利哩古": {
+  "type": "place",
+  "name": "以利哩古",
+  "name_en": "Illyricum",
+  "testament": "NT",
+  "desc": "羅馬帝國的省份，在今巴爾幹半島西部；保羅說他從耶路撒冷直轉到以利哩古，傳遍了基督的福音（羅15:19）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "非比": {
+  "type": "person",
+  "name": "非比",
+  "name_en": "Phoebe",
+  "testament": "NT",
+  "desc": "堅革哩教會的女執事，保羅推薦她給羅馬的信徒，請他們接待她、幫助她（羅16:1-2）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "以拜尼土": {
+  "type": "person",
+  "name": "以拜尼土",
+  "name_en": "Epaenetus",
+  "testament": "NT",
+  "desc": "保羅所親愛的，是亞細亞歸基督的初熟果子（羅16:5）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "安多尼古": {
+  "type": "person",
+  "name": "安多尼古",
+  "name_en": "Andronicus",
+  "testament": "NT",
+  "desc": "保羅的親屬，與保羅一同坐過監，在使徒中有名望，且比保羅先在基督裡（羅16:7）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "猶尼亞": {
+  "type": "person",
+  "name": "猶尼亞",
+  "name_en": "Junia",
+  "testament": "NT",
+  "desc": "保羅的親屬，與保羅一同坐過監，在使徒中有名望，且比保羅先在基督裡（羅16:7）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "暗伯利": {
+  "type": "person",
+  "name": "暗伯利",
+  "name_en": "Ampliatus",
+  "testament": "NT",
+  "desc": "保羅在主裡面所親愛的人（羅16:8）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "耳巴奴": {
+  "type": "person",
+  "name": "耳巴奴",
+  "name_en": "Urbanus",
+  "testament": "NT",
+  "desc": "在基督裡與保羅同工的人（羅16:9）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "士大古": {
+  "type": "person",
+  "name": "士大古",
+  "name_en": "Stachys",
+  "testament": "NT",
+  "desc": "保羅所親愛的人（羅16:9）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "亞比利": {
+  "type": "person",
+  "name": "亞比利",
+  "name_en": "Apelles",
+  "testament": "NT",
+  "desc": "在基督裡經過試驗的人（羅16:10）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "亞利多布": {
+  "type": "person",
+  "name": "亞利多布",
+  "name_en": "Aristobulus",
+  "testament": "NT",
+  "desc": "保羅問安的對象是亞利多布家屬中的人（羅16:10）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "希羅天": {
+  "type": "person",
+  "name": "希羅天",
+  "name_en": "Herodion",
+  "testament": "NT",
+  "desc": "保羅的親屬（羅16:11）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "拿其數": {
+  "type": "person",
+  "name": "拿其數",
+  "name_en": "Narcissus",
+  "testament": "NT",
+  "desc": "保羅問安的對象是拿其數家中在主裡的人（羅16:11）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "土非拿": {
+  "type": "person",
+  "name": "土非拿",
+  "name_en": "Tryphena",
+  "testament": "NT",
+  "desc": "在主裡勞苦的女子（羅16:12）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "土富撒": {
+  "type": "person",
+  "name": "土富撒",
+  "name_en": "Tryphosa",
+  "testament": "NT",
+  "desc": "在主裡勞苦的女子（羅16:12）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "彼息": {
+  "type": "person",
+  "name": "彼息",
+  "name_en": "Persis",
+  "testament": "NT",
+  "desc": "所親愛的人，在主裡多受勞苦（羅16:12）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "亞遜其土": {
+  "type": "person",
+  "name": "亞遜其土",
+  "name_en": "Asyncritus",
+  "testament": "NT",
+  "desc": "羅馬教會中保羅問安的弟兄之一（羅16:14）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "弗勒干": {
+  "type": "person",
+  "name": "弗勒干",
+  "name_en": "Phlegon",
+  "testament": "NT",
+  "desc": "羅馬教會中保羅問安的弟兄之一（羅16:14）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "黑米": {
+  "type": "person",
+  "name": "黑米",
+  "name_en": "Hermes",
+  "testament": "NT",
+  "desc": "羅馬教會中保羅問安的弟兄之一（羅16:14）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "八羅巴": {
+  "type": "person",
+  "name": "八羅巴",
+  "name_en": "Patrobas",
+  "testament": "NT",
+  "desc": "羅馬教會中保羅問安的弟兄之一（羅16:14）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "黑馬": {
+  "type": "person",
+  "name": "黑馬",
+  "name_en": "Hermas",
+  "testament": "NT",
+  "desc": "羅馬教會中保羅問安的弟兄之一（羅16:14）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "非羅羅古": {
+  "type": "person",
+  "name": "非羅羅古",
+  "name_en": "Philologus",
+  "testament": "NT",
+  "desc": "羅馬教會中保羅問安的人（羅16:15）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "猶利亞": {
+  "type": "person",
+  "name": "猶利亞",
+  "name_en": "Julia",
+  "testament": "NT",
+  "desc": "羅馬教會中保羅問安的人（羅16:15）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "阿林巴": {
+  "type": "person",
+  "name": "阿林巴",
+  "name_en": "Olympas",
+  "testament": "NT",
+  "desc": "羅馬教會中保羅問安的人（羅16:15）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "所西巴德": {
+  "type": "person",
+  "name": "所西巴德",
+  "name_en": "Sosipater",
+  "testament": "NT",
+  "desc": "保羅的親屬，在哥林多向羅馬的信徒問安（羅16:21）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "括土": {
+  "type": "person",
+  "name": "括土",
+  "name_en": "Quartus",
+  "testament": "NT",
+  "desc": "弟兄，在哥林多向羅馬的信徒問安（羅16:23）。",
+  "books": [
+   "羅馬書"
+  ]
+ },
+ "革來": {
+  "type": "person",
+  "name": "革來",
+  "name_en": "Chloe",
+  "testament": "NT",
+  "desc": "哥林多的人，革來家裡的人向保羅報告哥林多教會有紛爭（林前1:11）。",
+  "books": [
+   "哥林多前書"
+  ]
+ },
+ "福徒拿都": {
+  "type": "person",
+  "name": "福徒拿都",
+  "name_en": "Fortunatus",
+  "testament": "NT",
+  "desc": "與司提反、亞該古一同到以弗所探望保羅，使保羅心裡暢快的人（林前16:17）。",
+  "books": [
+   "哥林多前書"
+  ]
+ },
+ "亞該古": {
+  "type": "person",
+  "name": "亞該古",
+  "name_en": "Achaicus",
+  "testament": "NT",
+  "desc": "與司提反、福徒拿都一同到以弗所探望保羅的人（林前16:17）。",
+  "books": [
+   "哥林多前書"
+  ]
+ },
+ "循都基": {
+  "type": "person",
+  "name": "循都基",
+  "name_en": "Syntyche",
+  "testament": "NT",
+  "desc": "腓立比教會的婦女，保羅勸她與友阿爹同心靠主（腓4:2）。",
+  "books": [
+   "腓立比書"
+  ]
+ },
+ "革利免": {
+  "type": "person",
+  "name": "革利免",
+  "name_en": "Clement",
+  "testament": "NT",
+  "desc": "保羅的同工，名字在生命冊上（腓4:3）。",
+  "books": [
+   "腓立比書"
+  ]
+ },
+ "歌羅西": {
+  "type": "place",
+  "name": "歌羅西",
+  "name_en": "Colossae",
+  "testament": "NT",
+  "desc": "小亞細亞弗呂家的城，歌羅西書的收信對象所在地（西1:2）。"
+ },
+ "西古提": {
+  "type": "concept",
+  "name": "西古提",
+  "name_en": "Scythian",
+  "testament": "NT",
+  "desc": "古代住在黑海北方的遊牧民族；保羅說在基督裡沒有希臘人、猶太人、化外人、西古提人的分別（西3:11）。",
+  "books": [
+   "歌羅西書"
+  ],
+  "cat": "people"
+ },
+ "耶數": {
+  "type": "person",
+  "name": "耶數",
+  "name_en": "Jesus (Justus)",
+  "testament": "NT",
+  "desc": "稱為猶士都的耶數，保羅的同工（西4:11）。",
+  "books": [
+   "歌羅西書"
+  ],
+  "chapters": [
+   4,
+   4
+  ]
+ },
+ "路加": {
+  "type": "person",
+  "name": "路加",
+  "name_en": "Luke",
+  "testament": "NT",
+  "desc": "親愛的醫生，保羅的同工，陪伴保羅直到最後（西4:14；提後4:11；門1:24）；傳統上認為他是路加福音和使徒行傳的作者。"
+ },
+ "底馬": {
+  "type": "person",
+  "name": "底馬",
+  "name_en": "Demas",
+  "testament": "NT",
+  "desc": "保羅的同工；保羅在監裡時他仍與保羅在一起（西4:14；門1:24），後來因貪愛現今的世界離棄保羅，往帖撒羅尼迦去了（提後4:10）。"
+ },
+ "寧法": {
+  "type": "person",
+  "name": "寧法",
+  "name_en": "Nympha",
+  "testament": "NT",
+  "desc": "老底嘉的信徒，家中有教會，保羅問她安（西4:15）。",
+  "books": [
+   "歌羅西書"
+  ]
+ },
+ "亞基布": {
+  "type": "person",
+  "name": "亞基布",
+  "name_en": "Archippus",
+  "testament": "NT",
+  "desc": "保羅的同工，保羅囑咐他務要謹慎，成就在主裡所受的職事（西4:17；門1:2）。"
+ },
+ "許米乃": {
+  "type": "person",
+  "name": "許米乃",
+  "name_en": "Hymenaeus",
+  "testament": "NT",
+  "desc": "偏離真道的人，保羅把他和亞歷山大交給撒但（提前1:20），他又說復活的事已過，破壞人的信心（提後2:17-18）。"
+ },
+ "阿尼色弗": {
+  "type": "person",
+  "name": "阿尼色弗",
+  "name_en": "Onesiphorus",
+  "testament": "NT",
+  "desc": "多次使保羅心裡暢快，不以保羅的鎖鍊為恥，在羅馬殷勤找到保羅（提後1:16-18；4:19）。",
+  "books": [
+   "提摩太後書"
+  ]
+ },
+ "羅以": {
+  "type": "person",
+  "name": "羅以",
+  "name_en": "Lois",
+  "testament": "NT",
+  "desc": "提摩太的外祖母，有無偽的信心（提後1:5）。",
+  "books": [
+   "提摩太後書"
+  ]
+ },
+ "腓吉路": {
+  "type": "person",
+  "name": "腓吉路",
+  "name_en": "Phygelus",
+  "testament": "NT",
+  "desc": "在亞細亞離棄保羅的人（提後1:15）。",
+  "books": [
+   "提摩太後書"
+  ]
+ },
+ "黑摩其尼": {
+  "type": "person",
+  "name": "黑摩其尼",
+  "name_en": "Hermogenes",
+  "testament": "NT",
+  "desc": "在亞細亞離棄保羅的人（提後1:15）。",
+  "books": [
+   "提摩太後書"
+  ]
+ },
+ "腓理徒": {
+  "type": "person",
+  "name": "腓理徒",
+  "name_en": "Philetus",
+  "testament": "NT",
+  "desc": "與許米乃一同說復活的事已過的人（提後2:17-18）。",
+  "books": [
+   "提摩太後書"
+  ]
+ },
+ "雅尼": {
+  "type": "person",
+  "name": "雅尼",
+  "name_en": "Jannes",
+  "testament": "NT",
+  "desc": "抵擋摩西的人之一，保羅以他和佯庇比喻那些抵擋真理的人（提後3:8）。",
+  "books": [
+   "提摩太後書"
+  ]
+ },
+ "佯庇": {
+  "type": "person",
+  "name": "佯庇",
+  "name_en": "Jambres",
+  "testament": "NT",
+  "desc": "抵擋摩西的人之一，保羅以他和雅尼比喻那些抵擋真理的人（提後3:8）。",
+  "books": [
+   "提摩太後書"
+  ]
+ },
+ "革勒士": {
+  "type": "person",
+  "name": "革勒士",
+  "name_en": "Crescens",
+  "testament": "NT",
+  "desc": "保羅的同工，往加拉太去了（提後4:10）。",
+  "books": [
+   "提摩太後書"
+  ]
+ },
+ "撻馬太": {
+  "type": "place",
+  "name": "撻馬太",
+  "name_en": "Dalmatia",
+  "testament": "NT",
+  "desc": "羅馬的省份，在今巴爾幹半島西岸；提多往撻馬太去了（提後4:10）。",
+  "books": [
+   "提摩太後書"
+  ]
+ },
+ "加布": {
+  "type": "person",
+  "name": "加布",
+  "name_en": "Carpus",
+  "testament": "NT",
+  "desc": "特羅亞的人，保羅把外衣留在他那裡（提後4:13）。",
+  "books": [
+   "提摩太後書"
+  ]
+ },
+ "友布羅": {
+  "type": "person",
+  "name": "友布羅",
+  "name_en": "Eubulus",
+  "testament": "NT",
+  "desc": "在羅馬向提摩太問安的人（提後4:21）。",
+  "books": [
+   "提摩太後書"
+  ]
+ },
+ "布田": {
+  "type": "person",
+  "name": "布田",
+  "name_en": "Pudens",
+  "testament": "NT",
+  "desc": "在羅馬向提摩太問安的人（提後4:21）。",
+  "books": [
+   "提摩太後書"
+  ]
+ },
+ "利奴": {
+  "type": "person",
+  "name": "利奴",
+  "name_en": "Linus",
+  "testament": "NT",
+  "desc": "在羅馬向提摩太問安的人（提後4:21）。",
+  "books": [
+   "提摩太後書"
+  ]
+ },
+ "革老底亞": {
+  "type": "person",
+  "name": "革老底亞",
+  "name_en": "Claudia",
+  "testament": "NT",
+  "desc": "在羅馬向提摩太問安的人（提後4:21）。",
+  "books": [
+   "提摩太後書"
+  ]
+ },
+ "亞提馬": {
+  "type": "person",
+  "name": "亞提馬",
+  "name_en": "Artemas",
+  "testament": "NT",
+  "desc": "保羅打算差去見提多的人之一（多3:12）。",
+  "books": [
+   "提多書"
+  ]
+ },
+ "西納": {
+  "type": "person",
+  "name": "西納",
+  "name_en": "Zenas",
+  "testament": "NT",
+  "desc": "律法師，保羅囑咐提多送他和亞波羅起行，使他們不缺什麼（多3:13）。",
+  "books": [
+   "提多書"
+  ]
+ },
+ "亞腓亞": {
+  "type": "person",
+  "name": "亞腓亞",
+  "name_en": "Apphia",
+  "testament": "NT",
+  "desc": "腓利門書的收信人之一，被稱為「姊妹」（門1:2）。",
+  "books": [
+   "腓利門書"
+  ]
+ },
+ "拔摩": {
+  "type": "place",
+  "name": "拔摩",
+  "name_en": "Patmos",
+  "testament": "NT",
+  "desc": "愛琴海的小島；約翰因神的道和耶穌的見證被放逐到拔摩島，在這裡領受啟示（啟1:9）。",
+  "books": [
+   "啟示錄"
+  ],
+  "lat": 37.31,
+  "lng": 26.55
+ },
+ "亞巴頓": {
+  "type": "person",
+  "name": "亞巴頓",
+  "name_en": "Abaddon",
+  "testament": "NT",
+  "desc": "無底坑的使者，希伯來話名叫亞巴頓，希臘話名叫亞玻倫，意思是「毀滅者」（啟9:11）。",
+  "books": [
+   "啟示錄"
+  ]
+ },
+ "亞玻倫": {
+  "type": "person",
+  "name": "亞玻倫",
+  "name_en": "Apollyon",
+  "testament": "NT",
+  "desc": "無底坑的使者，希臘話名叫亞玻倫，希伯來話名叫亞巴頓，意思是「毀滅者」（啟9:11）。",
+  "books": [
+   "啟示錄"
   ]
  }
 }

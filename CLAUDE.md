@@ -73,6 +73,13 @@ python3 -c "import mark_bible;print(len(mark_bible.ENTITIES))"
 python3 tools/bible_query.py routecheck   # 確認沒有新增的路線警示
 ```
 
+### 補漏標流程（sparks 專名參照）
+`python3 tools/sparks_diff.py <書卷>` 以 sparks.bible 內嵌的專名標籤比對漏標，只是**參照**，不複製對方內容。
+**新增詞條後一定要跑 `python3 tools/regress_marks.py`**：引擎是字面比對、左邊優先，新詞條即使有 `books` 限制也會
+「佔位」吃掉鄰近字（例：「哥亞」吃掉「哥哥亞倫」、「愛雅」吃掉「愛雅各」、「以希」吃掉「所以希伯崙」）。
+別名詞條（如「西珥山」）不要加 `books`；只有分地小城邑這類才限定書卷。舊約人物要在新約標，把通用詞條的
+`testament` 改 `both`，同名不同人則用 `books`+`chapters` 變體。
+
 ### 碎片誤標
 優先用「登記完整詞條」解決（regex 最長匹配優先會自動修正），不要動 `_EXT_GUARD`。
 單字詞預設不標（`_SINGLE_CHAR_OK` 白名單），除非全經搜尋確認唯一用法、零碰撞
