@@ -33,7 +33,7 @@ try {
         aria-label="收合書卷選單" aria-expanded="true"
         onclick="toggleNav()">‹</button>
 
-<nav class="sidebar">{{ nav_html | safe }}</nav>
+<nav class="sidebar" data-tour="sidebar">{{ nav_html | safe }}</nav>
 
 <div class="main">
   <header class="chapter-header">
@@ -44,7 +44,7 @@ try {
   </header>
 
   {% if entities_json != '{}' %}
-  <div class="legend">
+  <div class="legend" data-tour="legend">
     <span class="legend-item"><span class="legend-dot anno-person"></span>人物</span>
     <span class="legend-item"><span class="legend-dot anno-place"></span>地點</span>
     <span class="legend-item"><span class="legend-dot anno-concept"></span>族群／概念</span>
@@ -52,7 +52,7 @@ try {
   </div>
   {% endif %}
   {% if lineage_json and lineage_json != 'null' %}
-  <button class="lineage-trigger" id="lineageTrigger" onclick="openLineage()">⛓ 本章世系結構圖</button>
+  <button class="lineage-trigger" id="lineageTrigger" data-tour="lineage" onclick="openLineage()">⛓ 本章世系結構圖</button>
   {% endif %}
   <button class="search-trigger" id="tbSearch" onclick="openSearch()">🔍 全本搜尋</button>
   <button class="search-trigger" id="tbExplore" onclick="openExplore()">📑 人物地點索引</button>
@@ -60,7 +60,7 @@ try {
   <button class="search-trigger" id="tbRoutes" onclick="openRoutes()">🧭 路線圖</button>
   <button class="search-trigger" id="tbBookmarks" onclick="openBookmarks()">🔖 我的書籤</button>
 
-  <div class="route-here-bar" id="routeHereBar" style="display:none"></div>
+  <div class="route-here-bar" id="routeHereBar" data-tour="route-here" style="display:none"></div>
 
   <main class="passage" id="passage">
     {% for v in verses %}
@@ -95,7 +95,7 @@ try {
   <button class="card-close" onclick="closeSearch()" aria-label="關閉">✕</button>
   <h3 class="search-title">全本搜尋</h3><p class="search-meta" style="margin-top:-4px">搜尋整本聖經（66 卷）</p>
   <div class="search-inputrow">
-    <input type="text" id="searchInput" placeholder="輸入關鍵字，如「歌利亞」「愛是恆久忍耐」" autocomplete="off">
+    <input type="text" id="searchInput" data-tour="search-input" placeholder="輸入關鍵字，如「歌利亞」「愛是恆久忍耐」" autocomplete="off">
     <button onclick="runSearch()">搜尋</button>
   </div>
   <label class="search-scope"><input type="checkbox" id="searchScope"> 只搜本卷（{{ book }}）</label>
@@ -121,7 +121,7 @@ try {
       <option value="OT">舊約</option>
       <option value="NT">新約</option>
     </select>
-    <select id="exploreCat" class="ex-cat" style="display:none" onchange="renderExplore()">
+    <select id="exploreCat" data-tour="explore-cat" class="ex-cat" style="display:none" onchange="renderExplore()">
       <option value="">所有分類</option>
       <option value="fest">節期禮儀</option>
       <option value="holy">聖所器物</option>
@@ -132,7 +132,7 @@ try {
       <option value="role">職分稱呼</option>
       <option value="theo">神學・其他</option>
     </select>
-    <label class="ex-inbook"><input type="checkbox" id="exploreInBook" onchange="renderExplore()"> 📖 只看本卷</label>
+    <label class="ex-inbook"><input type="checkbox" id="exploreInBook" data-tour="explore-inbook" onchange="renderExplore()"> 📖 只看本卷</label>
     <span class="ex-shown" id="exploreShown"></span>
   </div>
   <div class="explore-list" id="exploreList"></div>
@@ -144,7 +144,7 @@ try {
   <button class="card-close" onclick="closeBookmarks()" aria-label="關閉">✕</button>
   <h3 class="search-title">我的書籤</h3>
   <div class="search-meta">點經文的「節號」即可加／取消書籤</div>
-  <div class="search-results" id="bookmarksList"></div>
+  <div class="search-results" id="bookmarksList" data-tour="bookmarks-list"></div>
 </aside>
 
 <!-- 本卷地圖 -->
@@ -154,7 +154,7 @@ try {
   <h3 class="bigmap-title">本卷地圖　{{ book }}</h3>
   <div class="search-meta">💡 本卷所有地點聚成一圖；點右側清單會定位到地圖上的地點並顯示資訊，也可以直接點地圖標記。</div>
   <div class="bigmap-body">
-    <div class="bigmap-canvas" id="bookMap"></div>
+    <div class="bigmap-canvas" id="bookMap" data-tour="book-map"></div>
     <div class="place-list" id="bookMapList"></div>
   </div>
 </aside>
@@ -165,7 +165,7 @@ try {
   <button class="card-close" onclick="closeRoutes()" aria-label="關閉">✕</button>
   <h3 class="bigmap-title">🧭 聖經路線圖</h3>
   <div class="search-meta">💡 選一條路線 →「▶ 播放」鏡頭跟著行程走；點停靠點看經文出處、可調速度。</div>
-  <div class="route-picker" id="routePicker"></div>
+  <div class="route-picker" id="routePicker" data-tour="route-picker"></div>
   <div class="route-info" id="routeInfo"></div>
   <div class="bigmap-body">
     <div class="bigmap-canvas" id="routeMap"></div>
@@ -204,7 +204,7 @@ try {
   <p class="card-desc" id="cardDesc"></p>
   <div class="card-relations" id="cardRelations"></div>
   <div class="card-verses" id="cardVerses"></div>
-  <button class="card-explain-btn" id="cardVersesBtn" onclick="listEntityVerses()">🔍 列出所有經節</button>
+  <button class="card-explain-btn" id="cardVersesBtn" data-tour="card-verses" onclick="listEntityVerses()">🔍 列出所有經節</button>
   <button class="card-feedback-btn" id="cardFeedbackBtn" onclick="submitFeedback()">⚑ 標註有誤</button>
   <div class="card-feedback-done" id="cardFeedbackDone" style="display:none">已回報，謝謝！</div>
 </aside>
@@ -216,7 +216,7 @@ try {
 </div>
 
 <!-- 教學導覽浮動鈕（右下角） -->
-<button id="tourFab" class="tour-fab" type="button" onclick="startTour()" aria-label="教學導覽">
+<button id="tourFab" data-tour="tour-fab" class="tour-fab" type="button" onclick="startTour()" aria-label="教學導覽">
   <span class="tour-fab-q">?</span><span class="tour-fab-label">教學導覽</span>
 </button>
 
@@ -1138,29 +1138,35 @@ function closeAllPanels() {
 }
 const PAGE_TOUR_STEPS = [
   { title: '歡迎！這是教學導覽 👋', text: '不會用沒關係～我會把這一頁的功能一個一個打開、圈出來、用白話說給你聽。看著綠色框框、按「下一步」就好；想停隨時按「結束導覽」。' },
-  { sel: '.legend', title: '標註說明', text: '經文中有底線的詞，分人物（紅）、地點（綠）、族群／概念（紫）三類。', spot: 6 },
-  { sel: '.passage .anno', title: '點詞看背景', text: '點任一個有底線的詞，會跳出小卡片：人物生平、地點地圖、概念解釋（生僻字還附注音）。我現在幫你打開一張看看。', spot: 4 },
-  { before: () => { const a = document.querySelector('.passage .anno'); if (a) a.click(); }, beforeWait: 380,
-    sel: '#cardVersesBtn', title: '卡片：列出所有經節', text: '卡片下方這顆「🔍 列出所有經節」，能一次看這個人／地在整本聖經的所有出處。', spot: 6 },
-  { before: () => { try { closeCard(); } catch (e) {} }, sel: '.passage .verse-num', title: '節號＝書籤', text: '點經文的「節號」即可加入／取消書籤，加了會顯示 🔖。', spot: 4 },
+  { sel: '[data-tour="legend"]', title: '標註說明', text: '經文中有底線的詞，分人物（紅）、地點（綠）、族群／概念（紫）三類。', spot: 6 },
+  { sel: '[data-tour="anno"]', title: '點詞看背景', text: '點任一個有底線的詞，會跳出小卡片：人物生平、地點地圖、概念解釋（生僻字還附注音）。我現在幫你打開一張看看。', spot: 4 },
+  { before: () => { const a = document.querySelector('[data-tour="anno"]'); if (a) a.click(); }, beforeWait: 380,
+    sel: '[data-tour="card-verses"]', title: '卡片：列出所有經節', text: '卡片下方這顆「🔍 列出所有經節」，能一次看這個人／地在整本聖經的所有出處。', spot: 6 },
+  { before: () => { try { closeCard(); } catch (e) {} }, sel: '[data-tour="verse-num"]', title: '節號＝書籤', text: '點經文的「節號」即可加入／取消書籤，加了會顯示 🔖。', spot: 4 },
   { before: () => { closeAllPanels(); openSearch(); }, beforeWait: 340,
-    sel: '#searchInput', title: '全本搜尋', text: '在這裡打關鍵字，搜尋整本聖經（66 卷），點結果直接跳到該節。', spot: 6 },
+    sel: '[data-tour="search-input"]', title: '全本搜尋', text: '在這裡打關鍵字，搜尋整本聖經（66 卷），點結果直接跳到該節。', spot: 6 },
   { before: () => { closeAllPanels(); openExplore(); }, beforeWait: 360,
-    sel: '#exploreInBook', title: '索引：只看本卷', text: '索引列出全部人物／地點／概念。勾「📖 只看本卷」，就只剩當前書卷出現的，瞬間從幾百個縮到幾十個。', spot: 8 },
+    sel: '[data-tour="explore-inbook"]', title: '索引：只看本卷', text: '索引列出全部人物／地點／概念。勾「📖 只看本卷」，就只剩當前書卷出現的，瞬間從幾百個縮到幾十個。', spot: 8 },
   { before: () => { if (typeof switchExplore === 'function') switchExplore('concept'); }, beforeWait: 120,
-    sel: '#exploreCat', title: '索引：概念分類', text: '切到「概念」分頁，還能依分類（節期、聖所器物、寶石、度量衡…）再篩一層。', spot: 8 },
+    sel: '[data-tour="explore-cat"]', title: '索引：概念分類', text: '切到「概念」分頁，還能依分類（節期、聖所器物、寶石、度量衡…）再篩一層。', spot: 8 },
   { before: () => { closeAllPanels(); openBookMap(); }, beforeWait: 420,
-    sel: '#bookMap', title: '本卷地圖', text: '把本卷所有地點聚成一張大地圖，點任一標記看背景資料。', spot: 6 },
+    sel: '[data-tour="book-map"]', title: '本卷地圖', text: '把本卷所有地點聚成一張大地圖，點任一標記看背景資料。', spot: 6 },
   { before: () => { closeAllPanels(); openRoutes(); }, beforeWait: 480,
-    sel: '#routePicker', title: '路線圖', text: '亞伯拉罕遷徙、出埃及、保羅宣教…選一條，按「▶ 播放」鏡頭會跟著行程走，點停靠點看經文出處。', spot: 8 },
-  { before: () => { closeAllPanels(); }, sel: '#routeHereBar', title: '本章路線提示', text: '讀到有路線經過的章節，這裡會自動浮出，點一下直接開地圖定位到該站。', spot: 6 },
+    sel: '[data-tour="route-picker"]', title: '路線圖', text: '亞伯拉罕遷徙、出埃及、保羅宣教…選一條，按「▶ 播放」鏡頭會跟著行程走，點停靠點看經文出處。', spot: 8 },
+  { before: () => { closeAllPanels(); }, sel: '[data-tour="route-here"]', title: '本章路線提示', text: '讀到有路線經過的章節，這裡會自動浮出，點一下直接開地圖定位到該站。', spot: 6 },
   { before: () => { closeAllPanels(); openBookmarks(); }, beforeWait: 340,
-    sel: '#bookmarksList', title: '我的書籤', text: '你加過書籤的經節都收在這，點任一筆跳回去繼續讀。', spot: 6 },
-  { before: () => { closeAllPanels(); }, sel: '#lineageTrigger', title: '世系結構圖', text: '家譜、列王的章節會出現這顆按鈕，畫出世系樹、本章人物會點亮。', spot: 6 },
-  { before: () => { closeAllPanels(); }, sel: '.sidebar', title: '書卷切換', text: '左側可切換書卷與章節，隨時跳到聖經任何地方。', spot: 6 },
-  { before: () => { closeAllPanels(); }, sel: '#tourFab', title: '完成！你已經學會了 🎉', text: '以後忘記了不用緊張，隨時點右下角這顆「？教學導覽」，我就會再從頭帶你看一次。' },
+    sel: '[data-tour="bookmarks-list"]', title: '我的書籤', text: '你加過書籤的經節都收在這，點任一筆跳回去繼續讀。', spot: 6 },
+  { before: () => { closeAllPanels(); }, sel: '[data-tour="lineage"]', title: '世系結構圖', text: '家譜、列王的章節會出現這顆按鈕，畫出世系樹、本章人物會點亮。', spot: 6 },
+  { before: () => { closeAllPanels(); }, sel: '[data-tour="sidebar"]', title: '書卷切換', text: '左側可切換書卷與章節，隨時跳到聖經任何地方。', spot: 6 },
+  { before: () => { closeAllPanels(); }, sel: '[data-tour="tour-fab"]', title: '完成！你已經學會了 🎉', text: '以後忘記了不用緊張，隨時點右下角這顆「？教學導覽」，我就會再從頭帶你看一次。' },
 ];
 function startTour() {
+  // 經文內的標註與節號由伺服器產生，無法在模板上標記，這裡取第一個補上 data-tour
+  [['.passage .anno', 'anno'], ['.passage .verse-num', 'verse-num']].forEach(([q, k]) => {
+    document.querySelectorAll('[data-tour="' + k + '"]').forEach(el => el.removeAttribute('data-tour'));
+    const el = document.querySelector(q);
+    if (el) el.setAttribute('data-tour', k);
+  });
   const fab = document.getElementById('tourFab');
   if (fab) fab.classList.remove('pulse');
   localStorage.setItem('bible-tour-done', '1');
