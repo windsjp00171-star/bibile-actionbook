@@ -1368,17 +1368,29 @@
   "testament": "OT",
   "desc": "挪亞的長子，閃族（希伯來、亞蘭、亞述等）的祖先。挪亞醉酒事件中與雅弗倒退著為父蓋衣，蒙父祝福。"
  },
- "含": {
-  "books": [
-   "創世記",
-   "歷代志上"
-  ],
-  "type": "person",
-  "name": "含",
-  "name_en": "Ham",
-  "testament": "OT",
-  "desc": "挪亞的次子，迦南之父。因見父親醉臥赤身而受責，其後裔含括迦南、古實、麥西（埃及）等族。"
- },
+ "含": [
+  {
+   "books": [
+    "創世記",
+    "歷代志上"
+   ],
+   "type": "person",
+   "name": "含",
+   "name_en": "Ham",
+   "testament": "OT",
+   "desc": "挪亞的次子，迦南之父。因見父親醉臥赤身而受責，其後裔含括迦南、古實、麥西（埃及）等族。"
+  },
+  {
+   "type": "person",
+   "name": "含",
+   "name_en": "Ham",
+   "testament": "OT",
+   "desc": "詩篇用「含」代稱埃及（含的帳棚、含地），因埃及人是含的後裔（詩78:51；105:23；106:22）。",
+   "books": [
+    "詩篇"
+   ]
+  }
+ ],
  "雅弗": {
   "type": "person",
   "name": "雅弗",
@@ -12926,6 +12938,20 @@
     2,
     2
    ]
+  },
+  {
+   "type": "person",
+   "name": "利甲",
+   "name_en": "Rechab",
+   "testament": "OT",
+   "desc": "利甲的兒子瑪基雅修造糞門（尼3:14）。",
+   "books": [
+    "尼希米記"
+   ],
+   "chapters": [
+    3,
+    3
+   ]
   }
  ],
  "巴拿": [
@@ -14125,16 +14151,28 @@
   "desc": "戶沙人，大衛三十勇士之一（撒下23:27）。",
   "name": "米本乃"
  },
- "撒們": {
-  "type": "person",
-  "name_en": "Zalmon",
-  "testament": "OT",
-  "books": [
-   "撒母耳記下"
-  ],
-  "desc": "亞合人，大衛三十勇士之一（撒下23:28）。",
-  "name": "撒們"
- },
+ "撒們": [
+  {
+   "type": "person",
+   "name_en": "Zalmon",
+   "testament": "OT",
+   "books": [
+    "撒母耳記下"
+   ],
+   "desc": "亞合人，大衛三十勇士之一（撒下23:28）。",
+   "name": "撒們"
+  },
+  {
+   "type": "place",
+   "name": "撒們",
+   "name_en": "Zalmon",
+   "testament": "OT",
+   "books": [
+    "詩篇"
+   ],
+   "desc": "詩篇68:14說，全能者趕散列王的時候，勢如飄雪在撒們；確切位置不詳。"
+  }
+ ],
  "瑪哈萊": {
   "type": "person",
   "name_en": "Maharai",
@@ -29344,7 +29382,8 @@
   "name_en": "Salem",
   "testament": "OT",
   "books": [
-   "創世記"
+   "創世記",
+   "詩篇"
   ],
   "desc": "麥基洗德作王的城，經文稱他為「撒冷王」（14:18）；詩76:2以撒冷與錫安並稱，傳統上認為就是耶路撒冷。"
  },
@@ -29940,7 +29979,8 @@
   "name_en": "Meribah",
   "testament": "OT",
   "books": [
-   "出埃及記"
+   "出埃及記",
+   "詩篇"
   ],
   "desc": "以色列人在利非訂因沒有水喝而與摩西爭鬧、試探耶和華，摩西給此地起名瑪撒，又叫米利巴，意思是「爭鬧」（17:7）。"
  },
@@ -30193,7 +30233,8 @@
   "testament": "OT",
   "desc": "西頓人對黑門山的稱呼（申3:9）。",
   "books": [
-   "申命記"
+   "申命記",
+   "詩篇"
   ]
  },
  "比羅比尼亞干": {
@@ -32396,6 +32437,198 @@
   "desc": "住有亞拉伯人的地方；神幫助烏西雅攻擊他們（代下26:7）；確切位置不詳。",
   "books": [
    "歷代志下"
+  ]
+ },
+ "亞哈瓦河": {
+  "type": "place",
+  "name": "亞哈瓦河",
+  "name_en": "Ahava River",
+  "testament": "OT",
+  "desc": "以斯拉聚集歸回的猶大人之處；他在亞哈瓦河邊宣告禁食，求神賜平安的道路（拉8:15、21、31）。",
+  "books": [
+   "以斯拉記"
+  ]
+ },
+ "東門": {
+  "type": "place",
+  "name": "東門",
+  "name_en": "East Gate",
+  "testament": "OT",
+  "desc": "耶路撒冷城門，尼希米重修城牆時由守東門的示迦尼的兒子示瑪雅修造（尼3:29）。",
+  "books": [
+   "尼希米記"
+  ]
+ },
+ "護衛門": {
+  "type": "place",
+  "name": "護衛門",
+  "name_en": "Gate of the Guard",
+  "testament": "OT",
+  "desc": "耶路撒冷城門；獻城牆典禮中，第二隊感謝的人走到護衛門停住（尼12:39）。",
+  "books": [
+   "尼希米記"
+  ]
+ },
+ "伯亞斯瑪弗": {
+  "type": "place",
+  "name": "伯亞斯瑪弗",
+  "name_en": "Beth-azmaveth",
+  "testament": "OT",
+  "desc": "從被擄之地歸回的人原居的城鎮之一（尼7:28）；確切位置不詳。",
+  "books": [
+   "尼希米記"
+  ]
+ },
+ "約撒達": {
+  "type": "person",
+  "name": "約撒達",
+  "name_en": "Jozadak",
+  "testament": "OT",
+  "desc": "耶書亞的父親；約撒達的兒子是大祭司耶書亞（尼12:26）。",
+  "books": [
+   "尼希米記"
+  ]
+ },
+ "疏割谷": {
+  "type": "place",
+  "name": "疏割谷",
+  "name_en": "Valley of Succoth",
+  "testament": "OT",
+  "desc": "詩篇中神說要「丈量疏割谷」，作為得勝後分地的宣告（詩60:6；108:7）。",
+  "books": [
+   "詩篇"
+  ]
+ },
+ "巴珊山": {
+  "type": "place",
+  "name": "巴珊山",
+  "name_en": "Mount Bashan",
+  "testament": "OT",
+  "desc": "巴珊的山，詩人稱它為「神的山」「多峰多嶺的山」（詩68:15）。",
+  "books": [
+   "詩篇"
+  ],
+  "lat": 32.8,
+  "lng": 35.9
+ },
+ "瑣安": {
+  "type": "place",
+  "name": "瑣安",
+  "name_en": "Zoan",
+  "testament": "OT",
+  "desc": "埃及的城，神在瑣安地向埃及人行神蹟奇事（詩78:12、43）。",
+  "books": [
+   "詩篇"
+  ]
+ },
+ "黑門嶺": {
+  "type": "place",
+  "name": "黑門嶺",
+  "name_en": "Hermon peaks",
+  "testament": "OT",
+  "desc": "黑門山的山嶺；被擄的詩人從約但地、黑門嶺、米薩山記念神（詩42:6）。",
+  "books": [
+   "詩篇"
+  ]
+ },
+ "米薩山": {
+  "type": "place",
+  "name": "米薩山",
+  "name_en": "Mount Mizar",
+  "testament": "OT",
+  "desc": "詩人在流亡中記念神時提到的山（詩42:6）；位置不詳。",
+  "books": [
+   "詩篇"
+  ]
+ },
+ "迦巴勒": {
+  "type": "place",
+  "name": "迦巴勒",
+  "name_en": "Gebal",
+  "testament": "OT",
+  "desc": "腓尼基的城市；詩83:7列為聯合攻擊以色列的民族之一。",
+  "books": [
+   "詩篇"
+  ]
+ },
+ "利慕伊勒": {
+  "type": "person",
+  "name": "利慕伊勒",
+  "name_en": "Lemuel",
+  "testament": "OT",
+  "desc": "箴言31章記載其母所教導之話的王（箴31:1、4）。",
+  "books": [
+   "箴言"
+  ]
+ },
+ "雅基": {
+  "type": "person",
+  "name": "雅基",
+  "name_en": "Jakeh",
+  "testament": "OT",
+  "desc": "亞古珥的父親（箴30:1）。",
+  "books": [
+   "箴言"
+  ]
+ },
+ "亞古珥": {
+  "type": "person",
+  "name": "亞古珥",
+  "name_en": "Agur",
+  "testament": "OT",
+  "desc": "雅基的兒子，箴言第30章的作者（箴30:1）。",
+  "books": [
+   "箴言"
+  ]
+ },
+ "烏甲": {
+  "type": "person",
+  "name": "烏甲",
+  "name_en": "Ucal",
+  "testament": "OT",
+  "desc": "箴言30:1記載，亞古珥對以鐵和烏甲說話；烏甲是受話的人之一。",
+  "books": [
+   "箴言"
+  ]
+ },
+ "比特山": {
+  "type": "place",
+  "name": "比特山",
+  "name_en": "Mountains of Bether",
+  "testament": "OT",
+  "desc": "雅歌中女子呼喚良人「如羚羊或小鹿在比特山上」（歌2:17）；位置不詳。",
+  "books": [
+   "雅歌"
+  ]
+ },
+ "亞瑪拿": {
+  "type": "place",
+  "name": "亞瑪拿",
+  "name_en": "Amana",
+  "testament": "OT",
+  "desc": "雅歌4:8中，良人邀新婦從黎巴嫩、亞瑪拿頂、示尼珥和黑門頂下來；亞瑪拿是黎巴嫩一帶的山。",
+  "books": [
+   "雅歌"
+  ]
+ },
+ "巴特拉併": {
+  "type": "place",
+  "name": "巴特拉併",
+  "name_en": "Bath-rabbim",
+  "testament": "OT",
+  "desc": "雅歌7:4形容新婦的眼目像希實本巴特拉併門旁的水池。",
+  "books": [
+   "雅歌"
+  ]
+ },
+ "巴力哈們": {
+  "type": "place",
+  "name": "巴力哈們",
+  "name_en": "Baal-hamon",
+  "testament": "OT",
+  "desc": "所羅門有葡萄園的地方（歌8:11）；位置不詳。",
+  "books": [
+   "雅歌"
   ]
  }
 }
