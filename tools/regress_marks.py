@@ -48,7 +48,7 @@ for k, o in old.items():
             lost[t] += 1; ex.setdefault(t, k.replace("|", " ", 1).replace("|", ":")); allref.setdefault(t, []).append(k.replace("|", " ", 1).replace("|", ":"))
 gained = sum(len(new[k]) for k in new) - sum(len(old[k]) for k in old)
 print(f"# 與 {ref} 比對：標註總數變化 {gained:+d}；消失的詞 {len(lost)} 種（共 {sum(lost.values())} 處）")
-for t, n in lost.most_common(40):
+for t, n in lost.most_common():
     print(f"  {t} ×{n}  例 {ex[t]}")
 
 if os.environ.get("REGRESS_VERBOSE"):
