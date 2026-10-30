@@ -91,7 +91,8 @@ _EXT_GUARD = {
     "希伯崙", "希伯倫", "希伯來",
     "示羅密", "摩西錄",
     "巴末巴力", "伯巴力勉",
-    "以利未人", "比利未人",
+    "所以利", "比利未",
+    "所以掃", "默示撒", "指示撒", "所以法", "指示法", "河西亞", "就立尼", "冷得救", "豈比挪",
 }
 
 
@@ -134,26 +135,31 @@ def annotate(text, book="", chapter=1):
     data-entity 為解析後的詞條鍵），其餘字元 HTML 轉義。回傳 HTML 字串。"""
     if not _ALL_RE:
         return str(escape(text))
-    out, last = [], 0
-    for m in _ALL_RE.finditer(text):
+    out, last, pos = [], 0, 0
+    while True:
+        m = _ALL_RE.search(text, pos)
+        if not m:
+            break
         word = m.group(0)
-        out.append(str(escape(text[last:m.start()])))
+        # 守衛擋下、或此詞在當前書卷無適用條目：不吞掉整個詞，從下一字繼續找，
+        # 避免它佔位而讓與它重疊的真正專名（如「哥哥亞倫」裡的亞倫）標不到。
         if _is_partial_of_longer(text, m.start(), m.end(), word):
-            out.append(str(escape(word)))
-        else:
-            entry = resolve_entity(word, book, chapter)
-            if entry:
-                before = text[max(0, m.start() - 6):m.start()]
-                tgt = redirect_target(word, entry, text, before)
-                data_name = tgt or word
-                if tgt:
-                    te = ENTITIES[tgt]
-                    entry = te[0] if isinstance(te, list) else te
-                cls = _TYPE_CLASS.get(entry["type"], "anno-person")
-                out.append(f'<span class="anno {cls}" data-entity="{escape(data_name)}">{escape(word)}</span>')
-            else:
-                out.append(str(escape(word)))
-        last = m.end()
+            pos = m.start() + 1
+            continue
+        entry = resolve_entity(word, book, chapter)
+        if not entry:
+            pos = m.start() + 1
+            continue
+        out.append(str(escape(text[last:m.start()])))
+        before = text[max(0, m.start() - 6):m.start()]
+        tgt = redirect_target(word, entry, text, before)
+        data_name = tgt or word
+        if tgt:
+            te = ENTITIES[tgt]
+            entry = te[0] if isinstance(te, list) else te
+        cls = _TYPE_CLASS.get(entry["type"], "anno-person")
+        out.append(f'<span class="anno {cls}" data-entity="{escape(data_name)}">{escape(word)}</span>')
+        last = pos = m.end()
     out.append(str(escape(text[last:])))
     return "".join(out)
 
