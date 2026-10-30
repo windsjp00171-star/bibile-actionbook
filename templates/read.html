@@ -7,8 +7,9 @@
 {% include '_pwa.html' %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="{{ static_v('tokens.css') }}">
 <link rel="stylesheet" href="{{ static_v('style.css') }}">
 </head>
 <body>
@@ -21,6 +22,7 @@ try {
 } catch (e) {}
 </script>
 
+<div class="sun-line" id="sunLine" aria-hidden="true"></div>
 <header class="mob-header">
   <button class="burger" onclick="openDrawer()" aria-label="目錄">☰</button>
   <h2>聖 經 全 書</h2>

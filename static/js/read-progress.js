@@ -83,3 +83,16 @@ function reportVerse(v) {
 }
 
 // 滑動切換章節已移除——垂直捲動易誤觸翻章。改用底部「上一章／下一章」按鈕。
+
+// ── 晨光進度光帶：頂端細線隨捲動前進，表示讀到本章哪裡 ──────────────
+(function () {
+  const line = document.getElementById('sunLine');
+  if (!line) return;
+  function update() {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    line.style.width = (max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();

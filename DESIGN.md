@@ -1,237 +1,190 @@
 ---
 name: 聖經全書 (bibile-actionbook)
-description: 燭光下的手抄本：深棕書皮入口，羊皮紙米色閱讀頁，金色細線與三色經文標註。
+description: 晨光剖面：灰泥白牆上的經文、炭灰剖面塊的導覽，一道移動的日光金標示讀到哪裡。
 colors:
-  vellum: "#F7F0E0"
-  vellum-card: "#FEF8EC"
-  ink: "#2A1A08"
-  ink-body: "#5A3A18"
-  leather-night: "#1A0E06"
-  leather: "#2C1A0E"
-  leather-mid: "#3A220E"
-  leather-edge: "#5C3010"
-  gold: "#D4A847"
-  gold-soft: "#C9A96E"
-  gold-glow: "#F0C96A"
-  gold-dim: "#9A7040"
-  person-rust: "#8B3A1A"
-  place-forest: "#2A5C3A"
-  concept-indigo: "#4A3080"
-  tour-flag: "#E94F37"
+  wall: "#F2F1EC"
+  wall-2: "#E9E8E1"
+  wall-3: "#DAD9D0"
+  paper: "#FAFAF7"
+  ink: "#1C1F23"
+  ink-2: "#3B4047"
+  ink-3: "#4A5058"
+  ink-4: "#666C75"
+  poche: "#1F2328"
+  poche-2: "#2B3036"
+  poche-3: "#3A4048"
+  poche-ink: "#C3C8CF"
+  poche-mute: "#8C95A1"
+  entry-ground: "#14171A"
+  sun: "#E2A62E"
+  sun-glow: "#F2C45A"
+  sun-deep: "#8A5A0B"
+  shade: "#5B6F8C"
+  action: "#2B3A4E"
+  action-deep: "#1F2A3A"
+  person: "#9A3B26"
+  place: "#2F6B4A"
+  concept: "#55438F"
 typography:
-  body:
+  scripture:
     fontFamily: "'Noto Serif TC', serif"
-    fontSize: "15px"
-    fontWeight: 300
-    lineHeight: 2.3
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: 2
     letterSpacing: "0.02em"
+  ui:
+    fontFamily: "'Noto Sans TC', system-ui, sans-serif"
+    fontSize: "14px"
+    fontWeight: 400
   title:
-    fontFamily: "'Noto Serif TC', serif"
-    fontSize: "20px"
-    fontWeight: 500
-    letterSpacing: "0.08em"
-  cover:
     fontFamily: "'Noto Serif TC', serif"
     fontSize: "26px"
     fontWeight: 500
-    lineHeight: 1.6
-    letterSpacing: "0.2em"
-  card-body:
-    fontFamily: "'Noto Serif TC', serif"
-    fontSize: "12px"
-    fontWeight: 300
-    lineHeight: 1.85
-  label:
-    fontFamily: "sans-serif"
-    fontSize: "10px"
-    fontWeight: 500
     letterSpacing: "0.12em"
+  entry:
+    fontFamily: "'Noto Serif TC', serif"
+    fontSize: "36px"
+    fontWeight: 600
+    letterSpacing: "0.32em"
+  verse-num:
+    fontFamily: "'Noto Sans TC', system-ui, sans-serif"
+    fontSize: "0.72em"
+    fontWeight: 500
 rounded:
-  sm: "3px"
-  md: "6px"
-  lg: "8px"
-  card: "10px"
+  sm: "6px"
+  md: "8px"
+  lg: "10px"
   pill: "99px"
 spacing:
-  xs: "4px"
   sm: "8px"
   md: "16px"
   lg: "32px"
 components:
   nav-item:
     backgroundColor: "transparent"
-    textColor: "#D4B080"
-    typography: "{typography.card-body}"
-    padding: "6px 16px"
+    textColor: "{colors.poche-ink}"
+    padding: "8px 16px"
   nav-item-active:
-    backgroundColor: "{colors.leather-mid}"
-    textColor: "{colors.gold-glow}"
-  float-card:
-    backgroundColor: "{colors.vellum-card}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.lg}"
-    padding: "14px 15px"
-    width: "232px"
-  testament-card:
-    backgroundColor: "{colors.leather}"
-    textColor: "{colors.gold}"
-    rounded: "{rounded.card}"
-    width: "140px"
-    height: "155px"
-  enter-button:
-    backgroundColor: "#3D1F08"
-    textColor: "{colors.gold}"
-    rounded: "{rounded.md}"
-    padding: "10px 28px"
-  tour-fab:
-    backgroundColor: "{colors.place-forest}"
+    backgroundColor: "{colors.poche-2}"
+    textColor: "{colors.sun-glow}"
+  chapter-pill:
+    backgroundColor: "{colors.poche-2}"
+    textColor: "{colors.poche-ink}"
+    rounded: "{rounded.sm}"
+    size: "40px"
+  tool-button:
+    backgroundColor: "{colors.action}"
     textColor: "#FFFFFF"
     rounded: "{rounded.pill}"
-    padding: "12px 20px 12px 16px"
+  entry-button:
+    backgroundColor: "transparent"
+    textColor: "{colors.sun-glow}"
+    rounded: "{rounded.md}"
+    height: "56px"
+  float-card:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.md}"
+    padding: "14px 15px"
+  tour-fab:
+    backgroundColor: "{colors.poche}"
+    textColor: "#FFFFFF"
+    rounded: "{rounded.pill}"
 ---
 
 # Design System: 聖經全書
 
-> 本檔記錄 **改版前的現況**，作為 Rule 18 導入順序的基準。其中標示「待重構」的是已知問題，不是要保留的規範。
-
 ## Overview
 
-**Creative North Star: "燭光下的手抄本"**
+**Creative North Star: "晨光剖面"**
 
-整站是一本被翻開的老書：進站是深棕皮革的暗室，一本燙金書封等你點開；翻進去之後，是羊皮紙色的閱讀頁，經文行距寬鬆，像手抄本的行格。金色只用在細線、頁碼與點綴，從不用作大面積填色。氣氛安靜、有儀式感，偏靈修而不是工具。
+整個介面是一張連續的建築剖面：灰泥白牆是經文所在的房間，炭灰實心塊是切開的牆體與導覽，一道日光金斜切過畫面，讀到哪裡，光就亮到哪裡。它回應的是靈修的時間感（晨更），而不是宗教閱讀器常見的米色紙頁加棕金。
 
-同一套棕金色票出現在兩種亮度：入口與側欄是暗室（`leather` 系），閱讀與卡片是紙頁（`vellum` 系）。換頁就是換亮度，色相不變。
-
-經文裡的標註是唯一允許出現的「彩色」：人名鏽紅、地名森綠、概念靛紫，其餘介面一律保持棕金。
+氣氛安靜、清楚、不裝飾。顏色幾乎都是灰階，只有日光金代表「現在的位置」，只有人名、地名、概念三個標註色承載語意。標註同時用底線形式區分，不單靠顏色。
 
 **Key Characteristics:**
-- 深棕皮革與羊皮紙兩種亮度，共用一組棕金色票
-- 全站單一字體 Noto Serif TC，細字重 300 為主；標籤與徽章改用系統無襯線
-- 金色細線與菱形（旋轉 45° 的 6px 方塊）作為分隔飾紋
-- 經文行距 2.3，並有淡淡的橫格背景線（每 37px 一道）
-- 入口有 3D 開書儀式動畫與星點背景（待重構）
+- 冷調石灰白牆（#F2F1EC）加炭灰剖面塊，不使用米黃或棕色
+- 日光金只出現在三處：頂端進度光帶、導覽中目前所在、入口的一道斜光
+- 經文用襯線 Noto Serif TC 400、18px 起、行距 2；介面用 Noto Sans TC
+- 人物＝實線、地點＝點線、概念＝雙線，色弱也能分辨
+- 入口動畫只有一道 240ms 的斜光，回訪者直接進入
 
 ## Colors
 
-整體是低彩度的暖棕金，標註三色是唯一的彩度來源。
-
 ### Primary
-- **鎏金 Gilt** (#D4A847)：入口的標題、邊框、星點、啟用態。暗底上才用；紙頁上改用較柔的 `gold-soft` (#C9A96E) 作細線與節號。
-- **亮金 Gold Glow** (#F0C96A)：側欄目前章節文字，暗底上的選中強調。
+- **日光金 Sun** (#E2A62E)：進度光帶、入口斜光、焦點外框。**亮日光 Sun Glow** (#F2C45A)：暗底上的選中文字。**深日光 Sun Deep** (#8A5A0B)：淺底上需要金色文字時才用。
 
 ### Secondary
-- **森林綠 Forest** (#2A5C3A)：地名標註，也是教學浮動鈕與「確認類」按鈕的底色。這是介面裡唯一的實心強調色。
+- **陰影藍 Shade** (#5B6F8C)：退去的時刻、次要資訊。**行動藍灰 Action** (#2B3A4E)：工具按鈕、連結、主要動作底色。
 
-### Tertiary
-- **鏽紅 Rust** (#8B3A1A)：人名標註。
-- **靛紫 Indigo** (#4A3080)：概念標註。
-- **教學紅點 Tour Flag** (#E94F37)：只出現在教學鈕脈動時的小圓點。
+### Tertiary（標註專用）
+- **鏽紅 Person** (#9A3B26)、**森綠 Place** (#2F6B4A)、**靛紫 Concept** (#55438F)。
 
 ### Neutral
-- **羊皮紙 Vellum** (#F7F0E0)：閱讀頁底色。
-- **卡片紙 Vellum Card** (#FEF8EC)：浮動卡片、底部抽屜底色。
-- **墨 Ink** (#2A1A08)：紙頁上的正文；內文次級用 `ink-body` (#5A3A18)。
-- **夜皮革 Leather Night** (#1A0E06)：入口頁底色。
-- **皮革 Leather** (#2C1A0E) / **皮革中 Leather Mid** (#3A220E) / **皮革緣 Leather Edge** (#5C3010)：側欄、選單卡、邊線，由深到淺。
-- **暗金 Gold Dim** (#9A7040)：紙頁上的次要文字（章節標籤、說明）。
+- **牆 Wall** (#F2F1EC)、**牆 2** (#E9E8E1)、**牆 3** (#DAD9D0)：閱讀底、面板、分隔線。**卡片紙 Paper** (#FAFAF7)：浮動卡片。
+- **墨 Ink** (#1C1F23) 到 **ink-4** (#666C75)：正文到次要文字，ink-4 在牆上對比約 4.9:1。
+- **剖面 Poche** (#1F2328)、**poche-2** (#2B3036)、**poche-3** (#3A4048)：側欄、入口選單。**入口底 Entry Ground** (#14171A)。
 
 ### Named Rules
-**The Candle Rule.** 金色是光，不是顏料：只畫在線、點、字上，不鋪面。
-**The Three Tags Rule.** 人名、地名、概念各一個色，介面其他元素不得借用這三個色來裝飾。
-
-> 待清理：棕金色以十六進位硬編碼散落在 `static/style.css` 與 `templates/home.html` 內嵌樣式。兩處各自宣告一份 `:root`，`--bg`、`--gold` 同名但值不同（紙色 vs 夜皮革、`#C9A96E` vs `#D4A847`）；因為首頁不載入 `style.css`，目前不會在同一頁互相覆蓋，但新增共用元件時有踩雷風險，視覺改版時統一成單一來源。
+**The One Beam Rule.** 日光金只代表「現在的位置」。不用它做裝飾、不鋪面。
+**The Three Tags Rule.** 鏽紅、森綠、靛紫專屬標註。**The Form Not Hue Rule.** 標註類型必須同時用底線形式區分。
 
 ## Typography
 
-**Display / Body Font:** Noto Serif TC（fallback: serif），由 Google Fonts 載入，字重 300 / 400 / 500
-**Label Font:** 系統 sans-serif（節號、徽章、小圖例、分類 pill）
-
-**Character:** 中文宋體的細字重搭配寬鬆行距，像排版用心的線裝書；數字與英文小標用無襯線，形成「正文是書，標籤是書籤」的對比。
+**Scripture:** Noto Serif TC，**UI:** Noto Sans TC，數字用 `tabular-nums`。
 
 ### Hierarchy
-- **Cover** (500, 26px, 行高 1.6, 字距 0.2em)：入口書封的書名。
-- **Title** (500, 20px, 字距 0.08em)：閱讀頁書卷名，置中。
-- **Body** (300, 15px, 行高 2.3, 字距 0.02em)：經文。
-- **Card body** (300, 12px, 行高 1.85)：浮動卡片內文。
-- **Label** (500, 9–11px, 字距 0.12em, 大寫)：節號（上標）、徽章、圖例。
-
-### Named Rules
-**The Whisper Weight Rule.** 正文維持 300 細字重，只有標題與選中態升到 500。
-
-> 待重構：節號 9px、卡片內文 12px、圖例 11px，在手機與長輩閱讀情境下偏小。
+- **Entry** (600, 36px, 字距 0.32em)：入口書名。
+- **Title** (500, 26px, 字距 0.12em)：書卷名。
+- **Scripture** (400, 18px 可由使用者調整, 行距 2)：經文，行寬約 640px。
+- **UI** (400–500, 12–15px)：導覽、按鈕、卡片。字級下限 12px。
+- **Verse number** (500, 0.72em, tabular-nums)：節號。
 
 ## Layout
 
-桌面為「左側欄 + 單欄閱讀」：側欄固定 210px（可收合，狀態存 localStorage），閱讀區留白左右 48–52px，浮動卡片貼在右緣。手機（≤640px）側欄改為漢堡抽屜，卡片改為底部抽屜（最高 70vh）。首頁入口為全螢幕疊層，一次只顯示一個畫面，畫面之間以 .4s 淡入淡出切換。
-
-間距沒有統一尺度，內嵌樣式與 `style.css` 都是逐處手寫的 px 值（多為 4 / 8 / 12 / 14 / 16 / 20）。
+桌面：左側 210px 炭灰剖面欄（可收合）加單欄經文，經文最大寬約 640px。手機（≤640px）：側欄收成抽屜，說明卡變底部抽屜。頂端 3px 日光進度光帶固定。章節按鈕最小 40px。
 
 ## Elevation & Depth
 
-多數表面是平的，靠色階與金色細邊線分層。只有三處有陰影：入口書封（深色大陰影，製造立體感）、選單卡（`0 8px 32px rgba(0,0,0,.5)`）、浮動卡片（`2px 3px 0` 的淡金硬陰影，像紙片疊放）。
-
-### Shadow Vocabulary
-- **Book** (`box-shadow: 4px 4px 24px rgba(0,0,0,.7)`)：入口書封。
-- **Menu** (`box-shadow: 0 8px 32px rgba(0,0,0,.5)`)：暗室選單卡。
-- **Paper** (`box-shadow: 2px 3px 0 #C9A96E30`)：紙頁上的浮動卡片。
-- **Tour FAB** (`box-shadow: 0 6px 22px rgba(42,92,58,.5)`)：教學浮動鈕。
-
-### Named Rules
-**The Flat Page Rule.** 紙頁上不使用柔和模糊陰影，疊層只用淡金硬陰影。
+平面為主，靠色階與剖面塊分層。浮動卡片用柔和的小陰影；入口選單卡 `0 4px 14px rgba(0,0,0,.35)`。
 
 ## Shapes
 
-形體偏小圓角：按鈕與章節格 5–6px，卡片 8–10px，標籤與 pill 用全圓（99px）。書封是不對稱圓角（左 3px、右 10px），模擬書脊。分隔飾紋是兩端漸隱的金色 1px 線，中間一個旋轉 45° 的 6px 菱形。
+小圓角：按鈕與格 6–8px，卡片 8–10px，工具列按鈕與標籤用全圓。分隔飾紋是日光金菱形與細線。
 
 ## Components
 
 ### 側欄導覽
-- **Style:** 皮革底，書名項 13px 淡金文字，書卷分組用 10px 大寫無襯線小標。
-- **啟用態:** 底色 `leather-mid`，左緣 2px 金線，文字轉 `gold-glow`、字重 400。
-- **篩選框:** 半透明黑底、`leather-mid` 邊、8px 圓角。
+炭灰底，書名項 poche-ink，啟用態 poche-2 底加亮日光文字。章節按鈕 40px，已讀有小金點。
 
 ### 浮動卡片 / 底部抽屜
-- **Corner Style:** 8px（桌面）／上緣 12px（手機抽屜）
-- **Background:** `vellum-card`，1px `gold-soft` 邊
-- **Shadow Strategy:** Paper 硬陰影；左側有 45° 旋轉的小箭頭指向被點的詞
-- **內容:** 類型徽章（人／地／概念三色 pill）→ 名稱 15px → 說明 → 經文參照 chip
+Paper 底、1px 淺灰邊、8px 圓角；內容順序：類型徽章 → 名稱 → 說明 → 經文參照。
 
-### 內文標註 (anno)
-- **Style:** 文字轉為對應類型色，底部 2px 點狀線（色彩 53% 透明）。
-- **State:** 點按後 `opacity .7`；整句可點的 `.clause` 在 hover 時浮現淡黃底。
+### 內文標註
+人物實線 2px、地點點線 2px、概念雙線 3px，皆為對應類型色。
 
-### 入口按鈕與卡片
-- **Testament card:** 140×155，皮革底、`leather-edge` 邊、10px 圓角，hover 改色並上移。
-- **Book / chapter 格:** 6px / 5px 圓角，皮革底，hover 轉金。
-- **Enter button:** 深棕底、金色邊與字、字距 0.1em。
+### 入口
+炭灰底，書名 36px，一個 56px 高的「進入」按鈕，一道日光金斜線。首次或 30 天未訪才顯示；回訪者直接進入選單。
 
-### 教學浮動鈕 (Tour FAB)
-- **Style:** 右下角固定，森林綠漸層膠囊，白字「？ 教學導覽」。
-- **State:** 久未看過時脈動（1.8s 循環）並顯示右上紅點；`prefers-reduced-motion` 時關閉。
+### 教學導覽
+聚焦圈用日光金外框，彈窗 Paper 底，主要按鈕行動藍灰；右下角浮動鈕炭灰底。
 
-### 動畫 (入口與全站，待重構)
-- **開書儀式:** 點書 → 書本繞 Y 軸轉 -28°（.8s `cubic-bezier(.4,0,.2,1)`）→ 600ms 後書本淡出 → 1100ms 後切到選單。**每次進站都必須點書才能進入**，且沒有跳過選項。
-- **星點背景:** 40 顆隨機位置、2–5 秒不等的永久閃爍，由 JS 每次載入產生。
-- **提示字與光暈:** `book-hint` 以 2s 循環呼吸；光暈 1s 淡入。
-- **畫面切換:** 所有入口畫面共用 `.4s` 透明度過渡，切換期間舊畫面 `pointer-events: none`。
-- **全站微互動:** hover / active 過渡約 .12–.25s；抽屜與卡片 .2–.25s 滑入。
-- **降級:** 只有教學鈕脈動有 `prefers-reduced-motion` 降級；開書、星點、呼吸提示、畫面切換都沒有。
+### 動畫
+入口斜光 240ms；面板與抽屜滑動約 200–250ms。`prefers-reduced-motion: reduce` 時全部降為近乎瞬間。動畫期間所有控制項可點擊。
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** 在暗底使用 `gold` (#D4A847)，在紙頁使用 `gold-soft` (#C9A96E)，兩者不互換。
-- **Do** 保持正文 300 字重、行距 2.3，經文區留白。
-- **Do** 用人名鏽紅、地名森綠、概念靛紫標註，並保持點狀底線樣式一致。
-- **Do** 把分隔做成「漸隱金線 + 菱形」。
+- **Do** 讓日光金只代表現在的位置。
+- **Do** 標註類型同時用顏色與底線形式區分。
+- **Do** 保持字級下限 12px、經文 18px 起、點擊目標 40px 起。
 
 ### Don't:
-- **Don't** 在介面其他地方使用鏽紅、森林綠、靛紫來裝飾，三色專屬於標註（教學鈕與確認按鈕的森林綠為既有例外，待改版時釐清）。
-- **Don't** 在紙頁上使用大面積實心金色或柔和模糊陰影。
-- **Don't** 新增不在棕金色票內的灰色或藍色。
+- **Don't** 重新引入米黃、棕色或棕金。
+- **Don't** 用三個標註色裝飾其他元素。
+- **Don't** 在動畫期間用遮罩或 `pointer-events: none` 擋住操作。
 
-### 已知問題（待重構，非規範）
-- 首頁入口：每次進站強制點書；星點永久動畫；除教學鈕外無 `prefers-reduced-motion` 降級。
-- （已處理）`home.html` 內曾有無對應元素的閱讀區樣式，已於階段 2 移除。
-- 色票以硬編碼十六進位散落兩處，兩份 `:root` 同名異值（目前不同頁、不衝突）。
-- 小字（9–12px）偏多。
+### 已知待處理
+- `style.css` 約 40 處字級（13–22px）與 10 處圓角（2–16px）尚未收斂成單一尺度。
+- 路線晶片與路線步驟有 4px 左邊框（`--rc` 資料色），偵測器標為 side-tab，因其為資料編碼暫保留。
+- `read.html` 標題層級 h1 後直接是 h3（全本搜尋面板）。

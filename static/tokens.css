@@ -1,0 +1,15 @@
+:root {
+  /* 晨光剖面：灰泥白牆、炭灰剖面塊、移動的日光金、退去的陰影藍 */
+  --wall: #F2F1EC; --wall-2: #E9E8E1; --wall-3: #DAD9D0; --paper: #FAFAF7;
+  --ink: #1C1F23; --ink-2: #3B4047; --ink-3: #4A5058; --ink-4: #666C75;
+  --poche: #1F2328; --poche-2: #2B3036; --poche-3: #3A4048;
+  --poche-ink: #C3C8CF; --poche-mute: #8C95A1;
+  --sun: #E2A62E; --sun-glow: #F2C45A; --sun-deep: #8A5A0B;
+  --shade: #5B6F8C; --action: #2B3A4E; --action-deep: #1F2A3A;
+  --person: #9A3B26; --place: #2F6B4A; --concept: #55438F;
+  /* 舊名稱沿用，指向新色票 */
+  --bg: var(--wall); --text: var(--ink);
+  --gold: var(--sun); --gold-bright: var(--sun);
+  --nav-bg: var(--poche); --nav-title: var(--sun-glow); --nav-book: var(--poche-ink);
+  --nav-active-text: var(--sun-glow); --nav-active-bg: var(--poche-2); --nav-section: var(--poche-mute);
+}

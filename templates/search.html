@@ -5,23 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>全本搜尋 · 聖經互動全書</title>
 {% include '_pwa.html' %}
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ static_v('tokens.css') }}">
 <link rel="stylesheet" href="{{ static_v('style.css') }}">
 <style>
 .sp-wrap{max-width:720px;margin:0 auto;padding:28px 18px 60px;}
 .sp-head{text-align:center;margin-bottom:20px;}
-.sp-title{font-size:22px;color:#2A1A08;letter-spacing:.08em;margin-bottom:4px;}
-.sp-sub{font-size:13px;color:#9C8866;}
+.sp-title{font-size:22px;color:var(--ink);letter-spacing:.08em;margin-bottom:4px;}
+.sp-sub{font-size:13px;color:var(--ink-4);}
 .sp-row{display:flex;gap:8px;margin-bottom:6px;}
-.sp-row input{flex:1;padding:11px 14px;border:1px solid #C9A96E;border-radius:10px;font-size:15px;font-family:inherit;background:#fff;color:#2A1A08;}
-.sp-row button{padding:11px 20px;border:none;border-radius:10px;background:#2A5C3A;color:#fff;font-size:15px;cursor:pointer;font-family:inherit;}
-.sp-meta{font-size:12px;color:#9C8866;margin:10px 2px;}
-.sp-hit{display:block;padding:12px 8px;border-bottom:1px solid #ece2d2;text-decoration:none;color:#3A2A14;}
-.sp-hit:active{background:#F5ECD8;}
-.sp-ref{display:block;font-size:12px;color:#2A5C3A;margin-bottom:3px;font-weight:500;}
+.sp-row input{flex:1;padding:11px 14px;border:1px solid #CFCEC4;border-radius:10px;font-size:15px;font-family:inherit;background:#fff;color:var(--ink);}
+.sp-row button{padding:11px 20px;border:none;border-radius:10px;background:var(--action);color:#fff;font-size:15px;cursor:pointer;font-family:inherit;}
+.sp-meta{font-size:12px;color:var(--ink-4);margin:10px 2px;}
+.sp-hit{display:block;padding:12px 8px;border-bottom:1px solid var(--wall-2);text-decoration:none;color:var(--ink-2);}
+.sp-hit:active{background:var(--wall-2);}
+.sp-ref{display:block;font-size:12px;color:var(--action);margin-bottom:3px;font-weight:500;}
 .sp-text{font-size:15px;font-weight:300;line-height:1.8;}
-.sp-hit mark{background:#EDB93055;color:inherit;}
-.sp-empty{color:#9C8866;font-size:14px;padding:16px 2px;text-align:center;}
-.sp-back{display:inline-block;margin-bottom:16px;color:#8B6840;text-decoration:none;font-size:13px;}
+.sp-hit mark{background:#E2A62E55;color:inherit;}
+.sp-empty{color:var(--ink-4);font-size:14px;padding:16px 2px;text-align:center;}
+.sp-back{display:inline-block;margin-bottom:16px;color:var(--ink-4);text-decoration:none;font-size:13px;}
 </style>
 </head>
 <body class="search-page">
@@ -29,7 +31,7 @@
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
     <a class="sp-back" href="/" style="margin:0">‹ 回首頁</a>
     <button id="tourBtn" data-tour="search-tour" class="tour-trigger" type="button" onclick="startSearchTour()"
-      style="background:#2A5C3A;color:#fff;border:none;border-radius:14px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">💡 教學</button>
+      style="background:var(--action);color:#fff;border:none;border-radius:14px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">💡 教學</button>
   </div>
   <div class="sp-head">
     <div class="sp-title">🔍 全本搜尋</div>
@@ -41,7 +43,7 @@
   </div>
   <div class="sp-meta" id="meta"></div>
   <div id="results" data-tour="search-results"></div>
-  <p style="text-align:center;font-size:11px;color:#B0A088;margin-top:30px">經文採用《和合本》（Chinese Union Version，1919）· 公有領域</p>
+  <p style="text-align:center;font-size:12px;color:var(--ink-4);margin-top:30px">經文採用《和合本》（Chinese Union Version，1919）· 公有領域</p>
 </div>
 <script src="{{ static_v('js/tour.js') }}"></script>
 <script>
