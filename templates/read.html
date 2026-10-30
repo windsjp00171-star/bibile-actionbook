@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="{{ static_v('tokens.css') }}">
+<link rel="stylesheet" href="{{ static_v('section-art.css') }}">
 <link rel="stylesheet" href="{{ static_v('style.css') }}">
 </head>
 <body>
@@ -39,7 +40,7 @@ try {
 
 <div class="main">
   <header class="chapter-header">
-    <div class="deco-line"><span class="diamond"></span><span class="line"></span><span class="diamond"></span></div>
+    <div class="header-art">{% set sa_class = 'on-light' %}{% set sa_view = '310 245 480 200' %}{% set sa_once = true %}{% include '_section_art.html' %}</div>
     <h1 class="book-title">{{ book }}</h1>
     <p class="chapter-sub">第 {{ chapter }} 章</p>
     <div class="deco-line"><span class="diamond"></span><span class="line"></span><span class="diamond"></span></div>
@@ -232,6 +233,7 @@ const LINEAGE = {{ lineage_json | safe }};
 const CUR_BOOK = {{ book | tojson }};
 const CUR_CH = {{ chapter }};
 </script>
+<script src="{{ static_v('js/section-art.js') }}"></script>
 <script src="{{ static_v('js/read-core.js') }}"></script>
 <script src="{{ static_v('js/read-bigmap.js') }}"></script>
 <script src="{{ static_v('js/read-lineage.js') }}"></script>

@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <link rel="stylesheet" href="{{ static_v('tokens.css') }}">
+<link rel="stylesheet" href="{{ static_v('section-art.css') }}">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -36,35 +37,13 @@ body{background:var(--bg);color:var(--cream);overflow:hidden;}
    `animation-fill-mode: backwards` 讓「最終畫面」就是預設樣式，prefers-reduced-motion 時直接顯示最終畫面。 */
 #s-book{z-index:10;background:radial-gradient(ellipse 60% 50% at 38% 46%,#1c2128 0%,var(--bg) 70%);cursor:pointer;}
 .entry{position:relative;width:min(640px,94vw);display:flex;flex-direction:column;align-items:center;text-align:center;}
-.entry-art{width:100%;height:auto;display:block;overflow:visible;}
-.entry-art .ln{fill:none;stroke:#8C95A1;stroke-width:3;stroke-linecap:square;stroke-dasharray:1;stroke-dashoffset:0;}
-.entry-art .ln.wall{stroke:#C3C8CF;stroke-width:9;}
-.entry-art .ln.slab{stroke:#C3C8CF;stroke-width:6;}
-.entry-art .ln.tick{stroke:#8C95A1;stroke-width:3;}
-.entry-art .ground{opacity:.9;}
-.entry-art .book polygon{fill:#F2C45A;fill-opacity:.85;stroke:#C3C8CF;stroke-width:2;stroke-linejoin:round;}
-.entry-art .glow{fill:#F2C45A;opacity:.35;filter:url(#soft);}
-.entry-art .beam{fill:url(#beamG);transform-box:fill-box;transform-origin:left center;}
-.entry-art .floorlight{stroke:#F2C45A;stroke-width:6;stroke-linecap:square;transform-box:fill-box;transform-origin:left center;}
-.entry-art .floorglow{stroke:#F2C45A;stroke-width:14;opacity:.45;filter:url(#soft);transform-box:fill-box;transform-origin:left center;}
 .entry-title{margin-top:8px;font-size:clamp(30px,6vw,40px);font-weight:600;color:var(--wall);letter-spacing:.32em;padding-left:.32em;}
 .entry-sub{margin-top:8px;font-size:15px;color:var(--poche-ink);letter-spacing:.2em;padding-left:.2em;}
 .entry-btn{margin-top:30px;min-width:200px;min-height:56px;padding:14px 36px;border:1px solid var(--sun);border-radius:8px;background:transparent;color:var(--sun-glow);font-family:inherit;font-size:18px;letter-spacing:.3em;padding-left:calc(36px + .3em);cursor:pointer;transition:background .15s,color .15s;}
 .entry-btn:hover{background:var(--sun);color:var(--poche);}
 .home-copyright{position:fixed;bottom:14px;left:0;right:0;text-align:center;font-size:12px;color:var(--poche-mute);letter-spacing:.04em;z-index:2;}
-@keyframes ln-draw{from{stroke-dashoffset:1;}}
-@keyframes beam-in{from{transform:scaleX(0);opacity:0;}}
-@keyframes glow-in{from{opacity:0;}}
 @keyframes rise{from{opacity:0;transform:translateY(10px);}}
 @keyframes fade{from{opacity:0;}}
-.entry.play .ln.g1{animation:ln-draw .8s cubic-bezier(.16,1,.3,1) 0s backwards;}
-.entry.play .ln.g2{animation:ln-draw .9s cubic-bezier(.16,1,.3,1) .2s backwards;}
-.entry.play .ln.g3{animation:ln-draw .5s cubic-bezier(.16,1,.3,1) .75s backwards;}
-.entry.play .ground{animation:fade .8s ease-out .5s backwards;}
-.entry.play .book{animation:fade .8s ease-out 1.75s backwards;}
-.entry.play .glow{animation:glow-in 1s ease-out .85s backwards;}
-.entry.play .beam{animation:beam-in 1.1s cubic-bezier(.22,1,.36,1) .95s backwards;}
-.entry.play .floorlight,.entry.play .floorglow{animation:beam-in .9s cubic-bezier(.22,1,.36,1) 1.5s backwards;}
 .entry.play .entry-title{animation:rise .7s cubic-bezier(.16,1,.3,1) 1.15s backwards;}
 .entry.play .entry-sub{animation:fade .6s ease-out 1.4s backwards;}
 .entry.play .entry-btn{animation:fade .5s ease-out 1.75s backwards;}
@@ -123,39 +102,7 @@ body{background:var(--bg);color:var(--cream);overflow:hidden;}
 <!-- 1. 進入 -->
 <div class="screen" id="s-book">
   <div class="entry" id="entry">
-    <svg class="entry-art" viewBox="300 230 600 400" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="beamG" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color="#F2C45A" stop-opacity=".7"/>
-          <stop offset="1" stop-color="#E2A62E" stop-opacity=".08"/>
-        </linearGradient>
-        <pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-          <line x1="0" y1="0" x2="0" y2="9" stroke="#3A4048" stroke-width="2"/>
-        </pattern>
-        <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
-      </defs>
-      <ellipse class="glow" cx="338" cy="345" rx="30" ry="62"/>
-      <polygon class="beam" points="360,300 360,390 474,430 731,430"/>
-      <rect class="ground" x="300" y="603" width="600" height="22" fill="url(#hatch)"/>
-      <path class="ln g1" pathLength="1" d="M300 600 H900"/>
-      <path class="ln wall g1" pathLength="1" d="M360 600 V392"/>
-      <path class="ln wall g1" pathLength="1" d="M360 298 V262"/>
-      <path class="ln wall g1" pathLength="1" d="M840 600 V262"/>
-      <path class="ln slab g2" pathLength="1" d="M330 258 H870"/>
-      <path class="ln slab g2" pathLength="1" d="M360 430 H840"/>
-      <path class="ln wall g2" pathLength="1" d="M600 436 V600"/>
-      <path class="ln tick g3" pathLength="1" d="M340 298 H380"/>
-      <path class="ln tick g3" pathLength="1" d="M340 392 H380"/>
-      <path class="ln tick g3" pathLength="1" d="M538 400 H662"/>
-      <path class="ln tick g3" pathLength="1" d="M550 400 V430"/>
-      <path class="ln tick g3" pathLength="1" d="M650 400 V430"/>
-      <g class="book">
-        <polygon points="560,398 600,392 600,374 558,380"/>
-        <polygon points="600,392 640,398 642,380 600,374"/>
-      </g>
-      <path class="floorglow" d="M474 430 H731"/>
-      <path class="floorlight" d="M474 430 H731"/>
-    </svg>
+    {% include '_section_art.html' %}
     <div class="entry-title">聖經全書</div>
     <div class="entry-sub">互動閱讀</div>
     <button class="entry-btn" id="entryBtn" type="button">進入</button>
@@ -295,6 +242,7 @@ function showScreen(id){
   if(seen){enter();return;}
   showScreen('s-book');
   document.getElementById('entry').classList.add('play');
+  document.querySelector('#entry .sa').classList.add('play');
   document.getElementById('s-book').addEventListener('click',enter);
   document.getElementById('entryBtn').focus({preventScroll:true});
 })();

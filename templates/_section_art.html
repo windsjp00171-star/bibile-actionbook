@@ -1,0 +1,33 @@
+<svg class="sa {{ sa_class | default('') }}" viewBox="{{ sa_view | default('300 230 600 400') }}" aria-hidden="true" focusable="false" {{ 'data-sa-once' if sa_once else '' }}>
+  <defs>
+    <linearGradient id="sa-beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F2C45A" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#E2A62E" stop-opacity=".08"/>
+    </linearGradient>
+    <pattern id="sa-hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line class="hl" x1="0" y1="0" x2="0" y2="9"/>
+    </pattern>
+    <filter id="sa-soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
+  </defs>
+  <ellipse class="glow" cx="338" cy="345" rx="30" ry="62"/>
+  <polygon class="beam" points="360,300 360,390 474,430 731,430"/>
+  <rect class="ground" x="300" y="603" width="600" height="22" fill="url(#sa-hatch)"/>
+  <path class="ln g1" pathLength="1" d="M300 600 H900"/>
+  <path class="ln wall g1" pathLength="1" d="M360 600 V392"/>
+  <path class="ln wall g1" pathLength="1" d="M360 298 V262"/>
+  <path class="ln wall g1" pathLength="1" d="M840 600 V262"/>
+  <path class="ln slab g2" pathLength="1" d="M330 258 H870"/>
+  <path class="ln slab g2" pathLength="1" d="M360 430 H840"/>
+  <path class="ln wall g2" pathLength="1" d="M600 436 V600"/>
+  <path class="ln g3" pathLength="1" d="M340 298 H380"/>
+  <path class="ln g3" pathLength="1" d="M340 392 H380"/>
+  <path class="ln g3" pathLength="1" d="M538 400 H662"/>
+  <path class="ln g3" pathLength="1" d="M550 400 V430"/>
+  <path class="ln g3" pathLength="1" d="M650 400 V430"/>
+  <g class="book">
+    <polygon points="560,398 600,392 600,374 558,380"/>
+    <polygon points="600,392 640,398 642,380 600,374"/>
+  </g>
+  <path class="floorglow" d="M474 430 H731"/>
+  <path class="floorlight" d="M474 430 H731"/>
+</svg>
