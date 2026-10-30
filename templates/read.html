@@ -95,7 +95,7 @@ try {
 <div class="search-overlay" id="searchOverlay" onclick="closeSearch()"></div>
 <aside class="search-panel" id="searchPanel">
   <button class="card-close" onclick="closeSearch()" aria-label="關閉">✕</button>
-  <h3 class="search-title">全本搜尋</h3><p class="search-meta" style="margin-top:-4px">搜尋整本聖經（66 卷）</p>
+  <h2 class="search-title">全本搜尋</h2><p class="search-meta" style="margin-top:-4px">搜尋整本聖經（66 卷）</p>
   <div class="search-inputrow">
     <input type="text" id="searchInput" data-tour="search-input" placeholder="輸入關鍵字，如「歌利亞」「愛是恆久忍耐」" autocomplete="off">
     <button onclick="runSearch()">搜尋</button>
@@ -109,7 +109,7 @@ try {
 <div class="search-overlay" id="exploreOverlay" onclick="closeExplore()"></div>
 <aside class="search-panel" id="explorePanel">
   <button class="card-close" onclick="closeExplore()" aria-label="關閉">✕</button>
-  <h3 class="search-title">人物・地點・概念索引</h3>
+  <h2 class="search-title">人物・地點・概念索引</h2>
   <div class="search-meta">💡 「📖 只看本卷」可縮到當前書卷；概念能依分類篩選。點任一項看背景、並可列出所有經節。</div>
   <div class="explore-tabs">
     <button class="explore-tab active" data-type="person" onclick="switchExplore('person')">人物 <span class="ex-cnt" id="cnt-person"></span></button>
@@ -144,7 +144,7 @@ try {
 <div class="search-overlay" id="bookmarksOverlay" onclick="closeBookmarks()"></div>
 <aside class="search-panel" id="bookmarksPanel">
   <button class="card-close" onclick="closeBookmarks()" aria-label="關閉">✕</button>
-  <h3 class="search-title">我的書籤</h3>
+  <h2 class="search-title">我的書籤</h2>
   <div class="search-meta">點經文的「節號」即可加／取消書籤</div>
   <div class="search-results" id="bookmarksList" data-tour="bookmarks-list"></div>
 </aside>
@@ -153,7 +153,7 @@ try {
 <div class="bigmap-overlay" id="bookMapOverlay" onclick="closeBookMap()"></div>
 <aside class="bigmap-panel" id="bookMapPanel">
   <button class="card-close" onclick="closeBookMap()" aria-label="關閉">✕</button>
-  <h3 class="bigmap-title">本卷地圖　{{ book }}</h3>
+  <h2 class="bigmap-title">本卷地圖　{{ book }}</h2>
   <div class="search-meta">💡 本卷所有地點聚成一圖；點右側清單會定位到地圖上的地點並顯示資訊，也可以直接點地圖標記。</div>
   <div class="bigmap-body">
     <div class="bigmap-canvas" id="bookMap" data-tour="book-map"></div>
@@ -165,7 +165,7 @@ try {
 <div class="bigmap-overlay" id="routesOverlay" onclick="closeRoutes()"></div>
 <aside class="bigmap-panel" id="routesPanel">
   <button class="card-close" onclick="closeRoutes()" aria-label="關閉">✕</button>
-  <h3 class="bigmap-title">🧭 聖經路線圖</h3>
+  <h2 class="bigmap-title">🧭 聖經路線圖</h2>
   <div class="search-meta">💡 選一條路線 →「▶ 播放」鏡頭跟著行程走；點停靠點看經文出處、可調速度。</div>
   <div class="route-picker" id="routePicker" data-tour="route-picker"></div>
   <div class="route-info" id="routeInfo"></div>
@@ -179,7 +179,7 @@ try {
 <div class="lineage-overlay" id="lineageOverlay" onclick="closeLineage()"></div>
 <aside class="lineage-panel" id="lineagePanel">
   <button class="card-close" onclick="closeLineage()" aria-label="關閉">✕</button>
-  <h3 class="lineage-title">本章世系結構圖</h3>
+  <h2 class="lineage-title">本章世系結構圖</h2>
   <p class="lineage-sub">亮色為本章出現的人物，淡色為脈絡。點人物看介紹。</p>
   <div class="lineage-scroll"><svg id="lineageSvg"></svg></div>
 </aside>
@@ -188,7 +188,7 @@ try {
 <div class="bigmap-overlay" id="bigMapOverlay" onclick="closeBigMap()"></div>
 <aside class="bigmap-panel" id="bigMapPanel">
   <button class="card-close" onclick="closeBigMap()" aria-label="關閉">✕</button>
-  <h3 class="bigmap-title" id="bigMapTitle"></h3>
+  <h2 class="bigmap-title" id="bigMapTitle"></h2>
   <div class="bigmap-canvas" id="bigMap"></div>
 </aside>
 
