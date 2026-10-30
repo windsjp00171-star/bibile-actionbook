@@ -55,6 +55,11 @@ def test_header_art_rules_live_in_section_art_css():
     assert ".header-art" in css and "overflow:hidden" in css
 
 
+def test_tool_pages_have_no_header_art(client):
+    for url in ("/search", "/kings"):
+        assert "header-art" not in client.get(url).get_data(as_text=True)
+
+
 def test_missing_chapter_does_not_crash(client):
     assert client.get("/read/" + quote("不存在的書") + "/1").status_code < 500
 
