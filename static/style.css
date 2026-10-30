@@ -783,3 +783,7 @@ input, textarea, select, button { accent-color: var(--action); caret-color: var(
 @media (prefers-reduced-motion: reduce) {
   * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+
+/* 頁首線稿（晨光剖面）：與進入頁同一幅畫，縮小成標題區的裝飾 */
+.header-art { width: min(320px, 72%); margin: 0 auto 12px; }
+.header-art .sa { overflow: hidden; }

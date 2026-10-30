@@ -7,6 +7,7 @@
 {% include '_pwa.html' %}
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ static_v('tokens.css') }}">
+<link rel="stylesheet" href="{{ static_v('section-art.css') }}">
 <link rel="stylesheet" href="{{ static_v('style.css') }}">
 <style>
 .kp-wrap{max-width:720px;margin:0 auto;padding:28px 18px 60px;}
@@ -33,6 +34,7 @@
 <body class="search-page">
 <div class="kp-wrap">
   <a class="kp-back" href="/">‹ 回首頁</a>
+  <div class="header-art">{% set sa_class = 'on-light' %}{% set sa_view = '310 245 480 200' %}{% set sa_once = true %}{% include '_section_art.html' %}</div>
   <div class="kp-head">
     <div class="kp-title">南北國列王對照表</div>
     <div class="kp-sub">所羅門死後國家分裂，北國以色列與南國猶大並存的列王</div>
@@ -70,5 +72,6 @@
 
   <p style="text-align:center;font-size:12px;color:var(--ink-4);margin-top:30px">經文採用《和合本》（Chinese Union Version，1919）· 公有領域</p>
 </div>
+<script src="{{ static_v('js/section-art.js') }}"></script>
 </body>
 </html>
