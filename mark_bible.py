@@ -46,7 +46,7 @@ def _testament_of(book):
 _TYPE_CLASS = {"person": "anno-person", "place": "anno-place", "concept": "anno-concept"}
 
 # 單字詞預設不標（易誤框），僅放行白名單中安全的度量衡單位（如「肘」總接在數字後）。
-_SINGLE_CHAR_OK = {"肘", "閃", "含", "噩", "揝", "纛", "圭", "縋"}
+_SINGLE_CHAR_OK = {"肘", "閃", "含", "噩", "揝", "纛", "圭", "縋", "艾"}
 _ALL_NAMES = sorted(
     [n for n in ENTITIES if len(n) >= 2 or n in _SINGLE_CHAR_OK],
     key=len, reverse=True,
@@ -91,6 +91,7 @@ _EXT_GUARD = {
     "希伯崙", "希伯倫", "希伯來",
     "示羅密", "摩西錄",
     "巴末巴力", "伯巴力勉",
+    "以利未人", "比利未人",
 }
 
 
