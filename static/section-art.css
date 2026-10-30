@@ -1,0 +1,33 @@
+/* 晨光剖面線稿：進入頁與各頁標題共用。
+   預設樣式就是「完成畫面」；加上 .play 才播一次繪製動畫（fill-mode backwards），
+   所以 prefers-reduced-motion 與重複瀏覽時直接顯示完成畫面。
+   色彩由 --sa-* 變數決定：預設給暗底（進入頁），.on-light 給淺底（讀經頁等）。 */
+.sa{--sa-wall:#C3C8CF;--sa-line:#8C95A1;--sa-hatch:#3A4048;--sa-book-stroke:#C3C8CF;width:100%;height:auto;display:block;overflow:visible;}
+.sa.on-light{--sa-wall:#3B4047;--sa-line:#666C75;--sa-hatch:#CFCEC4;--sa-book-stroke:#3B4047;}
+.sa .ln{fill:none;stroke:var(--sa-line);stroke-width:3;stroke-linecap:square;stroke-dasharray:1;stroke-dashoffset:0;}
+.sa .ln.wall{stroke:var(--sa-wall);stroke-width:9;}
+.sa .ln.slab{stroke:var(--sa-wall);stroke-width:6;}
+.sa .hl{stroke:var(--sa-hatch);stroke-width:2;}
+.sa .ground{opacity:.9;}
+.sa .book polygon{fill:#F2C45A;fill-opacity:.9;stroke:var(--sa-book-stroke);stroke-width:2;stroke-linejoin:round;}
+.sa .glow{fill:#F2C45A;opacity:.35;filter:url(#sa-soft);}
+.sa .beam{fill:url(#sa-beam);transform-box:fill-box;transform-origin:left center;}
+.sa .floorlight{stroke:#E2A62E;stroke-width:6;stroke-linecap:square;transform-box:fill-box;transform-origin:left center;}
+.sa .floorglow{stroke:#F2C45A;stroke-width:14;opacity:.45;filter:url(#sa-soft);transform-box:fill-box;transform-origin:left center;}
+@keyframes sa-draw{from{stroke-dashoffset:1;}}
+@keyframes sa-beam{from{transform:scaleX(0);opacity:0;}}
+@keyframes sa-fade{from{opacity:0;}}
+.sa.play .ln.g1{animation:sa-draw .8s cubic-bezier(.16,1,.3,1) 0s backwards;}
+.sa.play .ln.g2{animation:sa-draw .9s cubic-bezier(.16,1,.3,1) .2s backwards;}
+.sa.play .ln.g3{animation:sa-draw .5s cubic-bezier(.16,1,.3,1) .75s backwards;}
+.sa.play .ground{animation:sa-fade .8s ease-out .5s backwards;}
+.sa.play .glow{animation:sa-fade 1s ease-out .85s backwards;}
+.sa.play .beam{animation:sa-beam 1.1s cubic-bezier(.22,1,.36,1) .95s backwards;}
+.sa.play .floorlight,.sa.play .floorglow{animation:sa-beam .9s cubic-bezier(.22,1,.36,1) 1.5s backwards;}
+.sa.play .book{animation:sa-fade .8s ease-out 1.75s backwards;}
+@media (prefers-reduced-motion:reduce){.sa.play *{animation:none !important;}}
+
+/* 頁首版本：裁成屋頂到樓板的一層（viewBox 由模板指定），縮小成標題區裝飾。
+   尺寸與裁切放在這個檔案裡，不依賴 style.css 是否為最新版。 */
+.header-art{width:min(320px,72%);margin:0 auto 12px;}
+.header-art .sa{overflow:hidden;}

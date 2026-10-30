@@ -1,5 +1,5 @@
 // 由 app.py 的 /sw.js 路由送出（不是 /static/sw.js），這樣 scope 才會是整個網站。
-const CACHE = 'bible-v3';
+const CACHE = 'bible-v4';
 
 // 只預先快取同網域、一定拿得到的東西。跨網域的字型與 Leaflet 交給 runtime 快取，
 // 因為 addAll() 只要有一個網址失敗就整個 reject，SW 會永遠 activate 不了。

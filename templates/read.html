@@ -7,9 +7,11 @@
 {% include '_pwa.html' %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ static_v('tokens.css') }}">
+<link rel="stylesheet" href="{{ static_v('section-art.css') }}">
+<link rel="stylesheet" href="{{ static_v('style.css') }}">
 </head>
 <body>
 <script>
@@ -21,6 +23,7 @@ try {
 } catch (e) {}
 </script>
 
+<div class="sun-line" id="sunLine" aria-hidden="true"></div>
 <header class="mob-header">
   <button class="burger" onclick="openDrawer()" aria-label="目錄">☰</button>
   <h2>聖 經 全 書</h2>
@@ -33,18 +36,18 @@ try {
         aria-label="收合書卷選單" aria-expanded="true"
         onclick="toggleNav()">‹</button>
 
-<nav class="sidebar">{{ nav_html | safe }}</nav>
+<nav class="sidebar" data-tour="sidebar">{{ nav_html | safe }}</nav>
 
 <div class="main">
   <header class="chapter-header">
-    <div class="deco-line"><span class="diamond"></span><span class="line"></span><span class="diamond"></span></div>
+    <div class="header-art">{% set sa_class = 'on-light' %}{% set sa_view = '310 245 480 200' %}{% set sa_once = true %}{% include '_section_art.html' %}</div>
     <h1 class="book-title">{{ book }}</h1>
     <p class="chapter-sub">第 {{ chapter }} 章</p>
     <div class="deco-line"><span class="diamond"></span><span class="line"></span><span class="diamond"></span></div>
   </header>
 
   {% if entities_json != '{}' %}
-  <div class="legend">
+  <div class="legend" data-tour="legend">
     <span class="legend-item"><span class="legend-dot anno-person"></span>人物</span>
     <span class="legend-item"><span class="legend-dot anno-place"></span>地點</span>
     <span class="legend-item"><span class="legend-dot anno-concept"></span>族群／概念</span>
@@ -52,7 +55,7 @@ try {
   </div>
   {% endif %}
   {% if lineage_json and lineage_json != 'null' %}
-  <button class="lineage-trigger" id="lineageTrigger" onclick="openLineage()">⛓ 本章世系結構圖</button>
+  <button class="lineage-trigger" id="lineageTrigger" data-tour="lineage" onclick="openLineage()">⛓ 本章世系結構圖</button>
   {% endif %}
   <button class="search-trigger" id="tbSearch" onclick="openSearch()">🔍 全本搜尋</button>
   <button class="search-trigger" id="tbExplore" onclick="openExplore()">📑 人物地點索引</button>
@@ -60,7 +63,7 @@ try {
   <button class="search-trigger" id="tbRoutes" onclick="openRoutes()">🧭 路線圖</button>
   <button class="search-trigger" id="tbBookmarks" onclick="openBookmarks()">🔖 我的書籤</button>
 
-  <div class="route-here-bar" id="routeHereBar" style="display:none"></div>
+  <div class="route-here-bar" id="routeHereBar" data-tour="route-here" style="display:none"></div>
 
   <main class="passage" id="passage">
     {% for v in verses %}
@@ -93,9 +96,9 @@ try {
 <div class="search-overlay" id="searchOverlay" onclick="closeSearch()"></div>
 <aside class="search-panel" id="searchPanel">
   <button class="card-close" onclick="closeSearch()" aria-label="關閉">✕</button>
-  <h3 class="search-title">全本搜尋</h3><p class="search-meta" style="margin-top:-4px">搜尋整本聖經（66 卷）</p>
+  <h2 class="search-title">全本搜尋</h2><p class="search-meta" style="margin-top:-4px">搜尋整本聖經（66 卷）</p>
   <div class="search-inputrow">
-    <input type="text" id="searchInput" placeholder="輸入關鍵字，如「歌利亞」「愛是恆久忍耐」" autocomplete="off">
+    <input type="text" id="searchInput" data-tour="search-input" placeholder="輸入關鍵字，如「歌利亞」「愛是恆久忍耐」" autocomplete="off">
     <button onclick="runSearch()">搜尋</button>
   </div>
   <label class="search-scope"><input type="checkbox" id="searchScope"> 只搜本卷（{{ book }}）</label>
@@ -107,7 +110,7 @@ try {
 <div class="search-overlay" id="exploreOverlay" onclick="closeExplore()"></div>
 <aside class="search-panel" id="explorePanel">
   <button class="card-close" onclick="closeExplore()" aria-label="關閉">✕</button>
-  <h3 class="search-title">人物・地點・概念索引</h3>
+  <h2 class="search-title">人物・地點・概念索引</h2>
   <div class="search-meta">💡 「📖 只看本卷」可縮到當前書卷；概念能依分類篩選。點任一項看背景、並可列出所有經節。</div>
   <div class="explore-tabs">
     <button class="explore-tab active" data-type="person" onclick="switchExplore('person')">人物 <span class="ex-cnt" id="cnt-person"></span></button>
@@ -121,7 +124,7 @@ try {
       <option value="OT">舊約</option>
       <option value="NT">新約</option>
     </select>
-    <select id="exploreCat" class="ex-cat" style="display:none" onchange="renderExplore()">
+    <select id="exploreCat" data-tour="explore-cat" class="ex-cat" style="display:none" onchange="renderExplore()">
       <option value="">所有分類</option>
       <option value="fest">節期禮儀</option>
       <option value="holy">聖所器物</option>
@@ -132,7 +135,7 @@ try {
       <option value="role">職分稱呼</option>
       <option value="theo">神學・其他</option>
     </select>
-    <label class="ex-inbook"><input type="checkbox" id="exploreInBook" onchange="renderExplore()"> 📖 只看本卷</label>
+    <label class="ex-inbook"><input type="checkbox" id="exploreInBook" data-tour="explore-inbook" onchange="renderExplore()"> 📖 只看本卷</label>
     <span class="ex-shown" id="exploreShown"></span>
   </div>
   <div class="explore-list" id="exploreList"></div>
@@ -142,19 +145,19 @@ try {
 <div class="search-overlay" id="bookmarksOverlay" onclick="closeBookmarks()"></div>
 <aside class="search-panel" id="bookmarksPanel">
   <button class="card-close" onclick="closeBookmarks()" aria-label="關閉">✕</button>
-  <h3 class="search-title">我的書籤</h3>
+  <h2 class="search-title">我的書籤</h2>
   <div class="search-meta">點經文的「節號」即可加／取消書籤</div>
-  <div class="search-results" id="bookmarksList"></div>
+  <div class="search-results" id="bookmarksList" data-tour="bookmarks-list"></div>
 </aside>
 
 <!-- 本卷地圖 -->
 <div class="bigmap-overlay" id="bookMapOverlay" onclick="closeBookMap()"></div>
 <aside class="bigmap-panel" id="bookMapPanel">
   <button class="card-close" onclick="closeBookMap()" aria-label="關閉">✕</button>
-  <h3 class="bigmap-title">本卷地圖　{{ book }}</h3>
+  <h2 class="bigmap-title">本卷地圖　{{ book }}</h2>
   <div class="search-meta">💡 本卷所有地點聚成一圖；點右側清單會定位到地圖上的地點並顯示資訊，也可以直接點地圖標記。</div>
   <div class="bigmap-body">
-    <div class="bigmap-canvas" id="bookMap"></div>
+    <div class="bigmap-canvas" id="bookMap" data-tour="book-map"></div>
     <div class="place-list" id="bookMapList"></div>
   </div>
 </aside>
@@ -163,9 +166,9 @@ try {
 <div class="bigmap-overlay" id="routesOverlay" onclick="closeRoutes()"></div>
 <aside class="bigmap-panel" id="routesPanel">
   <button class="card-close" onclick="closeRoutes()" aria-label="關閉">✕</button>
-  <h3 class="bigmap-title">🧭 聖經路線圖</h3>
+  <h2 class="bigmap-title">🧭 聖經路線圖</h2>
   <div class="search-meta">💡 選一條路線 →「▶ 播放」鏡頭跟著行程走；點停靠點看經文出處、可調速度。</div>
-  <div class="route-picker" id="routePicker"></div>
+  <div class="route-picker" id="routePicker" data-tour="route-picker"></div>
   <div class="route-info" id="routeInfo"></div>
   <div class="bigmap-body">
     <div class="bigmap-canvas" id="routeMap"></div>
@@ -177,7 +180,7 @@ try {
 <div class="lineage-overlay" id="lineageOverlay" onclick="closeLineage()"></div>
 <aside class="lineage-panel" id="lineagePanel">
   <button class="card-close" onclick="closeLineage()" aria-label="關閉">✕</button>
-  <h3 class="lineage-title">本章世系結構圖</h3>
+  <h2 class="lineage-title">本章世系結構圖</h2>
   <p class="lineage-sub">亮色為本章出現的人物，淡色為脈絡。點人物看介紹。</p>
   <div class="lineage-scroll"><svg id="lineageSvg"></svg></div>
 </aside>
@@ -186,7 +189,7 @@ try {
 <div class="bigmap-overlay" id="bigMapOverlay" onclick="closeBigMap()"></div>
 <aside class="bigmap-panel" id="bigMapPanel">
   <button class="card-close" onclick="closeBigMap()" aria-label="關閉">✕</button>
-  <h3 class="bigmap-title" id="bigMapTitle"></h3>
+  <h2 class="bigmap-title" id="bigMapTitle"></h2>
   <div class="bigmap-canvas" id="bigMap"></div>
 </aside>
 
@@ -204,7 +207,7 @@ try {
   <p class="card-desc" id="cardDesc"></p>
   <div class="card-relations" id="cardRelations"></div>
   <div class="card-verses" id="cardVerses"></div>
-  <button class="card-explain-btn" id="cardVersesBtn" onclick="listEntityVerses()">🔍 列出所有經節</button>
+  <button class="card-explain-btn" id="cardVersesBtn" data-tour="card-verses" onclick="listEntityVerses()">🔍 列出所有經節</button>
   <button class="card-feedback-btn" id="cardFeedbackBtn" onclick="submitFeedback()">⚑ 標註有誤</button>
   <div class="card-feedback-done" id="cardFeedbackDone" style="display:none">已回報，謝謝！</div>
 </aside>
@@ -216,1045 +219,29 @@ try {
 </div>
 
 <!-- 教學導覽浮動鈕（右下角） -->
-<button id="tourFab" class="tour-fab" type="button" onclick="startTour()" aria-label="教學導覽">
+<button id="tourFab" data-tour="tour-fab" class="tour-fab" type="button" onclick="startTour()" aria-label="教學導覽">
   <span class="tour-fab-q">?</span><span class="tour-fab-label">教學導覽</span>
 </button>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="{{ url_for('static', filename='js/tour.js') }}"></script>
+<script src="{{ static_v('js/tour.js') }}"></script>
 <script>
 const ENTITIES = {{ entities_json | safe }};
 const RELATIONS = {{ relations_json | safe }};
 const RELATED_BRIEF = {{ related_brief_json | safe }};
 const LINEAGE = {{ lineage_json | safe }};
-const TYPE_LABEL = { person: '人物', place: '地點', concept: '族群／概念' };
-// 關係顯示順序與標籤
-const REL_ORDER = ['父母','母','子女','手足','配偶','師長','門生','同工','敵對','主','婢女','臣僕','祖父','孫'];
-
-// ── Font size ───────────────────────────────────────────────────
-let fontSize = parseInt(localStorage.getItem('bible-fs') || '18');
-applyFont();
-function applyFont() {
-  document.getElementById('passage').style.fontSize = fontSize + 'px';
-  localStorage.setItem('bible-fs', fontSize);
-}
-function setFont(delta) {
-  fontSize = Math.max(14, Math.min(26, fontSize + delta));
-  applyFont();
-}
-
-// ── Drawer ──────────────────────────────────────────────────────
-function openDrawer() {
-  document.getElementById('drawer').classList.add('open');
-  document.getElementById('overlay').classList.add('open');
-}
-function closeDrawer() {
-  document.getElementById('drawer').classList.remove('open');
-  document.getElementById('overlay').classList.remove('open');
-}
-
-function toggleNav() {
-  var collapsed = document.body.classList.toggle('nav-collapsed');
-  var btn = document.getElementById('navToggle');
-  btn.textContent = collapsed ? '\u203a' : '\u2039';
-  btn.setAttribute('aria-label', collapsed ? '\u5c55\u958b\u66f8\u5377\u9078\u55ae' : '\u6536\u5408\u66f8\u5377\u9078\u55ae');
-  btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
-  try { localStorage.setItem('bible-nav-collapsed', collapsed ? '1' : '0'); } catch (e) {}
-}
-
-// 重新整理後讓按鈕箭頭方向跟已還原的狀態一致
-(function () {
-  if (document.body.classList.contains('nav-collapsed')) {
-    var btn = document.getElementById('navToggle');
-    btn.textContent = '\u203a';
-    btn.setAttribute('aria-label', '\u5c55\u958b\u66f8\u5377\u9078\u55ae');
-    btn.setAttribute('aria-expanded', 'false');
-  }
-})();
-
-// ── Anno card ───────────────────────────────────────────────────
-let _map = null, _layer = null;
-
-function closeCard() {
-  document.getElementById('annoCard').classList.remove('open');
-  document.getElementById('cardOverlay').classList.remove('open');
-}
-
-let _curPlace = null;
-function renderMap(ent) {
-  const wrap = document.getElementById('cardMap');
-  const outer = document.getElementById('cardMapWrap');
-  if (ent.type !== 'place' || ent.lat == null) { outer.style.display = 'none'; _curPlace = null; return; }
-  outer.style.display = 'block';
-  _curPlace = ent;
-  if (!_map) {
-    _map = L.map(wrap, { zoomControl: true, attributionControl: false });
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 14 }).addTo(_map);
-    _layer = L.layerGroup().addTo(_map);
-  }
-  _layer.clearLayers();
-  // 其他地名：只放小點，名稱改成碰觸/點擊才顯示，避免標籤全擠在一起；點了可開該地卡片
-  Object.values(ENTITIES).forEach(e => {
-    if (e.type === 'place' && e.name !== ent.name && e.lat != null) {
-      L.circleMarker([e.lat, e.lng], { radius: 5, fillColor: '#8B6840', color: '#fff', weight: 1.5, fillOpacity: 1 })
-        .bindTooltip(e.name, { direction: 'top', opacity: 0.95 })
-        .on('click', () => { if (ENTITIES[e.name]) openCard(e.name); })
-        .addTo(_layer);
-    }
-  });
-  // 焦點地名：較大、固定標籤
-  L.circleMarker([ent.lat, ent.lng], { radius: 8, fillColor: '#2A5C3A', color: '#fff', weight: 2, fillOpacity: 1 })
-    .bindTooltip(ent.name, { permanent: true, direction: 'top', className: 'map-focus-label' }).addTo(_layer);
-  _map.setView([ent.lat, ent.lng], 7);
-  setTimeout(() => { _map.invalidateSize(); _map.flyTo([ent.lat, ent.lng], 7); }, 60);
-}
-
-function _lookupEntity(name) {
-  return ENTITIES[name] || RELATED_BRIEF[name] || null;
-}
-
-// ── 全螢幕大地圖：所有地名都標清楚 ──────────────────────────────
-let _bigMap = null, _bigLayer = null;
-function openBigMap() {
-  if (!_curPlace) return;
-  const ent = _curPlace;
-  document.getElementById('bigMapTitle').textContent = '地圖　' + ent.name;
-  document.getElementById('bigMapPanel').classList.add('open');
-  document.getElementById('bigMapOverlay').classList.add('open');
-  setTimeout(() => {
-    const div = document.getElementById('bigMap');
-    if (!_bigMap) {
-      _bigMap = L.map(div, { zoomControl: true, attributionControl: false });
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 14 }).addTo(_bigMap);
-      _bigLayer = L.layerGroup().addTo(_bigMap);
-    }
-    _bigLayer.clearLayers();
-    const pts = [];
-    Object.values(ENTITIES).forEach(e => {
-      if (e.type === 'place' && e.lat != null) {
-        const focus = e.name === ent.name;
-        L.circleMarker([e.lat, e.lng], {
-          radius: focus ? 9 : 6,
-          fillColor: focus ? '#2A5C3A' : '#8B6840',
-          color: '#fff', weight: 2, fillOpacity: 1
-        }).bindTooltip(e.name, { permanent: true, direction: 'top',
-            className: focus ? 'map-focus-label' : '' })
-          .on('click', () => { if (ENTITIES[e.name]) { closeBigMap(); openCard(e.name); } })
-          .addTo(_bigLayer);
-        pts.push([e.lat, e.lng]);
-      }
-    });
-    _bigMap.invalidateSize();
-    if (pts.length > 1) _bigMap.fitBounds(pts, { padding: [50, 50] });
-    else _bigMap.setView([ent.lat, ent.lng], 8);
-  }, 80);
-}
-function closeBigMap() {
-  document.getElementById('bigMapPanel').classList.remove('open');
-  document.getElementById('bigMapOverlay').classList.remove('open');
-}
-
-// ── 本章世系結構圖（SVG） ──────────────────────────────────────
-function renderLineage() {
-  if (!LINEAGE) return;
-  const svg = document.getElementById('lineageSvg');
-  const SVGNS = 'http://www.w3.org/2000/svg';
-  svg.innerHTML = '';
-  // 依代分列
-  const byGen = {};
-  LINEAGE.nodes.forEach(n => { (byGen[n.gen] = byGen[n.gen] || []).push(n); });
-  const gens = Object.keys(byGen).map(Number).sort((a, b) => a - b);
-  const NW = 96, NH = 34, GAPX = 18, GAPY = 56;
-  const maxRow = Math.max(...gens.map(g => byGen[g].length));
-  const W = Math.max(maxRow * (NW + GAPX), 280);
-  const H = gens.length * (NH + GAPY);
-  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-  svg.setAttribute('width', W);
-  svg.setAttribute('height', H);
-  // 計算每節點座標
-  const pos = {};
-  gens.forEach((g, gi) => {
-    const row = byGen[g];
-    const rowW = row.length * (NW + GAPX) - GAPX;
-    const x0 = (W - rowW) / 2;
-    row.forEach((n, i) => {
-      pos[n.key] = { x: x0 + i * (NW + GAPX) + NW / 2, y: gi * (NH + GAPY) + NH / 2 };
-    });
-  });
-  // 畫親子連線
-  LINEAGE.edges.forEach(([p, c]) => {
-    if (!pos[p] || !pos[c]) return;
-    const line = document.createElementNS(SVGNS, 'line');
-    line.setAttribute('x1', pos[p].x); line.setAttribute('y1', pos[p].y + NH / 2);
-    line.setAttribute('x2', pos[c].x); line.setAttribute('y2', pos[c].y - NH / 2);
-    line.setAttribute('stroke', '#C9A96E'); line.setAttribute('stroke-width', '1.5');
-    svg.appendChild(line);
-  });
-  // 畫節點
-  LINEAGE.nodes.forEach(n => {
-    const p = pos[n.key];
-    const g = document.createElementNS(SVGNS, 'g');
-    g.style.cursor = 'pointer';
-    g.addEventListener('click', () => { closeLineage(); openCard(n.key); });
-    const rect = document.createElementNS(SVGNS, 'rect');
-    rect.setAttribute('x', p.x - NW / 2); rect.setAttribute('y', p.y - NH / 2);
-    rect.setAttribute('width', NW); rect.setAttribute('height', NH);
-    rect.setAttribute('rx', 8);
-    rect.setAttribute('fill', n.lit ? '#2A5C3A' : '#F0E6D0');
-    rect.setAttribute('stroke', n.lit ? '#2A5C3A' : '#C9A96E');
-    g.appendChild(rect);
-    const txt = document.createElementNS(SVGNS, 'text');
-    txt.setAttribute('x', p.x); txt.setAttribute('y', p.y + 4);
-    txt.setAttribute('text-anchor', 'middle');
-    txt.setAttribute('font-size', '13');
-    txt.setAttribute('fill', n.lit ? '#fff' : '#6B5436');
-    txt.textContent = n.name.length > 6 ? n.name.slice(0, 6) : n.name;
-    g.appendChild(txt);
-    svg.appendChild(g);
-  });
-}
-function openLineage() {
-  renderLineage();
-  document.getElementById('lineagePanel').classList.add('open');
-  document.getElementById('lineageOverlay').classList.add('open');
-}
-function closeLineage() {
-  document.getElementById('lineagePanel').classList.remove('open');
-  document.getElementById('lineageOverlay').classList.remove('open');
-}
-
-// ── 經文搜尋 ──────────────────────────────────────────────────────
-function openSearch() {
-  document.getElementById('searchPanel').classList.add('open');
-  document.getElementById('searchOverlay').classList.add('open');
-  setTimeout(() => document.getElementById('searchInput').focus(), 80);
-}
-function closeSearch() {
-  document.getElementById('searchPanel').classList.remove('open');
-  document.getElementById('searchOverlay').classList.remove('open');
-}
-function _hl(text, q) {
-  const i = text.indexOf(q);
-  if (i < 0) return text.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-  const esc = s => s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-  return esc(text.slice(0, i)) + '<mark>' + esc(q) + '</mark>' + esc(text.slice(i + q.length));
-}
-function runSearch() {
-  const q = document.getElementById('searchInput').value.trim();
-  const meta = document.getElementById('searchMeta');
-  const box = document.getElementById('searchResults');
-  if (!q) { meta.textContent = ''; box.innerHTML = ''; return; }
-  meta.textContent = '搜尋中…'; box.innerHTML = '';
-  const scoped = document.getElementById('searchScope').checked;
-  const bookParam = scoped ? '&book=' + encodeURIComponent(CUR_BOOK) : '';
-  fetch('/api/search?q=' + encodeURIComponent(q) + bookParam + '&limit=200')
-    .then(r => r.json()).then(d => {
-      meta.textContent = '找到 ' + d.total + ' 節' + (d.truncated ? '（顯示前 200）' : '');
-      box.innerHTML = '';
-      d.results.forEach(r => {
-        const a = document.createElement('a');
-        a.className = 'search-hit';
-        a.href = '/read/' + encodeURIComponent(r.book) + '/' + r.chapter + '?v=' + r.verse;
-        a.innerHTML = '<span class="hit-ref">' + r.book + ' ' + r.chapter + ':' + r.verse +
-                      '</span><span class="hit-text">' + _hl(r.text, q) + '</span>';
-        box.appendChild(a);
-      });
-      if (!d.results.length) box.innerHTML = '<p class="search-empty">查無符合的經文。</p>';
-    }).catch(() => { meta.textContent = '搜尋失敗，請稍後再試。'; });
-}
-// ── 人物/地點/概念索引 ──────────────────────────────────────────
-let _exploreData = null, _exploreType = 'person';
-function openExplore() {
-  document.getElementById('explorePanel').classList.add('open');
-  document.getElementById('searchOverlay').classList.add('open');
-  document.getElementById('searchOverlay').onclick = closeExplore;
-  if (_exploreData) { renderExplore(); }
-  else fetch('/api/entities?book=' + encodeURIComponent(CUR_BOOK)).then(r => r.json())
-    .then(d => { _exploreData = d; updateExploreCounts(); renderExplore(); });
-}
-function updateExploreCounts() {
-  if (!_exploreData) return;
-  ['person', 'place', 'concept'].forEach(t => {
-    const el = document.getElementById('cnt-' + t);
-    if (el) el.textContent = (_exploreData[t] || []).length;
-  });
-}
-function closeExplore() {
-  document.getElementById('explorePanel').classList.remove('open');
-  document.getElementById('searchOverlay').classList.remove('open');
-  document.getElementById('searchOverlay').onclick = closeSearch;
-}
-// 索引點擊 → 先取詞條卡片資料，開卡片看標註內容（非直接跑搜尋）
-function openEntityInfo(key) {
-  fetch('/api/entity?name=' + encodeURIComponent(key)).then(r => r.json()).then(c => {
-    if (c.error) return;
-    RELATED_BRIEF[key] = c;
-    closeExplore();
-    openCard(key);
-  }).catch(() => {});
-}
-// 在卡片列出此詞條的所有經節（去掉括號註記再搜）
-function listEntityVerses() {
-  if (!_curEntity) return;
-  const term = _curEntity.replace(/（.*$/, '').replace(/\(.*$/, '');
-  closeCard();
-  openSearch();
-  document.getElementById('searchInput').value = term;
-  document.getElementById('searchScope').checked = false;
-  runSearch();
-}
-function switchExplore(t) {
-  _exploreType = t;
-  document.querySelectorAll('.explore-tab').forEach(b => b.classList.toggle('active', b.dataset.type === t));
-  // 分類下拉只在概念分頁出現
-  const catSel = document.getElementById('exploreCat');
-  if (catSel) { catSel.style.display = (t === 'concept') ? '' : 'none'; if (t !== 'concept') catSel.value = ''; }
-  renderExplore();
-}
-function renderExplore() {
-  if (!_exploreData) return;
-  const filter = document.getElementById('exploreFilter').value.trim();
-  const testVal = (document.getElementById('exploreTestament') || {}).value || '';
-  const catVal = (document.getElementById('exploreCat') || {}).value || '';
-  const inBook = (document.getElementById('exploreInBook') || {}).checked || false;
-  const list = document.getElementById('exploreList');
-  list.innerHTML = '';
-  const lcFilter = filter.toLowerCase();
-  const rows = (_exploreData[_exploreType] || []).filter(e => {
-    if (filter && !e.name.includes(filter) && !(e.name_en || '').toLowerCase().includes(lcFilter)) return false;
-    if (testVal && e.testament !== testVal && e.testament !== 'both') return false;
-    if (catVal && e.cat !== catVal) return false;
-    if (inBook && !e.in_book) return false;
-    return true;
-  });
-  rows.forEach(e => {
-    const a = document.createElement('button');
-    a.className = 'explore-item';
-    a.innerHTML = (e.has_map ? '📍 ' : '') + e.name + (e.name_en ? ' <span class="ex-en">' + e.name_en + '</span>' : '');
-    a.onclick = () => openEntityInfo(e.key);
-    list.appendChild(a);
-  });
-  const shown = document.getElementById('exploreShown');
-  if (shown) shown.textContent = rows.length ? ('共 ' + rows.length + ' 筆') : '無符合';
-}
-
-// ── 本卷地圖 ────────────────────────────────────────────────────
-let _bookMap = null;
-function openBookMap() {
-  document.getElementById('bookMapPanel').classList.add('open');
-  document.getElementById('bookMapOverlay').classList.add('open');
-  fetch('/api/book_places?book=' + encodeURIComponent(CUR_BOOK)).then(r => r.json()).then(d => {
-    setTimeout(() => {
-      const el = document.getElementById('bookMap');
-      if (!_bookMap) {
-        _bookMap = L.map(el, { zoomControl: true, attributionControl: false });
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 16 }).addTo(_bookMap);
-      }
-      _bookMap.eachLayer(l => { if (l instanceof L.CircleMarker) _bookMap.removeLayer(l); });
-      const pts = [];
-      const markers = {};   // key -> marker，供清單點擊時定位、開 popup
-      const popupHtml = (p) => '<div class="map-popup">' +
-        '<b>' + _esc(p.name) + '</b>' +
-        (p.desc ? '<p>' + _esc(p.desc) + '</p>' : '') +
-        (ENTITIES[p.key] || RELATED_BRIEF[p.key]
-          ? '<a href="javascript:void(0)" onclick="closeBookMap();openCard(\'' + p.key.replace(/'/g, "\\'") + '\')">查看完整資料 →</a>' : '') +
-        '</div>';
-      // 座標很接近的點會在縮小檢視時疊在一起、擋住彼此無法點擊，先把重複／極接近的點錯開
-      const seen = {};
-      (d.places || []).forEach(p => {
-        const key = p.lat.toFixed(2) + ',' + p.lng.toFixed(2);
-        const n = seen[key] || 0; seen[key] = n + 1;
-        const lat = n === 0 ? p.lat : p.lat + 0.045 * n;
-        const lng = n === 0 ? p.lng : p.lng + 0.03 * n;
-        // 常駐標籤在地點多時會整片疊字看不清、擋住彼此，改用滑過才顯示；
-        // 點圖標／清單直接彈出 popup 顯示簡介，不整個跳走離開地圖
-        const marker = L.circleMarker([lat, lng], { radius: 6, fillColor: '#8B6840', color: '#fff', weight: 1.5, fillOpacity: 1 })
-          .bindTooltip(p.name, { direction: 'top' })
-          .bindPopup(popupHtml(p))
-          .addTo(_bookMap);
-        markers[p.key] = { marker, lat, lng };
-        pts.push([lat, lng]);
-      });
-      _bookMap.invalidateSize();
-      if (pts.length > 1) _bookMap.fitBounds(pts, { padding: [40, 40] });
-      else if (pts.length === 1) _bookMap.setView(pts[0], 7);
-      else _bookMap.setView([31.5, 35], 6);
-      // 點清單：地圖定位過去＋直接彈出資訊 popup，停留在地圖上，不跳走
-      const focusFromKey = (key) => {
-        const m = markers[key];
-        if (!m) return;
-        _bookMap.panTo([m.lat, m.lng], { animate: true });
-        m.marker.openPopup();
-      };
-      renderBookMapList(d.places || [], focusFromKey);
-    }, 80);
-  });
-}
-function renderBookMapList(places, focusFromKey) {
-  const box = document.getElementById('bookMapList');
-  if (!box) return;
-  box.innerHTML = '';
-  places.slice().sort((a, b) => a.name.localeCompare(b.name, 'zh-Hant')).forEach(p => {
-    const row = document.createElement('div');
-    row.className = 'place-item';
-    row.textContent = p.name;
-    row.onclick = () => focusFromKey(p.key);
-    box.appendChild(row);
-  });
-}
-function closeBookMap() {
-  document.getElementById('bookMapPanel').classList.remove('open');
-  document.getElementById('bookMapOverlay').classList.remove('open');
-}
-
-// ── 聖經路線圖 ──────────────────────────────────────────────────
-let _routeMap = null, _routeLayers = [], _routesList = null, _curRoute = null, _routeAnim = null;
-function openRoutes() {
-  document.getElementById('routesPanel').classList.add('open');
-  document.getElementById('routesOverlay').classList.add('open');
-  fetch('/api/routes?book=' + encodeURIComponent(CUR_BOOK)).then(r => r.json()).then(d => {
-    _routesList = d.routes || [];
-    if (!_routesList.length) {
-      document.getElementById('routePicker').innerHTML = '<span class="route-empty">尚無路線資料。</span>';
-      return;
-    }
-    _routesExpanded = false;       // 預設只顯示本卷相關路線
-    renderRoutePicker();
-    if (_pendingRoute) {           // 由「本章路線」提示點入：開到指定路線/站
-      const pr = _pendingRoute; _pendingRoute = null;
-      if (!_routesList.some(r => r.relevant && r.id === pr.id)) { _routesExpanded = true; renderRoutePicker(); }
-      selectRoute(pr.id, pr.stop);
-      const chip = document.querySelector('#routePicker .route-chip[data-rid="' + pr.id + '"]');
-      if (chip) highlightChip(chip);
-    } else {
-      // 預設選第一條（情境相關優先，已由後端排序）
-      selectRoute(_routesList[0].id);
-    }
-  });
-}
-// 從「本章路線」提示開啟，定位到指定站
-let _pendingRoute = null;
-function openRoutesAt(id, stop) { _pendingRoute = { id: id, stop: stop }; openRoutes(); }
-// 讀經頁載入時：自動偵測本章經過的路線，浮出提示條
-function loadRouteHere() {
-  const bar = document.getElementById('routeHereBar');
-  if (!bar) return;
-  fetch('/api/routes_here?book=' + encodeURIComponent(CUR_BOOK) + '&chapter=' + CUR_CH)
-    .then(r => r.json()).then(d => {
-      const hits = d.here || [];
-      if (!hits.length) { bar.style.display = 'none'; return; }
-      // 依路線分組，取本章第一個站
-      const byRoute = {};
-      hits.forEach(h => { if (!byRoute[h.id]) byRoute[h.id] = { route: h.route, color: h.color, stops: [], first: h.stop }; byRoute[h.id].stops.push(h.name); });
-      bar.innerHTML = '<span class="rh-label">🧭 本章路線</span>' +
-        Object.keys(byRoute).map(id => {
-          const g = byRoute[id];
-          const txt = g.stops.length > 1 ? (g.stops[0] + ' 等 ' + g.stops.length + ' 站') : g.stops[0];
-          return '<button class="rh-chip" style="--rc:' + g.color + '" onclick="openRoutesAt(\'' + id + '\',' + g.first + ')">' +
-                 g.route + ' · ' + txt + '</button>';
-        }).join('');
-      bar.style.display = 'flex';
-    }).catch(() => { bar.style.display = 'none'; });
-}
-let _routesExpanded = false;
-function renderRoutePicker() {
-  const pick = document.getElementById('routePicker');
-  pick.innerHTML = '';
-  const relevant = _routesList.filter(r => r.relevant);
-  const others = _routesList.filter(r => !r.relevant);
-  // 有相關路線時預設只顯示相關；無相關（如讀的卷沒對應路線）則全顯示
-  const baseList = (relevant.length && !_routesExpanded) ? relevant : _routesList;
-  let firstChip = null;
-  baseList.forEach(r => {
-    const b = document.createElement('button');
-    b.className = 'route-chip' + (r.relevant ? ' relevant' : '');
-    b.style.setProperty('--rc', r.color);
-    b.textContent = (r.relevant ? '✦ ' : '') + r.name;
-    b.dataset.rid = r.id;
-    b.onclick = () => { selectRoute(r.id); highlightChip(b); };
-    pick.appendChild(b);
-    if (!firstChip) firstChip = b;
-  });
-  // 「顯示其他路線 / 收起」切換
-  if (relevant.length && others.length) {
-    const t = document.createElement('button');
-    t.className = 'route-toggle';
-    t.textContent = _routesExpanded ? '收起其他路線' : ('＋ 其他路線 (' + others.length + ')');
-    t.onclick = () => { _routesExpanded = !_routesExpanded; renderRoutePicker(); restoreActiveChip(); };
-    pick.appendChild(t);
-  }
-  if (firstChip && !document.querySelector('#routePicker .route-chip.active')) highlightChip(firstChip);
-}
-function restoreActiveChip() {
-  if (!_curRoute) return;
-  const el = document.querySelector('#routePicker .route-chip[data-rid="' + _curRoute.id + '"]');
-  if (el) highlightChip(el);
-}
-function highlightChip(el) {
-  document.querySelectorAll('#routePicker .route-chip').forEach(c => c.classList.remove('active'));
-  el.classList.add('active');
-}
-function selectRoute(id, focusStop) {
-  _stopAnim();   // 切換路線前先徹底停掉舊路線可能還在跑的動畫，否則新路線按播放會整個靜默不動
-  fetch('/api/routes?id=' + encodeURIComponent(id)).then(r => r.json()).then(rt => {
-    _curRoute = rt;
-    document.getElementById('routeInfo').innerHTML =
-      '<div class="route-headline"><div class="route-name">' + rt.name + '</div>' +
-      '<div class="route-ctrl">' +
-        '<button class="route-play" id="routePlay" onclick="togglePlay()">▶ 播放</button>' +
-        '<select class="route-speed" id="routeSpeed" onchange="_routeSpeed=parseFloat(this.value)">' +
-          '<option value="1.6">0.6×</option><option value="1" selected>1×</option>' +
-          '<option value="0.6">1.6×</option><option value="0.35">3×</option>' +
-        '</select>' +
-      '</div></div>' +
-      '<div class="route-ref">' + (rt.ref || '') + '</div>' +
-      (rt.summary ? '<div class="route-sum">' + rt.summary + '</div>' : '');
-    drawRoute(rt);
-    renderStops(rt);
-    // 由「本章路線」提示開入時，定位並標示該站
-    if (focusStop && rt.waypoints && rt.waypoints[focusStop - 1]) {
-      const w = rt.waypoints[focusStop - 1];
-      setTimeout(() => { if (_routeMap) { _routeMap.setView([w.lat, w.lng], 8); _highlightStopRow(focusStop - 1); } }, 200);
-    }
-  });
-}
-function _highlightStopRow(idx) {
-  const rows = document.querySelectorAll('#routeStops .route-stop');
-  rows.forEach((r, i) => r.classList.toggle('rs-focus', i === idx));
-  if (rows[idx]) rows[idx].scrollIntoView({ block: 'nearest' });
-}
-function _ensureRouteMap() {
-  const el = document.getElementById('routeMap');
-  if (!_routeMap) {
-    _routeMap = L.map(el, { zoomControl: true, attributionControl: false });
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 16 }).addTo(_routeMap);
-  }
-  return _routeMap;
-}
-function _clearRoute() {
-  if (_routeAnim) { cancelAnimationFrame(_routeAnim); _routeAnim = null; }
-  if (_routeTimer) { clearTimeout(_routeTimer); _routeTimer = null; }
-  _routeLayers.forEach(l => _routeMap.removeLayer(l));
-  _routeLayers = [];
-}
-// 重複停靠點（往返同地）稍微錯開，避免編號標記疊在一起
-function _dispPositions(wps) {
-  const seen = {}, out = [];
-  wps.forEach(w => {
-    const key = w.lat.toFixed(3) + ',' + w.lng.toFixed(3);
-    const n = seen[key] || 0; seen[key] = n + 1;
-    if (n === 0) out.push([w.lat, w.lng]);
-    else out.push([w.lat + 0.07 * n, w.lng + 0.05 * n]);  // 第 n 次重複往東北錯開
-  });
-  return out;
-}
-function _routeMarker(rt, w, i, pos) {
-  const ll = pos || [w.lat, w.lng];
-  const icon = L.divIcon({ className: 'route-num-icon',
-    html: '<span style="background:' + rt.color + '">' + (i + 1) + '</span>',
-    iconSize: [22, 22], iconAnchor: [11, 11] });
-  return L.marker(ll, { icon })
-    .bindTooltip(w.name, { permanent: true, direction: 'top', offset: [0, -10] })
-    .bindPopup(_stopPopupHtml(w, i));
-}
-// 停靠點彈窗：地名 + 經文連結 + 說明
-function _stopPopupHtml(w, i) {
-  const nav = _parseRef(w.ref);
-  const refHtml = nav
-    ? '<a href="/read/' + encodeURIComponent(nav.book) + '/' + nav.ch +
-      (nav.v ? '?v=' + nav.v : '') + '" class="rp-link">' + w.ref + ' →</a>'
-    : (w.ref || '');
-  return '<b>' + (i + 1) + '. ' + w.name + '</b><br>' + refHtml + (w.note ? '<br>' + w.note : '');
-}
-// 經文簡稱 → 全名（路線資料 ref 用簡稱）
-const _BOOK_ABBR = {
-  '創': '創世記', '出': '出埃及記', '利': '利未記', '民': '民數記', '申': '申命記',
-  '書': '約書亞記', '士': '士師記', '得': '路得記', '撒上': '撒母耳記上', '撒下': '撒母耳記下',
-  '王上': '列王紀上', '王下': '列王紀下', '拉': '以斯拉記', '尼': '尼希米記', '詩': '詩篇',
-  '賽': '以賽亞書', '耶': '耶利米書', '結': '以西結書', '但': '但以理書',
-  '太': '馬太福音', '可': '馬可福音', '路': '路加福音', '約': '約翰福音', '徒': '使徒行傳'
-};
-function _parseRef(ref) {
-  if (!ref) return null;
-  const m = ref.match(/^([一-龥]+?(?:上|下)?)(\d+):(\d+)/);
-  if (!m) return null;
-  // 先試 2 字簡稱（王上/王下/撒上…）再試 1 字
-  let pre = m[1], book = _BOOK_ABBR[pre];
-  if (!book && pre.length > 1) book = _BOOK_ABBR[pre.slice(0, 1)];
-  if (!book) return null;
-  return { book: book, ch: parseInt(m[2]), v: parseInt(m[3]) };
-}
-// 方向箭頭：在每段中點放一個依方位角旋轉的箭頭
-function _arrowMarkers(rt) {
-  const out = [];
-  const wps = rt.waypoints || [];
-  for (let i = 0; i < wps.length - 1; i++) {
-    const a = wps[i], b = wps[i + 1];
-    if (a.lat === b.lat && a.lng === b.lng) continue;
-    const mid = [(a.lat + b.lat) / 2, (a.lng + b.lng) / 2];
-    const ang = Math.atan2(b.lng - a.lng, b.lat - a.lat) * 180 / Math.PI; // 0=北，順時針
-    const icon = L.divIcon({ className: 'route-arrow-icon',
-      html: '<span style="color:' + rt.color + ';transform:rotate(' + ang + 'deg)">▲</span>',
-      iconSize: [16, 16], iconAnchor: [8, 8] });
-    out.push(L.marker(mid, { icon, interactive: false }));
-  }
-  return out;
-}
-// 靜態：一次畫完整條路線（含方向箭頭）
-function drawRoute(rt) {
-  setTimeout(() => {
-    _ensureRouteMap();
-    _clearRoute();
-    const pts = (rt.waypoints || []).map(w => [w.lat, w.lng]);
-    const disp = _dispPositions(rt.waypoints || []);
-    if (pts.length > 1) {
-      const line = L.polyline(pts, { color: rt.color, weight: 3, opacity: 0.85, dashArray: '6,7' }).addTo(_routeMap);
-      _routeLayers.push(line);
-      _arrowMarkers(rt).forEach(a => { a.addTo(_routeMap); _routeLayers.push(a); });
-    }
-    (rt.waypoints || []).forEach((w, i) => { const m = _routeMarker(rt, w, i, disp[i]).addTo(_routeMap); _routeLayers.push(m); });
-    _routeMap.invalidateSize();
-    if (pts.length > 1) _routeMap.fitBounds(pts, { padding: [45, 45] });
-    else if (pts.length === 1) _routeMap.setView(pts[0], 7);
-  }, 80);
-}
-// 播放／暫停切換
-function togglePlay() {
-  if (_routePlaying && !_routePaused) { pauseRoute(); }
-  else if (_routePlaying && _routePaused) { resumeRoute(); }
-  else { playRoute(); }
-}
-function _setPlayBtn(txt) { const b = document.getElementById('routePlay'); if (b) b.textContent = txt; }
-// 完全停止動畫（不同於暫停：暫停後按播放要能接續，這裡是「切換路線」時要徹底歸零，
-// 不然切到新路線後 _routePlaying 還殘留 true，按播放會誤觸發成「暫停」而整個不動）
-function _stopAnim() {
-  if (_routeAnim) { cancelAnimationFrame(_routeAnim); _routeAnim = null; }
-  if (_routeTimer) { clearTimeout(_routeTimer); _routeTimer = null; }
-  _routePlaying = false; _routePaused = false; _anim = null;
-  _setPlayBtn('▶ 播放');
-}
-function pauseRoute() {
-  _routePaused = true;
-  if (_routeAnim) { cancelAnimationFrame(_routeAnim); _routeAnim = null; }
-  if (_routeTimer) { clearTimeout(_routeTimer); _routeTimer = null; }
-  _setPlayBtn('▶ 繼續');
-}
-function resumeRoute() {
-  if (!_routePaused) return;
-  _routePaused = false;
-  _setPlayBtn('⏸ 暫停');
-  _routeTick();   // 從目前進度接續
-}
-// 動畫狀態（讓暫停/速度能接續）
-let _routePlaying = false, _routePaused = false, _routeTimer = null, _routeSpeed = 1;
-let _anim = null;  // { wps, allPts, line, drawn, seg, segStart, paused }
-function playRoute() {
-  const rt = _curRoute;
-  if (!rt || !rt.waypoints || rt.waypoints.length < 2) return;
-  _ensureRouteMap();
-  _clearRoute();
-  _routeMap.invalidateSize();
-  const wps = rt.waypoints;
-  const allPts = wps.map(w => [w.lat, w.lng]);
-  // 縮放全程固定不變（只算一次能容下整條路線的縮放等級），圖磚只需在這個
-  // 解析度載入一次；鏡頭仍會平移跟著走保留移動感——放大縮小才是最容易讓
-  // 圖磚被打斷重載而閃爍/空白的操作，單純平移 Leaflet 本來就處理得平順
-  const fixedZoom = _routeMap.getBoundsZoom(L.latLngBounds(allPts), false, [45, 45]);
-  _routeMap.setView(allPts[0], fixedZoom, { animate: false });
-  const disp = _dispPositions(wps);
-  const line = L.polyline([], { color: rt.color, weight: 4, opacity: 0.95 }).addTo(_routeMap);
-  _routeLayers.push(line);
-  const traveler = L.circleMarker(allPts[0], { radius: 7, fillColor: '#fff', color: rt.color, weight: 3, fillOpacity: 1 }).addTo(_routeMap);
-  _routeLayers.push(traveler);
-  const m0 = _routeMarker(rt, wps[0], 0, disp[0]).addTo(_routeMap); _routeLayers.push(m0);
-  _anim = { rt, wps, disp, allPts, line, traveler,
-            drawn: [[wps[0].lat, wps[0].lng]], seg: 0, segT0: 0, elapsed: 0 };
-  _routePlaying = true; _routePaused = false;
-  _setPlayBtn('⏸ 暫停');
-  _routeTick();
-}
-const _SEG_BASE = 900;  // 每段基準毫秒（再乘速度倍率）
-function _routeTick() {
-  const A = _anim; if (!A) return;
-  if (A.seg >= A.wps.length - 1) {       // 播完，視角本來就沒動過，不用再飛回去
-    _routePlaying = false; _routePaused = false;
-    _setPlayBtn('▶ 重新播放');
-    return;
-  }
-  const a = A.wps[A.seg], b = A.wps[A.seg + 1];
-  const dur = _SEG_BASE * _routeSpeed;
-  const start = performance.now() - A.elapsed;   // 接續已過時間（暫停用）
-  function step(now) {
-    if (_routePaused) { A.elapsed = now - start; return; }
-    const t = Math.min(1, (now - start) / dur);
-    const e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-    const lat = a.lat + (b.lat - a.lat) * e, lng = a.lng + (b.lng - a.lng) * e;
-    A.line.setLatLngs(A.drawn.concat([[lat, lng]]));
-    A.traveler.setLatLng([lat, lng]);
-    // 鏡頭平移跟著目前位置走，縮放全程固定（見 playRoute 算好的 fixedZoom）不再變動，
-    // 純平移 Leaflet 處理得平順不會讓圖磚被打斷重載
-    _routeMap.panTo([lat, lng], { animate: false });
-    if (t < 1) { _routeAnim = requestAnimationFrame(step); }
-    else {
-      A.drawn.push([b.lat, b.lng]);
-      // 段末補上方向箭頭與停靠點
-      const ar = _arrowMarkers({ color: A.rt.color, waypoints: [a, b] })[0];
-      if (ar) { ar.addTo(_routeMap); _routeLayers.push(ar); }
-      const m = _routeMarker(A.rt, b, A.seg + 1, A.disp[A.seg + 1]).addTo(_routeMap); _routeLayers.push(m);
-      A.seg++; A.elapsed = 0;
-      _routeTimer = setTimeout(_routeTick, 240 * _routeSpeed);
-    }
-  }
-  _routeAnim = requestAnimationFrame(step);
-}
-function renderStops(rt) {
-  const box = document.getElementById('routeStops');
-  box.innerHTML = '';
-  (rt.waypoints || []).forEach((w, i) => {
-    const nav = _parseRef(w.ref);
-    const row = document.createElement('div');
-    row.className = 'route-stop';
-    row.innerHTML = '<span class="rs-num" style="background:' + rt.color + '">' + (i + 1) + '</span>' +
-      '<span class="rs-body"><b>' + w.name + '</b> ' +
-        (nav ? '<a class="rs-ref rs-link" href="/read/' + encodeURIComponent(nav.book) + '/' + nav.ch +
-               (nav.v ? '?v=' + nav.v : '') + '" onclick="event.stopPropagation()">' + w.ref + ' →</a>'
-             : '<span class="rs-ref">' + (w.ref || '') + '</span>') +
-        (w.note ? '<br><span class="rs-note">' + w.note + '</span>' : '') + '</span>';
-    row.onclick = () => { if (_routeMap) { _routeMap.setView([w.lat, w.lng], 8); } };
-    box.appendChild(row);
-  });
-}
-function closeRoutes() {
-  document.getElementById('routesPanel').classList.remove('open');
-  document.getElementById('routesOverlay').classList.remove('open');
-}
-
-// ── 書籤 ────────────────────────────────────────────────────────
-let _bmSet = new Set();  // 本章已加書籤的節
-function _bmKey(b, c, v) { return b + '|' + c + '|' + v; }
-function loadBookmarks(cb) {
-  fetch('/api/bookmarks?user_id=' + encodeURIComponent(deviceId()))
-    .then(r => r.json()).then(d => {
-      _bmAll = d.bookmarks || [];
-      _bmSet = new Set(_bmAll.filter(b => b.book_name === CUR_BOOK && b.chapter === CUR_CH)
-                            .map(b => _bmKey(b.book_name, b.chapter, b.verse)));
-      document.querySelectorAll('.verse').forEach(p => {
-        const v = parseInt(p.dataset.v);
-        p.classList.toggle('bookmarked', _bmSet.has(_bmKey(CUR_BOOK, CUR_CH, v)));
-      });
-      if (cb) cb();
-    }).catch(() => {});
-}
-let _bmAll = [];
-function toggleBookmark(v, p) {
-  const k = _bmKey(CUR_BOOK, CUR_CH, v);
-  const on = _bmSet.has(k);
-  const text = p.querySelector('.verse-body').textContent;
-  fetch('/api/bookmarks', {
-    method: on ? 'DELETE' : 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ user_id: deviceId(), book: CUR_BOOK, chapter: CUR_CH, verse: v, text: text })
-  }).catch(() => {});
-  if (on) { _bmSet.delete(k); p.classList.remove('bookmarked'); }
-  else { _bmSet.add(k); p.classList.add('bookmarked'); }
-}
-function openBookmarks() {
-  document.getElementById('bookmarksPanel').classList.add('open');
-  document.getElementById('searchOverlay').classList.add('open');
-  document.getElementById('searchOverlay').onclick = closeBookmarks;
-  const box = document.getElementById('bookmarksList');
-  box.innerHTML = '<p class="search-empty">載入中…</p>';
-  fetch('/api/bookmarks?user_id=' + encodeURIComponent(deviceId()))
-    .then(r => r.json()).then(d => {
-      const bms = d.bookmarks || [];
-      box.innerHTML = '';
-      if (!bms.length) { box.innerHTML = '<p class="search-empty">尚無書籤。點經文節號即可加入。</p>'; return; }
-      bms.forEach(b => {
-        const a = document.createElement('a');
-        a.className = 'search-hit';
-        a.href = '/read/' + encodeURIComponent(b.book_name) + '/' + b.chapter + '?v=' + b.verse;
-        a.innerHTML = '<span class="hit-ref">' + b.book_name + ' ' + b.chapter + ':' + b.verse +
-                      '</span><span class="hit-text">' + (b.text || '').replace(/[<>&]/g, '') + '</span>';
-        box.appendChild(a);
-      });
-    });
-}
-function closeBookmarks() {
-  document.getElementById('bookmarksPanel').classList.remove('open');
-  document.getElementById('searchOverlay').classList.remove('open');
-  document.getElementById('searchOverlay').onclick = closeSearch;
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const inp = document.getElementById('searchInput');
-  if (inp) inp.addEventListener('keydown', e => { if (e.key === 'Enter') runSearch(); });
-  const ef = document.getElementById('exploreFilter');
-  if (ef) ef.addEventListener('input', renderExplore);
-  // 節號可點以加／取消書籤
-  document.querySelectorAll('.verse').forEach(p => {
-    const v = parseInt(p.dataset.v);
-    const num = p.querySelector('.verse-num');
-    if (num) { num.style.cursor = 'pointer'; num.title = '加入／取消書籤';
-      num.addEventListener('click', () => toggleBookmark(v, p)); }
-    // 句末逐節回報 ⚑
-    const body = p.querySelector('.verse-body');
-    if (body) {
-      const rb = document.createElement('button');
-      rb.className = 'verse-report'; rb.textContent = '⚑';
-      rb.title = '回報此節漏標／標錯';
-      rb.addEventListener('click', e => { e.stopPropagation(); reportVerse(v); });
-      body.appendChild(rb);
-    }
-  });
-  loadBookmarks();
-  loadRouteHere();   // 本章路線自動提示
-  // 教學鈕定期脈動提醒：沒看過→提醒；看過也每隔幾天再提醒一次（功能多，容易忘）
-  const TOUR_REMIND_MS = 5 * 24 * 60 * 60 * 1000;  // 5 天
-  const tourLast = parseInt(localStorage.getItem('bible-tour-last') || '0', 10);
-  if (Date.now() - tourLast > TOUR_REMIND_MS) {
-    const fab = document.getElementById('tourFab');
-    if (fab) fab.classList.add('pulse');
-  }
-  // 從搜尋結果跳轉而來：高亮並捲到該節
-  const v = new URLSearchParams(location.search).get('v');
-  if (v) {
-    const el = document.querySelector('.verse[data-v="' + v + '"]') ||
-               [...document.querySelectorAll('.verse-num')].find(n => n.textContent.trim() === v)?.closest('.verse');
-    if (el) { el.classList.add('verse-hl'); el.scrollIntoView({block:'center'}); }
-  }
-});
-
-function renderRelations(name) {
-  const box = document.getElementById('cardRelations');
-  box.innerHTML = '';
-  const rel = RELATIONS[name];
-  if (!rel) return;
-  const seen = REL_ORDER.filter(r => rel[r]);
-  const rest = Object.keys(rel).filter(r => !REL_ORDER.includes(r));
-  [...seen, ...rest].forEach(relType => {
-    const row = document.createElement('div');
-    row.className = 'rel-row';
-    const lbl = document.createElement('span');
-    lbl.className = 'rel-label';
-    lbl.textContent = relType;
-    row.appendChild(lbl);
-    rel[relType].forEach(target => {
-      if (!_lookupEntity(target)) return;
-      const chip = document.createElement('span');
-      chip.className = 'rel-chip';
-      const t = _lookupEntity(target);
-      chip.textContent = (t && t.name) ? t.name : target;
-      chip.addEventListener('click', e => { e.stopPropagation(); openCard(target); });
-      row.appendChild(chip);
-    });
-    box.appendChild(row);
-  });
-}
-
-function _esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
-function openCard(name) {
-  const ent = _lookupEntity(name);
-  if (!ent) return;
-  _curEntity = name;
-  document.getElementById('cardBadge').textContent = TYPE_LABEL[ent.type] || '';
-  document.getElementById('cardBadge').className = 'card-badge anno-' + ent.type;
-  if (ent.type === 'place' && ent.lat != null) {
-    document.getElementById('cardBadge').innerHTML += ' <span class="map-avail" title="有地圖座標">📍地圖</span>';
-  }
-  document.getElementById('cardName').innerHTML = _esc(ent.name) +
-    (ent.reading ? ' <span class="card-reading">' + _esc(ent.reading) + '</span>' : '') +
-    (ent.name_en ? '<span class="card-en">　' + _esc(ent.name_en) + '</span>' : '');
-  document.getElementById('cardDesc').textContent = ent.desc || '';
-  renderRelations(name);
-  const vbox = document.getElementById('cardVerses');
-  vbox.innerHTML = '';
-  (ent.verses || '').split('、').filter(Boolean).forEach(v => {
-    const chip = document.createElement('span');
-    chip.className = 'verse-chip';
-    chip.textContent = v;
-    vbox.appendChild(chip);
-  });
-  renderMap(ent);
-  // 重置「標註有誤」按鈕（每張卡片都要能回報）
-  document.getElementById('cardFeedbackBtn').style.display = '';
-  document.getElementById('cardFeedbackDone').style.display = 'none';
-  document.getElementById('annoCard').classList.add('open');
-  document.getElementById('cardOverlay').classList.add('open');
-}
-
-document.querySelectorAll('.anno').forEach(el => {
-  el.addEventListener('click', e => { e.stopPropagation(); openCard(el.dataset.entity); });
-});
-
-// ── Sidebar ──────────────────────────────────────────────────────
-// 書卷搜尋：輸入關鍵字即時篩選書卷（同時套用到桌面 sidebar 與手機 drawer 兩份 nav）
-function filterNavBooks(input) {
-  const q = input.value.trim();
-  const nav = input.closest('.sidebar, .drawer');
-  if (!nav) return;
-  const items = nav.querySelectorAll('.book-item');
-  let matchCount = 0, firstMatch = null;
-  items.forEach(item => {
-    const hit = !q || item.textContent.includes(q);
-    item.classList.toggle('nav-hidden', !hit);
-    if (hit) { matchCount++; if (!firstMatch) firstMatch = item; }
-  });
-  nav.querySelectorAll('.section-label').forEach(label => {
-    let sib = label.nextElementSibling, hasVisible = false;
-    while (sib && !sib.classList.contains('section-label')) {
-      if (sib.classList.contains('book-item') && !sib.classList.contains('nav-hidden')) hasVisible = true;
-      sib = sib.nextElementSibling;
-    }
-    label.classList.toggle('nav-hidden', !hasVisible);
-  });
-  // 只剩一個符合的書卷時，自動展開章節方便直接點
-  if (q && matchCount === 1 && firstMatch) {
-    const pills = firstMatch.nextElementSibling;
-    if (pills && pills.classList.contains('chapter-pills')) pills.classList.add('open');
-  }
-}
-
-document.querySelectorAll('.book-item').forEach(el => {
-  el.addEventListener('click', function(e) {
-    const pills = this.nextElementSibling;
-    if (!pills || !pills.classList.contains('chapter-pills')) return;
-    e.preventDefault();
-    pills.classList.toggle('open');
-  });
-});
-const activeBook = document.querySelector('.book-item.active');
-if (activeBook) {
-  const pills = activeBook.nextElementSibling;
-  if (pills) pills.classList.add('open');
-  activeBook.scrollIntoView({ block: 'center' });
-}
-
-// ── 聚焦式教學導覽（SpotlightTour，static/js/tour.js） ─────────────
-// 深入式導覽：每一步「先打開該模塊面板」，再圈裡面的控制項
-function closeAllPanels() {
-  ['closeCard', 'closeSearch', 'closeExplore', 'closeBookMap', 'closeRoutes', 'closeBookmarks'].forEach(fn => {
-    try { if (typeof window[fn] === 'function') window[fn](); } catch (e) {}
-  });
-}
-const PAGE_TOUR_STEPS = [
-  { title: '歡迎！這是教學導覽 👋', text: '不會用沒關係～我會把這一頁的功能一個一個打開、圈出來、用白話說給你聽。看著綠色框框、按「下一步」就好；想停隨時按「結束導覽」。' },
-  { sel: '.legend', title: '標註說明', text: '經文中有底線的詞，分人物（紅）、地點（綠）、族群／概念（紫）三類。', spot: 6 },
-  { sel: '.passage .anno', title: '點詞看背景', text: '點任一個有底線的詞，會跳出小卡片：人物生平、地點地圖、概念解釋（生僻字還附注音）。我現在幫你打開一張看看。', spot: 4 },
-  { before: () => { const a = document.querySelector('.passage .anno'); if (a) a.click(); }, beforeWait: 380,
-    sel: '#cardVersesBtn', title: '卡片：列出所有經節', text: '卡片下方這顆「🔍 列出所有經節」，能一次看這個人／地在整本聖經的所有出處。', spot: 6 },
-  { before: () => { try { closeCard(); } catch (e) {} }, sel: '.passage .verse-num', title: '節號＝書籤', text: '點經文的「節號」即可加入／取消書籤，加了會顯示 🔖。', spot: 4 },
-  { before: () => { closeAllPanels(); openSearch(); }, beforeWait: 340,
-    sel: '#searchInput', title: '全本搜尋', text: '在這裡打關鍵字，搜尋整本聖經（66 卷），點結果直接跳到該節。', spot: 6 },
-  { before: () => { closeAllPanels(); openExplore(); }, beforeWait: 360,
-    sel: '#exploreInBook', title: '索引：只看本卷', text: '索引列出全部人物／地點／概念。勾「📖 只看本卷」，就只剩當前書卷出現的，瞬間從幾百個縮到幾十個。', spot: 8 },
-  { before: () => { if (typeof switchExplore === 'function') switchExplore('concept'); }, beforeWait: 120,
-    sel: '#exploreCat', title: '索引：概念分類', text: '切到「概念」分頁，還能依分類（節期、聖所器物、寶石、度量衡…）再篩一層。', spot: 8 },
-  { before: () => { closeAllPanels(); openBookMap(); }, beforeWait: 420,
-    sel: '#bookMap', title: '本卷地圖', text: '把本卷所有地點聚成一張大地圖，點任一標記看背景資料。', spot: 6 },
-  { before: () => { closeAllPanels(); openRoutes(); }, beforeWait: 480,
-    sel: '#routePicker', title: '路線圖', text: '亞伯拉罕遷徙、出埃及、保羅宣教…選一條，按「▶ 播放」鏡頭會跟著行程走，點停靠點看經文出處。', spot: 8 },
-  { before: () => { closeAllPanels(); }, sel: '#routeHereBar', title: '本章路線提示', text: '讀到有路線經過的章節，這裡會自動浮出，點一下直接開地圖定位到該站。', spot: 6 },
-  { before: () => { closeAllPanels(); openBookmarks(); }, beforeWait: 340,
-    sel: '#bookmarksList', title: '我的書籤', text: '你加過書籤的經節都收在這，點任一筆跳回去繼續讀。', spot: 6 },
-  { before: () => { closeAllPanels(); }, sel: '#lineageTrigger', title: '世系結構圖', text: '家譜、列王的章節會出現這顆按鈕，畫出世系樹、本章人物會點亮。', spot: 6 },
-  { before: () => { closeAllPanels(); }, sel: '.sidebar', title: '書卷切換', text: '左側可切換書卷與章節，隨時跳到聖經任何地方。', spot: 6 },
-  { before: () => { closeAllPanels(); }, sel: '#tourFab', title: '完成！你已經學會了 🎉', text: '以後忘記了不用緊張，隨時點右下角這顆「？教學導覽」，我就會再從頭帶你看一次。' },
-];
-function startTour() {
-  const fab = document.getElementById('tourFab');
-  if (fab) fab.classList.remove('pulse');
-  localStorage.setItem('bible-tour-done', '1');
-  localStorage.setItem('bible-tour-last', String(Date.now()));
-  SpotlightTour.start(PAGE_TOUR_STEPS, { onFinish: closeAllPanels });
-}
-
-// ── Reading progress (localStorage, offline-friendly) ───────────
 const CUR_BOOK = {{ book | tojson }};
 const CUR_CH = {{ chapter }};
-
-function loadProgress() {
-  try { return JSON.parse(localStorage.getItem('bible-progress') || '{}'); }
-  catch (e) { return {}; }
-}
-function saveProgress(p) { localStorage.setItem('bible-progress', JSON.stringify(p)); }
-
-// 記錄目前章節為「最後閱讀」並標記已讀
-const _prog = loadProgress();
-_prog.last = { book: CUR_BOOK, chapter: CUR_CH };
-_prog.read = _prog.read || {};
-_prog.read[CUR_BOOK] = _prog.read[CUR_BOOK] || [];
-if (!_prog.read[CUR_BOOK].includes(CUR_CH)) {
-  _prog.read[CUR_BOOK].push(CUR_CH);
-  _prog.read[CUR_BOOK].sort((a, b) => a - b);
-}
-saveProgress(_prog);
-
-// 同步存檔到 Supabase（首頁存檔選單用）。無登入，以裝置 ID 識別。
-function deviceId() {
-  let id = localStorage.getItem('bible-device-id');
-  if (!id) {
-    id = (crypto.randomUUID ? crypto.randomUUID()
-          : 'dev-' + Date.now() + '-' + Math.random().toString(16).slice(2));
-    localStorage.setItem('bible-device-id', id);
-  }
-  return id;
-}
-fetch('/api/progress', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ user_id: deviceId(), book: CUR_BOOK, chapter: CUR_CH })
-}).catch(() => {});
-
-// 在側欄已讀章節的 pill 加標記，書卷顯示讀過幾章
-function markRead(root) {
-  const read = _prog.read || {};
-  root.querySelectorAll('.book-item').forEach(item => {
-    const name = item.textContent.trim();
-    const list = read[name] || [];
-    if (list.length) {
-      const badge = document.createElement('span');
-      badge.className = 'read-count';
-      badge.textContent = list.length;
-      item.appendChild(badge);
-    }
-    const pills = item.nextElementSibling;
-    if (pills && pills.classList.contains('chapter-pills')) {
-      pills.querySelectorAll('.pill').forEach(pill => {
-        if (list.includes(parseInt(pill.textContent))) pill.classList.add('read');
-      });
-    }
-  });
-}
-document.querySelectorAll('.sidebar, .drawer').forEach(markRead);
-
-// ── 標註回報 ────────────────────────────────────────────────
-let _curEntity = '';  // 目前開著的實體名稱
-
-function submitFeedback() {
-  if (!_curEntity) return;
-  document.getElementById('cardFeedbackBtn').style.display = 'none';
-  fetch('/api/feedback', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({entity: _curEntity, book: CUR_BOOK, chapter: CUR_CH})
-  }).finally(() => {
-    document.getElementById('cardFeedbackDone').style.display = 'block';
-  });
-}
-
-// 章節層級回報：可回報「漏標」（沒有卡片可按的詞）或整章問題
-// 逐節回報：點某節的 ⚑ 回報「漏標／標錯」，精確到該節
-function reportVerse(v) {
-  const note = prompt('回報第 ' + v + ' 節的標註問題（例如：「迦瑪列」沒標、「某詞」標錯人）：');
-  if (!note || !note.trim()) return;
-  fetch('/api/feedback', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({entity: '（逐節回報）', book: CUR_BOOK, chapter: CUR_CH, verse: v, note: note.trim()})
-  }).finally(() => alert('已回報第 ' + v + ' 節，謝謝！'));
-}
-
-// 滑動切換章節已移除——垂直捲動易誤觸翻章。改用底部「上一章／下一章」按鈕。
 </script>
+<script src="{{ static_v('js/section-art.js') }}"></script>
+<script src="{{ static_v('js/read-core.js') }}"></script>
+<script src="{{ static_v('js/read-bigmap.js') }}"></script>
+<script src="{{ static_v('js/read-lineage.js') }}"></script>
+<script src="{{ static_v('js/read-search.js') }}"></script>
+<script src="{{ static_v('js/read-maps.js') }}"></script>
+<script src="{{ static_v('js/read-bookmarks.js') }}"></script>
+<script src="{{ static_v('js/read-sidebar.js') }}"></script>
+<script src="{{ static_v('js/read-tour.js') }}"></script>
+<script src="{{ static_v('js/read-progress.js') }}"></script>
 </body>
 </html>

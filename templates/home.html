@@ -5,16 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>聖經互動全書</title>
 {% include '_pwa.html' %}
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="stylesheet" href="{{ static_v('tokens.css') }}">
+<link rel="stylesheet" href="{{ static_v('section-art.css') }}">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --bg:#1A0E06;--brown-dark:#2C1A0E;--brown-mid:#3A220E;--brown-light:#5C3010;
-  --gold:#D4A847;--gold-dim:#9A7040;--gold-muted:#7A5830;--gold-faint:#5A3A18;
-  --cream:#F7F0E0;--cream-card:#FEF8EC;
-  --text-main:#2A1A08;--text-body:#5A3A18;
-  --person:#8B3A1A;--place:#2A5C3A;--concept:#4A3080;
+  --bg:#14171A;--brown-dark:var(--poche);--brown-mid:var(--poche-2);--brown-light:var(--poche-3);
+  --gold:var(--sun);--cream:var(--wall);
 }
 html,body{height:100%;font-family:'Noto Serif TC',serif;}
 body{background:var(--bg);color:var(--cream);overflow:hidden;}
@@ -22,191 +21,91 @@ body{background:var(--bg);color:var(--cream);overflow:hidden;}
 /* 共用 */
 .screen{position:fixed;inset:0;opacity:0;pointer-events:none;transition:opacity .4s;display:flex;align-items:center;justify-content:center;flex-direction:column;}
 .screen.show{opacity:1;pointer-events:all;}
-.back-btn{position:fixed;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;background:#2C1A0E;border-top:1px solid #5C3010;font-size:14px;color:#C8A860;cursor:pointer;border:none;font-family:'Noto Serif TC',serif;transition:background .15s;letter-spacing:.08em;z-index:20;}
-.back-btn:hover{background:#3A220E;color:var(--gold);}
-.breadcrumb{display:flex;align-items:center;gap:6px;font-size:11px;color:#B0946A;letter-spacing:.08em;margin-bottom:10px;}
+.back-btn{position:fixed;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;background:var(--poche);border-top:1px solid var(--poche-3);font-size:14px;color:var(--poche-ink);cursor:pointer;border:none;font-family:'Noto Serif TC',serif;transition:background .15s;letter-spacing:.08em;z-index:20;}
+.back-btn:hover{background:var(--poche-2);color:var(--gold);}
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--poche-mute);letter-spacing:.08em;margin-bottom:10px;}
 .bc-sep{color:var(--brown-light);}
-.bc-active{color:#C8A860;}
+.bc-active{color:var(--poche-ink);}
 .bc-link{cursor:pointer;transition:color .15s;}
-.bc-link:hover{color:#C8A860;}
+.bc-link:hover{color:var(--poche-ink);}
 .orn{display:flex;align-items:center;gap:10px;width:220px;}
-.orn-line{flex:1;height:1px;background:linear-gradient(to right,transparent,#5C3010,transparent);}
-.orn-dia{width:6px;height:6px;background:#C9A96E;transform:rotate(45deg);flex-shrink:0;}
+.orn-line{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--poche-3),transparent);}
+.orn-dia{width:6px;height:6px;background:var(--sun);transform:rotate(45deg);flex-shrink:0;}
 
-/* 星點 */
-#stars{position:fixed;inset:0;pointer-events:none;z-index:0;}
-.star{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;opacity:0;animation:twinkle 3s infinite;}
-@keyframes twinkle{0%,100%{opacity:0}50%{opacity:.5}}
-
-/* 1. 開書 */
-#s-book{z-index:10;background:var(--bg);}
-.book-wrap{position:relative;width:240px;height:320px;perspective:800px;cursor:pointer;z-index:1;}
-.book{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.4,0,.2,1);}
-.book.open{transform:rotateY(-28deg);}
-.cover{position:absolute;inset:0;background:linear-gradient(135deg,#3D1F08 0%,#5C3010 50%,#3D1F08 100%);border-radius:3px 10px 10px 3px;border:1px solid #8B5E2A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;box-shadow:4px 4px 24px rgba(0,0,0,.7);}
-.cover-cross{width:28px;height:28px;position:relative;opacity:.8;}
-.cover-cross::before{content:'';position:absolute;width:4px;height:28px;left:50%;transform:translateX(-50%);background:var(--gold);border-radius:2px;}
-.cover-cross::after{content:'';position:absolute;width:20px;height:4px;top:8px;left:50%;transform:translateX(-50%);background:var(--gold);border-radius:2px;}
-.cover-orn{width:160px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
-.cover-title{font-size:26px;font-weight:500;color:var(--gold);letter-spacing:.2em;text-align:center;line-height:1.6;}
-.cover-sub{font-size:12px;font-weight:300;color:#C8A860;letter-spacing:.14em;}
-.spine{position:absolute;left:-14px;top:4px;bottom:4px;width:14px;background:linear-gradient(to right,#1A0E06,#4A2810);border-radius:3px 0 0 3px;border:1px solid #5C3010;border-right:none;}
-.pages{position:absolute;right:-3px;top:6px;bottom:6px;width:3px;background:repeating-linear-gradient(to bottom,#E8D8B0,#E8D8B0 1px,#C8B080 1px,#C8B080 2px);border-radius:0 2px 2px 0;}
-.book-hint{position:absolute;bottom:-36px;left:50%;transform:translateX(-50%);font-size:12px;color:#B0946A;letter-spacing:.1em;white-space:nowrap;animation:blink 2s infinite;transition:opacity .4s;}
-.home-copyright{position:fixed;bottom:14px;left:0;right:0;text-align:center;font-size:11px;color:#6B5436;letter-spacing:.04em;z-index:2;}
-@keyframes blink{0%,100%{opacity:.3}50%{opacity:.8}}
-.glow{position:fixed;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,#D4A84720 0%,transparent 70%);pointer-events:none;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0;transition:opacity 1s;}
-.glow.show{opacity:1;}
+/* 1. 進入：晨光剖面。線稿一筆筆畫出一棟房子的剖面，一道晨光從窗口斜射到樓板。
+   全程約 2.4 秒、只播一次；整個畫面從第 0 秒起就能點擊進入，沒有任何遮罩擋住操作。
+   `animation-fill-mode: backwards` 讓「最終畫面」就是預設樣式，prefers-reduced-motion 時直接顯示最終畫面。 */
+#s-book{z-index:10;background:radial-gradient(ellipse 60% 50% at 38% 46%,#1c2128 0%,var(--bg) 70%);cursor:pointer;}
+.entry{position:relative;width:min(640px,94vw);display:flex;flex-direction:column;align-items:center;text-align:center;}
+.entry-title{margin-top:8px;font-size:clamp(30px,6vw,40px);font-weight:600;color:var(--wall);letter-spacing:.32em;padding-left:.32em;}
+.entry-sub{margin-top:8px;font-size:15px;color:var(--poche-ink);letter-spacing:.2em;padding-left:.2em;}
+.entry-btn{margin-top:30px;min-width:200px;min-height:56px;padding:14px 36px;border:1px solid var(--sun);border-radius:8px;background:transparent;color:var(--sun-glow);font-family:inherit;font-size:18px;letter-spacing:.3em;padding-left:calc(36px + .3em);cursor:pointer;transition:background .15s,color .15s;}
+.entry-btn:hover{background:var(--sun);color:var(--poche);}
+.home-copyright{position:fixed;bottom:14px;left:0;right:0;text-align:center;font-size:12px;color:var(--poche-mute);letter-spacing:.04em;z-index:2;}
+@keyframes rise{from{opacity:0;transform:translateY(10px);}}
+@keyframes fade{from{opacity:0;}}
+.entry.play .entry-title{animation:rise .7s cubic-bezier(.16,1,.3,1) 1.15s backwards;}
+.entry.play .entry-sub{animation:fade .6s ease-out 1.4s backwards;}
+.entry.play .entry-btn{animation:fade .5s ease-out 1.75s backwards;}
+@media (prefers-reduced-motion:reduce){.entry.play *{animation:none !important;}.screen{transition:none;}}
 
 /* 2. 存檔 */
 #s-menu{z-index:9;background:var(--bg);}
-.menu-card{background:var(--brown-dark);border:1px solid var(--brown-light);border-radius:10px;width:320px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.5);}
-.menu-head{background:#3D1F08;padding:14px 20px;border-bottom:1px solid var(--brown-light);display:flex;align-items:center;gap:8px;}
+.menu-card{background:var(--brown-dark);border:1px solid var(--brown-light);border-radius:10px;width:320px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.35);}
+.menu-head{background:var(--poche-2);padding:14px 20px;border-bottom:1px solid var(--brown-light);display:flex;align-items:center;gap:8px;}
 .menu-head-title{font-size:14px;color:var(--gold);letter-spacing:.08em;}
 .save-slot{padding:14px 20px;border-bottom:1px solid var(--brown-mid);display:flex;align-items:center;gap:12px;cursor:pointer;transition:background .15s;}
 .save-slot:hover{background:var(--brown-mid);}
-.slot-icon{width:34px;height:34px;border-radius:6px;background:#3D1F08;border:1px solid var(--brown-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.slot-icon{width:34px;height:34px;border-radius:6px;background:var(--poche-2);border:1px solid var(--brown-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .slot-info{flex:1;}
 .slot-book{font-size:13px;color:var(--gold);margin-bottom:3px;}
-.slot-detail{font-size:11px;color:#C8A860;font-weight:300;}
+.slot-detail{font-size:12px;color:var(--poche-ink);font-weight:300;}
 .new-btn{width:100%;padding:14px 20px;background:none;border:none;border-top:1px solid var(--brown-mid);display:flex;align-items:center;gap:12px;cursor:pointer;transition:background .15s;font-family:'Noto Serif TC',serif;}
 .new-btn:hover{background:var(--brown-mid);}
-.new-btn-label{font-size:13px;color:#C8A860;font-weight:300;letter-spacing:.04em;}
+.new-btn-label{font-size:13px;color:var(--poche-ink);font-weight:300;letter-spacing:.04em;}
 
 /* 3. 新舊約 */
 #s-testament{z-index:8;}
 .testament-row{display:flex;gap:16px;}
-.testament-card{width:140px;height:155px;background:var(--brown-dark);border:1px solid var(--brown-light);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;transition:background .15s,border-color .15s,transform .15s;}
+.testament-card{width:140px;height:155px;padding:16px;background:var(--brown-dark);border:1px solid var(--brown-light);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;transition:background .15s,border-color .15s,transform .15s;}
 .testament-card:hover{background:var(--brown-mid);border-color:var(--gold);transform:translateY(-2px);}
 .tc-icon{font-size:26px;color:var(--gold);}
 .tc-title{font-size:19px;font-weight:500;color:var(--gold);letter-spacing:.12em;}
-.tc-count{font-size:11px;color:#C8A860;font-weight:300;}
+.tc-count{font-size:12px;color:var(--poche-ink);font-weight:300;}
 
 /* 4. 經卷 */
 #s-books{z-index:7;}
-.book-grid-wrap{width:340px;max-height:360px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#5C3010 transparent;}
+.book-grid-wrap{width:340px;max-height:360px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--poche-3) transparent;}
 .book-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;}
 .book-btn{background:var(--brown-dark);border:1px solid var(--brown-mid);border-radius:6px;padding:7px 4px;text-align:center;cursor:pointer;transition:background .12s,border-color .12s;display:flex;flex-direction:column;align-items:center;gap:2px;}
-.book-btn:hover{background:var(--brown-mid);border-color:#8B5E2A;}
-.book-num{font-size:9px;color:#B0946A;font-family:sans-serif;}
-.book-name{font-size:11px;color:#E8C98A;font-weight:300;line-height:1.4;}
+.book-btn:hover{background:var(--brown-mid);border-color:#566070;}
+.book-num{font-size:12px;color:var(--poche-mute);font-family:sans-serif;}
+.book-name{font-size:12px;color:var(--sun-glow);font-weight:300;line-height:1.4;}
 
 /* 5. 章節 */
 #s-chapters{z-index:6;}
 .chapter-wrap{width:340px;}
 .chapter-header{display:flex;align-items:baseline;gap:10px;margin-bottom:14px;}
 .ch-book-name{font-size:18px;font-weight:500;color:var(--gold);letter-spacing:.06em;}
-.ch-total{font-size:11px;color:#C8A860;font-weight:300;}
-.chapter-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;max-height:240px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#5C3010 transparent;}
-.ch-btn{background:var(--brown-dark);border:1px solid var(--brown-mid);border-radius:5px;padding:8px 2px;text-align:center;cursor:pointer;font-size:12px;color:#C8A860;transition:background .12s,border-color .12s,color .12s;}
-.ch-btn:hover{background:var(--brown-mid);border-color:#8B5E2A;color:var(--gold);}
+.ch-total{font-size:12px;color:var(--poche-ink);font-weight:300;}
+.chapter-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;max-height:240px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--poche-3) transparent;}
+.ch-btn{background:var(--brown-dark);border:1px solid var(--brown-mid);border-radius:5px;padding:8px 2px;text-align:center;cursor:pointer;font-size:12px;color:var(--poche-ink);transition:background .12s,border-color .12s,color .12s;}
+.ch-btn:hover{background:var(--brown-mid);border-color:#566070;color:var(--gold);}
 .ch-btn.selected{background:var(--brown-mid);border-color:var(--gold);color:var(--gold);}
-.enter-btn{background:#3D1F08;border:1px solid var(--gold);border-radius:6px;padding:10px 28px;cursor:pointer;font-family:'Noto Serif TC',serif;font-size:13px;color:var(--gold);letter-spacing:.1em;display:flex;align-items:center;gap:8px;transition:background .15s;margin-top:12px;}
+.enter-btn{background:var(--poche-2);border:1px solid var(--gold);border-radius:6px;padding:10px 28px;cursor:pointer;font-family:'Noto Serif TC',serif;font-size:13px;color:var(--gold);letter-spacing:.1em;display:flex;align-items:center;gap:8px;transition:background .15s;margin-top:12px;}
 .enter-btn:hover{background:var(--brown-light);}
 
-/* 6. 閱讀頁 */
-#s-reader{z-index:5;background:var(--cream);flex-direction:row;align-items:stretch;justify-content:flex-start;}
-.sidebar{width:200px;background:#2C1A0E;border-right:2px solid #7A4E1E;display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto;}
-.sb-logo{font-size:13px;color:var(--gold);padding:16px;border-bottom:1px solid #4A2E12;letter-spacing:.1em;display:flex;align-items:center;gap:8px;}
-.sb-sec{padding:12px 16px 4px;font-size:10px;letter-spacing:.14em;color:#C8A860;text-transform:uppercase;font-family:sans-serif;}
-.sb-book-item{padding:6px 16px;font-size:13px;color:#D4B080;cursor:pointer;font-weight:300;transition:background .12s,color .12s;}
-.sb-book-item:hover{color:var(--gold);background:#3A220E;}
-.sb-book-item.active{color:#F0C96A;background:#3A220E;border-left:2px solid var(--gold);padding-left:14px;font-weight:400;}
-.sb-pills{display:flex;flex-wrap:wrap;gap:4px;padding:4px 16px 10px;}
-.sb-pill{font-size:10px;padding:2px 7px;border-radius:99px;border:1px solid #4A2E12;color:#C8A860;cursor:pointer;background:transparent;font-family:sans-serif;transition:background .12s;}
-.sb-pill:hover{background:#3A220E;}
-.sb-pill.active{background:var(--gold);color:#2C1A0E;border-color:var(--gold);font-weight:500;}
-
-/* 主閱讀區 */
-.reader-main{flex:1;padding:32px 48px 32px 52px;position:relative;overflow-y:auto;background:var(--cream);background-image:repeating-linear-gradient(transparent,transparent 36px,#D4B88818 36px,#D4B88818 37px);}
-.r-orn{display:flex;align-items:center;gap:10px;margin-bottom:20px;}
-.r-orn-line{flex:1;height:1px;background:linear-gradient(to right,transparent,#C9A96E88,transparent);}
-.r-orn-dia{width:6px;height:6px;background:#C9A96E;transform:rotate(45deg);flex-shrink:0;}
-.r-book-title{font-size:20px;font-weight:500;color:var(--text-main);letter-spacing:.08em;text-align:center;}
-.r-chapter-label{font-size:13px;color:#9A7040;margin-top:5px;font-weight:300;letter-spacing:.06em;text-align:center;margin-bottom:24px;}
-.verse-block{margin-bottom:2px;}
-.verse-num{font-family:sans-serif;font-size:9px;font-weight:500;color:#C9A96E;vertical-align:super;margin-right:3px;user-select:none;}
-.verse-text{font-size:15px;font-weight:300;color:var(--text-main);line-height:2.3;letter-spacing:.02em;}
-.tag-person{color:var(--person);border-bottom:1px dotted #8B3A1A66;cursor:pointer;}
-.tag-place{color:var(--place);border-bottom:1px dotted #2A5C3A66;cursor:pointer;}
-.tag-concept{color:var(--concept);border-bottom:1px dotted #4A308066;cursor:pointer;}
-.hl{background:linear-gradient(transparent 62%,#EDB93044 62%);}
-.legend{display:flex;gap:14px;margin-top:20px;padding-top:16px;border-top:1px solid #D4B88840;flex-wrap:wrap;}
-.legend-item{display:flex;align-items:center;gap:5px;font-family:sans-serif;font-size:11px;color:#9A7840;}
-.ldot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
-
-/* 浮動卡片（桌面） */
-.float-card{position:absolute;right:-12px;top:200px;width:232px;background:var(--cream-card);border:1px solid #C9A96E;border-radius:8px;padding:14px 15px;box-shadow:2px 3px 0 #C9A96E30;display:none;}
-.float-card.show{display:block;}
-.float-arrow{position:absolute;left:-7px;top:20px;width:12px;height:12px;background:var(--cream-card);border-left:1px solid #C9A96E;border-bottom:1px solid #C9A96E;transform:rotate(45deg);}
-.card-badge{font-family:sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;border-radius:99px;display:inline-block;margin-bottom:8px;}
-.badge-person{color:#7A3010;background:#F5DDD0;border:1px solid #C9906A;}
-.badge-place{color:#1A5030;background:#D0EDD8;border:1px solid #6AB08A;}
-.badge-concept{color:#2A1860;background:#DDD8F0;border:1px solid #9A90C8;}
-.card-name{font-size:15px;font-weight:500;color:var(--text-main);margin-bottom:6px;}
-.card-body{font-size:12px;font-weight:300;color:var(--text-body);line-height:1.85;margin-bottom:10px;}
-.card-refs{display:flex;gap:5px;flex-wrap:wrap;}
-.ref-chip{font-family:sans-serif;font-size:10px;padding:2px 7px;border-radius:99px;background:#F0E4C0;border:1px solid #C9A96E;color:#7A5020;}
-.card-close{position:absolute;top:8px;right:10px;background:none;border:none;color:#C9A96E;cursor:pointer;font-size:16px;line-height:1;}
-.card-map-placeholder{width:100%;height:90px;background:#D4E8C4;border-radius:6px;border:1px solid #A8C890;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--place);}
-
-/* 手機 header */
-.mob-header{display:none;background:#2C1A0E;padding:14px 16px;align-items:center;gap:12px;border-bottom:2px solid #7A4E1E;flex-shrink:0;}
-.mob-menu-btn{background:none;border:none;color:var(--gold);cursor:pointer;padding:4px;}
-.mob-title{font-size:14px;color:var(--gold);letter-spacing:.1em;flex:1;}
-.mob-chapter-btn{font-family:sans-serif;font-size:11px;color:#D4B080;border:1px solid #4A2E12;background:none;padding:4px 10px;border-radius:99px;cursor:pointer;}
-
-/* Bottom Sheet */
-.bs-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:50;display:none;}
-.bs-overlay.show{display:block;}
-.bs{position:fixed;bottom:0;left:0;right:0;background:var(--cream-card);border-top:2px solid #C9A96E;border-radius:12px 12px 0 0;z-index:51;max-height:70vh;overflow-y:auto;display:none;}
-.bs.show{display:block;}
-.bs-handle{width:36px;height:4px;background:#C9A96E;border-radius:99px;margin:10px auto 0;}
-.bs-inner{padding:14px 18px 28px;}
-.bs-tab-row{display:flex;align-items:center;margin-bottom:14px;border-bottom:1px solid #D4B88860;}
-.bs-tab{font-family:'Noto Serif TC',serif;font-size:12px;padding:6px 14px;color:#9A7040;cursor:pointer;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;background:none;}
-.bs-tab.active{color:var(--place);border-bottom-color:var(--place);font-weight:500;}
-.bs-close{background:none;border:none;color:#9A7040;cursor:pointer;font-size:18px;margin-left:auto;line-height:1;}
-.bs-map-placeholder{width:100%;height:160px;background:#D4E8C4;border-radius:8px;border:1px solid #A8C890;margin-bottom:10px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--place);}
-
-/* 抽屜 */
-.drawer-mask{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:60;display:none;}
-.drawer-mask.show{display:block;}
-.drawer{position:fixed;top:0;left:0;width:200px;bottom:0;background:#2C1A0E;z-index:61;overflow-y:auto;display:none;}
-.drawer.show{display:block;}
-.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid #4A2E12;}
-.drawer-close-btn{background:none;border:none;color:#C8A860;cursor:pointer;font-size:18px;}
-
-/* RWD */
-@media(max-width:640px){
-  .sidebar{display:none;}
-  .mob-header{display:flex;}
-  #s-reader{flex-direction:column;}
-  .reader-main{padding:20px 18px 160px;}
-  .float-card{display:none!important;}
-}
 </style>
 </head>
 <body>
 
-<div id="stars"></div>
-<div class="glow" id="glow"></div>
-
-<!-- 1. 開書 -->
-<div class="screen show" id="s-book">
-  <div class="book-wrap" id="bookWrap" role="button" aria-label="點擊開始閱讀">
-    <div class="book" id="book">
-      <div class="spine"></div>
-      <div class="pages"></div>
-      <div class="cover">
-        <div class="cover-cross"></div>
-        <div class="cover-orn"></div>
-        <div class="cover-title">聖　經</div>
-        <div class="cover-orn"></div>
-        <div class="cover-sub">互 動 全 書</div>
-      </div>
-    </div>
-    <div class="book-hint" id="bookHint">點擊書本開始</div>
+<!-- 1. 進入 -->
+<div class="screen" id="s-book">
+  <div class="entry" id="entry">
+    {% include '_section_art.html' %}
+    <div class="entry-title">聖經全書</div>
+    <div class="entry-sub">互動閱讀</div>
+    <button class="entry-btn" id="entryBtn" type="button">進入</button>
   </div>
   <div class="home-copyright">經文採用《和合本》（Chinese Union Version，1919）· 公有領域</div>
 </div>
@@ -225,30 +124,30 @@ body{background:var(--bg);color:var(--cream);overflow:hidden;}
         <div class="slot-book" id="slot1-book">撒母耳記上・第十七章</div>
         <div class="slot-detail" id="slot1-detail">大衛與歌利亞　· 昨天</div>
       </div>
-      <i class="ti ti-chevron-right" style="color:#6B3A10"></i>
+      <i class="ti ti-chevron-right" style="color:var(--poche-mute)"></i>
     </div>
     <div class="save-slot" id="slot2" onclick="enterChapter('約翰福音',3)">
-      <div class="slot-icon"><i class="ti ti-book" style="color:#C8A860;font-size:15px"></i></div>
+      <div class="slot-icon"><i class="ti ti-book" style="color:var(--poche-ink);font-size:15px"></i></div>
       <div class="slot-info">
         <div class="slot-book" id="slot2-book">約翰福音・第三章</div>
         <div class="slot-detail" id="slot2-detail">尼哥底母　· 三天前</div>
       </div>
-      <i class="ti ti-chevron-right" style="color:#6B3A10"></i>
+      <i class="ti ti-chevron-right" style="color:var(--poche-mute)"></i>
     </div>
     <button class="new-btn" onclick="showScreen('s-testament')">
-      <div class="slot-icon"><i class="ti ti-plus" style="color:#C8A860;font-size:15px"></i></div>
+      <div class="slot-icon"><i class="ti ti-plus" style="color:var(--poche-ink);font-size:15px"></i></div>
       <span class="new-btn-label">從頭開始，選擇書卷</span>
-      <i class="ti ti-chevron-right" style="color:#6B3A10;margin-left:auto"></i>
+      <i class="ti ti-chevron-right" style="color:var(--poche-mute);margin-left:auto"></i>
     </button>
     <a class="new-btn" href="/search" style="text-decoration:none">
-      <div class="slot-icon"><i class="ti ti-search" style="color:#C8A860;font-size:15px"></i></div>
+      <div class="slot-icon"><i class="ti ti-search" style="color:var(--poche-ink);font-size:15px"></i></div>
       <span class="new-btn-label">🔍 全本搜尋</span>
-      <i class="ti ti-chevron-right" style="color:#6B3A10;margin-left:auto"></i>
+      <i class="ti ti-chevron-right" style="color:var(--poche-mute);margin-left:auto"></i>
     </a>
     <a class="new-btn" href="/kings" style="text-decoration:none">
-      <div class="slot-icon"><i class="ti ti-crown" style="color:#C8A860;font-size:15px"></i></div>
+      <div class="slot-icon"><i class="ti ti-crown" style="color:var(--poche-ink);font-size:15px"></i></div>
       <span class="new-btn-label">南北國列王對照表</span>
-      <i class="ti ti-chevron-right" style="color:#6B3A10;margin-left:auto"></i>
+      <i class="ti ti-chevron-right" style="color:var(--poche-mute);margin-left:auto"></i>
     </a>
   </div>
 </div>
@@ -276,7 +175,7 @@ body{background:var(--bg);color:var(--cream);overflow:hidden;}
 <div class="screen" id="s-books">
   <button class="back-btn" onclick="showScreen('s-testament')"><i class="ti ti-arrow-left"></i> 返回</button>
   <div style="text-align:center;margin-bottom:14px;">
-    <div style="font-size:11px;color:#B0946A;letter-spacing:.14em;margin-bottom:6px;">── 經卷選擇 ──</div>
+    <div style="font-size:11px;color:var(--poche-mute);letter-spacing:.14em;margin-bottom:6px;">── 經卷選擇 ──</div>
     <div id="bc-books-t" style="font-size:22px;font-weight:500;color:var(--gold);letter-spacing:.14em;">舊約</div>
   </div>
   <div class="book-grid-wrap"><div class="book-grid" id="bookGrid"></div></div>
@@ -325,37 +224,28 @@ const NEW=[
   {n:'猶大書',c:1},{n:'啟示錄',c:22}
 ];
 
-/* 星點 */
-for(let i=0;i<40;i++){
-  const s=document.createElement('div');s.className='star';
-  s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*3}s;animation-duration:${2+Math.random()*3}s`;
-  document.getElementById('stars').appendChild(s);
-}
-
 /* 畫面切換 */
 function showScreen(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('show'));
   document.getElementById(id).classList.add('show');
 }
 
-/* 開書動畫 */
-let bookOpened=false;
-document.getElementById('bookWrap').addEventListener('click',()=>{
-  if(bookOpened)return;
-  bookOpened=true;
-  document.getElementById('book').classList.add('open');
-  document.getElementById('bookHint').style.opacity='0';
-  document.getElementById('glow').classList.add('show');
-  setTimeout(()=>{
-    document.getElementById('bookWrap').style.transition='opacity .5s';
-    document.getElementById('bookWrap').style.opacity='0';
-  },600);
-  setTimeout(()=>{
-    document.getElementById('glow').classList.remove('show');
+/* 進入：每個瀏覽工作階段只播一次（同一次瀏覽內重新整理或返回不重播）；點任何地方、按 Enter／空白鍵立即進入 */
+(function(){
+  let seen=false;
+  try{seen=sessionStorage.getItem('bible-entry-seen')==='1';}catch(e){}
+  function enter(){
+    try{sessionStorage.setItem('bible-entry-seen','1');}catch(e){}
     showScreen('s-menu');
     loadProgress();
-  },1100);
-});
+  }
+  if(seen){enter();return;}
+  showScreen('s-book');
+  document.getElementById('entry').classList.add('play');
+  document.querySelector('#entry .sa').classList.add('play');
+  document.getElementById('s-book').addEventListener('click',enter);
+  document.getElementById('entryBtn').focus({preventScroll:true});
+})();
 
 /* 選書流程 */
 let curT='old', selBook=null, selCh=null;

@@ -1,0 +1,161 @@
+{
+ "schemaVersion": 2,
+ "generatedAt": "2026-10-30T00:00:00Z",
+ "title": "Design System: 聖經全書",
+ "extensions": {
+  "colorMeta": {
+   "wall": {
+    "role": "neutral",
+    "displayName": "灰泥白牆",
+    "canonical": "#F2F1EC"
+   },
+   "poche": {
+    "role": "neutral",
+    "displayName": "剖面炭灰",
+    "canonical": "#1F2328"
+   },
+   "sun": {
+    "role": "primary",
+    "displayName": "日光金",
+    "canonical": "#E2A62E"
+   },
+   "action": {
+    "role": "secondary",
+    "displayName": "行動藍灰",
+    "canonical": "#2B3A4E"
+   },
+   "person": {
+    "role": "tertiary",
+    "displayName": "鏽紅",
+    "canonical": "#9A3B26"
+   },
+   "place": {
+    "role": "tertiary",
+    "displayName": "森綠",
+    "canonical": "#2F6B4A"
+   },
+   "concept": {
+    "role": "tertiary",
+    "displayName": "靛紫",
+    "canonical": "#55438F"
+   }
+  },
+  "typographyMeta": {
+   "scripture": {
+    "displayName": "經文",
+    "purpose": "閱讀頁經文，襯線 400、18px 起。"
+   },
+   "ui": {
+    "displayName": "介面",
+    "purpose": "導覽、按鈕、卡片，無襯線。"
+   }
+  },
+  "shadows": [
+   {
+    "name": "menu",
+    "value": "0 4px 14px rgba(0,0,0,.35)",
+    "purpose": "入口選單卡。"
+   },
+   {
+    "name": "tour-fab",
+    "value": "0 6px 22px rgba(20,23,26,.35)",
+    "purpose": "教學浮動鈕。"
+   }
+  ],
+  "motion": [
+   {
+    "name": "dawn",
+    "value": ".24s cubic-bezier(.2,.8,.2,1)",
+    "purpose": "入口一道斜光，首次造訪才播。"
+   },
+   {
+    "name": "panel",
+    "value": ".2s–.25s ease",
+    "purpose": "卡片、抽屜、側欄。"
+   },
+   {
+    "name": "tour-pulse",
+    "value": "1.8s ease-out infinite",
+    "purpose": "教學鈕脈動，有 reduced-motion 降級。"
+   }
+  ],
+  "breakpoints": [
+   {
+    "name": "mobile",
+    "value": "640px"
+   }
+  ]
+ },
+ "components": [
+  {
+   "name": "Float Card",
+   "kind": "card",
+   "refersTo": "float-card",
+   "description": "點按標註後的說明卡。",
+   "html": "<div class=\"ds-card\"><span class=\"ds-badge\">人物</span><div class=\"ds-name\">摩西</div><div class=\"ds-body\">帶領以色列人出埃及的領袖。</div></div>",
+   "css": ".ds-card{background:#FAFAF7;border:1px solid #DAD9D0;border-radius:8px;padding:14px 15px;width:232px;font-family:'Noto Sans TC',sans-serif}.ds-badge{font-size:12px;padding:2px 8px;border-radius:99px;color:#fff;background:#9A3B26;display:inline-block;margin-bottom:8px}.ds-name{font-size:15px;font-weight:500;color:#1C1F23;margin-bottom:6px}.ds-body{font-size:13px;color:#3B4047;line-height:1.85}"
+  },
+  {
+   "name": "Nav Item",
+   "kind": "nav",
+   "refersTo": "nav-item-active",
+   "description": "側欄書卷項，啟用態亮日光文字。",
+   "html": "<div class=\"ds-nav\"><div class=\"ds-i\">創世記</div><div class=\"ds-i on\">出埃及記</div></div>",
+   "css": ".ds-nav{background:#1F2328;width:200px;padding:8px 0;font-family:'Noto Sans TC',sans-serif}.ds-i{padding:8px 16px;font-size:13px;color:#C3C8CF}.ds-i:hover{background:#2B3036}.ds-i.on{color:#F2C45A;background:#2B3036}"
+  },
+  {
+   "name": "Entry Button",
+   "kind": "button",
+   "refersTo": "entry-button",
+   "description": "入口「進入」按鈕。",
+   "html": "<button class=\"ds-enter\">進入</button>",
+   "css": ".ds-enter{min-height:56px;min-width:200px;border:1px solid #E2A62E;border-radius:8px;background:#1F2328;color:#F2C45A;font-size:18px;letter-spacing:.3em;cursor:pointer}.ds-enter:hover{background:#E2A62E;color:#1F2328}.ds-enter:focus-visible{outline:3px solid #E2A62E;outline-offset:2px}"
+  },
+  {
+   "name": "Annotation",
+   "kind": "custom",
+   "refersTo": "colors.person",
+   "description": "經文標註，三種底線形式。",
+   "html": "<p class=\"ds-v\"><span class=\"ds-p\">摩西</span>到了<span class=\"ds-l\">西奈山</span>，<span class=\"ds-c\">約</span>。</p>",
+   "css": ".ds-v{font-family:'Noto Serif TC',serif;font-size:18px;line-height:2;color:#1C1F23;background:#F2F1EC;padding:12px}.ds-p{color:#9A3B26;border-bottom:2px solid #9A3B2699}.ds-l{color:#2F6B4A;border-bottom:2px dotted #2F6B4A88}.ds-c{color:#55438F;border-bottom:3px double #55438F99}"
+  }
+ ],
+ "narrative": {
+  "northStar": "晨光剖面",
+  "overview": "整個介面是一張連續的建築剖面：灰泥白牆是經文所在的房間，炭灰實心塊是導覽，一道日光金標示讀到哪裡。",
+  "keyCharacteristics": [
+   "冷調石灰白牆加炭灰剖面塊",
+   "日光金只代表現在的位置",
+   "經文襯線 18px 起、行距 2",
+   "人物實線、地點點線、概念雙線",
+   "入口只有一道 240ms 斜光，回訪者直接進入"
+  ],
+  "rules": [
+   {
+    "name": "The One Beam Rule",
+    "body": "日光金只代表「現在的位置」，不裝飾、不鋪面。",
+    "section": "colors"
+   },
+   {
+    "name": "The Three Tags Rule",
+    "body": "鏽紅、森綠、靛紫專屬標註。",
+    "section": "colors"
+   },
+   {
+    "name": "The Form Not Hue Rule",
+    "body": "標註類型必須同時用底線形式區分。",
+    "section": "colors"
+   }
+  ],
+  "dos": [
+   "Do 讓日光金只代表現在的位置。",
+   "Do 標註類型同時用顏色與底線形式區分。",
+   "Do 保持字級下限 12px、經文 18px 起、點擊目標 40px 起。"
+  ],
+  "donts": [
+   "Don't 重新引入米黃、棕色或棕金。",
+   "Don't 用三個標註色裝飾其他元素。",
+   "Don't 在動畫期間用遮罩或 pointer-events: none 擋住操作。"
+  ]
+ }
+}
