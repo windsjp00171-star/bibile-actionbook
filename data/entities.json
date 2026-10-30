@@ -3154,6 +3154,20 @@
    "name": "亞拿尼亞（大馬士革門徒）",
    "name_en": "Ananias",
    "desc": "大馬士革門徒，奉神命令為歸信的掃羅施洗、恢復視力。"
+  },
+  {
+   "type": "person",
+   "name": "亞拿尼亞",
+   "name_en": "Ananias",
+   "testament": "NT",
+   "desc": "住在大馬士革、按律法虔誠的人，奉主差遣為掃羅醫治眼睛（徒22:12）。",
+   "books": [
+    "使徒行傳"
+   ],
+   "chapters": [
+    22,
+    22
+   ]
   }
  ],
  "以斯拉": {
@@ -4864,7 +4878,7 @@
   "name": "以色列人",
   "name_en": "Israelites",
   "desc": "雅各（神改名為「以色列」）的十二個兒子及其後裔，即以色列十二支派的總稱，是神在西奈山與之立約、揀選作聖潔子民的對象。被擄歸回後，因猶大支派人數最多、影響力最大，「猶太人」一詞逐漸取代「以色列人」成為通稱，兩者所指其實是同一個民族。",
-  "testament": "OT"
+  "testament": "both"
  },
  "以色列家": {
   "type": "place",
@@ -6332,15 +6346,31 @@
   "lat": 31.95,
   "lng": 35.93
  },
- "米甸": {
-  "type": "place",
-  "name": "米甸",
-  "name_en": "Midian",
-  "testament": "OT",
-  "desc": "亞伯拉罕與基土拉所生米甸的後裔，居阿拉伯曠野的遊牧商旅民族。摩西逃亡時娶米甸祭司葉忒羅之女。（今沙烏地阿拉伯西北部）",
-  "lat": 28.0,
-  "lng": 35.5
- },
+ "米甸": [
+  {
+   "type": "place",
+   "name": "米甸",
+   "name_en": "Midian",
+   "testament": "OT",
+   "desc": "亞伯拉罕與基土拉所生米甸的後裔，居阿拉伯曠野的遊牧商旅民族。摩西逃亡時娶米甸祭司葉忒羅之女。（今沙烏地阿拉伯西北部）",
+   "lat": 28.0,
+   "lng": 35.5
+  },
+  {
+   "type": "place",
+   "name": "米甸",
+   "name_en": "Midian",
+   "testament": "NT",
+   "desc": "摩西逃亡時寄居的地方，他在那裡生了兩個兒子（徒7:29）。",
+   "books": [
+    "使徒行傳"
+   ],
+   "chapters": [
+    7,
+    7
+   ]
+  }
+ ],
  "亞瑪力": {
   "type": "concept",
   "name": "亞瑪力",
@@ -6851,13 +6881,29 @@
   "lat": 31.61,
   "lng": 34.86
  },
- "哈抹": {
-  "type": "person",
-  "name": "哈抹",
-  "name_en": "Hamor",
-  "testament": "OT",
-  "desc": "示劍城的希未人首領，示劍之父。其子玷辱底拿後，全城男丁被西緬、利未所殺。"
- },
+ "哈抹": [
+  {
+   "type": "person",
+   "name": "哈抹",
+   "name_en": "Hamor",
+   "testament": "OT",
+   "desc": "示劍城的希未人首領，示劍之父。其子玷辱底拿後，全城男丁被西緬、利未所殺。"
+  },
+  {
+   "type": "person",
+   "name": "哈抹",
+   "name_en": "Hamor",
+   "testament": "NT",
+   "desc": "示劍的父親；亞伯拉罕在示劍從哈抹的子孫手裡買了墳地（徒7:16）。",
+   "books": [
+    "使徒行傳"
+   ],
+   "chapters": [
+    7,
+    7
+   ]
+  }
+ ],
  "基土拉": {
   "type": "person",
   "name": "基土拉",
@@ -12540,7 +12586,7 @@
   {
    "type": "person",
    "name_en": "Kish",
-   "testament": "OT",
+   "testament": "both",
    "desc": "便雅憫人，亞別的兒子，掃羅的父親，家中丟失驢群促成掃羅與撒母耳相遇（撒上9章）。",
    "name": "基士"
   },
@@ -21936,13 +21982,29 @@
   "testament": "OT",
   "desc": "古尼的孫子，押比疊的兒子，迦得支派的一位族長（代上5:15）。"
  },
- "沙崙": {
-  "type": "place",
-  "name": "沙崙",
-  "name_en": "Sharon",
-  "testament": "OT",
-  "desc": "迦得支派居住地附近的郊野，與地中海沿岸的沙崙平原同名（代上5:16）。"
- },
+ "沙崙": [
+  {
+   "type": "place",
+   "name": "沙崙",
+   "name_en": "Sharon",
+   "testament": "OT",
+   "desc": "迦得支派居住地附近的郊野，與地中海沿岸的沙崙平原同名（代上5:16）。"
+  },
+  {
+   "type": "place",
+   "name": "沙崙",
+   "name_en": "Sharon",
+   "testament": "NT",
+   "desc": "沿地中海的平原；住在呂大和沙崙的人看見以尼雅被醫好，都歸服了主（徒9:35）。",
+   "books": [
+    "使徒行傳"
+   ],
+   "chapters": [
+    9,
+    9
+   ]
+  }
+ ],
  "伊突人": {
   "type": "place",
   "name": "伊突人",
@@ -34125,8 +34187,9 @@
   "desc": "但以理書預言中興起的國，希臘王是公山羊的象徵（但8:21；10:20；11:2）。",
   "books": [
    "但以理書",
-   "約珥書",
-   "撒迦利亞書"
+   "使徒行傳",
+   "撒迦利亞書",
+   "約珥書"
   ]
  },
  "羅路哈瑪": {
@@ -35044,20 +35107,36 @@
    3
   ]
  },
- "西面": {
-  "type": "person",
-  "name": "西面",
-  "name_en": "Simeon",
-  "testament": "NT",
-  "desc": "耶路撒冷的義人，敬虔等候以色列的安慰；聖靈指示他必看見主的基督，他在殿裡抱起嬰孩耶穌稱頌神（路2:25-35）。",
-  "books": [
-   "路加福音"
-  ],
-  "chapters": [
-   2,
-   2
-  ]
- },
+ "西面": [
+  {
+   "type": "person",
+   "name": "西面",
+   "name_en": "Simeon",
+   "testament": "NT",
+   "desc": "耶路撒冷的義人，敬虔等候以色列的安慰；聖靈指示他必看見主的基督，他在殿裡抱起嬰孩耶穌稱頌神（路2:25-35）。",
+   "books": [
+    "路加福音"
+   ],
+   "chapters": [
+    2,
+    2
+   ]
+  },
+  {
+   "type": "person",
+   "name": "西面",
+   "name_en": "Simeon",
+   "testament": "NT",
+   "desc": "稱呼尼結的西面，安提阿教會的先知和教師之一（徒13:1）。",
+   "books": [
+    "使徒行傳"
+   ],
+   "chapters": [
+    13,
+    13
+   ]
+  }
+ ],
  "法內力": {
   "type": "person",
   "name": "法內力",
@@ -35134,6 +35213,675 @@
   "desc": "希律的家宰，他的妻子約亞拿是跟隨耶穌、用自己財物供給他的婦女之一（路8:3）。",
   "books": [
    "路加福音"
+  ]
+ },
+ "馬其頓": {
+  "type": "place",
+  "name": "馬其頓",
+  "name_en": "Macedonia",
+  "testament": "NT",
+  "desc": "希臘北部的羅馬省，保羅在特羅亞夢見一個馬其頓人求他「過來幫助我們」，福音因此傳入歐洲（徒16:9-10）；腓立比、帖撒羅尼迦、庇哩亞都在其中。"
+ },
+ "亞該亞": {
+  "type": "place",
+  "name": "亞該亞",
+  "name_en": "Achaia",
+  "testament": "NT",
+  "desc": "希臘南部的羅馬省，首府是哥林多；迦流是亞該亞的方伯（徒18:12），亞波羅也曾往亞該亞去（18:27）。"
+ },
+ "大數": {
+  "type": "place",
+  "name": "大數",
+  "name_en": "Tarsus",
+  "testament": "NT",
+  "desc": "基利家的重要城市，保羅的出生地（徒9:11；21:39；22:3）；信主後的保羅曾回到大數（9:30）。"
+ },
+ "以哥念": {
+  "type": "place",
+  "name": "以哥念",
+  "name_en": "Iconium",
+  "testament": "NT",
+  "desc": "小亞細亞的城；保羅和巴拿巴第一次宣教旅程中在以哥念傳道，被猶太人和外邦人攻擊（徒13:51；14:1-6）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "特羅亞": {
+  "type": "place",
+  "name": "特羅亞",
+  "name_en": "Troas",
+  "testament": "NT",
+  "desc": "小亞細亞西北的海港城；保羅在這裡夢見馬其頓人求助（徒16:8-10），也曾在此住七天，猶推古在此從窗口墜樓（20:6-12）。"
+ },
+ "別加": {
+  "type": "place",
+  "name": "別加",
+  "name_en": "Perga",
+  "testament": "NT",
+  "desc": "旁非利亞的城；保羅和巴拿巴在第一次宣教旅程中到別加，約翰（馬可）在此離開他們（徒13:13）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "彼西底": {
+  "type": "place",
+  "name": "彼西底",
+  "name_en": "Pisidia",
+  "testament": "NT",
+  "desc": "小亞細亞中南部的地區；彼西底的安提阿是保羅在會堂傳道的城（徒13:14）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "呂高尼": {
+  "type": "place",
+  "name": "呂高尼",
+  "name_en": "Lycaonia",
+  "testament": "NT",
+  "desc": "小亞細亞中部的地區，包括路司得和特庇（徒14:6）；當地人說呂高尼話（14:11）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "每西亞": {
+  "type": "place",
+  "name": "每西亞",
+  "name_en": "Mysia",
+  "testament": "NT",
+  "desc": "小亞細亞西北的地區；保羅一行經過每西亞下到特羅亞（徒16:7-8）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "米利都": {
+  "type": "place",
+  "name": "米利都",
+  "name_en": "Miletus",
+  "testament": "NT",
+  "desc": "小亞細亞西岸的港口；保羅在這裡召來以弗所的長老，向他們辭別（徒20:15-38）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "西流基": {
+  "type": "place",
+  "name": "西流基",
+  "name_en": "Seleucia",
+  "testament": "NT",
+  "desc": "敘利亞的港口；保羅和巴拿巴從這裡坐船往居比路（徒13:4）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "撒拉米": {
+  "type": "place",
+  "name": "撒拉米",
+  "name_en": "Salamis",
+  "testament": "NT",
+  "desc": "居比路島東岸的城；保羅和巴拿巴在撒拉米的猶太會堂傳道（徒13:5）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "亞大利": {
+  "type": "place",
+  "name": "亞大利",
+  "name_en": "Attalia",
+  "testament": "NT",
+  "desc": "旁非利亞的港口；保羅和巴拿巴結束第一次宣教旅程，從亞大利坐船回安提阿（徒14:25）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "亞波羅尼亞": {
+  "type": "place",
+  "name": "亞波羅尼亞",
+  "name_en": "Apollonia",
+  "testament": "NT",
+  "desc": "馬其頓的城；保羅一行路過亞波羅尼亞到帖撒羅尼迦（徒17:1）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "米推利尼": {
+  "type": "place",
+  "name": "米推利尼",
+  "name_en": "Mitylene",
+  "testament": "NT",
+  "desc": "利斯波島上的港口；保羅從特羅亞往耶路撒冷途中，船經過米推利尼（徒20:14）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "基阿": {
+  "type": "place",
+  "name": "基阿",
+  "name_en": "Chios",
+  "testament": "NT",
+  "desc": "愛琴海的島；保羅所乘的船經過基阿（徒20:15）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "撒摩": {
+  "type": "place",
+  "name": "撒摩",
+  "name_en": "Samos",
+  "testament": "NT",
+  "desc": "愛琴海的島；保羅所乘的船在撒摩靠岸（徒20:15）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "哥士": {
+  "type": "place",
+  "name": "哥士",
+  "name_en": "Cos",
+  "testament": "NT",
+  "desc": "愛琴海的島；保羅從米利都乘船，直行到哥士（徒21:1）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "羅底": {
+  "type": "place",
+  "name": "羅底",
+  "name_en": "Rhodes",
+  "testament": "NT",
+  "desc": "愛琴海的島；保羅所乘的船第二天到羅底（徒21:1）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "帕大喇": {
+  "type": "place",
+  "name": "帕大喇",
+  "name_en": "Patara",
+  "testament": "NT",
+  "desc": "呂家的港口；保羅在帕大喇換船往腓尼基去（徒21:1-2）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "多利買": {
+  "type": "place",
+  "name": "多利買",
+  "name_en": "Ptolemais",
+  "testament": "NT",
+  "desc": "腓尼基海岸的港口；保羅在多利買問弟兄的安，與他們同住一天（徒21:7）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "亞大米田": {
+  "type": "place",
+  "name": "亞大米田",
+  "name_en": "Adramyttium",
+  "testament": "NT",
+  "desc": "小亞細亞西北的港口；百夫長猶流帶保羅上了亞大米田的船（徒27:2）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "每拉": {
+  "type": "place",
+  "name": "每拉",
+  "name_en": "Myra",
+  "testament": "NT",
+  "desc": "呂家的港口；百夫長在每拉找到往意大利的亞歷山大船（徒27:5-6）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "革尼土": {
+  "type": "place",
+  "name": "革尼土",
+  "name_en": "Cnidus",
+  "testament": "NT",
+  "desc": "小亞細亞西南的海岬；保羅所乘的船好不容易才到革尼土的對面（徒27:7）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "撒摩尼": {
+  "type": "place",
+  "name": "撒摩尼",
+  "name_en": "Salmone",
+  "testament": "NT",
+  "desc": "克里特島東端的海岬；船隻從革尼土對面轉向，貼著克里特島背風處過了撒摩尼（徒27:7）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "佳澳": {
+  "type": "place",
+  "name": "佳澳",
+  "name_en": "Fair Havens",
+  "testament": "NT",
+  "desc": "克里特島南岸的港口；保羅勸眾人不要冬天開船，但船主不聽（徒27:8-12）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "拉西亞": {
+  "type": "place",
+  "name": "拉西亞",
+  "name_en": "Lasea",
+  "testament": "NT",
+  "desc": "克里特島南岸的城，靠近佳澳（徒27:8）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "高大": {
+  "type": "place",
+  "name": "高大",
+  "name_en": "Cauda",
+  "testament": "NT",
+  "desc": "克里特島南邊的小島；船在高大小島背風處，好不容易保住了小艇（徒27:16）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "賽耳底": {
+  "type": "place",
+  "name": "賽耳底",
+  "name_en": "Syrtis",
+  "testament": "NT",
+  "desc": "非洲北岸的淺灘；水手怕撞在賽耳底的沙灘上，就落下篷來任船漂流（徒27:17）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "利基翁": {
+  "type": "place",
+  "name": "利基翁",
+  "name_en": "Rhegium",
+  "testament": "NT",
+  "desc": "意大利南端的港口；保羅的船繞行後到了利基翁（徒28:13）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "部丟利": {
+  "type": "place",
+  "name": "部丟利",
+  "name_en": "Puteoli",
+  "testament": "NT",
+  "desc": "意大利的港口；保羅在這裡遇見弟兄，同住了七天（徒28:13-14）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "亞比烏": {
+  "type": "place",
+  "name": "亞比烏",
+  "name_en": "Appii Forum",
+  "testament": "NT",
+  "desc": "羅馬城南邊的市鎮，保羅在這裡遇見羅馬來迎接的弟兄（徒28:15）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "三館": {
+  "type": "place",
+  "name": "三館",
+  "name_en": "Three Taverns",
+  "testament": "NT",
+  "desc": "羅馬城南邊的驛站，也有弟兄在這裡迎接保羅（徒28:15）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "亞革大馬": {
+  "type": "place",
+  "name": "亞革大馬",
+  "name_en": "Akeldama",
+  "testament": "NT",
+  "desc": "耶路撒冷的田地，希伯來話意思是「血田」；猶大用不義之工價買了這田（徒1:18-19）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "亞鎖都": {
+  "type": "place",
+  "name": "亞鎖都",
+  "name_en": "Azotus",
+  "testament": "NT",
+  "desc": "即舊約的亞實突，腓利傳福音給太監後被聖靈提走，後來在亞鎖都出現（徒8:40）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "利百地拿": {
+  "type": "place",
+  "name": "利百地拿",
+  "name_en": "Libertines",
+  "testament": "NT",
+  "desc": "耶路撒冷的一個會堂，成員有古利奈、亞歷山大、基利家、亞細亞的猶太人；他們與司提反辯論（徒6:9）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "斯多亞": {
+  "type": "concept",
+  "name": "斯多亞",
+  "name_en": "Stoics",
+  "testament": "NT",
+  "desc": "希臘哲學學派之一；斯多亞派和以彼古羅派的哲學家在雅典與保羅辯論（徒17:18）。",
+  "books": [
+   "使徒行傳"
+  ],
+  "cat": "role"
+ },
+ "亞底米": {
+  "type": "concept",
+  "name": "亞底米",
+  "name_en": "Artemis",
+  "testament": "NT",
+  "desc": "以弗所人所拜的女神，她的神廟是以弗所的驕傲；銀匠底米丟因保羅的傳道生意受損，煽動眾人高喊「大哉！以弗所人的亞底米」（徒19:24-35）。",
+  "cat": "theo"
+ },
+ "理番": {
+  "type": "concept",
+  "name": "理番",
+  "name_en": "Rephan",
+  "testament": "NT",
+  "desc": "司提反引用阿摩司書所提到的偶像神之一（徒7:43）。",
+  "books": [
+   "使徒行傳"
+  ],
+  "cat": "theo"
+ },
+ "耶孫": {
+  "type": "person",
+  "name": "耶孫",
+  "name_en": "Jason",
+  "testament": "NT",
+  "desc": "帖撒羅尼迦的信徒，接待保羅和西拉在家中；猶太人攻擊他的家，把他拉到地方官面前（徒17:5-9）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "迦流": {
+  "type": "person",
+  "name": "迦流",
+  "name_en": "Gallio",
+  "testament": "NT",
+  "desc": "亞該亞的方伯；猶太人在他面前控告保羅，他拒絕審理這種信仰上的爭論（徒18:12-17）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "巴撒巴": {
+  "type": "person",
+  "name": "巴撒巴",
+  "name_en": "Barsabbas",
+  "testament": "NT",
+  "desc": "使徒行傳有兩人被稱為巴撒巴：被推薦補選使徒的約瑟（1:23），以及隨保羅、西拉往安提阿的猶大（15:22）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "猶士都": {
+  "type": "person",
+  "name": "猶士都",
+  "name_en": "Justus",
+  "testament": "NT",
+  "desc": "約瑟的別名，又稱巴撒巴，被推薦補選使徒（徒1:23）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "以尼雅": {
+  "type": "person",
+  "name": "以尼雅",
+  "name_en": "Aeneas",
+  "testament": "NT",
+  "desc": "住在呂大的人，癱瘓臥床八年，被彼得奉耶穌基督的名醫好（徒9:33-34）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "亞迦布": {
+  "type": "person",
+  "name": "亞迦布",
+  "name_en": "Agabus",
+  "testament": "NT",
+  "desc": "先知；他預言天下將有大饑荒（徒11:28），後來又用保羅的腰帶捆自己的手腳，預言保羅在耶路撒冷要被捆綁（21:10-11）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "伯羅哥羅": {
+  "type": "person",
+  "name": "伯羅哥羅",
+  "name_en": "Prochorus",
+  "testament": "NT",
+  "desc": "耶路撒冷教會選出的七位管理飯食的人之一（徒6:5）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "尼迦挪": {
+  "type": "person",
+  "name": "尼迦挪",
+  "name_en": "Nicanor",
+  "testament": "NT",
+  "desc": "耶路撒冷教會選出的七位管理飯食的人之一（徒6:5）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "提門": {
+  "type": "person",
+  "name": "提門",
+  "name_en": "Timon",
+  "testament": "NT",
+  "desc": "耶路撒冷教會選出的七位管理飯食的人之一（徒6:5）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "巴米拿": {
+  "type": "person",
+  "name": "巴米拿",
+  "name_en": "Parmenas",
+  "testament": "NT",
+  "desc": "耶路撒冷教會選出的七位管理飯食的人之一（徒6:5）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "尼哥拉": {
+  "type": "person",
+  "name": "尼哥拉",
+  "name_en": "Nicolas",
+  "testament": "NT",
+  "desc": "耶路撒冷教會選出的七位管理飯食的人之一，是進猶太教的安提阿人（徒6:5）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "羅大": {
+  "type": "person",
+  "name": "羅大",
+  "name_en": "Rhoda",
+  "testament": "NT",
+  "desc": "馬利亞家中的使女；彼得敲門時她認出彼得的聲音，歡喜得忘了開門，跑進去報信（徒12:13-15）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "伯拉斯都": {
+  "type": "person",
+  "name": "伯拉斯都",
+  "name_en": "Blastus",
+  "testament": "NT",
+  "desc": "希律王的內侍；推羅和西頓的人先賄賂他，再向希律求和（徒12:20）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "尼結": {
+  "type": "person",
+  "name": "尼結",
+  "name_en": "Niger",
+  "testament": "NT",
+  "desc": "西面的別名（「稱呼尼結的西面」），安提阿教會的先知和教師之一（徒13:1）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "路求": {
+  "type": "person",
+  "name": "路求",
+  "name_en": "Lucius",
+  "testament": "NT",
+  "desc": "古利奈人，安提阿教會的先知和教師之一（徒13:1）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "馬念": {
+  "type": "person",
+  "name": "馬念",
+  "name_en": "Manaen",
+  "testament": "NT",
+  "desc": "與分封之王希律同養的人，安提阿教會的先知和教師之一（徒13:1）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "巴耶穌": {
+  "type": "person",
+  "name": "巴耶穌",
+  "name_en": "Bar-Jesus",
+  "testament": "NT",
+  "desc": "即以呂馬，居比路島上的猶太術士假先知，在方伯士求保羅面前敵擋福音，被保羅宣告暫時瞎眼（徒13:6-11）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "希耳米": {
+  "type": "concept",
+  "name": "希耳米",
+  "name_en": "Hermes",
+  "testament": "NT",
+  "desc": "希臘的神，傳達諸神的信息；路司得人因保羅說話領首，稱他為希耳米（徒14:12）。",
+  "books": [
+   "使徒行傳"
+  ],
+  "cat": "theo"
+ },
+ "丟尼修": {
+  "type": "person",
+  "name": "丟尼修",
+  "name_en": "Dionysius",
+  "testament": "NT",
+  "desc": "亞略巴古的官，聽了保羅在雅典的講論後信了主（徒17:34）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "大馬哩": {
+  "type": "person",
+  "name": "大馬哩",
+  "name_en": "Damaris",
+  "testament": "NT",
+  "desc": "雅典的婦人，聽了保羅的講論後信了主（徒17:34）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "提多猶士都": {
+  "type": "person",
+  "name": "提多猶士都",
+  "name_en": "Titius Justus",
+  "testament": "NT",
+  "desc": "敬拜神的人，家緊靠會堂，保羅離開會堂後搬到他家中（徒18:7）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "基利司布": {
+  "type": "person",
+  "name": "基利司布",
+  "name_en": "Crispus",
+  "testament": "NT",
+  "desc": "哥林多會堂的管會堂的，和全家都信了主，並且受了洗（徒18:8）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "推喇奴": {
+  "type": "person",
+  "name": "推喇奴",
+  "name_en": "Tyrannus",
+  "testament": "NT",
+  "desc": "以弗所的人，保羅在他的學房天天辯論（徒19:9）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "畢羅斯": {
+  "type": "person",
+  "name": "畢羅斯",
+  "name_en": "Pyrrhus",
+  "testament": "NT",
+  "desc": "庇哩亞人所巴特的父親（徒20:4）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "猶推古": {
+  "type": "person",
+  "name": "猶推古",
+  "name_en": "Eutychus",
+  "testament": "NT",
+  "desc": "特羅亞的少年人，聽保羅講道到半夜睡著，從三層樓窗口墜下，保羅使他復活（徒20:9-12）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "土西拉": {
+  "type": "person",
+  "name": "土西拉",
+  "name_en": "Drusilla",
+  "testament": "NT",
+  "desc": "猶太籍的婦人，巡撫腓力斯的妻子；腓力斯與她一同聽保羅講信基督耶穌的道（徒24:24）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "波求非斯都": {
+  "type": "person",
+  "name": "波求非斯都",
+  "name_en": "Porcius Festus",
+  "testament": "NT",
+  "desc": "接替腓力斯的猶太巡撫（徒24:27），審問保羅，保羅上訴該撒（25章）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "猶流": {
+  "type": "person",
+  "name": "猶流",
+  "name_en": "Julius",
+  "testament": "NT",
+  "desc": "御營的百夫長，奉命押解保羅等囚犯往羅馬，待保羅甚寬容（徒27:1、3）。",
+  "books": [
+   "使徒行傳"
+  ]
+ },
+ "部百流": {
+  "type": "person",
+  "name": "部百流",
+  "name_en": "Publius",
+  "testament": "NT",
+  "desc": "馬耳他島的首領，接待保羅一行三日；他的父親患病，被保羅醫好（徒28:7-8）。",
+  "books": [
+   "使徒行傳"
   ]
  }
 }
