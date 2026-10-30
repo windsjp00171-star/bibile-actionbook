@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-30T00:00:00Z",
+  "title": "Design System: 聖經全書",
+  "extensions": {
+    "colorMeta": {
+      "vellum": { "role": "neutral", "displayName": "羊皮紙", "canonical": "#F7F0E0" },
+      "vellum-card": { "role": "neutral", "displayName": "卡片紙", "canonical": "#FEF8EC" },
+      "ink": { "role": "neutral", "displayName": "墨", "canonical": "#2A1A08" },
+      "leather": { "role": "neutral", "displayName": "皮革", "canonical": "#2C1A0E" },
+      "gold": { "role": "primary", "displayName": "鎏金", "canonical": "#D4A847" },
+      "place-forest": { "role": "secondary", "displayName": "森林綠", "canonical": "#2A5C3A" },
+      "person-rust": { "role": "tertiary", "displayName": "鏽紅", "canonical": "#8B3A1A" },
+      "concept-indigo": { "role": "tertiary", "displayName": "靛紫", "canonical": "#4A3080" }
+    },
+    "typographyMeta": {
+      "body": { "displayName": "經文", "purpose": "閱讀頁經文，細字重、行距 2.3。" },
+      "cover": { "displayName": "書封", "purpose": "入口書封書名。" },
+      "label": { "displayName": "標籤", "purpose": "節號、徽章、圖例，系統無襯線。" }
+    },
+    "shadows": [
+      { "name": "book", "value": "4px 4px 24px rgba(0,0,0,.7)", "purpose": "入口書封。" },
+      { "name": "menu", "value": "0 8px 32px rgba(0,0,0,.5)", "purpose": "暗室選單卡。" },
+      { "name": "paper", "value": "2px 3px 0 #C9A96E30", "purpose": "紙頁上的浮動卡片。" },
+      { "name": "tour-fab", "value": "0 6px 22px rgba(42,92,58,.5)", "purpose": "教學浮動鈕。" }
+    ],
+    "motion": [
+      { "name": "book-open", "value": ".8s cubic-bezier(.4,0,.2,1)", "purpose": "入口開書旋轉（待重構）。" },
+      { "name": "screen-fade", "value": ".4s opacity", "purpose": "入口畫面切換（待重構）。" },
+      { "name": "panel", "value": ".2s–.25s ease", "purpose": "卡片、抽屜、側欄收合。" },
+      { "name": "tour-pulse", "value": "1.8s ease-out infinite", "purpose": "教學鈕脈動，有 reduced-motion 降級。" }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Float Card",
+      "kind": "card",
+      "refersTo": "float-card",
+      "description": "點按經文標註後出現的說明卡。",
+      "html": "<div class=\"ds-card\"><span class=\"ds-badge\">人物</span><div class=\"ds-name\">摩西</div><div class=\"ds-body\">帶領以色列人出埃及的領袖。</div></div>",
+      "css": ".ds-card{background:#FEF8EC;border:1px solid #C9A96E;border-radius:8px;padding:14px 15px;width:232px;box-shadow:2px 3px 0 #C9A96E30;font-family:'Noto Serif TC',serif}.ds-badge{font-family:sans-serif;font-size:9px;letter-spacing:.12em;padding:2px 8px;border-radius:99px;color:#7A3010;background:#F5DDD0;border:1px solid #C9906A;display:inline-block;margin-bottom:8px}.ds-name{font-size:15px;font-weight:500;color:#2A1A08;margin-bottom:6px}.ds-body{font-size:12px;font-weight:300;color:#5A3A18;line-height:1.85}"
+    },
+    {
+      "name": "Tour FAB",
+      "kind": "button",
+      "refersTo": "tour-fab",
+      "description": "右下角教學導覽浮動鈕。",
+      "html": "<button class=\"ds-fab\">？ 教學導覽</button>",
+      "css": ".ds-fab{background:linear-gradient(135deg,#21492e,#2A5C3A);color:#fff;border:none;border-radius:100px;padding:12px 20px 12px 16px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;box-shadow:0 6px 22px rgba(42,92,58,.5)}.ds-fab:active{transform:scale(.96)}.ds-fab:focus-visible{outline:2px solid #D4A847;outline-offset:2px}"
+    },
+    {
+      "name": "Nav Item",
+      "kind": "nav",
+      "refersTo": "nav-item-active",
+      "description": "側欄書卷項，啟用態有金色左緣線。",
+      "html": "<div class=\"ds-nav\"><div class=\"ds-nav-item\">創世記</div><div class=\"ds-nav-item active\">出埃及記</div></div>",
+      "css": ".ds-nav{background:#2C1A0E;width:200px;padding:8px 0;font-family:'Noto Serif TC',serif}.ds-nav-item{padding:6px 16px;font-size:13px;color:#D4B080;font-weight:300;cursor:pointer}.ds-nav-item:hover{color:#D4A847;background:#3A220E}.ds-nav-item.active{color:#F0C96A;background:#3A220E;border-left:2px solid #D4A847;padding-left:14px;font-weight:400}"
+    },
+    {
+      "name": "Testament Card",
+      "kind": "card",
+      "refersTo": "testament-card",
+      "description": "入口選擇舊約／新約的卡片。",
+      "html": "<div class=\"ds-test\">舊約</div>",
+      "css": ".ds-test{width:140px;height:155px;background:#2C1A0E;border:1px solid #5C3010;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#D4A847;font-family:'Noto Serif TC',serif;font-size:18px;cursor:pointer;transition:background .15s,border-color .15s}.ds-test:hover{background:#3A220E;border-color:#D4A847}"
+    },
+    {
+      "name": "Annotation",
+      "kind": "custom",
+      "refersTo": "colors.person-rust",
+      "description": "經文內人名／地名／概念標註。",
+      "html": "<p class=\"ds-verse\"><span class=\"ds-p\">摩西</span>到了<span class=\"ds-l\">西奈山</span>。</p>",
+      "css": ".ds-verse{font-family:'Noto Serif TC',serif;font-size:15px;font-weight:300;line-height:2.3;color:#2A1A08;background:#F7F0E0;padding:12px}.ds-p{color:#8B3A1A;border-bottom:2px dotted #8B3A1A88;cursor:pointer}.ds-l{color:#2A5C3A;border-bottom:2px dotted #2A5C3A88;cursor:pointer}"
+    }
+  ],
+  "narrative": {
+    "northStar": "燭光下的手抄本",
+    "overview": "整站是一本被翻開的老書：進站是深棕皮革的暗室，一本燙金書封等你點開；翻進去之後，是羊皮紙色的閱讀頁，經文行距寬鬆。金色只用在細線、頁碼與點綴，從不用作大面積填色。",
+    "keyCharacteristics": [
+      "深棕皮革與羊皮紙兩種亮度，共用一組棕金色票",
+      "全站單一字體 Noto Serif TC，細字重 300 為主",
+      "金色細線與菱形作為分隔飾紋",
+      "經文行距 2.3，並有淡淡的橫格背景線",
+      "入口有 3D 開書儀式動畫與星點背景（待重構）"
+    ],
+    "rules": [
+      { "name": "The Candle Rule", "body": "金色是光，不是顏料：只畫在線、點、字上，不鋪面。", "section": "colors" },
+      { "name": "The Three Tags Rule", "body": "人名、地名、概念各一個色，介面其他元素不得借用這三個色來裝飾。", "section": "colors" },
+      { "name": "The Whisper Weight Rule", "body": "正文維持 300 細字重，只有標題與選中態升到 500。", "section": "typography" },
+      { "name": "The Flat Page Rule", "body": "紙頁上不使用柔和模糊陰影，疊層只用淡金硬陰影。", "section": "elevation" }
+    ],
+    "dos": [
+      "Do 在暗底使用 gold (#D4A847)，在紙頁使用 gold-soft (#C9A96E)，兩者不互換。",
+      "Do 保持正文 300 字重、行距 2.3，經文區留白。",
+      "Do 用人名鏽紅、地名森綠、概念靛紫標註，並保持點狀底線樣式一致。",
+      "Do 把分隔做成「漸隱金線 + 菱形」。"
+    ],
+    "donts": [
+      "Don't 在介面其他地方使用鏽紅、森林綠、靛紫來裝飾。",
+      "Don't 在紙頁上使用大面積實心金色或柔和模糊陰影。",
+      "Don't 新增不在棕金色票內的灰色或藍色。"
+    ]
+  }
+}
