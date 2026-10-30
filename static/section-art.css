@@ -26,3 +26,8 @@
 .sa.play .floorlight,.sa.play .floorglow{animation:sa-beam .9s cubic-bezier(.22,1,.36,1) 1.5s backwards;}
 .sa.play .book{animation:sa-fade .8s ease-out 1.75s backwards;}
 @media (prefers-reduced-motion:reduce){.sa.play *{animation:none !important;}}
+
+/* 頁首版本：裁成屋頂到樓板的一層（viewBox 由模板指定），縮小成標題區裝飾。
+   尺寸與裁切放在這個檔案裡，不依賴 style.css 是否為最新版。 */
+.header-art{width:min(320px,72%);margin:0 auto 12px;}
+.header-art .sa{overflow:hidden;}
