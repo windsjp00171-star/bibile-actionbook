@@ -28,7 +28,7 @@
 <div class="sp-wrap">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
     <a class="sp-back" href="/" style="margin:0">‹ 回首頁</a>
-    <button id="tourBtn" class="tour-trigger" type="button" onclick="startSearchTour()"
+    <button id="tourBtn" data-tour="search-tour" class="tour-trigger" type="button" onclick="startSearchTour()"
       style="background:#2A5C3A;color:#fff;border:none;border-radius:14px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">💡 教學</button>
   </div>
   <div class="sp-head">
@@ -36,20 +36,20 @@
     <div class="sp-sub">搜尋整本聖經（66 卷）的經文</div>
   </div>
   <div class="sp-row">
-    <input type="text" id="q" placeholder="輸入關鍵字，如「歌利亞」「愛是恆久忍耐」" autocomplete="off" value="{{ q }}">
+    <input type="text" id="q" data-tour="search-q" placeholder="輸入關鍵字，如「歌利亞」「愛是恆久忍耐」" autocomplete="off" value="{{ q }}">
     <button onclick="run()">搜尋</button>
   </div>
   <div class="sp-meta" id="meta"></div>
-  <div id="results"></div>
+  <div id="results" data-tour="search-results"></div>
   <p style="text-align:center;font-size:11px;color:#B0A088;margin-top:30px">經文採用《和合本》（Chinese Union Version，1919）· 公有領域</p>
 </div>
 <script src="{{ url_for('static', filename='js/tour.js') }}"></script>
 <script>
 const SEARCH_TOUR_STEPS = [
   { title: '歡迎！這是搜尋教學 👋', text: '這頁可以一次搜尋整本聖經（66 卷）。我帶你看怎麼用，看完按「下一步」就好。' },
-  { sel: '#q', title: '輸入關鍵字', text: '打人名、地名或一句經文（如「歌利亞」「愛是恆久忍耐」），按 Enter 或右邊「搜尋」。', spot: 6 },
-  { sel: '#results', title: '搜尋結果', text: '會列出所有符合的經節，點任一筆直接跳到聖經那一節閱讀。', spot: 6 },
-  { sel: '#tourBtn', title: '完成！🎉', text: '忘記了隨時點這顆「💡 教學」再看一次。' },
+  { sel: '[data-tour="search-q"]', title: '輸入關鍵字', text: '打人名、地名或一句經文（如「歌利亞」「愛是恆久忍耐」），按 Enter 或右邊「搜尋」。', spot: 6 },
+  { sel: '[data-tour="search-results"]', title: '搜尋結果', text: '會列出所有符合的經節，點任一筆直接跳到聖經那一節閱讀。', spot: 6 },
+  { sel: '[data-tour="search-tour"]', title: '完成！🎉', text: '忘記了隨時點這顆「💡 教學」再看一次。' },
 ];
 function startSearchTour(){
   const b=document.getElementById('tourBtn'); if(b) b.classList.remove('pulse');
