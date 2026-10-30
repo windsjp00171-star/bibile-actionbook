@@ -90,7 +90,7 @@ body {
   justify-content: center;
   min-width: 40px;
   height: 40px;
-  border-radius: 6px;
+  border-radius: 8px;
   background: var(--poche-2);
   color: var(--nav-book);
   font-size: 12px;
@@ -217,7 +217,7 @@ body {
 .no-data { color: var(--ink-4); text-align: center; padding: 40px 0; }
 
 /* ── Tappable clause (mobile-friendly: tap, no long-press select) ── */
-.clause { cursor: pointer; border-radius: 3px; transition: background 0.12s; }
+.clause { cursor: pointer; border-radius: 4px; transition: background 0.12s; }
 .clause:active { background: #E2A62E33; }
 @media (hover: hover) {
   .clause:hover { background: #E2A62E22; }
@@ -225,7 +225,7 @@ body {
 
 /* ── Selection floating button (desktop bonus) ── */
 /* ── Inline annotation ── */
-.anno { cursor: pointer; text-underline-offset: 3px; border-radius: 2px; }
+.anno { cursor: pointer; text-underline-offset: 3px; border-radius: 4px; }
 .anno-person  { color: var(--person); border-bottom: 2px solid #9A3B2699; }
 .anno-place   { color: var(--place); border-bottom: 2px dotted #2F6B4A88; }
 .anno-concept { color: var(--concept); border-bottom: 3px double #55438F99; }
@@ -294,8 +294,8 @@ body {
   position: fixed; right: 16px; bottom: 18px; z-index: 1000;
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--poche); color: #fff;
-  border: none; border-radius: 100px; padding: 12px 20px 12px 16px;
-  font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer;
+  border: none; border-radius: 999px; padding: 12px 20px 12px 16px;
+  font-size: 16px; font-weight: 700; font-family: inherit; cursor: pointer;
   box-shadow: 0 6px 22px rgba(20,23,26,.35);
   padding-bottom: max(12px, env(safe-area-inset-bottom));
 }
@@ -383,14 +383,14 @@ body {
 }
 .card-badge {
   display: inline-block; font-size: 12px; padding: 2px 9px;
-  border-radius: 10px; color: #fff; margin-bottom: 8px;
+  border-radius: 8px; color: #fff; margin-bottom: 8px;
 }
 .card-badge.anno-person  { background: var(--person); }
 .card-badge.anno-place   { background: var(--place); }
 .card-badge.anno-concept { background: var(--concept); }
 .map-avail {
   display: inline-block; font-size: 12px; padding: 2px 7px; margin-left: 4px;
-  border-radius: 10px; background: var(--wall-3); color: var(--ink-3); font-weight: 500;
+  border-radius: 8px; background: var(--wall-3); color: var(--ink-3); font-weight: 500;
 }
 .card-name { font-size: 18px; font-weight: 500; color: var(--ink); margin: 0 0 10px; }
 .card-reading { font-size: 13px; color: var(--sun-deep); font-weight: 400; letter-spacing: .05em; margin-left: 4px; }
@@ -401,13 +401,13 @@ body {
 .map-popup { font-size: 13px; color: var(--ink-2); max-width: 220px; }
 .map-popup b { font-size: 14px; color: var(--ink); }
 .map-popup p { margin: 6px 0; line-height: 1.6; font-weight: 300; }
-.map-popup a { color: var(--action); font-weight: 600; text-decoration: none; font-size: 12.5px; }
+.map-popup a { color: var(--action); font-weight: 600; text-decoration: none; font-size: 13px; }
 .leaflet-tooltip { font-size: 12px; padding: 2px 7px; }
 .map-expand-btn {
   position: absolute; right: 8px; bottom: 8px; z-index: 500;
   background: rgba(255,255,255,.92); border: 1px solid #CFCEC4;
   color: var(--ink-3); font-size: 12px; padding: 5px 10px;
-  border-radius: 16px; cursor: pointer;
+  border-radius: 12px; cursor: pointer;
 }
 .map-expand-btn:active { background: var(--wall-2); }
 /* 全螢幕大地圖 */
@@ -420,14 +420,14 @@ body {
   position: fixed; z-index: 1301;
   left: 50%; top: 50%; transform: translate(-50%, -50%) scale(.97);
   width: min(97vw, 1200px); height: min(94vh, 880px);
-  background: var(--wall); border-radius: 16px; padding: 16px;
+  background: var(--wall); border-radius: 12px; padding: 16px;
   box-shadow: 0 12px 48px rgba(0,0,0,.35);
   opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
   display: flex; flex-direction: column;
 }
 .bigmap-panel.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
 .bigmap-title { font-size: 16px; color: var(--ink); margin: 0 0 10px; padding-right: 36px; }
-.bigmap-canvas { flex: 1; min-height: 0; border-radius: 10px; overflow: hidden; }
+.bigmap-canvas { flex: 1; min-height: 0; border-radius: 8px; overflow: hidden; }
 /* 路線圖面板：地圖拿最大空間，上方輔助區塊收緊高度，不擠壓地圖 */
 #routesPanel { min-height: 0; }
 #routesPanel .search-meta { flex: none; margin-bottom: 6px; }
@@ -467,15 +467,19 @@ body {
 /* 路線圖 */
 .route-picker { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
 .route-chip {
-  padding: 5px 11px; border: 1px solid #CFCEC4; border-radius: 14px;
+  padding: 5px 11px; border: 1px solid #CFCEC4; border-radius: 999px;
   background: #fff; color: var(--ink-3); font-size: 12px; cursor: pointer; font-family: inherit;
-  border-left: 4px solid var(--rc, var(--ink-4));
 }
+.route-chip::before, .rh-chip::before {
+  content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--rc, var(--ink-4)); margin-right: 6px; vertical-align: 0.05em;
+}
+.route-chip.active::before { background: #fff; }
 .route-chip.relevant { font-weight: 600; }
 .route-chip.active { background: var(--rc, var(--ink-4)); color: #fff; border-color: var(--rc, var(--ink-4)); }
 .route-empty { font-size: 13px; color: var(--ink-4); }
 .route-toggle {
-  padding: 5px 11px; border: 1px dashed #CFCEC4; border-radius: 14px;
+  padding: 5px 11px; border: 1px dashed #CFCEC4; border-radius: 999px;
   background: transparent; color: var(--ink-4); font-size: 12px; cursor: pointer; font-family: inherit;
 }
 .route-toggle:active { background: var(--wall-2); }
@@ -483,12 +487,12 @@ body {
 .route-headline { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .route-ctrl { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
 .route-play {
-  padding: 5px 12px; border: none; border-radius: 14px;
+  padding: 5px 12px; border: none; border-radius: 999px;
   background: var(--action); color: #fff; font-size: 12px; cursor: pointer; font-family: inherit;
 }
 .route-play:disabled { background: var(--ink-4); cursor: default; }
 .route-speed {
-  padding: 4px 6px; border: 1px solid #CFCEC4; border-radius: 10px;
+  padding: 4px 6px; border: 1px solid #CFCEC4; border-radius: 8px;
   background: #fff; color: var(--ink-3); font-size: 12px; font-family: inherit; cursor: pointer;
 }
 .route-arrow-icon { background: none; border: none; }
@@ -503,17 +507,17 @@ body {
 }
 .rh-label { font-size: 12px; color: var(--ink-4); font-weight: 600; flex-shrink: 0; }
 .rh-chip {
-  padding: 5px 11px; border: none; border-radius: 14px; cursor: pointer; font-family: inherit;
-  background: #fff; color: var(--ink-2); font-size: 12.5px; border-left: 4px solid var(--rc, var(--ink-4));
+  padding: 5px 11px; border: none; border-radius: 999px; cursor: pointer; font-family: inherit;
+  background: #fff; color: var(--ink-2); font-size: 13px;
 }
 .rh-chip:active { background: var(--wall-3); }
 .route-stop.rs-focus { background: var(--wall-2); border-radius: 8px; }
 .rp-link { color: var(--action); font-weight: 600; text-decoration: none; }
 .rs-link { text-decoration: none; }
 .rs-link:active { opacity: .6; }
-.route-name { font-size: 15px; color: var(--ink); font-weight: 600; }
+.route-name { font-size: 16px; color: var(--ink); font-weight: 600; }
 .route-ref { font-size: 12px; color: var(--action); margin: 1px 0 3px; }
-.route-sum { font-size: 12.5px; font-weight: 300; line-height: 1.7; color: var(--ink-2); }
+.route-sum { font-size: 13px; font-weight: 300; line-height: 1.7; color: var(--ink-2); }
 .route-stops { max-height: 150px; overflow-y: auto; margin-top: 8px; }
 .route-stop {
   display: flex; gap: 8px; align-items: flex-start; padding: 5px 4px;
@@ -567,7 +571,7 @@ body {
 }
 .rel-chip {
   font-size: 13px; color: var(--action); background: #E4EEE8;
-  border: 1px solid #2F6B4A33; border-radius: 14px;
+  border: 1px solid #2F6B4A33; border-radius: 999px;
   padding: 3px 11px; cursor: pointer; transition: background .15s;
 }
 .rel-chip:active { background: #D5E3DB; }
@@ -575,7 +579,7 @@ body {
 /* ── 經文搜尋 ── */
 .search-trigger {
   display: inline-block; margin: 8px 0 0 8px;
-  padding: 7px 14px; border-radius: 16px;
+  padding: 7px 14px; border-radius: 12px;
   background: var(--ink-3); color: #fff; border: none;
   font-size: 13px; cursor: pointer; letter-spacing: .04em;
 }
@@ -589,13 +593,13 @@ body {
   position: fixed; z-index: 1201; left: 50%; top: 50%;
   transform: translate(-50%, -50%) scale(.97);
   width: min(94vw, 640px); max-height: 86vh;
-  background: var(--wall); border-radius: 16px; padding: 20px;
+  background: var(--wall); border-radius: 12px; padding: 20px;
   box-shadow: 0 12px 48px rgba(0,0,0,.3);
   opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
   display: flex; flex-direction: column;
 }
 .search-panel.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
-.search-title { font-size: 17px; color: var(--ink); margin: 0 0 12px; }
+.search-title { font-size: 18px; color: var(--ink); margin: 0 0 12px; }
 .search-inputrow { display: flex; gap: 8px; }
 .search-inputrow input {
   flex: 1; padding: 9px 12px; border: 1px solid #CFCEC4;
@@ -616,7 +620,7 @@ body {
 .hit-text { font-size: 14px; font-weight: 300; line-height: 1.7; }
 .search-hit mark { background: #E2A62E55; color: inherit; padding: 0 1px; }
 .search-empty { color: var(--ink-4); font-size: 13px; padding: 12px 2px; }
-.verse-hl { background: linear-gradient(transparent 60%, #E2A62E40 60%); border-radius: 3px; }
+.verse-hl { background: linear-gradient(transparent 60%, #E2A62E40 60%); border-radius: 4px; }
 .search-scope { display: block; font-size: 12px; color: var(--ink-3); margin: 8px 2px 0; cursor: pointer; }
 .search-scope input { vertical-align: middle; margin-right: 5px; }
 /* 索引 */
@@ -632,7 +636,7 @@ body {
 }
 .explore-list { overflow-y: auto; flex: 1; display: flex; flex-wrap: wrap; gap: 6px; align-content: flex-start; }
 .explore-item {
-  padding: 6px 11px; border: 1px solid #8A8F9666; border-radius: 16px;
+  padding: 6px 11px; border: 1px solid #8A8F9666; border-radius: 12px;
   background: var(--wall-2); color: var(--ink-2); font-size: 13px; cursor: pointer; font-family: inherit;
 }
 .explore-item:active { background: var(--wall-3); }
@@ -655,7 +659,7 @@ body {
 /* ── 本章世系結構圖 ── */
 .lineage-trigger {
   display: inline-block; margin: 8px 0 0;
-  padding: 7px 14px; border-radius: 16px;
+  padding: 7px 14px; border-radius: 12px;
   background: var(--action); color: #fff; border: none;
   font-size: 13px; cursor: pointer; letter-spacing: .04em;
 }
@@ -669,13 +673,13 @@ body {
   position: fixed; z-index: 1201;
   left: 50%; top: 50%; transform: translate(-50%, -50%) scale(.96);
   width: min(92vw, 680px); max-height: 84vh;
-  background: var(--wall); border-radius: 16px; padding: 20px;
+  background: var(--wall); border-radius: 12px; padding: 20px;
   box-shadow: 0 12px 48px rgba(0,0,0,.3);
   opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
   overflow: hidden; display: flex; flex-direction: column;
 }
 .lineage-panel.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
-.lineage-title { font-size: 17px; color: var(--ink); margin: 0 0 4px; }
+.lineage-title { font-size: 18px; color: var(--ink); margin: 0 0 4px; }
 .lineage-sub { font-size: 12px; color: var(--ink-4); margin: 0 0 12px; }
 .lineage-scroll { overflow: auto; flex: 1; -webkit-overflow-scrolling: touch; }
 .lineage-scroll svg { display: block; margin: 0 auto; }
@@ -685,7 +689,7 @@ body {
   .anno-card {
     top: 50%; right: 28px; transform: translateY(-50%);
     width: 380px; max-height: 86vh; overflow-y: auto;
-    border-radius: 10px; padding: 18px 20px 20px;
+    border-radius: 8px; padding: 18px 20px 20px;
     opacity: 0; pointer-events: none; transition: opacity .18s;
   }
   .anno-card.open { opacity: 1; pointer-events: auto; }
@@ -711,7 +715,7 @@ body {
   /* Bottom sheet */
   .anno-card {
     left: 0; right: 0; bottom: 0; width: 100%;
-    border-radius: 16px 16px 0 0;
+    border-radius: 12px 12px 0 0;
     padding: 22px 18px calc(20px + env(safe-area-inset-bottom));
     max-height: 80vh; overflow-y: auto;
     transform: translateY(100%); transition: transform .25s ease;
@@ -720,7 +724,7 @@ body {
   .card-grip {
     display: block; position: absolute; top: 9px; left: 50%;
     transform: translateX(-50%);
-    width: 38px; height: 4px; border-radius: 2px; background: #8A8F9666;
+    width: 38px; height: 4px; border-radius: 4px; background: #8A8F9666;
   }
 }
 
@@ -737,7 +741,7 @@ body {
   align-items: center;
   justify-content: center;
   border: 1px solid var(--poche-2);
-  border-radius: 7px;
+  border-radius: 8px;
   background: var(--nav-bg);
   color: var(--nav-book);
   font-size: 13px;
