@@ -3,11 +3,25 @@ import re
 import json
 from datetime import datetime, timezone
 from urllib.parse import unquote_to_bytes
-from flask import Flask, render_template, request, jsonify, send_from_directory
+from flask import Flask, render_template, request, jsonify, send_from_directory, url_for
 from markupsafe import Markup, escape
 from supabase import create_client
 
 app = Flask(__name__)
+
+
+@app.context_processor
+def _inject_static_v():
+    """static 檔加上 ?v=<mtime>。sw.js 對 /static/ 是 cache-first，檔案改了但網址不變
+    的話，已安裝的 PWA 會一直用舊版 JS，跟新版模板對不上。"""
+    def static_v(filename):
+        path = os.path.join(app.static_folder, filename)
+        try:
+            v = int(os.path.getmtime(path))
+        except OSError:
+            v = 0
+        return url_for("static", filename=filename, v=v)
+    return {"static_v": static_v}
 
 
 class _DecodePathInfo:
