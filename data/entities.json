@@ -360,7 +360,7 @@
    "type": "person",
    "name": "希斯崙",
    "name_en": "Hezron",
-   "testament": "OT",
+   "testament": "both",
    "desc": "法勒斯之子，猶大支派族長之一，大衛家譜中承上啟下的一代。",
    "verses": "路得記"
   }
@@ -648,6 +648,20 @@
    "name_en": "Enoch (walked with God)",
    "desc": "塞特後裔，雅列之子，瑪土撒拉之父。六十五歲生子後「與神同行三百年」，最終神將他取去，不見蹤跡，聖經罕見的不經歷死亡者之一。",
    "verses": "創世記5:18-24"
+  },
+  {
+   "type": "person",
+   "name": "以諾",
+   "name_en": "Enoch",
+   "testament": "NT",
+   "desc": "雅列的兒子，瑪土撒拉的父親，列在耶穌的家譜中（路3:37）。",
+   "books": [
+    "路加福音"
+   ],
+   "chapters": [
+    3,
+    3
+   ]
   }
  ],
  "拉麥": [
@@ -678,6 +692,20 @@
    "name_en": "Lamech (father of Noah)",
    "desc": "塞特後裔，瑪土撒拉之子，挪亞的父親。他為挪亞起名時說「這個兒子必為我們解憂勞苦」，預示挪亞在洪水後的角色。",
    "verses": "創世記5:25-31"
+  },
+  {
+   "type": "person",
+   "name": "拉麥",
+   "name_en": "Lamech",
+   "testament": "NT",
+   "desc": "塞特後裔，瑪土撒拉的兒子，挪亞的父親，列在耶穌的家譜中（路3:36-37）。",
+   "books": [
+    "路加福音"
+   ],
+   "chapters": [
+    3,
+    3
+   ]
   }
  ],
  "亞大": {
@@ -1360,7 +1388,8 @@
  },
  "閃": {
   "books": [
-   "創世記"
+   "創世記",
+   "路加福音"
   ],
   "type": "person",
   "name": "閃",
@@ -2897,7 +2926,7 @@
   "name": "所羅門",
   "name_en": "Solomon",
   "desc": "以色列第三任王，以智慧著稱，建造聖殿，晚年因妃嬪導致拜偶像；傳統認為是箴言、傳道書、雅歌的作者。",
-  "testament": "OT"
+  "testament": "both"
  },
  "以利亞": {
   "type": "person",
@@ -3540,6 +3569,20 @@
     10
    ],
    "desc": "以斯拉記10章娶外邦女子的以色列人之一，此名在本章不只一處出現（拉10:39），經文未進一步區分是否同一人，與其他同名者皆非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "拿單",
+   "name_en": "Nathan",
+   "testament": "NT",
+   "desc": "大衛的兒子，列在耶穌的家譜中（路3:31）。",
+   "books": [
+    "路加福音"
+   ],
+   "chapters": [
+    3,
+    3
+   ]
   }
  ],
  "烏利亞": [
@@ -4768,7 +4811,7 @@
   "name": "以色列",
   "name_en": "Israel",
   "desc": "雅各被神改名為「以色列」後，這個名字同時成為他後裔十二支派的民族稱呼，也用來指他們定居的這片土地——大致是地中海東岸、約但河兩側，北從但（今黎巴嫩邊界）南到別是巴（今以色列南部）的狹長地帶，就是神應許給亞伯拉罕後裔為業的迦南地。",
-  "testament": "OT"
+  "testament": "both"
  },
  "人子": {
   "type": "concept",
@@ -4872,7 +4915,8 @@
    "books": [
     "列王紀上",
     "列王紀下",
-    "歷代志下"
+    "歷代志下",
+    "馬太福音"
    ]
   },
   {
@@ -5029,6 +5073,20 @@
     12
    ],
    "desc": "城牆告成之禮時奏樂的祭司之一（尼12:42），與亞倫第三子、繼任大祭司的以利亞撒非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "以利亞撒",
+   "name_en": "Eleazar",
+   "testament": "NT",
+   "desc": "耶穌家譜中以律的兒子（太1:15）；與亞倫的兒子祭司以利亞撒不是同一人。",
+   "books": [
+    "馬太福音"
+   ],
+   "chapters": [
+    1,
+    1
+   ]
   }
  ],
  "便哈達": {
@@ -5094,7 +5152,7 @@
   "type": "person",
   "name": "羅波安",
   "name_en": "",
-  "testament": "OT",
+  "testament": "both",
   "desc": "所羅門之子，猶大首任王。百姓因所羅門年間服苦役太重，求他減輕勞役，他先問老臣，得到「服事百姓、好話回答」的建議；卻改採一同長大的少年臣僕的主意，用強硬話回覆：「我父親使你們負重軛，我必使你們負更重的軛」，激起民怨，掌管服苦之人的亞多蘭被百姓用石頭打死，他自己則急忙逃回耶路撒冷（王上12:1-19）。除猶大支派外，十個支派就此脫離大衛家，另立耶羅波安為王，南北分裂自此開始。",
   "verses": "列王紀上12章、歷代志下10章"
  },
@@ -5110,7 +5168,7 @@
   "type": "person",
   "name": "亞撒",
   "name_en": "",
-  "testament": "OT",
+  "testament": "both",
   "desc": "亞比央之子，猶大王，行耶和華眼中看為正的事，除偶像、潔淨敬拜。",
   "verses": "列王紀下、歷代志下"
  },
@@ -5126,7 +5184,7 @@
   "type": "person",
   "name": "約坦",
   "name_en": "",
-  "testament": "OT",
+  "testament": "both",
   "desc": "烏西雅之子，猶大王，行正道，建聖殿上門，國勢穩固。",
   "verses": "列王紀下、歷代志下"
  },
@@ -5134,7 +5192,7 @@
   "type": "person",
   "name": "亞哈斯",
   "name_en": "",
-  "testament": "OT",
+  "testament": "both",
   "desc": "約坦之子，猶大王，行惡拜偶像，甚至焚子獻祭，引亞述入侵。",
   "verses": "列王紀下、歷代志下"
  },
@@ -5143,7 +5201,7 @@
    "type": "person",
    "name": "亞們",
    "name_en": "",
-   "testament": "OT",
+   "testament": "both",
    "desc": "瑪拿西之子，猶大王，效法父早年之惡，在位二年被臣僕所殺。",
    "verses": "列王紀下、歷代志下"
   },
@@ -6370,7 +6428,7 @@
   "type": "person",
   "name": "該南",
   "name_en": "",
-  "testament": "OT",
+  "testament": "both",
   "desc": "以挪士之子，瑪勒列之父，亞當到挪亞十代族譜中的一代，活九百一十歲。",
   "verses": "創世記5、創世記11"
  },
@@ -6379,7 +6437,7 @@
    "type": "person",
    "name": "瑪勒列",
    "name_en": "",
-   "testament": "OT",
+   "testament": "both",
    "desc": "該南之子，雅列之父，亞當到挪亞族譜中的一代。",
    "verses": "創世記5、創世記11"
   },
@@ -6402,7 +6460,7 @@
   "type": "person",
   "name": "雅列",
   "name_en": "",
-  "testament": "OT",
+  "testament": "both",
   "desc": "瑪勒列之子，以諾之父，亞當到挪亞族譜中的一代，活九百六十二歲。",
   "verses": "創世記5、創世記11"
  },
@@ -6410,7 +6468,7 @@
   "type": "person",
   "name": "瑪土撒拉",
   "name_en": "",
-  "testament": "OT",
+  "testament": "both",
   "desc": "以諾之子，拉麥之父，挪亞的祖父。聖經記載最長壽的人，活九百六十九歲。",
   "verses": "創世記5、創世記11"
  },
@@ -6418,7 +6476,7 @@
   "type": "person",
   "name": "亞法撒",
   "name_en": "",
-  "testament": "OT",
+  "testament": "both",
   "desc": "閃之子，洪水後二年所生，是希伯與亞伯拉罕一系的先祖。",
   "verses": "創世記5、創世記11"
  },
@@ -6427,7 +6485,7 @@
    "type": "person",
    "name": "沙拉（亞法撒之子）",
    "name_en": "",
-   "testament": "OT",
+   "testament": "both",
    "desc": "亞法撒之子，希伯之父，閃到亞伯拉罕族譜中的一代。",
    "verses": "創世記5、創世記11"
   },
@@ -6451,7 +6509,7 @@
    "type": "person",
    "name": "希伯",
    "name_en": "",
-   "testament": "OT",
+   "testament": "both",
    "desc": "沙拉之子，「希伯來人」一名可能源自他，是閃族裔通往亞伯拉罕的關鍵一代。",
    "verses": "創世記5、創世記11"
   },
@@ -6474,7 +6532,7 @@
   "type": "person",
   "name": "法勒",
   "name_en": "",
-  "testament": "OT",
+  "testament": "both",
   "desc": "希伯之子，「法勒」意為分開，因他在世時人類分散各地。",
   "verses": "創世記5、創世記11"
  },
@@ -6482,7 +6540,7 @@
   "type": "person",
   "name": "拉吳",
   "name_en": "",
-  "testament": "OT",
+  "testament": "both",
   "desc": "法勒之子，西鹿之父，閃到亞伯拉罕族譜中的一代。",
   "verses": "創世記5、創世記11"
  },
@@ -6490,7 +6548,7 @@
   "type": "person",
   "name": "西鹿",
   "name_en": "",
-  "testament": "OT",
+  "testament": "both",
   "desc": "拉吳之子，拿鶴之父，亞伯拉罕的曾祖父。",
   "verses": "創世記5、創世記11"
  },
@@ -7290,6 +7348,20 @@
     10
    ],
    "desc": "以斯拉記10章娶外邦女子的以色列人之一，此名在本章不只一處出現（拉10:18,23），經文未進一步區分是否同一人，與其他同名者皆非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "以利以謝",
+   "name_en": "Eliezer",
+   "testament": "NT",
+   "desc": "路加福音3章耶穌家譜中的人物。",
+   "books": [
+    "路加福音"
+   ],
+   "chapters": [
+    3,
+    3
+   ]
   }
  ],
  "烏利": {
@@ -11967,12 +12039,13 @@
    "testament": "OT",
    "books": [
     "以斯拉記",
+    "以賽亞書",
+    "何西阿書",
     "士師記",
     "尼希米記",
     "撒母耳記上",
-    "以賽亞書",
     "耶利米書",
-    "何西阿書"
+    "馬太福音"
    ],
    "desc": "便雅憫地著名城邑，先知撒母耳的家鄉，他在此審判以色列、築壇獻祭，也是他晚年安葬之地（撒上1、7、8、25章等）。（位於今日以色列）",
    "name": "拉瑪",
@@ -12221,7 +12294,7 @@
  "亞比亞他": {
   "type": "person",
   "name_en": "Abiathar",
-  "testament": "OT",
+  "testament": "both",
   "desc": "亞希米勒的兒子，挪伯祭司滅門中唯一逃脫者，投奔大衛，此後作大衛的祭司（撒上22:20、23:6等）。",
   "name": "亞比亞他"
  },
@@ -13485,6 +13558,20 @@
     13
    ],
    "desc": "尼希米派任管理庫房的文士司庫之一（尼13:13），與大衛時代的祭司長撒督、尼3章築牆者撒督皆非同一人。"
+  },
+  {
+   "type": "person",
+   "name": "撒督",
+   "name_en": "Zadok",
+   "testament": "NT",
+   "desc": "耶穌家譜中亞所的兒子（太1:14）；與大衛時代的祭司撒督不是同一人。",
+   "books": [
+    "馬太福音"
+   ],
+   "chapters": [
+    1,
+    1
+   ]
   }
  ],
  "西萊雅": [
@@ -14759,13 +14846,43 @@
   "desc": "西法瓦音人獻兒女焚燒的神之一。",
   "name": "亞拿米勒"
  },
- "以利亞敬": {
-  "type": "person",
-  "name_en": "Eliakim",
-  "testament": "OT",
-  "desc": "希勒家的兒子，家宰，對拉伯沙基說話。",
-  "name": "以利亞敬"
- },
+ "以利亞敬": [
+  {
+   "type": "person",
+   "name_en": "Eliakim",
+   "testament": "OT",
+   "desc": "希勒家的兒子，家宰，對拉伯沙基說話。",
+   "name": "以利亞敬"
+  },
+  {
+   "type": "person",
+   "name": "以利亞敬",
+   "name_en": "Eliakim",
+   "testament": "NT",
+   "desc": "耶穌家譜中亞比玉的兒子（太1:13）；與希西家時代的家宰以利亞敬不是同一人。",
+   "books": [
+    "馬太福音"
+   ],
+   "chapters": [
+    1,
+    1
+   ]
+  },
+  {
+   "type": "person",
+   "name": "以利亞敬",
+   "name_en": "Eliakim",
+   "testament": "NT",
+   "desc": "路加福音3章耶穌家譜中的人物。",
+   "books": [
+    "路加福音"
+   ],
+   "chapters": [
+    3,
+    3
+   ]
+  }
+ ],
  "舍伯那": {
   "type": "person",
   "name_en": "Shebna",
@@ -14885,13 +15002,29 @@
    "desc": "利未歌唱班始祖，城牆告成之禮所用讚美稱謝之樂即源自大衛與亞薩的日子，遊行吹號祭司亦為其子孫（尼12:35,46），與管理波斯王園林的亞薩非同一人。"
   }
  ],
- "亞摩斯": {
-  "type": "person",
-  "name_en": "Amoz",
-  "testament": "OT",
-  "desc": "先知以賽亞的父親。",
-  "name": "亞摩斯"
- },
+ "亞摩斯": [
+  {
+   "type": "person",
+   "name_en": "Amoz",
+   "testament": "OT",
+   "desc": "先知以賽亞的父親。",
+   "name": "亞摩斯"
+  },
+  {
+   "type": "person",
+   "name": "亞摩斯",
+   "name_en": "Amos",
+   "testament": "NT",
+   "desc": "路加福音3章耶穌家譜中的人物。",
+   "books": [
+    "路加福音"
+   ],
+   "chapters": [
+    3,
+    3
+   ]
+  }
+ ],
  "特哈加": {
   "type": "person",
   "name_en": "Tirhakah",
@@ -15874,8 +16007,9 @@
   "name_en": "Zarephath",
   "testament": "OT",
   "books": [
+   "俄巴底亞書",
    "列王紀上",
-   "俄巴底亞書"
+   "路加福音"
   ],
   "lat": 33.27,
   "lng": 35.3,
@@ -19382,13 +19516,29 @@
   "testament": "OT",
   "desc": "西珥的兒子，何利人的族長（創36:20、代上1:38）。"
  },
- "亞拿": {
-  "type": "person",
-  "name": "亞拿",
-  "name_en": "Anah",
-  "testament": "OT",
-  "desc": "西珥的兒子（創36:20、代上1:38）。"
- },
+ "亞拿": [
+  {
+   "type": "person",
+   "name": "亞拿",
+   "name_en": "Anah",
+   "testament": "OT",
+   "desc": "西珥的兒子（創36:20、代上1:38）。"
+  },
+  {
+   "type": "person",
+   "name": "亞拿",
+   "name_en": "Anna",
+   "testament": "NT",
+   "desc": "女先知，法內力的女兒，屬亞設支派，嫁後七年守寡，到八十四歲，常在殿中禁食禱告，見到嬰孩耶穌就稱謝神（路2:36-38）。",
+   "books": [
+    "路加福音"
+   ],
+   "chapters": [
+    2,
+    2
+   ]
+  }
+ ],
  "底順": {
   "type": "person",
   "name": "底順",
@@ -19791,7 +19941,7 @@
    "type": "person",
    "name": "亞比雅",
    "name_en": "Abijah",
-   "testament": "OT",
+   "testament": "both",
    "desc": "希斯崙死後的妻子，亞施戶的母親（代上2:24）。"
   },
   {
@@ -20300,14 +20450,14 @@
   "type": "person",
   "name": "耶哥尼雅",
   "name_en": "Jeconiah",
-  "testament": "OT",
+  "testament": "both",
   "desc": "約雅敬的兒子，猶大末代王之一，即約雅斤，被擄至巴比倫，歷代志上多用此名（代上3:16-17，參王下24:6-15）。"
  },
  "撒拉鐵": {
   "type": "person",
   "name": "撒拉鐵",
   "name_en": "Shealtiel",
-  "testament": "OT",
+  "testament": "both",
   "desc": "被擄的耶哥尼雅（約雅斤）的兒子，所羅巴伯之父（代上3:17-19，參拉3:2、太1:12）。"
  },
  "瑪基蘭": {
@@ -26069,13 +26219,29 @@
   "testament": "OT",
   "desc": "亞疊的兒子，掌管大衛王府庫（代上27:25），與大衛勇士押斯瑪弗非同一人。"
  },
- "以斯利": {
-  "type": "person",
-  "name": "以斯利",
-  "name_en": "Ezri",
-  "testament": "OT",
-  "desc": "基綠的兒子，掌管大衛耕田種地的官員（代上27:26）。"
- },
+ "以斯利": [
+  {
+   "type": "person",
+   "name": "以斯利",
+   "name_en": "Ezri",
+   "testament": "OT",
+   "desc": "基綠的兒子，掌管大衛耕田種地的官員（代上27:26）。"
+  },
+  {
+   "type": "person",
+   "name": "以斯利",
+   "name_en": "Esli",
+   "testament": "NT",
+   "desc": "路加福音3章耶穌家譜中的人物。",
+   "books": [
+    "路加福音"
+   ],
+   "chapters": [
+    3,
+    3
+   ]
+  }
+ ],
  "實弗米人": {
   "type": "place",
   "name": "實弗米人",
@@ -27875,13 +28041,29 @@
    "desc": "約雅金作大祭司時，約雅立族作族長的祭司（尼12:19），與拉10章娶外邦女子的瑪特乃非同一人。"
   }
  ],
- "瑪達他": {
-  "type": "person",
-  "name": "瑪達他",
-  "name_en": "Mattattah",
-  "testament": "OT",
-  "desc": "以斯拉記10章娶外邦女子的以色列人之一（拉10章）。"
- },
+ "瑪達他": [
+  {
+   "type": "person",
+   "name": "瑪達他",
+   "name_en": "Mattattah",
+   "testament": "OT",
+   "desc": "以斯拉記10章娶外邦女子的以色列人之一（拉10章）。"
+  },
+  {
+   "type": "person",
+   "name": "瑪達他",
+   "name_en": "Mattatha",
+   "testament": "NT",
+   "desc": "路加福音3章耶穌家譜中的人物。",
+   "books": [
+    "路加福音"
+   ],
+   "chapters": [
+    3,
+    3
+   ]
+  }
+ ],
  "耶利買": {
   "type": "person",
   "name": "耶利買",
@@ -29505,17 +29687,29 @@
   ],
   "desc": "亞伯蘭追擊基大老瑪聯軍所到最遠之處，在大馬色左邊（14:15），即北方。"
  },
- "撒冷": {
-  "type": "place",
-  "name": "撒冷",
-  "name_en": "Salem",
-  "testament": "OT",
-  "books": [
-   "創世記",
-   "詩篇"
-  ],
-  "desc": "麥基洗德作王的城，經文稱他為「撒冷王」（14:18）；詩76:2以撒冷與錫安並稱，傳統上認為就是耶路撒冷。"
- },
+ "撒冷": [
+  {
+   "type": "place",
+   "name": "撒冷",
+   "name_en": "Salem",
+   "testament": "OT",
+   "books": [
+    "創世記",
+    "詩篇"
+   ],
+   "desc": "麥基洗德作王的城，經文稱他為「撒冷王」（14:18）；詩76:2以撒冷與錫安並稱，傳統上認為就是耶路撒冷。"
+  },
+  {
+   "type": "place",
+   "name": "撒冷",
+   "name_en": "Salim",
+   "testament": "NT",
+   "desc": "約翰施洗的地方，哀嫩靠近撒冷，因為那裡水多（約3:23）；確切位置不詳。",
+   "books": [
+    "約翰福音"
+   ]
+  }
+ ],
  "巴列": {
   "type": "place",
   "name": "巴列",
@@ -32807,7 +33001,8 @@
   "testament": "OT",
   "desc": "意思是「神與我們同在」；以賽亞預言童女所懷的孕要生子，名叫以馬內利（賽7:14；8:8），馬太福音1:23引用這句話。",
   "books": [
-   "以賽亞書"
+   "以賽亞書",
+   "馬太福音"
   ],
   "cat": "theo"
  },
@@ -32851,16 +33046,29 @@
    "以賽亞書"
   ]
  },
- "西羅亞": {
-  "type": "place",
-  "name": "西羅亞",
-  "name_en": "Shiloah",
-  "testament": "OT",
-  "desc": "耶路撒冷的水道，「西羅亞緩緩流的水」，以賽亞用來比喻猶大人所輕看的耶和華的保護（賽8:6）。",
-  "books": [
-   "以賽亞書"
-  ]
- },
+ "西羅亞": [
+  {
+   "type": "place",
+   "name": "西羅亞",
+   "name_en": "Shiloah",
+   "testament": "OT",
+   "desc": "耶路撒冷的水道，「西羅亞緩緩流的水」，以賽亞用來比喻猶大人所輕看的耶和華的保護（賽8:6）。",
+   "books": [
+    "以賽亞書"
+   ]
+  },
+  {
+   "type": "place",
+   "name": "西羅亞",
+   "name_en": "Siloam",
+   "testament": "NT",
+   "desc": "耶路撒冷的池子；耶穌叫生來瞎眼的人到西羅亞池洗眼，他就看見了（約9:7、11）。路加福音13:4提到西羅亞的樓倒塌，壓死十八個人。",
+   "books": [
+    "約翰福音",
+    "路加福音"
+   ]
+  }
+ ],
  "迦勒挪": {
   "type": "place",
   "name": "迦勒挪",
@@ -33473,17 +33681,29 @@
   ],
   "cat": "theo"
  },
- "加略": {
-  "type": "place",
-  "name": "加略",
-  "name_en": "Kerioth",
-  "testament": "OT",
-  "desc": "摩押的城邑，受審判（耶48:24、41）。",
-  "books": [
-   "耶利米書",
-   "阿摩司書"
-  ]
- },
+ "加略": [
+  {
+   "type": "place",
+   "name": "加略",
+   "name_en": "Kerioth",
+   "testament": "OT",
+   "desc": "摩押的城邑，受審判（耶48:24、41）。",
+   "books": [
+    "耶利米書",
+    "阿摩司書"
+   ]
+  },
+  {
+   "type": "place",
+   "name": "加略",
+   "name_en": "Kerioth",
+   "testament": "NT",
+   "desc": "「加略人猶大」的「加略」，一般認為指猶大地的城鎮加略；學者對此有不同看法（約6:71；13:26）。",
+   "books": [
+    "約翰福音"
+   ]
+  }
+ ],
  "米斯迦": {
   "type": "place",
   "name": "米斯迦",
@@ -34272,6 +34492,648 @@
   "desc": "耶路撒冷的哀哭，好像在米吉多平原哈達臨門的哀哭（亞12:11）。",
   "books": [
    "撒迦利亞書"
+  ]
+ },
+ "亞比玉": {
+  "type": "person",
+  "name": "亞比玉",
+  "name_en": "Abiud",
+  "testament": "NT",
+  "desc": "耶穌家譜中的人物（太1:13）。",
+  "books": [
+   "馬太福音"
+  ],
+  "chapters": [
+   1,
+   1
+  ]
+ },
+ "亞所": {
+  "type": "person",
+  "name": "亞所",
+  "name_en": "Azor",
+  "testament": "NT",
+  "desc": "耶穌家譜中的人物（太1:13）。",
+  "books": [
+   "馬太福音"
+  ],
+  "chapters": [
+   1,
+   1
+  ]
+ },
+ "亞金": {
+  "type": "person",
+  "name": "亞金",
+  "name_en": "Achim",
+  "testament": "NT",
+  "desc": "耶穌家譜中的人物（太1:14）。",
+  "books": [
+   "馬太福音"
+  ],
+  "chapters": [
+   1,
+   1
+  ]
+ },
+ "以律": {
+  "type": "person",
+  "name": "以律",
+  "name_en": "Eliud",
+  "testament": "NT",
+  "desc": "耶穌家譜中的人物（太1:14）。",
+  "books": [
+   "馬太福音"
+  ],
+  "chapters": [
+   1,
+   1
+  ]
+ },
+ "馬但": {
+  "type": "person",
+  "name": "馬但",
+  "name_en": "Matthan",
+  "testament": "NT",
+  "desc": "耶穌家譜中的人物（太1:15）。",
+  "books": [
+   "馬太福音"
+  ],
+  "chapters": [
+   1,
+   1
+  ]
+ },
+ "約西": {
+  "type": "person",
+  "name": "約西",
+  "name_en": "Joses",
+  "testament": "NT",
+  "desc": "耶穌的兄弟之一（太13:55；可6:3）；經文也提到「雅各和約西的母親馬利亞」，在十字架旁觀看（太27:56；可15:40）。",
+  "books": [
+   "馬太福音",
+   "馬可福音"
+  ]
+ },
+ "希羅底": {
+  "type": "person",
+  "name": "希羅底",
+  "name_en": "Herodias",
+  "testament": "NT",
+  "desc": "分封的王希律（安提帕）的妻子，原是他兄弟腓力的妻子；施洗約翰指責這婚姻不合法，她因此懷恨，藉女兒的舞向希律要了約翰的頭（太14:3-11；可6:17-28）。",
+  "books": [
+   "路加福音",
+   "馬可福音",
+   "馬太福音"
+  ]
+ },
+ "亞基老": {
+  "type": "person",
+  "name": "亞基老",
+  "name_en": "Archelaus",
+  "testament": "NT",
+  "desc": "大希律死後，接續他統治猶太的兒子；約瑟從埃及回來，聽說亞基老作王，就不敢回猶太，轉往加利利的拿撒勒（太2:22）。",
+  "books": [
+   "馬太福音"
+  ]
+ },
+ "加大拉": {
+  "type": "place",
+  "name": "加大拉",
+  "name_en": "Gadara",
+  "testament": "NT",
+  "desc": "加利利海東南的地區；耶穌到了加大拉人的地方，趕出兩個被鬼附的人（太8:28）。",
+  "books": [
+   "馬太福音"
+  ]
+ },
+ "馬加丹": {
+  "type": "place",
+  "name": "馬加丹",
+  "name_en": "Magadan",
+  "testament": "NT",
+  "desc": "加利利海邊的地方；耶穌餵飽四千人後坐船到了馬加丹的境內（太15:39）。",
+  "books": [
+   "馬太福音"
+  ]
+ },
+ "大瑪努他": {
+  "type": "place",
+  "name": "大瑪努他",
+  "name_en": "Dalmanutha",
+  "testament": "NT",
+  "desc": "加利利海邊的地方；耶穌餵飽四千人後上船到了大瑪努他境內（可8:10）。",
+  "books": [
+   "馬可福音"
+  ]
+ },
+ "以土買": {
+  "type": "place",
+  "name": "以土買",
+  "name_en": "Idumea",
+  "testament": "NT",
+  "desc": "猶大地南方的地區，即以東人後來居住之地；有許多人從以土買來到耶穌那裡（可3:8）。",
+  "books": [
+   "馬可福音"
+  ]
+ },
+ "巴底買": {
+  "type": "person",
+  "name": "巴底買",
+  "name_en": "Bartimaeus",
+  "testament": "NT",
+  "desc": "耶利哥的瞎眼乞丐，是底買的兒子；他呼喊「大衛的子孫耶穌，可憐我」，耶穌使他得見（可10:46-52）。",
+  "books": [
+   "馬可福音"
+  ]
+ },
+ "底買": {
+  "type": "person",
+  "name": "底買",
+  "name_en": "Timaeus",
+  "testament": "NT",
+  "desc": "瞎眼乞丐巴底買的父親（可10:46）。",
+  "books": [
+   "馬可福音"
+  ]
+ },
+ "半尼其": {
+  "type": "concept",
+  "name": "半尼其",
+  "name_en": "Boanerges",
+  "testament": "NT",
+  "desc": "耶穌給西庇太的兒子雅各和約翰起的外號，意思是「雷子」（可3:17）。",
+  "books": [
+   "馬可福音"
+  ],
+  "cat": "people"
+ },
+ "西門彼得": {
+  "type": "person",
+  "name": "西門彼得",
+  "name_en": "Simon Peter",
+  "testament": "NT",
+  "desc": "即彼得，原名西門，耶穌稱他為彼得（可3:16；約1:42）；福音書常以「西門彼得」稱呼他，是十二使徒之首。"
+ },
+ "西門巴約拿": {
+  "type": "person",
+  "name": "西門巴約拿",
+  "name_en": "Simon Bar-Jonah",
+  "testament": "NT",
+  "desc": "即彼得；耶穌稱他為「西門巴約拿」，意思是「約拿的兒子西門」，在他認出耶穌是基督後祝福他（太16:17）。",
+  "books": [
+   "馬太福音"
+  ]
+ },
+ "亞利馬太": {
+  "type": "place",
+  "name": "亞利馬太",
+  "name_en": "Arimathea",
+  "testament": "NT",
+  "desc": "猶太人的城，富有的門徒約瑟的家鄉；他向彼拉多求耶穌的身體，安葬在自己的新墳墓（太27:57-60；可15:43；約19:38）。"
+ },
+ "哀嫩": {
+  "type": "place",
+  "name": "哀嫩",
+  "name_en": "Aenon",
+  "testament": "NT",
+  "desc": "約翰施洗的地方，靠近撒冷，因為那裡水多（約3:23）；確切位置不詳。",
+  "books": [
+   "約翰福音"
+  ]
+ },
+ "雅各井": {
+  "type": "place",
+  "name": "雅各井",
+  "name_en": "Jacob's Well",
+  "testament": "NT",
+  "desc": "敘加城附近的井，耶穌疲乏坐在井旁，與撒瑪利亞婦人談論活水（約4:5-14）。",
+  "books": [
+   "約翰福音"
+  ]
+ },
+ "提比哩亞": {
+  "type": "place",
+  "name": "提比哩亞",
+  "name_en": "Tiberias",
+  "testament": "NT",
+  "desc": "加利利海邊的城，也用來稱加利利海；有小船從提比哩亞來到五餅二魚的地方（約6:23）。",
+  "books": [
+   "約翰福音"
+  ]
+ },
+ "馬勒古": {
+  "type": "person",
+  "name": "馬勒古",
+  "name_en": "Malchus",
+  "testament": "NT",
+  "desc": "大祭司的僕人；耶穌被捕時，彼得拔刀削掉了他的右耳（約18:10）。",
+  "books": [
+   "約翰福音"
+  ]
+ },
+ "厄巴大": {
+  "type": "place",
+  "name": "厄巴大",
+  "name_en": "Gabbatha",
+  "testament": "NT",
+  "desc": "彼拉多坐堂審判耶穌的地方，希伯來話叫厄巴大，意思是「石鋪的院子」（約19:13）。",
+  "books": [
+   "約翰福音"
+  ]
+ },
+ "革羅罷": {
+  "type": "person",
+  "name": "革羅罷",
+  "name_en": "Clopas",
+  "testament": "NT",
+  "desc": "站在耶穌十字架旁的一位馬利亞，是革羅罷的妻子（約19:25）。",
+  "books": [
+   "約翰福音"
+  ]
+ },
+ "瑪塔": {
+  "type": "person",
+  "name": "瑪塔",
+  "name_en": "Matthat",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "麥基": {
+  "type": "person",
+  "name": "麥基",
+  "name_en": "Melchi",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "瑪他提亞": {
+  "type": "person",
+  "name": "瑪他提亞",
+  "name_en": "Mattathias",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "約亞拿": [
+  {
+   "type": "person",
+   "name": "約亞拿",
+   "name_en": "Joanan",
+   "testament": "NT",
+   "desc": "路加福音3章耶穌家譜中的人物。",
+   "books": [
+    "路加福音"
+   ],
+   "chapters": [
+    3,
+    3
+   ]
+  },
+  {
+   "type": "person",
+   "name": "約亞拿",
+   "name_en": "Joanna",
+   "testament": "NT",
+   "books": [
+    "路加福音"
+   ],
+   "desc": "希律家宰苦撒的妻子，被治好後跟隨耶穌、用自己的財物供給他；也是最早發現空墳墓的婦女之一（路8:3；24:10）。"
+  }
+ ],
+ "希里": {
+  "type": "person",
+  "name": "希里",
+  "name_en": "Heli",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "雅拿": {
+  "type": "person",
+  "name": "雅拿",
+  "name_en": "Janna",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "拿鴻": {
+  "type": "person",
+  "name": "拿鴻",
+  "name_en": "Naum",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "拿該": {
+  "type": "person",
+  "name": "拿該",
+  "name_en": "Naggai",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "瑪押": {
+  "type": "person",
+  "name": "瑪押",
+  "name_en": "Maath",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "西美": {
+  "type": "person",
+  "name": "西美",
+  "name_en": "Semein",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "利撒": {
+  "type": "person",
+  "name": "利撒",
+  "name_en": "Rhesa",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "尼利": {
+  "type": "person",
+  "name": "尼利",
+  "name_en": "Neri",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "亞底": {
+  "type": "person",
+  "name": "亞底",
+  "name_en": "Addi",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "哥桑": {
+  "type": "person",
+  "name": "哥桑",
+  "name_en": "Cosam",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "以摩當": {
+  "type": "person",
+  "name": "以摩當",
+  "name_en": "Elmadam",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "約細": {
+  "type": "person",
+  "name": "約細",
+  "name_en": "Jose",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "約令": {
+  "type": "person",
+  "name": "約令",
+  "name_en": "Jorim",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "約南": {
+  "type": "person",
+  "name": "約南",
+  "name_en": "Jonan",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "米利亞": {
+  "type": "person",
+  "name": "米利亞",
+  "name_en": "Melea",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "買南": {
+  "type": "person",
+  "name": "買南",
+  "name_en": "Menan",
+  "testament": "NT",
+  "desc": "路加福音3章耶穌家譜中的人物。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   3,
+   3
+  ]
+ },
+ "西面": {
+  "type": "person",
+  "name": "西面",
+  "name_en": "Simeon",
+  "testament": "NT",
+  "desc": "耶路撒冷的義人，敬虔等候以色列的安慰；聖靈指示他必看見主的基督，他在殿裡抱起嬰孩耶穌稱頌神（路2:25-35）。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   2,
+   2
+  ]
+ },
+ "法內力": {
+  "type": "person",
+  "name": "法內力",
+  "name_en": "Phanuel",
+  "testament": "NT",
+  "desc": "女先知亞拿的父親，屬亞設支派（路2:36）。",
+  "books": [
+   "路加福音"
+  ],
+  "chapters": [
+   2,
+   2
+  ]
+ },
+ "提阿非羅": {
+  "type": "person",
+  "name": "提阿非羅",
+  "name_en": "Theophilus",
+  "testament": "NT",
+  "desc": "路加福音和使徒行傳的受書人，路加稱他為「大人」，寫書好使他知道所學之道都是確實的（路1:1-4；徒1:1）。"
+ },
+ "居里扭": {
+  "type": "person",
+  "name": "居里扭",
+  "name_en": "Quirinius",
+  "testament": "NT",
+  "desc": "敘利亞的巡撫；他任內該撒亞古士督下令天下人登記戶籍，約瑟和馬利亞因此回伯利恆（路2:1-5）。",
+  "books": [
+   "路加福音"
+  ]
+ },
+ "本丟彼拉多": {
+  "type": "person",
+  "name": "本丟彼拉多",
+  "name_en": "Pontius Pilate",
+  "testament": "NT",
+  "desc": "即彼拉多，羅馬任命的猶太巡撫，在提庇留該撒第十五年作猶太巡撫（路3:1）；他審問耶穌並判處釘十字架。"
+ },
+ "以土利亞": {
+  "type": "place",
+  "name": "以土利亞",
+  "name_en": "Ituraea",
+  "testament": "NT",
+  "desc": "加利利北方的地區，在路加記載的時代由腓力分封統治（路3:1）。",
+  "books": [
+   "路加福音"
+  ]
+ },
+ "特拉可尼": {
+  "type": "place",
+  "name": "特拉可尼",
+  "name_en": "Trachonitis",
+  "testament": "NT",
+  "desc": "加利利東北的地區，在路加記載的時代由腓力分封統治（路3:1）。",
+  "books": [
+   "路加福音"
+  ]
+ },
+ "拿因": {
+  "type": "place",
+  "name": "拿因",
+  "name_en": "Nain",
+  "testament": "NT",
+  "desc": "加利利的城，耶穌在城門口使寡婦獨生的兒子復活（路7:11-15）。",
+  "books": [
+   "路加福音"
+  ]
+ },
+ "苦撒": {
+  "type": "person",
+  "name": "苦撒",
+  "name_en": "Chuza",
+  "testament": "NT",
+  "desc": "希律的家宰，他的妻子約亞拿是跟隨耶穌、用自己財物供給他的婦女之一（路8:3）。",
+  "books": [
+   "路加福音"
   ]
  }
 }
