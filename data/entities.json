@@ -11944,10 +11944,12 @@
    "name_en": "Ramah (of Benjamin)",
    "testament": "OT",
    "books": [
-    "撒母耳記上",
+    "以賽亞書",
+    "耶利米書",
     "士師記",
-    "以斯拉記",
-    "尼希米記"
+    "尼希米記",
+    "撒母耳記上",
+    "以斯拉記"
    ],
    "desc": "便雅憫地著名城邑，先知撒母耳的家鄉，他在此審判以色列、築壇獻祭，也是他晚年安葬之地（撒上1、7、8、25章等）。（位於今日以色列）",
    "name": "拉瑪",
@@ -12280,6 +12282,7 @@
   "name_en": "Gallim",
   "testament": "OT",
   "books": [
+   "以賽亞書",
    "撒母耳記上"
   ],
   "desc": "便雅憫地一城，帕提（米甲後夫）的家鄉（撒上25:44）。",
@@ -12513,19 +12516,32 @@
    ]
   }
  ],
- "迦密": {
-  "type": "place",
-  "name_en": "Carmel (of Judah)",
-  "testament": "OT",
-  "books": [
-   "撒母耳記上",
-   "歷代志上"
-  ],
-  "desc": "猶大南方一城，拿八與亞比該的家鄉，掃羅曾在此為自己立記念碑（撒上15:12、25章）。（位於今日以色列）",
-  "name": "迦密",
-  "lat": 31.42,
-  "lng": 35.05
- },
+ "迦密": [
+  {
+   "type": "place",
+   "name_en": "Carmel (of Judah)",
+   "testament": "OT",
+   "books": [
+    "耶利米書",
+    "撒母耳記上",
+    "歷代志上"
+   ],
+   "desc": "猶大南方一城，拿八與亞比該的家鄉，掃羅曾在此為自己立記念碑（撒上15:12、25章）。（位於今日以色列）",
+   "name": "迦密",
+   "lat": 31.42,
+   "lng": 35.05
+  },
+  {
+   "type": "place",
+   "name": "迦密",
+   "name_en": "Carmel",
+   "testament": "OT",
+   "desc": "以色列西北沿海的山脈，土地肥沃；以賽亞用「迦密」的衰殘形容地的荒涼（賽33:9；35:2）。",
+   "books": [
+    "以賽亞書"
+   ]
+  }
+ ],
  "亞希暖": [
   {
    "type": "person",
@@ -12802,6 +12818,20 @@
     3,
     3
    ]
+  },
+  {
+   "type": "person",
+   "name": "示法提雅",
+   "name_en": "Shephatiah",
+   "testament": "OT",
+   "desc": "瑪但的兒子，與猶甲等人聽見耶利米勸百姓降巴比倫的話，要求處死他（耶38:1）。",
+   "books": [
+    "耶利米書"
+   ],
+   "chapters": [
+    38,
+    38
+   ]
   }
  ],
  "亞比他": {
@@ -12952,6 +12982,17 @@
     3,
     3
    ]
+  },
+  {
+   "type": "concept",
+   "name": "利甲",
+   "name_en": "Rechabites",
+   "testament": "OT",
+   "desc": "利甲族，祖先約拿達吩咐子孫不喝酒、不蓋房、不種田；耶利米以他們守祖訓，對比猶大人不聽耶和華（耶35章）。",
+   "books": [
+    "耶利米書"
+   ],
+   "cat": "people"
   }
  ],
  "巴拿": [
@@ -13981,17 +14022,33 @@
   "desc": "三勇士之首約設巴設的別名（撒下23:8）。",
   "name": "亞底挪"
  },
- "亞利伊勒": {
-  "type": "person",
-  "name_en": "Ariel",
-  "testament": "OT",
-  "books": [
-   "撒母耳記下",
-   "歷代志上"
-  ],
-  "desc": "摩押人，其兩個兒子被大衛勇士比拿雅所殺（撒下23:20）。",
-  "name": "亞利伊勒"
- },
+ "亞利伊勒": [
+  {
+   "type": "person",
+   "name_en": "Ariel",
+   "testament": "OT",
+   "books": [
+    "撒母耳記下",
+    "歷代志上"
+   ],
+   "desc": "摩押人，其兩個兒子被大衛勇士比拿雅所殺（撒下23:20）。",
+   "name": "亞利伊勒"
+  },
+  {
+   "type": "place",
+   "name": "亞利伊勒",
+   "name_en": "Ariel",
+   "testament": "OT",
+   "desc": "對耶路撒冷（大衛安營之城）的稱呼；以賽亞預言它要受圍困，卻終必得解救（賽29:1-7）。",
+   "books": [
+    "以賽亞書"
+   ],
+   "chapters": [
+    29,
+    29
+   ]
+  }
+ ],
  "比拿雅": [
   {
    "type": "person",
@@ -15568,6 +15625,20 @@
    ],
    "testament": "OT",
    "desc": "亞述王西拿基立的兒子，與兄弟沙利色合謀弒父後逃往亞拉臘地（王下19:37）。"
+  },
+  {
+   "type": "person",
+   "name": "亞得米勒",
+   "name_en": "Adrammelech",
+   "testament": "OT",
+   "desc": "亞述王西拿基立的兒子，與兄弟沙利色合謀殺了父親（賽37:38）。",
+   "books": [
+    "以賽亞書"
+   ],
+   "chapters": [
+    37,
+    37
+   ]
   }
  ],
  "沙龍": [
@@ -16594,9 +16665,10 @@
   "name_en": "Baasha",
   "testament": "OT",
   "books": [
-   "列王紀上",
    "列王紀下",
-   "歷代志下"
+   "耶利米書",
+   "歷代志下",
+   "列王紀上"
   ],
   "desc": "以薩迦人亞希雅的兒子，以色列軍長，趁拿答被圍困基比頓時弒君篡位，滅絕耶羅波安全家，在位二十四年（王上15:27-16:7）。（代下16:1-6同一事蹟）"
  },
@@ -16655,6 +16727,20 @@
    "chapters": [
     28,
     28
+   ]
+  },
+  {
+   "type": "person",
+   "name": "比加",
+   "name_en": "Pekah",
+   "testament": "OT",
+   "desc": "利瑪利的兒子，以色列王，與亞蘭王一同上來攻擊猶大王亞哈斯（賽7:1）。",
+   "books": [
+    "以賽亞書"
+   ],
+   "chapters": [
+    7,
+    7
    ]
   }
  ],
@@ -30071,8 +30157,9 @@
   "testament": "OT",
   "desc": "摩押的城與其地，西宏之戰中被火焰燒盡（民21:28）；耶和華已將亞珥賜給羅得的子孫為業（申2:9）。",
   "books": [
-   "民數記",
-   "申命記"
+   "申命記",
+   "以賽亞書",
+   "民數記"
   ]
  },
  "毗奪": {
@@ -31841,16 +31928,28 @@
    "列王紀下"
   ]
  },
- "答比匿": {
-  "type": "person",
-  "name": "答比匿",
-  "name_en": "Tahpenes",
-  "testament": "OT",
-  "desc": "埃及法老的王后；她的妹妹嫁給了逃到埃及的以東人哈達（王上11:19）。",
-  "books": [
-   "列王紀上"
-  ]
- },
+ "答比匿": [
+  {
+   "type": "person",
+   "name": "答比匿",
+   "name_en": "Tahpenes",
+   "testament": "OT",
+   "desc": "埃及法老的王后；她的妹妹嫁給了逃到埃及的以東人哈達（王上11:19）。",
+   "books": [
+    "列王紀上"
+   ]
+  },
+  {
+   "type": "place",
+   "name": "答比匿",
+   "name_en": "Tahpanhes",
+   "testament": "OT",
+   "desc": "埃及東北部的城；猶大餘民逃往埃及後在此居住，耶利米在此用石頭預言尼布甲尼撒必來（耶2:16；43:7-13；44:1）。",
+   "books": [
+    "耶利米書"
+   ]
+  }
+ ],
  "基努拔": {
   "type": "person",
   "name": "基努拔",
@@ -32073,7 +32172,9 @@
   "testament": "OT",
   "desc": "被亞述攻取的城；亞述使者誇口說亞珥拔的神救不了城（王下18:34；19:13）。",
   "books": [
-   "列王紀下"
+   "列王紀下",
+   "以賽亞書",
+   "耶利米書"
   ]
  },
  "希拿": {
@@ -32083,7 +32184,8 @@
   "testament": "OT",
   "desc": "被亞述攻取的城（王下18:34；19:13）。",
   "books": [
-   "列王紀下"
+   "列王紀下",
+   "以賽亞書"
   ]
  },
  "以瓦": {
@@ -32093,7 +32195,8 @@
   "testament": "OT",
   "desc": "被亞述攻取的城（王下18:34；19:13）。",
   "books": [
-   "列王紀下"
+   "列王紀下",
+   "以賽亞書"
   ]
  },
  "吉珥哈列設": {
@@ -32103,7 +32206,9 @@
   "testament": "OT",
   "desc": "摩押的城；聯軍攻打摩押，拆毀城邑，只剩下吉珥哈列設的石牆（王下3:25）。",
   "books": [
-   "列王紀下"
+   "列王紀下",
+   "以賽亞書",
+   "耶利米書"
   ]
  },
  "撒益": {
@@ -32154,6 +32259,7 @@
   "desc": "耶路撒冷城門；以色列王約阿施拆毀「從以法蓮門直到角門」四百肘的城牆（王下14:13）。",
   "books": [
    "列王紀下",
+   "耶利米書",
    "歷代志下"
   ]
  },
@@ -32174,7 +32280,8 @@
   "testament": "OT",
   "desc": "亞述王攻取大馬色後，把居民擄到吉珥（王下16:9）；確切位置不詳。",
   "books": [
-   "列王紀下"
+   "列王紀下",
+   "以賽亞書"
   ]
  },
  "疏割比訥": {
@@ -32247,7 +32354,8 @@
   "testament": "OT",
   "desc": "耶路撒冷陷落時，被巴比倫護衛長拿住的副祭司（王下25:18）。",
   "books": [
-   "列王紀下"
+   "列王紀下",
+   "耶利米書"
   ]
  },
  "以未米羅達": {
@@ -32257,7 +32365,8 @@
   "testament": "OT",
   "desc": "巴比倫王；他元年使被囚三十七年的猶大王約雅斤抬頭，施恩善待他（王下25:27）。",
   "books": [
-   "列王紀下"
+   "列王紀下",
+   "耶利米書"
   ]
  },
  "錫安山": {
@@ -32518,7 +32627,8 @@
   "testament": "OT",
   "desc": "埃及的城，神在瑣安地向埃及人行神蹟奇事（詩78:12、43）。",
   "books": [
-   "詩篇"
+   "詩篇",
+   "以賽亞書"
   ]
  },
  "黑門嶺": {
@@ -32629,6 +32739,789 @@
   "desc": "所羅門有葡萄園的地方（歌8:11）；位置不詳。",
   "books": [
    "雅歌"
+  ]
+ },
+ "以馬內利": {
+  "type": "concept",
+  "name": "以馬內利",
+  "name_en": "Immanuel",
+  "testament": "OT",
+  "desc": "意思是「神與我們同在」；以賽亞預言童女所懷的孕要生子，名叫以馬內利（賽7:14；8:8），馬太福音1:23引用這句話。",
+  "books": [
+   "以賽亞書"
+  ],
+  "cat": "theo"
+ },
+ "施亞雅述": {
+  "type": "person",
+  "name": "施亞雅述",
+  "name_en": "Shear-jashub",
+  "testament": "OT",
+  "desc": "以賽亞的兒子，名字意思是「餘種必回轉」；耶和華吩咐以賽亞帶他去見亞哈斯王（賽7:3）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "他比勒": {
+  "type": "person",
+  "name": "他比勒",
+  "name_en": "Tabeel",
+  "testament": "OT",
+  "desc": "亞蘭和以法蓮合謀要立為猶大王的人，是他比勒的兒子（賽7:6）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "耶比利家": {
+  "type": "person",
+  "name": "耶比利家",
+  "name_en": "Jeberechiah",
+  "testament": "OT",
+  "desc": "撒迦利亞的父親；撒迦利亞是以賽亞記錄「瑪黑珥沙拉勒哈施罷斯」時的見證人之一（賽8:2）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "瑪黑珥沙拉勒哈施罷斯": {
+  "type": "person",
+  "name": "瑪黑珥沙拉勒哈施罷斯",
+  "name_en": "Maher-shalal-hash-baz",
+  "testament": "OT",
+  "desc": "以賽亞的兒子，名字意思是「擄掠速臨、搶奪快到」，預言亞蘭和以色列將被亞述攻破（賽8:1-4）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "西羅亞": {
+  "type": "place",
+  "name": "西羅亞",
+  "name_en": "Shiloah",
+  "testament": "OT",
+  "desc": "耶路撒冷的水道，「西羅亞緩緩流的水」，以賽亞用來比喻猶大人所輕看的耶和華的保護（賽8:6）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "迦勒挪": {
+  "type": "place",
+  "name": "迦勒挪",
+  "name_en": "Calno",
+  "testament": "OT",
+  "desc": "被亞述攻取的城（賽10:9）；確切位置不詳。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "亞葉": {
+  "type": "place",
+  "name": "亞葉",
+  "name_en": "Aiath",
+  "testament": "OT",
+  "desc": "亞述軍隊從北方入侵猶大時經過的便雅憫城邑（賽10:28）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "萊煞": {
+  "type": "place",
+  "name": "萊煞",
+  "name_en": "Laishah",
+  "testament": "OT",
+  "desc": "亞述軍隊入侵猶大時經過的地方（賽10:30）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "瑪得米那": {
+  "type": "place",
+  "name": "瑪得米那",
+  "name_en": "Madmenah",
+  "testament": "OT",
+  "desc": "亞述軍隊入侵猶大時，居民逃難的地方（賽10:31）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "基柄": {
+  "type": "place",
+  "name": "基柄",
+  "name_en": "Gebim",
+  "testament": "OT",
+  "desc": "亞述軍隊入侵猶大時，居民逃難的地方（賽10:31）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "巴忒羅": {
+  "type": "place",
+  "name": "巴忒羅",
+  "name_en": "Pathros",
+  "testament": "OT",
+  "desc": "埃及南部（上埃及）；耶和華應許從巴忒羅等地救回餘民（賽11:11）。",
+  "books": [
+   "以賽亞書",
+   "耶利米書"
+  ]
+ },
+ "底們": {
+  "type": "place",
+  "name": "底們",
+  "name_en": "Dimon",
+  "testament": "OT",
+  "desc": "摩押的城；以賽亞論摩押的默示提到底們的水滿了血（賽15:9）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "基珥": {
+  "type": "place",
+  "name": "基珥",
+  "name_en": "Kir of Moab",
+  "testament": "OT",
+  "desc": "摩押的城；一夜之間變為荒廢（賽15:1）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "巴益": {
+  "type": "place",
+  "name": "巴益",
+  "name_en": "Bayith",
+  "testament": "OT",
+  "desc": "摩押人為災禍哀哭上去的地方（賽15:2）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "魯希坡": {
+  "type": "place",
+  "name": "魯希坡",
+  "name_en": "Luhith",
+  "testament": "OT",
+  "desc": "摩押人哭著上去的坡（賽15:5；耶48:5）。",
+  "books": [
+   "以賽亞書",
+   "耶利米書"
+  ]
+ },
+ "何羅念": {
+  "type": "place",
+  "name": "何羅念",
+  "name_en": "Horonaim",
+  "testament": "OT",
+  "desc": "摩押的城，路上有毀滅的哀號（賽15:5）。",
+  "books": [
+   "以賽亞書",
+   "耶利米書"
+  ]
+ },
+ "寧林": {
+  "type": "place",
+  "name": "寧林",
+  "name_en": "Nimrim",
+  "testament": "OT",
+  "desc": "摩押的地方，那裡的水必乾涸（賽15:6）。",
+  "books": [
+   "以賽亞書",
+   "耶利米書"
+  ]
+ },
+ "柳樹河": {
+  "type": "place",
+  "name": "柳樹河",
+  "name_en": "Brook of the Willows",
+  "testament": "OT",
+  "desc": "摩押人帶著所積蓄的財物越過的河（賽15:7）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "以基蓮": {
+  "type": "place",
+  "name": "以基蓮",
+  "name_en": "Eglaim",
+  "testament": "OT",
+  "desc": "摩押的地方，哀號聲達到以基蓮（賽15:8）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "比珥以琳": {
+  "type": "place",
+  "name": "比珥以琳",
+  "name_en": "Beer-elim",
+  "testament": "OT",
+  "desc": "摩押的地方，哀號聲達到比珥以琳（賽15:8）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "挪弗": {
+  "type": "place",
+  "name": "挪弗",
+  "name_en": "Noph",
+  "testament": "OT",
+  "desc": "即孟菲斯，埃及的古都；以賽亞預言挪弗的首領受迷惑（賽19:13）。",
+  "books": [
+   "以賽亞書",
+   "耶利米書"
+  ]
+ },
+ "撒珥根": {
+  "type": "person",
+  "name": "撒珥根",
+  "name_en": "Sargon",
+  "testament": "OT",
+  "desc": "亞述王，差遣他珥探攻取亞實突（賽20:1）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "西曷": {
+  "type": "place",
+  "name": "西曷",
+  "name_en": "Shihor",
+  "testament": "OT",
+  "desc": "埃及的河，一般指尼羅河（賽23:3）。",
+  "books": [
+   "以賽亞書",
+   "耶利米書"
+  ]
+ },
+ "毗拉心山": {
+  "type": "place",
+  "name": "毗拉心山",
+  "name_en": "Mount Perazim",
+  "testament": "OT",
+  "desc": "以賽亞說耶和華必興起，像在毗拉心山一樣（賽28:21）；指大衛在此擊敗非利士人（撒下5:20）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "基遍谷": {
+  "type": "place",
+  "name": "基遍谷",
+  "name_en": "Valley of Gibeon",
+  "testament": "OT",
+  "desc": "以賽亞說耶和華必發怒，像在基遍谷一樣（賽28:21）；指約書亞或大衛擊敗仇敵之事。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "哈內斯": {
+  "type": "place",
+  "name": "哈內斯",
+  "name_en": "Hanes",
+  "testament": "OT",
+  "desc": "埃及的城；猶大的使臣曾到哈內斯尋求埃及的幫助（賽30:4）。",
+  "books": [
+   "以賽亞書"
+  ]
+ },
+ "彼勒": {
+  "type": "concept",
+  "name": "彼勒",
+  "name_en": "Bel",
+  "testament": "OT",
+  "desc": "巴比倫的神；以賽亞預言彼勒屈身，偶像無法拯救（賽46:1）。",
+  "books": [
+   "以賽亞書",
+   "耶利米書"
+  ],
+  "cat": "theo"
+ },
+ "尼利亞": {
+  "type": "person",
+  "name": "尼利亞",
+  "name_en": "Neriah",
+  "testament": "OT",
+  "desc": "巴錄的父親（耶32:12；36:4）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "以伯米勒": {
+  "type": "person",
+  "name": "以伯米勒",
+  "name_en": "Ebed-melech",
+  "testament": "OT",
+  "desc": "在王宮的古實人太監；他向西底家求情，把耶利米從爛泥坑中救上來（耶38:7-13），耶和華因此應許他在城破時得保全（39:15-18）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "哈拿篾": {
+  "type": "person",
+  "name": "哈拿篾",
+  "name_en": "Hanamel",
+  "testament": "OT",
+  "desc": "耶利米叔叔沙龍的兒子；耶利米依贖回的權利向他買下亞拿突的田地（耶32:7-9）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "基瑪利雅": {
+  "type": "person",
+  "name": "基瑪利雅",
+  "name_en": "Gemariah",
+  "testament": "OT",
+  "desc": "沙番的兒子，文士；巴錄在他房間旁邊的上院向眾人宣讀書卷（耶36:10-12）。",
+  "books": [
+   "耶利米書"
+  ],
+  "chapters": [
+   36,
+   36
+  ]
+ },
+ "猶底": {
+  "type": "person",
+  "name": "猶底",
+  "name_en": "Jehudi",
+  "testament": "OT",
+  "desc": "尼探雅的兒子；奉約雅敬王之命取來書卷並念給王聽（耶36:14、21、23）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "古示": {
+  "type": "person",
+  "name": "古示",
+  "name_en": "Cushi",
+  "testament": "OT",
+  "desc": "猶底的曾祖，示利米雅的父親（耶36:14）。",
+  "books": [
+   "耶利米書"
+  ],
+  "chapters": [
+   36,
+   36
+  ]
+ },
+ "尼甲沙利薛": {
+  "type": "person",
+  "name": "尼甲沙利薛",
+  "name_en": "Nergal-sharezer",
+  "testament": "OT",
+  "desc": "巴比倫王的首領之一，在耶路撒冷城破時坐在中門（耶39:3、13）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "三甲尼波": {
+  "type": "person",
+  "name": "三甲尼波",
+  "name_en": "Samgar-nebo",
+  "testament": "OT",
+  "desc": "巴比倫王的首領之一，在耶路撒冷城破時坐在中門（耶39:3）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "撒西金": {
+  "type": "person",
+  "name": "撒西金",
+  "name_en": "Sarsechim",
+  "testament": "OT",
+  "desc": "巴比倫王的首領之一，在耶路撒冷城破時坐在中門（耶39:3）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "尼布沙斯班": {
+  "type": "person",
+  "name": "尼布沙斯班",
+  "name_en": "Nebushazban",
+  "testament": "OT",
+  "desc": "巴比倫王的首領之一，奉命把耶利米從護衛兵院中領出來（耶39:13）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "中門": {
+  "type": "place",
+  "name": "中門",
+  "name_en": "Middle Gate",
+  "testament": "OT",
+  "desc": "耶路撒冷的城門，巴比倫王的首領在城破時坐在中門（耶39:3）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "殺戮谷": {
+  "type": "place",
+  "name": "殺戮谷",
+  "name_en": "Valley of Slaughter",
+  "testament": "OT",
+  "desc": "即欣嫩子谷；因猶大人在此獻子女給偶像，耶和華說它必改名為殺戮谷（耶7:31-32；19:6）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "哥尼雅": {
+  "type": "person",
+  "name": "哥尼雅",
+  "name_en": "Coniah",
+  "testament": "OT",
+  "desc": "猶大王約雅斤的別名；耶和華說他即使是戴印的戒指也要被摘去（耶22:24、28；37:1）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "示沙克": {
+  "type": "place",
+  "name": "示沙克",
+  "name_en": "Sheshach",
+  "testament": "OT",
+  "desc": "耶利米預言萬國都要喝神忿怒的杯，示沙克王隨後也要喝（耶25:26；51:41）；一般認為是「巴比倫」的隱語寫法。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "猶甲": {
+  "type": "person",
+  "name": "猶甲",
+  "name_en": "Jehucal",
+  "testament": "OT",
+  "desc": "示利米雅的兒子；西底家王差他去求耶利米為百姓禱告，後來也聽見耶利米勸百姓降巴比倫的話（耶37:3；38:1）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "便雅憫門": {
+  "type": "place",
+  "name": "便雅憫門",
+  "name_en": "Benjamin Gate",
+  "testament": "OT",
+  "desc": "耶路撒冷的城門；耶利米要出城往便雅憫地時，在此被守門官拿住（耶37:13）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "伊利雅": {
+  "type": "person",
+  "name": "伊利雅",
+  "name_en": "Irijah",
+  "testament": "OT",
+  "desc": "守便雅憫門的官，拿住耶利米，說他投降迦勒底人（耶37:13-14）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "哈拿尼亞": {
+  "type": "person",
+  "name": "哈拿尼亞",
+  "name_en": "Hananiah",
+  "testament": "OT",
+  "desc": "守便雅憫門的官伊利雅的祖父（耶37:13）。",
+  "books": [
+   "耶利米書"
+  ],
+  "chapters": [
+   37,
+   37
+  ]
+ },
+ "耶撒尼亞": {
+  "type": "person",
+  "name": "耶撒尼亞",
+  "name_en": "Jezaniah",
+  "testament": "OT",
+  "desc": "米斯巴的將領之一，在基大利總督底下（耶40:8；42:1）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "單戶篾": {
+  "type": "person",
+  "name": "單戶篾",
+  "name_en": "Tanhumeth",
+  "testament": "OT",
+  "desc": "尼陀法人，基大利總督底下的將領之一（耶40:8）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "以斐": {
+  "type": "person",
+  "name": "以斐",
+  "name_en": "Ephai",
+  "testament": "OT",
+  "desc": "尼陀法人，基大利總督底下的將領之一（耶40:8）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "巴利斯": {
+  "type": "person",
+  "name": "巴利斯",
+  "name_en": "Baalis",
+  "testament": "OT",
+  "desc": "亞捫人的王，差遣以實瑪利去刺殺基大利（耶40:14）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "金罕寓": {
+  "type": "place",
+  "name": "金罕寓",
+  "name_en": "Geruth Chimham",
+  "testament": "OT",
+  "desc": "靠近伯利恆的地方，約哈難帶著餘民在此暫住，打算逃往埃及（耶41:17）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "合弗拉": {
+  "type": "person",
+  "name": "合弗拉",
+  "name_en": "Hophra",
+  "testament": "OT",
+  "desc": "埃及法老；耶和華說要把他交給尋索他命的仇敵（耶44:30）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "哈巴洗尼雅": {
+  "type": "person",
+  "name": "哈巴洗尼雅",
+  "name_en": "Habazziniah",
+  "testament": "OT",
+  "desc": "雅利米雅的父親，利甲族人（耶35:3）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "雅利米雅": {
+  "type": "person",
+  "name": "雅利米雅",
+  "name_en": "Jeremiah (Rechabite)",
+  "testament": "OT",
+  "desc": "利甲族人，雅撒尼亞的父親（耶35:3）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "伊基大利": {
+  "type": "person",
+  "name": "伊基大利",
+  "name_en": "Igdaliah",
+  "testament": "OT",
+  "desc": "神人哈難的父親；耶利米帶利甲族人到他兒子的屋子（耶35:4）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "以法蓮山": {
+  "type": "place",
+  "name": "以法蓮山",
+  "name_en": "Mount Ephraim",
+  "testament": "OT",
+  "desc": "以法蓮山地一帶；有人從以法蓮山傳揚災禍的信息（耶4:15）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "烏法": {
+  "type": "place",
+  "name": "烏法",
+  "name_en": "Uphaz",
+  "testament": "OT",
+  "desc": "出產金子的地方（耶10:9）；位置不詳。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "哈珥西": {
+  "type": "place",
+  "name": "哈珥西",
+  "name_en": "Harsith",
+  "testament": "OT",
+  "desc": "欣嫩子谷中的門（原文作瓦器門）（耶19:2）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "瑪歌珥米撒畢": {
+  "type": "person",
+  "name": "瑪歌珥米撒畢",
+  "name_en": "Magor-missabib",
+  "testament": "OT",
+  "desc": "耶利米給祭司巴施戶珥改的名字，意思是「四圍都有驚嚇」（耶20:3）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "摩利沙": {
+  "type": "place",
+  "name": "摩利沙",
+  "name_en": "Moresheth",
+  "testament": "OT",
+  "desc": "先知彌迦的家鄉；耶利米提到摩利沙人彌迦曾向希西家說預言（耶26:18）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "迦立山": {
+  "type": "place",
+  "name": "迦立山",
+  "name_en": "Hill of Gareb",
+  "testament": "OT",
+  "desc": "耶路撒冷附近的山；耶利米預言重建的城，準繩要拉到迦立山（耶31:39）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "歌亞": {
+  "type": "place",
+  "name": "歌亞",
+  "name_en": "Goah",
+  "testament": "OT",
+  "desc": "耶路撒冷附近的地方；重建的城，準繩要拉到歌亞（耶31:39）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "瑪勒堪": {
+  "type": "concept",
+  "name": "瑪勒堪",
+  "name_en": "Milcom",
+  "testament": "OT",
+  "desc": "亞捫人的神；耶利米責問為何瑪勒堪承受迦得之地（耶49:1、3）。",
+  "books": [
+   "耶利米書"
+  ],
+  "cat": "theo"
+ },
+ "加略": {
+  "type": "place",
+  "name": "加略",
+  "name_en": "Kerioth",
+  "testament": "OT",
+  "desc": "摩押的城邑，受審判（耶48:24、41）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "米斯迦": {
+  "type": "place",
+  "name": "米斯迦",
+  "name_en": "Misgab",
+  "testament": "OT",
+  "desc": "摩押的地方，被羞辱敗壞（耶48:1）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "瑪得緬": {
+  "type": "place",
+  "name": "瑪得緬",
+  "name_en": "Madmen",
+  "testament": "OT",
+  "desc": "摩押的地方，要歸於靜默（耶48:2）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "伯低比拉太音": {
+  "type": "place",
+  "name": "伯低比拉太音",
+  "name_en": "Beth-diblathaim",
+  "testament": "OT",
+  "desc": "摩押的城，受審判（耶48:22）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "伯迦末": {
+  "type": "place",
+  "name": "伯迦末",
+  "name_en": "Beth-gamul",
+  "testament": "OT",
+  "desc": "摩押的城，受審判（耶48:23）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "伯米恩": {
+  "type": "place",
+  "name": "伯米恩",
+  "name_en": "Beth-meon",
+  "testament": "OT",
+  "desc": "摩押的城，受審判（耶48:23）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "雅謝海": {
+  "type": "place",
+  "name": "雅謝海",
+  "name_en": "Sea of Jazer",
+  "testament": "OT",
+  "desc": "耶利米為雅謝哀哭，雅謝的枝子蔓延過海，直到雅謝海（耶48:32）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "伊基拉施利施亞": {
+  "type": "place",
+  "name": "伊基拉施利施亞",
+  "name_en": "Eglath-shelishiyah",
+  "testament": "OT",
+  "desc": "摩押的地方，哀號聲達到那裡（耶48:34）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "米羅達": {
+  "type": "concept",
+  "name": "米羅達",
+  "name_en": "Merodach",
+  "testament": "OT",
+  "desc": "巴比倫的神；耶利米預言彼勒蒙羞、米羅達驚惶（耶50:2）。",
+  "books": [
+   "耶利米書"
+  ],
+  "cat": "theo"
+ },
+ "米拉大翁": {
+  "type": "place",
+  "name": "米拉大翁",
+  "name_en": "Merathaim",
+  "testament": "OT",
+  "desc": "耶和華吩咐上去攻擊的地方名，意思是「雙倍悖逆」，指向巴比倫（耶50:21）。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "比割": {
+  "type": "place",
+  "name": "比割",
+  "name_en": "Pekod",
+  "testament": "OT",
+  "desc": "耶和華吩咐攻擊米拉大翁和比割的居民（耶50:21）；指向巴比倫。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "立加米": {
+  "type": "place",
+  "name": "立加米",
+  "name_en": "Leb-kamai",
+  "testament": "OT",
+  "desc": "耶利米預言耶和華要興起毀滅的風攻擊立加米的居民（耶51:1）；一般認為是「迦勒底」的隱語寫法。",
+  "books": [
+   "耶利米書"
+  ]
+ },
+ "米尼": {
+  "type": "place",
+  "name": "米尼",
+  "name_en": "Minni",
+  "testament": "OT",
+  "desc": "亞拉臘附近的國，耶和華召集它攻擊巴比倫（耶51:27）。",
+  "books": [
+   "耶利米書"
   ]
  }
 }
