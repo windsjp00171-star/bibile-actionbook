@@ -139,7 +139,7 @@ components:
 **The Candle Rule.** 金色是光，不是顏料：只畫在線、點、字上，不鋪面。
 **The Three Tags Rule.** 人名、地名、概念各一個色，介面其他元素不得借用這三個色來裝飾。
 
-> 待清理：棕金色以十六進位硬編碼散落在 `static/style.css` 與 `templates/home.html` 內嵌樣式。兩處各自宣告一份 `:root` 變數，`--bg`、`--gold` 在兩邊值不同（紙色 vs 夜皮革、`#C9A96E` vs `#D4A847`）。同名異值，是目前最大的維護風險。
+> 待清理：棕金色以十六進位硬編碼散落在 `static/style.css` 與 `templates/home.html` 內嵌樣式。兩處各自宣告一份 `:root`，`--bg`、`--gold` 同名但值不同（紙色 vs 夜皮革、`#C9A96E` vs `#D4A847`）；因為首頁不載入 `style.css`，目前不會在同一頁互相覆蓋，但新增共用元件時有踩雷風險，視覺改版時統一成單一來源。
 
 ## Typography
 
@@ -232,6 +232,6 @@ components:
 
 ### 已知問題（待重構，非規範）
 - 首頁入口：每次進站強制點書；星點永久動畫；除教學鈕外無 `prefers-reduced-motion` 降級。
-- `home.html` 內嵌約 180 行 CSS，其中 `#s-reader` 與 `.reader-main` 等閱讀區樣式已無對應元素（死碼），並與 `style.css` 重複。
-- 色票以硬編碼十六進位散落兩處，`:root` 同名異值。
+- （已處理）`home.html` 內曾有無對應元素的閱讀區樣式，已於階段 2 移除。
+- 色票以硬編碼十六進位散落兩處，兩份 `:root` 同名異值（目前不同頁、不衝突）。
 - 小字（9–12px）偏多。
