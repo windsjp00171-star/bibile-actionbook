@@ -18,6 +18,7 @@ function setFont(delta) {
 function openDrawer() {
   document.getElementById('drawer').classList.add('open');
   document.getElementById('overlay').classList.add('open');
+  if (typeof revealActiveInNav === 'function') revealActiveInNav(document.getElementById('drawer'));
 }
 function closeDrawer() {
   document.getElementById('drawer').classList.remove('open');
